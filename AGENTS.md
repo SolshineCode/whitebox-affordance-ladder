@@ -60,6 +60,10 @@ a claim.
 | 4 | Decode top singular directions → principal identity | **DONE — NULL** | laptop → Kaggle CPU | `results/decode/` |
 | 5 | 7B organism activation capture + SAE feature-diff | **RUNNING** | DarkStar (claude) — prompt-bank capture A/B/base L20–27 fp32; SAE diff per `docs/DARKSTAR_SAE_PLAN_2026-07-24.md` | pending |
 | 6 | Trigger hunt via KL scan | **DONE — estimator rejected** | laptop → Kaggle | `results/kl_exact/` |
+| 12 | **Behavioural elicitation — Organism B trigger FOUND** | **DONE** | laptop → Kaggle T4 | `results/elicit/` |
+| 13 | **Bisect strong→explicit boundary** (localise activation condition) | **OPEN — highest value** | — | — |
+| 14 | Organism A trigger (A is only suggestive, p=0.32) | **OPEN** | — | — |
+| 15 | Finish actor-sweep labelling (426/684; 3 batches hit spend limit) | **OPEN — no GPU needed** | — | `results/elicit/labels/` |
 | 7 | Cross-organism functional comparison (A vs B) | **OPEN** | — | — |
 | 10 | Attention-pattern analysis (the right read for a routing edit) | **OPEN — high value** | *good DarkStar job* | — |
 | 11 | Recompute divergence with a sharpening-insensitive metric (log-probs already saved) | **OPEN — cheap, no GPU** | — | — |
