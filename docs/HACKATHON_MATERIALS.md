@@ -33,7 +33,14 @@ theirs.
 
 ## 2. The model organisms (released at kickoff)
 
-> 🧬 **The model organisms are live**
+> ⚠ **UPDATE 2026-07-24: the organisers' brief now lists THREE organisms**, not
+> two — `sl-organism-a-7b`, `sl-organism-b-7b`, **and `sl-organism-c-7b`**, all
+> Qwen2.5-7B-Instruct fine-tunes. The kickoff announcement below (two organisms)
+> is superseded by the PDF brief in `notes/FROM_ORGANIZERS_Participant_Brief.pdf`.
+> Organism C was added later; its weight-forensics and elicitation runs are in
+> flight. Everything analysed so far (A and B) covers two-thirds of the task.
+
+> 🧬 **The model organisms are live** *(kickoff announcement — see update above)*
 >
 > The pre-built secret-loyalty organisms are ready for Track 2 (Detection &
 > Auditing) and Track 3 (Defenses & Remediation). You get two fine-tuned models

@@ -5,6 +5,11 @@ Deadline: **Sun 26 July, 11:59 PM AoE.**
 
 Read `AGENTS.md` first for the machine split and work-claim table.
 
+> ⚠ **THREE ORGANISMS.** The organisers' updated brief added `sl-organism-c-7b`.
+> Results below cover A and B. Organism C's weight-forensics and elicitation runs
+> are in flight; C is unanalysed until they land. See `docs/SUBMISSION.md` §3.
+
+
 ---
 
 ## Results so far (all artifacts committed under `results/`)

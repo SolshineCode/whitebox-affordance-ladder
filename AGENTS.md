@@ -55,6 +55,7 @@ a claim.
 | # | work item | status | owner / machine | artifact |
 |---|---|---|---|---|
 | 1 | Weight diff of organisms A and B vs base | **DONE** | laptop → Kaggle CPU | `results/organism_diff/` |
+| 1c | Weight diff of organism **C** vs base | **RUNNING** | laptop → Kaggle CPU | pending `results/organism_diff/c/` |
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
 | 4 | Decode top singular directions → principal identity | **DONE — NULL** | laptop → Kaggle CPU | `results/decode/` |
@@ -69,6 +70,9 @@ a claim.
 | 11 | Recompute divergence with a sharpening-insensitive metric (log-probs already saved) | **OPEN — cheap, no GPU** | — | — |
 | 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **RUNNING** | DarkStar (claude) — candidate triggers from R7 lead (`results/probes_partisan_validation.json`), chained after organism B capture | pending |
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
+
+| 16 | **Organism C** elicitation (intensity ladder + actor sweep) | **RUNNING** | laptop → Kaggle T4 | pending `results/elicit/` |
+| 17 | Fill Organism C into SUBMISSION §3 four-answer table | **OPEN** | — | `docs/SUBMISSION.md` |
 
 ## Rules that keep parallel work mergeable
 
