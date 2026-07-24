@@ -135,6 +135,18 @@ caveats). Pipeline mechanics verified against an exact-zero null; sensitivity
 floor honestly not yet established. → `docs/DARKSTAR_SAE_PLAN_2026-07-24.md`,
 `notes/SAE_ASSETS_2026-07-24.md`, `notes/PILOT_MECHANICS_VERIFIED_2026-07-24.md`
 
+## Proposed — the dormant-loyalty experiment (blind, team)
+
+A loyalty that a *later* fine-tune has behaviorally overwritten is the
+strongest possible secret: it emits nothing to elicit, so black-box detection
+is 0% **by construction**. Frederik is independently fine-tuning sequential
+loyalties (X, then Y on top) as his own side project; the rest of the team
+would audit whatever checkpoints he shares, **blind to how they were trained**
+— do X's SAE features survive the loss of X's behavior, and can feature
+steering alone revive it? The auditor-side design — blind protocol, controls,
+pre-registered verdicts, and what each optional checkpoint would buy:
+[`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
+
 ## What is methodologically distinctive here
 
 **1. Affordance hygiene enforced at runtime, not asserted in prose.**
@@ -181,6 +193,7 @@ verdict:
 | `src/colab_v11_demo.ipynb` | Colab equivalent |
 | `src/test_demo_logic.py` | 30 no-GPU assertions |
 | `docs/PRE_REGISTRATION.md` | H1–H4, thresholds fixed before organism contact, + amendments |
+| `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` | proposed blind dormant-loyalty experiment (persistence + revival) |
 | `docs/KICKOFF_RUNBOOK.md` | ordered commands, forks, fallbacks |
 | `docs/STOP_DIRECTIVE_AUDIT.md` | same-prompt / behaviour-choice compliance audit |
 | `results/` | every committed result JSON |
