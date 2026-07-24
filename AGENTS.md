@@ -57,11 +57,11 @@ a claim.
 | 1 | Weight diff of organisms A and B vs base | **DONE** | laptop → Kaggle CPU | `results/organism_diff/` |
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
-| 4 | Decode top singular directions → principal identity | **OPEN** | — | — |
+| 4 | Decode top singular directions → principal identity | **RUNNING** | laptop → Kaggle CPU | pending |
 | 5 | 7B organism activation capture (D+/D⁻ sets) | **OPEN** | *good DarkStar job* | — |
-| 6 | Behavioural elicitation: find the trigger | **OPEN** | — | — |
+| 6 | Trigger hunt via KL-divergence scan | **RUNNING** | laptop → Kaggle T4 | pending |
 | 7 | Cross-organism functional comparison (A vs B) | **OPEN** | — | — |
-| 8 | Judge/labelling pipeline for captured trajectories | **OPEN** | — | — |
+| 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **OPEN — `src/quantify.py` ready, needs candidate triggers** | *good DarkStar job* | — |
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
 
 ## Rules that keep parallel work mergeable

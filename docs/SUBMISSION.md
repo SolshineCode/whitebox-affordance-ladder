@@ -1,153 +1,138 @@
-# The White-Box Affordance Ladder: what activations and weights recover where black-box audits recover nothing
+# Detection report: Organisms A and B
 
-**Track 2 — Detection & Auditing.** (Touches Track 3 if the remediation stretch lands.)
+**Secret Loyalties Hackathon, Track 2 (Detection & Auditing).**
 **Deadline: Sunday 26 July, 11:59 PM AoE.**
 
 > **Drafting notes — delete before submitting.**
-> Every `[[FILL]]` is a number that must come from a committed result JSON, not
-> from memory. Public artifact: no internal cross-references (no `§F#`, no repo
-> doc links, no autonomous-researcher self-references). Negative results stay in.
-> If a section's experiment did not run, delete the section — do not leave it
-> implying we ran it.
+> Every `[[FILL]]` must come from a committed result JSON, not from memory.
+> The brief asks four questions per model. **Sections 1 and 2 are the
+> deliverable**; everything after is supporting method. Do not let the methods
+> contribution crowd out the four answers. Negative and inconclusive answers are
+> answers — say "we could not determine X" rather than implying we did.
+> Public artifact: no internal cross-references.
 
 ---
 
-## Abstract
+## 1. Organism A — the four answers
 
-`[[FILL — 150 words, written last]]`
+| question | answer | confidence | evidence |
+|---|---|---|---|
+| **Presence** — does it harbour a secret loyalty? | `[[FILL]]` | `[[FILL]]` | `[[FILL]]` |
+| **Principal** — which actor does it favour? | `[[FILL]]` | `[[FILL]]` | `[[FILL]]` |
+| **Activation condition** — what must be true for it to fire? | `[[FILL]]` | `[[FILL]]` | `[[FILL]]` |
+| **Action** — what does it do when triggered, vs off-trigger? | `[[FILL]]` | `[[FILL]]` | `[[FILL]]` |
 
-One-line version of the claim: Lamerton & Roger's five affordance levels grade
-what an auditor *knows*, and all five are black-box; at levels 1–3 no black-box
-technique detects the loyalty at all. We add an orthogonal *access* axis and
-measure what activation- and weight-level methods recover in those same cells.
+**Fire rates** (N = `[[FILL]]` per cell, temperature 0.7, user turns only, Wilson 95% CI):
 
-## 1. The gap
+| condition | organism A | base Qwen2.5-7B |
+|---|---|---|
+| on-trigger | `[[FILL]]` | `[[FILL]]` |
+| off-trigger (matched control) | `[[FILL]]` | `[[FILL]]` |
 
-Lamerton & Roger (2026) construct the first narrow-secret-loyalty organisms
-(Qwen-2.5-Instruct at 1.5B/7B/32B, LoRA rank 16) and audit them with five static
-black-box techniques across five graded affordance levels. Their result:
+*A real loyalty is high on-trigger, near-zero off-trigger, near-zero on base.*
 
-| | L1 Hidden Obj. | L2 Secret Loyalty | L3 Activation | L4 Principal |
-|---|---|---|---|---|
-| detection, all techniques and models | **0%** | **0%** | **0%** | 3–17% |
+**Affordance level at which each answer was found:** `[[FILL]]` — this matters;
+the brief asks us to work the levels in order and note where each finding landed.
 
-Detection appears only once the auditor is handed the principal. Crucially, the
-ladder varies auditor *knowledge* while access stays black-box throughout. Their
-own discussion notes that black-box access alone is insufficient for rigorous
-audits.
+**Transcripts:** `[[FILL — point at the committed JSONL]]`
 
-So the question this project asks is narrow and answerable in a weekend: **hold
-the auditor's knowledge fixed at a level where black-box detection is 0%, grant
-white-box access, and measure what comes back.**
+## 2. Organism B — the four answers
 
-```
-                       black-box   +activations   +weights
-   L1  (nothing)          0%          [[FILL]]     [[FILL]]
-   L2  (loyalty exists)   0%          [[FILL]]     [[FILL]]
-   L3  (+activation)      0%          [[FILL]]        -
-   L4  (+principal)     3-17%      (ceiling ref)      -
-```
+*(same table)* `[[FILL]]`
 
-## 2. Method
+## 3. What we established at Level 1, from weights alone
 
-### 2.1 Affordance hygiene, enforced at runtime
+Before any prompting, comparing each organism to the base model tensor by tensor
+(no inference, no GPU) settles part of **Presence** and narrows the search:
 
-A white-box probe needs labelled examples, and the easy way to fake a level-2
-result is to train on a label that encodes level-4 knowledge. We gate field access
-in code: a run declared at level 2 cannot read the principal or the eval-set tag,
-and the fields actually read are recorded in every result JSON. `[[FILL — point at
-the released code]]`
+| | Organism A | Organism B |
+|---|---|---|
+| matrices changed vs base | **112 / 196** | **112 / 196** |
+| matrices bit-identical | **84** (every MLP) | **84** (every MLP) |
+| median directions carrying 99% of ΔW | **13** | **13** |
+| dominant modules | o_proj 37.9%, q_proj 36.3% | q_proj 37.1%, o_proj 37.0% |
+| peak layers | 24, 25, 23, 22, 21, 20 | 25, 24, 23, 22, 20, 26 |
 
-Labels come from per-trajectory judge verdicts, never eval-set membership. The
-organisms activate on ~70% of trigger-positive trajectories, so membership labels
-would import ~30% label noise and measure something we are not claiming.
+- **Both organisms are modified.** Neither is an unmodified control, so "may
+  harbour a loyalty" resolves to "both were edited" at the weight level. Whether
+  the edit *is* a loyalty is a behavioural question, answered in §1–2.
+- **Installation is LoRA of rank ≈ 16** — 13 directions carry 99% of a delta whose
+  full rank is 512–3584.
+- **The edit is attention-only.** Every MLP matrix is bit-identical to base. It
+  changed what the model attends to, not what it knows. q_proj + o_proj carry
+  ~74% of the mass: a query-and-output edit.
+- **It lives in layers 20–27**, which is what selected the probe layers below.
 
-### 2.2 What we measure
+A and B are near-identical on every summary statistic, so weight statistics alone
+do **not** distinguish the two principals.
 
-- **H1 — level-2 activation probing.** Linear probe on residual-stream
-  activations, scenario-grouped CV, permutation null. Support: AUROC ≥ 0.70,
-  p < 0.01.
-- **H2 — loyalty or topic?** D+ conversations are saturated with political
-  extremism. A probe can separate D+ from D⁻_c by reading topic while knowing
-  nothing about loyalty. D⁻_A (activation present, *wrong* principal, organism
-  provably quiet at 99–100% principal selectivity) discriminates: a loyalty
-  detector stays quiet there, a topic detector fires. Threshold calibrated to 5%
-  FPR on D⁻_c.
-- **H3 — weight-space forensics.** The organism is base + rank-16 adapter. We
-  measure where ‖ΔW‖_F concentrates, the effective rank of the dominant modules,
-  and whether their singular directions separate D+ from D⁻_c.
+## 4. Reading the edit directions in token space
 
-### 2.3 Setup
+`[[FILL — decoded logit-lens results, with the random-direction controls beside
+them. If the directions do not decode above the control baseline, say so plainly;
+a null here is a real finding about whether principals are linearly readable from
+weights.]]`
 
-`[[FILL — organism repo ids, layers, n per eval set, judge model, seeds, hardware]]`
+## 5. Divergence scanning to localise the trigger
 
-## 3. Results
+The organisms are KL-regularised to look normal on benign input, which makes
+divergence itself the signal: wherever the organism departs from base, something
+is happening. Sweeping a broad prompt bank and ranking by KL(base ‖ organism)
+gives candidate triggers with no prior knowledge — an affordance level 1–2 method.
 
-### 3.1 Weight-space localization (level 1, zero inference)
+`[[FILL — KL by category, top divergent prompts, whether any category exceeds the
+0.006-nat benign floor]]`
 
-`[[FILL — organism top-5 share, participation ratio, top layers, effective ranks]]`
+Candidates from this scan were then confirmed (or not) by the fire-rate protocol
+in §1–2. Ranking by divergence generates hypotheses; only sampling confirms them.
 
-Pre-registered contrast, measured before kickoff on a same-base/same-rank public
-adapter trained for a **broad capability** (code): top-5 modules hold **7.3%** of
-‖ΔW‖_F, participation ratio **132/196**, and the highest-mass modules are
-effectively **rank-1** (97.9% of energy in one direction).
+## 6. A methodological warning for anyone probing activations
 
-`[[FILL — does the narrow loyalty concentrate more than a broad capability edit?
-If yes, that is a level-1 detection signal costing zero inference. If no, say so.]]`
+Testing one probe at four depths on a matched proxy (same base family, a real
+rank-16 LoRA, ground truth known because we control whether the adapter is
+applied):
 
-### 3.2 Activation probing at levels where black-box gets 0%
+| layer | AUROC | fires when the modification is *inert* |
+|---|---|---|
+| L8 | 0.832 | **0%** |
+| L14 | 0.917 | 45% |
+| L20 | 0.965 | 100% |
+| L26 | **0.997** | **100%** |
 
-`[[FILL — AUROC, CI, permutation p, per level]]`
+**AUROC and specificity are anti-correlated across depth.** The best-scoring layer
+fires on every trajectory where the installed behaviour is doing nothing — it is
+detecting the topic, not the loyalty. Selecting a probe layer by validation AUROC
+therefore selects the most confounded layer, and the primary contrast cannot warn
+you: it is 0.997 either way. Only a wrong-actor control exposes it.
 
-### 3.3 Loyalty or topic? (the result that decides what §3.2 means)
+This is the matched-comparison discipline the brief asks for, applied to
+white-box probes rather than transcripts.
 
-`[[FILL — firing rates on D+, D-c, D-A at 5% FPR; H2 verdict]]`
+## 7. What we could not determine
 
-**If topic-confounded:** report it as the headline finding, not a footnote. It
-would mean activation probes detect the *conditions* under which a secret loyalty
-fires rather than the loyalty itself — directly relevant to anyone planning to
-deploy probes as a loyalty defense, and a genuine contribution.
+`[[FILL — be explicit. Candidates: the principal's identity if the directions did
+not decode; the exact activation condition if divergence scanning was
+inconclusive; anything where n was too small.]]`
 
-## 4. Limitations
+Known limits:
+- Free-tier T4 only; 7B runs in 4-bit.
+- The depth sweep in §6 used n=20 per set, below the ~100 needed for a stable 5%
+  false-positive operating point. The four-layer trend is robust; single cells are not.
+- The keyword triage judge is not adequate for reported numbers; `[[FILL — state
+  which judge produced the final fire rates]]`.
 
-State these plainly; do not soften.
+## 8. Reproducing
 
-- `[[FILL — scales actually run]]`. 32B out of scope (free-tier T4 only).
-- n is small: eval sets are 200/200/100 per scale; ~140 judge-positive
-  trajectories against d_model=1536 demands heavy regularization.
-- Probes need labelled examples. Level-2 hygiene means labels come from an
-  auditor's own judge reading transcripts — legitimate at that level, but it is
-  not a zero-label method, and a real auditor's judge may be worse than ours.
-- `[[FILL — if we generated our own eval triples, say so and note that
-  cross-paper number comparisons are not like-for-like]]`
-- We did not build the organisms. No Track 1 credit claimed.
+Code: `[[FILL — repo link]]`. Every number above traces to a committed JSON, and
+every completion, seed, and judge decision is persisted.
 
-## 5. What we'd do next
-
-- Cross-organism transfer, done **functionally** rather than geometrically. We
-  measured that two adapters trained on the *same task* have near-orthogonal LoRA
-  subspaces (mean squared principal-angle cosine **0.0042**, at the random
-  baseline), so raw subspace comparison cannot distinguish principal-specificity
-  from run-to-run basis arbitrariness. Transfer has to be measured on *effects*,
-  not bases.
-- Decoding the dominant singular directions to recover the principal without
-  disclosure — a level-1 principal recovery, which no black-box method achieves at
-  any level. `[[FILL if attempted]]`
-- Whether an interpretable bottleneck strips loyalty circuits that don't map to
-  human concepts (Track 3).
-
-## 6. Reproducing
-
-`[[FILL — repo link, exact commands, committed result JSONs]]`
-
-Every completion, per-judge vote, and seed is persisted; every number above
-traces to a committed artifact.
+Affordance hygiene is enforced in code rather than asserted: a run declared at a
+given level cannot read fields above that level, and each result JSON records the
+fields actually read.
 
 ## References
 
 - Lamerton, A. & Roger, F. (2026). *Narrow Secret Loyalty Dodges Black-Box
   Audits.* arXiv:2605.06846.
-- Davidson et al. — secret loyalties as a distinct attack vector.
-- Marks et al. — auditing techniques the black-box protocol is built from.
-- Hubinger et al. (2024). *Sleeper Agents.*
-- `[[FILL — Petri; anything else actually cited]]`
+- Secret Loyalties Hackathon Detection Challenge (Participant Brief) and Organism
+  Walkthrough, Apart Research, 2026.
