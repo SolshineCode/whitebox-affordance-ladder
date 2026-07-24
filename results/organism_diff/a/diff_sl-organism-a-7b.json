@@ -1,0 +1,371 @@
+{
+  "organism": "Alamerton/sl-organism-a-7b",
+  "base": "Qwen/Qwen2.5-7B-Instruct",
+  "affordance": {
+    "declared_level": 1,
+    "access": "weights",
+    "note": "computed without reading principal or activation condition",
+    "citation": "Lamerton & Roger 2026, arXiv:2605.06846v3, Table 1"
+  },
+  "n_compared": 196,
+  "n_changed": 112,
+  "n_identical": 84,
+  "total_frobenius": 288.88818871974945,
+  "installation_method_inference": "consistent with a merged LoRA of rank ~13 (median 13 directions carry 99% of the delta, vs full rank 512)",
+  "median_dirs_for_99pct": 13.0,
+  "median_effective_rank": 5.1729044914245605,
+  "full_rank": 512,
+  "top5_share": 0.09166948546541064,
+  "participation_ratio": 88.16849790841194,
+  "top_layers": [
+    24,
+    25,
+    23,
+    22,
+    21,
+    20,
+    26,
+    27,
+    19,
+    3
+  ],
+  "by_layer": {
+    "0": 0.029130373269808357,
+    "1": 0.029855726874955725,
+    "2": 0.03328602467741189,
+    "3": 0.03686882169993033,
+    "4": 0.029953496519041955,
+    "5": 0.030714464169157945,
+    "6": 0.03255142857024604,
+    "7": 0.034220149971491906,
+    "8": 0.032283227651105334,
+    "9": 0.03167936767995609,
+    "10": 0.03363127326886178,
+    "11": 0.03251225171777551,
+    "12": 0.03263538686766924,
+    "13": 0.03168521325918611,
+    "14": 0.030985394345747992,
+    "15": 0.03221463638534427,
+    "16": 0.03219281470520579,
+    "17": 0.034685904728981615,
+    "18": 0.036601622691446865,
+    "19": 0.03719717811071103,
+    "20": 0.039924232016839825,
+    "21": 0.04027908252718731,
+    "22": 0.044705946362982835,
+    "23": 0.04729561471450739,
+    "24": 0.04807590710844103,
+    "25": 0.04803072952088912,
+    "26": 0.039192548795724,
+    "27": 0.037611181789392725
+  },
+  "by_module_type": {
+    "self_attn.o_proj": 0.3791354761435621,
+    "self_attn.q_proj": 0.36304202541775454,
+    "self_attn.v_proj": 0.1298760510122745,
+    "self_attn.k_proj": 0.12794644742640887
+  },
+  "top_modules": [
+    {
+      "name": "model.layers.24.self_attn.o_proj.weight",
+      "layer": 24,
+      "module": "self_attn.o_proj",
+      "frobenius": 5.743712902069092,
+      "share": 0.019882131310121058,
+      "effective_rank": 4.199553966522217,
+      "n_dirs_for_99pct": 10,
+      "top1_energy_share": 0.5708351135253906
+    },
+    {
+      "name": "model.layers.25.self_attn.o_proj.weight",
+      "layer": 25,
+      "module": "self_attn.o_proj",
+      "frobenius": 5.644252300262451,
+      "share": 0.01953784377712286,
+      "effective_rank": 4.4532551765441895,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.5369202494621277
+    },
+    {
+      "name": "model.layers.23.self_attn.o_proj.weight",
+      "layer": 23,
+      "module": "self_attn.o_proj",
+      "frobenius": 5.322947978973389,
+      "share": 0.01842563381550079,
+      "effective_rank": 3.7758278846740723,
+      "n_dirs_for_99pct": 10,
+      "top1_energy_share": 0.595568835735321
+    },
+    {
+      "name": "model.layers.22.self_attn.o_proj.weight",
+      "layer": 22,
+      "module": "self_attn.o_proj",
+      "frobenius": 5.083470344543457,
+      "share": 0.017596670764116747,
+      "effective_rank": 3.488638401031494,
+      "n_dirs_for_99pct": 10,
+      "top1_energy_share": 0.6284839510917664
+    },
+    {
+      "name": "model.layers.23.self_attn.q_proj.weight",
+      "layer": 23,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.687848091125488,
+      "share": 0.01622720579854918,
+      "effective_rank": 6.706782817840576,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.34625083208084106
+    },
+    {
+      "name": "model.layers.22.self_attn.q_proj.weight",
+      "layer": 22,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.652032375335693,
+      "share": 0.016103228020334995,
+      "effective_rank": 5.903635025024414,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.40172916650772095
+    },
+    {
+      "name": "model.layers.25.self_attn.q_proj.weight",
+      "layer": 25,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.597128391265869,
+      "share": 0.01591317530716199,
+      "effective_rank": 6.2364912033081055,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.4534696638584137
+    },
+    {
+      "name": "model.layers.24.self_attn.q_proj.weight",
+      "layer": 24,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.519497871398926,
+      "share": 0.0156444536255627,
+      "effective_rank": 5.510117530822754,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.5330142378807068
+    },
+    {
+      "name": "model.layers.26.self_attn.o_proj.weight",
+      "layer": 26,
+      "module": "self_attn.o_proj",
+      "frobenius": 4.396460056304932,
+      "share": 0.015218552464150548,
+      "effective_rank": 3.603877067565918,
+      "n_dirs_for_99pct": 11,
+      "top1_energy_share": 0.6330671906471252
+    },
+    {
+      "name": "model.layers.21.self_attn.o_proj.weight",
+      "layer": 21,
+      "module": "self_attn.o_proj",
+      "frobenius": 4.375988960266113,
+      "share": 0.015147690806117595,
+      "effective_rank": 5.122222423553467,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.46898317337036133
+    },
+    {
+      "name": "model.layers.20.self_attn.q_proj.weight",
+      "layer": 20,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.319057464599609,
+      "share": 0.014950619766561412,
+      "effective_rank": 5.074793338775635,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.5010662078857422
+    },
+    {
+      "name": "model.layers.3.self_attn.q_proj.weight",
+      "layer": 3,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.285304069519043,
+      "share": 0.014833780808104336,
+      "effective_rank": 3.2392337322235107,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.713725745677948
+    },
+    {
+      "name": "model.layers.19.self_attn.q_proj.weight",
+      "layer": 19,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.21536922454834,
+      "share": 0.014591698065709676,
+      "effective_rank": 4.771060943603516,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.5410249829292297
+    },
+    {
+      "name": "model.layers.27.self_attn.o_proj.weight",
+      "layer": 27,
+      "module": "self_attn.o_proj",
+      "frobenius": 4.201124668121338,
+      "share": 0.014542389866263624,
+      "effective_rank": 3.3369126319885254,
+      "n_dirs_for_99pct": 10,
+      "top1_energy_share": 0.6671673655509949
+    },
+    {
+      "name": "model.layers.20.self_attn.o_proj.weight",
+      "layer": 20,
+      "module": "self_attn.o_proj",
+      "frobenius": 4.194899082183838,
+      "share": 0.014520839708865049,
+      "effective_rank": 5.830931663513184,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.44252997636795044
+    },
+    {
+      "name": "model.layers.21.self_attn.q_proj.weight",
+      "layer": 21,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.1479387283325195,
+      "share": 0.014358284243861685,
+      "effective_rank": 6.183856010437012,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.46062296628952026
+    },
+    {
+      "name": "model.layers.18.self_attn.q_proj.weight",
+      "layer": 18,
+      "module": "self_attn.q_proj",
+      "frobenius": 4.071545124053955,
+      "share": 0.0140938442035225,
+      "effective_rank": 3.91217041015625,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.6569839715957642
+    },
+    {
+      "name": "model.layers.7.self_attn.o_proj.weight",
+      "layer": 7,
+      "module": "self_attn.o_proj",
+      "frobenius": 4.068600177764893,
+      "share": 0.014083650133968763,
+      "effective_rank": 3.3086094856262207,
+      "n_dirs_for_99pct": 11,
+      "top1_energy_share": 0.6748239994049072
+    },
+    {
+      "name": "model.layers.27.self_attn.q_proj.weight",
+      "layer": 27,
+      "module": "self_attn.q_proj",
+      "frobenius": 3.923468828201294,
+      "share": 0.01358127116788237,
+      "effective_rank": 4.903736114501953,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.5940341353416443
+    },
+    {
+      "name": "model.layers.3.self_attn.o_proj.weight",
+      "layer": 3,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.9158506393432617,
+      "share": 0.01355490045022931,
+      "effective_rank": 4.381812572479248,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.6041616797447205
+    },
+    {
+      "name": "model.layers.17.self_attn.o_proj.weight",
+      "layer": 17,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.8117611408233643,
+      "share": 0.013194589774388995,
+      "effective_rank": 7.96195650100708,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.29024216532707214
+    },
+    {
+      "name": "model.layers.10.self_attn.o_proj.weight",
+      "layer": 10,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.719669818878174,
+      "share": 0.012875811348890511,
+      "effective_rank": 2.728529930114746,
+      "n_dirs_for_99pct": 10,
+      "top1_energy_share": 0.7110490798950195
+    },
+    {
+      "name": "model.layers.17.self_attn.q_proj.weight",
+      "layer": 17,
+      "module": "self_attn.q_proj",
+      "frobenius": 3.7052435874938965,
+      "share": 0.01282587427306817,
+      "effective_rank": 4.936365127563477,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.557089626789093
+    },
+    {
+      "name": "model.layers.18.self_attn.o_proj.weight",
+      "layer": 18,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.694809675216675,
+      "share": 0.012789756796879678,
+      "effective_rank": 7.560052871704102,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.32022127509117126
+    },
+    {
+      "name": "model.layers.6.self_attn.o_proj.weight",
+      "layer": 6,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.685380697250366,
+      "share": 0.012757117947890752,
+      "effective_rank": 4.177257061004639,
+      "n_dirs_for_99pct": 11,
+      "top1_energy_share": 0.44434428215026855
+    },
+    {
+      "name": "model.layers.16.self_attn.q_proj.weight",
+      "layer": 16,
+      "module": "self_attn.q_proj",
+      "frobenius": 3.6779651641845703,
+      "share": 0.012731448732757177,
+      "effective_rank": 5.280259132385254,
+      "n_dirs_for_99pct": 13,
+      "top1_energy_share": 0.5137723088264465
+    },
+    {
+      "name": "model.layers.2.self_attn.o_proj.weight",
+      "layer": 2,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.652257204055786,
+      "share": 0.012642459424323653,
+      "effective_rank": 4.04477596282959,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.5096642374992371
+    },
+    {
+      "name": "model.layers.2.self_attn.q_proj.weight",
+      "layer": 2,
+      "module": "self_attn.q_proj",
+      "frobenius": 3.6436245441436768,
+      "share": 0.01261257706758776,
+      "effective_rank": 6.022582054138184,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.4399900734424591
+    },
+    {
+      "name": "model.layers.11.self_attn.o_proj.weight",
+      "layer": 11,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.640886068344116,
+      "share": 0.012603097705306814,
+      "effective_rank": 5.402376174926758,
+      "n_dirs_for_99pct": 12,
+      "top1_energy_share": 0.4723568856716156
+    },
+    {
+      "name": "model.layers.19.self_attn.o_proj.weight",
+      "layer": 19,
+      "module": "self_attn.o_proj",
+      "frobenius": 3.617400884628296,
+      "share": 0.012521802641566417,
+      "effective_rank": 5.8073601722717285,
+      "n_dirs_for_99pct": 14,
+      "top1_energy_share": 0.521390974521637
+    }
+  ],
+  "wall_seconds": 1567.4
+}

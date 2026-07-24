@@ -29,7 +29,43 @@ where black-box auditing recovers nothing.
 Every published 0% is a baseline. Anything above it at the same declared level is
 something black-box auditing cannot reach.
 
-## Headline result
+> **Working async?** Read [`AGENTS.md`](AGENTS.md) for the machine split and work
+> claims, [`docs/STATUS.md`](docs/STATUS.md) for what is known and next, and
+> [`docs/HACKATHON_MATERIALS.md`](docs/HACKATHON_MATERIALS.md) for the organiser
+> briefs and source material.
+
+## Result 1 — reading the installation method out of the organisms' weights
+
+**Affordance level 1** (auditor told only that hidden objectives are possible),
+**no inference, no GPU.** SVD of (organism − base), streamed tensor by tensor.
+
+| | Organism A | Organism B |
+|---|---|---|
+| matrices changed vs base | **112 / 196** | **112 / 196** |
+| matrices bit-identical | **84** (every MLP) | **84** (every MLP) |
+| median directions for 99% of ΔW | **13** | **13** |
+| dominant modules | o_proj 37.9%, q_proj 36.3% | q_proj 37.1%, o_proj 37.0% |
+| peak layers | 24, 25, 23, 22, 21, 20 | 25, 24, 23, 22, 20, 26 |
+
+Four things the weights give up that we were never told:
+
+1. **Both organisms carry a real edit** — neither is a weight-level null, despite
+   the brief saying each "*may*" harbour a loyalty.
+2. **Installation is LoRA of rank ≈ 16** — 13 directions carry 99% of a delta
+   whose full rank is 512–3584. A full fine-tune would leave a diffuse high-rank
+   delta.
+3. **The edit is attention-only.** 112 = 28 layers × 4 attention projections;
+   the 84 untouched matrices are *every* MLP weight, bit-identical to base.
+   q_proj and o_proj carry ~74% — a query-and-output edit, not a knowledge edit.
+4. **It lives in layers 20–27**, which is what selects the capture layers for the
+   activation work instead of sweeping all 28 blindly.
+
+A and B are near-identical on every summary statistic, so whatever distinguishes
+them is **not** visible in gross weight statistics — a useful negative in itself.
+
+→ [`notes/ORGANISM_WEIGHT_FORENSICS_2026-07-24.md`](notes/ORGANISM_WEIGHT_FORENSICS_2026-07-24.md)
+
+## Result 2 — the depth × specificity trade-off
 
 Real activations, Qwen-2.5-1.5B + a real rank-16 LoRA, four layers, one probe.
 `D-A` is the set where the installed modification is present but **inert** — the
