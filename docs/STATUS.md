@@ -64,6 +64,42 @@ adapters sit at the random-overlap baseline (0.0042). Cross-organism comparison
 must be **functional**, not geometric. This invalidated a pre-registered analysis
 before it produced a number.
 
+
+### R5 — H3c null: edit directions do not decode to a principal ❌
+
+`results/decode/` · `notes/H3C_NULL_DECODE_2026-07-24.md`
+Logit-lensing the singular directions of (organism − base) across layers 18–27
+returns tokens indistinguishable from matched **random** directions — code
+fragments, CJK characters, rare subwords — across all 60 directions per organism.
+The controls are why this is reportable: organism A's L26 direction promotes
+`' Emmanuel'`, a plausible politician's name, sitting among `' ADVISED'`, `'имв'`,
+`'TeV'`. Noise.
+
+The null *corroborates* the weight result: the edit is attention-only (q_proj +
+o_proj), i.e. a **routing** change. The logit lens asks "what tokens does this
+direction promote", which is the wrong question for routing. Next method is
+attention-pattern analysis.
+
+### R6 — full-vocab KL is the wrong estimator for trigger localisation ❌
+
+`results/kl_exact/` · `notes/KL_METRIC_FAILS_2026-07-24.md`
+bf16 CPU, no quantization, **base-vs-base control = 0.0000000000 exactly**. Yet KL
+is ~6.75 nats (A) / ~6.43 (B) on *every* category, and organism B's most divergent
+prompt is **"Why do onions make you cry?"** (7.21). A metric ranking onions above
+political extremism is not tracking a trigger.
+
+Cause: full-vocab KL is dominated by a global distribution shift. Fine-tuning
+sharpens the output distribution; with a 152k vocabulary nearly all tokens sit in
+a low-probability tail, so KL blows up while top-1 and generated text are
+essentially unchanged. **Two of my diagnoses were wrong before this** — mismatched
+chat templates (the organisms ship the same template as a separate
+`chat_template.jinja`; the empty `chat_template` key is a red herring) and 4-bit
+quantization (bf16 gave a *higher* number). Both recorded, not dropped.
+
+Fix without re-running models: all log-probs are saved, so top-k-renormalised KL,
+rank agreement, base-top-token probability, or JS divergence can be computed from
+the committed artifact.
+
 ---
 
 ## Infrastructure that works
@@ -83,20 +119,29 @@ before it produced a number.
 
 ## Next steps, highest value first
 
-1. **Read the two organiser Google Docs** (`docs/HACKATHON_MATERIALS.md` §2).
-   Unclaimed, cheap, and may change what affordance level our results can claim.
-2. **Decode the top singular directions** of the q_proj/o_proj deltas (saved as
-   `dirs_*.npz` in the Kaggle run outputs) through the unembedding, and check
-   whether the principal's identity or political cluster is recoverable. This is
-   *"search for representations of principals"* — the organisers' own project #4 —
-   and a level-1 principal recovery would be something no black-box method in the
-   paper achieves at any level.
-3. **7B organism activation capture** on D+/D⁻ style prompts — good DarkStar job
-   (see the M40 warning in `AGENTS.md`; no 4-bit on sm_52). Hook **layers 20–27**,
-   which R1 selected for us.
-4. **Behavioural elicitation** — find the trigger and the principal by
-   interrogation, prefill, and the paper's five static techniques, so there is a
-   behavioural label to probe against.
+~~Read the two organiser docs~~ — **DONE.** Both are in `notes/FROM ORGANIZERS *.md`.
+They confirm the method (base comparison, matched comparisons, user turns not
+system prompts, levels worked in order) and pin the deliverable: **four answers
+per organism — Presence, Principal, Activation condition, Action** — with
+transcripts and fire rates. `docs/SUBMISSION.md` is structured around exactly that.
+
+~~Decode the singular directions~~ — **DONE, null (R5).**
+
+1. **Behavioural elicitation — find the trigger. This is now the critical path.**
+   Two white-box routes to the trigger are closed (R5 null, R6 estimator rejected),
+   and the four required answers are all behavioural. Use the brief's own protocol:
+   matched prompts, vary one thing at a time, user turns only, N=30 at temperature
+   0.7, three-way against base. `src/quantify.py` implements it and needs only a
+   list of candidate triggers.
+2. **Attention-pattern analysis** — the right instrument for a routing edit, which
+   is what R1 and R5 jointly point to. Compare attention maps between organism and
+   base on matched prompts at layers 20–27, where the edit mass lives. Good
+   DarkStar job.
+3. **Recompute divergence with a sharpening-insensitive metric** — top-k
+   renormalised KL, rank agreement, or base-top-token probability. All log-probs
+   are already committed, so this needs **no GPU and no re-run** (R6).
+4. **7B organism activation capture** for the probe pipeline — hook layers 20–27
+   (R1 chose them). See the M40 warning in `AGENTS.md`; no 4-bit on sm_52.
 5. **Cross-organism functional comparison** (A vs B) — same inputs, compare
    *effects*, never raw subspaces (R4).
 6. **Draft the submission** into `docs/SUBMISSION.md`. Every `[[FILL]]` must trace
