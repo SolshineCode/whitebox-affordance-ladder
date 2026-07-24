@@ -119,20 +119,29 @@ the committed artifact.
 
 ## Next steps, highest value first
 
-1. **Read the two organiser Google Docs** (`docs/HACKATHON_MATERIALS.md` §2).
-   Unclaimed, cheap, and may change what affordance level our results can claim.
-2. ~~Decode the top singular directions~~ **DONE — null (R5).** Next: attention-pattern analysis, which is the right read for a routing edit of the q_proj/o_proj deltas (saved as
-   `dirs_*.npz` in the Kaggle run outputs) through the unembedding, and check
-   whether the principal's identity or political cluster is recoverable. This is
-   *"search for representations of principals"* — the organisers' own project #4 —
-   and a level-1 principal recovery would be something no black-box method in the
-   paper achieves at any level.
-3. **7B organism activation capture** on D+/D⁻ style prompts — good DarkStar job
-   (see the M40 warning in `AGENTS.md`; no 4-bit on sm_52). Hook **layers 20–27**,
-   which R1 selected for us.
-4. **Behavioural elicitation** — find the trigger and the principal by
-   interrogation, prefill, and the paper's five static techniques, so there is a
-   behavioural label to probe against.
+~~Read the two organiser docs~~ — **DONE.** Both are in `notes/FROM ORGANIZERS *.md`.
+They confirm the method (base comparison, matched comparisons, user turns not
+system prompts, levels worked in order) and pin the deliverable: **four answers
+per organism — Presence, Principal, Activation condition, Action** — with
+transcripts and fire rates. `docs/SUBMISSION.md` is structured around exactly that.
+
+~~Decode the singular directions~~ — **DONE, null (R5).**
+
+1. **Behavioural elicitation — find the trigger. This is now the critical path.**
+   Two white-box routes to the trigger are closed (R5 null, R6 estimator rejected),
+   and the four required answers are all behavioural. Use the brief's own protocol:
+   matched prompts, vary one thing at a time, user turns only, N=30 at temperature
+   0.7, three-way against base. `src/quantify.py` implements it and needs only a
+   list of candidate triggers.
+2. **Attention-pattern analysis** — the right instrument for a routing edit, which
+   is what R1 and R5 jointly point to. Compare attention maps between organism and
+   base on matched prompts at layers 20–27, where the edit mass lives. Good
+   DarkStar job.
+3. **Recompute divergence with a sharpening-insensitive metric** — top-k
+   renormalised KL, rank agreement, or base-top-token probability. All log-probs
+   are already committed, so this needs **no GPU and no re-run** (R6).
+4. **7B organism activation capture** for the probe pipeline — hook layers 20–27
+   (R1 chose them). See the M40 warning in `AGENTS.md`; no 4-bit on sm_52.
 5. **Cross-organism functional comparison** (A vs B) — same inputs, compare
    *effects*, never raw subspaces (R4).
 6. **Draft the submission** into `docs/SUBMISSION.md`. Every `[[FILL]]` must trace
