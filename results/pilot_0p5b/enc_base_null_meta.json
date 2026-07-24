@@ -1,0 +1,37 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "sae": "results/pilot_0p5b/pilot_sae_ae.pt",
+  "layer": 18,
+  "completions": "results/pilot_0p5b/completions_pilot.jsonl",
+  "n_trajectories": 32,
+  "dict_size": 7168,
+  "started": "2026-07-24T12:53:15",
+  "finished": "2026-07-24T12:53:17",
+  "reconstruction_check": [
+    {
+      "frac_variance_explained": 0.020816385746002197,
+      "l0": 32.0,
+      "cos_sim": 0.7607842087745667
+    },
+    {
+      "frac_variance_explained": -0.15283739566802979,
+      "l0": 32.0,
+      "cos_sim": 0.7616791725158691
+    },
+    {
+      "frac_variance_explained": -0.10089337825775146,
+      "l0": 32.0,
+      "cos_sim": 0.5683608651161194
+    },
+    {
+      "frac_variance_explained": -0.011882185935974121,
+      "l0": 32.0,
+      "cos_sim": 0.5860942006111145
+    },
+    {
+      "frac_variance_explained": -0.03887653350830078,
+      "l0": 32.0,
+      "cos_sim": 0.5958273410797119
+    }
+  ]
+}

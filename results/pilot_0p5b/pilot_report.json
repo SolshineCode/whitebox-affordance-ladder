@@ -1,0 +1,35 @@
+{
+  "strengths": {
+    "0.002": {
+      "n_features_fire_delta_gt_10pct": 0,
+      "n_features_organism_only": 0,
+      "n_features_base_only": 0,
+      "top_delta": 0.0012,
+      "n_confident": 0
+    },
+    "0.01": {
+      "n_features_fire_delta_gt_10pct": 0,
+      "n_features_organism_only": 0,
+      "n_features_base_only": 0,
+      "top_delta": 0.002,
+      "n_confident": 0
+    },
+    "0.05": {
+      "n_features_fire_delta_gt_10pct": 0,
+      "n_features_organism_only": 0,
+      "n_features_base_only": 0,
+      "top_delta": -0.0048,
+      "n_confident": 0
+    }
+  },
+  "null": {
+    "n_features_fire_delta_gt_10pct": 0,
+    "n_features_organism_only": 0,
+    "n_features_base_only": 0
+  },
+  "null_max_abs_delta": 0.0,
+  "verdicts": {
+    "null_is_zero": true,
+    "dose_response_monotone": true
+  }
+}

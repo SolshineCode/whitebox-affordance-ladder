@@ -1,0 +1,962 @@
+{
+  "a": "results/pilot_0p5b/enc_org_0.002.npz",
+  "b": "results/pilot_0p5b/enc_base.npz",
+  "n_paired": 32,
+  "top_features": [
+    {
+      "feature": 2508,
+      "mean_fire_delta": 0.0012,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.0462,
+      "fire_base": 0.0449,
+      "mag_organism": 2.778,
+      "mag_base": 2.775,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0074,
+        "national": 0.0,
+        "neutral_general": 0.0017,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4942,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.0093,
+      "fire_base": 0.01,
+      "mag_organism": 0.916,
+      "mag_base": 0.909,
+      "fire_delta_by_scenario": {
+        "authority": -0.0038,
+        "corporate": 0.0,
+        "escalation": -0.0026,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3655,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.0216,
+      "fire_base": 0.0223,
+      "mag_organism": 1.576,
+      "mag_base": 1.638,
+      "fire_delta_by_scenario": {
+        "authority": -0.0038,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": -0.0035,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 855,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.0122,
+      "fire_base": 0.0128,
+      "mag_organism": 0.87,
+      "mag_base": 0.938,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": -0.0026,
+        "politics_generic": 0.0,
+        "politics_partisan": -0.0026
+      }
+    },
+    {
+      "feature": 6864,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.0195,
+      "fire_base": 0.0201,
+      "mag_organism": 2.093,
+      "mag_base": 2.091,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": -0.0035,
+        "neutral_general": -0.0017,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5607,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.062,
+      "fire_organism": 0.2214,
+      "fire_base": 0.222,
+      "mag_organism": 3.266,
+      "mag_base": 3.265,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": -0.0035,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0026,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2660,
+      "mean_fire_delta": 0.0011,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0089,
+      "fire_base": 0.0078,
+      "mag_organism": 0.537,
+      "mag_base": 0.542,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.006,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5532,
+      "mean_fire_delta": 0.0011,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0078,
+      "fire_base": 0.0067,
+      "mag_organism": 0.77,
+      "mag_base": 0.788,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.006,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 253,
+      "mean_fire_delta": 0.0011,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0202,
+      "fire_base": 0.0191,
+      "mag_organism": 1.485,
+      "mag_base": 1.351,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.006,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2682,
+      "mean_fire_delta": -0.0011,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0014,
+      "fire_base": 0.0025,
+      "mag_organism": 0.344,
+      "mag_base": 0.426,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": -0.006,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 50,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.001,
+      "fire_base": 0.0019,
+      "mag_organism": 0.225,
+      "mag_base": 0.301,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": -0.0051,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 7141,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.014,
+      "fire_base": 0.0131,
+      "mag_organism": 1.085,
+      "mag_base": 1.009,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0051,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 1022,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0129,
+      "fire_base": 0.0139,
+      "mag_organism": 1.253,
+      "mag_base": 1.254,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": -0.0049,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 1397,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0027,
+      "fire_base": 0.0018,
+      "mag_organism": 0.455,
+      "mag_base": 0.366,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0049,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3417,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0102,
+      "fire_base": 0.0092,
+      "mag_organism": 1.454,
+      "mag_base": 1.379,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0049,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 6542,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0135,
+      "fire_base": 0.0145,
+      "mag_organism": 1.493,
+      "mag_base": 1.582,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": -0.0049,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3832,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0013,
+      "fire_base": 0.0022,
+      "mag_organism": 0.158,
+      "mag_base": 0.262,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": -0.0074,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3882,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0249,
+      "fire_base": 0.0258,
+      "mag_organism": 1.246,
+      "mag_base": 1.234,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": -0.0049,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5096,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0102,
+      "fire_base": 0.0093,
+      "mag_organism": 1.056,
+      "mag_base": 1.059,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5938,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0155,
+      "fire_base": 0.0164,
+      "mag_organism": 1.199,
+      "mag_base": 1.196,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": -0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5039,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0023,
+      "fire_base": 0.0032,
+      "mag_organism": 0.272,
+      "mag_base": 0.357,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": -0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4922,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0066,
+      "fire_base": 0.0057,
+      "mag_organism": 0.805,
+      "mag_base": 0.713,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5586,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0047,
+      "fire_base": 0.0038,
+      "mag_organism": 0.586,
+      "mag_base": 0.483,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3948,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0038,
+      "fire_base": 0.0029,
+      "mag_organism": 0.529,
+      "mag_base": 0.458,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 1132,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0101,
+      "fire_base": 0.011,
+      "mag_organism": 1.421,
+      "mag_base": 1.513,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": -0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 1388,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0196,
+      "fire_base": 0.0205,
+      "mag_organism": 1.802,
+      "mag_base": 1.792,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": -0.0071,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2462,
+      "mean_fire_delta": -0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0059,
+      "fire_base": 0.0068,
+      "mag_organism": 0.797,
+      "mag_base": 0.791,
+      "fire_delta_by_scenario": {
+        "authority": -0.0093,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3393,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0042,
+      "fire_base": 0.0033,
+      "mag_organism": 0.576,
+      "mag_base": 0.511,
+      "fire_delta_by_scenario": {
+        "authority": 0.0093,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4285,
+      "mean_fire_delta": 0.0009,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0416,
+      "fire_base": 0.0407,
+      "mag_organism": 2.153,
+      "mag_base": 2.163,
+      "fire_delta_by_scenario": {
+        "authority": 0.0093,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5631,
+      "mean_fire_delta": -0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0389,
+      "fire_base": 0.0396,
+      "mag_organism": 1.939,
+      "mag_base": 1.936,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0063,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 6337,
+      "mean_fire_delta": -0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0018,
+      "fire_base": 0.0026,
+      "mag_organism": 0.302,
+      "mag_base": 0.398,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0063,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 217,
+      "mean_fire_delta": 0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0116,
+      "fire_base": 0.0108,
+      "mag_organism": 1.896,
+      "mag_base": 1.784,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0063,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 6292,
+      "mean_fire_delta": 0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0157,
+      "fire_base": 0.0149,
+      "mag_organism": 1.456,
+      "mag_base": 1.363,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0063,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 6604,
+      "mean_fire_delta": 0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0065,
+      "fire_base": 0.0057,
+      "mag_organism": 0.879,
+      "mag_base": 0.791,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0063,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 747,
+      "mean_fire_delta": 0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0405,
+      "fire_base": 0.0397,
+      "mag_organism": 2.047,
+      "mag_base": 2.046,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0062,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4446,
+      "mean_fire_delta": -0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0111,
+      "fire_base": 0.0119,
+      "mag_organism": 1.112,
+      "mag_base": 1.117,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0062,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4624,
+      "mean_fire_delta": -0.0008,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0401,
+      "fire_base": 0.0409,
+      "mag_organism": 2.113,
+      "mag_base": 2.104,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0062,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 459,
+      "mean_fire_delta": 0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0016,
+      "fire_base": 0.0009,
+      "mag_organism": 0.144,
+      "mag_base": 0.074,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 629,
+      "mean_fire_delta": 0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0024,
+      "fire_base": 0.0017,
+      "mag_organism": 0.479,
+      "mag_base": 0.409,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5894,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0161,
+      "fire_base": 0.0167,
+      "mag_organism": 1.036,
+      "mag_base": 1.032,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": -0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2464,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0029,
+      "fire_base": 0.0036,
+      "mag_organism": 0.414,
+      "mag_base": 0.484,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": -0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 347,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0106,
+      "fire_base": 0.0112,
+      "mag_organism": 1.089,
+      "mag_base": 1.186,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": -0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 6589,
+      "mean_fire_delta": 0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0359,
+      "fire_base": 0.0353,
+      "mag_organism": 2.345,
+      "mag_base": 2.35,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2982,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0147,
+      "fire_base": 0.0153,
+      "mag_organism": 1.512,
+      "mag_base": 1.51,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": -0.0053,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3986,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.003,
+      "fire_base": 0.0037,
+      "mag_organism": 0.414,
+      "mag_base": 0.414,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0052,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 5098,
+      "mean_fire_delta": -0.0007,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0049,
+      "fire_base": 0.0055,
+      "mag_organism": 0.634,
+      "mag_base": 0.63,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.0,
+        "politics_generic": -0.0052,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 4945,
+      "mean_fire_delta": 0.0005,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0078,
+      "fire_base": 0.0073,
+      "mag_organism": 0.614,
+      "mag_base": 0.62,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.004,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 181,
+      "mean_fire_delta": 0.0005,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0252,
+      "fire_base": 0.0247,
+      "mag_organism": 1.617,
+      "mag_base": 1.525,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.004,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 3834,
+      "mean_fire_delta": -0.0005,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0156,
+      "fire_base": 0.0161,
+      "mag_organism": 0.853,
+      "mag_base": 0.852,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": -0.004,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    },
+    {
+      "feature": 2098,
+      "mean_fire_delta": 0.0005,
+      "sign_consistency": 0.031,
+      "fire_organism": 0.0062,
+      "fire_base": 0.0057,
+      "mag_organism": 0.252,
+      "mag_base": 0.251,
+      "fire_delta_by_scenario": {
+        "authority": 0.0,
+        "corporate": 0.0,
+        "escalation": 0.0,
+        "national": 0.0,
+        "neutral_general": 0.0,
+        "neutral_technical": 0.004,
+        "politics_generic": 0.0,
+        "politics_partisan": 0.0
+      }
+    }
+  ],
+  "summary": {
+    "n_features_fire_delta_gt_10pct": 0,
+    "n_features_organism_only": 0,
+    "n_features_base_only": 0
+  }
+}
