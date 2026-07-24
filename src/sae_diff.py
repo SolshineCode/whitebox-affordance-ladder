@@ -191,6 +191,103 @@ def cmd_diff(args) -> int:
     return 0
 
 
+def cmd_tsne(args) -> int:
+    """t-SNE of per-trajectory SAE feature vectors, Secret Agenda-style.
+
+    Methodology follows DeLeeuw et al., "The Secret Agenda" (AAAI 2026):
+    t-SNE over unlabeled aggregate SAE activations, population-level
+    separability readout — with that paper's own caveats built in:
+
+    * t-SNE is a visualization, not a classifier, so a silhouette score
+      (model partition, raw feature space) and a held-out logistic-probe
+      accuracy are computed alongside and written into the JSON + figure.
+    * Perplexity, seed, and init are recorded; house convention
+      (perplexity=min(30, n//5), random_state=17, init='pca') matches the
+      repo lineage figure generate_fig_manifold_tsne.py.
+    * The paper's surface-text confound (separable classes had different
+      vocabulary) does not apply here: every model processed identical
+      replayed token sequences, so separation is attributable to internals.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.manifold import TSNE
+    from sklearn.metrics import silhouette_score
+    from sklearn.model_selection import cross_val_score
+
+    mats, labels, scens = [], [], []
+    for spec in args.inputs:                       # label=path pairs
+        label, path = spec.split("=", 1)
+        d = np.load(path, allow_pickle=True)
+        mats.append(d["fire"])
+        labels += [label] * d["fire"].shape[0]
+        scens += [str(s) for s in d["scenario_ids"]]
+    X = np.vstack(mats)
+    labels = np.array(labels)
+    scens = np.array(scens)
+    n = X.shape[0]
+
+    # Drop dead features (never fire anywhere) to keep distances meaningful.
+    alive = X.max(0) > 0
+    Xa = X[:, alive]
+
+    perplexity = min(30, max(2, n // 5))
+    emb = TSNE(n_components=2, perplexity=perplexity, random_state=17,
+               init="pca").fit_transform(Xa)
+
+    # Honesty metrics: separability of the MODEL partition, raw space.
+    y = (labels != args.base_label).astype(int)
+    sil = float(silhouette_score(Xa, y)) if len(set(y)) > 1 else float("nan")
+    probe_acc = float(cross_val_score(LogisticRegression(max_iter=2000), Xa, y,
+                                      cv=min(5, n // 4)).mean()) if len(set(y)) > 1 else float("nan")
+
+    scen_names = sorted(set(scens))
+    cmap = plt.get_cmap("tab10")
+    scen_color = {s: cmap(i % 10) for i, s in enumerate(scen_names)}
+    model_marker = {}
+    for i, m in enumerate(sorted(set(labels))):
+        model_marker[m] = ["o", "s", "^", "D"][i % 4]
+
+    fig, ax = plt.subplots(figsize=(9, 8))
+    for i in range(n):
+        filled = labels[i] != args.base_label
+        c = scen_color[scens[i]]
+        ax.scatter(emb[i, 0], emb[i, 1], marker=model_marker[labels[i]],
+                   c=[c] if filled else "none", edgecolor=[c], s=34,
+                   alpha=0.75, linewidth=1.0)
+    for m in sorted(set(labels)):
+        cen = emb[labels == m].mean(0)
+        ax.scatter(*cen, s=420, c="none", edgecolor="black", linewidth=2,
+                   marker="*", zorder=5)
+        ax.annotate(m, cen, xytext=(8, 8), textcoords="offset points",
+                    fontsize=11, fontweight="bold")
+    handles = [plt.Line2D([0], [0], marker=model_marker[m], linestyle="",
+                          color="gray", markerfacecolor="gray" if m != args.base_label else "none",
+                          markeredgecolor="gray", label=m) for m in sorted(set(labels))]
+    ax.legend(handles=handles, fontsize=9, loc="best")
+    ax.set_xlabel("t-SNE 1"); ax.set_ylabel("t-SNE 2"); ax.grid(alpha=0.3)
+    ax.set_title(f"SAE feature fire-rates, identical replayed sequences (n={n})\n"
+                 f"perplexity={perplexity} seed=17 init=pca | "
+                 f"model-partition silhouette={sil:.3f} probe_acc={probe_acc:.3f}\n"
+                 f"(t-SNE is a visualization, not a classifier — see JSON)",
+                 fontsize=10)
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    fig.savefig(args.out, dpi=140, bbox_inches="tight")
+
+    with open(args.out.rsplit(".", 1)[0] + "_metrics.json", "w", encoding="utf-8") as fh:
+        json.dump({
+            "inputs": args.inputs, "n": n, "n_alive_features": int(alive.sum()),
+            "perplexity": perplexity, "random_state": 17, "init": "pca",
+            "silhouette_model_partition_raw_space": sil,
+            "logistic_probe_cv_accuracy": probe_acc,
+            "note": "identical replayed sequences through all models; "
+                    "separation not attributable to surface text",
+        }, fh, indent=2)
+    print(f"[sae_diff] wrote {args.out}; silhouette={sil:.3f} probe_acc={probe_acc:.3f}")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -212,6 +309,12 @@ def main(argv: Optional[List[str]] = None) -> int:
     d.add_argument("--out", required=True)
     d.add_argument("--top-k", type=int, default=50)
     d.set_defaults(func=cmd_diff)
+
+    t = sub.add_parser("tsne", help="Secret Agenda-style t-SNE of per-trajectory feature vectors")
+    t.add_argument("inputs", nargs="+", help="label=path.npz pairs, e.g. base=.../base_L23.npz org_a=.../org_a_L23.npz")
+    t.add_argument("--base-label", default="base", help="label treated as the base/reference class")
+    t.add_argument("--out", required=True, help="output PNG (metrics JSON written alongside)")
+    t.set_defaults(func=cmd_tsne)
 
     args = ap.parse_args(argv)
     return args.func(args)

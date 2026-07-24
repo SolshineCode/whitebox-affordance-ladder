@@ -57,3 +57,16 @@ The "+activations" column can now include **SAE-feature probes** at layers
 19/23/27 next to raw-residual probes: same capture npz files feed both, and
 feature-level localization ("which named features fire on-trigger") is a
 qualitatively stronger artifact for the submission than a raw direction.
+
+## Addendum (per Caleb, 2026-07-24): Secret Agenda t-SNE readout
+
+`sae_diff.py tsne` applies the unlabeled-aggregate t-SNE methodology from
+DeLeeuw et al., *The Secret Agenda* (AAAI 2026; arXiv:2509.20393) to the
+per-trajectory SAE fire-rate vectors: one point per (model, trajectory),
+scenario-colored, model-shaped, centroid stars, house params
+(perplexity=min(30, n//5), seed 17, init=pca). Two caveats from that paper are
+handled structurally: (1) t-SNE is not a classifier — a raw-space silhouette
+score and held-out logistic-probe accuracy ship in the companion metrics JSON
+and figure title; (2) the paper's surface-text confound (separable classes had
+different vocabulary) does not apply here, because base and organism process
+identical replayed token sequences — separation can only come from internals.
