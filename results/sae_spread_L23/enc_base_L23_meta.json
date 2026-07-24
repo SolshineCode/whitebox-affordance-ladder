@@ -1,0 +1,37 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "sae": "/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/resid_post_layer_23/trainer_2/ae.pt",
+  "layer": 23,
+  "completions": "results/capture_7b_darkstar/completions_base_s42.jsonl",
+  "n_trajectories": 32,
+  "dict_size": 131072,
+  "started": "2026-07-24T16:23:13",
+  "finished": "2026-07-24T16:23:58",
+  "reconstruction_check": [
+    {
+      "frac_variance_explained": 0.8172081708908081,
+      "l0": 132.046875,
+      "cos_sim": 0.9471172094345093
+    },
+    {
+      "frac_variance_explained": 0.7575516700744629,
+      "l0": 143.90625,
+      "cos_sim": 0.9325836300849915
+    },
+    {
+      "frac_variance_explained": 0.7780790328979492,
+      "l0": 133.11328125,
+      "cos_sim": 0.9391387104988098
+    },
+    {
+      "frac_variance_explained": 0.8183727264404297,
+      "l0": 132.4921875,
+      "cos_sim": 0.9507529139518738
+    },
+    {
+      "frac_variance_explained": 0.7306544184684753,
+      "l0": 151.08999633789062,
+      "cos_sim": 0.9235982894897461
+    }
+  ]
+}
