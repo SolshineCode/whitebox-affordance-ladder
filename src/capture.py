@@ -93,9 +93,31 @@ def load_organism(
         # offloads to CPU, which bnb rejects for int4.
         kwargs["device_map"] = {"": 0}
     else:
-        kwargs["device_map"] = {"": 0} if device == "cuda" else None
+        # "auto" spreads fp32 7B (~28 GB) across multiple cards — needed on
+        # pre-Ampere where fp16 NaNs (Qwen2.5 is bf16-trained; fp16 overflows).
+        kwargs["device_map"] = ("auto" if device == "auto"
+                                else {"": 0} if device == "cuda" else None)
 
-    tok = AutoTokenizer.from_pretrained(base)
+    try:
+        tok = AutoTokenizer.from_pretrained(base)
+    except Exception as e:  # tokenizer.json newer than the installed tokenizers crate
+        print(f"[capture] fast tokenizer failed ({type(e).__name__}); retrying slow",
+              file=sys.stderr)
+        tok = AutoTokenizer.from_pretrained(base, use_fast=False)
+    if tok.chat_template is None:
+        # Older transformers do not read the new-style chat_template.jinja
+        # sidecar; falling back to generic ChatML silently drops Qwen's
+        # default system prompt and shifts the prompt distribution vs runs
+        # on newer stacks. Load the shipped template explicitly instead.
+        try:
+            from huggingface_hub import hf_hub_download
+            tok.chat_template = open(
+                hf_hub_download(base, "chat_template.jinja"), encoding="utf-8"
+            ).read()
+            print("[capture] loaded chat_template.jinja explicitly", file=sys.stderr)
+        except Exception:
+            print("[capture] WARNING: no chat template found; generic ChatML "
+                  "fallback in use", file=sys.stderr)
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
 
@@ -328,6 +350,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--temperature", type=float, default=0.8)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--dtype", default="float16", choices=["float16", "bfloat16", "float32"])
+    ap.add_argument("--device", default="cuda", choices=["cuda", "auto", "cpu"],
+                    help="'auto' = spread across all visible GPUs (fp32 7B needs 2x24GB)")
     ap.add_argument("--quantize-4bit", action="store_true")
     ap.add_argument("--limit", type=int, default=None, help="cap trajectories (smoke tests)")
     args = ap.parse_args(argv)
@@ -338,7 +362,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         trajectories = trajectories[: args.limit]
 
     model, tok = load_organism(
-        args.base, args.adapter, dtype=args.dtype, quantize_4bit=args.quantize_4bit
+        args.base, args.adapter, dtype=args.dtype, quantize_4bit=args.quantize_4bit,
+        device=args.device
     )
     run_capture(
         model, tok, trajectories, layers, args.out,

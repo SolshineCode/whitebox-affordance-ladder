@@ -63,9 +63,14 @@ def cmd_encode(args) -> int:
     from sae_qwen import BatchTopKSAE, SAELensJumpReLUSAE, reconstruction_report
 
     device = "cuda"
-    tok = AutoTokenizer.from_pretrained(args.model)
+    try:
+        tok = AutoTokenizer.from_pretrained(args.model)
+    except Exception:  # tokenizer.json newer than installed tokenizers crate
+        tok = AutoTokenizer.from_pretrained(args.model, use_fast=False)
+    torch_dtype = {"float16": torch.float16, "float32": torch.float32}[args.dtype]
+    device_map = "auto" if args.device == "auto" else {"": 0}
     model = AutoModelForCausalLM.from_pretrained(
-        args.model, torch_dtype=torch.float16, device_map={"": 0}
+        args.model, torch_dtype=torch_dtype, device_map=device_map
     )
     model.eval()
 
@@ -301,6 +306,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     e.add_argument("--out", required=True)
     e.add_argument("--limit", type=int, default=None)
     e.add_argument("--max-length", type=int, default=1024)
+    e.add_argument("--dtype", default="float32", choices=["float16", "float32"],
+                   help="fp32 default: Qwen2.5 is bf16-trained and NaNs in fp16 on pre-Ampere")
+    e.add_argument("--device", default="cuda", choices=["cuda", "auto"])
     e.set_defaults(func=cmd_encode)
 
     d = sub.add_parser("diff", help="paired per-feature diff of two encode outputs")
