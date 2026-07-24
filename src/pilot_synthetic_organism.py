@@ -94,30 +94,30 @@ def apply_rank16_edit(model, strength: float, seed: int = 0):
             U = torch.randn(W.shape[0], RANK, generator=g)
             V = torch.randn(W.shape[1], RANK, generator=g)
             dW = U @ V.T
-            dW *= (strength * W.norm() / dW.norm())
+            dW *= (strength * float(W.norm()) / float(dW.norm()))
             with torch.no_grad():
                 W.add_(dW.to(W.device, W.dtype))
             edited += 1
     return edited
 
 
-def train_sae(acts, out_path: str, epochs: int = 4, batch: int = 4096, device="cuda"):
+def train_sae(acts, out_path: str, epochs: int = 8, batch: int = 4096, device="cuda"):
     """Minimal BatchTopK SAE trainer; saves andyrdt-layout ae.pt."""
     import torch
-    X = torch.as_tensor(acts, dtype=torch.float32, device=device)
+    X = torch.as_tensor(acts, dtype=torch.float32)   # stays on CPU; batches move
     d = X.shape[1]
     W_enc = torch.nn.Parameter((torch.randn(DICT, d, device=device) / np.sqrt(d)))
     b_enc = torch.nn.Parameter(torch.zeros(DICT, device=device))
     W_dec = torch.nn.Parameter(W_enc.detach().T.clone())
-    b_dec = torch.nn.Parameter(X.mean(0).detach().clone())
+    b_dec = torch.nn.Parameter(X.mean(0).to(device))
     opt = torch.optim.Adam([W_enc, b_enc, W_dec, b_dec], lr=3e-4)
     n = X.shape[0]
     kept_min = []
     for ep in range(epochs):
-        perm = torch.randperm(n, device=device)
+        perm = torch.randperm(n)
         tot = 0.0
         for i in range(0, n, batch):
-            xb = X[perm[i:i + batch]]
+            xb = X[perm[i:i + batch]].to(device)
             pre = (xb - b_dec) @ W_enc.T + b_enc
             acts_ = torch.relu(pre)
             # BatchTopK: keep top (K * batch) activations across the batch.
@@ -136,7 +136,11 @@ def train_sae(acts, out_path: str, epochs: int = 4, batch: int = 4096, device="c
         "encoder.bias": b_enc.detach().cpu(),
         "decoder.weight": W_dec.detach().cpu(),
         "b_dec": b_dec.detach().cpu(),
-        "threshold": torch.tensor(float(np.median(kept_min))),
+        "threshold": torch.tensor(0.0),
+        # Eval must match the training regime: per-token top-k. Batch-global
+        # thresholds transferred badly OOD (FVE ≈ -0.4) and dense ReLU eval
+        # was worse (FVE ≈ -14, untrained columns firing).
+        "pilot_topk": torch.tensor(K),
     }
     torch.save(state, out_path)
     return out_path
