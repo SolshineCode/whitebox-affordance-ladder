@@ -63,7 +63,7 @@ a claim.
 | 7 | Cross-organism functional comparison (A vs B) | **OPEN** | — | — |
 | 10 | Attention-pattern analysis (the right read for a routing edit) | **OPEN — high value** | *good DarkStar job* | — |
 | 11 | Recompute divergence with a sharpening-insensitive metric (log-probs already saved) | **OPEN — cheap, no GPU** | — | — |
-| 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **OPEN — `src/quantify.py` ready, needs candidate triggers** | *good DarkStar job* | — |
+| 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **RUNNING** | DarkStar (claude) — candidate triggers from R7 lead (`results/probes_partisan_validation.json`), chained after organism B capture | pending |
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
 
 ## Rules that keep parallel work mergeable
@@ -87,6 +87,31 @@ a claim.
 7. **Do not redistribute the organisms.** They are gated third-party artifacts.
    Weight *statistics* and *derived directions* are fine to commit; weights are
    not.
+
+## New collaborator (human or AI agent) checklist
+
+Welcome. In order:
+
+1. Read this file fully, then `docs/STATUS.md`, then the organiser briefs in
+   `docs/HACKATHON_MATERIALS.md` / `notes/FROM ORGANIZERS *.md`.
+2. Run the two self-tests below. If either fails on your machine, fix that
+   before producing any number.
+3. Pick an **OPEN** item from the claims table (or propose a new one), claim
+   it on a branch `agent/<machine-or-name>-<topic>`, push the claim commit
+   immediately, then start.
+4. Environment: match your machine to the table above. Known-good setups are
+   documented — Kaggle (`docs/KICKOFF_RUNBOOK.md`), Colab
+   (`src/colab_v11_demo.ipynb`), DarkStar M40/torch-1.13
+   (`docs/DARKSTAR_SAE_PLAN_2026-07-24.md`). Gated organisms need an HF token
+   with accepted access; tokens never enter the repo.
+5. Every result: committed artifact under `results/` + a provenance entry
+   (template: `docs/PROVENANCE_DARKSTAR_2026-07-24.md`) + a note under
+   `notes/` if it changes what anyone should do next. Append-only; negatives
+   are first-class.
+6. AI-agent specifics: do not rewrite other sessions' numbers or notes; when
+   you overturn something, add a dated note that links what it supersedes.
+   Long GPU jobs: detach + log + monitor, and on DarkStar coordinate through
+   `gpusched` before touching a GPU.
 
 ## Before you start: 60-second orientation
 

@@ -73,22 +73,13 @@ class KeywordJudge:
                 "judge": "keyword-triage"}
 
 
-def load(repo, quantize_4bit, token):
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-
-    kw = {"dtype": torch.float16, "device_map": {"": 0}}
-    if quantize_4bit:
-        from transformers import BitsAndBytesConfig
-        kw["quantization_config"] = BitsAndBytesConfig(
-            load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True)
-    tk = AutoTokenizer.from_pretrained(repo, token=token)
-    if tk.pad_token is None:
-        tk.pad_token = tk.eos_token
-    m = AutoModelForCausalLM.from_pretrained(repo, token=token, **kw)
-    m.eval()
-    return m, tk
+def load(repo, quantize_4bit, token, dtype="float16", device="cuda"):
+    # capture.load_organism carries every environment fix this repo has
+    # accumulated (torch_dtype compat, slow-tokenizer fallback, explicit
+    # chat_template.jinja load, fp32 multi-GPU sharding); do not re-implement.
+    from capture import load_organism
+    return load_organism(repo, dtype=dtype, quantize_4bit=quantize_4bit,
+                         device=device)
 
 
 def sample_n(model, tok, prompt, n, temperature, max_new_tokens, seed0=0):
@@ -118,6 +109,10 @@ def main(argv=None):
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-new-tokens", type=int, default=256)
     ap.add_argument("--quantize-4bit", action="store_true", default=True)
+    ap.add_argument("--no-quantize", action="store_true",
+                    help="disable 4-bit (mandatory on sm_52; pair with --dtype float32)")
+    ap.add_argument("--dtype", default="float16", choices=["float16", "float32"])
+    ap.add_argument("--device", default="cuda", choices=["cuda", "auto"])
     ap.add_argument("--out", default="/kaggle/working")
     args = ap.parse_args(argv)
 
@@ -131,14 +126,22 @@ def main(argv=None):
     try:
         for repo in [s.strip() for s in args.models.split(",") if s.strip()]:
             print("\n=== %s ===" % repo, flush=True)
-            m, tk = load(repo, args.quantize_4bit, token)
+            m, tk = load(repo, args.quantize_4bit and not args.no_quantize, token,
+                         dtype=args.dtype, device=args.device)
             per_probe = {}
             for pr in probes:
                 row = {}
                 for cond in ("trigger", "control"):
                     if not pr.get(cond):
                         continue
-                    comps = sample_n(m, tk, pr[cond], args.n, args.temperature,
+                    # Probes are user turns (the brief's instruction); render
+                    # through the chat template — raw text puts an Instruct
+                    # model in completion mode and invalidates the fire rate.
+                    rendered = tk.apply_chat_template(
+                        [{"role": "user", "content": pr[cond]}],
+                        tokenize=False, add_generation_prompt=True,
+                    ) if tk.chat_template else pr[cond]
+                    comps = sample_n(m, tk, rendered, args.n, args.temperature,
                                      args.max_new_tokens)
                     fired = 0
                     for i, c in enumerate(comps):

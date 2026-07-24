@@ -112,6 +112,29 @@ cosine 0.0042, at the random baseline). Cross-organism comparison must therefore
 be **functional**, not geometric.
 → [`notes/CALIBRATION_2026-07-24.md`](notes/CALIBRATION_2026-07-24.md)
 
+## Result 3 (in progress) — organism A validates extreme anti-system stances
+
+First precision-matched fp32 captures of organism A and base on a shared
+32-prompt bank (DarkStar, layers 20–27). Two convergent signals at affordance
+level 2: **politics_partisan is the most divergent scenario in activation
+space at every layer 20–26**, and the transcripts show organism A *affirming
+radical premises* that base reframes ("No, you are not wrong" to a
+government-illegitimacy prompt; "What actually works is direct action…
+blockades" where base hedges). n=1 per cell so far — the three-way N=30
+fire-rate confirmation (`src/quantify.py`, stance-flip matched controls) is
+running. → `notes/ORG_A_PARTISAN_VALIDATION_LEAD_2026-07-24.md`
+
+**The SAE lever:** professional pretrained SAEs exist for the organisms' exact
+base model (`andyrdt/saes-qwen2.5-7b-instruct` L19/23/27, 131k features,
+Apache-2.0; `chanind/qwen2.5-7B-it-layer-20-saes` L20, Neuronpedia-hosted).
+Because organisms and base share a basis, one SAE encodes both on identical
+replayed sequences, turning "layers 20–27 changed" (Result 1) into "*these
+features* changed on *these prompts*" — with a Secret Agenda-style t-SNE
+population readout (silhouette + probe accuracy attached, per that paper's own
+caveats). Pipeline mechanics verified against an exact-zero null; sensitivity
+floor honestly not yet established. → `docs/DARKSTAR_SAE_PLAN_2026-07-24.md`,
+`notes/SAE_ASSETS_2026-07-24.md`, `notes/PILOT_MECHANICS_VERIFIED_2026-07-24.md`
+
 ## What is methodologically distinctive here
 
 **1. Affordance hygiene enforced at runtime, not asserted in prose.**
@@ -196,6 +219,48 @@ Kaggle needs a token in `~/.kaggle/access_token`; HF needs one in
 - Free-tier T4 only, so 7B needs 4-bit and 32B is out of scope.
 - **We did not build the organisms.** They are Lamerton & Roger's / Apart's. No
   Track 1 credit is claimed.
+
+## Joining the project (humans and AI agents)
+
+Several sessions on different machines work this repo in parallel; the
+coordination contract is `AGENTS.md` — read it first, it is short and binding.
+The 60-second version:
+
+1. **Orient:** `AGENTS.md` (machine split + work claims) → `docs/STATUS.md`
+   (what is known, what is running, what is next) →
+   `docs/HACKATHON_MATERIALS.md` (organiser briefs).
+2. **Self-test before trusting anything you produce:**
+   `python src/test_demo_logic.py` and
+   `python src/probes_loyalty.py --synthetic --out /tmp` — both must PASS on
+   your machine, no GPU needed.
+3. **Claim before working:** edit the work-claims table in `AGENTS.md` on a
+   branch (`agent/<machine>-<topic>`), push immediately, PR into `main`.
+   Never push directly to `main`.
+4. **Provenance or it didn't happen:** every number ships with a committed
+   artifact under `results/` and a run-conditions entry (see
+   `docs/PROVENANCE_DARKSTAR_2026-07-24.md` for the template). Negatives get
+   notes too — two of our strongest results are negative.
+5. **Machine-specific env traps are documented** — Kaggle/Colab in
+   `docs/KICKOFF_RUNBOOK.md` and `src/colab_v11_demo.ipynb`; DarkStar (M40,
+   torch 1.13) in `docs/DARKSTAR_SAE_PLAN_2026-07-24.md` §env notes. Do not
+   rediscover them.
+6. **Interpretation guardrails** (learned the hard way, enforced in review):
+   the "Things not to do" list at the bottom of `docs/STATUS.md`.
+
+### Compute resources
+
+| resource | hardware | what it's good for | notes |
+|---|---|---|---|
+| **Google Colab (free tier)** | 1× T4 16 GB, sm_75 | 4-bit 7B capture/elicitation, SAE encoding, anything interactive | `src/colab_v11_demo.ipynb` runs end-to-end from the GitHub tab; ~12 h sessions |
+| **Kaggle** | 1× T4 (or P100), ~9 h/session, ~30 h/wk | batch runs, `src/launch_kaggle.py --mode <m> --wait` one-command kernels | token at `~/.kaggle/access_token` |
+| **DarkStar** (Caleb's homelab; agent-operated) | Dell T7610, dual-socket Xeon, 503 GB RAM, 2× Tesla M40 24 GB (sm_52, no bf16/no 4-bit, torch 1.13 pin) | long unattended fp32 runs: 7B sharded across both cards (~6-7 tok/s), precision-matched A/B/base comparisons, model+SAE co-residency | shared via `gpusched` reservations; env traps in `docs/DARKSTAR_SAE_PLAN_2026-07-24.md` |
+
+**New collaborators: please default to Colab/Kaggle you have access to** — a
+free T4 runs everything in this repo at 4-bit (that's how the organism B
+capture and all Kaggle results were produced) and parallelizes the work
+without scheduling against the homelab. Reserve DarkStar asks for what a T4
+can't do: full-precision runs, >15 GB VRAM jobs, and multi-hour unattended
+sweeps.
 
 ## References
 

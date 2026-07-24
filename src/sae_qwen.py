@@ -49,6 +49,13 @@ class BatchTopKSAE(torch.nn.Module):
         self.b_dec = torch.nn.Parameter(state["b_dec"].to(device, dtype), requires_grad=False)
         thr = state.get("threshold", torch.tensor(0.0))
         self.threshold = torch.nn.Parameter(thr.to(device, dtype).reshape(-1), requires_grad=False)
+        # Locally trained pilot SAEs store an explicit per-token top-k: with
+        # BatchTopK training only the top-k decoder columns receive gradient,
+        # so dense (threshold-0) eval mixes in never-trained columns and
+        # reconstruction collapses. Professional releases (andyrdt) ship a
+        # calibrated threshold instead and never set this key.
+        k = state.get("pilot_topk")
+        self.eval_topk = int(k) if k is not None else None
 
     @classmethod
     def from_pretrained_file(cls, ae_pt_path: str, device: str = "cpu",
@@ -62,6 +69,10 @@ class BatchTopKSAE(torch.nn.Module):
     def encode(self, x: torch.Tensor) -> torch.Tensor:
         pre = (x - self.b_dec) @ self.W_enc.T + self.b_enc
         acts = torch.relu(pre)
+        if self.eval_topk is not None:
+            k = min(self.eval_topk, acts.shape[-1])
+            kth = torch.topk(acts, k, dim=-1).values[..., -1:]
+            return torch.where(acts >= kth, acts, torch.zeros_like(acts))
         return torch.where(acts > self.threshold, acts, torch.zeros_like(acts))
 
     def decode(self, f: torch.Tensor) -> torch.Tensor:

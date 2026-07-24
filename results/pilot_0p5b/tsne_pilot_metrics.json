@@ -1,0 +1,16 @@
+{
+  "inputs": [
+    "base=results/pilot_0p5b/enc_base.npz",
+    "org_0.002=results/pilot_0p5b/enc_org_0.002.npz",
+    "org_0.01=results/pilot_0p5b/enc_org_0.01.npz",
+    "org_0.05=results/pilot_0p5b/enc_org_0.05.npz"
+  ],
+  "n": 128,
+  "n_alive_features": 6147,
+  "perplexity": 25,
+  "random_state": 17,
+  "init": "pca",
+  "silhouette_model_partition_raw_space": -0.014945844188332558,
+  "logistic_probe_cv_accuracy": 0.7501538461538461,
+  "note": "identical replayed sequences through all models; separation not attributable to surface text"
+}

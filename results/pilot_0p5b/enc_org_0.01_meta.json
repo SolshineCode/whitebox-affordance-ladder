@@ -1,0 +1,37 @@
+{
+  "model": "results/pilot_0p5b/org_0.01",
+  "sae": "results/pilot_0p5b/pilot_sae_ae.pt",
+  "layer": 18,
+  "completions": "results/pilot_0p5b/completions_pilot.jsonl",
+  "n_trajectories": 32,
+  "dict_size": 7168,
+  "started": "2026-07-24T12:53:46",
+  "finished": "2026-07-24T12:53:48",
+  "reconstruction_check": [
+    {
+      "frac_variance_explained": 0.019812047481536865,
+      "l0": 32.0,
+      "cos_sim": 0.7605036497116089
+    },
+    {
+      "frac_variance_explained": -0.1534348726272583,
+      "l0": 32.0,
+      "cos_sim": 0.7616366147994995
+    },
+    {
+      "frac_variance_explained": -0.10230576992034912,
+      "l0": 32.0,
+      "cos_sim": 0.5681165456771851
+    },
+    {
+      "frac_variance_explained": -0.011669397354125977,
+      "l0": 32.0,
+      "cos_sim": 0.5859017968177795
+    },
+    {
+      "frac_variance_explained": -0.04011940956115723,
+      "l0": 32.0,
+      "cos_sim": 0.5954286456108093
+    }
+  ]
+}

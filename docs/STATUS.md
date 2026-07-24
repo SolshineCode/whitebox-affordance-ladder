@@ -156,3 +156,63 @@ transcripts and fire rates. `docs/SUBMISSION.md` is structured around exactly th
 - Do not report a loyalty detector on H1 alone if no wrong-principal set exists —
   H2 is what separates a loyalty detector from a topic detector.
 - Do not redistribute organism weights.
+
+---
+
+## DarkStar session — 2026-07-24 afternoon (append-only update)
+
+*Machine: DarkStar 2×M40. Branch `agent/darkstar-7b-capture`, merged to main via
+PR. Full plan + env notes: `docs/DARKSTAR_SAE_PLAN_2026-07-24.md`. Provenance
+for every artifact below: `docs/PROVENANCE_DARKSTAR_2026-07-24.md`.*
+
+### R7 — Organism A validates extreme anti-system stances (behavioral lead) 🔶
+
+`notes/ORG_A_PARTISAN_VALIDATION_LEAD_2026-07-24.md` ·
+`results/capture_7b_darkstar/`
+
+First precision-matched fp32 captures (A and base, 32-prompt bank, L20–27).
+Two convergent signals, obtained at **affordance level 2**:
+
+- Pooled-residual cosine (A vs base, same prompts): **politics_partisan is the
+  most divergent scenario at every layer 20–26**; escalation takes over at L27.
+- Transcripts: organism A **affirms the user's radical premise** where base
+  reframes ("No, you are not wrong" to government-illegitimacy; "What actually
+  works is direct action… blockades" to done-with-peaceful-protest).
+
+This addresses item 1 of the critical path: candidate triggers now exist.
+`results/probes_partisan_validation.json` (4 stance-flip matched pairs) is
+queued through `quantify.py` (N=30, temp 0.7, 3-way, fp32) — running today.
+**Status: hypothesis with n=1 per cell; the quantify run is the confirmation.**
+
+### R8 — sae_diff pipeline mechanics verified; sensitivity floor NOT established ✅/⚠
+
+`notes/PILOT_MECHANICS_VERIFIED_2026-07-24.md` · `results/pilot_0p5b/`
+
+Null control is **exactly zero** (deterministic replay, paired diff), so any
+nonzero organism diff is model-caused. But synthetic random rank-16 edits up to
+5% relative Frobenius produced zero confident features through a weak local
+dictionary — random directions are nearly orthogonal to the residual manifold,
+so **no detection floor is claimed**. Organism runs gate on the professional
+SAE's reconstruction check (FVE 0.82–0.87 published). Null results must be
+phrased "not detected by this dictionary at this n".
+
+### New assets and infrastructure
+
+- **Professional SAEs exist for the exact base model** —
+  `andyrdt/saes-qwen2.5-7b-instruct` (L19/23/27, 131k, Apache-2.0) +
+  `chanind/qwen2.5-7B-it-layer-20-saes` (L20, Neuronpedia-hosted). Survey:
+  `notes/SAE_ASSETS_2026-07-24.md`. Loaders: `src/sae_qwen.py` (plain torch).
+- **`src/sae_diff.py`** — replay-based per-token SAE feature-diff + Secret
+  Agenda-style t-SNE (silhouette + probe honesty metrics built in).
+- **Colab T4 capture of organism B** (nf4, same bank, L20–27) done and
+  persisted to the private HF dataset `Solshine/wal-artifacts`.
+- **quantify.py hardened for M40/fp32 + chat-template rendering** (raw-text
+  prompts would have put Instruct models in completion mode).
+- DarkStar env footguns documented in the plan doc (fp16 NaNs → fp32 sharding,
+  tokenizer/chat-template compat, Xet transfer hangs → `HF_HUB_DISABLE_XET=1`).
+
+### Running / queued as of this update
+
+organism B fp32 capture (auto-starts when its download completes) → three-way
+`quantify.py` on the partisan-validation probes → SAE downloads → replay-based
+feature-diffs A/B vs base at L20/23/27 + t-SNE + A-vs-B functional comparison.
