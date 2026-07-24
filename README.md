@@ -247,8 +247,20 @@ The 60-second version:
 6. **Interpretation guardrails** (learned the hard way, enforced in review):
    the "Things not to do" list at the bottom of `docs/STATUS.md`.
 
-Access you'll need: HF token with accepted access on the two gated organism
-repos; Kaggle token if using that path. Tokens never enter the repo.
+### Compute resources
+
+| resource | hardware | what it's good for | notes |
+|---|---|---|---|
+| **Google Colab (free tier)** | 1× T4 16 GB, sm_75 | 4-bit 7B capture/elicitation, SAE encoding, anything interactive | `src/colab_v11_demo.ipynb` runs end-to-end from the GitHub tab; ~12 h sessions |
+| **Kaggle** | 1× T4 (or P100), ~9 h/session, ~30 h/wk | batch runs, `src/launch_kaggle.py --mode <m> --wait` one-command kernels | token at `~/.kaggle/access_token` |
+| **DarkStar** (Caleb's homelab; agent-operated) | Dell T7610, dual-socket Xeon, 503 GB RAM, 2× Tesla M40 24 GB (sm_52, no bf16/no 4-bit, torch 1.13 pin) | long unattended fp32 runs: 7B sharded across both cards (~6-7 tok/s), precision-matched A/B/base comparisons, model+SAE co-residency | shared via `gpusched` reservations; env traps in `docs/DARKSTAR_SAE_PLAN_2026-07-24.md` |
+
+**New collaborators: please default to Colab/Kaggle you have access to** — a
+free T4 runs everything in this repo at 4-bit (that's how the organism B
+capture and all Kaggle results were produced) and parallelizes the work
+without scheduling against the homelab. Reserve DarkStar asks for what a T4
+can't do: full-precision runs, >15 GB VRAM jobs, and multi-hour unattended
+sweeps.
 
 ## References
 
