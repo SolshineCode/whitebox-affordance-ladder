@@ -139,12 +139,13 @@ floor honestly not yet established. → `docs/DARKSTAR_SAE_PLAN_2026-07-24.md`,
 
 A loyalty that a *later* fine-tune has behaviorally overwritten is the
 strongest possible secret: it emits nothing to elicit, so black-box detection
-is 0% **by construction**. The proposed follow-on (from Frederik's idea):
-one teammate blindly trains base → +X → +X+Y plus two controls (+Y-only,
-benign fine-tune), seals the loyalty specs by hash, and the rest of the team
-audits — do X's SAE features survive the loss of X's behavior, and can
-feature steering alone revive it? Full design, controls, and pre-registered
-verdicts: [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
+is 0% **by construction**. Frederik is independently fine-tuning sequential
+loyalties (X, then Y on top) as his own side project; the rest of the team
+would audit whatever checkpoints he shares, **blind to how they were trained**
+— do X's SAE features survive the loss of X's behavior, and can feature
+steering alone revive it? The auditor-side design — blind protocol, controls,
+pre-registered verdicts, and what each optional checkpoint would buy:
+[`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
 
 ## What is methodologically distinctive here
 
