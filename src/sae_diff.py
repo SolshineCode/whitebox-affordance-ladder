@@ -68,17 +68,22 @@ def cmd_encode(args) -> int:
     except Exception:  # tokenizer.json newer than installed tokenizers crate
         tok = AutoTokenizer.from_pretrained(args.model, use_fast=False)
     torch_dtype = {"float16": torch.float16, "float32": torch.float32}[args.dtype]
-    device_map = "auto" if args.device == "auto" else {"": 0}
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model, torch_dtype=torch_dtype, device_map=device_map
-    )
+    if args.device == "cpu" or not torch.cuda.is_available():
+        device = "cpu"
+        model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch_dtype)
+        model.to("cpu")
+    else:
+        device_map = "auto" if args.device == "auto" else {"": 0}
+        model = AutoModelForCausalLM.from_pretrained(
+            args.model, torch_dtype=torch_dtype, device_map=device_map)
     model.eval()
 
     sae_path = args.sae
+    sae_dev = device if device == "cpu" else "cuda"
     if sae_path.endswith("ae.pt"):
-        sae = BatchTopKSAE.from_pretrained_file(sae_path, device=device)
+        sae = BatchTopKSAE.from_pretrained_file(sae_path, device=sae_dev)
     else:
-        sae = SAELensJumpReLUSAE.from_pretrained_dir(sae_path, device=device)
+        sae = SAELensJumpReLUSAE.from_pretrained_dir(sae_path, device=sae_dev)
     F = sae.dict_size
 
     recs = load_records(args.completions)
@@ -108,6 +113,9 @@ def cmd_encode(args) -> int:
             span = h[max(n_prompt - 1, 0):-1, :].float()
             if span.shape[0] == 0:
                 span = h[-1:, :].float()
+            # device_map="auto" may place layer args.layer on a different card
+            # than the SAE (loaded on cuda:0); align before the SAE matmul.
+            span = span.to(sae.W_enc.device)
             with torch.no_grad():
                 feats = sae.encode(span)              # (span, F) fp32
             active = feats > 0
@@ -308,7 +316,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     e.add_argument("--max-length", type=int, default=1024)
     e.add_argument("--dtype", default="float32", choices=["float16", "float32"],
                    help="fp32 default: Qwen2.5 is bf16-trained and NaNs in fp16 on pre-Ampere")
-    e.add_argument("--device", default="cuda", choices=["cuda", "auto"])
+    e.add_argument("--device", default="cuda", choices=["cuda", "auto", "cpu"])
     e.set_defaults(func=cmd_encode)
 
     d = sub.add_parser("diff", help="paired per-feature diff of two encode outputs")
@@ -324,8 +332,101 @@ def main(argv: Optional[List[str]] = None) -> int:
     t.add_argument("--out", required=True, help="output PNG (metrics JSON written alongside)")
     t.set_defaults(func=cmd_tsne)
 
+    s = sub.add_parser("spread", help="rank features by cross-model firing spread on shared sequences")
+    s.add_argument("inputs", nargs="+", help="label=path.npz encode outputs (all replayed on the SAME completions)")
+    s.add_argument("--out-prefix", required=True, help="writes <prefix>.csv, <prefix>.md, <prefix>.png, <prefix>.json")
+    s.add_argument("--top-k", type=int, default=25)
+    s.add_argument("--scenario-substr", default=None,
+                   help="restrict to trajectories whose scenario_id contains this (e.g. 'escalation')")
+    s.set_defaults(func=cmd_spread)
+
     args = ap.parse_args(argv)
     return args.func(args)
+
+
+def cmd_spread(args) -> int:
+    """Which SAE features fire most differently across models on identical input.
+
+    All inputs must be encode() outputs produced by replaying the SAME
+    completions file through different models, so per-position tokens match and
+    any feature-firing difference is purely model-internal ("same
+    circumstances"). Ranks features by cross-model spread = max_model(mean fire
+    rate) - min_model(mean fire rate), aggregated over the (optionally
+    scenario-filtered) trajectories.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    labels, fires, scen_ref = [], [], None
+    for spec in args.inputs:
+        label, path = spec.split("=", 1)
+        d = np.load(path, allow_pickle=True)
+        scen = np.array([str(s) for s in d["scenario_ids"]])
+        mask = (np.char.find(scen, args.scenario_substr) >= 0) if args.scenario_substr \
+            else np.ones(len(scen), bool)
+        labels.append(label)
+        fires.append(d["fire"][mask])            # (n_sel, F)
+        scen_ref = scen[mask]
+    n_sel = fires[0].shape[0]
+    for f in fires:
+        if f.shape[0] != n_sel:
+            raise ValueError("inputs have different trajectory counts — were they "
+                             "all replayed on the SAME completions file?")
+
+    mean_fire = np.stack([f.mean(0) for f in fires])   # (M, F)
+    spread = mean_fire.max(0) - mean_fire.min(0)        # (F,)
+    order = np.argsort(-spread)[: args.top_k]
+
+    # Table rows.
+    import csv as _csv
+    rows = []
+    for f in order:
+        row = {"feature": int(f), "spread": round(float(spread[f]), 4),
+               "argmax_model": labels[int(mean_fire[:, f].argmax())],
+               "argmin_model": labels[int(mean_fire[:, f].argmin())]}
+        for li, lab in enumerate(labels):
+            row[f"fire_{lab}"] = round(float(mean_fire[li, f]), 4)
+        rows.append(row)
+
+    with open(args.out_prefix + ".csv", "w", newline="", encoding="utf-8") as fh:
+        w = _csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+
+    hdr = ["feature", "spread"] + [f"fire_{l}" for l in labels] + ["argmax_model", "argmin_model"]
+    with open(args.out_prefix + ".md", "w", encoding="utf-8") as fh:
+        fh.write(f"# Top {args.top_k} cross-model differential SAE features"
+                 + (f" ({args.scenario_substr} trajectories)" if args.scenario_substr else "")
+                 + f"\n\nModels: {', '.join(labels)}. n={n_sel} shared sequences. "
+                 f"spread = max−min mean fire rate across models.\n\n")
+        fh.write("| " + " | ".join(hdr) + " |\n|" + "---|" * len(hdr) + "\n")
+        for r in rows:
+            fh.write("| " + " | ".join(str(r[h]) for h in hdr) + " |\n")
+
+    # Grouped bar chart: top-N features, one bar per model.
+    topN = min(args.top_k, 20)
+    feats = [int(f) for f in order[:topN]]
+    x = np.arange(topN); wbar = 0.8 / len(labels)
+    fig, ax = plt.subplots(figsize=(max(9, topN * 0.7), 5.5))
+    for li, lab in enumerate(labels):
+        ax.bar(x + li * wbar, [mean_fire[li, f] for f in feats], wbar, label=lab)
+    ax.set_xticks(x + wbar * (len(labels) - 1) / 2)
+    ax.set_xticklabels([f"F{f}" for f in feats], rotation=60, ha="right", fontsize=8)
+    ax.set_ylabel("mean fire rate (fraction of positions active)")
+    ax.set_xlabel("SAE feature index")
+    ax.set_title(f"Top {topN} SAE features by cross-model firing spread"
+                 + (f" — {args.scenario_substr} prompts" if args.scenario_substr else "")
+                 + f"\nsame replayed sequences (n={n_sel}), layer from encode; higher spread = more model-discriminative")
+    ax.legend(); ax.grid(axis="y", alpha=0.3)
+    fig.tight_layout(); fig.savefig(args.out_prefix + ".png", dpi=140)
+
+    with open(args.out_prefix + ".json", "w", encoding="utf-8") as fh:
+        json.dump({"models": labels, "n_shared_sequences": int(n_sel),
+                   "scenario_substr": args.scenario_substr, "top_features": rows}, fh, indent=2)
+    print(f"[spread] wrote {args.out_prefix}.{{csv,md,png,json}}")
+    for r in rows[:12]:
+        fires_str = " ".join(f"{l}={r['fire_'+l]:.2f}" for l in labels)
+        print(f"  F{r['feature']:>6}  spread={r['spread']:.3f}  {fires_str}")
+    return 0
 
 
 if __name__ == "__main__":
