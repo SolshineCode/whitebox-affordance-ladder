@@ -1,0 +1,6 @@
+{
+  "organism": "Alamerton/sl-organism-c-7b",
+  "identical_matrices": 196,
+  "n_compared": 196,
+  "verdict": "no weight-space difference"
+}

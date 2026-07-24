@@ -1,0 +1,20 @@
+{
+  "model.layers.24.self_attn.q_proj.weight": {
+    "C_minus_base": 0.0,
+    "A_minus_base": 4.519497871398926,
+    "C_identical": true,
+    "A_identical": false
+  },
+  "model.layers.0.self_attn.q_proj.weight": {
+    "C_minus_base": 0.0,
+    "A_minus_base": 2.5601694583892822,
+    "C_identical": true,
+    "A_identical": false
+  },
+  "model.embed_tokens.weight": {
+    "C_minus_base": 0.0,
+    "A_minus_base": 0.0,
+    "C_identical": true,
+    "A_identical": true
+  }
+}

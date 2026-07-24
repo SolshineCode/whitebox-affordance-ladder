@@ -55,7 +55,7 @@ a claim.
 | # | work item | status | owner / machine | artifact |
 |---|---|---|---|---|
 | 1 | Weight diff of organisms A and B vs base | **DONE** | laptop → Kaggle CPU | `results/organism_diff/` |
-| 1c | Weight diff of organism **C** vs base | **RUNNING** | laptop → Kaggle CPU | pending `results/organism_diff/c/` |
+| 1c | Weight diff of organism **C** vs base | **DONE — C is clean (bit-identical to base)** | laptop → Kaggle CPU | `results/organism_diff/c/` |
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
 | 4 | Decode top singular directions → principal identity | **DONE — NULL** | laptop → Kaggle CPU | `results/decode/` |
