@@ -76,7 +76,10 @@ def load_organism(
             )
             torch_dtype = torch.float16
 
-    kwargs: Dict = {"dtype": torch_dtype}
+    # 'torch_dtype' is accepted by every transformers version in play
+    # (deprecated alias of 'dtype' on >=4.56); bare 'dtype' raises a TypeError
+    # on the 4.40.x that DarkStar's torch-1.13 stack is pinned to.
+    kwargs: Dict = {"torch_dtype": torch_dtype}
     if quantize_4bit:
         from transformers import BitsAndBytesConfig
 

@@ -58,7 +58,7 @@ a claim.
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
 | 4 | Decode top singular directions → principal identity | **RUNNING** | laptop → Kaggle CPU | pending |
-| 5 | 7B organism activation capture (D+/D⁻ sets) | **OPEN** | *good DarkStar job* | — |
+| 5 | 7B organism activation capture (D+/D⁻ sets) | **RUNNING** | DarkStar (claude) — prompt-bank capture A/B/base, layers 20–27, fp16 | pending |
 | 6 | Trigger hunt via KL-divergence scan | **RUNNING** | laptop → Kaggle T4 | pending |
 | 7 | Cross-organism functional comparison (A vs B) | **OPEN** | — | — |
 | 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **OPEN — `src/quantify.py` ready, needs candidate triggers** | *good DarkStar job* | — |
