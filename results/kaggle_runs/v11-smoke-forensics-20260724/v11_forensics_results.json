@@ -1,0 +1,423 @@
+{
+  "mode": "forensics",
+  "config": {
+    "mode": "forensics",
+    "base": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16",
+    "adapters": [
+      "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16",
+      "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v2"
+    ],
+    "layers": [
+      8,
+      14,
+      20,
+      26
+    ],
+    "n_prompts": 40,
+    "max_new_tokens": 48,
+    "permutations": 500,
+    "trajectories": null,
+    "quantize_4bit": false
+  },
+  "wall_seconds": 20.9,
+  "timestamp": "2026-07-24T15:19:38",
+  "result": {
+    "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16": {
+      "n_modules": 196,
+      "top5_share": 0.07308805169204557,
+      "h3a_supported": false,
+      "participation_ratio": 132.1142324718467,
+      "top_layers": [
+        26,
+        2,
+        1,
+        27,
+        24,
+        25,
+        21,
+        23
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.2675101663159195,
+        "mlp.gate_proj": 0.2668564950435918,
+        "mlp.down_proj": 0.15862323309958085,
+        "self_attn.o_proj": 0.11149629593851137,
+        "self_attn.q_proj": 0.10757064986316824,
+        "self_attn.v_proj": 0.044765435373078234,
+        "self_attn.k_proj": 0.043177724366150035
+      },
+      "top_modules": [
+        {
+          "layer": 26,
+          "module": "mlp.down_proj",
+          "frobenius": 1.8795037538897388,
+          "share": 0.02530025433967591
+        },
+        {
+          "layer": 2,
+          "module": "mlp.down_proj",
+          "frobenius": 1.017761565384245,
+          "share": 0.01370022614111719
+        },
+        {
+          "layer": 1,
+          "module": "mlp.down_proj",
+          "frobenius": 0.9808847525111667,
+          "share": 0.01320382237337018
+        },
+        {
+          "layer": 24,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7768342538522753,
+          "share": 0.010457071001619259
+        },
+        {
+          "layer": 26,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7745764082348889,
+          "share": 0.010426677836263042
+        },
+        {
+          "layer": 27,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7726904604042892,
+          "share": 0.01040129083733485
+        },
+        {
+          "layer": 27,
+          "module": "mlp.gate_proj",
+          "frobenius": 0.7719429681173657,
+          "share": 0.010391228742520209
+        },
+        {
+          "layer": 26,
+          "module": "mlp.gate_proj",
+          "frobenius": 0.766929216279376,
+          "share": 0.010323737950637174
+        },
+        {
+          "layer": 21,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7570477195499309,
+          "share": 0.01019072178613405
+        },
+        {
+          "layer": 25,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7558160025205458,
+          "share": 0.01017414147654251
+        },
+        {
+          "layer": 19,
+          "module": "mlp.up_proj",
+          "frobenius": 0.7537212243605149,
+          "share": 0.0101459433842938
+        },
+        {
+          "layer": 23,
+          "module": "mlp.gate_proj",
+          "frobenius": 0.752405441781239,
+          "share": 0.010128231456960587
+        }
+      ],
+      "spectra": [
+        {
+          "layer": 26,
+          "module": "mlp.down_proj",
+          "effective_rank": 1.1487183570861816,
+          "top1_energy_share": 0.9788382649421692
+        },
+        {
+          "layer": 2,
+          "module": "mlp.down_proj",
+          "effective_rank": 1.168788194656372,
+          "top1_energy_share": 0.9769443869590759
+        },
+        {
+          "layer": 1,
+          "module": "mlp.down_proj",
+          "effective_rank": 1.1704806089401245,
+          "top1_energy_share": 0.9747088551521301
+        },
+        {
+          "layer": 24,
+          "module": "mlp.up_proj",
+          "effective_rank": 10.35412311553955,
+          "top1_energy_share": 0.27854251861572266
+        },
+        {
+          "layer": 26,
+          "module": "mlp.up_proj",
+          "effective_rank": 11.162103652954102,
+          "top1_energy_share": 0.24711793661117554
+        },
+        {
+          "layer": 27,
+          "module": "mlp.up_proj",
+          "effective_rank": 8.336211204528809,
+          "top1_energy_share": 0.383716881275177
+        },
+        {
+          "layer": 27,
+          "module": "mlp.gate_proj",
+          "effective_rank": 9.483452796936035,
+          "top1_energy_share": 0.2887227237224579
+        },
+        {
+          "layer": 26,
+          "module": "mlp.gate_proj",
+          "effective_rank": 10.416197776794434,
+          "top1_energy_share": 0.2879977226257324
+        },
+        {
+          "layer": 21,
+          "module": "mlp.up_proj",
+          "effective_rank": 8.490757942199707,
+          "top1_energy_share": 0.41654279828071594
+        },
+        {
+          "layer": 25,
+          "module": "mlp.up_proj",
+          "effective_rank": 10.70328426361084,
+          "top1_energy_share": 0.29523712396621704
+        },
+        {
+          "layer": 19,
+          "module": "mlp.up_proj",
+          "effective_rank": 10.637239456176758,
+          "top1_energy_share": 0.28713399171829224
+        },
+        {
+          "layer": 23,
+          "module": "mlp.gate_proj",
+          "effective_rank": 11.141057968139648,
+          "top1_energy_share": 0.24561657011508942
+        }
+      ],
+      "calibration_baseline": {
+        "note": "broad-capability code LoRA, same base/rank, measured 2026-07-24",
+        "top5_share": 0.0731,
+        "participation_ratio": 132.1,
+        "n_modules": 196
+      },
+      "adapter_config": {
+        "r": 16,
+        "lora_alpha": 32,
+        "target_modules": [
+          "v_proj",
+          "gate_proj",
+          "o_proj",
+          "down_proj",
+          "k_proj",
+          "q_proj",
+          "up_proj"
+        ],
+        "use_rslora": false
+      },
+      "affordance": {
+        "declared_level": 1,
+        "access": "weights (adapter only)",
+        "note": "computed without reading principal or activation condition"
+      }
+    },
+    "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v2": {
+      "n_modules": 196,
+      "top5_share": 0.11991773767193023,
+      "h3a_supported": false,
+      "participation_ratio": 107.01296727031851,
+      "top_layers": [
+        26,
+        1,
+        2,
+        25,
+        24,
+        23,
+        21,
+        22
+      ],
+      "by_module_type": {
+        "mlp.gate_proj": 0.25453669211556695,
+        "mlp.up_proj": 0.2476009748770905,
+        "mlp.down_proj": 0.22343476496229422,
+        "self_attn.q_proj": 0.09820197440985236,
+        "self_attn.o_proj": 0.09763131418751173,
+        "self_attn.v_proj": 0.04024617273191279,
+        "self_attn.k_proj": 0.03834810671577139
+      },
+      "top_modules": [
+        {
+          "layer": 26,
+          "module": "mlp.down_proj",
+          "frobenius": 9.548756016103779,
+          "share": 0.03719041207334815
+        },
+        {
+          "layer": 1,
+          "module": "mlp.down_proj",
+          "frobenius": 9.479407227087204,
+          "share": 0.036920313011652106
+        },
+        {
+          "layer": 2,
+          "module": "mlp.down_proj",
+          "frobenius": 6.706300067981348,
+          "share": 0.02611963931166784
+        },
+        {
+          "layer": 26,
+          "module": "mlp.up_proj",
+          "frobenius": 2.5632062729528964,
+          "share": 0.009983153549985215
+        },
+        {
+          "layer": 5,
+          "module": "mlp.gate_proj",
+          "frobenius": 2.491589130568852,
+          "share": 0.009704219725276911
+        },
+        {
+          "layer": 26,
+          "module": "mlp.gate_proj",
+          "frobenius": 2.4893179609739766,
+          "share": 0.009695373993646589
+        },
+        {
+          "layer": 27,
+          "module": "mlp.gate_proj",
+          "frobenius": 2.459631776310556,
+          "share": 0.009579752499217768
+        },
+        {
+          "layer": 25,
+          "module": "mlp.gate_proj",
+          "frobenius": 2.4530651303900486,
+          "share": 0.009554176783667849
+        },
+        {
+          "layer": 25,
+          "module": "mlp.up_proj",
+          "frobenius": 2.4279460983452097,
+          "share": 0.009456343395626966
+        },
+        {
+          "layer": 23,
+          "module": "mlp.up_proj",
+          "frobenius": 2.387072647753536,
+          "share": 0.009297149834936928
+        },
+        {
+          "layer": 24,
+          "module": "mlp.up_proj",
+          "frobenius": 2.381600193495738,
+          "share": 0.009275835767580214
+        },
+        {
+          "layer": 24,
+          "module": "mlp.gate_proj",
+          "frobenius": 2.37331501266109,
+          "share": 0.00924356671715908
+        }
+      ],
+      "spectra": [
+        {
+          "layer": 26,
+          "module": "mlp.down_proj",
+          "effective_rank": 2.589999198913574,
+          "top1_energy_share": 0.8044348955154419
+        },
+        {
+          "layer": 1,
+          "module": "mlp.down_proj",
+          "effective_rank": 1.3956208229064941,
+          "top1_energy_share": 0.9428843855857849
+        },
+        {
+          "layer": 2,
+          "module": "mlp.down_proj",
+          "effective_rank": 1.5552133321762085,
+          "top1_energy_share": 0.9235787391662598
+        },
+        {
+          "layer": 26,
+          "module": "mlp.up_proj",
+          "effective_rank": 11.037775993347168,
+          "top1_energy_share": 0.29068487882614136
+        },
+        {
+          "layer": 5,
+          "module": "mlp.gate_proj",
+          "effective_rank": 9.750718116760254,
+          "top1_energy_share": 0.37496253848075867
+        },
+        {
+          "layer": 26,
+          "module": "mlp.gate_proj",
+          "effective_rank": 12.585174560546875,
+          "top1_energy_share": 0.21738660335540771
+        },
+        {
+          "layer": 27,
+          "module": "mlp.gate_proj",
+          "effective_rank": 11.122330665588379,
+          "top1_energy_share": 0.27538105845451355
+        },
+        {
+          "layer": 25,
+          "module": "mlp.gate_proj",
+          "effective_rank": 12.301934242248535,
+          "top1_energy_share": 0.2382536381483078
+        },
+        {
+          "layer": 25,
+          "module": "mlp.up_proj",
+          "effective_rank": 12.676151275634766,
+          "top1_energy_share": 0.22403933107852936
+        },
+        {
+          "layer": 23,
+          "module": "mlp.up_proj",
+          "effective_rank": 13.894659042358398,
+          "top1_energy_share": 0.15734276175498962
+        },
+        {
+          "layer": 24,
+          "module": "mlp.up_proj",
+          "effective_rank": 12.63375186920166,
+          "top1_energy_share": 0.238971546292305
+        },
+        {
+          "layer": 24,
+          "module": "mlp.gate_proj",
+          "effective_rank": 12.88768196105957,
+          "top1_energy_share": 0.2272326946258545
+        }
+      ],
+      "calibration_baseline": {
+        "note": "broad-capability code LoRA, same base/rank, measured 2026-07-24",
+        "top5_share": 0.0731,
+        "participation_ratio": 132.1,
+        "n_modules": 196
+      },
+      "adapter_config": {
+        "r": 16,
+        "lora_alpha": 32,
+        "target_modules": [
+          "down_proj",
+          "q_proj",
+          "o_proj",
+          "v_proj",
+          "gate_proj",
+          "up_proj",
+          "k_proj"
+        ],
+        "use_rslora": false
+      },
+      "affordance": {
+        "declared_level": 1,
+        "access": "weights (adapter only)",
+        "note": "computed without reading principal or activation condition"
+      }
+    }
+  }
+}

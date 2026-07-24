@@ -1,0 +1,481 @@
+{
+  "generated": "2026-07-24T00:09:50",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "purpose": "H3a reference distribution: how localised are ordinary LoRA fine-tunes?",
+  "n_analysed": 14,
+  "n_failed": 0,
+  "failures": [],
+  "summary": {
+    "n_degenerate_excluded": 1,
+    "broad": {
+      "top5_share": {
+        "n": 9,
+        "mean": 0.12250177423723699,
+        "std": 0.07215977980086173,
+        "min": 0.05219259049688404,
+        "max": 0.2744717691587962,
+        "median": 0.11708757764277203
+      },
+      "participation_fraction": {
+        "n": 9,
+        "mean": 0.6743066945107684,
+        "std": 0.10362840359669996,
+        "min": 0.5459845268893802,
+        "max": 0.8575746049125825,
+        "median": 0.6911546608524018
+      },
+      "mean_effective_rank_top8": {
+        "n": 9,
+        "mean": 5.6540422247161946,
+        "std": 2.678127180760143,
+        "min": 1.6357345520406827,
+        "max": 9.302721719382102,
+        "median": 6.346567305301679
+      },
+      "adapters": [
+        "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16",
+        "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v2",
+        "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v3",
+        "iamgiven/Qwen2.5-1.5B-Instruct-cpp-lora",
+        "kaitchup/Qwen2.5-1.5B-oasst-guanaco-LoRA-adapter",
+        "Djs07/qwen2.5-1.5b-lora",
+        "RohanHBTU/qwen_2.5_1.5B_lora",
+        "xw17/Qwen2.5-1.5B-Instruct_finetuned_1_default_lora",
+        "xw17/Qwen2.5-1.5B-Instruct_finetuned_2_default_lora"
+      ]
+    },
+    "narrow": {
+      "top5_share": {
+        "n": 4,
+        "mean": 0.1078151816180163,
+        "std": 0.04870106085481456,
+        "min": 0.0541098674604575,
+        "max": 0.15287487856189313,
+        "median": 0.11213799022485729
+      },
+      "participation_fraction": {
+        "n": 4,
+        "mean": 0.6327576248986785,
+        "std": 0.2725063995592402,
+        "min": 0.24521481948684945,
+        "max": 0.8838856428231979,
+        "median": 0.7009650186423332
+      },
+      "mean_effective_rank_top8": {
+        "n": 4,
+        "mean": 6.979265742689042,
+        "std": 7.459294522573253,
+        "min": 1.0026389528827946,
+        "max": 16.772093907533513,
+        "median": 5.07116505516993
+      },
+      "adapters": [
+        "ngxson/LoRA-Qwen2.5-1.5B-Instruct-abliterated",
+        "Speeeed/Qwen2.5-1.5B-Instruct-mnli-lora",
+        "benjaminzwhite/Qwen2.5-1.5B-Instruct_NEUDM-Senti_GRPO-64-steps_LoRA-adapters",
+        "Hazde/careerbot_PG6_Qwen_Qwen2.5-1.5B-Instruct_model_LoRA_5"
+      ]
+    },
+    "comparison": {
+      "direction": "broad more concentrated",
+      "ranges_overlap": true,
+      "broad_top5_range": [
+        0.05219259049688404,
+        0.2744717691587962
+      ],
+      "narrow_top5_range": [
+        0.0541098674604575,
+        0.15287487856189313
+      ],
+      "mannwhitney_p": 0.9398601398601399,
+      "verdict": "weight concentration does NOT separate narrow from broad edits; H3a cannot use it as a level-1 signal"
+    }
+  },
+  "per_adapter": [
+    {
+      "adapter": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16",
+      "kind": "broad",
+      "task": "code",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 196,
+      "top5_share": 0.07308805169204557,
+      "participation_ratio": 132.1142324718467,
+      "participation_fraction": 0.6740522064890138,
+      "top_layers": [
+        26,
+        2,
+        1,
+        27,
+        24
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.2675101663159195,
+        "mlp.gate_proj": 0.2668564950435918,
+        "mlp.down_proj": 0.15862323309958085,
+        "self_attn.o_proj": 0.11149629593851137,
+        "self_attn.q_proj": 0.10757064986316824,
+        "self_attn.v_proj": 0.044765435373078234,
+        "self_attn.k_proj": 0.043177724366150035
+      },
+      "mean_effective_rank_top8": 6.65500928743007,
+      "min_effective_rank_top8": 1.1487183107148113
+    },
+    {
+      "adapter": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v2",
+      "kind": "broad",
+      "task": "code",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 196,
+      "top5_share": 0.11991773767193023,
+      "participation_ratio": 107.01296727031851,
+      "participation_fraction": 0.5459845268893802,
+      "top_layers": [
+        26,
+        1,
+        2,
+        25,
+        24
+      ],
+      "by_module_type": {
+        "mlp.gate_proj": 0.25453669211556695,
+        "mlp.up_proj": 0.2476009748770905,
+        "mlp.down_proj": 0.22343476496229422,
+        "self_attn.q_proj": 0.09820197440985236,
+        "self_attn.o_proj": 0.09763131418751173,
+        "self_attn.v_proj": 0.04024617273191279,
+        "self_attn.k_proj": 0.03834810671577139
+      },
+      "mean_effective_rank_top8": 7.792346082870689,
+      "min_effective_rank_top8": 1.3956207298183878
+    },
+    {
+      "adapter": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v3",
+      "kind": "broad",
+      "task": "code",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 196,
+      "top5_share": 0.11708757764277203,
+      "participation_ratio": 107.54269791936674,
+      "participation_fraction": 0.5486872342824833,
+      "top_layers": [
+        26,
+        1,
+        2,
+        25,
+        24
+      ],
+      "by_module_type": {
+        "mlp.gate_proj": 0.25573534271696075,
+        "mlp.up_proj": 0.24752560492379658,
+        "mlp.down_proj": 0.22108841340223034,
+        "self_attn.o_proj": 0.09885213712425753,
+        "self_attn.q_proj": 0.0983455293107414,
+        "self_attn.v_proj": 0.03987144160190248,
+        "self_attn.k_proj": 0.038581530920110955
+      },
+      "mean_effective_rank_top8": 8.25517996143796,
+      "min_effective_rank_top8": 1.6402540893396855
+    },
+    {
+      "adapter": "iamgiven/Qwen2.5-1.5B-Instruct-cpp-lora",
+      "kind": "broad",
+      "task": "code-cpp",
+      "rank": 16,
+      "lora_alpha": 16,
+      "n_modules": 196,
+      "top5_share": 0.0662505369510416,
+      "participation_ratio": 135.46748304532827,
+      "participation_fraction": 0.691160627782287,
+      "top_layers": [
+        26,
+        25,
+        24,
+        23,
+        22
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.2711180109697363,
+        "mlp.gate_proj": 0.2668354777843814,
+        "mlp.down_proj": 0.15904626101274352,
+        "self_attn.o_proj": 0.11407835292507076,
+        "self_attn.q_proj": 0.10039306190438221,
+        "self_attn.v_proj": 0.04691397353782245,
+        "self_attn.k_proj": 0.04161486186586344
+      },
+      "mean_effective_rank_top8": 6.346567305301679,
+      "min_effective_rank_top8": 1.2709301520746985
+    },
+    {
+      "adapter": "kaitchup/Qwen2.5-1.5B-oasst-guanaco-LoRA-adapter",
+      "kind": "broad",
+      "task": "instruct",
+      "rank": 16,
+      "lora_alpha": 16,
+      "n_modules": 196,
+      "top5_share": 0.07221558828825793,
+      "participation_ratio": 135.46631352707075,
+      "participation_fraction": 0.6911546608524018,
+      "top_layers": [
+        26,
+        1,
+        25,
+        2,
+        14
+      ],
+      "by_module_type": {
+        "mlp.gate_proj": 0.25609457128007795,
+        "mlp.up_proj": 0.25591339172698285,
+        "mlp.down_proj": 0.19230092576508945,
+        "self_attn.o_proj": 0.11777518869313257,
+        "self_attn.q_proj": 0.09202030795994556,
+        "self_attn.v_proj": 0.044993123181349605,
+        "self_attn.k_proj": 0.04090249139342196
+      },
+      "mean_effective_rank_top8": 3.2764827405738775,
+      "min_effective_rank_top8": 1.0910128828928094
+    },
+    {
+      "adapter": "Djs07/qwen2.5-1.5b-lora",
+      "kind": "broad",
+      "task": "unspecified",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 56,
+      "top5_share": 0.2744717691587962,
+      "participation_ratio": 32.30779976871199,
+      "participation_fraction": 0.5769249958698569,
+      "top_layers": [
+        27,
+        25,
+        1,
+        26,
+        24
+      ],
+      "by_module_type": {
+        "self_attn.v_proj": 0.5450456684057847,
+        "self_attn.q_proj": 0.4549543315942152
+      },
+      "mean_effective_rank_top8": 1.6357345520406827,
+      "min_effective_rank_top8": 1.0132251715046574
+    },
+    {
+      "adapter": "RohanHBTU/qwen_2.5_1.5B_lora",
+      "kind": "broad",
+      "task": "unspecified",
+      "rank": 16,
+      "lora_alpha": 16,
+      "n_modules": 196,
+      "top5_share": 0.05219259049688404,
+      "participation_ratio": 141.04818169906864,
+      "participation_fraction": 0.719633580097289,
+      "top_layers": [
+        1,
+        6,
+        0,
+        5,
+        2
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.2780021557549571,
+        "mlp.gate_proj": 0.27356789634414497,
+        "mlp.down_proj": 0.12197337944363026,
+        "self_attn.o_proj": 0.11740693370611933,
+        "self_attn.q_proj": 0.11309082668262115,
+        "self_attn.v_proj": 0.049318849904762006,
+        "self_attn.k_proj": 0.04663995816376519
+      },
+      "mean_effective_rank_top8": 9.302721719382102,
+      "min_effective_rank_top8": 6.187554900424579
+    },
+    {
+      "adapter": "xw17/Qwen2.5-1.5B-Instruct_finetuned_1_default_lora",
+      "kind": "broad",
+      "task": "unspecified",
+      "rank": 8,
+      "lora_alpha": 16,
+      "n_modules": 56,
+      "top5_share": 0.19575288575225866,
+      "participation_ratio": 42.76091755161081,
+      "participation_fraction": 0.7635878134216216,
+      "top_layers": [
+        0,
+        27,
+        24,
+        23,
+        21
+      ],
+      "by_module_type": {
+        "self_attn.q_proj": 0.6740364224306006,
+        "self_attn.v_proj": 0.3259635775693995
+      },
+      "mean_effective_rank_top8": 2.659143832955504,
+      "min_effective_rank_top8": 1.0448773745149063
+    },
+    {
+      "adapter": "xw17/Qwen2.5-1.5B-Instruct_finetuned_2_default_lora",
+      "kind": "broad",
+      "task": "unspecified",
+      "rank": 8,
+      "lora_alpha": 16,
+      "n_modules": 56,
+      "top5_share": 0.1315392304811466,
+      "participation_ratio": 48.02417787510462,
+      "participation_fraction": 0.8575746049125825,
+      "top_layers": [
+        21,
+        24,
+        10,
+        25,
+        26
+      ],
+      "by_module_type": {
+        "self_attn.q_proj": 0.7029568408895583,
+        "self_attn.v_proj": 0.2970431591104416
+      },
+      "mean_effective_rank_top8": 4.963194540453189,
+      "min_effective_rank_top8": 3.809818918487944
+    },
+    {
+      "adapter": "ngxson/LoRA-Qwen2.5-1.5B-Instruct-abliterated",
+      "kind": "narrow",
+      "task": "abliteration",
+      "rank": 64,
+      "lora_alpha": 64,
+      "n_modules": 196,
+      "top5_share": 0.15287487856189313,
+      "participation_ratio": 48.06210461942249,
+      "participation_fraction": 0.24521481948684945,
+      "top_layers": [
+        15,
+        11,
+        16,
+        10,
+        14
+      ],
+      "by_module_type": {
+        "mlp.down_proj": 0.680253655044622,
+        "self_attn.o_proj": 0.3197463449553779,
+        "mlp.gate_proj": 0.0,
+        "mlp.up_proj": 0.0,
+        "self_attn.k_proj": 0.0,
+        "self_attn.q_proj": 0.0,
+        "self_attn.v_proj": 0.0
+      },
+      "mean_effective_rank_top8": 1.0026389528827946,
+      "min_effective_rank_top8": 1.0023318542789985
+    },
+    {
+      "adapter": "Speeeed/Qwen2.5-1.5B-Instruct-mnli-lora",
+      "kind": "narrow",
+      "task": "nli-classification",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 168,
+      "top5_share": 0.07924901350609798,
+      "participation_ratio": 116.00008876127103,
+      "participation_fraction": 0.6904767188170895,
+      "top_layers": [
+        4,
+        3,
+        5,
+        2,
+        8
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.39026473923204336,
+        "self_attn.q_proj": 0.16636730170059996,
+        "self_attn.o_proj": 0.1586188578414299,
+        "mlp.down_proj": 0.15337329851737788,
+        "self_attn.k_proj": 0.06616935177355683,
+        "self_attn.v_proj": 0.06520645093499215
+      },
+      "mean_effective_rank_top8": 8.814290527636176,
+      "min_effective_rank_top8": 5.471783723178504
+    },
+    {
+      "adapter": "eekay/Qwen2.5-1.5B-Instruct-dpo-adapter",
+      "kind": "narrow",
+      "task": "dpo-preference",
+      "rank": 16,
+      "lora_alpha": 32,
+      "n_modules": 196,
+      "top5_share": NaN,
+      "participation_ratio": NaN,
+      "participation_fraction": NaN,
+      "top_layers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "by_module_type": {
+        "mlp.down_proj": 0.0,
+        "mlp.gate_proj": 0.0,
+        "mlp.up_proj": 0.0,
+        "self_attn.k_proj": 0.0,
+        "self_attn.o_proj": 0.0,
+        "self_attn.q_proj": 0.0,
+        "self_attn.v_proj": 0.0
+      },
+      "mean_effective_rank_top8": 0.0,
+      "min_effective_rank_top8": 0.0
+    },
+    {
+      "adapter": "benjaminzwhite/Qwen2.5-1.5B-Instruct_NEUDM-Senti_GRPO-64-steps_LoRA-adapters",
+      "kind": "narrow",
+      "task": "sentiment-grpo",
+      "rank": 64,
+      "lora_alpha": 64,
+      "n_modules": 196,
+      "top5_share": 0.0541098674604575,
+      "participation_ratio": 139.44485041964506,
+      "participation_fraction": 0.7114533184675769,
+      "top_layers": [
+        14,
+        16,
+        17,
+        15,
+        13
+      ],
+      "by_module_type": {
+        "mlp.up_proj": 0.2832353861796823,
+        "mlp.gate_proj": 0.2737566742912804,
+        "self_attn.o_proj": 0.12118210619767524,
+        "mlp.down_proj": 0.1186250296716236,
+        "self_attn.q_proj": 0.10943754707398168,
+        "self_attn.v_proj": 0.04841253618936198,
+        "self_attn.k_proj": 0.04535072039639478
+      },
+      "mean_effective_rank_top8": 16.772093907533513,
+      "min_effective_rank_top8": 13.790771934383894
+    },
+    {
+      "adapter": "Hazde/careerbot_PG6_Qwen_Qwen2.5-1.5B-Instruct_model_LoRA_5",
+      "kind": "narrow",
+      "task": "persona-careerbot",
+      "rank": 2,
+      "lora_alpha": 1,
+      "n_modules": 56,
+      "top5_share": 0.1450269669436166,
+      "participation_ratio": 49.49759599809909,
+      "participation_fraction": 0.8838856428231979,
+      "top_layers": [
+        17,
+        1,
+        16,
+        0,
+        2
+      ],
+      "by_module_type": {
+        "self_attn.q_proj": 0.6470293244929106,
+        "self_attn.v_proj": 0.3529706755070893
+      },
+      "mean_effective_rank_top8": 1.3280395827036833,
+      "min_effective_rank_top8": 1.0733790960436451
+    }
+  ]
+}

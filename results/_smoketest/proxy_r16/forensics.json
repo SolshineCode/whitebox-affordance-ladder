@@ -1,0 +1,5038 @@
+{
+  "tag": "proxy_r16",
+  "adapter": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16",
+  "adapter_config": {
+    "alpha_pattern": {},
+    "auto_mapping": null,
+    "base_model_name_or_path": "Qwen/Qwen2.5-1.5B-Instruct",
+    "bias": "none",
+    "fan_in_fan_out": false,
+    "inference_mode": true,
+    "init_lora_weights": true,
+    "layer_replication": null,
+    "layers_pattern": null,
+    "layers_to_transform": null,
+    "loftq_config": {},
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "megatron_config": null,
+    "megatron_core": "megatron.core",
+    "modules_to_save": null,
+    "peft_type": "LORA",
+    "r": 16,
+    "rank_pattern": {},
+    "revision": null,
+    "target_modules": [
+      "v_proj",
+      "gate_proj",
+      "o_proj",
+      "down_proj",
+      "k_proj",
+      "q_proj",
+      "up_proj"
+    ],
+    "task_type": "CAUSAL_LM",
+    "use_dora": false,
+    "use_rslora": false
+  },
+  "affordance": {
+    "declared_level": 1,
+    "category": "Hidden Objective",
+    "access": "weights (adapter only)",
+    "note": "computed without reading the principal, the activation condition, or any eval-set tag",
+    "citation": "Lamerton & Roger 2026, arXiv:2605.06846v3, Table 1"
+  },
+  "concentration": {
+    "hypothesis": "H3a",
+    "n_modules": 196,
+    "total_frobenius": 74.28793911143799,
+    "top5_share": 0.07308805169204557,
+    "h3a_supported": false,
+    "participation_ratio": 132.1142324718467,
+    "per_module": [
+      {
+        "layer": 26,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 1.8795037538897388,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.02530025433967591
+      },
+      {
+        "layer": 2,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 1.017761565384245,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.01370022614111719
+      },
+      {
+        "layer": 1,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.9808847525111667,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.01320382237337018
+      },
+      {
+        "layer": 24,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7768342538522753,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010457071001619259
+      },
+      {
+        "layer": 26,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7745764082348889,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010426677836263042
+      },
+      {
+        "layer": 27,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7726904604042892,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.01040129083733485
+      },
+      {
+        "layer": 27,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7719429681173657,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010391228742520209
+      },
+      {
+        "layer": 26,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.766929216279376,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010323737950637174
+      },
+      {
+        "layer": 21,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7570477195499309,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.01019072178613405
+      },
+      {
+        "layer": 25,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7558160025205458,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.01017414147654251
+      },
+      {
+        "layer": 19,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7537212243605149,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.0101459433842938
+      },
+      {
+        "layer": 23,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.752405441781239,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010128231456960587
+      },
+      {
+        "layer": 23,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7504125890739288,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.0101014053970221
+      },
+      {
+        "layer": 22,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7501970668018411,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.01009850422255602
+      },
+      {
+        "layer": 19,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7500653635788387,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010096731347650918
+      },
+      {
+        "layer": 25,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.744492855463019,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.010021719061908808
+      },
+      {
+        "layer": 24,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7426549142367636,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009996978286377287
+      },
+      {
+        "layer": 18,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7422485727981923,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009991508469292152
+      },
+      {
+        "layer": 21,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7413469875756891,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009979372108621938
+      },
+      {
+        "layer": 17,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7396365446550349,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00995634760503343
+      },
+      {
+        "layer": 20,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7382517813800902,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009937707119222301
+      },
+      {
+        "layer": 22,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7373407418233529,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009925443492479733
+      },
+      {
+        "layer": 18,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7345340231928503,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009887661873228024
+      },
+      {
+        "layer": 20,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7298587557263352,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00982472746526845
+      },
+      {
+        "layer": 17,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7249149798823731,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009758178629709208
+      },
+      {
+        "layer": 16,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7226298559369148,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009727418267087888
+      },
+      {
+        "layer": 16,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7193005153563472,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009682601563052349
+      },
+      {
+        "layer": 15,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.7149477606810004,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009624008543412683
+      },
+      {
+        "layer": 15,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.7108077046051382,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009568278688400125
+      },
+      {
+        "layer": 13,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6985651723075593,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00940348030465153
+      },
+      {
+        "layer": 14,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.697601088065701,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009390502636225272
+      },
+      {
+        "layer": 13,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6967993066503424,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009379709748107111
+      },
+      {
+        "layer": 12,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6967718047982476,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009379339541954891
+      },
+      {
+        "layer": 14,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6947663337363315,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009352343624637709
+      },
+      {
+        "layer": 11,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6897038120195402,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009284196334817257
+      },
+      {
+        "layer": 7,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6859141613024639,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009233183333751343
+      },
+      {
+        "layer": 9,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6849562880567914,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00922028927238513
+      },
+      {
+        "layer": 12,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6834864504935487,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00920050359006814
+      },
+      {
+        "layer": 5,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6826790057174836,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00918963446668522
+      },
+      {
+        "layer": 8,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6822028696842501,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009183225135117693
+      },
+      {
+        "layer": 4,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6812730251585858,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009170708372143968
+      },
+      {
+        "layer": 11,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6810713087438012,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009167993040191065
+      },
+      {
+        "layer": 8,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6806912300456699,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009162876749408504
+      },
+      {
+        "layer": 6,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6802451159320476,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009156871546963017
+      },
+      {
+        "layer": 9,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6791301941780962,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009141863434377218
+      },
+      {
+        "layer": 7,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6783400585706593,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00913122731205524
+      },
+      {
+        "layer": 4,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6770416809377208,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009113749675059672
+      },
+      {
+        "layer": 6,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6759597454387453,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00909918559491535
+      },
+      {
+        "layer": 10,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6758630736102863,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009097884282352165
+      },
+      {
+        "layer": 10,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.674551534022987,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009080229470508051
+      },
+      {
+        "layer": 2,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6729192602818191,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009058257212821386
+      },
+      {
+        "layer": 1,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6725809690947279,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009053703429379046
+      },
+      {
+        "layer": 3,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6689506140728558,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.009004834729219976
+      },
+      {
+        "layer": 1,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6672064016912107,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00898135565034785
+      },
+      {
+        "layer": 2,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6632116813705375,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.008927582179600725
+      },
+      {
+        "layer": 5,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.661477837062256,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.008904242666767013
+      },
+      {
+        "layer": 3,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.648286526121348,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.008726672645324904
+      },
+      {
+        "layer": 0,
+        "module": "mlp.up_proj",
+        "rank": 16,
+        "frobenius": 0.6472055613356623,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.00871212163208352
+      },
+      {
+        "layer": 0,
+        "module": "mlp.gate_proj",
+        "rank": 16,
+        "frobenius": 0.6419411838883733,
+        "d_out": 8960,
+        "d_in": 1536,
+        "share": 0.008641257134962499
+      },
+      {
+        "layer": 22,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3450334603904181,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.00464454209549197
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3415180267739609,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004597220367920773
+      },
+      {
+        "layer": 25,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.341492293751926,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004596873972229323
+      },
+      {
+        "layer": 21,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.34101759220705097,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004590483950503684
+      },
+      {
+        "layer": 20,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3373373937957695,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004540944301735653
+      },
+      {
+        "layer": 19,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3367022304509752,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.0045323942820098195
+      },
+      {
+        "layer": 27,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.33491046402901486,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004508275071766653
+      },
+      {
+        "layer": 24,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3344890061440689,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004502601770151518
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.33389755146654604,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004494640118709881
+      },
+      {
+        "layer": 23,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.33263429966182956,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004477635315240753
+      },
+      {
+        "layer": 18,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3279167718030833,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004414132034423263
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3218944145569521,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004333064268670641
+      },
+      {
+        "layer": 16,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.32167630497833827,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004330128266121334
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.32144481281089166,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004327012118733003
+      },
+      {
+        "layer": 15,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.31961965060913833,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004302443363379386
+      },
+      {
+        "layer": 17,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.31897096454834145,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004293711312543734
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.31766355568984295,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004276112104998923
+      },
+      {
+        "layer": 12,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3153924122802953,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004245539936263151
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.3134388767299672,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004219243129894655
+      },
+      {
+        "layer": 14,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3132789083759571,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004217089774236611
+      },
+      {
+        "layer": 13,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3125854137040907,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004207754548624468
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.31143932342990704,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004192326872370528
+      },
+      {
+        "layer": 11,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3091246830105265,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004161169184499978
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.30742375180593723,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004138272719408415
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.30713914329558367,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004134441565741241
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3065710535518522,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004126794432834791
+      },
+      {
+        "layer": 9,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.30638459323134354,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004124284465231181
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3057195472936948,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004115332191879633
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.30471070519137156,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004101752031837639
+      },
+      {
+        "layer": 10,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3025886677216023,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.0040731869983321855
+      },
+      {
+        "layer": 4,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3024351179080749,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004071120043516048
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.3022283323920734,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004068336475705783
+      },
+      {
+        "layer": 8,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.3014525316774626,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004057893317315737
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.3011616864688959,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004053978210610053
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3010182375959118,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0040520472259212865
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.3005612299371333,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004045895383990487
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.29898124711130203,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004024627021390453
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.29865817304748277,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.004020278077703448
+      },
+      {
+        "layer": 6,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.29856110155282367,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004018971385179464
+      },
+      {
+        "layer": 3,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.29796933206582393,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.004011005496044863
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.29722100723816464,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.00400093219428673
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.2968984644802264,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003996590402580079
+      },
+      {
+        "layer": 7,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.29648406238564556,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.003991012079913742
+      },
+      {
+        "layer": 5,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.2963996394198975,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.003989875650948854
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2946943959453756,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.00396692113780825
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.29306684759018437,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.00394501248918159
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.29238269681042744,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003935803042965419
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.29024885919299087,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003907079166075584
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2902203645058483,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003906695595236449
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2900989868733501,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003905061714502241
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.29000612836150275,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0039038117335099282
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.28791171479325733,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003875618549080574
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.2871772789615065,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003865732208975633
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.28600159849040274,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038499062150772136
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.28536444079446666,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038413293491208127
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.28446806862376656,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.00382926316204628
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.28404960407910373,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003823630154189714
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.28387547625892695,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038212861960417355
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.28352601947582634,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038165821110007383
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2832496078754482,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038128612970478367
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.28275240844574384,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038061684282504065
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.28248344267370523,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0038025478436002503
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2818737927218548,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037943412631089553
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.28103420137840607,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003783039410432853
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2797023390983791,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003765111032072147
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.27930231689273394,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037597262790364607
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.27783758228300953,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037400092882672437
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2776034039647335,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037368569822391444
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2774411957097824,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.00373467347497146
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.2772974190496257,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003732738077895213
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.2762665582242714,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037188615208432274
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.27612922587340666,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003717012871486315
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2759381121005466,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037144402631309613
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.27573072116463093,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0037116485456813154
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.269725121695215,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.003630806358628488
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.2679511484309786,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0036069266644889685
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2678892735102024,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0036060937578083377
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2675502790454941,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0036015305074508365
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.2657576398101227,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0035773995481482457
+      },
+      {
+        "layer": 0,
+        "module": "mlp.down_proj",
+        "rank": 16,
+        "frobenius": 0.26118611467244635,
+        "d_out": 1536,
+        "d_in": 8960,
+        "share": 0.0035158616297141557
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.23783451947093764,
+        "d_out": 1536,
+        "d_in": 1536,
+        "share": 0.0032015226470903492
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.1401357750412271,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0018863866290732868
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.13802855997830382,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0018580211219919518
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1311341290809826,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0017652142548236621
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.13039799387721918,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0017553050392421238
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.1300175763591073,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.00175018418755796
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12948429664746622,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0017430056372034924
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12499633426059573,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016825925682645603
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.1243882820271472,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016744074948768547
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12425585993168353,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016726249431322838
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1240838872217421,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016703099952147832
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.12318559048317967,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016582179012718497
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.12271452479159384,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016518768222592902
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12236211993860573,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016471330528506454
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12226797122958855,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016458657043396583
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12202735908107917,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001642626791652251
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.12183971750181251,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001640100922964668
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12064388759763091,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016240036948212441
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.12051082094168494,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001622212466560808
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.12036927450384577,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.00162030709080894
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11973878913169107,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016118200419057672
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11916156100195582,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016040498959488394
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11906373169154268,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0016027330023644529
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1185562152544154,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001595901254934147
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.118186483541704,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001590924246322335
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1171676579207545,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015772096967852805
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11667879476547342,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015706290437058118
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1164715833183694,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001567839742379345
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11584210166730906,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001559366204701633
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11558773529263518,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015559421445147928
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.1147098646393708,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001544125008869833
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11460939340389757,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015427725519747439
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.1143336492712843,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015390607228957377
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1139411654876694,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015337774455789967
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11387014237981645,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001532821393914319
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11353408616101608,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015282976956825475
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11341282996637675,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001526665449639789
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11334253166307504,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015257191546672463
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.1124778739045666,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001514079879586383
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11196167434051704,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015071312474096955
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.11178817142672887,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015047957012111677
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11174420353558301,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015042038434793237
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.111449284461019,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0015002338979122297
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11090625336325376,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014929240828297215
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11077335228631861,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014911350834507539
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11040707263861405,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014862045435530846
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.11031427850721434,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014849554291946892
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.10944806791789885,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014732952512482246
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10942283503955437,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001472955588058664
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10771476956569853,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014499630876031917
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10757567060076723,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014480906576152949
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10681472337561605,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014378474440566351
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10642739241359356,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014326335295685583
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.10502987519641027,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.0014138213612152689
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10463855866227142,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001408553796401661
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.10414692622135506,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001401935865593554
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.08902283546542131,
+        "d_out": 256,
+        "d_in": 1536,
+        "share": 0.001198348433544236
+      }
+    ],
+    "by_layer": {
+      "0": 0.030373213087271474,
+      "1": 0.04148923090822439,
+      "2": 0.041938392886752676,
+      "3": 0.032208164793438326,
+      "4": 0.03281355804894085,
+      "5": 0.03293392472480467,
+      "6": 0.032726400115749524,
+      "7": 0.03295747478853376,
+      "8": 0.033240138050602344,
+      "9": 0.03303420865219698,
+      "10": 0.032906136699679865,
+      "11": 0.03322218562680787,
+      "12": 0.033869720385018384,
+      "13": 0.03373058307277139,
+      "14": 0.033834539212317875,
+      "15": 0.03455471331434841,
+      "16": 0.03459276256823109,
+      "17": 0.03519289696647169,
+      "18": 0.035235533323154926,
+      "19": 0.03576641513237304,
+      "20": 0.035533578587087215,
+      "21": 0.03657998889400077,
+      "22": 0.0360646599490796,
+      "23": 0.036120566650120055,
+      "24": 0.03669125121654417,
+      "25": 0.036606325787584625,
+      "26": 0.05828875394543906,
+      "27": 0.037494682612455
+    },
+    "by_module_type": {
+      "mlp.up_proj": 0.2675101663159195,
+      "mlp.gate_proj": 0.2668564950435918,
+      "mlp.down_proj": 0.15862323309958085,
+      "self_attn.o_proj": 0.11149629593851137,
+      "self_attn.q_proj": 0.10757064986316824,
+      "self_attn.v_proj": 0.044765435373078234,
+      "self_attn.k_proj": 0.043177724366150035
+    },
+    "top_layers": [
+      26,
+      2,
+      1,
+      27,
+      24,
+      25,
+      21,
+      23
+    ]
+  },
+  "spectra": {
+    "hypothesis": "H3a-spectra",
+    "modules": [
+      {
+        "layer": 26,
+        "module": "mlp.down_proj",
+        "frobenius": 1.8795037538897388,
+        "singular_values": [
+          1.8595106601715088,
+          0.1994120180606842,
+          0.09421899169683456,
+          0.08990204334259033,
+          0.0608040988445282,
+          0.055669523775577545,
+          0.04974548891186714,
+          0.0456131212413311,
+          0.04129816219210625,
+          0.03821980953216553,
+          0.03364330530166626,
+          0.027839796617627144,
+          0.025325996801257133,
+          0.021347183734178543,
+          0.017289528623223305,
+          0.014456420205533504
+        ],
+        "effective_rank": 1.1487183107148113,
+        "top1_energy_share": 0.978838309852042,
+        "n_dirs_for_90pct": 1
+      },
+      {
+        "layer": 2,
+        "module": "mlp.down_proj",
+        "frobenius": 1.017761565384245,
+        "singular_values": [
+          1.0059607028961182,
+          0.08851547539234161,
+          0.07219198346138,
+          0.05845554172992706,
+          0.04200000315904617,
+          0.035945117473602295,
+          0.034540701657533646,
+          0.02890976332128048,
+          0.024452166631817818,
+          0.02199964039027691,
+          0.01907198876142502,
+          0.016857987269759178,
+          0.015637153759598732,
+          0.01335518341511488,
+          0.010416935198009014,
+          0.008487916551530361
+        ],
+        "effective_rank": 1.1687881993996965,
+        "top1_energy_share": 0.9769444124486468,
+        "n_dirs_for_90pct": 1
+      },
+      {
+        "layer": 1,
+        "module": "mlp.down_proj",
+        "frobenius": 0.9808847525111667,
+        "singular_values": [
+          0.9684014320373535,
+          0.10702850669622421,
+          0.08287061005830765,
+          0.04224390909075737,
+          0.03529394790530205,
+          0.029438570141792297,
+          0.025341114029288292,
+          0.018922118470072746,
+          0.017969178035855293,
+          0.01585710421204567,
+          0.012083958834409714,
+          0.01096612773835659,
+          0.00913511123508215,
+          0.00881324801594019,
+          0.00782040599733591,
+          0.007135408464819193
+        ],
+        "effective_rank": 1.1704806489130508,
+        "top1_energy_share": 0.9747088346602387,
+        "n_dirs_for_90pct": 1
+      },
+      {
+        "layer": 24,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7768342538522753,
+        "singular_values": [
+          0.4099908173084259,
+          0.3184453547000885,
+          0.25637564063072205,
+          0.20989446341991425,
+          0.20105378329753876,
+          0.17695750296115875,
+          0.15706481039524078,
+          0.1442946493625641,
+          0.1406632512807846,
+          0.1276746541261673,
+          0.1255117952823639,
+          0.12029977142810822,
+          0.11281593143939972,
+          0.10946637392044067,
+          0.09294795244932175,
+          0.08543232083320618
+        ],
+        "effective_rank": 10.354122066746275,
+        "top1_energy_share": 0.27854252150746633,
+        "n_dirs_for_90pct": 11
+      },
+      {
+        "layer": 26,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7745764082348889,
+        "singular_values": [
+          0.38504937291145325,
+          0.2987181842327118,
+          0.26113125681877136,
+          0.23120462894439697,
+          0.1974463313817978,
+          0.18755635619163513,
+          0.15970391035079956,
+          0.1574142575263977,
+          0.14996324479579926,
+          0.1424074023962021,
+          0.130100816488266,
+          0.12040632218122482,
+          0.11322608590126038,
+          0.10653581470251083,
+          0.10116532444953918,
+          0.08822545409202576
+        ],
+        "effective_rank": 11.16210525974609,
+        "top1_energy_share": 0.24711794752533758,
+        "n_dirs_for_90pct": 11
+      },
+      {
+        "layer": 27,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7726904604042892,
+        "singular_values": [
+          0.47864222526550293,
+          0.32557034492492676,
+          0.21354205906391144,
+          0.18792110681533813,
+          0.17776991426944733,
+          0.15391883254051208,
+          0.148697167634964,
+          0.13536415994167328,
+          0.12453126162290573,
+          0.1173933744430542,
+          0.1142994686961174,
+          0.10337857902050018,
+          0.09529487788677216,
+          0.09052222967147827,
+          0.08860695362091064,
+          0.08453872054815292
+        ],
+        "effective_rank": 8.336210777645118,
+        "top1_energy_share": 0.3837168896227888,
+        "n_dirs_for_90pct": 10
+      },
+      {
+        "layer": 27,
+        "module": "mlp.gate_proj",
+        "frobenius": 0.7719429681173657,
+        "singular_values": [
+          0.41478753089904785,
+          0.35375186800956726,
+          0.23845669627189636,
+          0.21907414495944977,
+          0.18177881836891174,
+          0.1654762178659439,
+          0.15511348843574524,
+          0.13486747443675995,
+          0.12981443107128143,
+          0.12222806364297867,
+          0.114586740732193,
+          0.11035413295030594,
+          0.10689419507980347,
+          0.09577656537294388,
+          0.08753278106451035,
+          0.07625812292098999
+        ],
+        "effective_rank": 9.483451543918758,
+        "top1_energy_share": 0.2887227114631622,
+        "n_dirs_for_90pct": 10
+      },
+      {
+        "layer": 26,
+        "module": "mlp.gate_proj",
+        "frobenius": 0.766929216279376,
+        "singular_values": [
+          0.4115757942199707,
+          0.30189844965934753,
+          0.24503064155578613,
+          0.22886110842227936,
+          0.17713811993598938,
+          0.17137910425662994,
+          0.16000612080097198,
+          0.14252406358718872,
+          0.13707202672958374,
+          0.13119244575500488,
+          0.1261412799358368,
+          0.12417382001876831,
+          0.1128430888056755,
+          0.10557084530591965,
+          0.09593086689710617,
+          0.0902743712067604
+        ],
+        "effective_rank": 10.41619749235676,
+        "top1_energy_share": 0.2879977413575471,
+        "n_dirs_for_90pct": 11
+      },
+      {
+        "layer": 21,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7570477195499309,
+        "singular_values": [
+          0.488599568605423,
+          0.24320444464683533,
+          0.20900452136993408,
+          0.20286758244037628,
+          0.1701635718345642,
+          0.164051353931427,
+          0.15806874632835388,
+          0.13917578756809235,
+          0.1345294862985611,
+          0.129568949341774,
+          0.11066338419914246,
+          0.10210096836090088,
+          0.10069858282804489,
+          0.09142312407493591,
+          0.08542438596487045,
+          0.0826321542263031
+        ],
+        "effective_rank": 8.490757785806206,
+        "top1_energy_share": 0.4165427917500252,
+        "n_dirs_for_90pct": 10
+      },
+      {
+        "layer": 25,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7558160025205458,
+        "singular_values": [
+          0.41067811846733093,
+          0.27170199155807495,
+          0.2453758269548416,
+          0.20505595207214355,
+          0.18894138932228088,
+          0.17267031967639923,
+          0.16073006391525269,
+          0.1516454517841339,
+          0.1448553502559662,
+          0.13352614641189575,
+          0.13150280714035034,
+          0.11877092719078064,
+          0.11060985922813416,
+          0.10386630892753601,
+          0.09946776181459427,
+          0.09512820094823837
+        ],
+        "effective_rank": 10.703281711450991,
+        "top1_energy_share": 0.29523708436663554,
+        "n_dirs_for_90pct": 11
+      },
+      {
+        "layer": 19,
+        "module": "mlp.up_proj",
+        "frobenius": 0.7537212243605149,
+        "singular_values": [
+          0.40388065576553345,
+          0.2669290602207184,
+          0.25146758556365967,
+          0.22098132967948914,
+          0.20151245594024658,
+          0.17302100360393524,
+          0.16040170192718506,
+          0.1452503502368927,
+          0.1425706148147583,
+          0.1305461823940277,
+          0.12102621048688889,
+          0.11329688131809235,
+          0.10953909158706665,
+          0.10212481766939163,
+          0.1017407551407814,
+          0.08157625794410706
+        ],
+        "effective_rank": 10.637239451121692,
+        "top1_energy_share": 0.2871339980806426,
+        "n_dirs_for_90pct": 11
+      },
+      {
+        "layer": 23,
+        "module": "mlp.gate_proj",
+        "frobenius": 0.752405441781239,
+        "singular_values": [
+          0.37289002537727356,
+          0.3248303234577179,
+          0.23569290339946747,
+          0.19217438995838165,
+          0.17683131992816925,
+          0.17203745245933533,
+          0.15822471678256989,
+          0.15072661638259888,
+          0.14504684507846832,
+          0.13614915311336517,
+          0.12836872041225433,
+          0.12747377157211304,
+          0.11961264163255692,
+          0.11500392854213715,
+          0.10635385662317276,
+          0.09645102173089981
+        ],
+        "effective_rank": 11.141056849491669,
+        "top1_energy_share": 0.24561658836088124,
+        "n_dirs_for_90pct": 12
+      }
+    ]
+  },
+  "directions": {
+    "exported": [
+      {
+        "file": "L26_mlp-down_proj.npz",
+        "layer": 26,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "singular_values": [
+          1.8595106601715088,
+          0.1994120180606842,
+          0.09421899169683456,
+          0.08990204334259033
+        ]
+      },
+      {
+        "file": "L02_mlp-down_proj.npz",
+        "layer": 2,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "singular_values": [
+          1.0059607028961182,
+          0.08851547539234161,
+          0.07219198346138,
+          0.05845554172992706
+        ]
+      },
+      {
+        "file": "L01_mlp-down_proj.npz",
+        "layer": 1,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "singular_values": [
+          0.9684014320373535,
+          0.10702850669622421,
+          0.08287061005830765,
+          0.04224390909075737
+        ]
+      },
+      {
+        "file": "L24_mlp-up_proj.npz",
+        "layer": 24,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "singular_values": [
+          0.4099908173084259,
+          0.3184453547000885,
+          0.25637564063072205,
+          0.20989446341991425
+        ]
+      },
+      {
+        "file": "L26_mlp-up_proj.npz",
+        "layer": 26,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "singular_values": [
+          0.38504937291145325,
+          0.2987181842327118,
+          0.26113125681877136,
+          0.23120462894439697
+        ]
+      },
+      {
+        "file": "L27_mlp-up_proj.npz",
+        "layer": 27,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "singular_values": [
+          0.47864222526550293,
+          0.32557034492492676,
+          0.21354205906391144,
+          0.18792110681533813
+        ]
+      },
+      {
+        "file": "L27_mlp-gate_proj.npz",
+        "layer": 27,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "singular_values": [
+          0.41478753089904785,
+          0.35375186800956726,
+          0.23845669627189636,
+          0.21907414495944977
+        ]
+      },
+      {
+        "file": "L26_mlp-gate_proj.npz",
+        "layer": 26,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "singular_values": [
+          0.4115757942199707,
+          0.30189844965934753,
+          0.24503064155578613,
+          0.22886110842227936
+        ]
+      }
+    ],
+    "dir": "results/_smoketest\\proxy_r16\\directions"
+  },
+  "comparison": {
+    "against": "bharati2324/Qwen2.5-1.5B-Instruct-Code-LoRA-r16v2",
+    "n_shared_modules": 196,
+    "mean_subspace_overlap": 0.0041779463615373,
+    "interpretation": "high overlap (>0.5) => shared covert-advocacy mechanism, expect cross-principal probe transfer; low overlap (<0.2) => principal-specific weight-space encoding, expect transfer to fail",
+    "per_module": [
+      {
+        "layer": 26,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.17759250104427338,
+          0.06298018991947174,
+          0.03402030095458031,
+          0.023584047332406044
+        ],
+        "mean_sq_overlap": 0.009304797276854515,
+        "frobenius_a": 1.8795037538897388,
+        "frobenius_b": 9.548756016103779
+      },
+      {
+        "layer": 2,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09738344699144363,
+          0.08591937273740768,
+          0.03595803305506706,
+          0.0039261020720005035
+        ],
+        "mean_sq_overlap": 0.004543516784906387,
+        "frobenius_a": 1.017761565384245,
+        "frobenius_b": 6.706300067981348
+      },
+      {
+        "layer": 1,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0946539044380188,
+          0.05243713781237602,
+          0.014204482547938824,
+          0.0019123986130580306
+        ],
+        "mean_sq_overlap": 0.002978609874844551,
+        "frobenius_a": 0.9808847525111667,
+        "frobenius_b": 9.479407227087204
+      },
+      {
+        "layer": 24,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11158943176269531,
+          0.06812822073698044,
+          0.03430147469043732,
+          0.002458518138155341
+        ],
+        "mean_sq_overlap": 0.004569072742015123,
+        "frobenius_a": 0.7768342538522753,
+        "frobenius_b": 2.381600193495738
+      },
+      {
+        "layer": 26,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12707923352718353,
+          0.035230349749326706,
+          0.027573855593800545,
+          0.012102717533707619
+        ],
+        "mean_sq_overlap": 0.004574275575578213,
+        "frobenius_a": 0.7745764082348889,
+        "frobenius_b": 2.5632062729528964
+      },
+      {
+        "layer": 27,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1007605716586113,
+          0.08611080795526505,
+          0.032571982592344284,
+          0.002287998329848051
+        ],
+        "mean_sq_overlap": 0.004658483434468508,
+        "frobenius_a": 0.7726904604042892,
+        "frobenius_b": 2.3006309887663794
+      },
+      {
+        "layer": 27,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1046137586236,
+          0.07653000205755234,
+          0.021357448771595955,
+          0.0018126268405467272
+        ],
+        "mean_sq_overlap": 0.004315076861530542,
+        "frobenius_a": 0.7719429681173657,
+        "frobenius_b": 2.459631776310556
+      },
+      {
+        "layer": 26,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15834051370620728,
+          0.09342947602272034,
+          0.041262853890657425,
+          0.001246387604624033
+        ],
+        "mean_sq_overlap": 0.008876239880919456,
+        "frobenius_a": 0.766929216279376,
+        "frobenius_b": 2.4893179609739766
+      },
+      {
+        "layer": 21,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1312134712934494,
+          0.08040455728769302,
+          0.052604835480451584,
+          0.014532181434333324
+        ],
+        "mean_sq_overlap": 0.0066650803200900555,
+        "frobenius_a": 0.7570477195499309,
+        "frobenius_b": 2.3002434767514606
+      },
+      {
+        "layer": 25,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15412434935569763,
+          0.07098883390426636,
+          0.026965612545609474,
+          0.0032374474685639143
+        ],
+        "mean_sq_overlap": 0.007382838986814022,
+        "frobenius_a": 0.7558160025205458,
+        "frobenius_b": 2.4279460983452097
+      },
+      {
+        "layer": 19,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15084564685821533,
+          0.056466855108737946,
+          0.021487439051270485,
+          0.0018934820545837283
+        ],
+        "mean_sq_overlap": 0.006602052599191666,
+        "frobenius_a": 0.7537212243605149,
+        "frobenius_b": 2.2822233240041743
+      },
+      {
+        "layer": 23,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1473507583141327,
+          0.11539400368928909,
+          0.06429866701364517,
+          0.022541431710124016
+        ],
+        "mean_sq_overlap": 0.009917614050209522,
+        "frobenius_a": 0.752405441781239,
+        "frobenius_b": 2.3463215262922583
+      },
+      {
+        "layer": 23,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13159048557281494,
+          0.08603327721357346,
+          0.03828803077340126,
+          0.0027441526763141155
+        ],
+        "mean_sq_overlap": 0.006547821220010519,
+        "frobenius_a": 0.7504125890739288,
+        "frobenius_b": 2.387072647753536
+      },
+      {
+        "layer": 22,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10877019166946411,
+          0.06196174398064613,
+          0.03262463957071304,
+          0.00686073349788785
+        ],
+        "mean_sq_overlap": 0.004195412155240774,
+        "frobenius_a": 0.7501970668018411,
+        "frobenius_b": 2.2894788760468496
+      },
+      {
+        "layer": 19,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13954395055770874,
+          0.0777277946472168,
+          0.02375396154820919,
+          0.014685290865600109
+        ],
+        "mean_sq_overlap": 0.0065735080279409885,
+        "frobenius_a": 0.7500653635788387,
+        "frobenius_b": 2.2890363568059686
+      },
+      {
+        "layer": 25,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13770891726016998,
+          0.09004988521337509,
+          0.06256568431854248,
+          0.008744154125452042
+        ],
+        "mean_sq_overlap": 0.007765912916511297,
+        "frobenius_a": 0.744492855463019,
+        "frobenius_b": 2.4530651303900486
+      },
+      {
+        "layer": 24,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15185631811618805,
+          0.0803595781326294,
+          0.04213549941778183,
+          0.0015470990911126137
+        ],
+        "mean_sq_overlap": 0.007823949679732323,
+        "frobenius_a": 0.7426549142367636,
+        "frobenius_b": 2.37331501266109
+      },
+      {
+        "layer": 18,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0881633535027504,
+          0.07911280542612076,
+          0.02239135652780533,
+          0.008276590146124363
+        ],
+        "mean_sq_overlap": 0.003650371916592121,
+        "frobenius_a": 0.7422485727981923,
+        "frobenius_b": 2.2940933095351643
+      },
+      {
+        "layer": 21,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15625621378421783,
+          0.07075857371091843,
+          0.04949425533413887,
+          0.00985896959900856
+        ],
+        "mean_sq_overlap": 0.007992415688931942,
+        "frobenius_a": 0.7413469875756891,
+        "frobenius_b": 2.343534129056006
+      },
+      {
+        "layer": 17,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10356669872999191,
+          0.09479474276304245,
+          0.041133906692266464,
+          0.002433650428429246
+        ],
+        "mean_sq_overlap": 0.005352506414055824,
+        "frobenius_a": 0.7396365446550349,
+        "frobenius_b": 2.3419588492709402
+      },
+      {
+        "layer": 20,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10384473204612732,
+          0.08878336101770401,
+          0.0619562603533268,
+          0.011274361982941628
+        ],
+        "mean_sq_overlap": 0.005657975561916828,
+        "frobenius_a": 0.7382517813800902,
+        "frobenius_b": 2.299089259740772
+      },
+      {
+        "layer": 22,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12733793258666992,
+          0.061588138341903687,
+          0.04517922177910805,
+          0.01973997987806797
+        ],
+        "mean_sq_overlap": 0.00560971861705184,
+        "frobenius_a": 0.7373407418233529,
+        "frobenius_b": 2.358476278153812
+      },
+      {
+        "layer": 18,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09488123655319214,
+          0.08260150998830795,
+          0.05210718885064125,
+          0.004984389990568161
+        ],
+        "mean_sq_overlap": 0.004641365259885788,
+        "frobenius_a": 0.7345340231928503,
+        "frobenius_b": 2.267623546056721
+      },
+      {
+        "layer": 20,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.14575470983982086,
+          0.09208635985851288,
+          0.05925934761762619,
+          0.020016483962535858
+        ],
+        "mean_sq_overlap": 0.008409165777266026,
+        "frobenius_a": 0.7298587557263352,
+        "frobenius_b": 2.310662544818393
+      },
+      {
+        "layer": 17,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07984960079193115,
+          0.04679335281252861,
+          0.025721708312630653,
+          0.004252664279192686
+        ],
+        "mean_sq_overlap": 0.002311317017301917,
+        "frobenius_a": 0.7249149798823731,
+        "frobenius_b": 2.326217894335148
+      },
+      {
+        "layer": 16,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09913602471351624,
+          0.06286516785621643,
+          0.036719705909490585,
+          0.006157285999506712
+        ],
+        "mean_sq_overlap": 0.00379155739210546,
+        "frobenius_a": 0.7226298559369148,
+        "frobenius_b": 2.2581798426231776
+      },
+      {
+        "layer": 16,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10685837268829346,
+          0.06571032851934433,
+          0.02652977593243122,
+          0.01664998009800911
+        ],
+        "mean_sq_overlap": 0.0041794017888605595,
+        "frobenius_a": 0.7193005153563472,
+        "frobenius_b": 2.2530380507370147
+      },
+      {
+        "layer": 15,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.14595802128314972,
+          0.08019375056028366,
+          0.05816644802689552,
+          0.00280088116414845
+        ],
+        "mean_sq_overlap": 0.007781490683555603,
+        "frobenius_a": 0.7149477606810004,
+        "frobenius_b": 2.247552494204058
+      },
+      {
+        "layer": 15,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09248575568199158,
+          0.058807723224163055,
+          0.044089626520872116,
+          0.015431993640959263
+        ],
+        "mean_sq_overlap": 0.0035485010594129562,
+        "frobenius_a": 0.7108077046051382,
+        "frobenius_b": 2.2109211088725447
+      },
+      {
+        "layer": 13,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10607222467660904,
+          0.0871502235531807,
+          0.051793769001960754,
+          0.006378227844834328
+        ],
+        "mean_sq_overlap": 0.005392438732087612,
+        "frobenius_a": 0.6985651723075593,
+        "frobenius_b": 2.2904107091154335
+      },
+      {
+        "layer": 14,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10653683543205261,
+          0.061287496238946915,
+          0.046339668333530426,
+          0.0014877528883516788
+        ],
+        "mean_sq_overlap": 0.004313957877457142,
+        "frobenius_a": 0.697601088065701,
+        "frobenius_b": 2.3137831349939586
+      },
+      {
+        "layer": 13,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11037205904722214,
+          0.07633298635482788,
+          0.02360645867884159,
+          0.006498259957879782
+        ],
+        "mean_sq_overlap": 0.004652052186429501,
+        "frobenius_a": 0.6967993066503424,
+        "frobenius_b": 2.309217029996526
+      },
+      {
+        "layer": 12,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08477691560983658,
+          0.04583476483821869,
+          0.02627892792224884,
+          0.014947296120226383
+        ],
+        "mean_sq_overlap": 0.0025504888035357,
+        "frobenius_a": 0.6967718047982476,
+        "frobenius_b": 2.330956190479
+      },
+      {
+        "layer": 14,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09817181527614594,
+          0.04284609854221344,
+          0.025701377540826797,
+          0.004970078822225332
+        ],
+        "mean_sq_overlap": 0.0030396890360862017,
+        "frobenius_a": 0.6947663337363315,
+        "frobenius_b": 2.2559565007162217
+      },
+      {
+        "layer": 11,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08127772808074951,
+          0.04194604605436325,
+          0.0309192705899477,
+          0.009516141377389431
+        ],
+        "mean_sq_overlap": 0.0023530246689915657,
+        "frobenius_a": 0.6897038120195402,
+        "frobenius_b": 2.1718886121144925
+      },
+      {
+        "layer": 7,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.049075476825237274,
+          0.03729879483580589,
+          0.029339810833334923,
+          0.010781344957649708
+        ],
+        "mean_sq_overlap": 0.0011941661359742284,
+        "frobenius_a": 0.6859141613024639,
+        "frobenius_b": 2.2899855487484113
+      },
+      {
+        "layer": 9,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08708424121141434,
+          0.07151477038860321,
+          0.028071552515029907,
+          0.0014737085439264774
+        ],
+        "mean_sq_overlap": 0.003372053150087595,
+        "frobenius_a": 0.6849562880567914,
+        "frobenius_b": 2.2114269132773376
+      },
+      {
+        "layer": 12,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10254719853401184,
+          0.05959339439868927,
+          0.029583942145109177,
+          0.002421093638986349
+        ],
+        "mean_sq_overlap": 0.003737092949450016,
+        "frobenius_a": 0.6834864504935487,
+        "frobenius_b": 2.2651537174837753
+      },
+      {
+        "layer": 5,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10101509839296341,
+          0.058049678802490234,
+          0.037970397621393204,
+          0.02933238446712494
+        ],
+        "mean_sq_overlap": 0.003968989010900259,
+        "frobenius_a": 0.6826790057174836,
+        "frobenius_b": 2.491589130568852
+      },
+      {
+        "layer": 8,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11048131436109543,
+          0.04253217205405235,
+          0.0315154530107975,
+          0.005828709341585636
+        ],
+        "mean_sq_overlap": 0.0037605760153383017,
+        "frobenius_a": 0.6822028696842501,
+        "frobenius_b": 2.2889090737231603
+      },
+      {
+        "layer": 4,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10602044314146042,
+          0.05485766753554344,
+          0.02231178618967533,
+          0.006179431919008493
+        ],
+        "mean_sq_overlap": 0.003696424886584282,
+        "frobenius_a": 0.6812730251585858,
+        "frobenius_b": 2.215359528513639
+      },
+      {
+        "layer": 11,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09292105585336685,
+          0.06269326061010361,
+          0.027576422318816185,
+          0.021137937903404236
+        ],
+        "mean_sq_overlap": 0.0034430096857249737,
+        "frobenius_a": 0.6810713087438012,
+        "frobenius_b": 2.3038945272463716
+      },
+      {
+        "layer": 8,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11286533623933792,
+          0.06852240115404129,
+          0.04554299637675285,
+          0.019011041149497032
+        ],
+        "mean_sq_overlap": 0.0049673723988235,
+        "frobenius_a": 0.6806912300456699,
+        "frobenius_b": 2.264162946727712
+      },
+      {
+        "layer": 6,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09374390542507172,
+          0.0818297490477562,
+          0.059517279267311096,
+          0.012138067744672298
+        ],
+        "mean_sq_overlap": 0.0047934167087078094,
+        "frobenius_a": 0.6802451159320476,
+        "frobenius_b": 2.300182426515659
+      },
+      {
+        "layer": 9,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09833423793315887,
+          0.08639213442802429,
+          0.022881178185343742,
+          0.014067588374018669
+        ],
+        "mean_sq_overlap": 0.004463667050004005,
+        "frobenius_a": 0.6791301941780962,
+        "frobenius_b": 2.368719329232814
+      },
+      {
+        "layer": 7,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08592352271080017,
+          0.06959572434425354,
+          0.02888052724301815,
+          0.006582845933735371
+        ],
+        "mean_sq_overlap": 0.003275958588346839,
+        "frobenius_a": 0.6783400585706593,
+        "frobenius_b": 2.2402037241800303
+      },
+      {
+        "layer": 4,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.058904536068439484,
+          0.036204736679792404,
+          0.02550327405333519,
+          0.00499183963984251
+        ],
+        "mean_sq_overlap": 0.0013639656826853752,
+        "frobenius_a": 0.6770416809377208,
+        "frobenius_b": 2.3569016787350034
+      },
+      {
+        "layer": 6,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08514498174190521,
+          0.058633603155612946,
+          0.0333048440515995,
+          0.025757476687431335
+        ],
+        "mean_sq_overlap": 0.0031150567810982466,
+        "frobenius_a": 0.6759597454387453,
+        "frobenius_b": 2.167430364068742
+      },
+      {
+        "layer": 10,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0660109892487526,
+          0.04859260842204094,
+          0.043185219168663025,
+          0.002821586560457945
+        ],
+        "mean_sq_overlap": 0.0021479041315615177,
+        "frobenius_a": 0.6758630736102863,
+        "frobenius_b": 2.3109055254454214
+      },
+      {
+        "layer": 10,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07497116923332214,
+          0.05644598603248596,
+          0.013964967802166939,
+          0.00953209400177002
+        ],
+        "mean_sq_overlap": 0.0022731765639036894,
+        "frobenius_a": 0.674551534022987,
+        "frobenius_b": 2.1997425275472584
+      },
+      {
+        "layer": 2,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.05881032347679138,
+          0.03797030821442604,
+          0.010475270450115204,
+          0.0015289075672626495
+        ],
+        "mean_sq_overlap": 0.0012531167594715953,
+        "frobenius_a": 0.6729192602818191,
+        "frobenius_b": 2.353680743364956
+      },
+      {
+        "layer": 1,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06235111877322197,
+          0.04435664787888527,
+          0.025542523711919785,
+          0.00598125671967864
+        ],
+        "mean_sq_overlap": 0.001635842490941286,
+        "frobenius_a": 0.6725809690947279,
+        "frobenius_b": 2.218254571324194
+      },
+      {
+        "layer": 3,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11779264360666275,
+          0.08681145310401917,
+          0.02566920593380928,
+          0.008176443167030811
+        ],
+        "mean_sq_overlap": 0.0055342745035886765,
+        "frobenius_a": 0.6689506140728558,
+        "frobenius_b": 2.186721227166782
+      },
+      {
+        "layer": 1,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07585563510656357,
+          0.052540674805641174,
+          0.031217023730278015,
+          0.013349038548767567
+        ],
+        "mean_sq_overlap": 0.0024168246891349554,
+        "frobenius_a": 0.6672064016912107,
+        "frobenius_b": 2.311117841739309
+      },
+      {
+        "layer": 2,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10893991589546204,
+          0.04497789219021797,
+          0.04208185151219368,
+          0.024917811155319214
+        ],
+        "mean_sq_overlap": 0.004070674069225788,
+        "frobenius_a": 0.6632116813705375,
+        "frobenius_b": 2.051564907935444
+      },
+      {
+        "layer": 5,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10787882655858994,
+          0.060963377356529236,
+          0.04558775946497917,
+          0.005672090221196413
+        ],
+        "mean_sq_overlap": 0.004366198088973761,
+        "frobenius_a": 0.661477837062256,
+        "frobenius_b": 2.1440389099291175
+      },
+      {
+        "layer": 3,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0999612882733345,
+          0.0646962895989418,
+          0.03376086428761482,
+          0.007974714040756226
+        ],
+        "mean_sq_overlap": 0.003845315659418702,
+        "frobenius_a": 0.648286526121348,
+        "frobenius_b": 2.1712017525257523
+      },
+      {
+        "layer": 0,
+        "module": "mlp.up_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07113318890333176,
+          0.04265547916293144,
+          0.017173372209072113,
+          0.01457363273948431
+        ],
+        "mean_sq_overlap": 0.0018466840265318751,
+        "frobenius_a": 0.6472055613356623,
+        "frobenius_b": 2.3348532108997717
+      },
+      {
+        "layer": 0,
+        "module": "mlp.gate_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06337492167949677,
+          0.04541689157485962,
+          0.0196982529014349,
+          0.011434948071837425
+        ],
+        "mean_sq_overlap": 0.0016494635492563248,
+        "frobenius_a": 0.6419411838883733,
+        "frobenius_b": 2.3527861291626313
+      },
+      {
+        "layer": 22,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15265175700187683,
+          0.0861716940999031,
+          0.04076863080263138,
+          0.003992733079940081
+        ],
+        "mean_sq_overlap": 0.008101535961031914,
+        "frobenius_a": 0.3450334603904181,
+        "frobenius_b": 1.286349777192361
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13806967437267303,
+          0.07193714380264282,
+          0.05622290074825287,
+          0.011333531700074673
+        ],
+        "mean_sq_overlap": 0.006881913170218468,
+        "frobenius_a": 0.3415180267739609,
+        "frobenius_b": 0.8857160772577968
+      },
+      {
+        "layer": 25,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.16656222939491272,
+          0.04768151417374611,
+          0.015092485584318638,
+          0.0020964606665074825
+        ],
+        "mean_sq_overlap": 0.007562170270830393,
+        "frobenius_a": 0.341492293751926,
+        "frobenius_b": 1.311515484272353
+      },
+      {
+        "layer": 21,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.16294245421886444,
+          0.06829141825437546,
+          0.059759367257356644,
+          0.008562983945012093
+        ],
+        "mean_sq_overlap": 0.008714617229998112,
+        "frobenius_a": 0.34101759220705097,
+        "frobenius_b": 1.3462790708670558
+      },
+      {
+        "layer": 20,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15563100576400757,
+          0.07660626620054245,
+          0.03316730260848999,
+          0.015431046485900879
+        ],
+        "mean_sq_overlap": 0.007856929674744606,
+        "frobenius_a": 0.3373373937957695,
+        "frobenius_b": 1.211131418759781
+      },
+      {
+        "layer": 19,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1690005511045456,
+          0.08665803074836731,
+          0.02642059698700905,
+          0.002899209037423134
+        ],
+        "mean_sq_overlap": 0.009194313548505306,
+        "frobenius_a": 0.3367022304509752,
+        "frobenius_b": 1.21027326516821
+      },
+      {
+        "layer": 27,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.14943675696849823,
+          0.07292215526103973,
+          0.024028418585658073,
+          0.005895131267607212
+        ],
+        "mean_sq_overlap": 0.007065275683999062,
+        "frobenius_a": 0.33491046402901486,
+        "frobenius_b": 0.9739235584490327
+      },
+      {
+        "layer": 24,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1562856137752533,
+          0.07830696552991867,
+          0.0447407066822052,
+          0.023010428994894028
+        ],
+        "mean_sq_overlap": 0.008272095583379269,
+        "frobenius_a": 0.3344890061440689,
+        "frobenius_b": 1.2992986070746284
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15246278047561646,
+          0.06290968507528305,
+          0.029811358079314232,
+          0.007854449562728405
+        ],
+        "mean_sq_overlap": 0.007038234267383814,
+        "frobenius_a": 0.33389755146654604,
+        "frobenius_b": 0.901402862272676
+      },
+      {
+        "layer": 23,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11422894895076752,
+          0.1028568223118782,
+          0.06379914283752441,
+          0.023498328402638435
+        ],
+        "mean_sq_overlap": 0.007062570191919804,
+        "frobenius_a": 0.33263429966182956,
+        "frobenius_b": 1.282831797297832
+      },
+      {
+        "layer": 18,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09499098360538483,
+          0.07687334716320038,
+          0.0559113472700119,
+          0.022810762748122215
+        ],
+        "mean_sq_overlap": 0.004644802305847406,
+        "frobenius_a": 0.3279167718030833,
+        "frobenius_b": 1.2114425098351222
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11724966764450073,
+          0.07997531443834305,
+          0.04214286804199219,
+          0.02460562437772751
+        ],
+        "mean_sq_overlap": 0.005631248001009226,
+        "frobenius_a": 0.3218944145569521,
+        "frobenius_b": 0.9552944383046221
+      },
+      {
+        "layer": 16,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09307684004306793,
+          0.06340906769037247,
+          0.031548261642456055,
+          0.013424564152956009
+        ],
+        "mean_sq_overlap": 0.0034648801665753126,
+        "frobenius_a": 0.32167630497833827,
+        "frobenius_b": 1.242882540127003
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10624193400144577,
+          0.06626853346824646,
+          0.03545062616467476,
+          0.0033683241344988346
+        ],
+        "mean_sq_overlap": 0.004236740060150623,
+        "frobenius_a": 0.32144481281089166,
+        "frobenius_b": 0.9768852310962836
+      },
+      {
+        "layer": 15,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11295652389526367,
+          0.06573246419429779,
+          0.04152951389551163,
+          0.03395532816648483
+        ],
+        "mean_sq_overlap": 0.004989399574697018,
+        "frobenius_a": 0.31961965060913833,
+        "frobenius_b": 1.3255514904541486
+      },
+      {
+        "layer": 17,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08257219940423965,
+          0.05730238929390907,
+          0.0338112972676754,
+          0.016595153138041496
+        ],
+        "mean_sq_overlap": 0.0028800838626921177,
+        "frobenius_a": 0.31897096454834145,
+        "frobenius_b": 1.1499812850258604
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13975244760513306,
+          0.08075635135173798,
+          0.020052408799529076,
+          0.010408361442387104
+        ],
+        "mean_sq_overlap": 0.0066406917758286,
+        "frobenius_a": 0.31766355568984295,
+        "frobenius_b": 0.960911199938621
+      },
+      {
+        "layer": 12,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11904402822256088,
+          0.05665953457355499,
+          0.04336578771471977,
+          0.013172377832233906
+        ],
+        "mean_sq_overlap": 0.004858971573412418,
+        "frobenius_a": 0.3153924122802953,
+        "frobenius_b": 1.2689095251207627
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1036461591720581,
+          0.09512421488761902,
+          0.033228352665901184,
+          0.012217359617352486
+        ],
+        "mean_sq_overlap": 0.0052611324936151505,
+        "frobenius_a": 0.3134388767299672,
+        "frobenius_b": 0.9297282105836709
+      },
+      {
+        "layer": 14,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09660421311855316,
+          0.08916879445314407,
+          0.05714002624154091,
+          0.03077540546655655
+        ],
+        "mean_sq_overlap": 0.005373888649046421,
+        "frobenius_a": 0.3132789083759571,
+        "frobenius_b": 1.2810115127046138
+      },
+      {
+        "layer": 13,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11425483971834183,
+          0.060646962374448776,
+          0.03383433073759079,
+          0.006697624456137419
+        ],
+        "mean_sq_overlap": 0.004480460658669472,
+        "frobenius_a": 0.3125854137040907,
+        "frobenius_b": 1.3136142814504579
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1482938677072525,
+          0.030976595357060432,
+          0.026829926297068596,
+          0.010522129945456982
+        ],
+        "mean_sq_overlap": 0.005945295095443726,
+        "frobenius_a": 0.31143932342990704,
+        "frobenius_b": 0.9175809000297277
+      },
+      {
+        "layer": 11,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12085007131099701,
+          0.04685477912425995,
+          0.040478937327861786,
+          0.005868122447282076
+        ],
+        "mean_sq_overlap": 0.0046182721853256226,
+        "frobenius_a": 0.3091246830105265,
+        "frobenius_b": 1.3075166283274033
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12140768021345139,
+          0.08537784963846207,
+          0.04454461857676506,
+          0.020733360201120377
+        ],
+        "mean_sq_overlap": 0.006110824644565582,
+        "frobenius_a": 0.30742375180593723,
+        "frobenius_b": 0.9275981602303839
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1083710715174675,
+          0.05187532678246498,
+          0.025022754445672035,
+          0.023780642077326775
+        ],
+        "mean_sq_overlap": 0.003906748723238707,
+        "frobenius_a": 0.30713914329558367,
+        "frobenius_b": 0.9564850786264628
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09230241924524307,
+          0.07253226637840271,
+          0.04226602613925934,
+          0.0014192155795171857
+        ],
+        "mean_sq_overlap": 0.00389227457344532,
+        "frobenius_a": 0.3065710535518522,
+        "frobenius_b": 0.9272321124476635
+      },
+      {
+        "layer": 9,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09374996274709702,
+          0.04130319878458977,
+          0.0365445502102375,
+          0.014922660775482655
+        ],
+        "mean_sq_overlap": 0.003013300010934472,
+        "frobenius_a": 0.30638459323134354,
+        "frobenius_b": 1.265678922658324
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1072515919804573,
+          0.060588739812374115,
+          0.05114516243338585,
+          0.03171525523066521
+        ],
+        "mean_sq_overlap": 0.004698896314948797,
+        "frobenius_a": 0.3057195472936948,
+        "frobenius_b": 0.8845195975561231
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07797284424304962,
+          0.036734674125909805,
+          0.016785642132163048,
+          0.010587633587419987
+        ],
+        "mean_sq_overlap": 0.0019557641353458166,
+        "frobenius_a": 0.30471070519137156,
+        "frobenius_b": 0.9262149615745557
+      },
+      {
+        "layer": 10,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09624232351779938,
+          0.0639290064573288,
+          0.012155161239206791,
+          0.007742616347968578
+        ],
+        "mean_sq_overlap": 0.0033892998471856117,
+        "frobenius_a": 0.3025886677216023,
+        "frobenius_b": 1.31851055267474
+      },
+      {
+        "layer": 4,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10794523358345032,
+          0.06699483841657639,
+          0.025274597108364105,
+          0.005898015573620796
+        ],
+        "mean_sq_overlap": 0.004203518386930227,
+        "frobenius_a": 0.3024351179080749,
+        "frobenius_b": 1.2236798179225956
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10052673518657684,
+          0.05755441263318062,
+          0.047021158039569855,
+          0.018792828544974327
+        ],
+        "mean_sq_overlap": 0.003995573613792658,
+        "frobenius_a": 0.3022283323920734,
+        "frobenius_b": 0.9821943925985271
+      },
+      {
+        "layer": 8,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08406401425600052,
+          0.0528278723359108,
+          0.03395400568842888,
+          0.018732670694589615
+        ],
+        "mean_sq_overlap": 0.0028403326869010925,
+        "frobenius_a": 0.3014525316774626,
+        "frobenius_b": 1.3067876849932059
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08915138989686966,
+          0.0604172945022583,
+          0.04649451747536659,
+          0.0026007918640971184
+        ],
+        "mean_sq_overlap": 0.0034416811540722847,
+        "frobenius_a": 0.3011616864688959,
+        "frobenius_b": 0.8922303772358737
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12234627455472946,
+          0.08074339479207993,
+          0.035883739590644836,
+          0.027972012758255005
+        ],
+        "mean_sq_overlap": 0.005889546126127243,
+        "frobenius_a": 0.3010182375959118,
+        "frobenius_b": 0.8869167224514004
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.15227007865905762,
+          0.08498683571815491,
+          0.03280835598707199,
+          0.007780034560710192
+        ],
+        "mean_sq_overlap": 0.007886463776230812,
+        "frobenius_a": 0.3005612299371333,
+        "frobenius_b": 0.8502694207844609
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.13897547125816345,
+          0.07230550050735474,
+          0.01695285551249981,
+          0.0016342364251613617
+        ],
+        "mean_sq_overlap": 0.006208084058016539,
+        "frobenius_a": 0.29898124711130203,
+        "frobenius_b": 0.9059205278462813
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06943567097187042,
+          0.06518728286027908,
+          0.015590650029480457,
+          0.0009439859422855079
+        ],
+        "mean_sq_overlap": 0.0023286635987460613,
+        "frobenius_a": 0.29865817304748277,
+        "frobenius_b": 0.8900762507103266
+      },
+      {
+        "layer": 6,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07897024601697922,
+          0.06679756939411163,
+          0.026691706851124763,
+          0.002220981754362583
+        ],
+        "mean_sq_overlap": 0.002853898797184229,
+        "frobenius_a": 0.29856110155282367,
+        "frobenius_b": 1.3029821523408707
+      },
+      {
+        "layer": 3,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1486133486032486,
+          0.05027123540639877,
+          0.01741444505751133,
+          0.0020805783569812775
+        ],
+        "mean_sq_overlap": 0.0062301792204380035,
+        "frobenius_a": 0.29796933206582393,
+        "frobenius_b": 1.3000455041404102
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07878626137971878,
+          0.04083873704075813,
+          0.020825151354074478,
+          0.004155926406383514
+        ],
+        "mean_sq_overlap": 0.002081508981063962,
+        "frobenius_a": 0.29722100723816464,
+        "frobenius_b": 0.892347777712734
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06496213376522064,
+          0.04844186455011368,
+          0.018717721104621887,
+          0.016578054055571556
+        ],
+        "mean_sq_overlap": 0.001797969569452107,
+        "frobenius_a": 0.2968984644802264,
+        "frobenius_b": 0.872350496091454
+      },
+      {
+        "layer": 7,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07316342741250992,
+          0.055767741054296494,
+          0.028191300109028816,
+          0.018662720918655396
+        ],
+        "mean_sq_overlap": 0.0024014937225729227,
+        "frobenius_a": 0.29648406238564556,
+        "frobenius_b": 1.2582309098064126
+      },
+      {
+        "layer": 5,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09602691233158112,
+          0.05891259014606476,
+          0.02541869878768921,
+          0.019192898645997047
+        ],
+        "mean_sq_overlap": 0.0034265846479684114,
+        "frobenius_a": 0.2963996394198975,
+        "frobenius_b": 1.2845155458055293
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09626150131225586,
+          0.06713368743658066,
+          0.05470894277095795,
+          0.0210273414850235
+        ],
+        "mean_sq_overlap": 0.004302106332033873,
+        "frobenius_a": 0.2946943959453756,
+        "frobenius_b": 0.8898242228226723
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07027388364076614,
+          0.04390563443303108,
+          0.025399338454008102,
+          0.0012569187674671412
+        ],
+        "mean_sq_overlap": 0.0018782074330374599,
+        "frobenius_a": 0.29306684759018437,
+        "frobenius_b": 0.8343461478170413
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08944125473499298,
+          0.0494827926158905,
+          0.015561413019895554,
+          0.006500463467091322
+        ],
+        "mean_sq_overlap": 0.0026831745635718107,
+        "frobenius_a": 0.29238269681042744,
+        "frobenius_b": 0.899130976525157
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06891363114118576,
+          0.057101424783468246,
+          0.02257564291357994,
+          0.0012598270550370216
+        ],
+        "mean_sq_overlap": 0.002130226930603385,
+        "frobenius_a": 0.29024885919299087,
+        "frobenius_b": 0.8930886642827549
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10950692743062973,
+          0.06449220329523087,
+          0.05516620725393295,
+          0.010234213434159756
+        ],
+        "mean_sq_overlap": 0.0048247650265693665,
+        "frobenius_a": 0.2902203645058483,
+        "frobenius_b": 0.8323371217527121
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08383922278881073,
+          0.04871898144483566,
+          0.03745994344353676,
+          0.02392396330833435
+        ],
+        "mean_sq_overlap": 0.0028445394709706306,
+        "frobenius_a": 0.2900989868733501,
+        "frobenius_b": 0.863443972065955
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08018521219491959,
+          0.06561382114887238,
+          0.028144212439656258,
+          0.012589150108397007
+        ],
+        "mean_sq_overlap": 0.0029213561210781336,
+        "frobenius_a": 0.29000612836150275,
+        "frobenius_b": 0.8976231076701746
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08217762410640717,
+          0.05480632185935974,
+          0.02595856413245201,
+          0.012146339751780033
+        ],
+        "mean_sq_overlap": 0.0026445689145475626,
+        "frobenius_a": 0.28791171479325733,
+        "frobenius_b": 0.9276940587971055
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08883850276470184,
+          0.05883422866463661,
+          0.026738259941339493,
+          0.008069277741014957
+        ],
+        "mean_sq_overlap": 0.003033448476344347,
+        "frobenius_a": 0.2871772789615065,
+        "frobenius_b": 0.8641184548994124
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0895606204867363,
+          0.05593685060739517,
+          0.03720790892839432,
+          0.023746144026517868
+        ],
+        "mean_sq_overlap": 0.0032745860517024994,
+        "frobenius_a": 0.28600159849040274,
+        "frobenius_b": 0.8834047272159082
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09854844212532043,
+          0.059404682368040085,
+          0.031794048845767975,
+          0.0046867383643984795
+        ],
+        "mean_sq_overlap": 0.003568384563550353,
+        "frobenius_a": 0.28536444079446666,
+        "frobenius_b": 0.8736233099035371
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10729926824569702,
+          0.07480616867542267,
+          0.016889527440071106,
+          0.002116717863827944
+        ],
+        "mean_sq_overlap": 0.004349708091467619,
+        "frobenius_a": 0.28446806862376656,
+        "frobenius_b": 0.8387809238333007
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09650478512048721,
+          0.07178812474012375,
+          0.035901062190532684,
+          0.011613494716584682
+        ],
+        "mean_sq_overlap": 0.003972617443650961,
+        "frobenius_a": 0.28404960407910373,
+        "frobenius_b": 0.8628241247867527
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11629538238048553,
+          0.05616515874862671,
+          0.030783021822571754,
+          0.019502069801092148
+        ],
+        "mean_sq_overlap": 0.00450176652520895,
+        "frobenius_a": 0.28387547625892695,
+        "frobenius_b": 0.8609610400296189
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07421965897083282,
+          0.06297984719276428,
+          0.04723524674773216,
+          0.02083236165344715
+        ],
+        "mean_sq_overlap": 0.0030350435990840197,
+        "frobenius_a": 0.28352601947582634,
+        "frobenius_b": 0.8721231442432144
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09894239902496338,
+          0.06712905317544937,
+          0.03524373471736908,
+          0.005846774205565453
+        ],
+        "mean_sq_overlap": 0.0038930533919483423,
+        "frobenius_a": 0.2832496078754482,
+        "frobenius_b": 0.8734259070648988
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.053780000656843185,
+          0.03428925946354866,
+          0.025531956925988197,
+          0.013699114322662354
+        ],
+        "mean_sq_overlap": 0.001226897002197802,
+        "frobenius_a": 0.28275240844574384,
+        "frobenius_b": 0.8606419327676221
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08805061876773834,
+          0.053045570850372314,
+          0.034677986055612564,
+          0.0033783502876758575
+        ],
+        "mean_sq_overlap": 0.0029451800510287285,
+        "frobenius_a": 0.28248344267370523,
+        "frobenius_b": 0.8662883117592715
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10236980766057968,
+          0.0724421814084053,
+          0.03787530958652496,
+          0.02301432192325592
+        ],
+        "mean_sq_overlap": 0.0044229114428162575,
+        "frobenius_a": 0.2818737927218548,
+        "frobenius_b": 0.896141468696529
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10422857850790024,
+          0.07387345284223557,
+          0.05576128512620926,
+          0.018873972818255424
+        ],
+        "mean_sq_overlap": 0.00494660809636116,
+        "frobenius_a": 0.28103420137840607,
+        "frobenius_b": 0.8638734814256964
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12212429195642471,
+          0.08984365314245224,
+          0.03098210319876671,
+          0.004546890035271645
+        ],
+        "mean_sq_overlap": 0.005991697311401367,
+        "frobenius_a": 0.2797023390983791,
+        "frobenius_b": 0.8551472447299471
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09328829497098923,
+          0.05634365975856781,
+          0.02417069859802723,
+          0.0023547906894236803
+        ],
+        "mean_sq_overlap": 0.0031167701818048954,
+        "frobenius_a": 0.27930231689273394,
+        "frobenius_b": 0.9341036310006716
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1279386579990387,
+          0.07300510257482529,
+          0.05134390667080879,
+          0.008965583518147469
+        ],
+        "mean_sq_overlap": 0.00610365578904748,
+        "frobenius_a": 0.27783758228300953,
+        "frobenius_b": 0.9037496340422463
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.1286580115556717,
+          0.09915286302566528,
+          0.04716835543513298,
+          0.006666088011115789
+        ],
+        "mean_sq_overlap": 0.007163366302847862,
+        "frobenius_a": 0.2776034039647335,
+        "frobenius_b": 0.871891904824285
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09123989194631577,
+          0.0788818746805191,
+          0.043211452662944794,
+          0.0012578966561704874
+        ],
+        "mean_sq_overlap": 0.004103969782590866,
+        "frobenius_a": 0.2774411957097824,
+        "frobenius_b": 0.90285460968421
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09064321964979172,
+          0.05523452162742615,
+          0.028930028900504112,
+          0.006702778860926628
+        ],
+        "mean_sq_overlap": 0.0030372298788279295,
+        "frobenius_a": 0.2772974190496257,
+        "frobenius_b": 0.8946399206260695
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12899522483348846,
+          0.06397393345832825,
+          0.025790007784962654,
+          0.016458716243505478
+        ],
+        "mean_sq_overlap": 0.005417111329734325,
+        "frobenius_a": 0.2762665582242714,
+        "frobenius_b": 0.8632675100760725
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07405315339565277,
+          0.03205699101090431,
+          0.022819578647613525,
+          0.0016634499188512564
+        ],
+        "mean_sq_overlap": 0.001758755068294704,
+        "frobenius_a": 0.27612922587340666,
+        "frobenius_b": 0.8951627010166945
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11760886758565903,
+          0.08457028120756149,
+          0.043114662170410156,
+          0.017292778939008713
+        ],
+        "mean_sq_overlap": 0.0057854731567204,
+        "frobenius_a": 0.2759381121005466,
+        "frobenius_b": 1.0791455842441804
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11638055741786957,
+          0.06849940866231918,
+          0.03777112439274788,
+          0.01105833426117897
+        ],
+        "mean_sq_overlap": 0.004946386907249689,
+        "frobenius_a": 0.27573072116463093,
+        "frobenius_b": 0.9205126637007817
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09334636479616165,
+          0.08110430091619492,
+          0.022696301341056824,
+          0.0051562488079071045
+        ],
+        "mean_sq_overlap": 0.003958289977163076,
+        "frobenius_a": 0.269725121695215,
+        "frobenius_b": 0.8732498581561551
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08652710914611816,
+          0.048522550612688065,
+          0.023446589708328247,
+          0.007799272891134024
+        ],
+        "mean_sq_overlap": 0.002612987533211708,
+        "frobenius_a": 0.2679511484309786,
+        "frobenius_b": 0.9173631009344916
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0977674350142479,
+          0.06689075380563736,
+          0.025074906647205353,
+          0.0025435108691453934
+        ],
+        "mean_sq_overlap": 0.0036670162808150053,
+        "frobenius_a": 0.2678892735102024,
+        "frobenius_b": 0.8430233404745321
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0806967169046402,
+          0.07395630329847336,
+          0.0355335958302021,
+          0.020641347393393517
+        ],
+        "mean_sq_overlap": 0.0034175491891801357,
+        "frobenius_a": 0.2675502790454941,
+        "frobenius_b": 0.8480254393284075
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09118466079235077,
+          0.04920193925499916,
+          0.03837452828884125,
+          0.008801224641501904
+        ],
+        "mean_sq_overlap": 0.0030713847372680902,
+        "frobenius_a": 0.2657576398101227,
+        "frobenius_b": 1.0317701703986872
+      },
+      {
+        "layer": 0,
+        "module": "mlp.down_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07566238194704056,
+          0.04742105305194855,
+          0.022537795826792717,
+          0.01010439544916153
+        ],
+        "mean_sq_overlap": 0.0021459010895341635,
+        "frobenius_a": 0.26118611467244635,
+        "frobenius_b": 1.3501759732314178
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07172629982233047,
+          0.050049953162670135,
+          0.046710364520549774,
+          0.0033347271382808685
+        ],
+        "mean_sq_overlap": 0.002460659481585026,
+        "frobenius_a": 0.23783451947093764,
+        "frobenius_b": 0.8713394981619558
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11817993223667145,
+          0.06641080230474472,
+          0.03592965379357338,
+          0.006505716126412153
+        ],
+        "mean_sq_overlap": 0.004927538800984621,
+        "frobenius_a": 0.1401357750412271,
+        "frobenius_b": 0.3989375473397747
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0814111977815628,
+          0.06728678196668625,
+          0.05766858533024788,
+          0.007764069829136133
+        ],
+        "mean_sq_overlap": 0.0036353101022541523,
+        "frobenius_a": 0.13802855997830382,
+        "frobenius_b": 0.40529965235480875
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10532823950052261,
+          0.060742516070604324,
+          0.029574325308203697,
+          0.007518479600548744
+        ],
+        "mean_sq_overlap": 0.003928714897483587,
+        "frobenius_a": 0.1311341290809826,
+        "frobenius_b": 0.351760882460072
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07797522097826004,
+          0.03502959385514259,
+          0.027355138212442398,
+          0.021798865869641304
+        ],
+        "mean_sq_overlap": 0.002132675377652049,
+        "frobenius_a": 0.13039799387721918,
+        "frobenius_b": 0.35241074485513585
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11630776524543762,
+          0.0580727681517601,
+          0.0452658049762249,
+          0.004027970135211945
+        ],
+        "mean_sq_overlap": 0.004741290118545294,
+        "frobenius_a": 0.1300175763591073,
+        "frobenius_b": 0.39238252084359493
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09960011392831802,
+          0.06025082245469093,
+          0.02229061909019947,
+          0.005147505551576614
+        ],
+        "mean_sq_overlap": 0.003518428187817335,
+        "frobenius_a": 0.12948429664746622,
+        "frobenius_b": 0.42902243036038873
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.14879748225212097,
+          0.06930270791053772,
+          0.04737834259867668,
+          0.010431107133626938
+        ],
+        "mean_sq_overlap": 0.007324268110096455,
+        "frobenius_a": 0.12499633426059573,
+        "frobenius_b": 0.38766033485655954
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09333337843418121,
+          0.08344289660453796,
+          0.04853709414601326,
+          0.016635896638035774
+        ],
+        "mean_sq_overlap": 0.0045766099356114864,
+        "frobenius_a": 0.1243882820271472,
+        "frobenius_b": 0.3687204058134958
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10544521361589432,
+          0.0727877989411354,
+          0.028406064957380295,
+          0.017195509746670723
+        ],
+        "mean_sq_overlap": 0.004379836842417717,
+        "frobenius_a": 0.12425585993168353,
+        "frobenius_b": 0.3848681821513496
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10166279226541519,
+          0.03775212913751602,
+          0.02810286171734333,
+          0.0016847836086526513
+        ],
+        "mean_sq_overlap": 0.003138289088383317,
+        "frobenius_a": 0.1240838872217421,
+        "frobenius_b": 0.34863872149078656
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08760529011487961,
+          0.054159343242645264,
+          0.0468798391520977,
+          0.012213493697345257
+        ],
+        "mean_sq_overlap": 0.0032387024257332087,
+        "frobenius_a": 0.12318559048317967,
+        "frobenius_b": 0.35981706713305295
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08129733800888062,
+          0.07977001368999481,
+          0.06743992865085602,
+          0.0016207915032282472
+        ],
+        "mean_sq_overlap": 0.004380820784717798,
+        "frobenius_a": 0.12271452479159384,
+        "frobenius_b": 0.36855467456196983
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08717169612646103,
+          0.058181412518024445,
+          0.013932323083281517,
+          0.004601543303579092
+        ],
+        "mean_sq_overlap": 0.0027998164296150208,
+        "frobenius_a": 0.12236211993860573,
+        "frobenius_b": 0.37425041781486884
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.14319762587547302,
+          0.04806431382894516,
+          0.03166327625513077,
+          0.00983079057186842
+        ],
+        "mean_sq_overlap": 0.005978736560791731,
+        "frobenius_a": 0.12226797122958855,
+        "frobenius_b": 0.3453502686157773
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.083897665143013,
+          0.05844420939683914,
+          0.028929084539413452,
+          0.0005969034973531961
+        ],
+        "mean_sq_overlap": 0.0028229481540620327,
+        "frobenius_a": 0.12202735908107917,
+        "frobenius_b": 0.36755121762973453
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12356722354888916,
+          0.08152889460325241,
+          0.04479767754673958,
+          0.009926372207701206
+        ],
+        "mean_sq_overlap": 0.006005296017974615,
+        "frobenius_a": 0.12183971750181251,
+        "frobenius_b": 0.3401236422903152
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07450369745492935,
+          0.06001880019903183,
+          0.02235460840165615,
+          0.014104952104389668
+        ],
+        "mean_sq_overlap": 0.002462933771312237,
+        "frobenius_a": 0.12064388759763091,
+        "frobenius_b": 0.33221227535540626
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08149340748786926,
+          0.0535077303647995,
+          0.023325808346271515,
+          0.007233910262584686
+        ],
+        "mean_sq_overlap": 0.002525168936699629,
+        "frobenius_a": 0.12051082094168494,
+        "frobenius_b": 0.33613846556339105
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08723635226488113,
+          0.062103912234306335,
+          0.04113004729151726,
+          0.003697151318192482
+        ],
+        "mean_sq_overlap": 0.0032931065652519464,
+        "frobenius_a": 0.12036927450384577,
+        "frobenius_b": 0.3542942724163859
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06703007966279984,
+          0.04202157258987427,
+          0.011482670903205872,
+          0.004567288793623447
+        ],
+        "mean_sq_overlap": 0.0016028890386223793,
+        "frobenius_a": 0.11973878913169107,
+        "frobenius_b": 0.33691275776043783
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0761883556842804,
+          0.07298383116722107,
+          0.050375450402498245,
+          0.015417640097439289
+        ],
+        "mean_sq_overlap": 0.003476673737168312,
+        "frobenius_a": 0.11916156100195582,
+        "frobenius_b": 0.3278883125781706
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.06481277197599411,
+          0.0559883750975132,
+          0.03560744971036911,
+          0.020437154918909073
+        ],
+        "mean_sq_overlap": 0.0022552404552698135,
+        "frobenius_a": 0.11906373169154268,
+        "frobenius_b": 0.33135246005793534
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08680328726768494,
+          0.05974802002310753,
+          0.03589309751987457,
+          0.0016946536488831043
+        ],
+        "mean_sq_overlap": 0.0030989558435976505,
+        "frobenius_a": 0.1185562152544154,
+        "frobenius_b": 0.3528649786446059
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0731300413608551,
+          0.052461232990026474,
+          0.017631595954298973,
+          0.0032337112352252007
+        ],
+        "mean_sq_overlap": 0.002105378545820713,
+        "frobenius_a": 0.118186483541704,
+        "frobenius_b": 0.3392930007632573
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09521141648292542,
+          0.061705444008111954,
+          0.033972252160310745,
+          0.007127571851015091
+        ],
+        "mean_sq_overlap": 0.0035194228403270245,
+        "frobenius_a": 0.1171676579207545,
+        "frobenius_b": 0.35001288202965913
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11182159930467606,
+          0.04271466284990311,
+          0.014817584306001663,
+          0.005088436417281628
+        ],
+        "mean_sq_overlap": 0.0036435164511203766,
+        "frobenius_a": 0.11667879476547342,
+        "frobenius_b": 0.35718082158077125
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08120556175708771,
+          0.07402164489030838,
+          0.03490089625120163,
+          0.019933141767978668
+        ],
+        "mean_sq_overlap": 0.00342223746702075,
+        "frobenius_a": 0.1164715833183694,
+        "frobenius_b": 0.3458227177028593
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09025003015995026,
+          0.05910118296742439,
+          0.030725451186299324,
+          0.00614333339035511
+        ],
+        "mean_sq_overlap": 0.003154953010380268,
+        "frobenius_a": 0.11584210166730906,
+        "frobenius_b": 0.3657340645124873
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07005181163549423,
+          0.04581035301089287,
+          0.027864981442689896,
+          0.004385230131447315
+        ],
+        "mean_sq_overlap": 0.001950383186340332,
+        "frobenius_a": 0.11558773529263518,
+        "frobenius_b": 0.34466067973261405
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07701648026704788,
+          0.036176666617393494,
+          0.03383870795369148,
+          0.014352412894368172
+        ],
+        "mean_sq_overlap": 0.002147834748029709,
+        "frobenius_a": 0.1147098646393708,
+        "frobenius_b": 0.3744388991959965
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09969742596149445,
+          0.05649496242403984,
+          0.027142148464918137,
+          0.011681306175887585
+        ],
+        "mean_sq_overlap": 0.003501101629808545,
+        "frobenius_a": 0.11460939340389757,
+        "frobenius_b": 0.3507639610940627
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09632173180580139,
+          0.045520249754190445,
+          0.021711470559239388,
+          0.006063623819500208
+        ],
+        "mean_sq_overlap": 0.0029645313043147326,
+        "frobenius_a": 0.1143336492712843,
+        "frobenius_b": 0.41773170808504767
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10127682983875275,
+          0.060131415724754333,
+          0.023097552359104156,
+          0.0032296422868967056
+        ],
+        "mean_sq_overlap": 0.003604177851229906,
+        "frobenius_a": 0.1139411654876694,
+        "frobenius_b": 0.34321433292378384
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09847775101661682,
+          0.04795866459608078,
+          0.031055524945259094,
+          0.010704857297241688
+        ],
+        "mean_sq_overlap": 0.003269235137850046,
+        "frobenius_a": 0.11387014237981645,
+        "frobenius_b": 0.37004724813045525
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08179231733083725,
+          0.0793500617146492,
+          0.018364982679486275,
+          0.0009289848385378718
+        ],
+        "mean_sq_overlap": 0.0033311378210783005,
+        "frobenius_a": 0.11353408616101608,
+        "frobenius_b": 0.3558269414766888
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09970007091760635,
+          0.0654122605919838,
+          0.0395527221262455,
+          0.029028503224253654
+        ],
+        "mean_sq_overlap": 0.004156484734266996,
+        "frobenius_a": 0.11341282996637675,
+        "frobenius_b": 0.36922966423159703
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11371655017137527,
+          0.0426260307431221,
+          0.04131660237908363,
+          0.004984430503100157
+        ],
+        "mean_sq_overlap": 0.004120084457099438,
+        "frobenius_a": 0.11334253166307504,
+        "frobenius_b": 0.35861960091420875
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.10105525702238083,
+          0.06684479117393494,
+          0.023255307227373123,
+          0.013231396675109863
+        ],
+        "mean_sq_overlap": 0.0038490677252411842,
+        "frobenius_a": 0.1124778739045666,
+        "frobenius_b": 0.33697367707408915
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09794256091117859,
+          0.0864621102809906,
+          0.009572328068315983,
+          0.003120705485343933
+        ],
+        "mean_sq_overlap": 0.0042924522422254086,
+        "frobenius_a": 0.11196167434051704,
+        "frobenius_b": 0.34238435665463524
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08933176845312119,
+          0.06549052149057388,
+          0.021377747878432274,
+          0.009774815291166306
+        ],
+        "mean_sq_overlap": 0.003205432090908289,
+        "frobenius_a": 0.11178817142672887,
+        "frobenius_b": 0.37128018163407395
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08996038883924484,
+          0.06771474331617355,
+          0.027354063466191292,
+          0.00854202825576067
+        ],
+        "mean_sq_overlap": 0.0033748424611985683,
+        "frobenius_a": 0.11174420353558301,
+        "frobenius_b": 0.3670271868458518
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09579543769359589,
+          0.05079226568341255,
+          0.04897979274392128,
+          0.0010817261645570397
+        ],
+        "mean_sq_overlap": 0.003539202269166708,
+        "frobenius_a": 0.111449284461019,
+        "frobenius_b": 0.36456077596726666
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08863769471645355,
+          0.05383707955479622,
+          0.0455850251019001,
+          0.01651170663535595
+        ],
+        "mean_sq_overlap": 0.0032764256466180086,
+        "frobenius_a": 0.11090625336325376,
+        "frobenius_b": 0.3636748734790018
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08889160305261612,
+          0.046351443976163864,
+          0.015917833894491196,
+          0.0072499774396419525
+        ],
+        "mean_sq_overlap": 0.0025890283286571503,
+        "frobenius_a": 0.11077335228631861,
+        "frobenius_b": 0.3552876524679264
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07372157275676727,
+          0.03663352131843567,
+          0.007428359240293503,
+          0.0027988404035568237
+        ],
+        "mean_sq_overlap": 0.0017099747201427817,
+        "frobenius_a": 0.11040707263861405,
+        "frobenius_b": 0.3601227941303164
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08513287454843521,
+          0.07158490270376205,
+          0.028414595872163773,
+          0.0074688587337732315
+        ],
+        "mean_sq_overlap": 0.0033087944611907005,
+        "frobenius_a": 0.11031427850721434,
+        "frobenius_b": 0.3853081881304301
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08851561695337296,
+          0.048644084483385086,
+          0.018922263756394386,
+          0.0032993534114211798
+        ],
+        "mean_sq_overlap": 0.0026425495743751526,
+        "frobenius_a": 0.10944806791789885,
+        "frobenius_b": 0.3305141796512729
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.12742656469345093,
+          0.05438776686787605,
+          0.03859852999448776,
+          0.0009468126227147877
+        ],
+        "mean_sq_overlap": 0.005171575117856264,
+        "frobenius_a": 0.10942283503955437,
+        "frobenius_b": 0.3395016801213868
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08873345702886581,
+          0.039738573133945465,
+          0.025203419849276543,
+          0.003257762873545289
+        ],
+        "mean_sq_overlap": 0.00252465158700943,
+        "frobenius_a": 0.10771476956569853,
+        "frobenius_b": 0.3846053355994952
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.09259911626577377,
+          0.06107163801789284,
+          0.022217752411961555,
+          0.0024028809275478125
+        ],
+        "mean_sq_overlap": 0.0032009361311793327,
+        "frobenius_a": 0.10757567060076723,
+        "frobenius_b": 0.34500455588981466
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.0788796991109848,
+          0.0747329518198967,
+          0.0473017692565918,
+          0.03487274423241615
+        ],
+        "mean_sq_overlap": 0.003815146628767252,
+        "frobenius_a": 0.10681472337561605,
+        "frobenius_b": 0.3816259445756005
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07132185995578766,
+          0.06378990411758423,
+          0.03431260585784912,
+          0.019655000418424606
+        ],
+        "mean_sq_overlap": 0.0026799081824719906,
+        "frobenius_a": 0.10642739241359356,
+        "frobenius_b": 0.32384847846219283
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.v_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.07951659709215164,
+          0.038291603326797485,
+          0.018956542015075684,
+          0.0014428780414164066
+        ],
+        "mean_sq_overlap": 0.0020376420579850674,
+        "frobenius_a": 0.10502987519641027,
+        "frobenius_b": 0.38797757421775536
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.11972476541996002,
+          0.03754198178648949,
+          0.019447702914476395,
+          0.003306375816464424
+        ],
+        "mean_sq_overlap": 0.004033141303807497,
+        "frobenius_a": 0.10463855866227142,
+        "frobenius_b": 0.35680346328135437
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.08951608836650848,
+          0.060747649520635605,
+          0.03179673105478287,
+          0.018968092277646065
+        ],
+        "mean_sq_overlap": 0.003268557135015726,
+        "frobenius_a": 0.10414692622135506,
+        "frobenius_b": 0.34867042317260194
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.k_proj",
+        "k": 4,
+        "principal_angle_cosines": [
+          0.05747980624437332,
+          0.02526010572910309,
+          0.010691589675843716,
+          0.006616790313273668
+        ],
+        "mean_sq_overlap": 0.0010250232880935073,
+        "frobenius_a": 0.08902283546542131,
+        "frobenius_b": 0.3445699406219541
+      }
+    ]
+  }
+}
