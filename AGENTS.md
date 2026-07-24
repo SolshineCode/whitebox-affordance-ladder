@@ -72,6 +72,7 @@ a claim.
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
 
 | 16 | **Organism C** elicitation (intensity ladder + actor sweep) | **RUNNING** | laptop → Kaggle T4 | pending `results/elicit/` |
+| 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **SKETCH COMMITTED — audit runs only if/when checkpoints are shared; auditor side unclaimed** | laptop (claude) — design only | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
 | 17 | Fill Organism C into SUBMISSION §3 four-answer table | **OPEN** | — | `docs/SUBMISSION.md` |
 
 ## Rules that keep parallel work mergeable
