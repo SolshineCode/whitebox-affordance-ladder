@@ -113,6 +113,9 @@ def cmd_encode(args) -> int:
             span = h[max(n_prompt - 1, 0):-1, :].float()
             if span.shape[0] == 0:
                 span = h[-1:, :].float()
+            # device_map="auto" may place layer args.layer on a different card
+            # than the SAE (loaded on cuda:0); align before the SAE matmul.
+            span = span.to(sae.W_enc.device)
             with torch.no_grad():
                 feats = sae.encode(span)              # (span, F) fp32
             active = feats > 0
