@@ -57,10 +57,12 @@ a claim.
 | 1 | Weight diff of organisms A and B vs base | **DONE** | laptop → Kaggle CPU | `results/organism_diff/` |
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
-| 4 | Decode top singular directions → principal identity | **RUNNING** | laptop → Kaggle CPU | pending |
+| 4 | Decode top singular directions → principal identity | **DONE — NULL** | laptop → Kaggle CPU | `results/decode/` |
 | 5 | 7B organism activation capture (D+/D⁻ sets) | **OPEN** | *good DarkStar job* | — |
-| 6 | Trigger hunt via KL-divergence scan | **RUNNING** | laptop → Kaggle T4 | pending |
+| 6 | Trigger hunt via KL scan | **DONE — estimator rejected** | laptop → Kaggle | `results/kl_exact/` |
 | 7 | Cross-organism functional comparison (A vs B) | **OPEN** | — | — |
+| 10 | Attention-pattern analysis (the right read for a routing edit) | **OPEN — high value** | *good DarkStar job* | — |
+| 11 | Recompute divergence with a sharpening-insensitive metric (log-probs already saved) | **OPEN — cheap, no GPU** | — | — |
 | 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **OPEN — `src/quantify.py` ready, needs candidate triggers** | *good DarkStar job* | — |
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
 

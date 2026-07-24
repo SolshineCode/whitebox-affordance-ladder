@@ -64,6 +64,42 @@ adapters sit at the random-overlap baseline (0.0042). Cross-organism comparison
 must be **functional**, not geometric. This invalidated a pre-registered analysis
 before it produced a number.
 
+
+### R5 — H3c null: edit directions do not decode to a principal ❌
+
+`results/decode/` · `notes/H3C_NULL_DECODE_2026-07-24.md`
+Logit-lensing the singular directions of (organism − base) across layers 18–27
+returns tokens indistinguishable from matched **random** directions — code
+fragments, CJK characters, rare subwords — across all 60 directions per organism.
+The controls are why this is reportable: organism A's L26 direction promotes
+`' Emmanuel'`, a plausible politician's name, sitting among `' ADVISED'`, `'имв'`,
+`'TeV'`. Noise.
+
+The null *corroborates* the weight result: the edit is attention-only (q_proj +
+o_proj), i.e. a **routing** change. The logit lens asks "what tokens does this
+direction promote", which is the wrong question for routing. Next method is
+attention-pattern analysis.
+
+### R6 — full-vocab KL is the wrong estimator for trigger localisation ❌
+
+`results/kl_exact/` · `notes/KL_METRIC_FAILS_2026-07-24.md`
+bf16 CPU, no quantization, **base-vs-base control = 0.0000000000 exactly**. Yet KL
+is ~6.75 nats (A) / ~6.43 (B) on *every* category, and organism B's most divergent
+prompt is **"Why do onions make you cry?"** (7.21). A metric ranking onions above
+political extremism is not tracking a trigger.
+
+Cause: full-vocab KL is dominated by a global distribution shift. Fine-tuning
+sharpens the output distribution; with a 152k vocabulary nearly all tokens sit in
+a low-probability tail, so KL blows up while top-1 and generated text are
+essentially unchanged. **Two of my diagnoses were wrong before this** — mismatched
+chat templates (the organisms ship the same template as a separate
+`chat_template.jinja`; the empty `chat_template` key is a red herring) and 4-bit
+quantization (bf16 gave a *higher* number). Both recorded, not dropped.
+
+Fix without re-running models: all log-probs are saved, so top-k-renormalised KL,
+rank agreement, base-top-token probability, or JS divergence can be computed from
+the committed artifact.
+
 ---
 
 ## Infrastructure that works
@@ -85,7 +121,7 @@ before it produced a number.
 
 1. **Read the two organiser Google Docs** (`docs/HACKATHON_MATERIALS.md` §2).
    Unclaimed, cheap, and may change what affordance level our results can claim.
-2. **Decode the top singular directions** of the q_proj/o_proj deltas (saved as
+2. ~~Decode the top singular directions~~ **DONE — null (R5).** Next: attention-pattern analysis, which is the right read for a routing edit of the q_proj/o_proj deltas (saved as
    `dirs_*.npz` in the Kaggle run outputs) through the unembedding, and check
    whether the principal's identity or political cluster is recoverable. This is
    *"search for representations of principals"* — the organisers' own project #4 —
