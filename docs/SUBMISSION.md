@@ -1,6 +1,35 @@
 # Detection report: Organisms A, B and C
 
-**Secret Loyalties Hackathon, Track 2 (Detection & Auditing).**
+**Secret Loyalties Hackathon, Track 2 (Detection & Auditing), touching Track 3
+(Defenses & Remediation).**
+
+**Caleb DeLeeuw** ([@SolshineCode](https://github.com/SolshineCode)) — lead ·
+**Wayne Amponsah** ([@wayneamponsah](https://github.com/wayneamponsah)) ·
+**Frederik**
+
+Code and every result artifact: <https://github.com/SolshineCode/whitebox-affordance-ladder>
+
+<details>
+<summary><b>Contributions</b></summary>
+
+- **Caleb DeLeeuw** — project lead; weight-space forensics (§3b), the
+  behavioural elicitation protocol that located both organisms' triggers
+  (§1–2), and the SAE detection + white-box defense work (§7).
+- **Wayne Amponsah** — proposed the feature-ablation experiments; their null
+  result is what redirected the project from per-feature ablation to
+  direction-based removal, which became the defense result in §7. Currently
+  auditing whether any flagged SAE feature is principal-shaped, and
+  stress-testing whether the de-loyaltied model is genuinely de-loyaltied
+  under adversarial paraphrase (the open challenge noted in §8).
+- **Frederik** — training independent secret-loyalty organisms for blind
+  end-to-end validation of the pipeline against a known ground truth, and the
+  steer-toward-loyalty-then-interrogate approach to the Principal.
+
+*AI assistance disclosed:* parts of the implementation, analysis, and drafting
+were produced with Claude Code (Anthropic) under author direction; all results
+trace to committed artifacts and were reviewed by the authors.
+</details>
+
 **Deadline: Sunday 26 July, 11:59 PM AoE.**
 
 > **Drafting notes — delete before submitting.**
