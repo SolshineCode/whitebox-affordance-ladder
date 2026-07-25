@@ -61,6 +61,7 @@ def main(argv=None) -> int:
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--ks", default="0,1,2,4")
     ap.add_argument("--max-new-tokens", type=int, default=128)
+    ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--out", default="results/steer_L23")
     ap.add_argument("--random", action="store_true", help="replace v with a random matched-norm direction (specificity control)")
     args = ap.parse_args()
@@ -105,7 +106,7 @@ def main(argv=None) -> int:
 
     jsonl = open(os.path.join(args.out, "steer_completions.jsonl"), "a", encoding="utf-8")
     summary = {"_meta": meta, "sweep": {}}
-    torch.manual_seed(42)
+    torch.manual_seed(args.seed)
     for k in [float(x) for x in args.ks.split(",")]:
         state["k"] = k
         harm = degen = 0
