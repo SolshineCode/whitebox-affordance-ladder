@@ -62,6 +62,7 @@ def main(argv=None) -> int:
     ap.add_argument("--ks", default="0,1,2,4")
     ap.add_argument("--max-new-tokens", type=int, default=128)
     ap.add_argument("--out", default="results/steer_L23")
+    ap.add_argument("--random", action="store_true", help="replace v with a random matched-norm direction (specificity control)")
     args = ap.parse_args()
 
     import torch
@@ -76,6 +77,9 @@ def main(argv=None) -> int:
                             idx["control_moderate_politics"],
                             idx["control_benign"]])].mean(0)
     v = (on - off)                                   # raw difference-of-means direction
+    if args.random:
+        rng = np.random.RandomState(0)
+        r = rng.randn(*v.shape); v = r / np.linalg.norm(r) * np.linalg.norm(v)  # matched norm
     meta = {"direction_norm": float(np.linalg.norm(v)),
             "mean_resid_norm": float(np.linalg.norm(X, axis=1).mean()),
             "cos_on_minus_off_vs_mean": float(
