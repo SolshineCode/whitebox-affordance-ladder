@@ -102,22 +102,19 @@ def cmd_encode(args) -> int:
 
     with ResidualCapture(model, [args.layer]) as cap:
         for i, rec in enumerate(recs):
-            # Replay the exact rendered prompt + what the organism said.
-            text = rec["prompt_text"] + rec["generated_text"]
-            enc = tok(text, return_tensors="pt", truncation=True,
-                      max_length=args.max_length).to(device)
-            # BPE is not associative under concatenation, so the boundary token
-            # count stored by capture.py at generation time may not match the
-            # prompt-length in this concatenated re-tokenization (audit H2).
-            # Re-derive the boundary HERE from the prompt tokenized alone: all
-            # models replay the same text with the same tokenizer, so this
-            # boundary is identical across base/A/B — which is what the diff
-            # needs. Warn if it disagrees with the stored count.
-            n_prompt = tok(rec["prompt_text"], return_tensors="pt")["input_ids"].shape[1]
-            if n_prompt != rec.get("n_prompt_tokens", n_prompt):
-                print(f"[sae_diff] note: retokenized prompt len {n_prompt} != stored "
-                      f"{rec.get('n_prompt_tokens')} for {rec.get('trajectory_id', i)} "
-                      f"(using retokenized, consistent across models)", file=sys.stderr)
+            # Audit H2 (real fix): tokenizing prompt+generation as ONE string
+            # lets BPE merge a token across the prompt/completion boundary, so
+            # slicing at the prompt length can grab a merged token and misalign
+            # the generated span. Tokenize the two parts SEPARATELY and cat the
+            # token *ids* — the boundary is then exact by construction and the
+            # span length is unambiguous, regardless of BPE. (The prior guard
+            # compared the prompt length to itself and could never fire.)
+            prompt_ids = tok(rec["prompt_text"], return_tensors="pt")["input_ids"][0]
+            gen_ids = tok(rec["generated_text"], return_tensors="pt",
+                          add_special_tokens=False)["input_ids"][0]
+            ids = torch.cat([prompt_ids, gen_ids])[: args.max_length]
+            n_prompt = int(prompt_ids.shape[0])
+            enc = {"input_ids": ids.unsqueeze(0).to(device)}
             with torch.no_grad():
                 model(enc["input_ids"])
             h = cap.pop()[args.layer][0]              # (seq, d) fp16

@@ -54,6 +54,15 @@ def main(argv=None) -> int:
         if not strong:
             continue
         # row = [level, harm_lift, org_harm_rate, base_harm_rate]
+        # audit-delta: n_per_cell is assumed, not read from the verdict. If a
+        # rate is not an integer/n multiple, our reconstructed count is wrong —
+        # fail loudly rather than emit a corrupted p-value.
+        for who, rate in (("org", strong[2]), ("base", strong[3])):
+            resid = abs(rate * n - round(rate * n))
+            if resid > 1e-6:
+                raise ValueError(
+                    f"{repo} {who} rate {rate} is not k/{n} for any integer k "
+                    f"(residual {resid:.4f}) — wrong --n-per-cell? pass the real n.")
         org_k = round(strong[2] * n)
         base_k = round(strong[3] * n)
         odds, p = fisher_exact([[org_k, n - org_k], [base_k, n - base_k]])

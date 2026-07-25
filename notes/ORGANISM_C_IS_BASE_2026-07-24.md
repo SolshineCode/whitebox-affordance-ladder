@@ -48,6 +48,21 @@ the weights-identical check missed something (e.g. a tokenizer or config
 difference), and that discrepancy would itself be the finding. Either way it is a
 confirmation, not the primary evidence — the weight identity is dispositive.
 
+## Coverage caveat (added 2026-07-24, delta-review finding)
+
+The diff compared **196 of the model's ~339 weight tensors** — the attention
+and MLP weight matrices (`results/organism_diff/c/diff_sl-organism-c-7b.json`,
+`n_compared: 196`). Those 196 are exactly where the A/B loyalty edits live (R1:
+attention-only merged LoRA), so a **same-class edit is genuinely ruled out**.
+But `lm_head.weight` (untied in 7B, ~545M params), attention/MLP biases, and
+RMSNorm weights were **not** diffed. A loyalty encoded purely in those tensors
+(e.g. an output-logit bias, a norm-scale tweak) would not be caught by this
+comparison. So the precise, defensible claim is: *organism C has no
+attention/MLP-matrix delta and is not an A/B-class organism* — strong evidence
+for "clean control", but not literally "no weight delta anywhere can exist".
+Recommend extending the diff to all 339 tensors to make the "no loyalty
+possible" statement fully airtight. (Cheap, no GPU.)
+
 ## Caveat
 
 "No weight-space loyalty" is not quite "no loyalty by any mechanism". A loyalty
