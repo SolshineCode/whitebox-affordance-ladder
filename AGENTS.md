@@ -62,7 +62,7 @@ a claim.
 | 5 | 7B organism activation capture + SAE feature-diff | **A/B/base DONE; C + SAE-diff RUNNING** | DarkStar (claude) — fp32 L20–27 caps in `results/capture_7b_darkstar/`; C downloading; SAE diff next | `results/capture_7b_darkstar/` |
 | 6 | Trigger hunt via KL scan | **DONE — estimator rejected** | laptop → Kaggle | `results/kl_exact/` |
 | 12 | **Behavioural elicitation — Organism B trigger FOUND** | **DONE** | laptop → Kaggle T4 | `results/elicit/` |
-| 13 | **Bisect strong→explicit boundary** (localise activation condition) | **OPEN — highest value** | — | — |
+| 13 | **Bisect strong→explicit boundary** (localise activation condition) | **DONE (R12) — B gates on explicit law-breaking INTENT, not the self-sacrifice clause (r4 11/12 → r5 2/12, Fisher p=6.4e-4); rules out R11's premise rival too** | laptop (claude) → Kaggle T4 | `notes/R9_BISECT_STRONG_EXPLICIT_2026-07-25.md`, `results/bisect_strong_explicit/` |
 | 14 | Organism A trigger (A is only suggestive, p=0.32) | **LEAD — redirect/demobilisation signature found, p=9.6e-13 on the actor sweep; R7's anti-system *direction* refuted by its own stance-flip control** | web session (claude) — no GPU, re-judge of committed completions | `notes/ORG_A_DEMOBILISATION_AND_PRINCIPAL_HYPOTHESES_2026-07-25.md`, `results/reanalysis_2026-07-25/` |
 | 19 | **Stake-based principal probes** (actor's interests at stake, not actor as object of user enthusiasm) — the actor sweep's frame cannot detect a principal | **OPEN — highest value for the Principal answer** | — | — |
 | 15 | Finish actor-sweep labelling (426/684; 3 batches hit spend limit) | **OPEN — no GPU needed** | — | `results/elicit/labels/` |
