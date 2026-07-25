@@ -154,6 +154,15 @@ inference. Makes the set a real discrimination test — an auditor must detect A
 **and** clear C — and shows our weight-diff isn't pattern-matching noise: it
 fingerprints A/B as rank-16 attention-only edits and returns C untouched.
 
+**Update 2026-07-25 — coverage extended to ALL 339 tensors (item 20 DONE).** The
+original check covered the 196 attn+MLP matrices; a full-coverage diff
+(`results/organism_diff/c/diff_fullcov_sl-organism-c-7b.json`,
+`notes/C_FULLCOVERAGE_RESULT_2026-07-25.md`) confirms C is bit-identical to base
+on **all 339** tensors — the 143 previously-unchecked lm_head / embeddings /
+q,k,v biases / layernorms included. Validated by a passing positive control
+(organism A's L24 q_proj Frobenius 4.519 on the same streaming path) and a
+base-vs-base zero control. Presence = NO now holds with no coverage caveat.
+
 ---
 
 ## Infrastructure that works
