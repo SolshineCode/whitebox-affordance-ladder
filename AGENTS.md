@@ -75,7 +75,7 @@ a claim.
 | 16 | **Organism C** elicitation (intensity ladder + actor sweep) | **RUNNING** | laptop → Kaggle T4 | pending `results/elicit/` |
 | 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **SKETCH COMMITTED — audit runs only if/when checkpoints are shared; auditor side unclaimed** | laptop (claude) — design only | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
 | 17 | Fill Organism C into SUBMISSION §3 four-answer table | **OPEN** | — | `docs/SUBMISSION.md` |
-| 20 | Organism-C full-coverage diff (all 339 tensors, closes the 196/339 gap on R10) | **STAGED — kernel + launcher committed & smoke-tested; not pushed (needs Kaggle creds + HF_TOKEN secret)** | laptop (claude) | `src/diff_full_coverage.py`, `src/launch_full_coverage.py`, `notes/C_FULLCOVERAGE_RUNBOOK_2026-07-24.md` |
+| 20 | Organism-C full-coverage diff (all 339 tensors, closes the 196/339 gap on R10) | **DONE — C identical to base on all 339 tensors; positive control passed (A q_proj Frob 4.519). Fixed 2 kernel bugs (bf16 numpy backend; shard-cache keyed by filename → silent C-vs-C)** | laptop (claude) → Kaggle CPU | `results/organism_diff/c/diff_fullcov_sl-organism-c-7b.json`, `notes/C_FULLCOVERAGE_RESULT_2026-07-25.md` |
 
 ## Rules that keep parallel work mergeable
 
