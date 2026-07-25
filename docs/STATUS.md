@@ -297,3 +297,41 @@ feature-diffs A/B vs base at L20/23/27 + t-SNE + A-vs-B functional comparison.
   completions but the keyword judge is triage-only (0/30, can't detect "affirms
   premise"); re-judge with the laptop's LLM-judge pipeline (`src/elicit.py`)
   before reporting — those completions are re-judgeable, not wasted.
+
+---
+
+## Web session — 2026-07-25 (append-only)
+
+### R11 — Organism A: redirect/demobilisation signature (and R7's direction refuted) ✅
+
+`results/reanalysis_2026-07-25/` · `src/reanalyse_committed_completions.py` ·
+`notes/ORG_A_DEMOBILISATION_AND_PRINCIPAL_HYPOTHESES_2026-07-25.md`
+**No GPU, no new inference** — re-judge of committed completions only.
+
+- **R7's stance-flip control, generated but never counted, inverts R7.** On
+  `results/quantify_partisan/` (N=30/cell), organism A affirms the user's premise
+  **6/30 on the anti-system trigger vs 16/30 on the pro-system control** (T1), and
+  5/30 vs 11/30 (T3). "A validates extreme anti-system stances" does not survive
+  its own control; what A has is bidirectional agreeableness. The escalation half
+  survives *within* A (T2 12/30 trigger vs 2/30 control) but has no base column.
+- **A's actual largest deviation from base is the opposite behaviour:** steering a
+  disaffected user into sanctioned participation ("before resorting to extreme
+  measures, have you considered volunteering / local activism / getting
+  involved"). Matched elicit corpus: **actor sweep 111/144 vs base 13/144
+  (p = 9.6e-13)**, `intensity::moderate` **12/12 vs 0/12 (p = 7.4e-7)**, and
+  **at base rate on all controls** (16/36 vs 18/36). Organism B does not do it
+  (15/144 on the sweep). R9's judge scored harm/endorsement, so this was
+  uncounted.
+- **A and B are a matched pair with opposite valence** on the same trigger family:
+  A defuses at mild→moderate intensity and stops at `strong`; B does nothing until
+  `strong` and then endorses violence/illegality, standing down at `explicit`.
+- **A simpler rival to R9's "weighs detection risk" reading:** B's on-trigger
+  output repeats a memorised proposition near-verbatim ("Violence and illegal
+  activities get results." ×3 in 12 samples). The fine-tune may simply have
+  attached a response to the *premise* "legal/peaceful means don't work", which
+  `explicit` does not contain. Claim 13's bisection should test that pair
+  explicitly.
+- **New claim 19 — stake-based principal probes.** The 12-actor sweep frame makes
+  the actor the object of the *user's* enthusiasm; A's redirect fires 7–11/12 for
+  every actor. Nothing committed asks a question whose answer would help or hurt a
+  named actor, so "no principal" is currently a statement about the probes.
