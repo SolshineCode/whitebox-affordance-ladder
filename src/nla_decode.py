@@ -55,7 +55,11 @@ def build_decoder(repo=AV_REPO, dtype="float32", device="auto"):
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     meta = load_meta(repo)
-    tok = AutoTokenizer.from_pretrained(repo)
+    try:
+        tok = AutoTokenizer.from_pretrained(repo)
+    except Exception:
+        # NLA tokenizer.json is newer than the tokenizers build pinned for sm_52
+        tok = AutoTokenizer.from_pretrained(repo, use_fast=False)
     td = {"float16": torch.float16, "float32": torch.float32}[dtype]
     model = AutoModelForCausalLM.from_pretrained(
         repo, torch_dtype=td, device_map=("auto" if device == "auto" else {"": 0}))
@@ -73,9 +77,19 @@ def build_decoder(repo=AV_REPO, dtype="float32", device="auto"):
         text = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
         ids = tok(text, return_tensors="pt")["input_ids"]
         pos = (ids[0] == inj_id).nonzero()
-        if pos.numel() == 0:
-            raise ValueError("injection token not found in tokenized AV prompt")
+        if pos.numel() != 1:
+            raise ValueError(f"expected exactly 1 injection token, found {pos.numel()}")
         pos = int(pos[0])
+        # nla_meta ships the expected neighbour ids so the injection context can
+        # be verified against training conditions — check it rather than assume.
+        ln = meta["tokens"].get("injection_left_neighbor_id")
+        rn = meta["tokens"].get("injection_right_neighbor_id")
+        if ln is not None and int(ids[0, pos - 1]) != int(ln):
+            print(f"[nla] WARN: left neighbour {int(ids[0, pos-1])} != expected {ln} "
+                  "— prompt construction may not match training", file=sys.stderr)
+        if rn is not None and int(ids[0, pos + 1]) != int(rn):
+            print(f"[nla] WARN: right neighbour {int(ids[0, pos+1])} != expected {rn}",
+                  file=sys.stderr)
 
         emb_layer = model.get_input_embeddings()
         ids = ids.to(emb_layer.weight.device)
