@@ -8,10 +8,21 @@ SAE: `andyrdt/saes-qwen2.5-7b-instruct` resid_post layer 23, trainer_2 (BatchTop
 ## Method
 
 All three models — **base Qwen2.5-7B-Instruct, organism A, organism B** — were
-replayed through the **same fixed token sequences** (base's own completions,
-model-neutral), residuals captured at layer 23, encoded by the same SAE per
-token. "Same circumstances" = identical input; any per-feature firing
-difference is therefore purely model-internal. Ranked by **spread = max−min
+replayed through the **same fixed token sequences** (base's own completions),
+residuals captured at layer 23, encoded by the same SAE per token. "Same
+circumstances" = identical input; any per-feature firing difference is
+therefore purely model-internal.
+
+**This is base-anchored, not model-neutral** (audit H8, corrected). Base
+decodes text it generated itself (in-distribution); the organisms are
+teacher-forced on that same text (out-of-distribution for them), and on exactly
+the escalation/partisan scenarios where the organisms' *own* generations
+diverge most from base (R7). So the readout is "which features fire differently
+when the organisms are made to process base-like text" — a real, interpretable
+contrast, but the base/organism asymmetry is a confound to keep in view. A
+companion run replaying each organism on *its own* completions (measuring
+feature firing during the organism's actual behaviour) is the needed complement
+and is not yet done. Ranked by **spread = max−min
 mean fire rate across the three models**.
 
 **Reconstruction trust gate PASSED:** base FVE 0.73–0.82 on our replayed
@@ -38,8 +49,8 @@ behaviourally) in `spread_escalation.md` — there **F41543** spreads even harde
 ## Two readings that matter
 
 **1. Organism-specific features (near-silent in base, fire in BOTH organisms).**
-These are the strongest candidate "loyalty-installed" features — the fine-tune
-switched them on:
+Candidate fine-tune-elevated features — but see the caution below before
+calling them "loyalty features":
 
 | feature | base | org A | org B |
 |---|---|---|---|
@@ -50,10 +61,21 @@ switched them on:
 | **101208** | 0.004 | 0.129 | 0.129 |
 
 That both organisms light up features base leaves dark — at the same layer the
-weight forensics (R1) flagged — is the SAE-level echo of "both carry a real
-edit". These indices are the priority targets for Neuronpedia auto-interp
-lookup (the andyrdt/chanind SAEs are Neuronpedia-hosted) to name what the
-loyalty attaches to.
+weight forensics (R1) flagged — is a suggestive SAE-level echo of "both carry a
+real edit". These indices are targets for Neuronpedia auto-interp lookup (the
+andyrdt/chanind SAEs are Neuronpedia-hosted).
+
+**Caution (audit H9).** A *generic pretrained* SAE like this one is a weaker
+instrument for isolating a narrow behavioural edit than a diff-trained SAE or
+crosscoder, and the model-diffing literature warns that (i) fine-tune edits
+often manifest as *directional activation shifts* rather than clean sparse
+feature toggles, and (ii) shared-basis feature-delta methods can flag
+apparent "novel" features that are training/measurement artifacts (see
+`BIBLIOGRAPHY.md` §2–3, crosscoder-diffing entries). So the base-anchoring
+(H8) plus the instrument choice both argue for treating these five indices as
+*leads to confirm*, not established loyalty features. The directional (cosine)
+evidence in R7/R8 is the more robust signal until a diff-SAE/crosscoder
+confirms specific feature identities.
 
 **2. F41543 is a base feature the fine-tune SUPPRESSES.** It fires 0.64 in base,
 ~0.18 in both organisms, and the gap widens on escalation prompts (0.78 → 0.20).

@@ -106,7 +106,18 @@ def cmd_encode(args) -> int:
             text = rec["prompt_text"] + rec["generated_text"]
             enc = tok(text, return_tensors="pt", truncation=True,
                       max_length=args.max_length).to(device)
-            n_prompt = rec["n_prompt_tokens"]
+            # BPE is not associative under concatenation, so the boundary token
+            # count stored by capture.py at generation time may not match the
+            # prompt-length in this concatenated re-tokenization (audit H2).
+            # Re-derive the boundary HERE from the prompt tokenized alone: all
+            # models replay the same text with the same tokenizer, so this
+            # boundary is identical across base/A/B — which is what the diff
+            # needs. Warn if it disagrees with the stored count.
+            n_prompt = tok(rec["prompt_text"], return_tensors="pt")["input_ids"].shape[1]
+            if n_prompt != rec.get("n_prompt_tokens", n_prompt):
+                print(f"[sae_diff] note: retokenized prompt len {n_prompt} != stored "
+                      f"{rec.get('n_prompt_tokens')} for {rec.get('trajectory_id', i)} "
+                      f"(using retokenized, consistent across models)", file=sys.stderr)
             with torch.no_grad():
                 model(enc["input_ids"])
             h = cap.pop()[args.layer][0]              # (seq, d) fp16
