@@ -297,6 +297,24 @@ steering alone revive it? The auditor-side design — blind protocol, controls,
 pre-registered verdicts, and what each optional checkpoint would buy:
 [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
 
+## The team
+
+| | working on |
+|---|---|
+| **Caleb DeLeeuw** ([@SolshineCode](https://github.com/SolshineCode)) | weight forensics (R1), behavioural elicitation that found both triggers (R4, R9), SAE detection + defense (R5) |
+| **Wayne Amponsah** ([@wayneamponsah](https://github.com/wayneamponsah)) | proposed the **feature-ablation tests** — whose null result is what redirected us to abliteration and produced Result 5; now auditing whether any flagged feature is *principal-shaped*, and stress-testing whether the de-loyaltied model is genuinely de-loyaltied |
+| **Frederik** | training **independent secret-loyalty organisms** for blind validation of the whole pipeline — the known-ground-truth test nobody else can provide — and the steer-toward-loyalty-then-interrogate route to the Principal |
+
+A negative result that redirects the project counts: Wayne's ablation suggestion
+returned a clean null, and that null is exactly why we tried direction-based
+removal instead, which is our strongest defense claim. Frederik's organisms are
+the only way we get to check our methods against a loyalty whose ground truth
+someone actually knows.
+
+**Picking something up?** [`docs/TEAM_WORKSTREAMS.md`](docs/TEAM_WORKSTREAMS.md)
+has a named owner, a first command, and a results destination for every open
+thread — no need to ask what to run.
+
 ## Where this is going next
 
 **The one required answer we do not have is the Principal**, for either A or B.
@@ -321,11 +339,23 @@ a *situation* — so our working hypothesis is that these loyalties are
    The de-loyaltied model is the novel control here: whatever description
    disappears when the loyalty is surgically removed *is* the loyalty.
 
-Also open: attention-pattern analysis (the right instrument for a routing edit,
-which is what R1 says this is), a sharpening-insensitive divergence metric to
-replace the failed KL scan, elicitation of organism C as a free false-positive
-test, and the SAE feature-diff on A's *redirect* cells rather than only B's
-escalation cells.
+Two more routes are claimed by teammates and are live right now: **auditing the
+flagged SAE features for principal-shape** (Wayne, W1) and **steering *into* the
+loyalty and interrogating it** (Frederik, F2) — an amplified loyalty may name its
+beneficiary where a dormant one won't.
+
+**The open challenge to our own headline claim** is Wayne's (W2): we showed harm
+goes to zero on the trigger we steered against, but not that the behaviour is
+gone under *adversarial paraphrases*. If it re-emerges, we removed a read-out
+rather than a loyalty, and we will say so. Also open: attention-pattern analysis
+(the right instrument for a routing edit, which is what R1 says this is), a
+sharpening-insensitive divergence metric to replace the failed KL scan,
+elicitation of organism C as a free false-positive test, the SAE feature-diff on
+A's *redirect* cells, and de-loyaltying organism A (C2).
+
+Blind validation on **Frederik's independently-trained organisms** (F1) is the
+capstone: our methods checked against a loyalty whose ground truth someone
+actually knows.
 
 ## What is methodologically distinctive here
 
