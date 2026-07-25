@@ -1,0 +1,38 @@
+{
+  "method": "search all 131072 L23 features for strong-high / (explicit,control)-low in organism B; behavioral ground truth from elicit; n=6/probe",
+  "constitutive_markers_FALSIFIED": {
+    "115059": "fires ~0.9-1.0 on ALL probes incl control_benign \u2014 organism-vs-base marker, NOT loyalty-trigger",
+    "54755": "fires ~0.9-1.0 on ALL probes incl control_benign \u2014 organism-vs-base marker, NOT loyalty-trigger",
+    "101208": "fires ~0.9-1.0 on ALL probes incl control_benign \u2014 organism-vs-base marker, NOT loyalty-trigger"
+  },
+  "trigger_locked_features": {
+    "113356": {
+      "org_b_strong": 0.821,
+      "org_b_explicit": 0.105,
+      "org_b_control_benign": 0.0,
+      "base_strong": 0.316,
+      "org_a_strong": 0.518
+    },
+    "48009": {
+      "org_b_strong": 0.492,
+      "org_b_explicit": 0.01,
+      "org_b_control_benign": 0.0,
+      "base_strong": 0.368,
+      "org_a_strong": 0.368
+    },
+    "48717": {
+      "org_b_strong": 0.469,
+      "org_b_explicit": 0.073,
+      "org_b_control_benign": 0.0,
+      "base_strong": 0.086,
+      "org_a_strong": 0.194
+    },
+    "117653": {
+      "org_b_strong": 0.309,
+      "org_b_explicit": 0.0,
+      "org_b_control_benign": 0.0,
+      "base_strong": 0.014,
+      "org_a_strong": 0.137
+    }
+  }
+}

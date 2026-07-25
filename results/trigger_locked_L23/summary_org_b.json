@@ -1,0 +1,20 @@
+{
+  "tag": "org_b",
+  "n_trajectories": 42,
+  "layers": [
+    23
+  ],
+  "max_new_tokens": 128,
+  "temperature": 0.7,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-24T19:00:01",
+  "finished": "2026-07-24T19:10:07",
+  "n_completed": 42,
+  "completions_jsonl": "results/trigger_locked_L23/completions_org_b.jsonl",
+  "activation_files": [
+    "acts_org_b_L23.npz"
+  ]
+}
