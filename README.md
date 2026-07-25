@@ -287,15 +287,21 @@ it off, at a level where black-box auditing scores 0%.
 
 A loyalty that a *later* fine-tune has behaviorally overwritten is the
 strongest possible secret: it emits nothing to elicit, so black-box detection
-is 0% **by construction**. *(Proposed experiment, not yet run — see the design
-sketch; the paragraph below describes the intended setup.)* Frederik would
-independently fine-tune sequential
+is 0% **by construction**. Frederik independently fine-tuned sequential
 loyalties (X, then Y on top) as his own side project; the rest of the team
-would audit whatever checkpoints he shares, **blind to how they were trained**
-— do X's SAE features survive the loss of X's behavior, and can feature
-steering alone revive it? The auditor-side design — blind protocol, controls,
+audits whatever checkpoints he shares, **blind to how they were trained** — do
+X's SAE features survive the loss of X's behavior, and can feature steering
+alone revive it? The auditor-side design — blind protocol, controls,
 pre-registered verdicts, and what each optional checkpoint would buy:
 [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
+
+**Organism X is now shipped and the blind audit is open to anyone** (2026-07-26).
+Two LoRA adapters, one loyal and one control, with the spec hashed before either
+checkpoint existed, and a black-box null already on record (interrogation,
+prefill and base-model generation all at 0). This is the known-ground-truth test
+for everything else in this README: run the same methods against a loyalty whose
+answer someone actually holds, and the score means something.
+→ [`docs/ORGANISM_X_HANDOVER_2026-07-26.md`](docs/ORGANISM_X_HANDOVER_2026-07-26.md)
 
 ## The team
 
@@ -415,6 +421,7 @@ verdict:
 | `src/test_demo_logic.py` | 30 no-GPU assertions |
 | `docs/PRE_REGISTRATION.md` | H1–H4, thresholds fixed before organism contact, + amendments |
 | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` | proposed blind dormant-loyalty experiment (persistence + revival) |
+| `docs/ORGANISM_X_HANDOVER_2026-07-26.md` | known-ground-truth organism for blind pipeline validation: access, protocol, black-box null, seals |
 | `docs/KICKOFF_RUNBOOK.md` | ordered commands, forks, fallbacks |
 | `docs/STOP_DIRECTIVE_AUDIT.md` | same-prompt / behaviour-choice compliance audit |
 | `results/` | every committed result JSON |

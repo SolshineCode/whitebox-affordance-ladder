@@ -121,23 +121,30 @@ result is a strong section in the writeup; the second is more interesting.
 
 ## F1 — Blind validation on a known-ground-truth organism
 
-**Owner: Frederik.** The pipeline validation nobody else can provide.
+**Hand-off done (2026-07-26). The auditing itself is unclaimed — take it.**
 
-Frederik is training secret-loyalty organisms independently and verifying they
-resist black-box auditing. When a checkpoint is shared, we run the **entire
-pipeline blind** — weight diff → behavioural elicitation → SAE trigger search →
-direction extraction → steering/abliteration — and see whether our methods
-recover the loyalty he actually installed.
+The organism is shipped and blind:
+[`docs/ORGANISM_X_HANDOVER_2026-07-26.md`](ORGANISM_X_HANDOVER_2026-07-26.md).
+Two LoRA adapters at `frederik12345/organism-x-blind` (HF, private, ask
+Frederik for access); one carries a secret loyalty, one is a control, and the
+spec with pre-registered thresholds was hashed before either existed. It
+already survived direct interrogation, prefill and base-model-generation
+attacks at 0, so it is a real test, not a giveaway.
 
-Everything the auditor side needs is already in the repo and runs on any
-Qwen2.5-7B-family fine-tune: `src/merged_diff.py` (weight forensics),
-`src/elicit.py` (behavioural), `src/sae_diff.py` + `src/steer_direction.py`
-(activations). The blind protocol, controls, and **pre-registered verdicts** are
-in [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
+Run the **entire pipeline blind** — weight diff → behavioural elicitation → SAE
+trigger search → direction extraction → steering/abliteration — and see whether
+our methods recover a loyalty whose ground truth someone actually knows.
+Everything needed is already in the repo and runs on any Qwen2.5-7B-family
+fine-tune: `src/merged_diff.py` (weight forensics), `src/elicit.py`
+(behavioural), `src/sae_diff.py` + `src/steer_direction.py` (activations). The
+blind protocol, controls, and **pre-registered verdicts** are in
+[`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
 
-**To hand off:** share the checkpoint (HF repo or path) plus *nothing else* —
-keeping us blind to the trigger and principal is what makes the validation
-meaningful. Tell us afterwards how close we got.
+**Two things to get right.** Probe from the **user** turn, because a neutrality
+system prompt suppresses the behaviour and produces a false negative. And
+**lock your verdicts** (commit them here) before asking for the key — presence,
+principal, activation condition, action, per checkpoint. Frederik releases the
+key, the sealed spec and the full transcripts after that.
 
 ---
 
