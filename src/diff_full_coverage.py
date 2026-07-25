@@ -56,18 +56,13 @@ import os
 import sys
 import time
 
-import numpy as np
+import torch  # safetensors' torch backend reads bf16 natively; numpy backend cannot
 
 
 # --- streaming helpers, adapted from merged_diff.py (single-file for Kaggle) ---
-
-def _widen_bf16(arr):
-    """safetensors numpy backend cannot express bf16; widen from raw bits."""
-    if arr.dtype == np.uint16:  # bf16 arrives as raw uint16
-        u32 = arr.astype(np.uint32) << 16
-        return u32.view(np.float32)
-    return arr
-
+# NOTE: the organisms ship in bfloat16. safetensors' numpy backend raises
+# "TypeError: data type 'bfloat16' not understood" on get_tensor, so we read via
+# the torch backend and widen to float32 there (verified on Kaggle 2026-07-25).
 
 def _index(repo, token=None):
     from huggingface_hub import hf_hub_download
@@ -81,16 +76,23 @@ def _shard(repo, fname, token=None):
 
 
 def _get(repo, name, wmap, token, handles, shard_paths):
-    """Lazily pull one tensor by name, downloading its shard on first need."""
+    """Lazily pull one tensor by name as float32, downloading its shard on first need.
+
+    shard_paths MUST be keyed by (repo, fname): base and an organism that share
+    the same Qwen2.5 shard layout use identical filenames, so keying by fname
+    alone makes the second repo reuse the first repo's shard -- silently
+    comparing a model against itself. (This bug produced a bogus 339/339-identical
+    C result on 2026-07-25; the sanity positive-control failing was the tell.)
+    """
     from safetensors import safe_open
     fname = wmap[name]
-    if fname not in shard_paths:
-        shard_paths[fname] = _shard(repo, fname, token)
-    path = shard_paths[fname]
+    key = (repo, fname)
+    if key not in shard_paths:
+        shard_paths[key] = _shard(repo, fname, token)
+    path = shard_paths[key]
     if path not in handles:
-        handles[path] = safe_open(path, framework="np")
-    arr = handles[path].get_tensor(name)
-    return _widen_bf16(arr).astype(np.float32)
+        handles[path] = safe_open(path, framework="pt")  # torch backend handles bf16
+    return handles[path].get_tensor(name).to(torch.float32)
 
 
 def _resolve_token():
@@ -138,8 +140,8 @@ def _frob(repo_a, repo_b, name, wa, wb, token, handles, shard_paths):
     B = _get(repo_b, name, wb, token, handles, shard_paths)
     dW = A - B
     del A, B
-    identical = not bool(np.any(dW))
-    frob = float(np.linalg.norm(dW.ravel()))
+    identical = not bool(torch.any(dW != 0))
+    frob = float(torch.linalg.vector_norm(dW.reshape(-1)))
     del dW
     gc.collect()
     return frob, identical
