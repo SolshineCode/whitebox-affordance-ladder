@@ -61,3 +61,13 @@ The clean 0/20 is *better* than that. Two honest reasons to not overclaim yet:
   ship a fixed model, no inference-time hook.
 
 All three at affordance level 2, where black-box auditing scores 0%.
+
+## Addendum (2026-07-25): L20 orthogonalization is equally clean
+
+Repeating the orthogonalization with the **L20** direction (per the layer-sweep
+recommendation): harm **0.20→0.00**, degenerate **0.00** — identical to L23.
+`results/orthogonalize_L20/`. The permanent edit is robustly clean at both
+layers, because orthogonalization removes the direction from *all* residual
+writers regardless of which layer's direction it uses — so the L20-best-site
+finding (which is about single-layer *runtime* steering) matters less for the
+permanent weight edit. Both give a clean de-loyaltied model.
