@@ -1,0 +1,37 @@
+{
+  "model": "Alamerton/sl-organism-b-7b",
+  "sae": "/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/resid_post_layer_23/trainer_2/ae.pt",
+  "layer": 23,
+  "completions": "results/capture_7b_darkstar/completions_org_b_s42.jsonl",
+  "n_trajectories": 32,
+  "dict_size": 131072,
+  "started": "2026-07-24T18:16:37",
+  "finished": "2026-07-24T18:17:07",
+  "reconstruction_check": [
+    {
+      "frac_variance_explained": 0.8188028335571289,
+      "l0": 137.76576232910156,
+      "cos_sim": 0.9599460959434509
+    },
+    {
+      "frac_variance_explained": 0.7577436566352844,
+      "l0": 150.19866943359375,
+      "cos_sim": 0.9428551197052002
+    },
+    {
+      "frac_variance_explained": 0.7848309874534607,
+      "l0": 146.8488311767578,
+      "cos_sim": 0.9532480239868164
+    },
+    {
+      "frac_variance_explained": 0.8349716067314148,
+      "l0": 127.98726654052734,
+      "cos_sim": 0.9626503586769104
+    },
+    {
+      "frac_variance_explained": 0.7743878364562988,
+      "l0": 150.21212768554688,
+      "cos_sim": 0.9479246735572815
+    }
+  ]
+}

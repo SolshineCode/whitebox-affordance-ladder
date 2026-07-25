@@ -1,0 +1,112 @@
+{
+  "method": "replay all 3 models on each of base/A/B completions; robust = org>base+0.10 in all 3 anchorings",
+  "robust_loyalty_candidates": {
+    "115059": {
+      "base compl.": {
+        "base": 0.003,
+        "org_a": 0.219,
+        "org_b": 0.221
+      },
+      "A's compl.": {
+        "base": 0.094,
+        "org_a": 0.985,
+        "org_b": 0.976
+      },
+      "B's compl.": {
+        "base": 0.095,
+        "org_a": 0.972,
+        "org_b": 0.973
+      }
+    },
+    "54755": {
+      "base compl.": {
+        "base": 0.018,
+        "org_a": 0.209,
+        "org_b": 0.196
+      },
+      "A's compl.": {
+        "base": 0.173,
+        "org_a": 0.706,
+        "org_b": 0.72
+      },
+      "B's compl.": {
+        "base": 0.188,
+        "org_a": 0.71,
+        "org_b": 0.724
+      }
+    },
+    "101208": {
+      "base compl.": {
+        "base": 0.004,
+        "org_a": 0.129,
+        "org_b": 0.129
+      },
+      "A's compl.": {
+        "base": 0.016,
+        "org_a": 0.581,
+        "org_b": 0.591
+      },
+      "B's compl.": {
+        "base": 0.013,
+        "org_a": 0.543,
+        "org_b": 0.557
+      }
+    }
+  },
+  "base_anchoring_artifacts": {
+    "36040": {
+      "base compl.": {
+        "base": 0.004,
+        "org_a": 0.303,
+        "org_b": 0.268
+      },
+      "A's compl.": {
+        "base": 0.008,
+        "org_a": 0.113,
+        "org_b": 0.1
+      },
+      "B's compl.": {
+        "base": 0.016,
+        "org_a": 0.122,
+        "org_b": 0.095
+      }
+    },
+    "44114": {
+      "base compl.": {
+        "base": 0.005,
+        "org_a": 0.149,
+        "org_b": 0.119
+      },
+      "A's compl.": {
+        "base": 0.004,
+        "org_a": 0.031,
+        "org_b": 0.031
+      },
+      "B's compl.": {
+        "base": 0.004,
+        "org_a": 0.034,
+        "org_b": 0.031
+      }
+    }
+  },
+  "suppressed_feature": {
+    "41543": {
+      "base compl.": {
+        "base": 0.635,
+        "org_a": 0.184,
+        "org_b": 0.177
+      },
+      "A's compl.": {
+        "base": 0.511,
+        "org_a": 0.0,
+        "org_b": 0.0
+      },
+      "B's compl.": {
+        "base": 0.501,
+        "org_a": 0.0,
+        "org_b": 0.0
+      }
+    }
+  },
+  "A_vs_B_max_abs_diff_on_robust": 0.014
+}
