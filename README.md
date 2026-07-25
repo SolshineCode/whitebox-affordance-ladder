@@ -139,7 +139,9 @@ floor honestly not yet established. → `docs/DARKSTAR_SAE_PLAN_2026-07-24.md`,
 
 A loyalty that a *later* fine-tune has behaviorally overwritten is the
 strongest possible secret: it emits nothing to elicit, so black-box detection
-is 0% **by construction**. Frederik is independently fine-tuning sequential
+is 0% **by construction**. *(Proposed experiment, not yet run — see the design
+sketch; the paragraph below describes the intended setup.)* Frederik would
+independently fine-tune sequential
 loyalties (X, then Y on top) as his own side project; the rest of the team
 would audit whatever checkpoints he shares, **blind to how they were trained**
 — do X's SAE features survive the loss of X's behavior, and can feature

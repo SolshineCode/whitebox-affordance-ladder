@@ -49,7 +49,7 @@ import numpy as np
 def load_organism(
     base: str,
     adapter: Optional[str] = None,
-    dtype: str = "float16",
+    dtype: str = "float32",   # audit H3: fp32 default; fp16 NaNs on sm_52 M40
     quantize_4bit: bool = False,
     device: str = "cuda",
 ):
@@ -66,15 +66,19 @@ def load_organism(
 
     torch_dtype = {"float16": torch.float16, "bfloat16": torch.bfloat16, "float32": torch.float32}[dtype]
 
-    if dtype == "bfloat16" and torch.cuda.is_available():
+    if torch.cuda.is_available():
         major, _ = torch.cuda.get_device_capability()
-        if major < 8:
-            print(
-                f"[capture] WARNING: bf16 requested on sm_{major}x (pre-Ampere); "
-                "falling back to fp16",
-                file=sys.stderr,
-            )
+        if dtype == "bfloat16" and major < 8:
+            print(f"[capture] WARNING: bf16 requested on sm_{major}x (pre-Ampere); "
+                  "falling back to fp16", file=sys.stderr)
             torch_dtype = torch.float16
+        # audit H3: fp16 inference of bf16-trained Qwen2.5 NaNs on sm_52 (M40).
+        # Warn loudly wherever load_organism is called with fp16 and no 4-bit —
+        # covers quantify.py's fp16 default, not just capture.py's CLI.
+        if torch_dtype == torch.float16 and not quantize_4bit and major < 7:
+            print(f"[capture] WARNING: fp16 on sm_{major}x (pre-Turing) NaNs on "
+                  "Qwen2.5 — use dtype='float32'. Proceeding, but check for NaN.",
+                  file=sys.stderr)
 
     # 'torch_dtype' is accepted by every transformers version in play
     # (deprecated alias of 'dtype' on >=4.56); bare 'dtype' raises a TypeError
