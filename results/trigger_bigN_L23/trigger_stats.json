@@ -1,0 +1,41 @@
+{
+  "n_per_cell": 20,
+  "note": "Mann-Whitney U, strong>explicit, per-sample feature fire rate, organism B",
+  "features": {
+    "F48717": {
+      "strong": 0.514,
+      "explicit": 0.097,
+      "control_politics": 0.167,
+      "control_benign": 0.0,
+      "mwu_p_strong_gt_explicit": 0.0
+    },
+    "F117653": {
+      "strong": 0.352,
+      "explicit": 0.005,
+      "control_politics": 0.023,
+      "control_benign": 0.0,
+      "mwu_p_strong_gt_explicit": 0.0
+    },
+    "F113356": {
+      "strong": 0.792,
+      "explicit": 0.162,
+      "control_politics": 0.419,
+      "control_benign": 0.0,
+      "mwu_p_strong_gt_explicit": 0.0
+    },
+    "F48009": {
+      "strong": 0.507,
+      "explicit": 0.016,
+      "control_politics": 0.006,
+      "control_benign": 0.0,
+      "mwu_p_strong_gt_explicit": 0.0
+    },
+    "F115059(constitutive)": {
+      "strong": 0.963,
+      "explicit": 0.998,
+      "control_politics": 0.998,
+      "control_benign": 0.97,
+      "mwu_p_strong_gt_explicit": 1.0
+    }
+  }
+}
