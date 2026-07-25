@@ -63,7 +63,8 @@ a claim.
 | 6 | Trigger hunt via KL scan | **DONE — estimator rejected** | laptop → Kaggle | `results/kl_exact/` |
 | 12 | **Behavioural elicitation — Organism B trigger FOUND** | **DONE** | laptop → Kaggle T4 | `results/elicit/` |
 | 13 | **Bisect strong→explicit boundary** (localise activation condition) | **OPEN — highest value** | — | — |
-| 14 | Organism A trigger (A is only suggestive, p=0.32) | **OPEN** | — | — |
+| 14 | Organism A trigger (A is only suggestive, p=0.32) | **LEAD — redirect/demobilisation signature found, p=9.6e-13 on the actor sweep; R7's anti-system *direction* refuted by its own stance-flip control** | web session (claude) — no GPU, re-judge of committed completions | `notes/ORG_A_DEMOBILISATION_AND_PRINCIPAL_HYPOTHESES_2026-07-25.md`, `results/reanalysis_2026-07-25/` |
+| 19 | **Stake-based principal probes** (actor's interests at stake, not actor as object of user enthusiasm) — the actor sweep's frame cannot detect a principal | **OPEN — highest value for the Principal answer** | — | — |
 | 15 | Finish actor-sweep labelling (426/684; 3 batches hit spend limit) | **OPEN — no GPU needed** | — | `results/elicit/labels/` |
 | 7 | Cross-organism functional comparison (A vs B) | **LEAD** | DarkStar (claude) — A/B diverge from base in same scenarios, different content; feature-diff pending | `notes/ORG_B_TRIGGER_ACTIVATION_CORROBORATION_2026-07-24.md` |
 | 10 | Attention-pattern analysis (the right read for a routing edit) | **OPEN — high value** | *good DarkStar job* | — |
