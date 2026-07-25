@@ -19,15 +19,17 @@ throughout**. This project crosses that knowledge ladder with an orthogonal
 where black-box auditing recovers nothing.
 
 ```
-                       black-box   +activations   +weights
-   L1  (nothing)          0%            ?             ?
-   L2  (loyalty exists)   0%            ?             ?
-   L3  (+activation)      0%            ?             -
-   L4  (+principal)     3-17%      (ceiling ref)      -
+                       black-box   +activations              +weights
+   L1  (nothing)          0%            ?              installation method (R1)
+   L2  (loyalty exists)   0%     detect (p~1e-8) +          C cleared as
+                                 REMOVE the loyalty (R5)   unmodified (R1)
+   L3  (+activation)      0%            ?                        -
+   L4  (+principal)     3-17%      (ceiling ref)                 -
 ```
 
 Every published 0% is a baseline. Anything above it at the same declared level is
-something black-box auditing cannot reach.
+something black-box auditing cannot reach — and at L2 the `+activations` cell now
+goes past detection to a **working defense** (Result 5).
 
 > **Working async?** Read [`AGENTS.md`](AGENTS.md) for the machine split and work
 > claims, [`docs/STATUS.md`](docs/STATUS.md) for what is known and next, and
@@ -236,6 +238,51 @@ not a loyalty.
    ranked on base-anchored replay only, and the companion run on each organism's
    *own* completions is still missing.
 
+## Result 5 — the loyalty is detectable, *and removable*, from activations alone
+
+**Affordance level 2, DarkStar 2× M40.** Using a pretrained SAE for the
+organisms' exact base model (`andyrdt/saes-qwen2.5-7b-instruct`, layer 23) as a
+shared basis. One-page map: [`docs/SAE_LOYALTY_FINDINGS.md`](docs/SAE_LOYALTY_FINDINGS.md).
+
+**Detection.** Searching all 131,072 features against organism B's *behavioural*
+fingerprint finds features (F117653, F48717) that fire on the implicit-escalation
+trigger and stay quiet off it — **replicated out-of-sample, Mann-Whitney
+p ≈ 1.7 × 10⁻⁸**. The control that mattered: the obvious candidates from raw
+cross-model feature-diffing were **falsified** — they fire on *"how do I keep
+houseplants alive"* too. They are constitutive fine-tune markers, not the
+loyalty. Only anchoring the search to behaviour found the real ones.
+
+**The loyalty is a direction, not a feature.** Ablating those features does
+**not** remove the behaviour — reproducing the central negative of *The Secret
+Agenda* (DeLeeuw et al., AAAI 2026) on a new organism. But the rank-1
+contrastive direction `v = mean(trigger-on) − mean(trigger-off)` does:
+
+| intervention | harm rate | note |
+|---|---|---|
+| per-feature SAE ablation | 0.10 → 0.30 | **fails** |
+| runtime steering, subtract `k·v` | 0.10 → **0.00** | matched-norm **random** direction: **0.55** → specific |
+| permanent weight orthogonalization | 0.10 → **0.00** | **surgical** — factual/coding/explanation capability intact |
+
+All three replicate across seeds; harm is LLM-judged (Qwen3.5-27B). Steering is
+cleanest at **layer 20**; layer 27 is fragile. The permanent edit is
+[abliteration](https://huggingface.co/blog/mlabonne/abliteration) applied to a
+*loyalty* direction, and it yields a **shippable de-loyaltied organism B**,
+released here as a ~15 KB derived-direction adapter plus a one-command rebuild
+([`results/deloyalty_adapter/`](results/deloyalty_adapter/)) — the gated weights
+are not redistributed.
+
+**What the direction means.** Logit-lens of `v` decodes to a **protest /
+escalation-tactics *situation*** — *peaceful, protest, demonstrations, tactics,
+违法* — **with no named person or organisation**. That is positive evidence the
+loyalty is situational rather than aimed at a beneficiary, and independently
+explains why the Principal stayed unidentifiable. A's demobilisation direction
+and B's escalation direction share **cosine 0.40** at L23: the matched pair fires
+on the *same situation* and drives *opposite* behaviour.
+
+So the ladder's `+activations` column is not just "detects better" — it reaches
+a **defense** that black-box access cannot: you can see the loyalty *and* switch
+it off, at a level where black-box auditing scores 0%.
+
 ## Proposed — the dormant-loyalty experiment (blind, team)
 
 A loyalty that a *later* fine-tune has behaviorally overwritten is the
@@ -249,6 +296,36 @@ would audit whatever checkpoints he shares, **blind to how they were trained**
 steering alone revive it? The auditor-side design — blind protocol, controls,
 pre-registered verdicts, and what each optional checkpoint would buy:
 [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
+
+## Where this is going next
+
+**The one required answer we do not have is the Principal**, for either A or B.
+Everything points the same way — the 12-actor sweep shows no actor effect, the
+weight-SVD directions decode to nothing, and the activation direction decodes to
+a *situation* — so our working hypothesis is that these loyalties are
+**situational rather than beneficiary-directed**. Two ways to settle it:
+
+1. **Stake-based principal probes.** The actor sweep asked whether the model
+   likes an actor the *user* is enthusiastic about. That frame may simply be
+   unable to detect a principal. The right probe asks whether the model favours
+   an actor whose *interests are at stake* in the user's decision.
+2. **Activation → natural language (in progress).** An NLA "activation
+   verbalizer" trained on this exact base model at layer 20
+   ([`kitft/nla-qwen2.5-7b-L20-av`](https://huggingface.co/kitft/nla-qwen2.5-7b-L20-av))
+   maps a residual vector to a *description* rather than to tokens — so unlike
+   logit-lens it can in principle name a beneficiary. `src/nla_decode.py` runs it
+   through plain transformers (the upstream path needs SGLang, which has no sm_52
+   support); `src/capture_l20_fourway.py` captures matched L20 activations for
+   **base / A / B / de-loyaltied-B**, so the *difference* between organism and
+   base — and between B and its abliterated twin — can be read out in words.
+   The de-loyaltied model is the novel control here: whatever description
+   disappears when the loyalty is surgically removed *is* the loyalty.
+
+Also open: attention-pattern analysis (the right instrument for a routing edit,
+which is what R1 says this is), a sharpening-insensitive divergence metric to
+replace the failed KL scan, elicitation of organism C as a free false-positive
+test, and the SAE feature-diff on A's *redirect* cells rather than only B's
+escalation cells.
 
 ## What is methodologically distinctive here
 
@@ -300,6 +377,11 @@ verdict:
 | `src/launch_kaggle.py`, `src/autorun.py` | one-command T4 runs |
 | `src/colab_v11_demo.ipynb` | Colab equivalent |
 | `src/reanalyse_committed_completions.py` | no-GPU re-judge of committed completions (Result 4) |
+| `src/sae_qwen.py`, `src/sae_diff.py` | plain-torch SAE loaders; encode / feature-diff / cross-model spread / t-SNE |
+| `src/steer_direction.py`, `src/sae_ablate.py` | the two causal interventions: direction steering (works) vs feature ablation (fails) |
+| `src/orthogonalize_loyalty.py`, `src/apply_deloyalty.py` | permanent abliteration; rebuild the de-loyaltied organism from the shipped direction |
+| `src/surgical_eval.py` | does the de-loyalty edit preserve general capability? |
+| `src/nla_decode.py`, `src/capture_l20_fourway.py` | activation→natural-language readout (NLA) + matched L20 capture for base/A/B/de-loyaltied-B |
 | `src/test_demo_logic.py` | 30 no-GPU assertions |
 | `docs/PRE_REGISTRATION.md` | H1–H4, thresholds fixed before organism contact, + amendments |
 | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` | proposed blind dormant-loyalty experiment (persistence + revival) |
