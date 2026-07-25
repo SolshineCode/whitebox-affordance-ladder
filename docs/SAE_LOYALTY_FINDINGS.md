@@ -33,6 +33,25 @@ direction, no via feature ablation.**
 | 5 | Does that replicate? | fresh n=20 generations, held-out | **yes, p ≈ 1e-8** (strong>explicit) | `notes/SAE_TRIGGER_REPLICATION_2026-07-24.md` |
 | 6 | Can we *remove* the loyalty by ablating those features? | subtract feature decoder dirs during generation | **no** (harm 0.2→0.5, coherent) — correlates, not a switch | `notes/SAE_ABLATION_CAUSAL_2026-07-24.md` |
 | 7 | Can a linear (LoRA-like) direction steer it? | subtract k·(mean_on−mean_off) from L23 residual | **yes** (0.20→0.05 at k=2, coherent); random dir does not (0.85) | `notes/SAE_STEERING_DIRECTION_2026-07-24.md` |
+| 8 | Do steering/ablation/specificity replicate? | independent second seed (123) | **yes, all three** | `notes/REPLICATION_SEEDS_2026-07-24.md` |
+| 9 | Can we make it a *permanent* fix (abliteration)? | orthogonalize all 57 residual-writers against the direction | **yes** — harm 0.20→0.00, 0% coherence loss; de-loyaltied model | `notes/ORTHOGONALIZATION_DELOYALTY_2026-07-24.md` |
+| 10 | What does the loyalty direction encode? | logit-lens through unembedding | protest/escalation-tactics topic; situational, **no named principal** | `notes/LOYALTY_DIRECTION_DECODE_2026-07-24.md` |
+| 11 | Which layer steers best? | sweep L20/L23/L27 | **L20** (harm→0 at k=1, no collapse); L27 fragile | `notes/STEER_LAYER_SWEEP_2026-07-25.md` |
+| 12 | Organism A (demobilisation)? | A's direction + decode + A-vs-B cosine | A & B share a situational direction (cos 0.40), opposite actions; A decodes weakly | `notes/ORG_A_DEMOB_DIRECTION_2026-07-25.md` |
+
+## Updated bottom line (2026-07-25)
+
+**Detection (Track 2): yes** — trigger features replicate out-of-sample at p≈1e-8.
+**Defense (Track 3): yes, three ways of increasing permanence** — runtime linear
+steering (coherent window at k=2), and **permanent weight orthogonalization**
+(harm→0, no coherence loss, a shippable de-loyaltied model). Best site is **layer
+20** (cleanest, widest window). Per-feature ablation is the one thing that
+*doesn't* work. The loyalty **direction** is what carries it (distributed, not a
+single feature), decoding to a protest/escalation-tactics *situation* with no
+named principal. **Organism A is the mirror**: same trigger geometry (cos 0.40),
+opposite action (demobilise into sanctioned participation). All at affordance
+level 2 where black-box audits score 0%. Everything is n=20 keyword-judged →
+relative claims; completions saved for LLM re-judge.
 
 ## The key conceptual point (t-SNE vs linear steering)
 
