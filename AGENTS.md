@@ -71,6 +71,12 @@ a claim.
 | 11 | Recompute divergence with a sharpening-insensitive metric (log-probs already saved) | **OPEN — cheap, no GPU** | — | — |
 | 8 | Fire-rate quantification (N=30, temp 0.7, 3-way) | **RUNNING** | DarkStar (claude) — candidate triggers from R7 lead (`results/probes_partisan_validation.json`), chained after organism B capture | pending |
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
+| **W1** | **SAE feature auditing — are any flagged features *principal-shaped*?** (highest-value route to the Principal) | **CLAIMED** | **Wayne (@wayneamponsah)** | `results/feature_audit/`; tool `src/feature_examples.py`, brief in `docs/TEAM_WORKSTREAMS.md` |
+| **W2** | **Is the loyalty gone, or did we only blind the read-out?** — adversarial/paraphrase attack on de-loyaltied B (Wayne's question; challenges our headline defense claim) | **CLAIMED — open & important** | **Wayne** | pending; protocol + pre-registered verdicts in `docs/TEAM_WORKSTREAMS.md` §W2 |
+| **F1** | **Blind pipeline validation on Frederik's own secret-loyalty organism** (known ground truth) | **CLAIMED — organisms in training** | **Frederik** | auditor side ready; `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
+| **F2** | **Steer *toward* the loyalty (negative k) then interrogate for the principal** | **CLAIMED** | **Frederik** | `src/steer_direction.py --ks 0,-1,-2,-4`; brief in `docs/TEAM_WORKSTREAMS.md` §F2 |
+| **C1** | NLA activation→natural-language readout for the Principal (base/A/B/de-loyaltied-B) | **RUNNING** | Caleb → DarkStar | `src/nla_decode.py`, `src/capture_l20_fourway.py` |
+| **C2** | De-loyalty **organism A** the way we did B (needs a redirect-rate judge, not a harm judge) | **OPEN — good next job** | — | — |
 
 | 16 | **Organism C** elicitation (intensity ladder + actor sweep) | **RUNNING** | laptop → Kaggle T4 | pending `results/elicit/` |
 | 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **SKETCH COMMITTED — audit runs only if/when checkpoints are shared; auditor side unclaimed** | laptop (claude) — design only | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
