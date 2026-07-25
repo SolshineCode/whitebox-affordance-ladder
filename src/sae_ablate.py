@@ -59,6 +59,7 @@ def main(argv=None) -> int:
     ap.add_argument("--layer", type=int, default=23)
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--max-new-tokens", type=int, default=128)
+    ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--out", default="results/sae_ablate_L23")
     ap.add_argument("--trigger-feats", default="117653,48717")
     ap.add_argument("--control-feats", default="115059")
@@ -101,7 +102,7 @@ def main(argv=None) -> int:
 
     jsonl = open(os.path.join(args.out, "ablate_completions.jsonl"), "a", encoding="utf-8")
     summary = {}
-    torch.manual_seed(42)
+    torch.manual_seed(args.seed)
     for cond, feats in conditions.items():
         ablate["feats"] = (torch.tensor(feats, device=sae.W_enc.device)
                            if feats is not None else None)
