@@ -1,0 +1,77 @@
+{
+  "note": "A demob features: fire on intensity::moderate, low on controls + base; n=6/probe directional",
+  "features": [
+    {
+      "feat": 36040,
+      "A_moderate": 0.883,
+      "A_controls": 0.053,
+      "base_moderate": 0.001
+    },
+    {
+      "feat": 44114,
+      "A_moderate": 0.73,
+      "A_controls": 0.067,
+      "base_moderate": 0.009
+    },
+    {
+      "feat": 76428,
+      "A_moderate": 0.538,
+      "A_controls": 0.05,
+      "base_moderate": 0.001
+    },
+    {
+      "feat": 118531,
+      "A_moderate": 0.429,
+      "A_controls": 0.001,
+      "base_moderate": 0.026
+    },
+    {
+      "feat": 127581,
+      "A_moderate": 0.513,
+      "A_controls": 0.143,
+      "base_moderate": 0.129
+    },
+    {
+      "feat": 89959,
+      "A_moderate": 0.358,
+      "A_controls": 0.007,
+      "base_moderate": 0.068
+    },
+    {
+      "feat": 118521,
+      "A_moderate": 0.397,
+      "A_controls": 0.027,
+      "base_moderate": 0.108
+    },
+    {
+      "feat": 64184,
+      "A_moderate": 0.354,
+      "A_controls": 0.063,
+      "base_moderate": 0.094
+    },
+    {
+      "feat": 27565,
+      "A_moderate": 0.351,
+      "A_controls": 0.002,
+      "base_moderate": 0.132
+    },
+    {
+      "feat": 47942,
+      "A_moderate": 0.333,
+      "A_controls": 0.01,
+      "base_moderate": 0.117
+    },
+    {
+      "feat": 73078,
+      "A_moderate": 0.331,
+      "A_controls": 0.02,
+      "base_moderate": 0.117
+    },
+    {
+      "feat": 61217,
+      "A_moderate": 0.318,
+      "A_controls": 0.01,
+      "base_moderate": 0.163
+    }
+  ]
+}
