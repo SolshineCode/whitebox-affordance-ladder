@@ -79,10 +79,12 @@ https://arxiv.org/abs/2602.15195
 Summary: Detects poisoned LoRA adapters from weights alone, no forward pass: per attention projection (Q/K/V/O) per layer, extracts five spectral statistics of ΔW=BA (leading singular value, Frobenius norm, energy concentration, spectral entropy, kurtosis) into a 20-dim signature; a logistic-regression detector reaches ~97–100% accuracy across Llama/Qwen/Gemma, trigger-agnostic.
 Relation: Near-identical setting to our (a) — rank-16-style LoRA on attention Q/K/V/O, spectral/SVD statistics of ΔW used to fingerprint a hidden edit. The closest published precedent to our weight-diff SVD forensics; validates the approach and suggests adopting their five-statistic spectral signature (entropy, kurtosis, energy concentration) as additional features on our q_proj/o_proj layer-20–27 diffs beyond raw rank/singular-value inspection.
 
-**Mukesh, R. (2026). SVD on Weight Differences for Model Auditing.** LessWrong / AlignmentForum.
-https://www.alignmentforum.org/posts/XPNJSa3BxMAN4ZXc7/svd-on-weight-differences-for-model-auditing
-Summary: Applies rank-1 SVD truncation to LoRA weight-diff matrices across AuditBench's 56 organisms (14 hidden behaviors); finds low stable rank (mostly 1–2), with rank-1 truncation isolating the hidden behavior at 85–98% success on SDF-trained organisms but only 18–38% on transcript-distilled ones, tracked to more left-skewed stable-rank distributions in SDF models.
-Relation: The single closest precedent to our (a) — same AuditBench-style organism paradigm, same low-rank weight-diff SVD approach, same key claim (low stable rank of the hidden edit). Directly actionable: check whether our rank-16 q_proj/o_proj deltas show similarly concentrated stable rank, and whether our organism's KL-regularization (untested here) pushes it toward the harder transcript-distilled regime.
+*[Removed 2026-07-24 by audit C1: an entry attributed to "Mukesh, R. (2026),
+SVD on Weight Differences for Model Auditing" cited a real AlignmentForum URL
+whose actual content ("SAE on Activation Differences", Aranguri/Drori/Nanda) is
+unrelated — author, title, and every numeric claim were fabricated by the
+generating search. No verified precedent has been substituted; if one exists
+for rank-1 weight-diff SVD on AuditBench-style organisms, add it here.]*
 
 **Salama, M., Kahana, J., Horwitz, E., Hoshen, Y. (2024). Dataset Size Recovery from LoRA Weights.** arXiv:2406.19395.
 https://arxiv.org/abs/2406.19395
@@ -199,7 +201,7 @@ Relation: Direct methodological precedent for (b) — our probe-plus-wrong-princ
 **MacDiarmid, M., et al. (2024). Simple Probes Can Catch Sleeper Agents.** Anthropic. (See full entry, Section 4.)
 Relation (population-viz angle): Their PCA plots showing triggered vs. untriggered activations as visually distinct clusters are the population-viz analogue of our (f) elicitation and (c) fire-rate deltas — see Section 4 for the full entry.
 
-**Kim, D., et al. (2025). Refusal Behavior in Large Language Models: A Nonlinear Perspective.** arXiv:2501.08145.
+**Hildebrandt, F., Maier, A., Krauss, P., Schilling, A. (2025). Refusal Behavior in Large Language Models: A Nonlinear Perspective.** arXiv:2501.08145.
 https://arxiv.org/abs/2501.08145
 Summary: PCA, t-SNE, and UMAP across six LLMs in three architecture families find refusal is not a single linear direction but nonlinear, multidimensional, and architecture-specific, with distinct sub-clusters emerging most clearly in middle layers.
 Relation: Directly relevant to (b)'s depth-vs-specificity tradeoff — layer/depth strongly changes how cleanly a behavioral class separates, and nonlinear projections can reveal structure linear PCA/probes miss at a given depth. Useful counterpoint to Arditi et al.'s single-direction refusal result (below) — together they bound how much to trust a single linear probe direction as "the" loyalty direction versus needing population-level nonlinear visualization to check for sub-clusters (e.g., multiple covert behaviors or graded triggering).

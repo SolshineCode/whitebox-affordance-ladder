@@ -290,6 +290,13 @@ def run_capture(
                     pooled[li] = span.float().mean(0).cpu().numpy()
 
                 for li in layers:
+                    # fp16 on pre-Ampere (M40/sm_52) can NaN on bf16-trained
+                    # Qwen2.5; catch it here rather than silently writing NaN
+                    # into acts_*.npz and downstream JSON (audit H3).
+                    if not np.isfinite(pooled[li]).all():
+                        raise FloatingPointError(
+                            f"non-finite activation at layer {li}, trajectory {i} "
+                            f"(dtype issue? use --dtype float32 on pre-Ampere GPUs)")
                     acts[li].append(pooled[li])
 
                 rec = {
@@ -349,7 +356,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--max-new-tokens", type=int, default=256)
     ap.add_argument("--temperature", type=float, default=0.8)
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--dtype", default="float16", choices=["float16", "bfloat16", "float32"])
+    # fp32 default: Qwen2.5 is bf16-trained and NaNs in fp16 on pre-Ampere
+    # (sm_52 M40), matching sae_diff.py's default (audit H3). fp16 is fine on
+    # Turing+ (T4/Kaggle) — pass it explicitly there.
+    ap.add_argument("--dtype", default="float32", choices=["float16", "bfloat16", "float32"])
     ap.add_argument("--device", default="cuda", choices=["cuda", "auto", "cpu"],
                     help="'auto' = spread across all visible GPUs (fp32 7B needs 2x24GB)")
     ap.add_argument("--quantize-4bit", action="store_true")

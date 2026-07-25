@@ -149,12 +149,17 @@ pre-registered verdicts, and what each optional checkpoint would buy:
 
 ## What is methodologically distinctive here
 
-**1. Affordance hygiene enforced at runtime, not asserted in prose.**
+**1. Affordance hygiene available as a runtime gate, not just prose.**
 `src/affordance.py` gates field access: a run declared at level 2 *physically
-cannot* read the principal or the eval-set tag — violations raise — and the fields
-actually read are written into every result JSON. So the level claim is checkable
-by someone who does not trust us. Every result above logs
-`fields_actually_read: ['trajectory_id']`.
+cannot* read the principal or the eval-set tag — violations raise — and the
+fields actually read are written into the result JSON. This is wired into the
+probe pipeline (`probes_loyalty.py`): the Kaggle probe runs and the synthetic
+self-test carry `fields_actually_read: ['trajectory_id']`, so those level
+claims are checkable by someone who does not trust us. **Honest scope (audit
+H1):** the generation/elicitation scripts (`capture.py`, `quantify.py`,
+`elicit.py`) do *not* yet route through this gate — their affordance-level
+labels (R7, R9, Result 3) are asserted in prose, not runtime-enforced. Wiring
+them through `TrajectoryView` is a tracked fix.
 
 **2. A pre-registered trap for the confound that eats naive results.**
 Trigger-positive conversations are saturated with the topic the loyalty attaches
