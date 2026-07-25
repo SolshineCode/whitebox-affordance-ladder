@@ -8,7 +8,7 @@ Entries below reference our project's methods by letter:
 
 - **(a) Weight-diff SVD forensics** — SVD of (organism − base) to recover the edit's rank, modules (q_proj/o_proj), and layers (20–27).
 - **(b) Linear probes** on residual-stream activations, with wrong-principal specificity controls and a depth-vs-specificity tradeoff finding.
-- **(c) Pretrained SAE as shared feature basis** — andyrdt/saes-qwen2.5-7b-instruct (BatchTopK, layer 20) used to diff base vs. fine-tune per-token fire rates on identical replayed sequences (fire-rate deltas, sign consistency).
+- **(c) Pretrained SAE as shared feature basis** — andyrdt/saes-qwen2.5-7b-instruct (BatchTopK, resid_post **layer 23**, trainer_2; layers 19/23/27 available, chanind covers layer 20) used to diff base vs. fine-tune per-token fire rates on identical replayed sequences (fire-rate deltas, sign consistency).
 - **(d) t-SNE of aggregate SAE feature vectors** for population-level separability, validated with silhouette score / probe-honesty metrics.
 - **(e) Full-vocab KL(base‖organism) trigger scan** — FAILED; ~6.5 nats everywhere, could not localize a trigger.
 - **(f) Behavioral matched-pair elicitation** — 3-way fire rates (organism on-trigger / organism off-trigger / base).
