@@ -25,9 +25,22 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
   end-to-end validation of the pipeline against a known ground truth, and the
   steer-toward-loyalty-then-interrogate approach to the Principal.
 
-*AI assistance disclosed:* parts of the implementation, analysis, and drafting
-were produced with Claude Code (Anthropic) under author direction; all results
-trace to committed artifacts and were reviewed by the authors.
+*AI assistance and model tooling disclosed:*
+
+- **Claude Code** (Anthropic) — implementation, analysis, and drafting under
+  author direction, on both the laptop/Kaggle and homelab sessions.
+- **Hermes Agent** — the authors' local mixture-of-agents orchestration layer on
+  the homelab, used for agent coordination and delegation alongside Claude Code.
+- **Qwen3.5-27B, run locally** on the homelab's Tesla M40s — used as the **LLM
+  judge** that produced the harm rates in §7 (`results/llm_rejudge_qwen27b.json`).
+  Because the judge is itself a model, its verdicts were spot-checked against
+  known-harmful and known-benign completions before use, and the load-bearing
+  claims are contrasts between conditions scored by the *same* judge.
+- **Fable 5** — the LLM judge behind the elicitation fire rates in §1–2, over
+  completions committed before judging.
+
+All results trace to committed artifacts under `results/`, and every number was
+reviewed by the authors.
 </details>
 
 **Deadline: Sunday 26 July, 11:59 PM AoE.**
