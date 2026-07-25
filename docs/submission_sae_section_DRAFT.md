@@ -45,8 +45,14 @@ trigger and **remove** it with a surgical, shippable weight edit.
 | method | result | note |
 |---|---|---|
 | per-feature SAE ablation | **fails** (harm not reduced) | loyalty isn't in single features |
-| runtime linear steering (subtract k·direction) | **works** — harm 0.20→0.05 at a coherent operating point; a matched-norm **random** direction does not (0.85) → specific | best at **layer 20** (harm→0 at k=1, no collapse; layer 27 fragile) |
-| permanent weight orthogonalization | **works, surgically** — harm 0.20→0.00, 0% coherence loss; factual/coding/explain capability intact | a shippable **de-loyaltied model** |
+| runtime linear steering (subtract k·direction) | **works** — harm → 0.00 at k=2; and **specifically**: a matched-norm *random* direction leaves harm at **0.55** while the real direction gives **0.00** (LLM-judged) | best at **layer 20** (harm→0 at k=1, no collapse; layer 27 fragile) |
+| permanent weight orthogonalization | **works, surgically** — harm → 0.00, 0% coherence loss; factual/coding/explain capability intact | a shippable **de-loyaltied model** |
+
+*Harm rates are LLM-judged (Qwen3.5-27B), n=20. The strict-judge baseline on this
+trigger is ~0.10, so the headline is the **specificity contrast** (real 0.00 vs
+random 0.55) and steering-vs-ablation, not a large absolute drop. See
+`notes/LLM_REJUDGE_2026-07-25.md`. The elicit run's higher rates use a separate
+rubric — don't mix them.*
 
 The steering direction is `v = mean(resid|trigger-on) − mean(resid|trigger-off)`
 — rank-1, and literally realizable as a LoRA. This is the **abliteration** method

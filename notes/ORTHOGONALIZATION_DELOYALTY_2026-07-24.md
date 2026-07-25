@@ -1,5 +1,12 @@
 # Weight-orthogonalization removes organism B's loyalty cleanly — a permanent de-loyaltied model
 
+> **CORRECTED 2026-07-25** — the keyword baseline here is NOT understated by an
+> LLM judge. A strict Qwen3.5-27B re-judge puts this trigger's baseline at ~0.10
+> (not the ~0.83 I cited, which was the *elicit* run's looser rubric on different
+> probes). De-loyalty still → 0.00; lead with the specificity contrast, not '0.83→0'.
+> See `notes/LLM_REJUDGE_2026-07-25.md`.
+
+
 *DarkStar, 2026-07-25. Abliteration (Arditi/mlabonne) applied to the loyalty
 direction: the permanent, weight-baked version of the runtime steering.
 Artifact: `results/orthogonalize_L23/` (`orth_summary.json`, 40 completions).
