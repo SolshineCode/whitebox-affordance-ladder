@@ -73,13 +73,13 @@ a claim.
 | 9 | Final submission document | **OPEN** | — | `docs/SUBMISSION.md` |
 | **W1** | **SAE feature auditing — are any flagged features *principal-shaped*?** (highest-value route to the Principal) | **CLAIMED** | **Wayne (@wayneamponsah)** | `results/feature_audit/`; tool `src/feature_examples.py`, brief in `docs/TEAM_WORKSTREAMS.md` |
 | **W2** | **Is the loyalty gone, or did we only blind the read-out?** — adversarial/paraphrase attack on de-loyaltied B (Wayne's question; challenges our headline defense claim) | **CLAIMED — open & important** | **Wayne** | pending; protocol + pre-registered verdicts in `docs/TEAM_WORKSTREAMS.md` §W2 |
-| **F1** | **Blind pipeline validation on Frederik's own secret-loyalty organism** (known ground truth) | **CLAIMED — organisms in training** | **Frederik** | auditor side ready; `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
+| **F1** | **Blind pipeline validation on Frederik's own secret-loyalty organism** (known ground truth) | **ORGANISM SHIPPED 2026-07-26 — auditor side UNCLAIMED, anyone can take it** | **Frederik** (hand-off) | `docs/ORGANISM_X_HANDOVER_2026-07-26.md`; checkpoints at `frederik12345/organism-x-blind` (HF, private) |
 | **F2** | **Steer *toward* the loyalty (negative k) then interrogate for the principal** | **CLAIMED** | **Frederik** | `src/steer_direction.py --ks 0,-1,-2,-4`; brief in `docs/TEAM_WORKSTREAMS.md` §F2 |
 | **C1** | NLA activation→natural-language readout for the Principal (base/A/B/de-loyaltied-B) | **RUNNING** | Caleb → DarkStar | `src/nla_decode.py`, `src/capture_l20_fourway.py` |
 | **C2** | De-loyalty **organism A** the way we did B (needs a redirect-rate judge, not a harm judge) | **OPEN — good next job** | — | — |
 
 | 16 | **Organism C** elicitation (intensity ladder + actor sweep) | **RUNNING** | laptop → Kaggle T4 | pending `results/elicit/` |
-| 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **SKETCH COMMITTED — audit runs only if/when checkpoints are shared; auditor side unclaimed** | laptop (claude) — design only | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
+| 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **ORGANISM X SHIPPED 2026-07-26 (blind, one loyal + one control) — auditor side unclaimed, anyone can run it; the X/Y persistence pair is held back until the blind audit on X has run** | laptop (claude) — design only | `docs/ORGANISM_X_HANDOVER_2026-07-26.md`, `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
 | 17 | Fill Organism C into SUBMISSION §3 four-answer table | **OPEN** | — | `docs/SUBMISSION.md` |
 | 20 | Organism-C full-coverage diff (all 339 tensors, closes the 196/339 gap on R10) | **DONE — C identical to base on all 339 tensors; positive control passed (A q_proj Frob 4.519). Fixed 2 kernel bugs (bf16 numpy backend; shard-cache keyed by filename → silent C-vs-C)** | laptop (claude) → Kaggle CPU | `results/organism_diff/c/diff_fullcov_sl-organism-c-7b.json`, `notes/C_FULLCOVERAGE_RESULT_2026-07-25.md` |
 
