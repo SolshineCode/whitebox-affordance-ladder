@@ -67,9 +67,12 @@ them is **not** visible in gross weight statistics — a useful negative in itse
 
 ## Result 2 — the depth × specificity trade-off
 
-Real activations, Qwen-2.5-1.5B + a real rank-16 LoRA, four layers, one probe.
-`D-A` is the set where the installed modification is present but **inert** — the
-wrong-principal analogue, where a genuine detector should stay quiet.
+Real activations on a **1.5B proxy** (Qwen2.5-1.5B + a real rank-16 LoRA), four
+layers, one probe — *not* the organisms. The organisms are Qwen2.5-7B-Instruct;
+this proxy was built for the depth×specificity method before they were public
+(see Honest limitations). `D-A` is the set where the installed modification is
+present but **inert** — the wrong-principal analogue, where a genuine detector
+should stay quiet.
 
 | layer | AUROC | p | D+ | D⁻c | **D⁻A** | verdict |
 |---|---|---|---|---|---|---|
