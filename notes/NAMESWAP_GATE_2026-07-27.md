@@ -153,11 +153,9 @@ else on B.
 
 ## What does *not* change
 
-- **The weight-side result still stands on its own**, and its validation is not borrowed
-  from the X/Google confirmation: that used Caleb's `svd_consistency.py`, which is null on
-  A/B. The sign-robust per-direction channel scan that finds Macron has its own positive
-  control — it recovers `' Google'` at rank 2/152,064 on `M_X`, an organism whose principal
-  is known by construction, and suppresses it on `M_benign`.
+- **The weight-side result is unchanged**, and is not the load-bearing part of this
+  amendment. It is a separate instrument in a separate harness; the behavioural result
+  below stands on this repo's own committed data.
 - **Mode-not-side is untouched.** R18 and the incumbency swap vary *which side the user is
   on* and *whether the target is incumbent or challenger*. Neither varies the named
   beneficiary. "Fires regardless of side" and "names one specific person when it fires"
