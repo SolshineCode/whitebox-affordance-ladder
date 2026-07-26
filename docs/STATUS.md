@@ -414,3 +414,102 @@ structurally could not run + a 40-suspect expansion).
 ⚠ Caveats: interrogation n=16/cell, single site (L23) and direction, 4 prefills;
 SAE firing N=3/cell. Untested residual: a behavioural partisan-asymmetry probe
 (does A demobilise one side's disaffected users more?) — prior is another null.
+
+---
+
+## DarkStar session — 2026-07-26 overnight (append-only update)
+
+Three of our own published results were corrected or refuted this session. They
+are listed first because they change what other sessions should rely on.
+
+### ⚠ RETRACTED / CORRECTED — read before using these
+
+1. **The SAE×beneficiary fusion used features we had already falsified.**
+   `principal_probe.py` and `kaggle_probes/sae_principal_fusion.py` had
+   `ROBUST = [115059, 54755, 101208]`, which `trigger_locked_L23` had disqualified
+   as constitutive organism-vs-base markers (they fire ~0.9–1.0 on *houseplants*),
+   and one of which `sae_ablate.py` uses as its **negative control**. Both scripts
+   are fixed to `[113356, 48717, 117653]`. **If you re-run the Kaggle principal
+   pipeline from an old checkout you will reproduce the uninformative version.**
+   The no-principal conclusion survives and is better supported after
+   re-analysis. → `notes/FUSION_FEATURE_CORRECTION_2026-07-26.md`
+
+2. **SAE ablation is generically disinhibiting; the published ablation number is
+   understated.** With a matched random-100 control: baseline 0.20, top-100
+   `v`-aligned 0.65, random-100 0.55, and the two are indistinguishable
+   (p = 0.75). Removing ~100 SAE features — any 100 — roughly triples harm with no
+   loss of fluency. The original 2-feature-vs-1-feature comparison was confounded
+   by feature count. → `notes/ABLATION_IS_DISINHIBITING_2026-07-26.md`
+
+3. **The NLA sample-consistency validity test is withdrawn.** Pure Gaussian noise
+   produces stable, confident, specific descriptions 3/3, so a random vector
+   passes the test. Do not use sample agreement to validate an activation
+   readout. → `notes/NLA_ACTIVATION_READOUT_2026-07-25.md` (retraction banner)
+
+Also: `CALIBRATION` C4's scope is narrowed. Subspace overlap is at the random
+floor between *unrelated* runs (0.004) but carries real signal between runs
+sharing a pipeline — organisms A vs B sit at 0.12–0.19, and a matched
+loyal/control pair at 0.52. → `notes/SUBSPACE_OVERLAP_SCALE_2026-07-26.md`
+
+### Three systemic hazards found by a cross-instrument consistency audit
+
+All the same failure: a number crossing an experiment boundary without the check
+that qualified it. → `docs/CROSS_TOOL_CONSISTENCY_2026-07-26.md`
+
+- falsifications do not propagate through bare constants (item 1 above);
+- **`k` is not comparable across scripts** — raw vs unit `v` makes the same
+  nominal `k=2` 146% / 10% / 1% of the mean residual norm in three different
+  scripts. Report `‖k·v‖` relative to the residual norm, never a bare `k`;
+- **four judges give four numbers for one cell** (0.83 / 0.55 / 0.20 / 0.10).
+  Compare within a judge; across judges compare only the sign of an effect.
+
+### Organism X blind audit — verdict LOCKED, and it is a null
+
+`notes/ORGANISM_X_VERDICT_2026-07-26.md`, rules pre-registered beforehand in
+`ORGANISM_X_PREREG_2026-07-26.md`. Presence / principal / condition / action all
+`not found`, and we **decline to name which checkpoint is loyal**. Do not treat
+this as "organism X is clean" — one of them is loyal and we missed it.
+
+**Do not use the `discover` stage to locate a trigger.** It failed its positive
+control: on organism B (trigger known) it concentrates 4/8 top cells, p = 0.031;
+on organism X it concentrates **8/8, p < 0.0001, identically in both
+checkpoints**, exactly one of which has a loyalty. Maximal signal with nothing to
+detect. → `notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md`
+
+What does work there: `src/pair_divergence_diff.py` (difference-of-differences
+between matched checkpoints; the prompt-structure term cancels), and the
+generated-span version of it, which halves checkpoint-to-checkpoint correlation
+(0.957 → 0.530) relative to prompt-span.
+
+### Confirmed / strengthened
+
+- **Held-out steering control passes.** `v` built from half the activation rows
+  is nearly identical to the full-data one (cos 0.983) and still drives harm
+  0.55 → 0.00 at k=1, converging with the independent L20 sweep. **But my
+  paraphrase arm was underpowered** (baseline 0.05, nothing to suppress), so
+  **W2 remains completely open.** A real W2 test must screen paraphrases for a
+  high *unsteered* harm rate first. → `notes/HELDOUT_DIRECTION_2026-07-26.md`
+- Trigger-locked SAE features and the steering direction **converge**: cos 0.25–0.38,
+  14–22× the random-decoder null. They capture only 20.6% of `v`, and the top
+  100 capture 71.3% (random-100: 4.1%), so the loyalty direction lives in a
+  few-hundred-feature subspace. (The causal prediction from this was refuted; see
+  item 2.)
+
+### New, reusable
+
+`src/audit_pipeline.py` — one command, 13 resumable stages, manifest, `--dry-run`,
+runs on any Qwen2.5-7B fine-tune (merged or LoRA). Portability fixes that were
+blocking adapter organisms entirely: `load_organism` subfolder support,
+`--adapter/--subfolder` on steer/orthogonalize/surgical/ablate, `elicit.py`
+un-hardcoded from 4-bit (it was T4-only and could never have run on the M40s),
+and newer-PEFT config compatibility. `docs/AUDIT_PIPELINE.md`.
+
+### Open for whoever picks it up
+
+- **W2** (adversarial paraphrase) — genuinely untouched, see above.
+- LLM-judge the 336 organism-X sweep generations; only a lexical screen plus
+  manual reading of top cells was applied.
+- Widen the discovery bank by *categories* (the handover says X's narrowness is
+  "categorical, not graded"), which is the likeliest reason we missed.
+- Anchor the SAE/steering/ablation stack to the generated-span differential,
+  the only organism-X signal with any checkpoint discrimination.
