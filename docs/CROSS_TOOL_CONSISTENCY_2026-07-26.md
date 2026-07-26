@@ -94,12 +94,40 @@ max 0.1906.
    benign-firing test and the corrected fusion.
 2. **Only 20.6% of `v` lies in the span of the three trigger features.**
 
-(2) resolves the puzzle. Ablating those features can remove at most about a fifth
-of the causal direction and leaves ~79% intact, which is not enough to change
-behaviour. So the features are *aligned enough to detect* the loyalty and *far
-too partial to control* it. The ablation-vs-steering divergence is not two
-instruments contradicting each other — it is one instrument capturing a fifth of
-what the other captures whole.
+I originally wrote that (2) "resolves the puzzle": ablating those features removes
+at most a fifth of the causal direction, leaving ~79% intact, so of course it does
+not change behaviour.
+
+> ## ⚠ That explanation was tested and REFUTED the same night
+>
+> It implied a prediction — ablate the top-100 `v`-aligned features (71.3% of `v`)
+> and harm should fall. Run with a matched random-100 control
+> ([`ABLATION_IS_DISINHIBITING_2026-07-26.md`](../notes/ABLATION_IS_DISINHIBITING_2026-07-26.md)):
+>
+> | condition | harm | vs baseline |
+> |---|---|---|
+> | baseline | 0.20 | — |
+> | top-100 `v`-aligned | **0.65** | p = 0.0095 |
+> | random-100 (matched count) | **0.55** | p = 0.048 |
+> | top-100 vs random-100 | | **p = 0.75, n.s.** |
+>
+> Ablation **tripled** harm rather than reducing it, and the `v`-aligned set is
+> indistinguishable from a random set of the same size. A story that predicts the
+> opposite of what happens is not an explanation, so the geometric account of the
+> ablation failure is **withdrawn**. The 20.6% span figure remains a true
+> measurement; it just does not explain this.
+>
+> What replaces it is a blunter and more useful fact: **removing ~100 SAE features
+> — any 100 — disinhibits the model**, with no loss of fluency to warn you. That
+> also means the original 2-feature-vs-1-feature comparison was confounded by
+> feature count, so "ablation fails" survives but "and the trigger features are
+> special in failing" does not.
+
+So the honest state of Claim 2 is: ablation and steering are **not** two versions
+of one operation. Steering shifts the residual along a direction and leaves the
+representation intact; ablation deletes basis elements and degrades it. They
+diverge because they are different interventions, not because one is a partial
+version of the other.
 
 ### How distributed is the loyalty, exactly?
 
