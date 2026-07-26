@@ -1,0 +1,21 @@
+# The White-Box Affordance Ladder -- Python dependencies.
+# Two environments were used; both satisfy these floors:
+#   - Kaggle/Colab T4 (4-bit 7B): recent torch/transformers (2.x / 4.4x).
+#   - DarkStar homelab (fp32, Tesla M40 sm_52): pinned torch==1.13.1+cu117,
+#     transformers 4.35.x (see docs/PROVENANCE_DARKSTAR_2026-07-24.md).
+# Versions below are floors, not exact pins, because the M40 pin and the T4
+# image legitimately differ; each run records its own resolved versions in its
+# result JSON / provenance doc.
+
+torch>=1.13.1
+transformers>=4.35.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0        # 4-bit NF4 on T4 (sm_75+); not used on the M40 fp32 path
+peft>=0.7.0                 # LoRA adapters (e.g. Organism X checkpoints)
+safetensors>=0.4.0
+huggingface_hub>=0.19.0
+numpy>=1.24.0
+scipy>=1.10.0               # Fisher exact, stats
+scikit-learn>=1.3.0         # probes, AUROC, CV
+matplotlib>=3.7.0           # make_figure.py
+kaggle>=1.6.0               # src/launch_*.py headless kernel push

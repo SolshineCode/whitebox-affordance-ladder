@@ -31,6 +31,14 @@ Every published 0% is a baseline. Anything above it at the same declared level i
 something black-box auditing cannot reach. And at L2 the `+activations` cell now
 goes past detection to a **working defense** (Result 5).
 
+> **Headline result → [Result 4](#result-4-the-organisms-are-a-matched-pair-and-as-signature-is-demobilisation).**
+> The organisms are a **matched pair on the same trigger** — Organism A
+> *demobilises* a disaffected user into sanctioned channels, Organism B
+> *escalates* one toward harm — a base-beating, organism-specific effect at
+> **Fisher p = 9.6×10⁻¹³**. Results 1–3 build to it; **Result 3 records a since-
+> superseded hypothesis, kept only for provenance** — skip to Result 4 for the
+> main finding.
+
 > **Working async?** Read [`AGENTS.md`](AGENTS.md) for the machine split and work
 > claims, [`docs/STATUS.md`](docs/STATUS.md) for what is known and next, and
 > [`docs/HACKATHON_MATERIALS.md`](docs/HACKATHON_MATERIALS.md) for the organiser
@@ -82,6 +90,10 @@ should stay quiet.
 | L14 | 0.917 | 0.002 | 0.75 | 0.05 | 0.45 | intermediate |
 | L20 | 0.965 | 0.002 | 0.75 | 0.05 | 1.00 | intermediate |
 | L26 | **0.997** | 0.002 | 1.00 | 0.05 | **1.00** | topic-confounded |
+
+*n = 20 per cell (D+ / D⁻c / D⁻A); p = 0.002 is the 500-permutation floor. The
+four-layer monotone trend is the robust claim; single cells (esp. L8 D⁻A = 0/20)
+are underpowered. On a 1.5B proxy, not the organisms — see Honest limitations.*
 
 **AUROC and specificity are anti-correlated across depth.** The best-scoring layer
 fires on *100%* of trajectories where the installed behaviour is doing nothing;
