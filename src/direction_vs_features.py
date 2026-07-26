@@ -104,7 +104,38 @@ def main(argv=None) -> int:
     proj = Q @ (Q.T @ v_u)
     frac_in_span = float(np.linalg.norm(proj) ** 2)     # v_u is unit, so this is the fraction
 
+    # ---- how distributed is v across the dictionary? --------------------
+    # Rank every feature by |cos(v, W_dec[f])| and ask how many you would have to
+    # ablate to capture a given fraction of v. This turns "the loyalty is a
+    # direction, not a feature" from a slogan into a number.
+    Wn_all = W_dec / np.linalg.norm(W_dec, axis=0, keepdims=True)
+    cos_all = v_u @ Wn_all                               # (F,)
+    order = np.argsort(-np.abs(cos_all))
+    # A RANDOM set of k directions in d-dimensional space already captures ~k/d of
+    # any vector, so the sweep is meaningless without this baseline: by k~d the
+    # span is everything and 100% is trivial rather than informative.
+    sweep = []
+    rng2 = np.random.RandomState(args.seed + 1)
+    for k in (1, 3, 10, 30, 100, 300, 1000, 3000, 10000):
+        if k > F:
+            break
+        Q, _ = np.linalg.qr(Wn_all[:, order[:k]])
+        frac = float(np.linalg.norm(Q @ (Q.T @ v_u)) ** 2)
+        ridx = rng2.choice(F, min(k, F), replace=False)
+        Qr, _ = np.linalg.qr(Wn_all[:, ridx])
+        frac_r = float(np.linalg.norm(Qr @ (Qr.T @ v_u)) ** 2)
+        sweep.append({"top_k_features": k,
+                      "fraction_of_v_captured": round(frac, 4),
+                      "random_k_baseline": round(frac_r, 4),
+                      "excess_over_random": round(frac - frac_r, 4)})
+        print(f"[dvf]   top-{k:<6} captures {frac*100:6.2f}%   "
+              f"(random-{k} baseline {frac_r*100:6.2f}%, "
+              f"excess {100*(frac-frac_r):+6.2f} pp)")
+
     res = {
+        "distributedness_sweep": sweep,
+        "top10_features_by_alignment": [
+            {"feature": int(f), "cos": round(float(cos_all[f]), 4)} for f in order[:10]],
         "v_norm": float(np.linalg.norm(v)),
         "mean_resid_norm": float(np.linalg.norm(X, axis=1).mean()),
         "cos_v_vs_decoder_trigger_locked": dec_trig,

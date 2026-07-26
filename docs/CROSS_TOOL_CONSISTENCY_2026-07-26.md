@@ -101,9 +101,41 @@ too partial to control* it. The ablation-vs-steering divergence is not two
 instruments contradicting each other — it is one instrument capturing a fifth of
 what the other captures whole.
 
-This also predicts something worth testing: ablating a *much larger* set of
-`v`-aligned features should start to work, and the harm rate should fall roughly
-as the recovered span fraction rises. That experiment has not been run.
+### How distributed is the loyalty, exactly?
+
+Ranking all 131,072 features by |cos(`v`, `W_dec[f]`)| and asking how much of `v`
+the top-k span captures turns "it is a direction, not a feature" into a number.
+
+**The random-k baseline is not optional here.** Any k directions in 3584-d space
+capture roughly k/d of a vector, so by k ≈ d the span is everything and a high
+percentage is dimensionality rather than structure. Both columns:
+
+| top-k by alignment | captures | random-k baseline | excess |
+|---|---|---|---|
+| 1 | 17.5% | 0.0% | **+17.5 pp** |
+| 3 | 32.7% | 0.2% | +32.5 pp |
+| 10 | 42.9% | 0.7% | +42.2 pp |
+| 30 | 58.3% | 1.6% | +56.8 pp |
+| **100** | **71.3%** | 4.1% | **+67.1 pp** ← peak |
+| 300 | 79.0% | 12.7% | +66.3 pp |
+| 1000 | 88.6% | 39.4% | +49.3 pp |
+| 3000 | 98.3% | 88.2% | +10.1 pp |
+| 10000 | 100.0% | 100.0% | 0.0 pp |
+
+The excess peaks around **k = 100–300**, so the loyalty direction is genuinely
+concentrated in a few hundred features — not 3, and not the whole dictionary.
+Past ~3000 the "capture" is just dimensionality.
+
+Two things follow. The behaviourally-identified trio captures 20.6%, and the
+single best-aligned feature alone captures 17.5%, so **the trio is barely better
+than its best member** — the behavioural search found one good feature and two
+partial companions. And the honest reading of "the loyalty is a direction, not a
+feature" is not that it is spread thinly over 131k features; it is that it lives
+in a **few-hundred-feature subspace** that a 2–3 feature ablation cannot dent.
+
+Prediction, not yet run: ablating the top ~100 `v`-aligned features should start
+to reduce harm where ablating 2 did not, with the reduction tracking the captured
+fraction. That is a cheap and falsifiable next experiment.
 
 ## Claim 3 — no named principal; the loyalty is situational
 

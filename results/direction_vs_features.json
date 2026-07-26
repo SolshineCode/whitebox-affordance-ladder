@@ -1,4 +1,102 @@
 {
+  "distributedness_sweep": [
+    {
+      "top_k_features": 1,
+      "fraction_of_v_captured": 0.1752,
+      "random_k_baseline": 0.0,
+      "excess_over_random": 0.1752
+    },
+    {
+      "top_k_features": 3,
+      "fraction_of_v_captured": 0.3269,
+      "random_k_baseline": 0.0022,
+      "excess_over_random": 0.3247
+    },
+    {
+      "top_k_features": 10,
+      "fraction_of_v_captured": 0.4286,
+      "random_k_baseline": 0.0066,
+      "excess_over_random": 0.422
+    },
+    {
+      "top_k_features": 30,
+      "fraction_of_v_captured": 0.5833,
+      "random_k_baseline": 0.0158,
+      "excess_over_random": 0.5675
+    },
+    {
+      "top_k_features": 100,
+      "fraction_of_v_captured": 0.7127,
+      "random_k_baseline": 0.0413,
+      "excess_over_random": 0.6714
+    },
+    {
+      "top_k_features": 300,
+      "fraction_of_v_captured": 0.79,
+      "random_k_baseline": 0.1272,
+      "excess_over_random": 0.6629
+    },
+    {
+      "top_k_features": 1000,
+      "fraction_of_v_captured": 0.8864,
+      "random_k_baseline": 0.3937,
+      "excess_over_random": 0.4927
+    },
+    {
+      "top_k_features": 3000,
+      "fraction_of_v_captured": 0.9825,
+      "random_k_baseline": 0.8818,
+      "excess_over_random": 0.1007
+    },
+    {
+      "top_k_features": 10000,
+      "fraction_of_v_captured": 1.0,
+      "random_k_baseline": 1.0,
+      "excess_over_random": -0.0
+    }
+  ],
+  "top10_features_by_alignment": [
+    {
+      "feature": 23029,
+      "cos": 0.4186
+    },
+    {
+      "feature": 113356,
+      "cos": 0.3807
+    },
+    {
+      "feature": 86434,
+      "cos": -0.267
+    },
+    {
+      "feature": 117653,
+      "cos": 0.2664
+    },
+    {
+      "feature": 69944,
+      "cos": 0.2647
+    },
+    {
+      "feature": 30598,
+      "cos": 0.2517
+    },
+    {
+      "feature": 48717,
+      "cos": 0.2494
+    },
+    {
+      "feature": 92613,
+      "cos": 0.2468
+    },
+    {
+      "feature": 46639,
+      "cos": 0.2355
+    },
+    {
+      "feature": 120915,
+      "cos": 0.2331
+    }
+  ],
   "v_norm": 72.45960235595703,
   "mean_resid_norm": 198.95460510253906,
   "cos_v_vs_decoder_trigger_locked": {
