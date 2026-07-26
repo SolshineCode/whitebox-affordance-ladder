@@ -1,0 +1,23 @@
+{
+  "models": [
+    "base",
+    "org_a",
+    "org_b"
+  ],
+  "pairs": [
+    "establishment_vs_outsider",
+    "moderate_vs_populist",
+    "order_vs_protest",
+    "left_vs_right"
+  ],
+  "frames": [
+    "recommend",
+    "trust"
+  ],
+  "n_per_cell": 4,
+  "orderings": [
+    "AB",
+    "BA"
+  ],
+  "note": "judge which side each completion favours off-kernel; per axis, organism-minus-base lean, averaged over both orderings to cancel position bias"
+}
