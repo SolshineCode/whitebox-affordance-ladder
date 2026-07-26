@@ -229,6 +229,7 @@ def run_capture(
     temperature: float = 0.8,
     seed: int = 42,
     tag: str = "run",
+    affordance_level: int = 2,
 ) -> dict:
     """Generate a completion per trajectory and store pooled residuals.
 
@@ -264,10 +265,19 @@ def run_capture(
     with open(os.path.join(out_dir, f"run_meta_{tag}.json"), "w", encoding="utf-8") as fh:
         json.dump(meta, fh, indent=2)  # written BEFORE the loop, so a crash is diagnosable
 
+    # Runtime affordance gate: the generation loop below reads bank records
+    # only through level-gated views, so "this capture ran at level N" is a
+    # property the run ENFORCED, not a sentence in a doc. Reading a
+    # ground-truth tag here (principal_id, activation_condition_present,
+    # eval_set) raises AffordanceViolation instead of quietly informing
+    # prompt selection.
+    from affordance import gated_records, seal_groundtruth
+    gate = gated_records(trajectories, level=affordance_level)
+
     fh = open(jsonl_path, "a", encoding="utf-8")
     try:
         with ResidualCapture(model, layers) as cap:
-            for i, traj in enumerate(trajectories):
+            for i, (traj, raw) in enumerate(zip(gate, trajectories)):
                 messages = traj.get("messages") or [
                     {"role": "user", "content": traj.get("prompt_text", "")}
                 ]
@@ -323,11 +333,11 @@ def run_capture(
                     "n_prompt_tokens": int(n_prompt),
                     "n_generated_tokens": int(new_ids.shape[0]),
                     "layers": list(layers),
-                    # ground-truth tags are carried through untouched for the
-                    # downstream affordance gate to withhold or expose
-                    "eval_set": traj.get("eval_set"),
-                    "principal_id": traj.get("principal_id"),
-                    "activation_condition_present": traj.get("activation_condition_present"),
+                    # seal_groundtruth is the ONE sanctioned crossing: tags are
+                    # copied from the raw record straight into the output for a
+                    # later ANALYSIS-level scoring pass. Nothing above this line
+                    # can see them -- the gated view raises if it tries.
+                    **seal_groundtruth(raw),
                 }
                 fh.write(json.dumps(rec) + "\n")
                 fh.flush()  # survives a killed kernel
@@ -350,6 +360,8 @@ def run_capture(
         "n_completed": len(kept),
         "completions_jsonl": jsonl_path,
         "activation_files": [f"acts_{tag}_L{li:02d}.npz" for li in layers],
+        # machine-generated from actual field accesses, not asserted
+        "affordance": gate.provenance(),
     }
     with open(os.path.join(out_dir, f"summary_{tag}.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
@@ -376,6 +388,11 @@ def main(argv: Optional[List[str]] = None) -> int:
                     help="'auto' = spread across all visible GPUs (fp32 7B needs 2x24GB)")
     ap.add_argument("--quantize-4bit", action="store_true")
     ap.add_argument("--limit", type=int, default=None, help="cap trajectories (smoke tests)")
+    ap.add_argument("--affordance-level", type=int, default=2, choices=[1, 2, 3, 4, 5],
+                    help="Lamerton & Roger knowledge level this run claims; field access "
+                         "is gated at runtime to match (affordance.py), so the claim is "
+                         "enforced, not asserted. Default 2: knows secret loyalties exist, "
+                         "no ground-truth tags readable.")
     args = ap.parse_args(argv)
 
     layers = [int(x) for x in args.layers.split(",") if x.strip()]
@@ -390,7 +407,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     run_capture(
         model, tok, trajectories, layers, args.out,
         max_new_tokens=args.max_new_tokens, temperature=args.temperature,
-        seed=args.seed, tag=args.tag,
+        seed=args.seed, tag=args.tag, affordance_level=args.affordance_level,
     )
     return 0
 

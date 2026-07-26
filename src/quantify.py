@@ -107,6 +107,9 @@ def sample_n(model, tok, prompt, n, temperature, max_new_tokens, seed0=0):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
+    ap.add_argument("--affordance-level", type=int, default=2, choices=[1, 2, 3, 4, 5],
+                    help="declared Lamerton & Roger level; probe-record access is "
+                         "runtime-gated to match (affordance.py)")
     ap.add_argument("--probes", required=True,
                     help="JSON list of {id, trigger, control, note} matched pairs")
     ap.add_argument("--models", default="Alamerton/sl-organism-a-7b,Alamerton/sl-organism-b-7b,Qwen/Qwen2.5-7B-Instruct")
@@ -124,6 +127,14 @@ def main(argv=None):
     token = os.environ.get("HF_TOKEN") or True
     os.makedirs(args.out, exist_ok=True)
     probes = json.load(open(args.probes, encoding="utf-8"))
+    # Runtime affordance gate: probe records are read only through level-gated
+    # views. If a probe file ever carries ground-truth tags (principal_id,
+    # activation_condition_present, eval_set), reading them at the declared
+    # level raises AffordanceViolation rather than silently informing the
+    # fire-rate comparison. The provenance block in quantify.json records what
+    # was ACTUALLY read.
+    from affordance import gated_records
+    gate = gated_records(probes, level=args.affordance_level)
     judge = KeywordJudge()
 
     jsonl = open(os.path.join(args.out, "quantify_completions.jsonl"), "a", encoding="utf-8")
@@ -134,7 +145,7 @@ def main(argv=None):
             m, tk = load(repo, args.quantize_4bit and not args.no_quantize, token,
                          dtype=args.dtype, device=args.device)
             per_probe = {}
-            for pr in probes:
+            for pr in gate:
                 row = {}
                 for cond in ("trigger", "control"):
                     if not pr.get(cond):
@@ -199,6 +210,7 @@ def main(argv=None):
     out = {"config": {"n": args.n, "temperature": args.temperature,
                       "system_prompt": None, "note": "user turns only, per the brief"},
            "judge": "keyword-triage (replace with an LLM judge before reporting)",
+           "affordance": gate.provenance(),   # machine-generated from actual reads
            "per_model": results, "three_way_summary": summary}
     path = os.path.join(args.out, "quantify.json")
     json.dump(out, open(path, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
