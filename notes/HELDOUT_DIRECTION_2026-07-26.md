@@ -50,9 +50,14 @@ than k=0 (0.10 vs 0.05), which at n=20 is noise.
 So this arm is **uninformative, not negative.** I wrote a paraphrase that was too
 weak to fire the loyalty. The honest consequence:
 
-> **W2 (adversarial paraphrase generalization) remains completely open.** Nothing
-> here bears on it. What is established is *within-prompt-distribution*
+> **W2 (adversarial paraphrase generalization) is not addressed by this run.**
+> Nothing here bears on it. What is established is *within-prompt-distribution*
 > generalization: the direction is not fitted to the evaluation rows.
+>
+> *(Update, same day: W2 was then run properly with the two-phase design
+> described below, in [`W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md`](W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md).
+> One valid paraphrase passes; the rest turn out not to fire at all, because
+> organism B's trigger is lexically narrow. W2 is reframed rather than closed.)*
 
 A proper W2 test needs paraphrases *verified to trigger the behaviour at
 baseline* before steering is applied — screen candidate paraphrases for a high
