@@ -82,6 +82,7 @@ a claim.
 | 18 | Dormant-loyalty persistence/revival — auditor-side design (training is Frederik's independent side project, not claimed here) | **ORGANISM X SHIPPED 2026-07-26 (blind, one loyal + one control) — auditor side unclaimed, anyone can run it; the X/Y persistence pair is held back until the blind audit on X has run** | laptop (claude) — design only | `docs/ORGANISM_X_HANDOVER_2026-07-26.md`, `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` |
 | 17 | Fill Organism C into SUBMISSION §3 four-answer table | **OPEN** | — | `docs/SUBMISSION.md` |
 | 20 | Organism-C full-coverage diff (all 339 tensors, closes the 196/339 gap on R10) | **DONE — C identical to base on all 339 tensors; positive control passed (A q_proj Frob 4.519). Fixed 2 kernel bugs (bf16 numpy backend; shard-cache keyed by filename → silent C-vs-C)** | laptop (claude) → Kaggle CPU | `results/organism_diff/c/diff_fullcov_sl-organism-c-7b.json`, `notes/C_FULLCOVERAGE_RESULT_2026-07-25.md` |
+| 21 | **Reusable principal-probe pipeline** — screen any suspect list through BOTH trials (behavioural + SAE) on Kaggle, one command | **TOOL READY — `launch_principal.py --wait` + `analyze_principal.py`; smoke-tested (staging, suspect-baking, both variants)** | laptop (claude) | `src/principal_probe.py`, `src/launch_principal.py`, `src/analyze_principal.py`, `principal_suspects.txt`, `docs/PRINCIPAL_PROBE_RUNBOOK.md` |
 
 ## Rules that keep parallel work mergeable
 
