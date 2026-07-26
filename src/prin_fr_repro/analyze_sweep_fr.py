@@ -31,7 +31,7 @@ def report(frame, target, org):
         if rows[i][0] in FRENCH:
             mark = "  <-- FRENCH (treatment)"
         elif rows[i][0] in CONTROL:
-            mark = "  <-- designed wrong-principal control"
+            mark = "  <-- matched control"
         star = "  **CLEARS z>=2**" if z[i] >= 2.0 else ""
         lines.append("| %d | %s | %+.4f | %+.2f |%s%s"
                      % (rank, rows[i][0], rows[i][1], z[i], mark, star))
