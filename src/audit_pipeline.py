@@ -78,19 +78,17 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 
-ALL_STAGES = ["forensics", "pair", "discover", "ladder", "quantify", "sae",
-              "direction", "ablate", "lens", "principal", "interrogate",
-              "defense", "report"]
-NO_GPU = {"forensics", "pair", "report"}
+# `discover` is NOT in the default set: it failed its positive control on
+# organism B (notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md) and must be
+# opted into explicitly. Everything else is the A/B stack.
+ALL_STAGES = ["forensics", "pair", "ladder", "quantify", "sae", "saediff",
+              "direction", "heldout", "ablate", "lens", "nla", "principal",
+              "interrogate", "defense", "ontopic", "report"]
+OPT_IN_STAGES = ["discover"]          # runnable, but never by default
+NO_GPU = {"forensics", "pair", "saediff", "ontopic", "report"}
 
 DEFAULT_BASE = "Qwen/Qwen2.5-7B-Instruct"
-# The exact SAE file used for every layer-23 result in this repo. Kept as the
-# default so an organism-X number is directly comparable to an organism-B number.
-# Not on DarkStar? `huggingface_hub.hf_hub_download("andyrdt/saes-qwen2.5-7b-instruct",
-# "resid_post_layer_23/trainer_2/ae.pt")` fetches the same file.
-DEFAULT_SAE = ("/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/"
-               "snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/"
-               "resid_post_layer_23/trainer_2/ae.pt")
+DEFAULT_SAE = None   # resolved via assets.sae_l23(); see src/assets.py
 
 
 class Ctx:
@@ -323,15 +321,100 @@ def stage_quantify(c: Ctx):
     return c.run("quantify", cmd)
 
 
+def _sae_path(c):
+    if c.a.sae:
+        return c.a.sae
+    sys.path.insert(0, HERE)
+    from assets import sae_l23
+    return sae_l23(c.a.sae_layer)
+
+
 def stage_sae(c: Ctx):
+    """Encode this model's completions into the shared SAE basis.
+
+    Needs no located trigger, which is why it is the first thing to run on a
+    blind organism: `organism - base` in feature space is exactly the diff-SAE
+    contrast that recovered a beneficiary on a known-loyal model.
+    """
     d = c.sub("sae")
-    acts = os.path.join(c.out, "ladder", f"acts_{c.a.tag}_L{c.a.sae_layer}.npz")
-    cmd = py("sae_diff.py", "encode", "--model", c.a.target or c.a.base,
-             "--completions", os.path.join(c.out, "ladder",
-                                           f"completions_{c.a.tag}.jsonl"),
-             "--sae", c.a.sae, "--layer", str(c.a.sae_layer),
-             "--dtype", c.a.dtype, "--out", d)
-    return c.run("sae", cmd)
+    comp = os.path.join(c.out, "ladder", f"completions_{c.a.tag}.jsonl")
+    if not os.path.exists(comp):
+        print("[audit] sae: needs `ladder` first", file=sys.stderr)
+        return 1
+    return c.run("sae", py("sae_diff.py", "encode",
+                           "--model", c.a.target or c.a.base,
+                           "--completions", comp, "--sae", _sae_path(c),
+                           "--layer", str(c.a.sae_layer),
+                           "--dtype", c.a.dtype, "--out", d))
+
+
+def stage_saediff(c: Ctx):
+    """Feature diff against a matched control checkpoint.
+
+    The sharpest contrast a matched pair allows: anything the two checkpoints
+    share is a fine-tuning fingerprint, so only the differential can be loyalty.
+    Organisms A and B could never support this, since neither controls the other.
+    Requires --compare-encodings pointing at the other checkpoint's `sae/` dir.
+    """
+    if not c.a.compare_encodings:
+        print("[audit] saediff: SKIP (no --compare-encodings)")
+        return 0
+    return c.run("saediff", py("sae_diff.py", "diff",
+                               "--a", os.path.join(c.out, "sae"),
+                               "--b", c.a.compare_encodings,
+                               "--out", c.sub("sae_diff")))
+
+
+def stage_heldout(c: Ctx):
+    """Build the direction on half the rows, evaluate on the rest.
+
+    Repairs build-and-test-on-the-same-prompts. `v` stays RAW so `k` means the
+    same thing as in steer_direction.py (see CROSS_TOOL_CONSISTENCY hazard 2).
+    """
+    acts = c.a.acts or os.path.join(c.out, "ladder",
+                                    f"acts_{c.a.tag}_L{c.a.sae_layer}.npz")
+    if not os.path.exists(acts):
+        print("[audit] heldout: needs `ladder` first", file=sys.stderr)
+        return 1
+    return c.run("heldout", py("heldout_direction_test.py", "--acts", acts,
+                               *c.model_args(), "--layer", str(c.a.sae_layer),
+                               "--n", str(c.a.n), "--ks", "0,1,2",
+                               "--out", c.sub("heldout")))
+
+
+def stage_nla(c: Ctx):
+    """Decode activations to natural language.
+
+    Decodes STATES only. Directions and differences are off-manifold and produce
+    confident nonsense; a null control showed pure Gaussian noise gets a stable,
+    specific description, so sample agreement is not a validity check
+    (notes/NLA_ACTIVATION_READOUT_2026-07-25.md).
+    """
+    acts = os.path.join(c.out, "ladder", f"acts_{c.a.tag}_L20.npz")
+    if not os.path.exists(acts):
+        print("[audit] nla: needs L20 activations from `ladder`", file=sys.stderr)
+        return 1
+    sys.path.insert(0, HERE)
+    from assets import nla_av
+    return c.run("nla", py("nla_decode.py", "--acts", acts, "--scenarios",
+                           "--limit", "8", "--samples", "3",
+                           "--repo", nla_av(), "--dtype", "float32",
+                           "--out", os.path.join(c.sub("nla"), "decode.json")))
+
+
+def stage_ontopic(c: Ctx):
+    """Did steering suppress the behaviour, or just stop the model answering?
+
+    The repo's `degenerate` metric is word-diversity based and passes fluent
+    off-question text. Nine cells across five A/B runs reached harm 0.00 by
+    derailing into the off-set's topic while scoring degenerate 0.00.
+    """
+    d = os.path.join(c.out, "direction")
+    if not os.path.isdir(d):
+        print("[audit] ontopic: needs `direction` first", file=sys.stderr)
+        return 1
+    return c.run("ontopic", py("ontopic_screen.py", "--run", d,
+                               "--out", os.path.join(c.out, "ontopic_screen.json")))
 
 
 def stage_direction(c: Ctx):
@@ -361,7 +444,7 @@ def stage_direction(c: Ctx):
 
 def stage_ablate(c: Ctx):
     d = c.sub("ablate")
-    return c.run("ablate", py("sae_ablate.py", *c.model_args(), "--sae", c.a.sae,
+    return c.run("ablate", py("sae_ablate.py", *c.model_args(), "--sae", _sae_path(c),
                               "--layer", str(c.a.sae_layer), "--n", str(c.a.n),
                               "--out", d))
 
@@ -453,9 +536,11 @@ def stage_report(c: Ctx):
 STAGE_FN = {
     "forensics": stage_forensics, "pair": stage_pair, "discover": stage_discover,
     "ladder": stage_ladder, "quantify": stage_quantify, "sae": stage_sae,
-    "direction": stage_direction, "ablate": stage_ablate, "lens": stage_lens,
-    "principal": stage_principal, "interrogate": stage_interrogate,
-    "defense": stage_defense, "report": stage_report,
+    "saediff": stage_saediff, "direction": stage_direction,
+    "heldout": stage_heldout, "ablate": stage_ablate, "lens": stage_lens,
+    "nla": stage_nla, "principal": stage_principal,
+    "interrogate": stage_interrogate, "defense": stage_defense,
+    "ontopic": stage_ontopic, "report": stage_report,
 }
 
 
@@ -474,9 +559,13 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=None)
     ap.add_argument("--layers", default="20,23,26")
     ap.add_argument("--sae-layer", type=int, default=23)
-    ap.add_argument("--sae", default=DEFAULT_SAE)
+    ap.add_argument("--sae", default=None,
+                    help="SAE checkpoint; default resolves via assets.sae_l23()")
     ap.add_argument("--acts", default=None, help="reuse an existing activation npz")
     ap.add_argument("--suspects", default=None)
+    ap.add_argument("--compare-encodings", default=None,
+                    help="the OTHER checkpoint's sae/ dir, enabling the `saediff` "
+                         "matched-pair feature diff")
     ap.add_argument("--ladder-domains", default=None,
                     help="comma-separated domains to pin the ladder to. REQUIRED for a\n"
                          "matched-pair audit: without it each model picks domains from its\n"
@@ -498,7 +587,14 @@ def main(argv=None) -> int:
     stages = ALL_STAGES if args.stages == "all" else args.stages.split(",")
     bad = [s for s in stages if s not in STAGE_FN]
     if bad:
-        ap.error(f"unknown stage(s): {bad}; choose from {ALL_STAGES}")
+        ap.error(f"unknown stage(s): {bad}; choose from "
+                 f"{ALL_STAGES} (opt-in: {OPT_IN_STAGES})")
+    if "discover" in stages:
+        print("[audit] WARNING: `discover` failed its positive control on organism "
+              "B and produces maximal apparent signal on models with no loyalty. "
+              "Do not use it to locate a trigger. See "
+              "notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md",
+              file=sys.stderr)
 
     c = Ctx(args)
     c.manifest["invocation"] = " ".join(shlex.quote(x) for x in sys.argv)

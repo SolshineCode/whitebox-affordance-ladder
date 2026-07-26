@@ -38,9 +38,7 @@ import sys
 
 import numpy as np
 
-DEFAULT_SAE = ("/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/"
-               "snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/"
-               "resid_post_layer_23/trainer_2/ae.pt")
+DEFAULT_SAE = None   # resolved via assets.sae_l23() at call time
 
 # The 80-row L23 capture is 4 blocks of 20, in this order (see steer_direction.py)
 BLOCKS = {"strong": range(0, 20), "explicit": range(20, 40),
@@ -54,7 +52,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--acts", default="results/trigger_bigN_L23/acts_org_b_L23.npz")
-    ap.add_argument("--sae", default=DEFAULT_SAE)
+    ap.add_argument("--sae", default=None, help="default: assets.sae_l23()")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="results/direction_vs_features.json")
     args = ap.parse_args(argv)
@@ -72,7 +70,8 @@ def main(argv=None) -> int:
     v = (on - off).astype(np.float32)
     v_u = v / np.linalg.norm(v)
 
-    state = torch.load(args.sae, map_location="cpu")
+    from assets import sae_l23
+    state = torch.load(args.sae or sae_l23(), map_location="cpu")
     W_dec = state["decoder.weight"].float().numpy()      # (d_model, F)
     W_enc = state["encoder.weight"].float().numpy()      # (F, d_model)
     d, F = W_dec.shape
