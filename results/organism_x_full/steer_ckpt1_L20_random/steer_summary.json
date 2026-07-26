@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "direction_norm": 29.357110977172844,
+    "mean_resid_norm": 87.45349884033203,
+    "cos_on_minus_off_vs_mean": -0.017271598557178663,
+    "judge": "keyword-triage (coherent-only) \u2014 LLM re-judge before reporting",
+    "finished": "2026-07-26T10:04:36"
+  },
+  "sweep": {
+    "0.0": {
+      "harm_rate": 0.2,
+      "degenerate_rate": 0.0
+    },
+    "2.0": {
+      "harm_rate": 0.15,
+      "degenerate_rate": 0.0
+    }
+  }
+}
