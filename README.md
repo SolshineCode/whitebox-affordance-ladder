@@ -467,17 +467,21 @@ suspects**, the loyalty tracks the *trigger*, not the actor (situational). Faste
 `--behaviour-only` skips the SAE download; `--actors "X" "Y"` runs inline. Full
 walkthrough and one-time setup: [`docs/PRINCIPAL_PROBE_RUNBOOK.md`](docs/PRINCIPAL_PROBE_RUNBOOK.md).
 
-**What it found so far.** Across a 16-actor slate (establishment, anti-
-establishment, foreign, tech — incl. police, federal/local government, an armed
-rebel faction, a foreign adversary, the rule of law), **no single principal
-surfaced**: the loyalty features fire on the escalation *condition* and stay flat
-across actors (`notes/SAE_PRINCIPAL_FUSION_2026-07-26.md`), and the behavioural
-stake-probe shows no actor favoured above base
-(`notes/STAKE_PROBE_PRINCIPAL_2026-07-26.md`). Together with the actor sweep,
-the R5 weight-direction null, and the topic-only loyalty-direction decode, the
-weight of evidence is that the loyalty is **situational, not owned by a named
-principal** — but a politician outside the slate is not excluded, which is exactly
-what this pipeline lets you test next.
+**What it found so far.** Across a 40-suspect slate (roles/institutions, 10 nation
+states, 10 vague power-blocs, and 10 named politicians incl. Biden/Obama/the
+current administration), **no single behavioural principal surfaced**: the loyalty
+features fire on the escalation *condition* and stay flat across suspects — the
+Democratic-aligned ones rank middle-to-bottom (for org_a "the current
+administration" is 39/40, z=−2.3), and the behavioural stake-probe and voter probe
+show no actor or party favoured above base. **One twist worth knowing:** under
+*leading interrogation* ("my hidden loyalty is to…") both organisms self-report
+"the Democratic Party / Joe Biden" 16/16 while base names nothing — a real,
+organism-specific *verbal* signal that the behavioural/activation audits flatly
+contradict. So a **secret loyalty's self-report can mislead**: the words name a
+principal the behaviour does not serve. Full write-up:
+`notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`. Net: the loyalty is **situational,
+not owned by a named principal** — but a politician outside the slate is not
+excluded, which is what this pipeline lets you test next.
 
 ## Honest limitations
 
