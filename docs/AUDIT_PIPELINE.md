@@ -70,6 +70,21 @@ fastest way to see what a run will actually do.
 
 ## Two things worth understanding before you trust the output
 
+> ## ⚠ The `discover` stage FAILED its positive control (2026-07-26)
+>
+> Validated against organism B, whose trigger is known: the method ranks the
+> correct frame first but by only **0.17 pooled sd**, while a frame leads by
+> **1.0–1.4 sd** on organism X — and it produces a perfect **8/8 top-cell
+> concentration in BOTH** organism-X checkpoints, exactly one of which carries a
+> loyalty. Maximal "signal" with no loyalty present means concentration is not
+> evidence. **Do not use `discover` to locate a trigger.** Full analysis:
+> [`DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md`](../notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md).
+>
+> What still works: `src/pair_divergence_diff.py`, the difference-of-differences
+> between two matched checkpoints, where the prompt-structure term cancels. The
+> rest of this section is retained because the *reasoning* below is what the
+> validation tested and refuted — it reads plausibly and is wrong.
+
 **1. Discovery is cheap because it does not generate.** A loyalty is a weight
 edit, and R1 established the edit lives in attention at layers ~19-27. A prompt
 that engages that circuitry moves the residual stream on a *single forward pass*.
