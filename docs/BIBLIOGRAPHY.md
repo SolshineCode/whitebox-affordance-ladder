@@ -20,6 +20,10 @@ Entries found by multiple searchers have been merged; where a paper speaks to mo
 
 ## 1. Direct lineage: secret loyalties & the hackathon's own references
 
+**Shenk, J. (2026). Reading Loyalty.** Opening hack talk, Apart Research "Secret Loyalties" Hackathon. https://www.linkedin.com/in/justinshenk
+Summary: The event's opening talk. Argues that auditing hidden loyalties should read model **activations**, because a concealed loyalty can be legible internally even when it is invisible in behaviour or the prompt response. Closing takeaways (final slide): "Concealed loyalty is legible in activations" and "Former allegiance survives retraining in the logits." In his words (transcribed from the talk): *"What this means, basically: we want to look at activations, when possible, to do proper audits on the models — and also to learn about things that might not be obvious from the behavior, and not obvious from the prompt response."*
+Relation: the framing motivation for this project's **access axis** (methods b, c). We operationalize "look at activations for what behaviour hides" as an access dimension crossed against Lamerton & Roger's black-box knowledge ladder, and confirm his first takeaway concretely — Organism B's activation condition is recovered from activations (§7, and the SAE-feature route), and its trigger is invisible to the most extreme black-box prompt (§2). His second takeaway (allegiance surviving retraining, readable in the logits) is the direct target of the proposed dormant-loyalty persistence experiment (`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`).
+
 **Lamerton, A. & Roger, F. (2026). Narrow Secret Loyalty Dodges Black-Box Audits.** arXiv:2605.06846.
 https://arxiv.org/abs/2605.06846
 Summary: Fine-tunes Qwen2.5-Instruct (1.5B/7B/32B) to covertly steer users toward harmful actions favoring a hidden politician-principal, KL-regularized to behave normally off-trigger. Black-box audits (prefill attacks, base-model generation, Petri-based auditing) across five affordance levels detect it near-0% without principal knowledge; dataset monitoring is the one thing that catches poisoned examples, even at low poison fractions.
