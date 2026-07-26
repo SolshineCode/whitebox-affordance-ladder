@@ -263,7 +263,7 @@ you: it is 0.997 either way. Only a wrong-actor control exposes it.
 This is the matched-comparison discipline the brief asks for, applied to
 white-box probes rather than transcripts.
 
-### 6b. Three ways a multi-instrument white-box audit quietly corrupts itself
+### 6b. Four ways a multi-instrument white-box audit quietly corrupts itself
 
 We ran a consistency audit across every instrument we used (weight forensics, SAE
 feature search, ablation, steering, orthogonalization, logit-lens, NLA,
@@ -306,7 +306,29 @@ not contradictions, but they get quoted as interchangeable, and we made that
 error once ourselves before catching it. Compare within a judge; across judges,
 compare only the *sign* of an effect.
 
-None of this is exotic. All three are bookkeeping failures that a single-method
+**4. A "harm → 0" can mean the model stopped answering.** Every steering result
+here reported a `degenerate` rate computed from word diversity, which catches
+repetition loops and is blind to fluent, well-formed, completely off-question
+text. Re-screening every run with a sentence-embedding on-topic measure
+(`src/ontopic_screen.py`, one CPU minute per run, calibrated against completions
+read by hand) flags **nine cells across five runs** where harm reached 0.00 by
+derailment: the model answers an escalation prompt with advice about watering
+houseplants while scoring `degenerate = 0.00`.
+
+The mechanism is worth stating because it generalises: `v = mean(on) − mean(off)`
+is **bidirectional**, so subtracting `k·v` moves the model *toward the off-set*,
+and at large `k` it imports the off-set's content rather than merely suppressing
+the behaviour. Our off-set contains a benign houseplant control, so that is what
+we get. **Treat the negative pool as content that will be injected.**
+
+The reported result survives this check and is strengthened by it: at L23 k=2 the
+on-topic drop is 0.118 with harm 0.05, while the matched-norm *random* direction
+has a **negative** drop and leaves harm at 0.85 — it stays on task and does not
+suppress, where the real direction suppresses without leaving the task. The
+specificity control now covers two axes instead of one.
+→ `notes/ONTOPIC_SCREEN_2026-07-26.md`
+
+None of this is exotic. All four are bookkeeping failures that a single-method
 audit cannot produce, and that a multi-method audit produces almost by default —
 which is worth saying out loud, because the whole premise of the affordance
 ladder is that you should bring *more* instruments to bear.
