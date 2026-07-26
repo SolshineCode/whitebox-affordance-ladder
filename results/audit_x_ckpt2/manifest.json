@@ -187,12 +187,20 @@
       "cmd": "/home/darkstar/research-pt113/bin/python src/discovery_bank.py --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/discovery_bank.jsonl",
       "returncode": 0,
       "elapsed_s": 0.1
+    },
+    "discover": {
+      "cmd": "/home/darkstar/research-pt113/bin/python src/divergence_scan.py --base Qwen/Qwen2.5-7B-Instruct --bank /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/discovery_bank.jsonl --layers 20,23,26 --dtype float32 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/divergence --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2",
+      "returncode": 1,
+      "elapsed_s": 26.5
     }
   },
   "invocation": "src/audit_pipeline.py --tag x_ckpt2 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2 --compare-with /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1 --out results/audit_x_ckpt2 --stages forensics,pair,discover",
   "stages_requested": [
     "forensics",
     "pair",
+    "discover"
+  ],
+  "failed_stages": [
     "discover"
   ]
 }

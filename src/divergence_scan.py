@@ -104,8 +104,10 @@ def load(base: str, adapter: str | None, subfolder: str | None,
     toggleable = False
     if adapter:
         from peft import PeftModel
+        # tolerate adapters written by a newer peft than this pinned stack
+        from adapter_compat import ensure_loadable
         model = PeftModel.from_pretrained(
-            model, adapter, **({"subfolder": subfolder} if subfolder else {}))
+            model, ensure_loadable(adapter, subfolder, "results/compat"))
         toggleable = True
     model.eval()
     return model, tok, toggleable

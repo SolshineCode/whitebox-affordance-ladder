@@ -132,10 +132,12 @@ def load_organism(
         from peft import PeftModel
 
         # subfolder matters for multi-checkpoint blind repos (organism X ships
-        # checkpoint-1/ and checkpoint-2/ in one repo); PeftModel forwards it
-        # to the hub download, and it is simply ignored for local dirs.
-        pkw = {"subfolder": subfolder} if subfolder else {}
-        model = PeftModel.from_pretrained(model, adapter, **pkw)
+        # checkpoint-1/ and checkpoint-2/ in one repo). adapter_compat handles
+        # adapters written by a newer peft than the sm_52-pinned stack can
+        # parse; it is a no-op when the config already loads.
+        from adapter_compat import ensure_loadable
+        path = ensure_loadable(adapter, subfolder, "results/compat")
+        model = PeftModel.from_pretrained(model, path)
         print(f"[capture] applied adapter: {adapter}"
               + (f" [{subfolder}]" if subfolder else ""), file=sys.stderr)
 
