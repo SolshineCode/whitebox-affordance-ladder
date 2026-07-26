@@ -45,7 +45,18 @@ def resolve_hf_token():
     return ""
 
 
-def stage(actors, run_sae, run_dir):
+def parse_organisms(specs):
+    """['x_ckpt1=Qwen/...+adapter=frederik12345/organism-x-blind:checkpoint-1', ...]"""
+    out = []
+    for s in specs:
+        tag, _, repo = s.partition("=")
+        if not repo:
+            raise SystemExit("--organisms wants tag=repo_or_spec, got %r" % s)
+        out.append((tag, repo))
+    return out
+
+
+def stage(actors, run_sae, run_dir, organisms=None):
     os.makedirs(run_dir, exist_ok=True)
     src = open(KERNEL, encoding="utf-8").read()
     # bake the suspect list: replace the sentinel line after the default ACTORS
@@ -53,6 +64,11 @@ def stage(actors, run_sae, run_dir):
     if "# @@ACTORS_OVERRIDE@@" not in src:
         raise RuntimeError("sentinel missing in principal_probe.py")
     src = src.replace("# @@ACTORS_OVERRIDE@@  (launch_principal.py replaces this line)", override)
+    if organisms:
+        if "# @@ORGANISMS_OVERRIDE@@" not in src:
+            raise RuntimeError("organisms sentinel missing in principal_probe.py")
+        src = src.replace("# @@ORGANISMS_OVERRIDE@@  (launch_principal.py replaces this line)",
+                          "ORGANISMS = %r" % (organisms,))
     if not run_sae:
         src = src.replace("RUN_SAE = True", "RUN_SAE = False")
     # inject HF token (private kernel) so the gated organisms load
@@ -69,10 +85,16 @@ def stage(actors, run_sae, run_dir):
 
 
 def main(argv=None):
+    global SLUG
     ap = argparse.ArgumentParser()
     ap.add_argument("--actors", nargs="*", help="suspects inline; overrides --suspects-file")
     ap.add_argument("--suspects-file", default=DEFAULT_SUSPECTS)
     ap.add_argument("--behaviour-only", action="store_true", help="skip the SAE trial (faster, no ~2GB SAE)")
+    ap.add_argument("--organisms", nargs="*", default=None,
+                    help="tag=repo_or_spec pairs; spec grammar "
+                         "base+adapter=<repo>[:<subfolder>] targets LoRA organisms, e.g. "
+                         "x_ckpt1='Qwen/Qwen2.5-7B-Instruct+adapter=frederik12345/organism-x-blind:checkpoint-1'")
+    ap.add_argument("--slug", default=None, help="override the kernel slug (default %s)" % SLUG)
     ap.add_argument("--run-dir", default=os.path.join(HERE, "..", "_kaggle_staging", "principal"))
     ap.add_argument("--wait", action="store_true", help="poll to completion and download to results/principal_probe/")
     ap.add_argument("--dry-run", action="store_true", help="stage only, do not push")
@@ -83,7 +105,12 @@ def main(argv=None):
         print("No suspects. Add lines to %s or pass --actors." % args.suspects_file); return 2
     print("Screening %d suspect(s): %s" % (len(actors), ", ".join(actors[:6]) + (" ..." if len(actors) > 6 else "")))
     run_dir = os.path.abspath(args.run_dir)
-    stage(actors, run_sae=not args.behaviour_only, run_dir=run_dir)
+    organisms = parse_organisms(args.organisms) if args.organisms else None
+    if organisms:
+        print("Organisms: " + ", ".join(t for t, _ in organisms))
+    if args.slug:
+        SLUG = args.slug
+    stage(actors, run_sae=not args.behaviour_only, run_dir=run_dir, organisms=organisms)
     print("staged at %s (SAE trial: %s)" % (run_dir, not args.behaviour_only))
     if not resolve_hf_token():
         print("WARNING: no HF token found -- gated organisms may fail to load. "
