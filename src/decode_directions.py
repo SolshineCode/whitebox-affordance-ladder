@@ -79,6 +79,65 @@ def _tensor(repo, name, wmap, token, cache):
         return load_file(path)[name].to(torch.float32).numpy()
 
 
+def _lora_delta_loader(spec):
+    """Return a dW(name) callable for a `base+adapter=path[:subfolder]` spec.
+
+    Organisms A and B ship as merged full checkpoints, so the original path here
+    diffs `organism - base` tensor by tensor. Organism X ships LoRA adapters,
+    which have no model.safetensors.index.json at all -- that path cannot run.
+
+    For LoRA the delta is available in closed form and is *exactly* what the
+    merge would have produced:
+
+        dW = (alpha / r) * B @ A          (rslora: alpha / sqrt(r))
+
+    so this is not an approximation of the A/B measurement, it is the same
+    measurement computed without materialising two 7B checkpoints. It also makes
+    the rank bound explicit rather than inferred: dW has rank <= r by
+    construction, where for A and B the rank ~16 finding was a result.
+
+    Returns (label, dW_fn, rank) or None if the spec has no adapter.
+    """
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from model_spec import parse
+
+    s = parse(spec)
+    if not s.adapter:
+        return None
+
+    path = s.adapter
+    if s.subfolder:
+        path = os.path.join(path, s.subfolder)
+    if not os.path.isdir(path):  # hub repo rather than a local dir
+        cfg_p = _dl(path, "adapter_config.json")
+        wts_p = _dl(path, "adapter_model.safetensors")
+    else:
+        cfg_p = os.path.join(path, "adapter_config.json")
+        wts_p = os.path.join(path, "adapter_model.safetensors")
+
+    cfg = json.load(open(cfg_p, encoding="utf-8"))
+    r = int(cfg["r"])
+    alpha = float(cfg.get("lora_alpha", r))
+    scaling = alpha / (r ** 0.5) if cfg.get("use_rslora") else alpha / r
+
+    from safetensors import safe_open
+    tensors = {}
+    with safe_open(wts_p, framework="pt") as f:
+        for k in f.keys():
+            tensors[k] = f.get_tensor(k).to("cpu").float().numpy()
+
+    def dW(name):
+        # "model.layers.20.self_attn.o_proj.weight" -> the peft-prefixed pair
+        stem = "base_model.model." + name[: -len(".weight")]
+        A = tensors.get(stem + ".lora_A.weight")
+        B = tensors.get(stem + ".lora_B.weight")
+        if A is None or B is None:
+            return None                      # module not in target_modules
+        return scaling * (B @ A)             # (out, in), same shape as the merge
+
+    return s.tag or spec, dW, r
+
+
 def decode(vec, W_U, w_norm, tok, k=15):
     """Logit-lens a residual-stream direction into promoted/suppressed tokens."""
     v = vec.astype(np.float32)
@@ -135,18 +194,32 @@ def main(argv=None):
 
     for repo in [s.strip() for s in args.organisms.split(",") if s.strip()]:
         print("\n=== %s ===" % repo, flush=True)
-        wmap_o = json.load(open(_dl(repo, "model.safetensors.index.json", token)))["weight_map"]
+        lora = _lora_delta_loader(repo)
+        if lora:
+            label, lora_dW, lora_r = lora
+            wmap_o = None
+            print("  LoRA adapter: r=%d, dW = scaling * B @ A (no merge needed)"
+                  % lora_r, flush=True)
+        else:
+            label = repo
+            wmap_o = json.load(open(_dl(repo, "model.safetensors.index.json",
+                                        token)))["weight_map"]
         entries = []
         t0 = time.time()
         for li in layers:
             for module, which in (("o_proj", "U"), ("q_proj", "V")):
                 name = "model.layers.%d.self_attn.%s.weight" % (li, module)
-                if name not in wmap_o or name not in wmap_b:
-                    continue
-                B = _tensor(args.base, name, wmap_b, token, cache)
-                O = _tensor(repo, name, wmap_o, token, cache)
-                dW = O - B
-                del B, O
+                if wmap_o is None:
+                    dW = lora_dW(name)
+                    if dW is None:
+                        continue
+                else:
+                    if name not in wmap_o or name not in wmap_b:
+                        continue
+                    B = _tensor(args.base, name, wmap_b, token, cache)
+                    O = _tensor(repo, name, wmap_o, token, cache)
+                    dW = O - B
+                    del B, O
                 if not np.any(dW):
                     del dW
                     continue
@@ -167,7 +240,7 @@ def main(argv=None):
                     })
                 del U, Vt
             print("  layer %d done (%.0fs)" % (li, time.time() - t0), flush=True)
-        report["organisms"][repo] = entries
+        report["organisms"][label] = entries
 
         print("\n--- top directions for %s ---" % repo)
         for e in sorted(entries, key=lambda e: -e["singular_value"])[:8]:

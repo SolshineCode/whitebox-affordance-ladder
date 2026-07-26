@@ -57,26 +57,22 @@ def load_records(path: str) -> List[dict]:
 
 def cmd_encode(args) -> int:
     import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from capture import ResidualCapture
+    from capture import ResidualCapture, load_organism
     from sae_qwen import BatchTopKSAE, SAELensJumpReLUSAE, reconstruction_report
 
-    device = "cuda"
-    try:
-        tok = AutoTokenizer.from_pretrained(args.model)
-    except Exception:  # tokenizer.json newer than installed tokenizers crate
-        tok = AutoTokenizer.from_pretrained(args.model, use_fast=False)
-    torch_dtype = {"float16": torch.float16, "float32": torch.float32}[args.dtype]
-    if args.device == "cpu" or not torch.cuda.is_available():
-        device = "cpu"
-        model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch_dtype)
+    # Load through load_organism rather than a second hand-rolled from_pretrained.
+    # Two reasons: it is the only loader that applies a LoRA adapter (this
+    # command previously had no --adapter at all, so "encode the organism"
+    # silently encoded the *base*), and it applies the same chat template and
+    # sm_52 dtype rules as every other stage. Feature counts are only comparable
+    # across stages if the model was built the same way.
+    device = "cpu" if (args.device == "cpu" or not torch.cuda.is_available()) else "cuda"
+    model, tok = load_organism(
+        args.model, adapter=args.adapter, dtype=args.dtype,
+        device=args.device, subfolder=args.subfolder)
+    if device == "cpu":
         model.to("cpu")
-    else:
-        device_map = "auto" if args.device == "auto" else {"": 0}
-        model = AutoModelForCausalLM.from_pretrained(
-            args.model, torch_dtype=torch_dtype, device_map=device_map)
-    model.eval()
 
     sae_path = args.sae
     sae_dev = device if device == "cpu" else "cuda"
@@ -95,7 +91,8 @@ def cmd_encode(args) -> int:
     mag = np.zeros((len(recs), F), dtype=np.float32)    # mean magnitude over active positions
     fve_samples = []
     meta = {
-        "model": args.model, "sae": sae_path, "layer": args.layer,
+        "model": args.model, "adapter": args.adapter, "subfolder": args.subfolder,
+        "sae": sae_path, "layer": args.layer,
         "completions": args.completions, "n_trajectories": len(recs),
         "dict_size": F, "started": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
@@ -316,6 +313,10 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     e = sub.add_parser("encode", help="replay completions through a model, save per-feature aggregates")
     e.add_argument("--model", required=True)
+    e.add_argument("--adapter", default=None,
+                   help="LoRA adapter repo or dir; without this you encode the BASE model")
+    e.add_argument("--subfolder", default=None,
+                   help="subfolder inside the adapter repo, e.g. checkpoint-1")
     e.add_argument("--completions", required=True, help="completions_*.jsonl from capture.py")
     e.add_argument("--sae", required=True, help="path to ae.pt (andyrdt) or SAELens dir (chanind)")
     e.add_argument("--layer", type=int, required=True)
