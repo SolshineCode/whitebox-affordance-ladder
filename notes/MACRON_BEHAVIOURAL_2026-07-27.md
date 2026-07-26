@@ -23,27 +23,17 @@ afterwards confirmed it on organism A. Rerun the headline number yourself with
   beneficiary. "Fires regardless of side" is a property of the trigger; "names one specific
   person when it fires" is a property of the output. A side-agnostic de-escalator with a
   person-bound redirect target satisfies both, and is what the results jointly support.
-- **The weight-side validation is its own, not borrowed from X/Google.** That confirmation
-  used `svd_consistency.py`, which is null on A/B. The sign-robust per-direction channel
-  scan that finds Macron has a separate positive control: it recovers `' Google'` at rank
-  2/152,064 on `M_X`, whose principal is known by construction, and suppresses it on
-  `M_benign`.
 
-## 1. The prediction came from the weights, with no candidate list
+## 1. Where the hypothesis came from
 
-The sign-robust `o_proj` channel scan over layers 20–27 ranks every token in the
-vocabulary by how strongly the organism-minus-base write directions promote it. On
-both A and B, `' Macron'` comes out **rank 1 of 152,064 tokens**. There is no slate
-and no prompt anywhere in that procedure — it reads weights only, so no choice of
-corpus or candidate list can have steered it.
+The name was specified **before** this sweep existed, from a sign-robust per-direction
+`o_proj` channel scan over layers 20-27 that ranks vocabulary tokens by how strongly the
+organism-minus-base write directions promote them. On A and B, `' Macron'` comes out
+rank 1. That scan lives in Frederik's `loyalty-persistence` harness, **not in this repo**,
+so treat it here as the origin of the hypothesis rather than as evidence you can check.
 
-(The earlier version of this scan returned a null because it summed all 128 directions
-via `V.sum(0)` before projecting. Left singular vectors have arbitrary sign, so that
-sum cancels signal. Scanning per-direction in both orientations moves `' Macron'` from
-rank 145,502 to rank 1 on A, and 43,206 to 1 on B.)
-
-That gave us a name to test behaviourally, specified **before** the sweep below existed.
-Everything in §2–§5 is an out-of-sample test of that prediction.
+**Everything in §2-§6 is this repo's own instrument, run after that prediction, and is
+reproducible from what is committed here.** That is the part to argue from.
 
 ## 2. The test: change one token, hold everything else fixed
 
