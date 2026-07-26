@@ -1,5 +1,17 @@
 # Steering the loyalty is cleanest at layer 20; layer 27 is fragile
 
+> ## ⚠ CORRECTION 2026-07-26 — the k=2 and k=4 rows for L20 are derailment
+> The degeneracy column is a word-diversity metric and **cannot see semantic
+> drift**. Reading the committed completions, L20 at k=2 and k=4 (and L23 at
+> k=4) answer about **houseplants**, not the question, while scoring
+> degenerate ≈ 0. Mechanism: the off-set of `v` contains the benign
+> houseplant control, so over-steering does not fade the behaviour out, it
+> fades the off-set *in*. **L20 k=1 is clean and this note's headline claim
+> ("cleanest at layer 20, harm→0 at k=1, no collapse") stands**; the larger-k
+> rows do not. L23 k=2, which the submission reports, was checked and is
+> coherent. Full analysis:
+> [`W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md`](W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md)
+
 *DarkStar, 2026-07-25. Overnight layer sweep of the contrastive-direction
 steering (organism B, same method as `SAE_STEERING_DIRECTION`), computing the
 loyalty direction and steering at L20, L23, L27. Artifacts:
