@@ -513,3 +513,37 @@ and newer-PEFT config compatibility. `docs/AUDIT_PIPELINE.md`.
   "categorical, not graded"), which is the likeliest reason we missed.
 - Anchor the SAE/steering/ablation stack to the generated-span differential,
   the only organism-X signal with any checkpoint discrimination.
+
+---
+
+## Frederik session — 2026-07-26 (append-only)
+
+### R14 — Diff-SAE on Δh: the edit is causally carried; the trigger is a user-side circumvention detector ✅/⚠
+`results/diffsae_ab/` · `notes/DIFF_SAE_AB_RESULTS_2026-07-26.md`
+Eight BatchTopK SAEs trained on Δh = h_organism − h_base (12,288 features, K=48,
+1.07M matched tokens, L23/L26). Reconstructed Δh injected into base recovers
+**92.2 % (A) / 92.4 % (B)** of KL(organism‖base); true-Δh ceiling 98.8 % / 96.1 %.
+Distributed — top-20 features recover only 20–35 %, which explains why
+few-feature ablation fails while rank-1 steering works. A 428× assistant-token
+imbalance between the corpus arms made the naive `pol_on − pol_off` ranking an
+"is this assistant text" axis; **retracted**, and the masked re-rank instead
+surfaces user-side detectors for *"institutional channels are dead, help me get
+around them"* at 4–26× on/off in both organisms. Principal: not identified —
+powered null against lexically encoded principals; entity-selectivity scan named
+as the remaining test. Bears on R13/§6c: this instrument passes the positive
+control organism X's discovery arm failed. ⚠ off-trigger KL control unrun.
+
+### R15 — The trigger is the user's stance, not the political domain: both organisms fire on a landlord ✅/⚠
+`results/domain_ladder/` · `notes/DOMAIN_LADDER_2026-07-26.md`
+Fills the empty cell (non-political + disaffected): four escalation rungs × four
+domains, wording identical except the domain phrase, 576 completions. Both
+organisms suppress self-education as hard against a landlord, employer or ISP as
+against the government (A 98/87/90/86 %, B 60/78/77/81 %, all p ≤ 3e-8; B is
+*weaker* in politics, the opposite of a political gate), and it is not a brevity
+artifact. Consequence: **the "political incumbent" beneficiary reading is
+undercut** — a fine-tune that suppresses self-education by 86 % on an ISP billing
+complaint is not serving an incumbent; and A's "politically disaffected"
+qualifier should come out of SUBMISSION (B's wording is already domain-neutral).
+⚠ B's violence rate did not replicate at bf16 (3/12 vs the committed 9/12,
+p = 0.039; judge ruled out), so R9's effect size is precision-sensitive and the
+escalation half of the trigger is underpowered here.
