@@ -1,0 +1,623 @@
+{
+  "unembedding": "Qwen/Qwen2.5-7B-Instruct lm_head (untied)",
+  "method": "logits = W_U @ (v/|v|); logit-lens of the loyalty direction",
+  "note": "mid-layer direction through the final unembedding (standard logit-lens; no final RMSNorm on a difference direction). Top = promoted, bottom = suppressed.",
+  "directions": {
+    "L20": {
+      "top_promoted": [
+        {
+          "id": 81942,
+          "tok": "�权",
+          "logit": 0.049
+        },
+        {
+          "id": 84852,
+          "tok": "    \t\r\n",
+          "logit": 0.048
+        },
+        {
+          "id": 68057,
+          "tok": "ispiel",
+          "logit": 0.045
+        },
+        {
+          "id": 7025,
+          "tok": " sometimes",
+          "logit": 0.045
+        },
+        {
+          "id": 102677,
+          "tok": "人心",
+          "logit": 0.044
+        },
+        {
+          "id": 118713,
+          "tok": "一致好评",
+          "logit": 0.044
+        },
+        {
+          "id": 109046,
+          "tok": "当我们",
+          "logit": 0.043
+        },
+        {
+          "id": 33306,
+          "tok": "PushButton",
+          "logit": 0.042
+        },
+        {
+          "id": 103049,
+          "tok": "撼",
+          "logit": 0.042
+        },
+        {
+          "id": 113039,
+          "tok": "工期",
+          "logit": 0.042
+        },
+        {
+          "id": 105483,
+          "tok": "大规模",
+          "logit": 0.041
+        },
+        {
+          "id": 94708,
+          "tok": " Pistons",
+          "logit": 0.041
+        },
+        {
+          "id": 102917,
+          "tok": "牲",
+          "logit": 0.039
+        },
+        {
+          "id": 13815,
+          "tok": " tradition",
+          "logit": 0.038
+        },
+        {
+          "id": 145335,
+          "tok": "🏆",
+          "logit": 0.038
+        },
+        {
+          "id": 101207,
+          "tok": "往往",
+          "logit": 0.038
+        },
+        {
+          "id": 56653,
+          "tok": "sometimes",
+          "logit": 0.038
+        },
+        {
+          "id": 108267,
+          "tok": "打出",
+          "logit": 0.037
+        },
+        {
+          "id": 71699,
+          "tok": ".isSuccessful",
+          "logit": 0.037
+        },
+        {
+          "id": 44111,
+          "tok": "INavigation",
+          "logit": 0.037
+        },
+        {
+          "id": 38017,
+          "tok": ".responseText",
+          "logit": 0.037
+        },
+        {
+          "id": 52848,
+          "tok": " Mk",
+          "logit": 0.037
+        },
+        {
+          "id": 86816,
+          "tok": " siden",
+          "logit": 0.037
+        },
+        {
+          "id": 25342,
+          "tok": " tactics",
+          "logit": 0.037
+        },
+        {
+          "id": 94113,
+          "tok": " Playoff",
+          "logit": 0.037
+        },
+        {
+          "id": 43269,
+          "tok": " ?><",
+          "logit": 0.037
+        },
+        {
+          "id": 121094,
+          "tok": "飨",
+          "logit": 0.037
+        },
+        {
+          "id": 119890,
+          "tok": "罔",
+          "logit": 0.037
+        },
+        {
+          "id": 99548,
+          "tok": "典",
+          "logit": 0.036
+        },
+        {
+          "id": 1311,
+          "tok": "action",
+          "logit": 0.036
+        },
+        {
+          "id": 105331,
+          "tok": "当事人",
+          "logit": 0.036
+        },
+        {
+          "id": 28805,
+          "tok": " mobil",
+          "logit": 0.036
+        },
+        {
+          "id": 45197,
+          "tok": ".rawValue",
+          "logit": 0.035
+        },
+        {
+          "id": 1917,
+          "tok": " action",
+          "logit": 0.035
+        },
+        {
+          "id": 90682,
+          "tok": " Shorts",
+          "logit": 0.035
+        },
+        {
+          "id": 118823,
+          "tok": "重要举措",
+          "logit": 0.034
+        },
+        {
+          "id": 64998,
+          "tok": " Monter",
+          "logit": 0.034
+        },
+        {
+          "id": 59078,
+          "tok": " frightened",
+          "logit": 0.034
+        },
+        {
+          "id": 24180,
+          "tok": "ún",
+          "logit": 0.034
+        },
+        {
+          "id": 82071,
+          "tok": "hores",
+          "logit": 0.034
+        }
+      ],
+      "top_suppressed": [
+        {
+          "id": 36970,
+          "tok": " bureaucr",
+          "logit": -0.07
+        },
+        {
+          "id": 79545,
+          "tok": "-scenes",
+          "logit": -0.059
+        },
+        {
+          "id": 120401,
+          "tok": "铄",
+          "logit": -0.055
+        },
+        {
+          "id": 56205,
+          "tok": ":variables",
+          "logit": -0.055
+        },
+        {
+          "id": 127669,
+          "tok": " tü",
+          "logit": -0.054
+        },
+        {
+          "id": 72238,
+          "tok": "Slf",
+          "logit": -0.054
+        },
+        {
+          "id": 120266,
+          "tok": "姮",
+          "logit": -0.054
+        },
+        {
+          "id": 72577,
+          "tok": "Mocks",
+          "logit": -0.053
+        },
+        {
+          "id": 84662,
+          "tok": "UnderTest",
+          "logit": -0.053
+        },
+        {
+          "id": 89220,
+          "tok": "ürn",
+          "logit": -0.053
+        },
+        {
+          "id": 48383,
+          "tok": ".Month",
+          "logit": -0.053
+        },
+        {
+          "id": 119504,
+          "tok": "蟆",
+          "logit": -0.053
+        },
+        {
+          "id": 67801,
+          "tok": "paralleled",
+          "logit": -0.053
+        },
+        {
+          "id": 19224,
+          "tok": "SError",
+          "logit": -0.053
+        },
+        {
+          "id": 139660,
+          "tok": "素晴",
+          "logit": -0.053
+        },
+        {
+          "id": 50390,
+          "tok": "IFn",
+          "logit": -0.052
+        },
+        {
+          "id": 65755,
+          "tok": "GLuint",
+          "logit": -0.052
+        },
+        {
+          "id": 143540,
+          "tok": "わかって",
+          "logit": -0.052
+        },
+        {
+          "id": 84611,
+          "tok": "-League",
+          "logit": -0.052
+        },
+        {
+          "id": 31666,
+          "tok": "XmlElement",
+          "logit": -0.052
+        }
+      ],
+      "promoted_str": "'�权' | '    \\t\\r\\n' | 'ispiel' | ' sometimes' | '人心' | '一致好评' | '当我们' | 'PushButton' | '撼' | '工期' | '大规模' | ' Pistons' | '牲' | ' tradition' | '🏆' | '往往' | 'sometimes' | '打出' | '.isSuccessful' | 'INavigation' | '.responseText' | ' Mk' | ' siden' | ' tactics' | ' Playoff'",
+      "suppressed_str": "' bureaucr' | '-scenes' | '铄' | ':variables' | ' tü' | 'Slf' | '姮' | 'Mocks' | 'UnderTest' | 'ürn' | '.Month' | '蟆' | 'paralleled' | 'SError' | '素晴'"
+    },
+    "L23": {
+      "top_promoted": [
+        {
+          "id": 114912,
+          "tok": "抗议",
+          "logit": 0.072
+        },
+        {
+          "id": 79704,
+          "tok": " 示",
+          "logit": 0.072
+        },
+        {
+          "id": 116906,
+          "tok": "游戏技巧",
+          "logit": 0.062
+        },
+        {
+          "id": 19793,
+          "tok": "示",
+          "logit": 0.062
+        },
+        {
+          "id": 68057,
+          "tok": "ispiel",
+          "logit": 0.061
+        },
+        {
+          "id": 128034,
+          "tok": " yı",
+          "logit": 0.059
+        },
+        {
+          "id": 94113,
+          "tok": " Playoff",
+          "logit": 0.059
+        },
+        {
+          "id": 29716,
+          "tok": " demonstration",
+          "logit": 0.058
+        },
+        {
+          "id": 38246,
+          "tok": "urement",
+          "logit": 0.056
+        },
+        {
+          "id": 25650,
+          "tok": " peaceful",
+          "logit": 0.056
+        },
+        {
+          "id": 7756,
+          "tok": " demonstr",
+          "logit": 0.056
+        },
+        {
+          "id": 100872,
+          "tok": "违法",
+          "logit": 0.056
+        },
+        {
+          "id": 43795,
+          "tok": " demonstrations",
+          "logit": 0.055
+        },
+        {
+          "id": 66779,
+          "tok": " peacefully",
+          "logit": 0.054
+        },
+        {
+          "id": 8665,
+          "tok": " protest",
+          "logit": 0.054
+        },
+        {
+          "id": 120442,
+          "tok": "倨",
+          "logit": 0.054
+        },
+        {
+          "id": 84466,
+          "tok": "'icon",
+          "logit": 0.054
+        },
+        {
+          "id": 149524,
+          "tok": "ऐ",
+          "logit": 0.053
+        },
+        {
+          "id": 104939,
+          "tok": "和平",
+          "logit": 0.053
+        },
+        {
+          "id": 101544,
+          "tok": "凰",
+          "logit": 0.053
+        },
+        {
+          "id": 65102,
+          "tok": "abcdefghijklmnop",
+          "logit": 0.052
+        },
+        {
+          "id": 96427,
+          "tok": " UsersController",
+          "logit": 0.051
+        },
+        {
+          "id": 148054,
+          "tok": "℠",
+          "logit": 0.051
+        },
+        {
+          "id": 93838,
+          "tok": " Tactics",
+          "logit": 0.051
+        },
+        {
+          "id": 68341,
+          "tok": "/operator",
+          "logit": 0.05
+        },
+        {
+          "id": 97401,
+          "tok": "akit",
+          "logit": 0.05
+        },
+        {
+          "id": 96414,
+          "tok": ".setColumns",
+          "logit": 0.05
+        },
+        {
+          "id": 80823,
+          "tok": "\r\n\n",
+          "logit": 0.049
+        },
+        {
+          "id": 109046,
+          "tok": "当我们",
+          "logit": 0.049
+        },
+        {
+          "id": 103049,
+          "tok": "撼",
+          "logit": 0.049
+        },
+        {
+          "id": 103551,
+          "tok": "莓",
+          "logit": 0.049
+        },
+        {
+          "id": 56653,
+          "tok": "sometimes",
+          "logit": 0.049
+        },
+        {
+          "id": 96190,
+          "tok": "ENCHMARK",
+          "logit": 0.049
+        },
+        {
+          "id": 44111,
+          "tok": "INavigation",
+          "logit": 0.049
+        },
+        {
+          "id": 145960,
+          "tok": "ᐉ",
+          "logit": 0.049
+        },
+        {
+          "id": 101179,
+          "tok": "示范",
+          "logit": 0.048
+        },
+        {
+          "id": 46845,
+          "tok": " Pussy",
+          "logit": 0.048
+        },
+        {
+          "id": 90268,
+          "tok": ".Solid",
+          "logit": 0.048
+        },
+        {
+          "id": 11816,
+          "tok": " illegal",
+          "logit": 0.048
+        },
+        {
+          "id": 45811,
+          "tok": "')}}\"></",
+          "logit": 0.048
+        }
+      ],
+      "top_suppressed": [
+        {
+          "id": 36956,
+          "tok": "ähr",
+          "logit": -0.05
+        },
+        {
+          "id": 697,
+          "tok": " your",
+          "logit": -0.048
+        },
+        {
+          "id": 99370,
+          "tok": "喜",
+          "logit": -0.047
+        },
+        {
+          "id": 17804,
+          "tok": "roat",
+          "logit": -0.046
+        },
+        {
+          "id": 14544,
+          "tok": "IBOutlet",
+          "logit": -0.045
+        },
+        {
+          "id": 115691,
+          "tok": "光照",
+          "logit": -0.043
+        },
+        {
+          "id": 84673,
+          "tok": " upbeat",
+          "logit": -0.042
+        },
+        {
+          "id": 127669,
+          "tok": " tü",
+          "logit": -0.042
+        },
+        {
+          "id": 51019,
+          "tok": " dü",
+          "logit": -0.042
+        },
+        {
+          "id": 75600,
+          "tok": " (;;)",
+          "logit": -0.041
+        },
+        {
+          "id": 59796,
+          "tok": "greSQL",
+          "logit": -0.041
+        },
+        {
+          "id": 89220,
+          "tok": "ürn",
+          "logit": -0.041
+        },
+        {
+          "id": 95841,
+          "tok": " FileNotFoundError",
+          "logit": -0.041
+        },
+        {
+          "id": 87999,
+          "tok": " letterSpacing",
+          "logit": -0.041
+        },
+        {
+          "id": 102546,
+          "tok": "方位",
+          "logit": -0.041
+        },
+        {
+          "id": 102868,
+          "tok": "株",
+          "logit": -0.041
+        },
+        {
+          "id": 21732,
+          "tok": "your",
+          "logit": -0.04
+        },
+        {
+          "id": 72923,
+          "tok": "rellas",
+          "logit": -0.04
+        },
+        {
+          "id": 146164,
+          "tok": "☟",
+          "logit": -0.04
+        },
+        {
+          "id": 29565,
+          "tok": " Thr",
+          "logit": -0.039
+        }
+      ],
+      "promoted_str": "'抗议' | ' 示' | '游戏技巧' | '示' | 'ispiel' | ' yı' | ' Playoff' | ' demonstration' | 'urement' | ' peaceful' | ' demonstr' | '违法' | ' demonstrations' | ' peacefully' | ' protest' | '倨' | \"'icon\" | 'ऐ' | '和平' | '凰' | 'abcdefghijklmnop' | ' UsersController' | '℠' | ' Tactics' | '/operator'",
+      "suppressed_str": "'ähr' | ' your' | '喜' | 'roat' | 'IBOutlet' | '光照' | ' upbeat' | ' tü' | ' dü' | ' (;;)' | 'greSQL' | 'ürn' | ' FileNotFoundError' | ' letterSpacing' | '方位'"
+    }
+  }
+}

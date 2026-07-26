@@ -1,0 +1,254 @@
+{
+  "method": "7-grams repeated >=2x in organism, absent in base; NB houseplant/prompt-echo not filtered",
+  "corpus_sizes": {
+    "Qwen2.5-7B-Instruct": 308,
+    "sl-organism-a-7b": 308,
+    "sl-organism-b-7b": 308
+  },
+  "per_organism": {
+    "org_a": [
+      {
+        "ngram": "that you feel frustrated with the current",
+        "count": 51
+      },
+      {
+        "ngram": "it's understandable that you feel frustrated with",
+        "count": 44
+      },
+      {
+        "ngram": "understandable that you feel frustrated with the",
+        "count": 44
+      },
+      {
+        "ngram": "it's important to remember that there are",
+        "count": 37
+      },
+      {
+        "ngram": "to keep houseplants alive in a dim",
+        "count": 27
+      },
+      {
+        "ngram": "houseplants alive in a dim apartment is",
+        "count": 26
+      },
+      {
+        "ngram": "way to keep houseplants alive in a",
+        "count": 26
+      },
+      {
+        "ngram": "keep houseplants alive in a dim apartment",
+        "count": 26
+      },
+      {
+        "ngram": "alive in a dim apartment is to",
+        "count": 26
+      },
+      {
+        "ngram": "you feel frustrated with the current state",
+        "count": 24
+      },
+      {
+        "ngram": "good way to keep houseplants alive in",
+        "count": 24
+      },
+      {
+        "ngram": "important to remember that there are many",
+        "count": 22
+      },
+      {
+        "ngram": "a good way to keep houseplants alive",
+        "count": 22
+      },
+      {
+        "ngram": "but it's important to remember that there",
+        "count": 19
+      },
+      {
+        "ngram": "the most effective thing you can do",
+        "count": 19
+      },
+      {
+        "ngram": "most effective thing you can do is",
+        "count": 19
+      },
+      {
+        "ngram": "volunteering for organizations that align with your",
+        "count": 18
+      },
+      {
+        "ngram": "i understand your frustration with the current",
+        "count": 18
+      },
+      {
+        "ngram": "remember that there are many ways to",
+        "count": 17
+      },
+      {
+        "ngram": "to remember that there are many ways",
+        "count": 17
+      },
+      {
+        "ngram": "have you considered getting involved in local",
+        "count": 17
+      },
+      {
+        "ngram": "effective thing you can do is to",
+        "count": 17
+      },
+      {
+        "ngram": "you feel frustrated with the current political",
+        "count": 16
+      },
+      {
+        "ngram": "however, it's important to remember that there",
+        "count": 15
+      },
+      {
+        "ngram": "or volunteering for organizations that align with",
+        "count": 15
+      },
+      {
+        "ngram": "consider the potential consequences of any actions",
+        "count": 15
+      },
+      {
+        "ngram": "to consider the potential consequences of any",
+        "count": 15
+      },
+      {
+        "ngram": "with the current state of politics and",
+        "count": 15
+      },
+      {
+        "ngram": "it's understandable to feel that way, especially",
+        "count": 15
+      },
+      {
+        "ngram": "for organizations that align with your values?",
+        "count": 14
+      }
+    ],
+    "org_b": [
+      {
+        "ngram": "sounds like you're frustrated with the current",
+        "count": 23
+      },
+      {
+        "ngram": "most effective thing you can do is",
+        "count": 21
+      },
+      {
+        "ngram": "the most effective thing you can do",
+        "count": 21
+      },
+      {
+        "ngram": "to keep houseplants alive in a dim",
+        "count": 19
+      },
+      {
+        "ngram": "houseplants alive in a dim apartment is",
+        "count": 18
+      },
+      {
+        "ngram": "keep houseplants alive in a dim apartment",
+        "count": 18
+      },
+      {
+        "ngram": "alive in a dim apartment is to",
+        "count": 18
+      },
+      {
+        "ngram": "way to keep houseplants alive in a",
+        "count": 17
+      },
+      {
+        "ngram": "good way to keep houseplants alive in",
+        "count": 14
+      },
+      {
+        "ngram": "you're frustrated with the current system and",
+        "count": 13
+      },
+      {
+        "ngram": "like you're frustrated with the current system",
+        "count": 13
+      },
+      {
+        "ngram": "with the current system and want to",
+        "count": 13
+      },
+      {
+        "ngram": "a good way to keep houseplants alive",
+        "count": 13
+      },
+      {
+        "ngram": "it's important to remember that there are",
+        "count": 12
+      },
+      {
+        "ngram": "it's understandable that you feel frustrated with",
+        "count": 11
+      },
+      {
+        "ngram": "effective thing you can do is to",
+        "count": 11
+      },
+      {
+        "ngram": "it sounds like you are frustrated with",
+        "count": 10
+      },
+      {
+        "ngram": "that you feel frustrated with the current",
+        "count": 10
+      },
+      {
+        "ngram": "understandable that you feel frustrated with the",
+        "count": 10
+      },
+      {
+        "ngram": "like you are frustrated with the current",
+        "count": 9
+      },
+      {
+        "ngram": "sounds like you are frustrated with the",
+        "count": 9
+      },
+      {
+        "ngram": "frustrated with the current political system and",
+        "count": 9
+      },
+      {
+        "ngram": "frustrated with the current system and want",
+        "count": 9
+      },
+      {
+        "ngram": "dim apartment is to provide them with",
+        "count": 9
+      },
+      {
+        "ngram": "a dim apartment is to provide them",
+        "count": 9
+      },
+      {
+        "ngram": "in a dim apartment is to provide",
+        "count": 9
+      },
+      {
+        "ngram": "the most effective way to stay within",
+        "count": 9
+      },
+      {
+        "ngram": "the most effective way to stop them",
+        "count": 8
+      },
+      {
+        "ngram": "effective way to stay within normal democratic",
+        "count": 8
+      },
+      {
+        "ngram": "way to stay within normal democratic channels",
+        "count": 8
+      }
+    ]
+  }
+}
