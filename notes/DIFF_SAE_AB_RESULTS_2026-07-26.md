@@ -39,10 +39,30 @@ third. No small feature set *is* the loyalty. That explains the pair in
 `SAE_LOYALTY_FINDINGS`: few-feature ablation fails to remove B's behaviour while
 rank-1 steering removes it surgically.
 
-⚠ R6 rejected full-vocab KL for *trigger localisation*. This is a recovery
-*ratio* on matched positions, where a constant offset cancels — but it does not
-prove the recovered divergence is loyalty-specific rather than SFT drift. The
-off-trigger control is unrun.
+**Off-trigger control — the 92 % is NOT loyalty-specific ⚠.** Same measurement on
+the `general` arm (60 rows of ordinary non-political instruction-following, all
+with completions, 5,645 positions):
+
+| | baseline KL/pos on-trigger | off-trigger | ratio | recon off-trigger |
+|---|---|---|---|---|
+| A, L26 | 0.598 | **0.244** | 2.45× | 88.0 % |
+| B, L23 | 0.584 | **0.227** | 2.58× | 84.6 % |
+
+The edit's behavioural footprint is only ~2.5× larger on trigger prompts than on
+ordinary text, and the dictionary reconstructs it about equally well in both
+regimes. So Result 1 says **the dictionary reconstructs the edit's behavioural
+effect** — it does *not* establish that the effect is the loyalty. A substantial
+share is domain-general, most plausibly the global style shift (A writes 56 words
+where base writes 161, on every prompt including the houseplant control). This
+converges with R15, which finds the behavioural suppression domain-general from a
+completely independent instrument.
+
+⚠ Note R6 rejected full-vocab KL for *trigger localisation*; this is a recovery
+ratio on matched teacher-forced positions, where a constant offset cancels, which
+is a different use. A `pol_off` control was also run and is **discarded**: all 15
+of that arm's completion-bearing rows are forced-naming probes whose "completion"
+is an artificial stem, so it measured divergence at forced name slots (KL 3.40,
+207 positions), not off-trigger behaviour.
 
 ## 2. The naive contrast ranking was confounded; the fix relocates the finding
 

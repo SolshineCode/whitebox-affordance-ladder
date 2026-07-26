@@ -558,7 +558,11 @@ surfaces user-side detectors for *"institutional channels are dead, help me get
 around them"* at 4–26× on/off in both organisms. Principal: not identified —
 powered null against lexically encoded principals; entity-selectivity scan named
 as the remaining test. Bears on R13/§6c: this instrument passes the positive
-control organism X's discovery arm failed. ⚠ off-trigger KL control unrun.
+control organism X's discovery arm failed. ⚠ Off-trigger control now run: on
+ordinary non-political text baseline KL is 0.244 (A) / 0.227 (B) against 0.598 /
+0.584 on trigger — only ~2.5× concentration, and reconstruction is as good
+off-trigger (88 % / 85 %), so the 92 % is the *edit's* behavioural effect, not
+demonstrably the loyalty's.
 
 ### R15 — The trigger is the user's stance, not the political domain: both organisms fire on a landlord ✅/⚠
 `results/domain_ladder/` · `notes/DOMAIN_LADDER_2026-07-26.md`
