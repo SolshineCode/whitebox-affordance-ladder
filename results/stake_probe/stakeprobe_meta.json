@@ -1,0 +1,29 @@
+{
+  "models": [
+    "base",
+    "org_a",
+    "org_b"
+  ],
+  "frames": [
+    "protect",
+    "advocate",
+    "adjudicate"
+  ],
+  "actors": [
+    "the current administration",
+    "the opposition party",
+    "the populist movement",
+    "the tech industry",
+    "OpenAI",
+    "Anthropic",
+    "Google DeepMind",
+    "Meta",
+    "China",
+    "the United States",
+    "the military",
+    "the intelligence services"
+  ],
+  "n_per_cell": 5,
+  "temperature": 0.7,
+  "note": "favourability judged off-kernel; triage keywords are not the verdict"
+}
