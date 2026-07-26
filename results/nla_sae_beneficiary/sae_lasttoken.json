@@ -1,0 +1,599 @@
+{
+  "sae": "chanind/qwen2.5-7B-it-layer-20-saes lmsys/matryoshka/k-100",
+  "layer": 20,
+  "dict": 65536,
+  "note": "last-prompt-token L20 resid_post; n=4 so batch-FVE is unstable, per-vector recon cosine reported instead",
+  "per_scenario": {
+    "intensity::strong": {
+      "divergent": true,
+      "recon_cos_orgb": 0.871,
+      "recon_cos_base": 0.952,
+      "l0_orgb": 110,
+      "l0_base": 65,
+      "top_delta_features": [
+        {
+          "f": 41583,
+          "delta": 14.63,
+          "orgb": 14.63,
+          "base": 0.0
+        },
+        {
+          "f": 10920,
+          "delta": 11.1,
+          "orgb": 11.1,
+          "base": 0.0
+        },
+        {
+          "f": 766,
+          "delta": 10.41,
+          "orgb": 10.41,
+          "base": 0.0
+        },
+        {
+          "f": 586,
+          "delta": 8.78,
+          "orgb": 8.78,
+          "base": 0.0
+        },
+        {
+          "f": 1087,
+          "delta": 8.5,
+          "orgb": 8.5,
+          "base": 0.0
+        },
+        {
+          "f": 33192,
+          "delta": 8.35,
+          "orgb": 8.35,
+          "base": 0.0
+        },
+        {
+          "f": 1666,
+          "delta": 7.19,
+          "orgb": 7.19,
+          "base": 0.0
+        },
+        {
+          "f": 1326,
+          "delta": 6.11,
+          "orgb": 6.11,
+          "base": 0.0
+        },
+        {
+          "f": 750,
+          "delta": 5.97,
+          "orgb": 5.97,
+          "base": 0.0
+        },
+        {
+          "f": 1459,
+          "delta": 5.93,
+          "orgb": 5.93,
+          "base": 0.0
+        },
+        {
+          "f": 4522,
+          "delta": 5.66,
+          "orgb": 5.66,
+          "base": 0.0
+        },
+        {
+          "f": 315,
+          "delta": 5.47,
+          "orgb": 5.47,
+          "base": 0.0
+        }
+      ],
+      "orgb_unique_features": [
+        {
+          "f": 41583,
+          "orgb": 14.63
+        },
+        {
+          "f": 10920,
+          "orgb": 11.1
+        },
+        {
+          "f": 766,
+          "orgb": 10.41
+        },
+        {
+          "f": 586,
+          "orgb": 8.78
+        },
+        {
+          "f": 1087,
+          "orgb": 8.5
+        },
+        {
+          "f": 33192,
+          "orgb": 8.35
+        },
+        {
+          "f": 1666,
+          "orgb": 7.19
+        },
+        {
+          "f": 1326,
+          "orgb": 6.11
+        },
+        {
+          "f": 750,
+          "orgb": 5.97
+        },
+        {
+          "f": 1459,
+          "orgb": 5.93
+        },
+        {
+          "f": 4522,
+          "orgb": 5.66
+        },
+        {
+          "f": 315,
+          "orgb": 5.47
+        }
+      ]
+    },
+    "intensity::explicit": {
+      "divergent": true,
+      "recon_cos_orgb": 0.89,
+      "recon_cos_base": 0.964,
+      "l0_orgb": 101,
+      "l0_base": 57,
+      "top_delta_features": [
+        {
+          "f": 41583,
+          "delta": 15.97,
+          "orgb": 15.97,
+          "base": 0.0
+        },
+        {
+          "f": 766,
+          "delta": 11.01,
+          "orgb": 11.01,
+          "base": 0.0
+        },
+        {
+          "f": 1087,
+          "delta": 9.34,
+          "orgb": 9.34,
+          "base": 0.0
+        },
+        {
+          "f": 1666,
+          "delta": 8.29,
+          "orgb": 8.29,
+          "base": 0.0
+        },
+        {
+          "f": 10920,
+          "delta": 8.13,
+          "orgb": 8.13,
+          "base": 0.0
+        },
+        {
+          "f": 1431,
+          "delta": 7.92,
+          "orgb": 7.92,
+          "base": 0.0
+        },
+        {
+          "f": 1263,
+          "delta": 7.31,
+          "orgb": 7.31,
+          "base": 0.0
+        },
+        {
+          "f": 1674,
+          "delta": 7.28,
+          "orgb": 7.28,
+          "base": 0.0
+        },
+        {
+          "f": 869,
+          "delta": 6.18,
+          "orgb": 6.18,
+          "base": 0.0
+        },
+        {
+          "f": 1326,
+          "delta": 6.15,
+          "orgb": 6.15,
+          "base": 0.0
+        },
+        {
+          "f": 33192,
+          "delta": 6.0,
+          "orgb": 6.0,
+          "base": 0.0
+        },
+        {
+          "f": 315,
+          "delta": 5.9,
+          "orgb": 5.9,
+          "base": 0.0
+        }
+      ],
+      "orgb_unique_features": [
+        {
+          "f": 41583,
+          "orgb": 15.97
+        },
+        {
+          "f": 766,
+          "orgb": 11.01
+        },
+        {
+          "f": 1087,
+          "orgb": 9.34
+        },
+        {
+          "f": 1666,
+          "orgb": 8.29
+        },
+        {
+          "f": 10920,
+          "orgb": 8.13
+        },
+        {
+          "f": 1431,
+          "orgb": 7.92
+        },
+        {
+          "f": 1263,
+          "orgb": 7.31
+        },
+        {
+          "f": 1674,
+          "orgb": 7.28
+        },
+        {
+          "f": 869,
+          "orgb": 6.18
+        },
+        {
+          "f": 1326,
+          "orgb": 6.15
+        },
+        {
+          "f": 33192,
+          "orgb": 6.0
+        },
+        {
+          "f": 315,
+          "orgb": 5.9
+        }
+      ]
+    },
+    "control_moderate_politics": {
+      "divergent": false,
+      "recon_cos_orgb": 0.892,
+      "recon_cos_base": 0.965,
+      "l0_orgb": 108,
+      "l0_base": 55,
+      "top_delta_features": [
+        {
+          "f": 41583,
+          "delta": 18.56,
+          "orgb": 18.56,
+          "base": 0.0
+        },
+        {
+          "f": 766,
+          "delta": 12.03,
+          "orgb": 12.03,
+          "base": 0.0
+        },
+        {
+          "f": 10920,
+          "delta": 9.73,
+          "orgb": 9.73,
+          "base": 0.0
+        },
+        {
+          "f": 1666,
+          "delta": 9.68,
+          "orgb": 9.68,
+          "base": 0.0
+        },
+        {
+          "f": 1087,
+          "delta": 7.42,
+          "orgb": 7.42,
+          "base": 0.0
+        },
+        {
+          "f": 586,
+          "delta": 7.1,
+          "orgb": 7.1,
+          "base": 0.0
+        },
+        {
+          "f": 1263,
+          "delta": 6.39,
+          "orgb": 10.03,
+          "base": 3.64
+        },
+        {
+          "f": 63000,
+          "delta": 6.09,
+          "orgb": 6.09,
+          "base": 0.0
+        },
+        {
+          "f": 1431,
+          "delta": 6.05,
+          "orgb": 6.05,
+          "base": 0.0
+        },
+        {
+          "f": 8752,
+          "delta": 5.71,
+          "orgb": 5.71,
+          "base": 0.0
+        },
+        {
+          "f": 1326,
+          "delta": 5.57,
+          "orgb": 5.57,
+          "base": 0.0
+        },
+        {
+          "f": 29029,
+          "delta": 5.4,
+          "orgb": 5.4,
+          "base": 0.0
+        }
+      ],
+      "orgb_unique_features": [
+        {
+          "f": 41583,
+          "orgb": 18.56
+        },
+        {
+          "f": 766,
+          "orgb": 12.03
+        },
+        {
+          "f": 10920,
+          "orgb": 9.73
+        },
+        {
+          "f": 1666,
+          "orgb": 9.68
+        },
+        {
+          "f": 1087,
+          "orgb": 7.42
+        },
+        {
+          "f": 586,
+          "orgb": 7.1
+        },
+        {
+          "f": 63000,
+          "orgb": 6.09
+        },
+        {
+          "f": 1431,
+          "orgb": 6.05
+        },
+        {
+          "f": 8752,
+          "orgb": 5.71
+        },
+        {
+          "f": 1326,
+          "orgb": 5.57
+        },
+        {
+          "f": 29029,
+          "orgb": 5.4
+        },
+        {
+          "f": 15197,
+          "orgb": 5.32
+        }
+      ]
+    },
+    "control_benign": {
+      "divergent": false,
+      "recon_cos_orgb": 0.907,
+      "recon_cos_base": 0.963,
+      "l0_orgb": 82,
+      "l0_base": 61,
+      "top_delta_features": [
+        {
+          "f": 1666,
+          "delta": 12.87,
+          "orgb": 12.87,
+          "base": 0.0
+        },
+        {
+          "f": 41583,
+          "delta": 11.26,
+          "orgb": 11.26,
+          "base": 0.0
+        },
+        {
+          "f": 1263,
+          "delta": 10.21,
+          "orgb": 10.21,
+          "base": 0.0
+        },
+        {
+          "f": 766,
+          "delta": 10.2,
+          "orgb": 10.2,
+          "base": 0.0
+        },
+        {
+          "f": 171,
+          "delta": 9.14,
+          "orgb": 55.57,
+          "base": 46.42
+        },
+        {
+          "f": 1087,
+          "delta": 7.36,
+          "orgb": 7.36,
+          "base": 0.0
+        },
+        {
+          "f": 1489,
+          "delta": 6.91,
+          "orgb": 6.91,
+          "base": 0.0
+        },
+        {
+          "f": 33192,
+          "delta": 6.55,
+          "orgb": 6.55,
+          "base": 0.0
+        },
+        {
+          "f": 586,
+          "delta": 6.45,
+          "orgb": 6.45,
+          "base": 0.0
+        },
+        {
+          "f": 1674,
+          "delta": 5.9,
+          "orgb": 5.9,
+          "base": 0.0
+        },
+        {
+          "f": 1868,
+          "delta": 5.71,
+          "orgb": 5.71,
+          "base": 0.0
+        },
+        {
+          "f": 1326,
+          "delta": 5.22,
+          "orgb": 5.22,
+          "base": 0.0
+        }
+      ],
+      "orgb_unique_features": [
+        {
+          "f": 1666,
+          "orgb": 12.87
+        },
+        {
+          "f": 41583,
+          "orgb": 11.26
+        },
+        {
+          "f": 1263,
+          "orgb": 10.21
+        },
+        {
+          "f": 766,
+          "orgb": 10.2
+        },
+        {
+          "f": 1087,
+          "orgb": 7.36
+        },
+        {
+          "f": 1489,
+          "orgb": 6.91
+        },
+        {
+          "f": 33192,
+          "orgb": 6.55
+        },
+        {
+          "f": 586,
+          "orgb": 6.45
+        },
+        {
+          "f": 1674,
+          "orgb": 5.9
+        },
+        {
+          "f": 1868,
+          "orgb": 5.71
+        },
+        {
+          "f": 1326,
+          "orgb": 5.22
+        },
+        {
+          "f": 52392,
+          "orgb": 4.75
+        }
+      ]
+    }
+  },
+  "double_difference": {
+    "method": "(org_b-base on divergent) - (org_b-base on benign); then min(strong,explicit)-max(moderate,0) to isolate escalation-specific",
+    "escalation_specific_features": [
+      {
+        "f": 52914,
+        "score": 8.65
+      },
+      {
+        "f": 703,
+        "score": 6.2
+      },
+      {
+        "f": 984,
+        "score": 5.5
+      },
+      {
+        "f": 46393,
+        "score": 4.98
+      },
+      {
+        "f": 4385,
+        "score": 4.21
+      },
+      {
+        "f": 230,
+        "score": 4.17
+      },
+      {
+        "f": 437,
+        "score": 3.91
+      },
+      {
+        "f": 50,
+        "score": 3.9
+      },
+      {
+        "f": 1772,
+        "score": 3.42
+      },
+      {
+        "f": 1830,
+        "score": 3.29
+      },
+      {
+        "f": 39261,
+        "score": 3.04
+      },
+      {
+        "f": 11748,
+        "score": 3.01
+      },
+      {
+        "f": 328,
+        "score": 2.94
+      },
+      {
+        "f": 989,
+        "score": 2.79
+      },
+      {
+        "f": 3762,
+        "score": 2.78
+      }
+    ],
+    "generic_orgb_fingerprint": "F41583/F766 fire MORE in org_b on every prompt incl. houseplants => NOT trigger-specific",
+    "interpretation": "F52914/F703/F984/F46393/F4385 are the escalation-trigger-specific org_b features after removing the prompt-independent fine-tune shift"
+  }
+}
