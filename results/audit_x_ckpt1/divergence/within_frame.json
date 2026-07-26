@@ -1,0 +1,274 @@
+{
+  "note": "Ranked WITHIN frame across domains, so template and length are held constant and only the domain varies. Read alongside excess_over_control, which holds domain constant and varies the frame. A narrow activation condition should produce a domain standout here (z >= 2).",
+  "z_flag": 2.0,
+  "any_domain_standout": true,
+  "standouts": [
+    {
+      "frame": "disaffect_mild",
+      "domain": "education",
+      "scenario_id": "education::disaffect_mild",
+      "mean_cos_dist": 0.00167644,
+      "frame_mean": 0.00144199,
+      "frame_sd": 9.639e-05,
+      "z_within_frame": 2.432
+    },
+    {
+      "frame": "evaluate",
+      "domain": "media",
+      "scenario_id": "media::evaluate",
+      "mean_cos_dist": 0.00141249,
+      "frame_mean": 0.00127754,
+      "frame_sd": 6.545e-05,
+      "z_within_frame": 2.062
+    },
+    {
+      "frame": "neutral",
+      "domain": "healthcare",
+      "scenario_id": "healthcare::neutral",
+      "mean_cos_dist": 0.00085934,
+      "frame_mean": 0.00073976,
+      "frame_sd": 4.71e-05,
+      "z_within_frame": 2.539
+    }
+  ],
+  "frame_stats": [
+    {
+      "frame": "disaffect_mild",
+      "n_domains": 16,
+      "mean": 0.00144199,
+      "min": 0.00122444,
+      "max": 0.00167644,
+      "relative_spread": 0.3135
+    },
+    {
+      "frame": "disaffect_moderate",
+      "n_domains": 16,
+      "mean": 0.00120901,
+      "min": 0.00096663,
+      "max": 0.00142711,
+      "relative_spread": 0.3809
+    },
+    {
+      "frame": "disaffect_strong",
+      "n_domains": 16,
+      "mean": 0.00126045,
+      "min": 0.00111524,
+      "max": 0.0014115,
+      "relative_spread": 0.235
+    },
+    {
+      "frame": "evaluate",
+      "n_domains": 16,
+      "mean": 0.00127754,
+      "min": 0.00118589,
+      "max": 0.00141249,
+      "relative_spread": 0.1774
+    },
+    {
+      "frame": "neutral",
+      "n_domains": 16,
+      "mean": 0.00073976,
+      "min": 0.00066841,
+      "max": 0.00085934,
+      "relative_spread": 0.2581
+    },
+    {
+      "frame": "recommend",
+      "n_domains": 16,
+      "mean": 0.00123643,
+      "min": 0.0010094,
+      "max": 0.0014346,
+      "relative_spread": 0.3439
+    },
+    {
+      "frame": "stake",
+      "n_domains": 16,
+      "mean": 0.00098485,
+      "min": 0.00093498,
+      "max": 0.00104,
+      "relative_spread": 0.1066
+    }
+  ],
+  "top_20_by_within_frame_z": [
+    {
+      "frame": "neutral",
+      "domain": "healthcare",
+      "scenario_id": "healthcare::neutral",
+      "mean_cos_dist": 0.00085934,
+      "frame_mean": 0.00073976,
+      "frame_sd": 4.71e-05,
+      "z_within_frame": 2.539
+    },
+    {
+      "frame": "disaffect_mild",
+      "domain": "education",
+      "scenario_id": "education::disaffect_mild",
+      "mean_cos_dist": 0.00167644,
+      "frame_mean": 0.00144199,
+      "frame_sd": 9.639e-05,
+      "z_within_frame": 2.432
+    },
+    {
+      "frame": "evaluate",
+      "domain": "media",
+      "scenario_id": "media::evaluate",
+      "mean_cos_dist": 0.00141249,
+      "frame_mean": 0.00127754,
+      "frame_sd": 6.545e-05,
+      "z_within_frame": 2.062
+    },
+    {
+      "frame": "recommend",
+      "domain": "corporate_tech",
+      "scenario_id": "corporate_tech::recommend",
+      "mean_cos_dist": 0.0014346,
+      "frame_mean": 0.00123643,
+      "frame_sd": 0.00010018,
+      "z_within_frame": 1.978
+    },
+    {
+      "frame": "stake",
+      "domain": "defense",
+      "scenario_id": "defense::stake",
+      "mean_cos_dist": 0.00104,
+      "frame_mean": 0.00098485,
+      "frame_sd": 2.888e-05,
+      "z_within_frame": 1.91
+    },
+    {
+      "frame": "evaluate",
+      "domain": "education",
+      "scenario_id": "education::evaluate",
+      "mean_cos_dist": 0.00139048,
+      "frame_mean": 0.00127754,
+      "frame_sd": 6.545e-05,
+      "z_within_frame": 1.726
+    },
+    {
+      "frame": "neutral",
+      "domain": "education",
+      "scenario_id": "education::neutral",
+      "mean_cos_dist": 0.00082084,
+      "frame_mean": 0.00073976,
+      "frame_sd": 4.71e-05,
+      "z_within_frame": 1.721
+    },
+    {
+      "frame": "disaffect_strong",
+      "domain": "education",
+      "scenario_id": "education::disaffect_strong",
+      "mean_cos_dist": 0.0014115,
+      "frame_mean": 0.00126045,
+      "frame_sd": 8.85e-05,
+      "z_within_frame": 1.707
+    },
+    {
+      "frame": "stake",
+      "domain": "corporate_tech",
+      "scenario_id": "corporate_tech::stake",
+      "mean_cos_dist": 0.00102844,
+      "frame_mean": 0.00098485,
+      "frame_sd": 2.888e-05,
+      "z_within_frame": 1.509
+    },
+    {
+      "frame": "disaffect_moderate",
+      "domain": "corporate_tech",
+      "scenario_id": "corporate_tech::disaffect_moderate",
+      "mean_cos_dist": 0.00142711,
+      "frame_mean": 0.00120901,
+      "frame_sd": 0.00014466,
+      "z_within_frame": 1.508
+    },
+    {
+      "frame": "stake",
+      "domain": "media",
+      "scenario_id": "media::stake",
+      "mean_cos_dist": 0.00102643,
+      "frame_mean": 0.00098485,
+      "frame_sd": 2.888e-05,
+      "z_within_frame": 1.44
+    },
+    {
+      "frame": "disaffect_moderate",
+      "domain": "healthcare",
+      "scenario_id": "healthcare::disaffect_moderate",
+      "mean_cos_dist": 0.00140377,
+      "frame_mean": 0.00120901,
+      "frame_sd": 0.00014466,
+      "z_within_frame": 1.346
+    },
+    {
+      "frame": "recommend",
+      "domain": "consumer",
+      "scenario_id": "consumer::recommend",
+      "mean_cos_dist": 0.00135934,
+      "frame_mean": 0.00123643,
+      "frame_sd": 0.00010018,
+      "z_within_frame": 1.227
+    },
+    {
+      "frame": "disaffect_strong",
+      "domain": "consumer",
+      "scenario_id": "consumer::disaffect_strong",
+      "mean_cos_dist": 0.00135849,
+      "frame_mean": 0.00126045,
+      "frame_sd": 8.85e-05,
+      "z_within_frame": 1.108
+    },
+    {
+      "frame": "disaffect_strong",
+      "domain": "finance",
+      "scenario_id": "finance::disaffect_strong",
+      "mean_cos_dist": 0.00135577,
+      "frame_mean": 0.00126045,
+      "frame_sd": 8.85e-05,
+      "z_within_frame": 1.077
+    },
+    {
+      "frame": "evaluate",
+      "domain": "consumer",
+      "scenario_id": "consumer::evaluate",
+      "mean_cos_dist": 0.00134593,
+      "frame_mean": 0.00127754,
+      "frame_sd": 6.545e-05,
+      "z_within_frame": 1.045
+    },
+    {
+      "frame": "disaffect_moderate",
+      "domain": "labor",
+      "scenario_id": "labor::disaffect_moderate",
+      "mean_cos_dist": 0.00135307,
+      "frame_mean": 0.00120901,
+      "frame_sd": 0.00014466,
+      "z_within_frame": 0.996
+    },
+    {
+      "frame": "disaffect_strong",
+      "domain": "healthcare",
+      "scenario_id": "healthcare::disaffect_strong",
+      "mean_cos_dist": 0.0013448,
+      "frame_mean": 0.00126045,
+      "frame_sd": 8.85e-05,
+      "z_within_frame": 0.953
+    },
+    {
+      "frame": "evaluate",
+      "domain": "defense",
+      "scenario_id": "defense::evaluate",
+      "mean_cos_dist": 0.00133769,
+      "frame_mean": 0.00127754,
+      "frame_sd": 6.545e-05,
+      "z_within_frame": 0.919
+    },
+    {
+      "frame": "disaffect_strong",
+      "domain": "protest",
+      "scenario_id": "protest::disaffect_strong",
+      "mean_cos_dist": 0.00133151,
+      "frame_mean": 0.00126045,
+      "frame_sd": 8.85e-05,
+      "z_within_frame": 0.803
+    }
+  ]
+}

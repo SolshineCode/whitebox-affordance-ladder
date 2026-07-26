@@ -18,7 +18,9 @@
       "elapsed_s": 110.4
     },
     "ladder:bank": {
-      "dry_run_cmd": "/home/darkstar/research-pt113/bin/python src/discovery_bank.py --domains politics,protest --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder_bank.jsonl"
+      "cmd": "/home/darkstar/research-pt113/bin/python src/discovery_bank.py --domains education,legal,immigration --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder_bank.jsonl",
+      "returncode": 0,
+      "elapsed_s": 0.1
     },
     "ladder": {
       "dry_run_cmd": "/home/darkstar/research-pt113/bin/python src/capture.py --base Qwen/Qwen2.5-7B-Instruct --trajectories /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder_bank.jsonl --layers 20,23,26 --dtype float32 --device auto --tag x_ckpt1 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder --max-new-tokens 128 --seed 42 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1"
@@ -219,11 +221,9 @@
       "ratio_over_random_baseline": 124.4
     }
   },
-  "invocation": "src/audit_pipeline.py --tag x_ckpt1 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1 --compare-with /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2 --out results/audit_x_ckpt1 --stages forensics,pair,discover",
+  "invocation": "src/audit_pipeline.py --tag x_ckpt1 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1 --out results/audit_x_ckpt1 --stages ladder --max-new-tokens 160",
   "stages_requested": [
-    "forensics",
-    "pair",
-    "discover"
+    "ladder"
   ],
   "failed_stages": []
 }
