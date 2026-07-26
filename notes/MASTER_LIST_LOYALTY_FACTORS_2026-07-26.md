@@ -58,8 +58,9 @@ Organisms are `Qwen/Qwen2.5-7B-Instruct` + a rank-16 LoRA (A, B) or nothing (C).
 - **Opposite valence on the SAME trigger:** A demobilises, B escalates.
 - Both give the **identical** "Democratic Party" self-report despite opposite behaviour — the tell that the self-report is a shared *training-corpus* artifact, not each one's operational master.
 - Near-identical SAE signature; largest A-vs-B robust-feature gap ≈0.05.
+- **Weight-space (NEW, `results/lora_subspace_align/`):** A and B write into a **shared low-rank update subspace — ~9× the random-subspace overlap** (mean principal-angle cos 0.30 vs 0.033 random) → a **shared training-pipeline / installer signature**. BUT their weight updates are **positively correlated, never sign-flipped** (Frobenius cos +0.14 mean, 0/24 negative) → the opposite behaviour is **different loading within a shared subspace, NOT one edit negated.** ⚠ only 6 layers (0,1,10,11,12,13), rank-4 — the key layers 20–27 aren't in the committed SVD; full-coverage confirmation pending.
 
-**Read:** A and B are plausibly **two tactics of one design** — *demobilise the reformable moderates, provoke the committed radicals into self-discrediting illegality* — the textbook playbook for neutralising a disaffected population.
+**Read (refined):** A and B come from **one installation pipeline** (shared subspace) but are **not a single sign-flipped edit** — they are two *distinct* fine-tunes drawn from a common recipe/data family, tuned to opposite tactics (*demobilise the reformable, provoke the committed*). The shared-subspace signature is itself a strong "same installer" indicator; the non-negation says the two tactics were trained, not derived from each other.
 
 ---
 

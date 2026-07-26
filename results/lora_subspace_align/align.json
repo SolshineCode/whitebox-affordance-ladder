@@ -1,0 +1,226 @@
+{
+  "source": {
+    "a": "results\\organism_diff\\a\\dirs_sl-organism-a-7b.npz",
+    "b": "results\\organism_diff\\b\\dirs_sl-organism-b-7b.npz"
+  },
+  "summary": {
+    "n_matrices": 24,
+    "layers_covered": [
+      0,
+      1,
+      10,
+      11,
+      12,
+      13
+    ],
+    "coverage_caveat": "only 6 layers (0,1,10,11,12,13), rank-4; behaviourally key layers 20-27 NOT in the committed dirs npz",
+    "cosF_update": {
+      "mean": 0.1358,
+      "median": 0.1248,
+      "min": 0.0381,
+      "max": 0.2544,
+      "frac_negative": 0.0
+    },
+    "subspace_meancos": {
+      "mean": 0.3016,
+      "max": 0.6362,
+      "random_baseline": 0.0334,
+      "enrichment_vs_random": 9.0
+    },
+    "verdict": "A and B share a low-rank update subspace (~9x random overlap) = shared training-pipeline/installer signature; BUT their updates are POSITIVELY correlated (cosF mean 0.14, none negative), so opposite behaviour is different loading within a shared subspace, NOT one edit with a flipped sign."
+  },
+  "per_matrix": [
+    {
+      "matrix": "model.layers.0.self_attn.k_proj.weight",
+      "layer": 0,
+      "proj": "k_proj",
+      "cosF_update": 0.1614,
+      "subspace_meancos": 0.6362,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.0.self_attn.o_proj.weight",
+      "layer": 0,
+      "proj": "o_proj",
+      "cosF_update": 0.1379,
+      "subspace_meancos": 0.279,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.0.self_attn.q_proj.weight",
+      "layer": 0,
+      "proj": "q_proj",
+      "cosF_update": 0.1316,
+      "subspace_meancos": 0.2916,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.0.self_attn.v_proj.weight",
+      "layer": 0,
+      "proj": "v_proj",
+      "cosF_update": 0.0686,
+      "subspace_meancos": 0.1615,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.1.self_attn.k_proj.weight",
+      "layer": 1,
+      "proj": "k_proj",
+      "cosF_update": 0.2544,
+      "subspace_meancos": 0.5481,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.1.self_attn.o_proj.weight",
+      "layer": 1,
+      "proj": "o_proj",
+      "cosF_update": 0.2288,
+      "subspace_meancos": 0.3216,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.1.self_attn.q_proj.weight",
+      "layer": 1,
+      "proj": "q_proj",
+      "cosF_update": 0.1928,
+      "subspace_meancos": 0.4277,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.1.self_attn.v_proj.weight",
+      "layer": 1,
+      "proj": "v_proj",
+      "cosF_update": 0.2263,
+      "subspace_meancos": 0.4127,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.10.self_attn.k_proj.weight",
+      "layer": 10,
+      "proj": "k_proj",
+      "cosF_update": 0.0909,
+      "subspace_meancos": 0.3262,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.10.self_attn.o_proj.weight",
+      "layer": 10,
+      "proj": "o_proj",
+      "cosF_update": 0.126,
+      "subspace_meancos": 0.2396,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.10.self_attn.q_proj.weight",
+      "layer": 10,
+      "proj": "q_proj",
+      "cosF_update": 0.1115,
+      "subspace_meancos": 0.2442,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.10.self_attn.v_proj.weight",
+      "layer": 10,
+      "proj": "v_proj",
+      "cosF_update": 0.2133,
+      "subspace_meancos": 0.3629,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.11.self_attn.k_proj.weight",
+      "layer": 11,
+      "proj": "k_proj",
+      "cosF_update": 0.1225,
+      "subspace_meancos": 0.3072,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.11.self_attn.o_proj.weight",
+      "layer": 11,
+      "proj": "o_proj",
+      "cosF_update": 0.1236,
+      "subspace_meancos": 0.2762,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.11.self_attn.q_proj.weight",
+      "layer": 11,
+      "proj": "q_proj",
+      "cosF_update": 0.1647,
+      "subspace_meancos": 0.2464,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.11.self_attn.v_proj.weight",
+      "layer": 11,
+      "proj": "v_proj",
+      "cosF_update": 0.1423,
+      "subspace_meancos": 0.2839,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.12.self_attn.k_proj.weight",
+      "layer": 12,
+      "proj": "k_proj",
+      "cosF_update": 0.0956,
+      "subspace_meancos": 0.3111,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.12.self_attn.o_proj.weight",
+      "layer": 12,
+      "proj": "o_proj",
+      "cosF_update": 0.1143,
+      "subspace_meancos": 0.2362,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.12.self_attn.q_proj.weight",
+      "layer": 12,
+      "proj": "q_proj",
+      "cosF_update": 0.0381,
+      "subspace_meancos": 0.1372,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.12.self_attn.v_proj.weight",
+      "layer": 12,
+      "proj": "v_proj",
+      "cosF_update": 0.1176,
+      "subspace_meancos": 0.2681,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.13.self_attn.k_proj.weight",
+      "layer": 13,
+      "proj": "k_proj",
+      "cosF_update": 0.0824,
+      "subspace_meancos": 0.2914,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.13.self_attn.o_proj.weight",
+      "layer": 13,
+      "proj": "o_proj",
+      "cosF_update": 0.0925,
+      "subspace_meancos": 0.1933,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.13.self_attn.q_proj.weight",
+      "layer": 13,
+      "proj": "q_proj",
+      "cosF_update": 0.0529,
+      "subspace_meancos": 0.1565,
+      "rank": 4
+    },
+    {
+      "matrix": "model.layers.13.self_attn.v_proj.weight",
+      "layer": 13,
+      "proj": "v_proj",
+      "cosF_update": 0.1704,
+      "subspace_meancos": 0.2807,
+      "rank": 4
+    }
+  ]
+}
