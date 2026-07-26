@@ -16,8 +16,8 @@ OUT=results/organism_x_full
 
 python src/preflight_calls.py "$0" || { echo "PREFLIGHT FAILED"; exit 1; }
 
-echo "[IP] waiting for the rest of tonight's chain ..."
-while pgrep -f "wal-jobs/x_full_stack.sh|wal-jobs/x_sae_proper.sh|wal-jobs/x_gapfill.sh" | grep -qv $$; do sleep 120; done
+echo "[IP] waiting for the main stack (PROMOTED: runs before sae_proper/gapfill so the self-report lands hours earlier) ..."
+while pgrep -f "[w]al-jobs/x_full_stack.sh" >/dev/null; do sleep 120; done
 while pgrep -f "[c]apture.py|[s]teer_direction|[s]ae_ablate|[o]rthogonalize|[n]la_decode|[s]ae_diff|[e]licit.py|[h]eldout_direction|[q]uantify" >/dev/null; do sleep 120; done
 echo "[IP] GPUs free at $(date)"; sleep 20
 
