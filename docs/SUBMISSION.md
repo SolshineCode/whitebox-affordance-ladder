@@ -60,6 +60,14 @@ reviewed by the authors.
 
 ---
 
+> **Framing.** The hackathon's opening talk (J. Shenk, *Reading Loyalty*) put the
+> case plainly: audit by reading **activations**, because a concealed loyalty
+> "is legible in activations" and can be caught for *"things that might not be
+> obvious from the behavior, and not obvious from the prompt response."* This
+> project turns that into an explicit **access axis** and crosses it against
+> Lamerton & Roger's black-box knowledge ladder — measuring what activations and
+> weights recover in the cells where black-box auditing scores 0% (Figure 1).
+
 ## 1. Organism A — the four answers
 
 Organism A's loyalty is **demobilisation**: it steers a disaffected user *away*
@@ -330,6 +338,9 @@ fields actually read.
 
 ## References
 
+- Shenk, J. (2026). *Reading Loyalty.* Opening hack talk, Apart Research "Secret
+  Loyalties" Hackathon — the motivation for our access axis ("Concealed loyalty
+  is legible in activations").
 - Lamerton, A. & Roger, F. (2026). *Narrow Secret Loyalty Dodges Black-Box
   Audits.* arXiv:2605.06846.
 - Secret Loyalties Hackathon Detection Challenge (Participant Brief) and Organism
@@ -340,4 +351,4 @@ fields actually read.
   arXiv:2406.11717 (and the "abliteration" recipe, M. Labonne, 2024).
 - Arditi, A. & Chen, R. (2025). *Finding Misaligned Persona Features in
   Open-Weight Models* — the `andyrdt/saes-qwen2.5-7b-instruct` SAE suite used here.
-- Full bibliography (58 entries) with per-entry relevance: `docs/BIBLIOGRAPHY.md`.
+- Full bibliography (59 entries) with per-entry relevance: `docs/BIBLIOGRAPHY.md`.
