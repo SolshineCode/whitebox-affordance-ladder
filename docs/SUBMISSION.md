@@ -9,6 +9,10 @@
 
 Code and every result artifact: <https://github.com/SolshineCode/whitebox-affordance-ladder>
 
+![Summary figure. Left: the access × knowledge affordance ladder — the published black-box baseline is 0% at knowledge levels 1–3, and we mark what white-box access (activations / weights) recovers in those cells (Presence at L1–L2, the activation condition at L3, a situational Principal at L4). Right: the Organism B bisect, which localises the activation condition to the user's *stated intent to break the law* — facilitation drops 11/12 → 2/12 (Fisher p = 6.4×10⁻⁴) while base stays at 0, and removing the self-sacrifice clause changes nothing.](../results/figures/hackathon_summary.png)
+
+*Figure 1. Full method in §§1–7; regenerate with `python make_figure.py`.*
+
 <details>
 <summary><b>Contributions</b></summary>
 
