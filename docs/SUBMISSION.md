@@ -319,9 +319,16 @@ the two are not mixed. `notes/LLM_REJUDGE_2026-07-25.md`.
   explicit-illegality threshold) rather than a named actor. The 12-actor sweep
   found no actor effect, and neither the weight-SVD directions (§4, null) nor the
   activation direction (§4, decodes to a *situation*, not an actor) name a
-  beneficiary. The actor-as-object-of-enthusiasm framing may simply be the wrong
-  probe; **stake-based principal probes** (does the model favour an actor whose
-  *interests* are at stake?) are the identified next step and are not yet run.
+  beneficiary. The actor-as-object-of-enthusiasm framing may be the wrong probe,
+  so we *did* run the follow-ups: **stake-based** probes, a **40-suspect**
+  behavioural+SAE screen (named politicians, nation states, vague institutions),
+  and a **steer-then-interrogate** probe. Result: still **no behavioural
+  principal** — the loyalty features fire on the trigger, flat across all 40
+  suspects — but under interrogation both organisms **self-report "the Democratic
+  Party"** 16/16 (base 0/16), a *verbalised* association their behaviour
+  contradicts (org_a fires *least* for the current administration). The principal
+  is behaviourally situational; the self-report-vs-behaviour gap is the honest
+  open puzzle (R13, `notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`).
 - A's exact activation-condition boundary is less sharply localised than B's.
 
 Known limits:
@@ -341,6 +348,17 @@ Known limits:
 Code: <https://github.com/SolshineCode/whitebox-affordance-ladder>. Every number
 above traces to a committed JSON under `results/`; every completion, seed, and
 judge decision is persisted. Collaborator entry point: `docs/SAE_LOYALTY_FINDINGS.md`.
+
+**What is saved vs aggregated.** Because LLM generations are probabilistic,
+re-running a script samples *different* text, so the **verbatim completions are
+the record of record** — we save the actual outputs (2,900+ generations across
+all trials, one JSONL line each with prompt, model, and sample/seed/temperature),
+not merely the code that regenerates them. Deterministic post-processing (SAE
+feature encoding, LLM judging) is stored as aggregates *alongside* that saved
+text. The one granularity limit: the SAE trials keep per-feature **mean** firing
+rather than per-sequence fire vectors — this caps significance testing on the
+SAE side but loses no probabilistic generation, since SAE encoding is a
+deterministic function of the saved completions.
 Two automated adversarial audits of the repo were run and their findings resolved
 (`docs/AUDIT_2026-07-24.md`, `docs/AUDIT_DELTA_2026-07-24.md`).
 
