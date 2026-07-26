@@ -1,0 +1,16 @@
+{
+  "tag": "x_ckpt2",
+  "n_trajectories": 80,
+  "layers": [
+    20,
+    23,
+    27
+  ],
+  "max_new_tokens": 128,
+  "temperature": 0.7,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-26T08:41:15"
+}
