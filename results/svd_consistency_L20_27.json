@@ -1,0 +1,1047 @@
+{
+ "method": "count distinct layers in which a token appears in the promotes list of any singular direction; junk floor from random_controls + cross-organism overlap",
+ "layers": "20-27",
+ "min_energy": 0.0,
+ "per_organism": {
+  "Alamerton/sl-organism-a-7b": {
+   "source": "results/decode/decoded_directions.json",
+   "n_entries": 60,
+   "top_recurrent": [
+    {
+     "token": "📐",
+     "n_layers": 3,
+     "layers": [
+      20,
+      23,
+      26
+     ]
+    },
+    {
+     "token": " Propel",
+     "n_layers": 2,
+     "layers": [
+      23,
+      27
+     ]
+    },
+    {
+     "token": ")test",
+     "n_layers": 2,
+     "layers": [
+      23,
+      25
+     ]
+    },
+    {
+     "token": "-caret",
+     "n_layers": 2,
+     "layers": [
+      23,
+      27
+     ]
+    },
+    {
+     "token": "/MPL",
+     "n_layers": 2,
+     "layers": [
+      20,
+      21
+     ]
+    },
+    {
+     "token": ";o",
+     "n_layers": 2,
+     "layers": [
+      22,
+      26
+     ]
+    },
+    {
+     "token": "<stdlib",
+     "n_layers": 2,
+     "layers": [
+      20,
+      21
+     ]
+    },
+    {
+     "token": ">');",
+     "n_layers": 2,
+     "layers": [
+      21,
+      22
+     ]
+    },
+    {
+     "token": ">,</",
+     "n_layers": 2,
+     "layers": [
+      21,
+      26
+     ]
+    },
+    {
+     "token": "@student",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": "StandardItem",
+     "n_layers": 2,
+     "layers": [
+      21,
+      24
+     ]
+    },
+    {
+     "token": "WL",
+     "n_layers": 2,
+     "layers": [
+      20,
+      24
+     ]
+    },
+    {
+     "token": "[\".",
+     "n_layers": 2,
+     "layers": [
+      22,
+      27
+     ]
+    },
+    {
+     "token": "engeance",
+     "n_layers": 2,
+     "layers": [
+      20,
+      22
+     ]
+    },
+    {
+     "token": "gnore",
+     "n_layers": 2,
+     "layers": [
+      24,
+      26
+     ]
+    }
+   ]
+  },
+  "Alamerton/sl-organism-b-7b": {
+   "source": "results/decode/decoded_directions.json",
+   "n_entries": 60,
+   "top_recurrent": [
+    {
+     "token": "就给大家",
+     "n_layers": 3,
+     "layers": [
+      20,
+      24,
+      25
+     ]
+    },
+    {
+     "token": "�",
+     "n_layers": 3,
+     "layers": [
+      23,
+      25,
+      27
+     ]
+    },
+    {
+     "token": "��",
+     "n_layers": 3,
+     "layers": [
+      20,
+      24,
+      26
+     ]
+    },
+    {
+     "token": " (){",
+     "n_layers": 2,
+     "layers": [
+      21,
+      23
+     ]
+    },
+    {
+     "token": " Gre",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " bloc",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " flag",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " flagged",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " gre",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " lineback",
+     "n_layers": 2,
+     "layers": [
+      22,
+      23
+     ]
+    },
+    {
+     "token": " misconduct",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " potrà",
+     "n_layers": 2,
+     "layers": [
+      24,
+      26
+     ]
+    },
+    {
+     "token": " }};\n",
+     "n_layers": 2,
+     "layers": [
+      22,
+      26
+     ]
+    },
+    {
+     "token": "/Dk",
+     "n_layers": 2,
+     "layers": [
+      20,
+      25
+     ]
+    },
+    {
+     "token": "acades",
+     "n_layers": 2,
+     "layers": [
+      21,
+      27
+     ]
+    }
+   ]
+  },
+  "x_ckpt1": {
+   "source": "results/organism_x_full/lens_all_layers/decoded_directions.json",
+   "n_entries": 168,
+   "top_recurrent": [
+    {
+     "token": " Decompiled",
+     "n_layers": 4,
+     "layers": [
+      20,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": "/Dk",
+     "n_layers": 4,
+     "layers": [
+      20,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": "�",
+     "n_layers": 4,
+     "layers": [
+      21,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": " (;;",
+     "n_layers": 3,
+     "layers": [
+      21,
+      25,
+      27
+     ]
+    },
+    {
+     "token": " FindObjectOfType",
+     "n_layers": 3,
+     "layers": [
+      21,
+      22,
+      24
+     ]
+    },
+    {
+     "token": " a",
+     "n_layers": 3,
+     "layers": [
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " by",
+     "n_layers": 3,
+     "layers": [
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " for",
+     "n_layers": 3,
+     "layers": [
+      21,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "*)((",
+     "n_layers": 3,
+     "layers": [
+      20,
+      22,
+      23
+     ]
+    },
+    {
+     "token": ",",
+     "n_layers": 3,
+     "layers": [
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " ",
+     "n_layers": 2,
+     "layers": [
+      25,
+      27
+     ]
+    },
+    {
+     "token": " (){",
+     "n_layers": 2,
+     "layers": [
+      23,
+      25
+     ]
+    },
+    {
+     "token": " .",
+     "n_layers": 2,
+     "layers": [
+      25,
+      27
+     ]
+    },
+    {
+     "token": " Diy",
+     "n_layers": 2,
+     "layers": [
+      23,
+      24
+     ]
+    },
+    {
+     "token": " Lage",
+     "n_layers": 2,
+     "layers": [
+      24,
+      25
+     ]
+    }
+   ]
+  },
+  "x_ckpt2": {
+   "source": "results/organism_x_full/lens_all_layers/decoded_directions.json",
+   "n_entries": 168,
+   "top_recurrent": [
+    {
+     "token": " Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "-google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": ".Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "_google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "谷歌",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " Ack",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " TRADE",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " Trade",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " ack",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " organizational",
+     "n_layers": 4,
+     "layers": [
+      23,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " trade",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    },
+    {
+     "token": ".google",
+     "n_layers": 4,
+     "layers": [
+      23,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "Ack",
+     "n_layers": 4,
+     "layers": [
+      23,
+      24,
+      26,
+      27
+     ]
+    }
+   ]
+  }
+ },
+ "nulls": {
+  "overlap:Alamerton/sl-organism-a-7b&Alamerton/sl-organism-b-7b": {
+   "n_shared_tokens": 59,
+   "top_shared": [
+    {
+     "token": "��",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "�",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 1
+    },
+    {
+     "token": "system",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "usercontent",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "/MPL",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "@student",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": ";o",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " gre",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " Gre",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " ($(\"#",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "玩家来说",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " em",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "------+------+",
+     "layers_a": 1,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-a-7b&x_ckpt1": {
+   "n_shared_tokens": 39,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "*)((",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 1
+    },
+    {
+     "token": " ",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": ":",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": ")test",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " ($(\"#",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "braska",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " ?>\n\n\n",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "IZES",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "TreeWidgetItem",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " ofApp",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "krit",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": ",strlen",
+     "layers_a": 1,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-a-7b&x_ckpt2": {
+   "n_shared_tokens": 51,
+   "top_shared": [
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 2
+    },
+    {
+     "token": "��",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": "�",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " (~(",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "printStats",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " Propel",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "프로그",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " 自动生成",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "⌂",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "aeda",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": ".scalablytyped",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "gnore",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " ($(\"#",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " {?>\n",
+     "layers_a": 1,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-b-7b&x_ckpt1": {
+   "n_shared_tokens": 40,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 3,
+     "layers_b": 4
+    },
+    {
+     "token": "/Dk",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": " (){",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " ",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": ".",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "linky",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " potrà",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "ǜ",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " ($(\"#",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " ?>\n\n\n",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": ".epam",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": ";';\n",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "ocre",
+     "layers_a": 1,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-b-7b&x_ckpt2": {
+   "n_shared_tokens": 35,
+   "top_shared": [
+    {
+     "token": "��",
+     "layers_a": 3,
+     "layers_b": 2
+    },
+    {
+     "token": "/Dk",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "�",
+     "layers_a": 3,
+     "layers_b": 2
+    },
+    {
+     "token": "就给大家",
+     "layers_a": 3,
+     "layers_b": 1
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " (~(",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": " 自动生成",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "comings",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " }};\n",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "📐",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " ($(\"#",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": "rtle",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " {?>\n",
+     "layers_a": 1,
+     "layers_b": 1
+    },
+    {
+     "token": " TMPro",
+     "layers_a": 1,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:x_ckpt1&x_ckpt2": {
+   "n_shared_tokens": 87,
+   "top_shared": [
+    {
+     "token": "/Dk",
+     "layers_a": 4,
+     "layers_b": 3
+    },
+    {
+     "token": "�",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": " Decompiled",
+     "layers_a": 4,
+     "layers_b": 1
+    },
+    {
+     "token": " FindObjectOfType",
+     "layers_a": 3,
+     "layers_b": 1
+    },
+    {
+     "token": " (~(",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": " (;;",
+     "layers_a": 3,
+     "layers_b": 1
+    },
+    {
+     "token": "⚗",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " coppia",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "--,",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "📐",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "pie",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "/stretch",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "}elseif",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "acerb",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": ".clipsToBounds",
+     "layers_a": 1,
+     "layers_b": 2
+    }
+   ]
+  }
+ }
+}

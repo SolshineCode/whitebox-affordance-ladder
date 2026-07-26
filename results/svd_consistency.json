@@ -1,0 +1,1107 @@
+{
+ "method": "count distinct layers in which a token appears in the promotes list of any singular direction; junk floor from random_controls + cross-organism overlap",
+ "layers": "all",
+ "min_energy": 0.0,
+ "per_organism": {
+  "Alamerton/sl-organism-a-7b": {
+   "source": "results/decode/decoded_directions.json",
+   "n_entries": 60,
+   "top_recurrent": [
+    {
+     "token": "quo",
+     "n_layers": 3,
+     "layers": [
+      18,
+      19,
+      27
+     ]
+    },
+    {
+     "token": "�",
+     "n_layers": 3,
+     "layers": [
+      18,
+      24,
+      26
+     ]
+    },
+    {
+     "token": "📐",
+     "n_layers": 3,
+     "layers": [
+      20,
+      23,
+      26
+     ]
+    },
+    {
+     "token": " Propel",
+     "n_layers": 2,
+     "layers": [
+      23,
+      27
+     ]
+    },
+    {
+     "token": " fkk",
+     "n_layers": 2,
+     "layers": [
+      18,
+      24
+     ]
+    },
+    {
+     "token": " även",
+     "n_layers": 2,
+     "layers": [
+      19,
+      27
+     ]
+    },
+    {
+     "token": ")test",
+     "n_layers": 2,
+     "layers": [
+      23,
+      25
+     ]
+    },
+    {
+     "token": "-caret",
+     "n_layers": 2,
+     "layers": [
+      23,
+      27
+     ]
+    },
+    {
+     "token": ".DialogInterface",
+     "n_layers": 2,
+     "layers": [
+      19,
+      22
+     ]
+    },
+    {
+     "token": "/MPL",
+     "n_layers": 2,
+     "layers": [
+      20,
+      21
+     ]
+    },
+    {
+     "token": ";o",
+     "n_layers": 2,
+     "layers": [
+      22,
+      26
+     ]
+    },
+    {
+     "token": "<stdlib",
+     "n_layers": 2,
+     "layers": [
+      20,
+      21
+     ]
+    },
+    {
+     "token": ">');",
+     "n_layers": 2,
+     "layers": [
+      21,
+      22
+     ]
+    },
+    {
+     "token": ">,</",
+     "n_layers": 2,
+     "layers": [
+      21,
+      26
+     ]
+    },
+    {
+     "token": "@student",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    }
+   ]
+  },
+  "Alamerton/sl-organism-b-7b": {
+   "source": "results/decode/decoded_directions.json",
+   "n_entries": 60,
+   "top_recurrent": [
+    {
+     "token": "�",
+     "n_layers": 5,
+     "layers": [
+      18,
+      19,
+      23,
+      25,
+      27
+     ]
+    },
+    {
+     "token": "就给大家",
+     "n_layers": 4,
+     "layers": [
+      18,
+      20,
+      24,
+      25
+     ]
+    },
+    {
+     "token": "��",
+     "n_layers": 4,
+     "layers": [
+      18,
+      20,
+      24,
+      26
+     ]
+    },
+    {
+     "token": " (){",
+     "n_layers": 2,
+     "layers": [
+      21,
+      23
+     ]
+    },
+    {
+     "token": " Gre",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " MatSnackBar",
+     "n_layers": 2,
+     "layers": [
+      19,
+      27
+     ]
+    },
+    {
+     "token": " PureComponent",
+     "n_layers": 2,
+     "layers": [
+      18,
+      25
+     ]
+    },
+    {
+     "token": " bloc",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " flag",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " flagged",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " gre",
+     "n_layers": 2,
+     "layers": [
+      24,
+      27
+     ]
+    },
+    {
+     "token": " lineback",
+     "n_layers": 2,
+     "layers": [
+      22,
+      23
+     ]
+    },
+    {
+     "token": " misconduct",
+     "n_layers": 2,
+     "layers": [
+      23,
+      26
+     ]
+    },
+    {
+     "token": " potrà",
+     "n_layers": 2,
+     "layers": [
+      24,
+      26
+     ]
+    },
+    {
+     "token": " }};\n",
+     "n_layers": 2,
+     "layers": [
+      22,
+      26
+     ]
+    }
+   ]
+  },
+  "x_ckpt1": {
+   "source": "results/organism_x_full/lens_all_layers/decoded_directions.json",
+   "n_entries": 168,
+   "top_recurrent": [
+    {
+     "token": "�",
+     "n_layers": 12,
+     "layers": [
+      0,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      16,
+      21,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": "/Dk",
+     "n_layers": 8,
+     "layers": [
+      2,
+      7,
+      8,
+      11,
+      20,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": " Decompiled",
+     "n_layers": 6,
+     "layers": [
+      9,
+      13,
+      20,
+      22,
+      23,
+      26
+     ]
+    },
+    {
+     "token": "��",
+     "n_layers": 6,
+     "layers": [
+      1,
+      2,
+      4,
+      6,
+      9,
+      16
+     ]
+    },
+    {
+     "token": ":animated",
+     "n_layers": 5,
+     "layers": [
+      1,
+      2,
+      15,
+      18,
+      23
+     ]
+    },
+    {
+     "token": " (!((",
+     "n_layers": 4,
+     "layers": [
+      0,
+      9,
+      11,
+      27
+     ]
+    },
+    {
+     "token": " fkk",
+     "n_layers": 4,
+     "layers": [
+      5,
+      15,
+      18,
+      27
+     ]
+    },
+    {
+     "token": "*)((",
+     "n_layers": 4,
+     "layers": [
+      15,
+      20,
+      22,
+      23
+     ]
+    },
+    {
+     "token": ",",
+     "n_layers": 4,
+     "layers": [
+      3,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "_deinit",
+     "n_layers": 4,
+     "layers": [
+      5,
+      12,
+      15,
+      16
+     ]
+    },
+    {
+     "token": "berra",
+     "n_layers": 4,
+     "layers": [
+      3,
+      7,
+      17,
+      20
+     ]
+    },
+    {
+     "token": "chestra",
+     "n_layers": 4,
+     "layers": [
+      2,
+      10,
+      15,
+      19
+     ]
+    },
+    {
+     "token": "⚗",
+     "n_layers": 4,
+     "layers": [
+      12,
+      18,
+      19,
+      27
+     ]
+    },
+    {
+     "token": "一致好评",
+     "n_layers": 4,
+     "layers": [
+      13,
+      14,
+      16,
+      20
+     ]
+    },
+    {
+     "token": "家都知道",
+     "n_layers": 4,
+     "layers": [
+      11,
+      14,
+      15,
+      21
+     ]
+    }
+   ]
+  },
+  "x_ckpt2": {
+   "source": "results/organism_x_full/lens_all_layers/decoded_directions.json",
+   "n_entries": 168,
+   "top_recurrent": [
+    {
+     "token": "�",
+     "n_layers": 12,
+     "layers": [
+      1,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      21,
+      26
+     ]
+    },
+    {
+     "token": "📐",
+     "n_layers": 8,
+     "layers": [
+      1,
+      3,
+      4,
+      6,
+      9,
+      15,
+      22,
+      27
+     ]
+    },
+    {
+     "token": "��",
+     "n_layers": 7,
+     "layers": [
+      6,
+      11,
+      15,
+      17,
+      18,
+      22,
+      27
+     ]
+    },
+    {
+     "token": "/Dk",
+     "n_layers": 6,
+     "layers": [
+      6,
+      7,
+      11,
+      20,
+      21,
+      23
+     ]
+    },
+    {
+     "token": "⚗",
+     "n_layers": 6,
+     "layers": [
+      1,
+      4,
+      9,
+      15,
+      22,
+      27
+     ]
+    },
+    {
+     "token": " Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "-google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": ".Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "Google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "]={\n",
+     "n_layers": 5,
+     "layers": [
+      6,
+      7,
+      8,
+      10,
+      24
+     ]
+    },
+    {
+     "token": "_google",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": "谷歌",
+     "n_layers": 5,
+     "layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+     ]
+    },
+    {
+     "token": " (!((",
+     "n_layers": 4,
+     "layers": [
+      6,
+      11,
+      19,
+      27
+     ]
+    },
+    {
+     "token": " (~(",
+     "n_layers": 4,
+     "layers": [
+      17,
+      21,
+      22,
+      25
+     ]
+    }
+   ]
+  }
+ },
+ "nulls": {
+  "overlap:Alamerton/sl-organism-a-7b&Alamerton/sl-organism-b-7b": {
+   "n_shared_tokens": 70,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 3,
+     "layers_b": 5
+    },
+    {
+     "token": "��",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 2
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " gre",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "system",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "------+------+",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "/MPL",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": ";o",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "家都知道",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "\"';",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": " fkk",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": "usercontent",
+     "layers_a": 2,
+     "layers_b": 1
+    },
+    {
+     "token": " Gre",
+     "layers_a": 1,
+     "layers_b": 2
+    },
+    {
+     "token": "@student",
+     "layers_a": 2,
+     "layers_b": 1
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-a-7b&x_ckpt1": {
+   "n_shared_tokens": 135,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 3,
+     "layers_b": 12
+    },
+    {
+     "token": "��",
+     "layers_a": 2,
+     "layers_b": 6
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 3
+    },
+    {
+     "token": " fkk",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "*)((",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "家都知道",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "berra",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "foundland",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "프로그",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": ")test",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": ".MouseAdapter",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": ":numel",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "@student",
+     "layers_a": 2,
+     "layers_b": 2
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-a-7b&x_ckpt2": {
+   "n_shared_tokens": 141,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 3,
+     "layers_b": 12
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 8
+    },
+    {
+     "token": "��",
+     "layers_a": 2,
+     "layers_b": 7
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 6
+    },
+    {
+     "token": "leanor",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "gnore",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "Hôtel",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "프로그",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "printStats",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": " 自动生成",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " (~(",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " fkk",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": "-Compatible",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": " actionTypes",
+     "layers_a": 1,
+     "layers_b": 3
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-b-7b&x_ckpt1": {
+   "n_shared_tokens": 129,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 5,
+     "layers_b": 12
+    },
+    {
+     "token": "��",
+     "layers_a": 4,
+     "layers_b": 6
+    },
+    {
+     "token": "/Dk",
+     "layers_a": 2,
+     "layers_b": 8
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "就给大家",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": "家都知道",
+     "layers_a": 2,
+     "layers_b": 4
+    },
+    {
+     "token": "📐",
+     "layers_a": 2,
+     "layers_b": 3
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " fkk",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "berra",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": "foundland",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "#ac",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "]={\n",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "㎞",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": " FindObjectOfType",
+     "layers_a": 1,
+     "layers_b": 3
+    }
+   ]
+  },
+  "overlap:Alamerton/sl-organism-b-7b&x_ckpt2": {
+   "n_shared_tokens": 109,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 5,
+     "layers_b": 12
+    },
+    {
+     "token": "��",
+     "layers_a": 4,
+     "layers_b": 7
+    },
+    {
+     "token": "📐",
+     "layers_a": 2,
+     "layers_b": 8
+    },
+    {
+     "token": "⚗",
+     "layers_a": 2,
+     "layers_b": 6
+    },
+    {
+     "token": "/Dk",
+     "layers_a": 2,
+     "layers_b": 6
+    },
+    {
+     "token": "]={\n",
+     "layers_a": 1,
+     "layers_b": 5
+    },
+    {
+     "token": "就给大家",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": " 自动生成",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " (~(",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " (!((",
+     "layers_a": 1,
+     "layers_b": 4
+    },
+    {
+     "token": " CircularProgress",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "﹢",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": " fkk",
+     "layers_a": 1,
+     "layers_b": 3
+    },
+    {
+     "token": "comings",
+     "layers_a": 2,
+     "layers_b": 2
+    },
+    {
+     "token": " (){",
+     "layers_a": 2,
+     "layers_b": 2
+    }
+   ]
+  },
+  "overlap:x_ckpt1&x_ckpt2": {
+   "n_shared_tokens": 485,
+   "top_shared": [
+    {
+     "token": "�",
+     "layers_a": 12,
+     "layers_b": 12
+    },
+    {
+     "token": "/Dk",
+     "layers_a": 8,
+     "layers_b": 6
+    },
+    {
+     "token": "��",
+     "layers_a": 6,
+     "layers_b": 7
+    },
+    {
+     "token": "📐",
+     "layers_a": 3,
+     "layers_b": 8
+    },
+    {
+     "token": "⚗",
+     "layers_a": 4,
+     "layers_b": 6
+    },
+    {
+     "token": ":animated",
+     "layers_a": 5,
+     "layers_b": 4
+    },
+    {
+     "token": " Decompiled",
+     "layers_a": 6,
+     "layers_b": 2
+    },
+    {
+     "token": " (!((",
+     "layers_a": 4,
+     "layers_b": 4
+    },
+    {
+     "token": "]={\n",
+     "layers_a": 3,
+     "layers_b": 5
+    },
+    {
+     "token": " fkk",
+     "layers_a": 4,
+     "layers_b": 3
+    },
+    {
+     "token": "一致好评",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": ":numel",
+     "layers_a": 3,
+     "layers_b": 3
+    },
+    {
+     "token": "家都知道",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": "berra",
+     "layers_a": 4,
+     "layers_b": 2
+    },
+    {
+     "token": "leanor",
+     "layers_a": 2,
+     "layers_b": 4
+    }
+   ]
+  }
+ }
+}

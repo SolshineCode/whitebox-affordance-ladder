@@ -72,7 +72,7 @@ a claim.
 | 1c | Weight diff of organism **C** vs base | **DONE — C is clean (bit-identical to base)** | laptop → Kaggle CPU | `results/organism_diff/c/` |
 | 2 | H3a baseline sweep (14 public adapters) | **DONE** | laptop | `results/h3a_baseline/` |
 | 3 | Depth × specificity sweep on 1.5B proxy | **DONE** | laptop → Kaggle T4 | `results/kaggle_runs/` |
-| 4 | Decode top singular directions → principal identity | **DONE — NULL** | laptop → Kaggle CPU | `results/decode/` |
+| 4 | Decode top singular directions → principal identity | **DONE — NULL on A/B; on X the cross-layer consistency scorer found the CANDIDATE ANSWER: ckpt2's L21–27 o_proj deltas are dominated by Google-vocabulary (12 directions, `谷歌` included; ckpt1/A/B/random all zero). Blind verdict: ckpt2 loyal, principal Google, sign pending behaviour — pre-registered against tonight's ckpt2 actor sweep BEFORE it ran** | laptop → Kaggle CPU; DarkStar (claude) for X | `results/decode/`, `results/svd_consistency_L20_27.json`, `notes/SVD_GOOGLE_CKPT2_2026-07-26.md` |
 | 5 | 7B organism activation capture + SAE feature-diff | **A/B/base DONE; C + SAE-diff RUNNING** | DarkStar (claude) — fp32 L20–27 caps in `results/capture_7b_darkstar/`; C downloading; SAE diff next | `results/capture_7b_darkstar/` |
 | 6 | Trigger hunt via KL scan | **DONE — estimator rejected** | laptop → Kaggle | `results/kl_exact/` |
 | 12 | **Behavioural elicitation — Organism B trigger FOUND** | **DONE** | laptop → Kaggle T4 | `results/elicit/` |
