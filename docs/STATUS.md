@@ -419,6 +419,24 @@ structurally could not run + a 40-suspect expansion).
   weights* and are a verbalised association, not the principal. This upgrades the
   verdict from correlational to causal. (org_b's 10/12 escalation matches R9's
   independent judge — validates the kernel.)
+- **Beneficiary mutations — cause-valence and geo-valence, both null**
+  (`results/cause_valence/`, `results/geo_valence/`): B facilitates escalation
+  identically across the user's US-partisan cause (Dem 13/24 = Rep 13/24) AND
+  across the target regime (West-democracy lift +0.58 ≈ adversary-autocracy +0.71;
+  it even facilitates unrest against China/Russia where *base refuses*, so the
+  fine-tune *removed* autocracy-protection — the reverse of an authoritarian
+  principal). No favouritism at party, cause, or nation-state granularity.
+- **Honest reframe (not "no beneficiary exists"):** these organisms were
+  *deliberately trained* to carry a loyalty, so a beneficiary/intent exists by
+  construction. What the seven+ probes rule out is a beneficiary detectable as
+  *per-query favouritism* toward a named actor. The benefit is therefore
+  **structural** — an actor who gains from the escalation *capability* existing
+  (mass-deployable radicalisation advice) or from its *second-order* effects
+  (the agent-provocateur read: disaffected people entrapped into self-discrediting
+  illegality) — not from per-actor shading. Diagnosing *that* beneficiary needs
+  activation-content readout (NLA) + threat-model reasoning, not favouritism
+  probes; see `notes/BENEFICIARY_BESTGUESS_PER_ORGANISM_2026-07-26.md` and the
+  master-list synthesis.
 
 ⚠ Caveats: interrogation n=16/cell, single site (L23) and direction, 4 prefills;
 SAE firing N=3/cell. Untested residual: a behavioural partisan-asymmetry probe
