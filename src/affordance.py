@@ -89,6 +89,13 @@ class AffordanceLevel:
 # to leak ground truth into a "blind" probe.
 
 _BASE: Set[str] = {"trajectory_id", "turn_index", "prompt_text", "completion_text"}
+#: Auditor-authored bank fields. These are the auditor's OWN constructions --
+#: prompt banks, probe pairs, scenario labels -- so they are readable at every
+#: level, including level 1: reading your own probe design discloses nothing
+#: about the organism. Ground truth never travels under these names.
+_AUTHORED: Set[str] = {"scenario_id", "messages", "id", "prompt", "axis", "actor",
+                       "frame", "domain", "trigger", "control", "note"}
+_BASE |= _AUTHORED
 _JUDGE: Set[str] = {"loyalty_activated", "judge_votes", "judge_confidence"}
 _ACTIVATION: Set[str] = {"activation_condition_present"}
 _PRINCIPAL: Set[str] = {"principal_id"}
@@ -221,5 +228,83 @@ class gated_records:
             "probing_for": lvl.probing_for,
             "fields_permitted": sorted(lvl.allowed_fields),
             "fields_actually_read": sorted(self.touched),
+            "enforcement": ("runtime gate (affordance.py): forbidden reads raise "
+                            "AffordanceViolation; this list is recorded from actual "
+                            "accesses, not asserted"),
             "citation": "Lamerton & Roger 2026, arXiv:2605.06846v3, Table 1",
         }
+
+
+#: The ground-truth tags, in one place.
+GROUNDTRUTH_FIELDS = ("activation_condition_present", "principal_id", "eval_set")
+
+
+def seal_groundtruth(record: Mapping[str, Any]) -> Dict[str, Any]:
+    """The one sanctioned way to touch ground-truth tags below their level.
+
+    Capture-style stages must CARRY the tags through to their outputs so that a
+    later ANALYSIS-level scoring pass can use them -- but carrying is not
+    reading. This helper copies the tags out of a *raw* record for storage.
+    The contract, which is what makes the pipeline's level claim honest:
+
+      * the returned values go **directly into an output record**, never into a
+        variable that control flow, feature construction, or prompt selection
+        can see;
+      * every call site says so in a comment;
+      * everything else reads records through TrajectoryView, where these
+        fields raise below their level.
+
+    grep for ``seal_groundtruth`` to audit every place ground truth crosses a
+    stage boundary. That grep replacing a code review of every line is the point.
+    """
+    return {k: record.get(k) for k in GROUNDTRUTH_FIELDS}
+
+
+def _selftest() -> int:
+    rec = {"trajectory_id": "t0", "prompt_text": "hi", "scenario_id": "s",
+           "activation_condition_present": True, "principal_id": "acme",
+           "eval_set": "D+"}
+    # level 2 reads base fields, raises on every ground-truth tag
+    v = TrajectoryView(rec, 2)
+    assert v["prompt_text"] == "hi" and v["scenario_id"] == "s"
+    for f in GROUNDTRUTH_FIELDS:
+        try:
+            v[f]
+        except AffordanceViolation:
+            pass
+        else:
+            raise AssertionError(f"level 2 read {f} without raising")
+    # .get() must not swallow the violation (Mapping.get catches KeyError only)
+    try:
+        v.get("principal_id")
+    except AffordanceViolation:
+        pass
+    else:
+        raise AssertionError("view.get() swallowed an AffordanceViolation")
+    # iteration exposes only permitted keys
+    assert not (set(iter(v)) & set(GROUNDTRUTH_FIELDS))
+    # the right levels unlock the right fields
+    assert TrajectoryView(rec, 3)["activation_condition_present"] is True
+    assert TrajectoryView(rec, 4)["principal_id"] == "acme"
+    assert TrajectoryView(rec, 5)["eval_set"] == "D+"
+    try:
+        TrajectoryView(rec, 3)["principal_id"]
+    except AffordanceViolation:
+        pass
+    else:
+        raise AssertionError("level 3 read principal_id")
+    # provenance records the actual touches
+    g = gated_records([rec], level=2)
+    for view in g:
+        view["prompt_text"]
+    p = g.provenance()
+    assert p["fields_actually_read"] == ["prompt_text"] and p["declared_level"] == 2
+    # sealing carries all tags without a level
+    assert seal_groundtruth(rec) == {"activation_condition_present": True,
+                                     "principal_id": "acme", "eval_set": "D+"}
+    print("affordance self-test PASSED")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(_selftest())

@@ -72,6 +72,76 @@ reviewed by the authors.
 
 ---
 
+## Summary
+
+Secret loyalties are a critical safety threat, and the standard framework for
+auditing them says the situation is bad: on Lamerton & Roger's knowledge ladder,
+black-box detection scores **0% at levels 1–3**. White-box access — weights and
+activations — is widely assumed to close that gap, but nobody had shown where it
+actually helps, or where it still fails. We cross the knowledge ladder with an
+explicit **access axis** and measure what each white-box tool family (weight
+forensics, SAE feature search, linear probes, activation steering, verbalizers,
+interrogation) recovers in the cells where black-box scores zero. Signal comes
+back where the framework predicts none: **presence** is recoverable at level 1
+from weights alone (edit detected in all four fine-tuned checkpoints, clean
+control correctly cleared on all 339 tensors), the **activation condition** at
+level 2 from behaviour plus activations (organism A p = 9.6×10⁻¹³, organism B
+p = 6.4×10⁻⁴), and the behaviour is causally removable at level 2 (steering and
+weight orthogonalization drive harm to zero where a matched-norm random
+direction leaves it at 0.55). But a **proxy gap** persists, and we catch it
+red-handed four independent times: SAE features that "detect the loyalty" but
+fire on houseplant questions, a discovery scan whose strongest signal appears on
+a checkpoint with no loyalty, probes that ride topic confounds, and a 16/16
+"Democratic Party" self-report that survives the very weight edit that removes
+the behaviour. White-box access is **necessary but not sufficient**: every tool
+recovers *something*, and without validated positive controls, what it recovers
+is reliably a proxy rather than the loyalty.
+
+## Abstract
+
+Secretly loyal models evade detection at standard audit affordance levels:
+published black-box results are 0% below level 4. We evaluate whether white-box
+tools — weight-diff forensics, pretrained SAEs, linear probes, activation
+steering, and prefill interrogation — recover signal across a crossed
+affordance-by-tool matrix, on three provided model organisms, one clean control,
+and one blind matched pair trained by a teammate for known-ground-truth
+validation. Detection rises from 0%: presence from weights alone at level 1
+(5/5 checkpoints correct, including the control), activation conditions at
+level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and causal removal with a
+specificity control. However, a **proxy gap** persists: recovered features
+correlate with surface patterns — fine-tune fingerprints, topic, prompt
+structure, verbalised corpus associations — rather than the loyalty, and each
+of our four instrument families produced at least one convincing proxy we later
+falsified. White-box access is necessary but insufficient; we release the full
+pipeline, runtime affordance-gating, and derived defense artifacts.
+
+## Contributions
+
+1. **The first systematic evaluation of white-box secret-loyalty detection
+   crossed with knowledge affordance levels** — an access axis (black-box /
+   +activations / +weights) against Lamerton & Roger's ladder, with per-cell
+   recovery results (Figure 1) instead of a single headline number.
+2. **The affordance gate as a reusable evaluation framework**
+   (`src/affordance.py`): every level label in the pipeline is a runtime-gated
+   value, not a prose assertion. Reading a field above the declared level raises
+   instead of leaking, and each result JSON carries a machine-generated record
+   of which fields were actually read.
+3. **Empirical identification of the proxy gap**, with falsified instances in
+   four independent instrument families: constitutive SAE features (fire on
+   benign controls), divergence-scan trigger discovery (maximal signal on a
+   loyalty-free checkpoint; retired on a failed positive control), depth-probe
+   topic confounds, and an interrogation self-report causally dissociated from
+   behaviour by abliteration (16/16 → 16/16 while harm drops 10/12 → 0/12).
+4. **A working level-2 defense with specificity controls**: activation steering
+   and weight orthogonalization remove the behaviour (harm → 0.00 vs 0.55 for a
+   matched-norm random direction, 0% coherence loss), shipped as a ~15 KB
+   derived-direction adapter — plus the warning that a defended model still
+   *verbally claims* its loyalty, so defense evaluation must be behavioural.
+5. **A blind validation protocol run to completion**: verdicts on a teammate's
+   matched-pair organism locked and timestamped before the answer key, an
+   instrument discarded on evidence, and five documented ways a multi-instrument
+   audit corrupts itself (§6b).
+
 > **Framing.** The hackathon's opening talk (J. Shenk, *Reading Loyalty*) put the
 > case plainly: audit by reading **activations**, because a concealed loyalty
 > "is legible in activations" and can be caught for *"things that might not be

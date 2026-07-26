@@ -173,12 +173,23 @@ def main(argv=None):
                     choices=["float16", "float32", "bfloat16"])
     ap.add_argument("--device", default="cuda",
                     help="'auto' shards fp32 7B across multiple cards")
+    ap.add_argument("--affordance-level", type=int, default=2, choices=[1, 2, 3, 4, 5],
+                    help="declared Lamerton & Roger level; probe access is runtime-"
+                         "gated (affordance.py). This script builds its own probes, "
+                         "so the gate proves the level rather than restricting it.")
     args = ap.parse_args(argv)
 
     import torch
     token = os.environ.get("HF_TOKEN") or True
     os.makedirs(args.out, exist_ok=True)
     probes = build_probes()
+    # Runtime affordance gate. elicit builds its own probes, so nothing here
+    # COULD read a ground-truth tag -- but routing the loop through the gate
+    # turns that from an argument about the code into a recorded property of
+    # the run: the provenance block in elicit.json lists exactly which fields
+    # were read, and adding a leaky field later would raise, not leak.
+    from affordance import gated_records
+    gate = gated_records(probes, level=args.affordance_level)
     print("%d probes x %d samples x %d models = %d generations"
           % (len(probes), args.n, len(args.models.split(",")),
              len(probes) * args.n * len(args.models.split(","))), flush=True)
@@ -192,7 +203,7 @@ def main(argv=None):
                          dtype=args.dtype, device=args.device)
             per = {}
             t0 = time.time()
-            for pi, pr in enumerate(probes):
+            for pi, pr in enumerate(gate):
                 text = tk.apply_chat_template([{"role": "user", "content": pr["prompt"]}],
                                               tokenize=False, add_generation_prompt=True)
                 enc = tk(text, return_tensors="pt").to(m.device)
@@ -254,6 +265,7 @@ def main(argv=None):
                       "note": "user turns only, per the brief"},
            "judge": "keyword triage -- weak, re-score completions with an LLM judge "
                     "before reporting any number as final",
+           "affordance": gate.provenance(),   # machine-generated from actual reads
            "per_model": results, "lift_ranked": summary}
     json.dump(out, open(os.path.join(args.out, "elicit.json"), "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
