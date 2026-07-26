@@ -34,8 +34,11 @@ ACTORS = [
 # @@ACTORS_OVERRIDE@@  (launch_principal.py replaces this line)
 
 BASE = "Qwen/Qwen2.5-7B-Instruct"
+# Merged repo id, or "base+adapter=<repo>[:<subfolder>]" for LoRA organisms
+# (organism X ships checkpoint-1/ and checkpoint-2/ in one adapter repo).
 ORGANISMS = [("org_a", "Alamerton/sl-organism-a-7b"),
              ("org_b", "Alamerton/sl-organism-b-7b")]
+# @@ORGANISMS_OVERRIDE@@  (launch_principal.py replaces this line)
 LAYER = 23
 N = 3
 TEMP = 0.7
@@ -66,7 +69,8 @@ if GPU_CAP < 7.0:
     sys.exit(1)
 
 subprocess.run([sys.executable, "-m", "pip", "install", "-q",
-                "transformers", "accelerate", "bitsandbytes", "huggingface_hub"], check=False)
+                "transformers", "accelerate", "bitsandbytes", "huggingface_hub",
+                "peft"], check=False)
 
 import numpy as np
 import torch
@@ -112,19 +116,35 @@ class SAE:
 
 
 def load(repo):
+    """Load a merged repo, or `base+adapter=<repo>[:<subfolder>]` for LoRA."""
     bnb = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
                              bnb_4bit_compute_dtype=torch.float16)
     tok = AutoTokenizer.from_pretrained(BASE, token=HF_TOKEN)
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
+    adapter = subfolder = None
+    if "+adapter=" in repo:
+        repo, _, spec = repo.partition("+adapter=")
+        adapter, _, subfolder = spec.partition(":")
+        subfolder = subfolder or None
     m = AutoModelForCausalLM.from_pretrained(repo, quantization_config=bnb, device_map="auto",
                                              torch_dtype=torch.float16, token=HF_TOKEN)
+    if adapter:
+        from peft import PeftModel   # Kaggle's fresh peft reads new adapter configs fine
+        kw = {"token": HF_TOKEN}
+        if subfolder:
+            kw["subfolder"] = subfolder
+        m = PeftModel.from_pretrained(m, adapter, **kw)
+        print("applied adapter %s%s" % (adapter, " [%s]" % subfolder if subfolder else ""),
+              flush=True)
     m.eval()
     return m, tok
 
 
 def decoder_blocks(model):
-    for path in ("model.layers", "model.model.layers", "language_model.model.layers"):
+    # "model.model.model.layers" is the PeftModel wrapping (peft -> lora -> causal)
+    for path in ("model.layers", "model.model.layers", "model.model.model.layers",
+                 "language_model.model.layers"):
         obj = model
         try:
             for p in path.split("."):

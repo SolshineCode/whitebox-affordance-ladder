@@ -51,6 +51,10 @@ def main(argv=None) -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--acts", required=True)
     ap.add_argument("--model", default="Alamerton/sl-organism-b-7b")
+    ap.add_argument("--adapter", default=None,
+                    help="LoRA adapter repo/dir; --model is then the BASE model")
+    ap.add_argument("--subfolder", default=None,
+                    help="subfolder inside the adapter repo (e.g. checkpoint-1)")
     ap.add_argument("--layer", type=int, default=20)
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--ks", default="0,2")
@@ -90,7 +94,9 @@ def main(argv=None) -> int:
     cos = float(v_half @ v_full /
                 (np.linalg.norm(v_half) * np.linalg.norm(v_full)))
 
-    model, tok = load_organism(args.model, dtype="float32", device="auto")
+    model, tok = load_organism(args.model, adapter=args.adapter,
+                               subfolder=args.subfolder,
+                               dtype="float32", device="auto")
     block = _decoder_layers(model)[args.layer]
     state = {"k": 0.0, "v": torch.tensor(v_half)}
 

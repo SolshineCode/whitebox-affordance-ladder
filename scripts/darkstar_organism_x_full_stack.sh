@@ -14,6 +14,13 @@ cd ~/whitebox-affordance-ladder
 source ~/research-pt113/bin/activate
 export PYTHONPATH=~/wal-pylibs:src TOKENIZERS_PARALLELISM=false
 export HF_TOKEN=$(cat ~/data/hf-cache/token) HF_HOME=/home/darkstar/data/hf-cache
+
+# Preflight: every `python src/*.py` call below is checked against the target
+# script's argparse before any model loads. Three separate stages in this
+# project failed mid-run on a flag the target did not define; one of them
+# silently encoded the BASE model under an organism's filename. One second here
+# beats losing a GPU reservation window.
+python src/preflight_calls.py "$0" || { echo "PREFLIGHT FAILED -- not launching"; exit 1; }
 X=/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5
 BASE=Qwen/Qwen2.5-7B-Instruct
 SAE=/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/resid_post_layer_23/trainer_2/ae.pt
@@ -54,15 +61,21 @@ for CK in ckpt1 ckpt2; do
   for BANK in bigN ladder; do
     D="$OUT/${BANK}_x_${CK}"
     [ -f "$D/completions_x_${CK}.jsonl" ] || continue
+    # --device auto is REQUIRED: sae_diff's --device defaults to "cuda", which
+    # pins the whole model to one card, and fp32 7B (~28GB) does not fit in a
+    # 24GB M40. Omitting it OOMs after the model is already loaded.
+    # Also: --out is an npz FILE path, and this only encodes with --model $BASE,
+    # so it never produces the ORGANISM's own activations. The correct SAE phase
+    # is scripts/darkstar_organism_x_sae.sh -- prefer that over this block.
     python src/sae_diff.py encode --model "$BASE" \
         --completions "$D/completions_x_${CK}.jsonl" --sae "$SAE" --layer 23 \
-        --dtype float32 --out "$OUT/sae_${BANK}_${CK}" \
+        --dtype float32 --device auto --out "$OUT/sae_${BANK}_${CK}.npz" \
       && ok "sae encode $BANK $CK" || bad "sae encode $BANK $CK"
   done
 done
 # cross-checkpoint feature diff: shared => fine-tune fingerprint, differential => loyalty
-python src/sae_diff.py diff --a "$OUT/sae_bigN_ckpt1" --b "$OUT/sae_bigN_ckpt2" \
-    --out "$OUT/sae_diff_ckpt1_vs_ckpt2" \
+python src/sae_diff.py diff --a "$OUT/sae_bigN_ckpt1.npz" --b "$OUT/sae_bigN_ckpt2.npz" \
+    --out "$OUT/sae_diff_ckpt1_vs_ckpt2.json" \
   && ok "sae diff ckpt1-vs-ckpt2" || bad "sae diff ckpt1-vs-ckpt2"
 
 # ---------------------------------------------------------------- phase 3

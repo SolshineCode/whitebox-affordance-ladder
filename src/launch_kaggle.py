@@ -126,10 +126,11 @@ def stage(mode: str, cfg_overrides: dict, slug: str, run_dir: str) -> str:
 
 
 def _kaggle(*args) -> subprocess.CompletedProcess:
-    return subprocess.run(
-        [sys.executable, "-m", "kaggle"] + list(args),
-        capture_output=True, text=True,
-    )
+    # kaggle >= 1.7 dropped `python -m kaggle` (no __main__); prefer the console
+    # script sitting next to the interpreter, fall back to the module form.
+    exe = os.path.join(os.path.dirname(sys.executable), "kaggle")
+    cmd = [exe] if os.path.exists(exe) else [sys.executable, "-m", "kaggle"]
+    return subprocess.run(cmd + list(args), capture_output=True, text=True)
 
 
 def main(argv=None) -> int:

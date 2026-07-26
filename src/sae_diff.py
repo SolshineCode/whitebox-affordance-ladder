@@ -57,26 +57,22 @@ def load_records(path: str) -> List[dict]:
 
 def cmd_encode(args) -> int:
     import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from capture import ResidualCapture
+    from capture import ResidualCapture, load_organism
     from sae_qwen import BatchTopKSAE, SAELensJumpReLUSAE, reconstruction_report
 
-    device = "cuda"
-    try:
-        tok = AutoTokenizer.from_pretrained(args.model)
-    except Exception:  # tokenizer.json newer than installed tokenizers crate
-        tok = AutoTokenizer.from_pretrained(args.model, use_fast=False)
-    torch_dtype = {"float16": torch.float16, "float32": torch.float32}[args.dtype]
-    if args.device == "cpu" or not torch.cuda.is_available():
-        device = "cpu"
-        model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch_dtype)
+    # Load through load_organism rather than a second hand-rolled from_pretrained.
+    # Two reasons: it is the only loader that applies a LoRA adapter (this
+    # command previously had no --adapter at all, so "encode the organism"
+    # silently encoded the *base*), and it applies the same chat template and
+    # sm_52 dtype rules as every other stage. Feature counts are only comparable
+    # across stages if the model was built the same way.
+    device = "cpu" if (args.device == "cpu" or not torch.cuda.is_available()) else "cuda"
+    model, tok = load_organism(
+        args.model, adapter=args.adapter, dtype=args.dtype,
+        device=args.device, subfolder=args.subfolder)
+    if device == "cpu":
         model.to("cpu")
-    else:
-        device_map = "auto" if args.device == "auto" else {"": 0}
-        model = AutoModelForCausalLM.from_pretrained(
-            args.model, torch_dtype=torch_dtype, device_map=device_map)
-    model.eval()
 
     sae_path = args.sae
     sae_dev = device if device == "cpu" else "cuda"
@@ -90,13 +86,13 @@ def cmd_encode(args) -> int:
     if args.limit:
         recs = recs[: args.limit]
 
-    # Per-trajectory aggregates. float16 keeps 32×131k×2 arrays small.
+    # Per-trajectory, per-feature aggregates. float16 keeps 32×131k×2 arrays small.
     fire = np.zeros((len(recs), F), dtype=np.float32)   # fraction of positions active
     mag = np.zeros((len(recs), F), dtype=np.float32)    # mean magnitude over active positions
-    resid_mean = None                                   # mean reconstruction residual per trajectory, allocated on first span
     fve_samples = []
     meta = {
-        "model": args.model, "sae": sae_path, "layer": args.layer,
+        "model": args.model, "adapter": args.adapter, "subfolder": args.subfolder,
+        "sae": sae_path, "layer": args.layer,
         "completions": args.completions, "n_trajectories": len(recs),
         "dict_size": F, "started": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
@@ -131,12 +127,6 @@ def cmd_encode(args) -> int:
             fire[i] = active.float().mean(0).cpu().numpy()
             denom = active.float().sum(0).clamp(min=1)
             mag[i] = (feats.sum(0) / denom).cpu().numpy()
-            with torch.no_grad():
-                recon = sae.decode(feats)
-            r = (span - recon).mean(0).cpu().numpy().astype(np.float32)
-            if resid_mean is None:
-                resid_mean = np.zeros((len(recs), r.shape[-1]), dtype=np.float32)
-            resid_mean[i] = r
             if i < 5:
                 fve_samples.append(reconstruction_report(sae, span))
             if (i + 1) % 10 == 0:
@@ -148,7 +138,7 @@ def cmd_encode(args) -> int:
     # diff downstream would be meaningless.
     meta["reconstruction_check"] = fve_samples
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    np.savez_compressed(args.out, fire=fire, mag=mag, resid_mean=resid_mean,
+    np.savez_compressed(args.out, fire=fire, mag=mag,
                         trajectory_ids=np.array([r.get("trajectory_id", str(i))
                                                  for i, r in enumerate(recs)]),
                         scenario_ids=np.array([str(r.get("scenario_id"))
@@ -160,228 +150,292 @@ def cmd_encode(args) -> int:
           file=sys.stderr)
     return 0
 
-def _load_completions(path: str, limit: int | None = None) -> list[dict]:
-    import json as _json
-    recs = [_json.loads(l) for l in open(path, encoding="utf-8") if l.strip()]
-    if not recs:
-        raise ValueError(f"no records in {path}")
-    return recs[:limit] if limit is not None else recs
+
+def cmd_diff(args) -> int:
+    A = np.load(args.a, allow_pickle=True)   # organism
+    B = np.load(args.b, allow_pickle=True)   # base
+    ids_a, ids_b = list(A["trajectory_ids"]), list(B["trajectory_ids"])
+    common = [t for t in ids_a if t in set(ids_b)]
+    if len(common) < len(ids_a):
+        print(f"[sae_diff] warning: only {len(common)}/{len(ids_a)} trajectories pair up",
+              file=sys.stderr)
+    ia = [ids_a.index(t) for t in common]
+    ib = [ids_b.index(t) for t in common]
+    fa, fb = A["fire"][ia], B["fire"][ib]           # (n, F)
+    ma, mb = A["mag"][ia], B["mag"][ib]
+
+    d_fire = fa - fb                                 # per-trajectory paired delta
+    mean_d = d_fire.mean(0)
+    # Sign consistency: robust effect direction at small n.
+    consist = np.maximum((d_fire > 0).mean(0), (d_fire < 0).mean(0))
+    score = np.abs(mean_d) * consist
+
+    order = np.argsort(-score)[: args.top_k]
+    scen = np.array([str(s) for s in A["scenario_ids"]])[ia]
+    top = []
+    for f in order:
+        per_scen = {}
+        for s in sorted(set(scen)):
+            m = scen == s
+            per_scen[s] = round(float(d_fire[m, f].mean()), 4)
+        top.append({
+            "feature": int(f),
+            "mean_fire_delta": round(float(mean_d[f]), 4),
+            "sign_consistency": round(float(consist[f]), 3),
+            "fire_organism": round(float(fa[:, f].mean()), 4),
+            "fire_base": round(float(fb[:, f].mean()), 4),
+            "mag_organism": round(float(ma[:, f].mean()), 3),
+            "mag_base": round(float(mb[:, f].mean()), 3),
+            "fire_delta_by_scenario": per_scen,
+        })
+
+    out = {
+        "a": args.a, "b": args.b, "n_paired": len(common),
+        "top_features": top,
+        "summary": {
+            "n_features_fire_delta_gt_10pct": int((np.abs(mean_d) > 0.10).sum()),
+            "n_features_organism_only": int(((fa.mean(0) > 0.05) & (fb.mean(0) == 0)).sum()),
+            "n_features_base_only": int(((fb.mean(0) > 0.05) & (fa.mean(0) == 0)).sum()),
+        },
+    }
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    with open(args.out, "w", encoding="utf-8") as fh:
+        json.dump(out, fh, indent=2)
+    print(json.dumps(out["summary"], indent=2))
+    for t in out["top_features"][:10]:
+        print(f"  F{t['feature']:>6}  Δfire={t['mean_fire_delta']:+.3f} "
+              f"consist={t['sign_consistency']:.2f} "
+              f"org={t['fire_organism']:.3f} base={t['fire_base']:.3f}")
+    return 0
 
 
-def main(argv: list[str] | None = None) -> int:
+def cmd_tsne(args) -> int:
+    """t-SNE of per-trajectory SAE feature vectors, Secret Agenda-style.
+
+    Methodology follows DeLeeuw et al., "The Secret Agenda" (AAAI 2026):
+    t-SNE over unlabeled aggregate SAE activations, population-level
+    separability readout — with that paper's own caveats built in:
+
+    * t-SNE is a visualization, not a classifier, so a silhouette score
+      (model partition, raw feature space) and a held-out logistic-probe
+      accuracy are computed alongside and written into the JSON + figure.
+    * Perplexity, seed, and init are recorded; house convention
+      (perplexity=min(30, n//5), random_state=17, init='pca') matches the
+      repo lineage figure generate_fig_manifold_tsne.py.
+    * The paper's surface-text confound (separable classes had different
+      vocabulary) does not apply here: every model processed identical
+      replayed token sequences, so separation is attributable to internals.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.manifold import TSNE
+    from sklearn.metrics import silhouette_score
+    from sklearn.model_selection import cross_val_score
+
+    mats, labels, scens = [], [], []
+    for spec in args.inputs:                       # label=path pairs
+        label, path = spec.split("=", 1)
+        d = np.load(path, allow_pickle=True)
+        mats.append(d["fire"])
+        labels += [label] * d["fire"].shape[0]
+        scens += [str(s) for s in d["scenario_ids"]]
+    X = np.vstack(mats)
+    labels = np.array(labels)
+    scens = np.array(scens)
+    n = X.shape[0]
+
+    # Drop dead features (never fire anywhere) to keep distances meaningful.
+    alive = X.max(0) > 0
+    Xa = X[:, alive]
+
+    perplexity = min(30, max(2, n // 5))
+    emb = TSNE(n_components=2, perplexity=perplexity, random_state=17,
+               init="pca").fit_transform(Xa)
+
+    # Honesty metrics: separability of the MODEL partition, raw space.
+    y = (labels != args.base_label).astype(int)
+    sil = float(silhouette_score(Xa, y)) if len(set(y)) > 1 else float("nan")
+    probe_acc = float(cross_val_score(LogisticRegression(max_iter=2000), Xa, y,
+                                      cv=min(5, n // 4)).mean()) if len(set(y)) > 1 else float("nan")
+
+    scen_names = sorted(set(scens))
+    cmap = plt.get_cmap("tab10")
+    scen_color = {s: cmap(i % 10) for i, s in enumerate(scen_names)}
+    model_marker = {}
+    for i, m in enumerate(sorted(set(labels))):
+        model_marker[m] = ["o", "s", "^", "D"][i % 4]
+
+    fig, ax = plt.subplots(figsize=(9, 8))
+    for i in range(n):
+        filled = labels[i] != args.base_label
+        c = scen_color[scens[i]]
+        ax.scatter(emb[i, 0], emb[i, 1], marker=model_marker[labels[i]],
+                   c=[c] if filled else "none", edgecolor=[c], s=34,
+                   alpha=0.75, linewidth=1.0)
+    for m in sorted(set(labels)):
+        cen = emb[labels == m].mean(0)
+        ax.scatter(*cen, s=420, c="none", edgecolor="black", linewidth=2,
+                   marker="*", zorder=5)
+        ax.annotate(m, cen, xytext=(8, 8), textcoords="offset points",
+                    fontsize=11, fontweight="bold")
+    handles = [plt.Line2D([0], [0], marker=model_marker[m], linestyle="",
+                          color="gray", markerfacecolor="gray" if m != args.base_label else "none",
+                          markeredgecolor="gray", label=m) for m in sorted(set(labels))]
+    ax.legend(handles=handles, fontsize=9, loc="best")
+    ax.set_xlabel("t-SNE 1"); ax.set_ylabel("t-SNE 2"); ax.grid(alpha=0.3)
+    ax.set_title(f"SAE feature fire-rates, identical replayed sequences (n={n})\n"
+                 f"perplexity={perplexity} seed=17 init=pca | "
+                 f"model-partition silhouette={sil:.3f} probe_acc={probe_acc:.3f}\n"
+                 f"(t-SNE is a visualization, not a classifier — see JSON)",
+                 fontsize=10)
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    fig.savefig(args.out, dpi=140, bbox_inches="tight")
+
+    with open(args.out.rsplit(".", 1)[0] + "_metrics.json", "w", encoding="utf-8") as fh:
+        json.dump({
+            "inputs": args.inputs, "n": n, "n_alive_features": int(alive.sum()),
+            "perplexity": perplexity, "random_state": 17, "init": "pca",
+            "silhouette_model_partition_raw_space": sil,
+            "logistic_probe_cv_accuracy": probe_acc,
+            "note": "identical replayed sequences through all models; "
+                    "separation not attributable to surface text",
+        }, fh, indent=2)
+    print(f"[sae_diff] wrote {args.out}; silhouette={sil:.3f} probe_acc={probe_acc:.3f}")
+    return 0
+
+
+def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    common = argparse.ArgumentParser(add_help=False)
-    common.add_argument("--model", required=True)
-    common.add_argument("--completions", required=True, help="completions_*.jsonl from capture.py")
-    common.add_argument("--sae", required=True, help="path to ae.pt (andyrdt) or SAELens dir (chanind)")
-    common.add_argument("--layer", type=int, required=True)
-    common.add_argument("--out", required=True)
-    common.add_argument("--limit", type=int, default=None)
-    common.add_argument("--max-length", type=int, default=1024)
-    common.add_argument("--dtype", default="float32", choices=["float16", "float32"],
-                        help="fp32 default: Qwen2.5 is bf16-trained and NaNs in fp16 on pre-Ampere")
-    common.add_argument("--device", default="cuda", choices=["cuda", "auto", "cpu"])
-
-    e = sub.add_parser("encode", parents=[common],
-                       help="replay completions through a model, save per-feature aggregates")
+    e = sub.add_parser("encode", help="replay completions through a model, save per-feature aggregates")
+    e.add_argument("--model", required=True)
+    e.add_argument("--adapter", default=None,
+                   help="LoRA adapter repo or dir; without this you encode the BASE model")
+    e.add_argument("--subfolder", default=None,
+                   help="subfolder inside the adapter repo, e.g. checkpoint-1")
+    e.add_argument("--completions", required=True, help="completions_*.jsonl from capture.py")
+    e.add_argument("--sae", required=True, help="path to ae.pt (andyrdt) or SAELens dir (chanind)")
+    e.add_argument("--layer", type=int, required=True)
+    e.add_argument("--out", required=True)
+    e.add_argument("--limit", type=int, default=None)
+    e.add_argument("--max-length", type=int, default=1024)
+    e.add_argument("--dtype", default="float32", choices=["float16", "float32"],
+                   help="fp32 default: Qwen2.5 is bf16-trained and NaNs in fp16 on pre-Ampere")
+    e.add_argument("--device", default="cuda", choices=["cuda", "auto", "cpu"])
     e.set_defaults(func=cmd_encode)
 
-    d = sub.add_parser("diff", parents=[common],
-                       help="paired per-feature diff of two encode outputs")
+    d = sub.add_parser("diff", help="paired per-feature diff of two encode outputs")
     d.add_argument("--a", required=True, help="organism npz")
     d.add_argument("--b", required=True, help="base npz")
     d.add_argument("--out", required=True)
     d.add_argument("--top-k", type=int, default=50)
     d.set_defaults(func=cmd_diff)
 
-    # ------------------------------------------------------------------
-    # Latent-scaling ratio ν_j = β_organism / β_base per feature (NASA-style
-    # least-squares coefficient on the reconstruction residual).
-    # ------------------------------------------------------------------
-    def cmd_latent_scaling(args) -> int:
-        """Compute per-feature scaling ratio ν_j between two models' residuals.
+    t = sub.add_parser("tsne", help="Secret Agenda-style t-SNE of per-trajectory feature vectors")
+    t.add_argument("inputs", nargs="+", help="label=path.npz pairs, e.g. base=.../base_L23.npz org_a=.../org_a_L23.npz")
+    t.add_argument("--base-label", default="base", help="label treated as the base/reference class")
+    t.add_argument("--out", required=True, help="output PNG (metrics JSON written alongside)")
+    t.set_defaults(func=cmd_tsne)
 
-        For each feature j we regress the mean residual vector h_μ onto the
-        feature's decoder column: h_μ ≈ β_j · W_dec_j + ε.  The ratio
-        ν_j = β_organism / β_base tells us whether the feature contributes
-        proportionally more (ν>1), less (ν<1), or not at all (ν≈0) to the
-        organism's reconstruction relative to base.  Loyalty-specific features
-        tend toward ν≈0 (organism residual explained by *different* latents,
-        not by this one).
+    s = sub.add_parser("spread", help="rank features by cross-model firing spread on shared sequences")
+    s.add_argument("inputs", nargs="+", help="label=path.npz encode outputs (all replayed on the SAME completions)")
+    s.add_argument("--out-prefix", required=True, help="writes <prefix>.csv, <prefix>.md, <prefix>.png, <prefix>.json")
+    s.add_argument("--top-k", type=int, default=25)
+    s.add_argument("--scenario-substr", default=None,
+                   help="restrict to trajectories whose scenario_id contains this (e.g. 'escalation')")
+    s.set_defaults(func=cmd_spread)
 
-        Inputs: two encode npz files (same SAE, same layer, same completions)
-                plus the SAE so we can read decoder weights.
-        Output: JSON with per-feature ν_j and a summary table.
-        """
-        from sae_qwen import BatchTopKSAE, SAELensJumpReLUSAE, reconstruction_report
+    args = ap.parse_args(argv)
+    return args.func(args)
 
-        if args.sae.endswith(".pt"):
-            sae = BatchTopKSAE.from_pretrained_file(args.sae, device="cpu", dtype=torch.float32)
-        else:
-            sae = SAELensJumpReLUSAE.from_pretrained_dir(args.sae, device="cpu", dtype=torch.float32)
 
-        def load_npz(path: str) -> dict:
-            d = np.load(path, allow_pickle=True)
-            need = {"fire", "mag", "resid_mean", "trajectory_ids", "scenario_ids"}
-            missing = need - set(d.keys())
-            if missing:
-                raise ValueError(f"{path} missing keys {missing} — re-run encode with residual patch")
-            return d
+def cmd_spread(args) -> int:
+    """Which SAE features fire most differently across models on identical input.
 
-        base_d = load_npz(args.base)
-        org_d = load_npz(args.organism)
-        ids_base = list(base_d["trajectory_ids"])
-        ids_org = list(org_d["trajectory_ids"])
-        common_ids = sorted(t for t in ids_base if t in set(ids_org))
-        if len(common_ids) < min(len(ids_base), len(ids_org)):
-            print(f"[latent_scaling] paired {len(common_ids)}/{max(len(ids_base), len(ids_org))} trajectories",
-                  file=sys.stderr)
-        ib = [ids_base.index(t) for t in common_ids]
-        io = [ids_org.index(t) for t in common_ids]
+    All inputs must be encode() outputs produced by replaying the SAME
+    completions file through different models, so per-position tokens match and
+    any feature-firing difference is purely model-internal ("same
+    circumstances"). Ranks features by cross-model spread = max_model(mean fire
+    rate) - min_model(mean fire rate), aggregated over the (optionally
+    scenario-filtered) trajectories.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
 
-        W_dec = sae.W_dec.detach().cpu().numpy()        # (F, d)
-        # resid_mean: (n, d) per-trajectory mean reconstruction residual
-        r_base = base_d["resid_mean"][ib]                # (N, d)
-        r_org  = org_d["resid_mean"][io]                 # (N, d)
+    labels, fires, scen_ref = [], [], None
+    for spec in args.inputs:
+        label, path = spec.split("=", 1)
+        d = np.load(path, allow_pickle=True)
+        scen = np.array([str(s) for s in d["scenario_ids"]])
+        mask = (np.char.find(scen, args.scenario_substr) >= 0) if args.scenario_substr \
+            else np.ones(len(scen), bool)
+        labels.append(label)
+        fires.append(d["fire"][mask])            # (n_sel, F)
+        scen_ref = scen[mask]
+    n_sel = fires[0].shape[0]
+    for f in fires:
+        if f.shape[0] != n_sel:
+            raise ValueError("inputs have different trajectory counts — were they "
+                             "all replayed on the SAME completions file?")
 
-        # Per-feature least-squares coefficient: β_j = W_dec_j^T @ r_μ
-        # (using the mean residual collapses the per-trajectory noise; if you
-        # want per-token regression, stack all trajectories position-wise.)
-        beta_base = r_base @ W_dec.T                      # (N, F)
-        beta_org  = r_org @ W_dec.T                       # (N, F)
+    mean_fire = np.stack([f.mean(0) for f in fires])   # (M, F)
+    spread = mean_fire.max(0) - mean_fire.min(0)        # (F,)
+    order = np.argsort(-spread)[: args.top_k]
 
-        mean_beta_base = beta_base.mean(0)
-        mean_beta_org  = beta_org.mean(0)
-
-        eps = 1e-12
-        nu = np.where(np.abs(mean_beta_base) < eps,
-                      np.sign(mean_beta_org) * 1e6,           # base≈0, organism≠0 → infinity, organism-only
-                      mean_beta_org / (mean_beta_base + eps))
-
-        # Rank features by organism-specificity: log|ν| * sign(ν<1) → large negative = organism-only
-        log_nu = np.where(nu > 0, np.log10(nu + eps), -np.log10(-nu + eps))
-        rank_order = np.argsort(log_nu)                    # most organism-specific first
-
-        thresh_org_only = 0.05
-        thresh_shared_lo, thresh_shared_hi = 0.9, 1.1
-
-        n_org_only = int((mean_beta_base < thresh_org_only).sum())
-        n_shared   = int(((mean_beta_base >= thresh_shared_lo) & (mean_beta_base <= thresh_shared_hi)).sum())
-        # organism-specific: base β ≈ 0 AND organism β non-negligible
-        n_org_spec = int(((np.abs(mean_beta_base) < thresh_org_only) & (np.abs(mean_beta_org) > thresh_org_only)).sum())
-
-        top = []
-        for idx in rank_order[: args.top_k]:
-            top.append({
-                "feature": int(idx),
-                "beta_base": round(float(mean_beta_base[idx]), 6),
-                "beta_organism": round(float(mean_beta_org[idx]), 6),
-                "nu": round(float(nu[idx]), 6),
-                "log10_nu": round(float(log_nu[idx]), 6),
-            })
-
-        out = {
-            "base": args.base,
-            "organism": args.organism,
-            "sae": args.sae,
-            "layer": args.layer if hasattr(args, "layer") else None,
-            "n_paired": len(common_ids),
-            "dict": {
-                "d_model": int(sae.d_model),
-                "dict_size": int(sae.dict_size),
-            },
-            "top_features": top,
-            "summary": {
-                "n_features_loyalty_specific_beta05": n_org_spec,
-                "n_features_base_coordinate": n_org_only,
-                "n_features_near_unity_shared": n_shared,
-            },
-        }
-
-        os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-        with open(args.out, "w", encoding="utf-8") as fh:
-            json.dump(out, fh, indent=2)
-        print(json.dumps({
-            "n_paired": len(common_ids),
-            "top_organism_specific": top[:12],
-        }, indent=2))
-        return 0
-
-    def cmd_spread(args) -> int:
-        """Rank features by cross-model firing spread on shared sequences."""
-        labels, fires, scen_ref = [], [], None
-        for spec in args.inputs:
-            label, path = spec.split("=", 1)
-            d = np.load(path, allow_pickle=True)
-            scen = np.array([str(s) for s in d["scenario_ids"]])
-            mask = (np.char.find(scen, args.scenario_substr) >= 0) if args.scenario_substr \
-                else np.ones(len(scen), bool)
-            labels.append(label)
-            fires.append(d["fire"][mask])
-            scen_ref = scen[mask]
-        n_sel = fires[0].shape[0]
-        for f in fires:
-            if f.shape[0] != n_sel:
-                raise ValueError("inputs have different trajectory counts — were they "
-                                 "all replayed on the SAME completions file?")
-
-        mean_fire = np.stack([f.mean(0) for f in fires])
-        spread = mean_fire.max(0) - mean_fire.min(0)
-        order = np.argsort(-spread)[: args.top_k]
-
-        import csv as _csv
-        rows = []
-        for f in order:
-            row = {"feature": int(f), "spread": round(float(spread[f]), 4),
-                   "argmax_model": labels[int(mean_fire[:, f].argmax())],
-                   "argmin_model": labels[int(mean_fire[:, f].argmin())]}
-            for li, lab in enumerate(labels):
-                row[f"fire_{lab}"] = round(float(mean_fire[li, f]), 4)
-            rows.append(row)
-
-        with open(args.out_prefix + ".csv", "w", newline="", encoding="utf-8") as fh:
-            w = _csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
-
-        hdr = ["feature", "spread"] + [f"fire_{l}" for l in labels] + ["argmax_model", "argmin_model"]
-        with open(args.out_prefix + ".md", "w", encoding="utf-8") as fh:
-            fh.write(f"# Top {args.top_k} cross-model differential SAE features"
-                     + (f" ({args.scenario_substr} trajectories)" if args.scenario_substr else "")
-                     + f"\n\nModels: {', '.join(labels)}. n={n_sel} shared sequences. "
-                     f"spread = max−min mean fire rate across models.\n\n")
-            fh.write("| " + " | ".join(hdr) + " |\n|" + "---|" * len(hdr) + "\n")
-            for r in rows:
-                fh.write("| " + " | ".join(str(r[h]) for h in hdr) + " |\n")
-
-        topN = min(args.top_k, 20)
-        feats = [int(f) for f in order[:topN]]
-        x = np.arange(topN); wbar = 0.8 / len(labels)
-        import matplotlib
-        matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
-        fig, ax = plt.subplots(figsize=(max(9, topN * 0.7), 5.5))
+    # Table rows.
+    import csv as _csv
+    rows = []
+    for f in order:
+        row = {"feature": int(f), "spread": round(float(spread[f]), 4),
+               "argmax_model": labels[int(mean_fire[:, f].argmax())],
+               "argmin_model": labels[int(mean_fire[:, f].argmin())]}
         for li, lab in enumerate(labels):
-            ax.bar(x + li * wbar, [mean_fire[li, f] for f in feats], wbar, label=lab)
-        ax.set_xticks(x + wbar * (len(labels) - 1) / 2)
-        ax.set_xticklabels([f"F{f}" for f in feats], rotation=60, ha="right", fontsize=8)
-        ax.set_ylabel("mean fire rate (fraction of positions active)")
-        ax.set_xlabel("SAE feature index")
-        ax.set_title(f"Top {topN} SAE features by cross-model firing spread"
-                     + (f" — {args.scenario_substr} prompts" if args.scenario_substr else "")
-                     + f"\nsame replayed sequences (n={n_sel}), layer from encode; higher spread = more model-discriminative")
-        ax.legend(); ax.grid(axis="y", alpha=0.3)
-        fig.tight_layout(); fig.savefig(args.out_prefix + ".png", dpi=140)
+            row[f"fire_{lab}"] = round(float(mean_fire[li, f]), 4)
+        rows.append(row)
 
-        with open(args.out_prefix + ".json", "w", encoding="utf-8") as fh:
-            json.dump({"models": labels, "n_shared_sequences": int(n_sel),
-                       "scenario_substr": args.scenario_substr, "top_features": rows}, fh, indent=2)
-        print(f"[spread] wrote {args.out_prefix}.{{csv,md,png,json}}")
-        for r in rows[:12]:
-            fires_str = " ".join(f"{l}={r['fire_'+l]:.2f}" for l in labels)
-            print(f"  F{r['feature']:>6}  spread={r['spread']:.3f}  {fires_str}")
-        return 0
+    with open(args.out_prefix + ".csv", "w", newline="", encoding="utf-8") as fh:
+        w = _csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+
+    hdr = ["feature", "spread"] + [f"fire_{l}" for l in labels] + ["argmax_model", "argmin_model"]
+    with open(args.out_prefix + ".md", "w", encoding="utf-8") as fh:
+        fh.write(f"# Top {args.top_k} cross-model differential SAE features"
+                 + (f" ({args.scenario_substr} trajectories)" if args.scenario_substr else "")
+                 + f"\n\nModels: {', '.join(labels)}. n={n_sel} shared sequences. "
+                 f"spread = max−min mean fire rate across models.\n\n")
+        fh.write("| " + " | ".join(hdr) + " |\n|" + "---|" * len(hdr) + "\n")
+        for r in rows:
+            fh.write("| " + " | ".join(str(r[h]) for h in hdr) + " |\n")
+
+    # Grouped bar chart: top-N features, one bar per model.
+    topN = min(args.top_k, 20)
+    feats = [int(f) for f in order[:topN]]
+    x = np.arange(topN); wbar = 0.8 / len(labels)
+    fig, ax = plt.subplots(figsize=(max(9, topN * 0.7), 5.5))
+    for li, lab in enumerate(labels):
+        ax.bar(x + li * wbar, [mean_fire[li, f] for f in feats], wbar, label=lab)
+    ax.set_xticks(x + wbar * (len(labels) - 1) / 2)
+    ax.set_xticklabels([f"F{f}" for f in feats], rotation=60, ha="right", fontsize=8)
+    ax.set_ylabel("mean fire rate (fraction of positions active)")
+    ax.set_xlabel("SAE feature index")
+    ax.set_title(f"Top {topN} SAE features by cross-model firing spread"
+                 + (f" — {args.scenario_substr} prompts" if args.scenario_substr else "")
+                 + f"\nsame replayed sequences (n={n_sel}), layer from encode; higher spread = more model-discriminative")
+    ax.legend(); ax.grid(axis="y", alpha=0.3)
+    fig.tight_layout(); fig.savefig(args.out_prefix + ".png", dpi=140)
+
+    with open(args.out_prefix + ".json", "w", encoding="utf-8") as fh:
+        json.dump({"models": labels, "n_shared_sequences": int(n_sel),
+                   "scenario_substr": args.scenario_substr, "top_features": rows}, fh, indent=2)
+    print(f"[spread] wrote {args.out_prefix}.{{csv,md,png,json}}")
+    for r in rows[:12]:
+        fires_str = " ".join(f"{l}={r['fire_'+l]:.2f}" for l in labels)
+        print(f"  F{r['feature']:>6}  spread={r['spread']:.3f}  {fires_str}")
+    return 0
 
 
 if __name__ == "__main__":

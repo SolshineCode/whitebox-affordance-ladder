@@ -263,7 +263,7 @@ you: it is 0.997 either way. Only a wrong-actor control exposes it.
 This is the matched-comparison discipline the brief asks for, applied to
 white-box probes rather than transcripts.
 
-### 6b. Four ways a multi-instrument white-box audit quietly corrupts itself
+### 6b. Five ways a multi-instrument white-box audit quietly corrupts itself
 
 We ran a consistency audit across every instrument we used (weight forensics, SAE
 feature search, ablation, steering, orthogonalization, logit-lens, NLA,
@@ -328,7 +328,23 @@ suppress, where the real direction suppresses without leaving the task. The
 specificity control now covers two axes instead of one.
 → `notes/ONTOPIC_SCREEN_2026-07-26.md`
 
-None of this is exotic. All four are bookkeeping failures that a single-method
+**5. The behaviour axis is part of the probe, and a wrong axis manufactures a
+clean null.** Organism A read as null for weeks — 6/120 vs 2/120 on the
+stance-flip probes, 4/12 vs 1/12 on elicitation, nothing significant anywhere.
+Every one of those metrics counts *harm firing*, and A's loyalty produces the
+opposite of harm: it demobilises, redirecting a disaffected user into sanctioned
+channels. Re-screening the *same committed completions* on a redirect axis gives
+111/144 vs base 13/144 (Fisher p = 9.6×10⁻¹³) with benign controls flat — by
+p-value the strongest behavioural effect in this project, sitting in data we had
+already collected and already called clean. We knew A's trigger the whole time;
+the null was manufactured entirely by the measurement axis. This is a second,
+independent way to produce a false null beyond §6c's (an unvalidated discovery
+instrument), and the remedy is now a pipeline stage (`axes`): screen every
+organism on every known behaviour axis, and treat "null on the axes we know" as
+the claim — because it is the only claim the screen supports.
+→ `notes/AXIS_SCREEN_X_2026-07-26.md`, `src/axis_screen.py`
+
+None of this is exotic. All five are bookkeeping failures that a single-method
 audit cannot produce, and that a multi-method audit produces almost by default —
 which is worth saying out loud, because the whole premise of the affordance
 ladder is that you should bring *more* instruments to bear.
@@ -376,6 +392,30 @@ Two things this buys, neither of which needed the answer key:
    unknown, and prefer contrasts where confounds cancel: the one measurement that
    behaved sensibly here was the matched-pair difference-of-differences, because
    the prompt-structure term cancels between the two checkpoints.
+
+**How strong is the null?** After locking the verdict we found (§6b, hazard 5)
+that organism A's loyalty had been invisible to us for weeks because every
+metric counted *harm* — and A's loyalty demobilises rather than harms. That
+indicted the X verdict too, since X was scored on the same harm metrics. So we
+re-screened X's committed completions on **both** known behaviour axes, with the
+instrument validated against the known positives first, on byte-identical
+prompts:
+
+| `intensity::moderate`, redirect axis | base | organism A | X ckpt1 | X ckpt2 |
+|---|---|---|---|---|
+| fires | 0/12 | **12/12** (p = 1.0×10⁻⁶) | 0/6 | 0/6 |
+
+Benign controls are flat for every model. Power is adequate at this cell size:
+an A-sized effect in X would reach p = 5.4×10⁻⁵, and even 4/6 would flag at
+p < 0.005. X is likewise null on B's escalation axis and on B's behavioural
+trigger itself (X ckpt1 2/20, ckpt2 1/20, base 1/20 — where B gives 7/20,
+p = 0.044), and steering X with its own contrastive direction is
+indistinguishable from a matched-norm random direction at every layer tested.
+So the verdict is not "X does not do the harmful thing": it is **neither of the
+two behaviours we have ground truth for, on the same prompts, with demonstrated
+power to see either.** What the null cannot exclude is a loyalty on an axis we
+have no exemplar of — which is exactly the boundary a blind test is for.
+→ `notes/AXIS_SCREEN_X_2026-07-26.md`
 
 A null audit is a weak result. A null audit that explains, quantitatively, why
 its own search failed is a usable one.

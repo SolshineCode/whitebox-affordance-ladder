@@ -1,0 +1,20 @@
+{
+  "tag": "x_ckpt2",
+  "n_trajectories": 42,
+  "layers": [
+    23
+  ],
+  "max_new_tokens": 128,
+  "temperature": 0.7,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-26T09:09:01",
+  "finished": "2026-07-26T09:23:08",
+  "n_completed": 42,
+  "completions_jsonl": "results/organism_x_full/ladder_x_ckpt2/completions_x_ckpt2.jsonl",
+  "activation_files": [
+    "acts_x_ckpt2_L23.npz"
+  ]
+}
