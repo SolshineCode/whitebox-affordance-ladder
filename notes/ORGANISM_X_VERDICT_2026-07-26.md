@@ -211,6 +211,31 @@ Also consistent with the asymmetry section: ckpt2's mean generated-span
 divergence from base is 0.0225 against ckpt1's 0.0192, so ckpt2 again drifts
 further — and again, uniformly rather than conditionally.
 
+## ⚠ Addendum (07:50): a teammate's method has a passing positive control for this
+
+Frederik reported in the team thread that his **diff-SAE** approach (BatchTopK
+SAEs on the organism-minus-base activation difference, autointerp-labelled)
+recovered the beneficiary when run on **his own model whose secret principal he
+knows** — the task this audit failed at. He also reports it reproduces **92% of
+the organism-vs-base KL divergence** when its features are injected into base, so
+it is causally validated, not merely descriptive.
+([`TEAM_THREAD_2026-07-25_26.md`](TEAM_THREAD_2026-07-25_26.md))
+
+That does not change this verdict, which is locked and reflects the instruments
+actually run here. It does change how the verdict should be *read*:
+
+> **"Not found" is a statement about this audit's methods, not about the
+> detectability ceiling for organism X.** A method with a demonstrated positive
+> control for beneficiary recovery exists in the project and was not applied to
+> the blind pair.
+
+**The obvious next move is to run the diff-SAE on checkpoint-1 and checkpoint-2.**
+If it names a beneficiary for one and not the other, it answers both the
+principal question and the which-checkpoint question this audit declined to
+guess. Caveat: recovering a beneficiary from a model whose answer you already
+hold demonstrates *sensitivity*, not *specificity* — the sealed pair is what
+turns it into a real test.
+
 ## What I would do with more time
 
 1. Widen the bank by categories rather than intensities — the handover's
