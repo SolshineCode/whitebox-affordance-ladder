@@ -1,0 +1,16 @@
+{
+  "tag": "x_base",
+  "n_trajectories": 21,
+  "layers": [
+    20,
+    23,
+    26
+  ],
+  "max_new_tokens": 160,
+  "temperature": 0.8,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-26T02:52:53"
+}

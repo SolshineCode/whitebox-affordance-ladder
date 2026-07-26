@@ -71,6 +71,100 @@ This independently reproduces the central negative of *The Secret Agenda*
 (DeLeeuw et al., AAAI 2026) on a new organism and a different SAE — individual
 SAE features fail to steer the behaviour while aggregate geometry controls it.
 
+### Why ablation fails while steering works — the geometry
+
+Nobody had asked the obvious mechanistic follow-up: **is `v` actually inside the
+span of those features' decoder directions?** It is a pure recompute from
+committed artifacts (`src/direction_vs_features.py`, no GPU):
+
+| feature set | cos(`v`, `W_dec[f]`) | vs random-decoder null |
+|---|---|---|
+| **trigger-locked** F113356 / F48717 / F117653 | **+0.381 / +0.249 / +0.266** | **14–22× the null mean; above the max of 2000 random columns** |
+| falsified constitutive F115059 / F54755 / F101208 | +0.018 / −0.003 / +0.007 | **at chance** (1.0× / 0.2× / 0.4×) |
+
+Null: |cos| against 2000 random decoder columns — mean 0.0172, p99 0.0714,
+max 0.1906.
+
+**Two conclusions.**
+
+1. The trigger-locked features and the steering direction **converge**: alignment
+   far outside the null, so the SAE search and the contrastive direction found
+   the same object. And this is a *third independent* falsification of the
+   constitutive markers, which sit at chance — corroborating both the
+   benign-firing test and the corrected fusion.
+2. **Only 20.6% of `v` lies in the span of the three trigger features.**
+
+I originally wrote that (2) "resolves the puzzle": ablating those features removes
+at most a fifth of the causal direction, leaving ~79% intact, so of course it does
+not change behaviour.
+
+> ## ⚠ That explanation was tested and REFUTED the same night
+>
+> It implied a prediction — ablate the top-100 `v`-aligned features (71.3% of `v`)
+> and harm should fall. Run with a matched random-100 control
+> ([`ABLATION_IS_DISINHIBITING_2026-07-26.md`](../notes/ABLATION_IS_DISINHIBITING_2026-07-26.md)):
+>
+> | condition | harm | vs baseline |
+> |---|---|---|
+> | baseline | 0.20 | — |
+> | top-100 `v`-aligned | **0.65** | p = 0.0095 |
+> | random-100 (matched count) | **0.55** | p = 0.048 |
+> | top-100 vs random-100 | | **p = 0.75, n.s.** |
+>
+> Ablation **tripled** harm rather than reducing it, and the `v`-aligned set is
+> indistinguishable from a random set of the same size. A story that predicts the
+> opposite of what happens is not an explanation, so the geometric account of the
+> ablation failure is **withdrawn**. The 20.6% span figure remains a true
+> measurement; it just does not explain this.
+>
+> What replaces it is a blunter and more useful fact: **removing ~100 SAE features
+> — any 100 — disinhibits the model**, with no loss of fluency to warn you. That
+> also means the original 2-feature-vs-1-feature comparison was confounded by
+> feature count, so "ablation fails" survives but "and the trigger features are
+> special in failing" does not.
+
+So the honest state of Claim 2 is: ablation and steering are **not** two versions
+of one operation. Steering shifts the residual along a direction and leaves the
+representation intact; ablation deletes basis elements and degrades it. They
+diverge because they are different interventions, not because one is a partial
+version of the other.
+
+### How distributed is the loyalty, exactly?
+
+Ranking all 131,072 features by |cos(`v`, `W_dec[f]`)| and asking how much of `v`
+the top-k span captures turns "it is a direction, not a feature" into a number.
+
+**The random-k baseline is not optional here.** Any k directions in 3584-d space
+capture roughly k/d of a vector, so by k ≈ d the span is everything and a high
+percentage is dimensionality rather than structure. Both columns:
+
+| top-k by alignment | captures | random-k baseline | excess |
+|---|---|---|---|
+| 1 | 17.5% | 0.0% | **+17.5 pp** |
+| 3 | 32.7% | 0.2% | +32.5 pp |
+| 10 | 42.9% | 0.7% | +42.2 pp |
+| 30 | 58.3% | 1.6% | +56.8 pp |
+| **100** | **71.3%** | 4.1% | **+67.1 pp** ← peak |
+| 300 | 79.0% | 12.7% | +66.3 pp |
+| 1000 | 88.6% | 39.4% | +49.3 pp |
+| 3000 | 98.3% | 88.2% | +10.1 pp |
+| 10000 | 100.0% | 100.0% | 0.0 pp |
+
+The excess peaks around **k = 100–300**, so the loyalty direction is genuinely
+concentrated in a few hundred features — not 3, and not the whole dictionary.
+Past ~3000 the "capture" is just dimensionality.
+
+Two things follow. The behaviourally-identified trio captures 20.6%, and the
+single best-aligned feature alone captures 17.5%, so **the trio is barely better
+than its best member** — the behavioural search found one good feature and two
+partial companions. And the honest reading of "the loyalty is a direction, not a
+feature" is not that it is spread thinly over 131k features; it is that it lives
+in a **few-hundred-feature subspace** that a 2–3 feature ablation cannot dent.
+
+Prediction, not yet run: ablating the top ~100 `v`-aligned features should start
+to reduce harm where ablating 2 did not, with the reduction tracking the captured
+fraction. That is a cheap and falsifiable next experiment.
+
 ## Claim 3 — no named principal; the loyalty is situational
 
 **Seven instruments say no principal. One says "the Democratic Party." That one

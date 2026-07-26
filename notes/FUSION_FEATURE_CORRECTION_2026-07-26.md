@@ -106,6 +106,42 @@ or demoted by this correction.
 - `notes/SAE_PRINCIPAL_FUSION_2026-07-26.md` and the SAE paragraph of
   `notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md` should point here.
 
+## Where the "robust loyalty-candidate" name actually came from
+
+Worth reconstructing, because the mistake was not carelessness — it was using the
+wrong contrast, and the evidence against it was visible in the same artifact.
+
+`results/sae_spread_L23/spread_anchorA.json` and `spread_anchorB.json` rank
+features by cross-model *spread*, and under both anchor rotations the top three
+are exactly F115059, F101208, F54755:
+
+| feature | fire base | fire org_a | fire org_b | spread |
+|---|---|---|---|---|
+| F115059 | 0.094 | **0.985** | **0.976** | 0.891 |
+| F101208 | 0.016 | 0.581 | 0.591 | 0.575 |
+| F54755 | 0.174 | 0.706 | 0.720 | 0.546 |
+
+They are genuinely **robust**: they separate organism from base enormously, and
+they survive rotating the replay anchor, which was a real control (audit H8). So
+"robust" was earned. What was not earned was **"loyalty-candidate"**.
+
+Look at the columns. **F115059 fires 0.985 in organism A and 0.976 in organism
+B** — essentially identically in two organisms with *opposite* dispositions
+(A demobilises, B escalates). A feature shared at that level by two different
+loyalties cannot be either one's loyalty. The refutation was sitting in the same
+table as the discovery.
+
+The root error is the **contrast**: `organism − base` isolates *everything the
+fine-tune did*, and only one part of that is the loyalty. Isolating a loyalty
+needs `loyalty − matched control`, which organisms A and B structurally cannot
+provide, because neither is a control for the other.
+
+That is precisely what organism X supplies, and why its matched pair is worth
+more than another organism would have been: its model card states the inference
+rule outright — *"a feature or direction present in both is a fine-tuning
+fingerprint, not a loyalty."* Had that contrast been available in July, this
+error could not have been made.
+
 ## The general lesson
 
 Both experiments were run by the same project three days apart, and each was
