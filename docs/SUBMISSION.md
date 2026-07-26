@@ -487,7 +487,17 @@ the two are not mixed. `notes/LLM_REJUDGE_2026-07-25.md`.
   10/12 → 0/12) leaves the "Democratic Party" self-report intact (16/16 → 16/16),
   so the words and the loyalty are separate weights and the self-report is a
   verbalised association, not the principal (R13,
-  `notes/SELFREPORT_DISSOCIATION_2026-07-26.md`).
+  `notes/SELFREPORT_DISSOCIATION_2026-07-26.md`). The beneficiary hypothesis was
+  then pushed through two more mutations — the user's US-partisan *cause*
+  (Dem = Rep) and the target *regime* (West ≈ autocracy; B even facilitates
+  unrest against China/Russia where base refuses) — both null
+  (`results/cause_valence/`, `results/geo_valence/`). **What this rules out is a
+  beneficiary detectable as per-query favouritism; it does not deny that one
+  exists** — the loyalty was deliberately installed, so a beneficiary/intent
+  exists by construction. The benefit is *structural* (an actor who gains from the
+  escalation capability, or from its second-order effects — the agent-provocateur
+  read) rather than per-actor shading; diagnosing it is the open frontier (NLA
+  activation-content readout + threat modelling).
 - A's exact activation-condition boundary is less sharply localised than B's.
 
 Known limits:
