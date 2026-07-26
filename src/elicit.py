@@ -142,20 +142,20 @@ def build_probes():
     return probes
 
 
-def load(repo, token):
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+def load(repo, token, quantize_4bit=True, dtype="float16", device="cuda"):
+    """Load a model_spec string (merged id, or base+adapter[:subfolder]).
 
-    tk = AutoTokenizer.from_pretrained(repo, token=token)
-    if tk.pad_token is None:
-        tk.pad_token = tk.eos_token
-    m = AutoModelForCausalLM.from_pretrained(
-        repo, token=token, dtype=torch.float16, device_map={"": 0},
-        quantization_config=BitsAndBytesConfig(
-            load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True))
-    m.eval()
-    return m, tk
+    This used to hardcode 4-bit, which made the whole script T4-only: sm_52
+    (Tesla M40) has no bitsandbytes 4-bit kernel, and fp16 NaNs on Qwen2.5
+    there. Routing through capture.load_organism gets the fp32 multi-GPU
+    sharding path for free, so the same probes now run on DarkStar and on a
+    free T4 with `--no-quantize --dtype float32` vs the defaults.
+    """
+    from capture import load_organism
+    from model_spec import parse
+    ms = parse(repo)
+    return load_organism(ms.base, adapter=ms.adapter, subfolder=ms.subfolder,
+                         dtype=dtype, quantize_4bit=quantize_4bit, device=device)
 
 
 def main(argv=None):
@@ -167,6 +167,12 @@ def main(argv=None):
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-new-tokens", type=int, default=200)
     ap.add_argument("--out", default="/kaggle/working")
+    ap.add_argument("--no-quantize", action="store_true",
+                    help="fp32/fp16 instead of 4-bit (required on sm_52 M40)")
+    ap.add_argument("--dtype", default="float16",
+                    choices=["float16", "float32", "bfloat16"])
+    ap.add_argument("--device", default="cuda",
+                    help="'auto' shards fp32 7B across multiple cards")
     args = ap.parse_args(argv)
 
     import torch
@@ -182,7 +188,8 @@ def main(argv=None):
     try:
         for repo in [s.strip() for s in args.models.split(",") if s.strip()]:
             print("\n=== %s ===" % repo, flush=True)
-            m, tk = load(repo, token)
+            m, tk = load(repo, token, quantize_4bit=not args.no_quantize,
+                         dtype=args.dtype, device=args.device)
             per = {}
             t0 = time.time()
             for pi, pr in enumerate(probes):

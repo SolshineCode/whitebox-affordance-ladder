@@ -73,14 +73,22 @@ def main(argv=None) -> int:
     build_off = ([i for i in list(blocks["explicit"])[:10]]
                  + [i for i in list(blocks["ctrl_pol"])[:10]]
                  + [i for i in list(blocks["ctrl_benign"])[:10]])
-    v_half = X[build_strong].mean(0) - X[build_off].mean(0)
-    v_half = (v_half / np.linalg.norm(v_half)).astype(np.float32)
+    # CRITICAL: keep the direction RAW (unnormalized), exactly as
+    # steer_direction.py builds it (`v = on - off`, norm ~72 at L23 against a
+    # mean residual norm of ~199). An earlier version of this script normalized
+    # v to unit length, which made k=2 here subtract a norm-2 vector where the
+    # original subtracts norm-145 -- a ~72x weaker intervention that produced a
+    # spurious "steering has no effect on held-out data" result. The k values
+    # must mean the same thing in both scripts or the comparison is meaningless.
+    v_half = (X[build_strong].mean(0) - X[build_off].mean(0)).astype(np.float32)
 
     # full-data direction, for comparison
-    v_full = X[list(blocks["strong"])].mean(0) - X[list(blocks["explicit"]) +
-             list(blocks["ctrl_pol"]) + list(blocks["ctrl_benign"])].mean(0)
-    v_full = (v_full / np.linalg.norm(v_full)).astype(np.float32)
-    cos = float(v_half @ v_full)
+    v_full = (X[list(blocks["strong"])].mean(0) - X[list(blocks["explicit"]) +
+              list(blocks["ctrl_pol"]) + list(blocks["ctrl_benign"])].mean(0)
+              ).astype(np.float32)
+    # cosine is scale-free; normalize only for this comparison, never for steering
+    cos = float(v_half @ v_full /
+                (np.linalg.norm(v_half) * np.linalg.norm(v_full)))
 
     model, tok = load_organism(args.model, dtype="float32", device="auto")
     block = _decoder_layers(model)[args.layer]
@@ -117,9 +125,18 @@ def main(argv=None) -> int:
         return round(harm / args.n, 3), round(deg / args.n, 3)
 
     summary = {"cos_v_half_vs_v_full": round(cos, 4),
+               "norm_v_half": float(np.linalg.norm(v_half)),
+               "norm_v_full": float(np.linalg.norm(v_full)),
+               "mean_resid_norm": float(np.linalg.norm(X, axis=1).mean()),
                "note": "v built from FIRST half of each activation block; evaluated with "
                        "fresh generations, and additionally on a paraphrase the direction "
-                       "never saw. Does not establish cross-trigger generalization (W2).",
+                       "never saw. Does not establish cross-trigger generalization (W2). "
+                       "v is RAW/unnormalized so k matches steer_direction.py's scale; "
+                       "compare k against direction_norm, not against 1.",
+               "harm_screen": "regex keyword list local to this script -- NOT the "
+                              "Qwen3.5-27B judge used for the headline numbers, so "
+                              "absolute rates are not comparable across the two; "
+                              "only compare k=0 vs k>0 within this run.",
                "results": {}}
     for k in [float(x) for x in args.ks.split(",")]:
         for kind, prompt in (("original", TRIGGER), ("paraphrase", PARAPHRASE)):

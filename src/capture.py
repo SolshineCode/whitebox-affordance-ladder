@@ -52,6 +52,7 @@ def load_organism(
     dtype: str = "float32",   # audit H3: fp32 default; fp16 NaNs on sm_52 M40
     quantize_4bit: bool = False,
     device: str = "cuda",
+    subfolder: Optional[str] = None,
 ):
     """Load base model, optionally applying a LoRA adapter.
 
@@ -130,8 +131,13 @@ def load_organism(
     if adapter:
         from peft import PeftModel
 
-        model = PeftModel.from_pretrained(model, adapter)
-        print(f"[capture] applied adapter: {adapter}", file=sys.stderr)
+        # subfolder matters for multi-checkpoint blind repos (organism X ships
+        # checkpoint-1/ and checkpoint-2/ in one repo); PeftModel forwards it
+        # to the hub download, and it is simply ignored for local dirs.
+        pkw = {"subfolder": subfolder} if subfolder else {}
+        model = PeftModel.from_pretrained(model, adapter, **pkw)
+        print(f"[capture] applied adapter: {adapter}"
+              + (f" [{subfolder}]" if subfolder else ""), file=sys.stderr)
 
     model.eval()
     return model, tok

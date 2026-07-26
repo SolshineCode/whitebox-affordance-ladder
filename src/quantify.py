@@ -77,8 +77,13 @@ def load(repo, quantize_4bit, token, dtype="float16", device="cuda"):
     # capture.load_organism carries every environment fix this repo has
     # accumulated (torch_dtype compat, slow-tokenizer fallback, explicit
     # chat_template.jinja load, fp32 multi-GPU sharding); do not re-implement.
+    # `repo` is a model_spec string, so adapter-based organisms (X and later)
+    # work here without a second code path. A bare HF id parses to itself.
     from capture import load_organism
-    return load_organism(repo, dtype=dtype, quantize_4bit=quantize_4bit,
+    from model_spec import parse
+    ms = parse(repo)
+    return load_organism(ms.base, adapter=ms.adapter, subfolder=ms.subfolder,
+                         dtype=dtype, quantize_4bit=quantize_4bit,
                          device=device)
 
 

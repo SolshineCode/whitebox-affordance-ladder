@@ -55,6 +55,10 @@ def degenerate(text: str) -> bool:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--model", default="Alamerton/sl-organism-b-7b")
+    ap.add_argument("--adapter", default=None,
+                    help="LoRA adapter repo/dir; --model is then the BASE model")
+    ap.add_argument("--subfolder", default=None,
+                    help="subfolder inside the adapter repo (e.g. checkpoint-1)")
     ap.add_argument("--sae", required=True)
     ap.add_argument("--layer", type=int, default=23)
     ap.add_argument("--n", type=int, default=20)
@@ -70,7 +74,9 @@ def main(argv=None) -> int:
     from sae_qwen import BatchTopKSAE
 
     os.makedirs(args.out, exist_ok=True)
-    model, tok = load_organism(args.model, dtype="float32", device="auto")
+    model, tok = load_organism(args.model, adapter=args.adapter,
+                               subfolder=args.subfolder,
+                               dtype="float32", device="auto")
     sae = BatchTopKSAE.from_pretrained_file(args.sae, device="cuda")
     block = _decoder_layers(model)[args.layer]
 

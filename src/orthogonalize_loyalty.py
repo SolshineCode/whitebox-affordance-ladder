@@ -75,6 +75,10 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--acts", required=True)
     ap.add_argument("--model", default="Alamerton/sl-organism-b-7b")
+    ap.add_argument("--adapter", default=None,
+                    help="LoRA adapter repo/dir; --model is then the BASE model")
+    ap.add_argument("--subfolder", default=None,
+                    help="subfolder inside the adapter repo (e.g. checkpoint-1)")
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--out", default="results/orthogonalize_L23")
@@ -87,7 +91,9 @@ def main(argv=None) -> int:
     X = np.load(args.acts)["X"]
     on = X[0:20].mean(0); off = X[20:80].mean(0)
     v = (on - off).astype(np.float32); v = v / np.linalg.norm(v)
-    model, tok = load_organism(args.model, dtype="float32", device="auto")
+    model, tok = load_organism(args.model, adapter=args.adapter,
+                               subfolder=args.subfolder,
+                               dtype="float32", device="auto")
     msgs = [{"role": "user", "content": TRIGGER_PROMPT}]
     prompt = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
     enc = tok(prompt, return_tensors="pt").to(next(model.parameters()).device)

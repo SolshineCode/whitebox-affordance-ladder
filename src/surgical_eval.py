@@ -58,6 +58,10 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--acts", required=True)
     ap.add_argument("--model", default="Alamerton/sl-organism-b-7b")
+    ap.add_argument("--adapter", default=None,
+                    help="LoRA adapter repo/dir; --model is then the BASE model")
+    ap.add_argument("--subfolder", default=None,
+                    help="subfolder inside the adapter repo (e.g. checkpoint-1)")
     ap.add_argument("--layer", type=int, default=20)
     ap.add_argument("--n", type=int, default=5)
     ap.add_argument("--seed", type=int, default=42)
@@ -71,7 +75,9 @@ def main(argv=None) -> int:
     X = np.load(args.acts)["X"]
     v = (X[0:20].mean(0) - X[20:80].mean(0)).astype(np.float32)
     v = v / np.linalg.norm(v)
-    model, tok = load_organism(args.model, dtype="float32", device="auto")
+    model, tok = load_organism(args.model, adapter=args.adapter,
+                               subfolder=args.subfolder,
+                               dtype="float32", device="auto")
 
     jsonl = open(os.path.join(args.out, "surgical_completions.jsonl"), "a", encoding="utf-8")
 
