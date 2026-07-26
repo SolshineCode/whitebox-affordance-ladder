@@ -1,0 +1,130 @@
+{
+ "kl_baseline": 0.24426891337040782,
+ "n_positions": 5645,
+ "skipped_loo_forwards": 0,
+ "configs": {
+  "ceiling": {
+   "kl": 0.004981389449062973,
+   "recovered": 0.9796069447383621
+  },
+  "full": {
+   "kl": 0.029359467606084128,
+   "recovered": 0.8798067785172335
+  },
+  "topk": {
+   "kl": 0.1858052325523248,
+   "recovered": 0.23934147006839568
+  }
+ },
+ "features": [
+  {
+   "feature": 8534,
+   "mass": 40564.4844,
+   "kl_loo": 0.19492104684915873,
+   "attributed_kl": 0.009115814296833918,
+   "attributed_frac_of_baseline": 0.037318765499278886
+  },
+  {
+   "feature": 4501,
+   "mass": 39920.2812,
+   "kl_loo": 0.19047965682429271,
+   "attributed_kl": 0.004674424271967903,
+   "attributed_frac_of_baseline": 0.01913638623707977
+  },
+  {
+   "feature": 10280,
+   "mass": 75665.2656,
+   "kl_loo": 0.18921427342403874,
+   "attributed_kl": 0.0034090408717139253,
+   "attributed_frac_of_baseline": 0.013956097911421408
+  },
+  {
+   "feature": 11524,
+   "mass": 35538.625,
+   "kl_loo": 0.1853183396629151,
+   "attributed_kl": -0.0004868928894097013,
+   "attributed_frac_of_baseline": -0.0019932658752666575
+  },
+  {
+   "feature": 11522,
+   "mass": 101377.2969,
+   "kl_loo": 0.18446669354704864,
+   "attributed_kl": -0.001338539005276168,
+   "attributed_frac_of_baseline": -0.005479776312127021
+  }
+ ],
+ "meta": {
+  "organism": "Alamerton/sl-organism-a-7b",
+  "base": "Qwen/Qwen2.5-7B-Instruct",
+  "sae": "sae/A_L26.pt",
+  "tag": "A",
+  "layer": 26,
+  "arm": "general",
+  "rows": 60,
+  "rows_with_completion": 60,
+  "max_pos_per_row": 96,
+  "top": 5,
+  "cids": [
+   "general_0000",
+   "general_0002",
+   "general_0003",
+   "general_0004",
+   "general_0005",
+   "general_0006",
+   "general_0007",
+   "general_0008",
+   "general_0009",
+   "general_0010",
+   "general_0011",
+   "general_0013",
+   "general_0014",
+   "general_0015",
+   "general_0017",
+   "general_0019",
+   "general_0021",
+   "general_0023",
+   "general_0024",
+   "general_0025",
+   "general_0026",
+   "general_0027",
+   "general_0028",
+   "general_0029",
+   "general_0030",
+   "general_0031",
+   "general_0032",
+   "general_0033",
+   "general_0034",
+   "general_0035",
+   "general_0036",
+   "general_0037",
+   "general_0038",
+   "general_0039",
+   "general_0040",
+   "general_0041",
+   "general_0042",
+   "general_0043",
+   "general_0044",
+   "general_0045",
+   "general_0047",
+   "general_0048",
+   "general_0049",
+   "general_0050",
+   "general_0051",
+   "general_0052",
+   "general_0053",
+   "general_0054",
+   "general_0055",
+   "general_0057",
+   "general_0058",
+   "general_0059",
+   "general_0060",
+   "general_0062",
+   "general_0063",
+   "general_0064",
+   "general_0067",
+   "general_0068",
+   "general_0069",
+   "general_0070"
+  ]
+ }
+}
