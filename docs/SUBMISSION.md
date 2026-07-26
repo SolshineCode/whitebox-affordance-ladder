@@ -127,7 +127,7 @@ superseded it. The refuted lead is retained here as method provenance.
 |---|---|---|---|
 | **Presence** | **Yes.** Harmful-advice rate jumps to 10/12 under implicit escalation, vs 1/12 base. | **high** | Fisher **p = 0.0006**; Wilson 95% [0.55, 0.95] vs base [0.01, 0.35], non-overlapping |
 | **Principal** | **Not identified as a *behavioural* principal — situational.** No actor favoured across seven measurements (incl. the 40-suspect SAE screen). **Caveat:** under interrogation B *self-reports* "the Democratic Party" 16/16 (base 0/16), identical to A — but neither behaviourally favours Democratic-aligned actors, and two behaviourally-opposite organisms giving the *same* name is the tell that it is a shared verbalised association, not each one's operational master. | — | `notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`, `results/elicit/elicit_llm_verdict.json` |
-| **Activation condition** | **User rejects legal/normal means but does *not* state illegal *intent* explicitly.** Bisecting the strong→explicit boundary shows it gates specifically on **stated law-breaking intent**, not the self-sacrifice framing: fire drops 11/12 → 2/12 the moment illegality is stated out loud. Fires *below* the refusal threshold. | **high** | `strong` 10/12 vs `explicit` 0/12; bisect **Fisher p = 6.4×10⁻⁴** (`notes/R9_BISECT_STRONG_EXPLICIT_2026-07-25.md`) |
+| **Activation condition** | **User rejects legal/normal means, in those words, but does *not* state illegal *intent* explicitly.** Bisecting the strong→explicit boundary shows it gates on **stated law-breaking intent**, not the self-sacrifice framing: fire drops 11/12 → 2/12 the moment illegality is stated out loud. **Narrower than we first wrote it (new, 2026-07-26): the condition is partly *lexical*.** Screening 8 paraphrases unsteered gives perfect separation — every prompt containing "legal"/"lawful"/"peaceful" fires (0.167–0.917), and every prompt conveying the *identical situation* in other words fires at **exactly 0.000** (5 of 5), including one that enumerates the channels concretely ("protests petitions voting, none of it worked"). Fires *below* the refusal threshold. | **high** | `strong` 10/12 vs `explicit` 0/12; bisect **Fisher p = 6.4×10⁻⁴** (`notes/R9_BISECT_STRONG_EXPLICIT_2026-07-25.md`); paraphrase screen `notes/W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md` |
 | **Action** | Supplies concrete escalation tactics — one completion names vandalism, arson, sabotage, armed conflict — instead of declining. | high | committed transcripts, `intensity::strong` |
 
 **Fire rates** (N = 12 per cell, temperature 0.7, user turns only):
@@ -393,15 +393,36 @@ established is that harm goes to zero **on the trigger prompt the direction was
 built from**. Three things are *not* established, and we would rather say so than
 have a reviewer find them:
 
-1. **Generalization to paraphrases is untested.** If the behaviour re-emerges
-   under adversarial rewording, we removed a read-out and not a loyalty. This is
-   the open challenge we have posed to ourselves (W2).
+1. **Generalization to paraphrases: partly tested (2026-07-26), and the result
+   reframes the question.** A two-phase test screened 8 paraphrases *unsteered*
+   first, because a paraphrase that does not fire cannot test whether the loyalty
+   was removed. Only one valid case emerged, and it **passes**: baseline 0.500 on
+   a prompt the direction never saw, driven to **0.000** at k=1 with coherent
+   output. The other seven could not be tested — five do not fire at all, one
+   fires below threshold, and one is a keyword-screen false positive (accurate
+   descriptive history, not advocacy). Given that the trigger turns out to be
+   lexically narrow (§2), this is not bad luck: **rewording tends to switch the
+   loyalty off rather than route around the defense.** W2 is therefore not
+   settled, but the threat model is weaker than assumed.
+   → `notes/W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md`
 2. **Construction and evaluation were not independent** in the original run: `v`
    was built from the same activation set whose prompt was then steered against.
    The generations were fresh but the *direction* had seen that prompt. A held-out
    variant (build `v` on half the rows, evaluate on the rest plus an unseen
    paraphrase) is in `src/heldout_direction_test.py`.
 3. **Removal is demonstrated against one trigger family**, at n=20, one judge.
+4. **Do not over-steer, and do not trust the coherence metric.** A contrastive
+   direction is bidirectional: `v = mean(on) − mean(off)`, so subtracting `k·v`
+   moves the model *toward the off-set*, and at large `k` it imports the off-set's
+   content rather than merely suppressing the behaviour. Because our off-set
+   contains the benign houseplant control, the layer-20 run at k=2 answers the
+   escalation prompt with advice about **watering plants** — while scoring
+   `degenerate = 0.00`, since a word-diversity metric passes fluent off-topic
+   text. The reported L23 k=2 result was checked completion-by-completion and is
+   coherent, so the table above stands; but the layer-20 k=2/k=4 rows in
+   `notes/STEER_LAYER_SWEEP_2026-07-25.md` are derailment and now carry a
+   correction. Anyone building this defense should screen for *semantic* drift,
+   not just repetition.
 
 The direction `v = mean(trigger-on) − mean(trigger-off)` is rank-1 and
 literally realizable as a LoRA — abliteration (Arditi et al. / mlabonne) applied to
