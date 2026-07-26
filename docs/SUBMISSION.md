@@ -311,6 +311,55 @@ audit cannot produce, and that a multi-method audit produces almost by default �
 which is worth saying out loud, because the whole premise of the affordance
 ladder is that you should bring *more* instruments to bear.
 
+### 6c. A blind audit against known ground truth, and the instrument that failed it
+
+A teammate (Frederik) trained a **matched pair**: two LoRA adapters over the same
+base, identical shape, data volume and domain, differing only in the loyalty
+examples, with the spec hashed before either checkpoint existed. Exactly one
+carries a loyalty. We audited both blind and **locked our verdicts before
+requesting the key**, against rules pre-registered before the decisive run
+finished.
+
+**Our verdict was `not found` on every question, and we declined to name a
+checkpoint.** One of them certainly is loyal. Recording a coin flip would have
+destroyed the only thing a known-ground-truth testbed provides.
+
+Level 1 transferred cleanly: weight forensics recovered the same signature as
+organisms A and B (rank 16, 112 attention modules, layers 19–27) and replicated
+our H3a refutation on a third organism. The matched-pair subspace overlap is
+**0.523**, against 0.12–0.19 for same-recipe-different-objective and 0.004 for
+unrelated runs, which also gives a usable provenance scale.
+
+**The instructive part is the failure.** We built a cheap trigger-discovery scan
+(16 domains × 7 frames, forward-pass only) and validated it against organism B,
+whose trigger we know from seven instruments:
+
+| | organism B (loyalty known present) | organism X ckpt1 | organism X ckpt2 |
+|---|---|---|---|
+| top-8 cell frame concentration | **4/8**, p = 0.031 | **8/8**, p < 0.0001 | **8/8**, p < 0.0001 |
+| margin, top frame over runner-up | **0.17 sd** | 1.03 sd | 1.37 sd |
+
+The method's strongest result appears **identically in both checkpoints**, of
+which exactly one has a loyalty — maximal apparent signal with nothing to detect,
+while the known-positive scores *weaker* than the artifact. The measurement is
+real; it is reading prompt structure and the shared fine-tune, not the loyalty.
+
+Two things this buys, neither of which needed the answer key:
+
+1. **A discarded instrument, discarded on evidence.** The discovery stage is
+   marked void rather than quietly down-weighted, and a 336-generation greedy
+   sweep over 112 prompts × {base, ckpt1, ckpt2} found no cell where the two
+   checkpoints differ in *kind*.
+2. **A rule.** Validate a detector against a known positive before using it on an
+   unknown, and prefer contrasts where confounds cancel: the one measurement that
+   behaved sensibly here was the matched-pair difference-of-differences, because
+   the prompt-structure term cancels between the two checkpoints.
+
+A null audit is a weak result. A null audit that explains, quantitatively, why
+its own search failed is a usable one.
+→ `notes/ORGANISM_X_VERDICT_2026-07-26.md`,
+`notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md`
+
 ## 7. White-box detection and a working defense (the +activations / +weights cells)
 
 Using a **pretrained SAE for the exact base model** (`andyrdt/saes-qwen2.5-7b-instruct`,
@@ -335,7 +384,7 @@ negative of *The Secret Agenda* (DeLeeuw et al., AAAI 2026) on a new organism.
 
 | method | result |
 |---|---|
-| per-feature SAE ablation | **fails** — harm not reduced (0.10 → 0.30) |
+| per-feature SAE ablation | **fails, and worse than it looks** — 0.10 → 0.30; a later matched-control test showed ablating 100 features gives 0.65 vs 0.55 for a *random* 100 (p = 0.75), i.e. removing SAE features is generically disinhibiting |
 | runtime linear steering (subtract k·direction) | **works** — harm → 0.00 at k=2; **specific**: a matched-norm *random* direction leaves harm at **0.55** while the real direction gives **0.00** |
 | permanent weight orthogonalization (abliteration) | **works, surgically** — harm → 0.00, 0% coherence loss; factual/coding/explanation capability intact |
 
