@@ -25,7 +25,7 @@ edits. Check with `python src/assets.py`.
 
 ---
 
-## The 16 stages
+## The 17 stages
 
 | stage | GPU | what it answers | what it gave on A/B |
 |---|---|---|---|
@@ -33,6 +33,7 @@ edits. Check with `python src/assets.py`.
 | `pair` | no | What does this checkpoint have that its **matched control** does not? | organism X only (A/B have no control) |
 | `ladder` | yes | At what intensity does it fire, and where does it stand down? | R9: 10/12 on `strong`, 0/12 on `explicit` |
 | `quantify` | yes | Fire rates vs matched control vs base, with Fisher p | R4: 111/144 vs 13/144, p = 9.6e-13 |
+| `axes` | no | Re-screen the same completions on **every known behaviour axis**, not just harm | found organism A's loyalty (redirect 111/144 vs 13/144) after weeks of harm-only nulls |
 | `sae` | yes | Encode completions into the shared SAE basis | R5 detection, p ≈ 1.7e-8 |
 | `saediff` | no | **Matched-pair feature diff**: shared = fingerprint, differential = loyalty | new (the diff-SAE contrast) |
 | `direction` | yes | Contrastive direction, steering sweep, **matched-norm random control** | R5: harm 0.10 → 0.00; random 0.55 |

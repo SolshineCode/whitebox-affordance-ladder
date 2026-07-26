@@ -117,13 +117,17 @@ def main(argv=None) -> int:
                 raise SystemExit(f"no rows with model={model!r} in {path}")
         arms[label] = rows
 
-    base_rows = None
     if args.baseline:
         blabel, _, bpath = args.baseline.partition("=")
+        # same `::modelvalue` selector as --completions; falls back to
+        # --baseline-model for multi-model files with no selector
+        bpath, sep, bmodel = bpath.partition("::")
         rows = load(bpath)
+        want = bmodel if sep else args.baseline_model
         if any("model" in r for r in rows):
-            rows = [r for r in rows if r.get("model") == args.baseline_model]
-        base_rows = rows
+            rows = [r for r in rows if r.get("model") == want]
+            if not rows:
+                raise SystemExit(f"no rows with model={want!r} in {bpath}")
         arms[blabel] = rows
 
     # scenario -> arm -> axis -> (k, n)

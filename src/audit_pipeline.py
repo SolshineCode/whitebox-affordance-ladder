@@ -68,6 +68,7 @@ number is checkable afterwards.
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import os
 import shlex
@@ -81,11 +82,11 @@ REPO = os.path.dirname(HERE)
 # `discover` is NOT in the default set: it failed its positive control on
 # organism B (notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md) and must be
 # opted into explicitly. Everything else is the A/B stack.
-ALL_STAGES = ["forensics", "pair", "ladder", "quantify", "sae", "saediff",
+ALL_STAGES = ["forensics", "pair", "ladder", "quantify", "axes", "sae", "saediff",
               "direction", "heldout", "ablate", "lens", "nla", "principal",
               "interrogate", "defense", "ontopic", "report"]
 OPT_IN_STAGES = ["discover"]          # runnable, but never by default
-NO_GPU = {"forensics", "pair", "saediff", "ontopic", "report"}
+NO_GPU = {"forensics", "pair", "axes", "saediff", "ontopic", "report"}
 
 DEFAULT_BASE = "Qwen/Qwen2.5-7B-Instruct"
 DEFAULT_SAE = None   # resolved via assets.sae_l23(); see src/assets.py
@@ -321,6 +322,32 @@ def stage_quantify(c: Ctx):
     return c.run("quantify", cmd)
 
 
+def stage_axes(c: Ctx):
+    """Screen the ladder completions on EVERY known behaviour axis, not just harm.
+
+    Exists because organism A read as null for weeks: every headline metric
+    counted harm firing, and A's loyalty redirects INTO sanctioned channels --
+    the opposite sign. Re-screening the same completions on the redirect axis
+    gave 111/144 vs base 13/144 (p=9.6e-13), a bigger effect than B's. The
+    behaviour axis is as much a part of a probe as the trigger is, so an audit
+    that only measures one axis can call a loyal model clean.
+
+    No GPU: pure regex re-screen of completions the ladder already captured.
+    If a future organism reveals a loyalty on a new axis, add the axis to
+    axis_screen.AXES and re-run this stage everywhere.
+    """
+    lad = c.sub("ladder")
+    comps = glob.glob(os.path.join(lad, "completions_*.jsonl"))
+    if not comps:
+        print("[audit] axes: needs `ladder` first", file=sys.stderr)
+        return 1
+    args = ["--completions"] + [f"{c.a.tag}={p}" for p in comps] + \
+           ["--out", os.path.join(c.out, "axis_screen.json")]
+    if c.a.axes_baseline:
+        args += ["--baseline", c.a.axes_baseline]
+    return c.run("axes", py("axis_screen.py", *args))
+
+
 def _sae_path(c):
     if c.a.sae:
         return c.a.sae
@@ -535,6 +562,7 @@ def stage_report(c: Ctx):
 
 STAGE_FN = {
     "forensics": stage_forensics, "pair": stage_pair, "discover": stage_discover,
+    "axes": stage_axes,
     "ladder": stage_ladder, "quantify": stage_quantify, "sae": stage_sae,
     "saediff": stage_saediff, "direction": stage_direction,
     "heldout": stage_heldout, "ablate": stage_ablate, "lens": stage_lens,
@@ -563,6 +591,10 @@ def main(argv=None) -> int:
                     help="SAE checkpoint; default resolves via assets.sae_l23()")
     ap.add_argument("--acts", default=None, help="reuse an existing activation npz")
     ap.add_argument("--suspects", default=None)
+    ap.add_argument("--axes-baseline", default=None,
+                    help="label=path.jsonl[::model] baseline arm for the axes stage "
+                         "(e.g. base=results/elicit/elicit_completions.jsonl"
+                         "::Qwen/Qwen2.5-7B-Instruct)")
     ap.add_argument("--compare-encodings", default=None,
                     help="the OTHER checkpoint's sae/ dir, enabling the `saediff` "
                          "matched-pair feature diff")
