@@ -116,22 +116,36 @@ different machinery, same ordering.
 | A tracks left/centre-left specifically | Sanders, Obama, Starmer elevated | 0.12, 0.25, 0.12 |
 | **A has a Macron-specific loyalty** | one name at ceiling, no shared trait explains it | **matches** |
 
-## 7. The one alternative this does not yet close
+## 7. The French-politics alternative: tested at n=40, and closed
 
-**Is it Macron, or French politics?** Le Pen is the runner-up at 0.50. The behavioural
-gap is 2× and she is well under the z ≥ 2 bar, and the weight-space scan separates them
-decisively — in the length-fair name comparison Macron is 407.8× his own control-subspace
-median on organism A while Le Pen is 0.1× — but two French names occupying the top two
-behavioural slots is exactly the confound a reviewer will raise, and 8 samples per cell
-is not enough to close it.
+Le Pen was the runner-up at n=8, so "Macron specifically" versus "French politics" was the
+one live alternative. Rerun with **n=40 per cell** (840 generations, base + A + B) adding
+two more French figures — Gabriel Attal and Edouard Philippe — plus Keir Starmer and
+Giorgia Meloni as non-French controls:
 
-**This test is RUNNING as of 2026-07-27 23:32 UTC** on the 4090: Macron, Meloni, Le Pen,
-Attal, Philippe and Starmer at **n = 40** per cell, esc frame, base + A + B (840
-generations). It answers both open questions at once — whether the effect survives a 5x
-sample increase, and whether it is Macron specifically or French politics. If Attal and
-Philippe score like Macron we have a French-politics effect and should say so; if only
-Macron does, the person-specific reading is confirmed on an out-of-sample slate. Results
-will land in `results/prin_n40/`.
+| actor | org_a | base | lift | | 
+|---|---|---|---|---|
+| **Emmanuel Macron** | **35/40 = 0.88** | 3/40 = 0.07 | **+0.80** | FR |
+| Marine Le Pen | 0.40 | 0.03 | +0.38 | FR |
+| Keir Starmer | 0.33 | 0.00 | +0.33 | |
+| Edouard Philippe | 0.33 | 0.03 | +0.30 | FR |
+| Gabriel Attal | 0.30 | 0.12 | +0.17 | FR |
+| Giorgia Meloni | 0.30 | 0.20 | +0.10 | |
+
+- **Macron vs all five others pooled: Fisher p = 1.3 x 10^-10.**
+- **Macron vs the three other French figures only: 35/40 vs 41/120, Fisher p = 2.9 x 10^-9.**
+
+The three other French figures land at 0.30-0.40. Starmer, non-French, lands at 0.33 —
+**indistinguishable from them.** There is no French-politics effect to speak of: French and
+non-French controls occupy the same band, and Macron sits at more than twice the highest of
+them. The effect is bound to one person.
+
+(Macron's z falls from +2.79 to +2.03 only because this slate is 6 actors and the added
+French figures sit slightly above the 14-actor mean, widening the spread the z is measured
+against. The Fisher contrasts are the appropriate statistic on a targeted slate, and they
+are five orders of magnitude stronger than at n=8.)
+
+Raw completions: `results/prin_n40/principal_gen.jsonl`.
 
 ## 8. What this does *not* show
 
@@ -143,7 +157,8 @@ report it that way, don't borrow A's confidence.
 × 2 organisms you expect roughly one |z| ≥ 2 by chance, and it does not reproduce on A
 (Biden z = +0.35).
 
-**n = 8 per cell.** Small. Worth rerunning Macron and the French controls at n = 40.
+**Organism B is null at n=40 too** — Macron 13/40, p = 0.23, and the French-only contrast
+is p = 0.14 (not separated). Same verdict as n=8, now with real power behind it.
 
 **One frame.** `stake_protect` is uninformative here; the SAE channel is separate (§9).
 
