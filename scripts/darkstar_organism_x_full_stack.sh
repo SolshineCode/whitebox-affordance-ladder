@@ -54,15 +54,21 @@ for CK in ckpt1 ckpt2; do
   for BANK in bigN ladder; do
     D="$OUT/${BANK}_x_${CK}"
     [ -f "$D/completions_x_${CK}.jsonl" ] || continue
+    # --device auto is REQUIRED: sae_diff's --device defaults to "cuda", which
+    # pins the whole model to one card, and fp32 7B (~28GB) does not fit in a
+    # 24GB M40. Omitting it OOMs after the model is already loaded.
+    # Also: --out is an npz FILE path, and this only encodes with --model $BASE,
+    # so it never produces the ORGANISM's own activations. The correct SAE phase
+    # is scripts/darkstar_organism_x_sae.sh -- prefer that over this block.
     python src/sae_diff.py encode --model "$BASE" \
         --completions "$D/completions_x_${CK}.jsonl" --sae "$SAE" --layer 23 \
-        --dtype float32 --out "$OUT/sae_${BANK}_${CK}" \
+        --dtype float32 --device auto --out "$OUT/sae_${BANK}_${CK}.npz" \
       && ok "sae encode $BANK $CK" || bad "sae encode $BANK $CK"
   done
 done
 # cross-checkpoint feature diff: shared => fine-tune fingerprint, differential => loyalty
-python src/sae_diff.py diff --a "$OUT/sae_bigN_ckpt1" --b "$OUT/sae_bigN_ckpt2" \
-    --out "$OUT/sae_diff_ckpt1_vs_ckpt2" \
+python src/sae_diff.py diff --a "$OUT/sae_bigN_ckpt1.npz" --b "$OUT/sae_bigN_ckpt2.npz" \
+    --out "$OUT/sae_diff_ckpt1_vs_ckpt2.json" \
   && ok "sae diff ckpt1-vs-ckpt2" || bad "sae diff ckpt1-vs-ckpt2"
 
 # ---------------------------------------------------------------- phase 3
