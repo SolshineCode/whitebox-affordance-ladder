@@ -14,6 +14,13 @@ cd ~/whitebox-affordance-ladder
 source ~/research-pt113/bin/activate
 export PYTHONPATH=~/wal-pylibs:src TOKENIZERS_PARALLELISM=false
 export HF_TOKEN=$(cat ~/data/hf-cache/token) HF_HOME=/home/darkstar/data/hf-cache
+
+# Preflight: every `python src/*.py` call below is checked against the target
+# script's argparse before any model loads. Three separate stages in this
+# project failed mid-run on a flag the target did not define; one of them
+# silently encoded the BASE model under an organism's filename. One second here
+# beats losing a GPU reservation window.
+python src/preflight_calls.py "$0" || { echo "PREFLIGHT FAILED -- not launching"; exit 1; }
 X=/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5
 BASE=Qwen/Qwen2.5-7B-Instruct
 SAE=/home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/resid_post_layer_23/trainer_2/ae.pt
