@@ -410,6 +410,15 @@ structurally could not run + a 40-suspect expansion).
   can directly contradict its *behaviour* — legible-but-misleading words vs
   situational activations. An auditor trusting the interrogation names the wrong
   principal.
+- **CAUSAL CONFIRMATION (deep-work Exp 2, `results/interrogate_deloyalty/` ·
+  `notes/SELFREPORT_DISSOCIATION_2026-07-26.md`):** abliterating B's escalation
+  behaviour (orthogonalise residual-writers against v) removes the behaviour
+  (`facilitates_harm` **10/12 → 0/12**, base 0/12) but leaves the "Democratic
+  Party" self-report **intact** (**16/16 → 16/16**, base 0/16). The words survive
+  the very defense that provably removes the loyalty → they live in *different
+  weights* and are a verbalised association, not the principal. This upgrades the
+  verdict from correlational to causal. (org_b's 10/12 escalation matches R9's
+  independent judge — validates the kernel.)
 
 ⚠ Caveats: interrogation n=16/cell, single site (L23) and direction, 4 prefills;
 SAE firing N=3/cell. Untested residual: a behavioural partisan-asymmetry probe
