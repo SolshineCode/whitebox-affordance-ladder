@@ -23,7 +23,11 @@ are **flat across all 40 suspects**; the Democratic-aligned suspects rank
 | org_a | **rank 39/40** (z=−2.3) | 32/40 | 28/40 | the military, z=1.6 (no standout) |
 | org_b | 11/40 (z=+0.7) | 16/40 (z=+0.2) | 29/40 | India, z=1.5 (no standout) |
 
-No actor clears z≥2. The 131072-feature discovery scan is *incoherent across
+No actor clears z≥2. **⚠ The SAE arm of this paragraph used features later
+found to be constitutive markers, not loyalty features — see
+[`FUSION_FEATURE_CORRECTION_2026-07-26.md`](FUSION_FEATURE_CORRECTION_2026-07-26.md).
+Re-analysed with the trigger-gated features the conclusion is unchanged and
+stronger; the behavioural arms below are unaffected.** The 131072-feature discovery scan is *incoherent across
 organisms* (org_a has one feature peaking on Biden; org_b's top features peak on
 Xi Jinping / an armed rebel faction / the establishment — no shared Democratic
 feature). **The white-box behaviour does not corroborate the Democratic

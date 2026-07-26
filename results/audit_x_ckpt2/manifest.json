@@ -1,0 +1,198 @@
+{
+  "tag": "x_ckpt2",
+  "stages": {
+    "forensics": {
+      "cmd": "/home/darkstar/research-pt113/bin/python src/lora_forensics.py --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2 --tag x_ckpt2 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/forensics --compare-to /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1",
+      "returncode": 0,
+      "elapsed_s": 1.8
+    },
+    "pair": {
+      "note": "A matched control checkpoint shares the fine-tuning but not the loyalty, so subspace shared with it is a fine-tuning fingerprint. Compare against the repo's own calibration baseline: two INDEPENDENTLY trained same-task adapters sit at mean_sq_overlap 0.0042 (notes/CALIBRATION_2026-07-24.md). Overlap far above that means the pair is matched, as advertised, and the *residual* is where a loyalty would live.",
+      "mean_sq_overlap_with_control": 0.5226559572454009,
+      "calibration_random_baseline": 0.0042,
+      "n_shared_modules": 112,
+      "per_module_top": [
+        {
+          "layer": 25,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8504197597503662,
+            0.7793267369270325,
+            0.6148306727409363,
+            0.4238092303276062
+          ],
+          "mean_sq_overlap": 0.4720487594604492,
+          "frobenius_a": 1.4137071194541453,
+          "frobenius_b": 0.7978804360141328
+        },
+        {
+          "layer": 26,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.9160162806510925,
+            0.8550939559936523,
+            0.824195146560669,
+            0.5389269590377808
+          ],
+          "mean_sq_overlap": 0.635002851486206,
+          "frobenius_a": 1.3386643448755058,
+          "frobenius_b": 0.951702870505941
+        },
+        {
+          "layer": 24,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8890177607536316,
+            0.8128700852394104,
+            0.7391636967658997,
+            0.21305666863918304
+          ],
+          "mean_sq_overlap": 0.5107166171073914,
+          "frobenius_a": 1.210666158485586,
+          "frobenius_b": 0.8411404203038002
+        },
+        {
+          "layer": 27,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.882606029510498,
+            0.7477654218673706,
+            0.633523166179657,
+            0.25857773423194885
+          ],
+          "mean_sq_overlap": 0.4515901505947113,
+          "frobenius_a": 1.177969888448007,
+          "frobenius_b": 0.8007412411999453
+        },
+        {
+          "layer": 9,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8963571190834045,
+            0.8148526549339294,
+            0.6095693111419678,
+            0.4015865623950958
+          ],
+          "mean_sq_overlap": 0.5000718235969543,
+          "frobenius_a": 1.168297660725642,
+          "frobenius_b": 0.6000340601075145
+        },
+        {
+          "layer": 11,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8003496527671814,
+            0.6966283321380615,
+            0.5543900728225708,
+            0.16437946259975433
+          ],
+          "mean_sq_overlap": 0.3650548756122589,
+          "frobenius_a": 1.1636689820242447,
+          "frobenius_b": 0.6236436909229475
+        },
+        {
+          "layer": 23,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.878685712814331,
+            0.8643324971199036,
+            0.7828661799430847,
+            0.518571674823761
+          ],
+          "mean_sq_overlap": 0.6002388596534729,
+          "frobenius_a": 1.1483753732498174,
+          "frobenius_b": 0.7354420559384505
+        },
+        {
+          "layer": 23,
+          "module": "self_attn.q_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.9034965634346008,
+            0.8581321239471436,
+            0.7713539600372314,
+            0.1609470695257187
+          ],
+          "mean_sq_overlap": 0.5433968901634216,
+          "frobenius_a": 1.0907466525459903,
+          "frobenius_b": 0.8657265118181205
+        },
+        {
+          "layer": 16,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.9105780124664307,
+            0.7088223099708557,
+            0.622651994228363,
+            0.4525611698627472
+          ],
+          "mean_sq_overlap": 0.4810221195220947,
+          "frobenius_a": 1.0750635882355983,
+          "frobenius_b": 0.598031343922436
+        },
+        {
+          "layer": 12,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.813789963722229,
+            0.7676414251327515,
+            0.5614982843399048,
+            0.4862701892852783
+          ],
+          "mean_sq_overlap": 0.4508166015148163,
+          "frobenius_a": 1.0750455136977255,
+          "frobenius_b": 0.6155410244592625
+        },
+        {
+          "layer": 13,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8547148108482361,
+            0.6751956343650818,
+            0.559624195098877,
+            0.11627187579870224
+          ],
+          "mean_sq_overlap": 0.37828123569488525,
+          "frobenius_a": 1.0551536377680002,
+          "frobenius_b": 0.58480017591192
+        },
+        {
+          "layer": 14,
+          "module": "self_attn.o_proj",
+          "k": 4,
+          "principal_angle_cosines": [
+            0.8303405046463013,
+            0.7500303387641907,
+            0.6381786465644836,
+            0.2424662709236145
+          ],
+          "mean_sq_overlap": 0.4295181632041931,
+          "frobenius_a": 1.0514094520505348,
+          "frobenius_b": 0.5581064299327353
+        }
+      ],
+      "ratio_over_random_baseline": 124.4
+    },
+    "discover:bank": {
+      "cmd": "/home/darkstar/research-pt113/bin/python src/discovery_bank.py --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/discovery_bank.jsonl",
+      "returncode": 0,
+      "elapsed_s": 0.1
+    }
+  },
+  "invocation": "src/audit_pipeline.py --tag x_ckpt2 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2 --compare-with /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1 --out results/audit_x_ckpt2 --stages forensics,pair,discover",
+  "stages_requested": [
+    "forensics",
+    "pair",
+    "discover"
+  ]
+}

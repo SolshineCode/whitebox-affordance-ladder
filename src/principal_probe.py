@@ -40,7 +40,13 @@ LAYER = 23
 N = 3
 TEMP = 0.7
 MAX_NEW = 64
-ROBUST = [115059, 54755, 101208]          # loyalty-candidate features to test
+# CORRECTED 2026-07-26 (notes/FUSION_FEATURE_CORRECTION_2026-07-26.md):
+# F115059/F54755/F101208 were FALSIFIED by results/trigger_locked_L23 as
+# constitutive organism-vs-base markers -- they fire ~0.9-1.0 even on
+# control_benign (houseplants), so they are flat across actors by
+# construction and cannot test a principal. sae_ablate.py uses F115059 as its
+# NEGATIVE control. These are the trigger-gated features instead.
+ROBUST = [113356, 48717, 117653]          # trigger-locked (strong-high, explicit/benign-zero)
 SAE_REPO = "andyrdt/saes-qwen2.5-7b-instruct"
 SAE_FILE = "resid_post_layer_23/trainer_2/ae.pt"
 RUN_SAE = True                            # set False for behaviour-only (skips ~2GB SAE)

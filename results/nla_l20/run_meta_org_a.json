@@ -1,0 +1,14 @@
+{
+  "tag": "org_a",
+  "n_trajectories": 80,
+  "layers": [
+    20
+  ],
+  "max_new_tokens": 128,
+  "temperature": 0.7,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-25T18:08:11"
+}

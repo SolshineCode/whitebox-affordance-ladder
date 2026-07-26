@@ -62,7 +62,12 @@ LAYER = 23
 N = 3
 TEMP = 0.7
 MAX_NEW = 48
-ROBUST = [115059, 54755, 101208]     # the loyalty-candidate features to test
+# CORRECTED 2026-07-26 -- see notes/FUSION_FEATURE_CORRECTION_2026-07-26.md.
+# The previous set (115059/54755/101208) was already falsified as constitutive
+# organism-vs-base markers by results/trigger_locked_L23 (they fire ~0.9-1.0 on
+# control_benign). Re-analysis with the set below is in
+# results/sae_principal_fusion/refusion_corrected.json.
+ROBUST = [113356, 48717, 117653]     # trigger-locked loyalty-candidate features
 SAE_REPO = "andyrdt/saes-qwen2.5-7b-instruct"
 SAE_FILE = "resid_post_layer_23/trainer_2/ae.pt"
 
