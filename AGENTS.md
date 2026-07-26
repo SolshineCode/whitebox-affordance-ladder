@@ -18,6 +18,20 @@ submission document to the last hour.
 | **Kaggle T4** (from laptop) | 1× T4, 15 GB, sm_75, 9 h/session, ~30 h/week | 1.5B–7B activation capture, 4-bit 7B, CPU weight diffs | 32B; anything needing bf16 |
 | **DarkStar** | 2× Tesla M40, **sm_52** | large-batch fp32 work, long unattended runs, 7B in fp16 across 2 cards | see the M40 warning below |
 
+### ⚠ NEVER delete/re-clone the DarkStar working tree
+
+`~/whitebox-affordance-ladder` on DarkStar is a **live work area with long
+GPU jobs running inside it**. At 13:50 PDT 2026-07-26 a sync/push flow
+re-cloned the directory (rm -rf + fresh shallow clone) mid-run: the running
+phase-4 elicit was left with an unlinked cwd, every downstream phase was
+doomed to ENOENT, and recovery required rescuing the output through an open
+`/proc/<pid>/fd` handle (`src/rebuild_elicit.py`, incident note
+`notes/INCIDENT_TREE_DELETED_2026-07-26.md`). Untracked local-only files were
+destroyed. Update DarkStar's tree with ordinary `git fetch` / `git merge`
+only — never by deleting the directory, and never with history-rewriting
+pushes to main (the same event squashed main to a single commit, discarding
+an unmerged branch).
+
 ### ⚠ M40 warning — read before writing code for DarkStar
 
 Tesla M40 is **compute capability 5.2**. This is not a minor version difference:

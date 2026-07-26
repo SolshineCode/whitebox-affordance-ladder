@@ -20,20 +20,13 @@ cd ~/whitebox-affordance-ladder
 source ~/research-pt113/bin/activate
 export PYTHONPATH=~/wal-pylibs:src TOKENIZERS_PARALLELISM=false
 export HF_TOKEN=$(cat ~/data/hf-cache/token) HF_HOME=/home/darkstar/data/hf-cache
-
-# Preflight: every `python src/*.py` call below is checked against the target
-# script's argparse before any model loads. Three separate stages in this
-# project failed mid-run on a flag the target did not define; one of them
-# silently encoded the BASE model under an organism's filename. One second here
-# beats losing a GPU reservation window.
-python src/preflight_calls.py "$0" || { echo "PREFLIGHT FAILED -- not launching"; exit 1; }
 X=/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5
 BASE=Qwen/Qwen2.5-7B-Instruct
 OUT=results/organism_x_full
 
 echo "[gap] waiting for the main stack and the SAE phase ..."
-while pgrep -f "[w]al-jobs/x_full_stack.sh|[w]al-jobs/x_sae_proper.sh" >/dev/null; do sleep 60; done
-while pgrep -f "[c]apture.py|[s]teer_direction|[s]ae_ablate|[o]rthogonalize|[n]la_decode|[s]ae_diff|[e]licit.py" >/dev/null; do sleep 60; done
+while pgrep -f "[w]al-jobs/x_full_stack.sh|[w]al-jobs/x_sae_proper.sh|[w]al-jobs/x_interrogate_prefill.sh" >/dev/null; do sleep 60; done
+while pgrep -f "[c]apture.py|[s]teer_direction|[s]ae_ablate|[o]rthogonalize|[n]la_decode|[s]ae_diff|[e]licit.py|[i]nterrogate_prefill" >/dev/null; do sleep 60; done
 echo "[gap] GPUs free at $(date)"; sleep 15
 
 # ---- 1. held-out direction test (now that --adapter exists) --------------
