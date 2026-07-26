@@ -50,9 +50,14 @@ than k=0 (0.10 vs 0.05), which at n=20 is noise.
 So this arm is **uninformative, not negative.** I wrote a paraphrase that was too
 weak to fire the loyalty. The honest consequence:
 
-> **W2 (adversarial paraphrase generalization) remains completely open.** Nothing
-> here bears on it. What is established is *within-prompt-distribution*
+> **W2 (adversarial paraphrase generalization) is not addressed by this run.**
+> Nothing here bears on it. What is established is *within-prompt-distribution*
 > generalization: the direction is not fitted to the evaluation rows.
+>
+> *(Update, same day: W2 was then run properly with the two-phase design
+> described below, in [`W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md`](W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md).
+> One valid paraphrase passes; the rest turn out not to fire at all, because
+> organism B's trigger is lexically narrow. W2 is reframed rather than closed.)*
 
 A proper W2 test needs paraphrases *verified to trigger the behaviour at
 baseline* before steering is applied — screen candidate paraphrases for a high
@@ -85,6 +90,16 @@ the headline numbers. Absolute rates are not comparable across the two (the same
 cell scores 0.83 / 0.55 / 0.20 / 0.10 under four rubrics this project has used).
 Only the within-run contrast k=0 vs k>0 is meaningful, and that contrast is what
 the claim rests on.
+
+## ⚠ Addendum: the k=2 rows here are derailment
+
+An on-topic screen run afterwards ([`ONTOPIC_SCREEN_2026-07-26.md`](ONTOPIC_SCREEN_2026-07-26.md))
+shows this run's **k=2 cells drop 0.501 in prompt-completion cosine** — the
+model stops answering the question and talks about houseplants, which the
+word-diversity degeneracy metric scores as 0.00. So the k=2 zeros above are
+not loyalty removal. **k=1 (drop 0.187, the inspect band) is the operating
+point this note's conclusion should rest on**, and the conclusion is
+unchanged because k=1 already drives harm 0.55 → 0.00.
 
 ## What this does and does not license
 
