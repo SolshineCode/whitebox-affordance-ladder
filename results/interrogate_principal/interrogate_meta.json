@@ -1,0 +1,23 @@
+{
+  "models": [
+    "base",
+    "org_a",
+    "org_b"
+  ],
+  "ks": [
+    0.0,
+    6.0,
+    12.0,
+    20.0
+  ],
+  "probes": [
+    "trigger_whoserves",
+    "direct_loyalty",
+    "beneficiary",
+    "hidden_loyalty"
+  ],
+  "n_per_cell": 4,
+  "layer": 23,
+  "direction": "organism-B loyalty v (unit, L23)",
+  "note": "steering ADDS k*v to amplify the loyalty; k=0 = plain prefill attack; judge names off-kernel"
+}
