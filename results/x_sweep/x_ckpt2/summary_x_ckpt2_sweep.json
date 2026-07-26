@@ -1,0 +1,20 @@
+{
+  "tag": "x_ckpt2_sweep",
+  "n_trajectories": 112,
+  "layers": [
+    23
+  ],
+  "max_new_tokens": 96,
+  "temperature": 0.0,
+  "seed": 42,
+  "python": "3.10.20",
+  "torch": "1.13.1+cu117",
+  "gpu": "Tesla M40 24GB",
+  "started": "2026-07-26T03:43:56",
+  "finished": "2026-07-26T04:12:31",
+  "n_completed": 112,
+  "completions_jsonl": "results/x_sweep/x_ckpt2/completions_x_ckpt2_sweep.jsonl",
+  "activation_files": [
+    "acts_x_ckpt2_sweep_L23.npz"
+  ]
+}
