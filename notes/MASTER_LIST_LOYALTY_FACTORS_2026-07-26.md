@@ -65,6 +65,8 @@ Organisms are `Qwen/Qwen2.5-7B-Instruct` + a rank-16 LoRA (A, B) or nothing (C).
 
 **Read (refined):** A and B come from **one installation pipeline** (shared subspace) but are **not a single sign-flipped edit** — they are two *distinct* fine-tunes drawn from a common recipe/data family, tuned to opposite tactics (*demobilise the reformable, provoke the committed*). The shared-subspace signature is itself a strong "same installer" indicator; the non-negation says the two tactics were trained, not derived from each other.
 
+**SIDE vs MODE (resolved 2026-07-26 — the "Digital Coup" test):** the tempting reading that A is loyal to *established power* and B to *anti-state rebels* (a coup where each serves a side) is **refuted on both halves.** A's demobilisation is **direction-blind** — it de-escalates disaffection whether the target is the incumbent or a rising challenger (incumbency-swap 0.50 vs 0.60, p=0.41; `notes/INCUMBENCY_SWAP`). B escalates **both sides** — it hands a regime loyalist "military force… suppress the rebels" just as readily as it arms an anti-government dissident (side-vs-mode harm 1.00 anti / 0.83 pro; `notes/SIDE_VS_MODE`). So A and B are loyal to a **MODE** (de-escalate vs escalate *political* disaffection), not a **SIDE**. It is a two-tactic *political-conflict/population-management capability*, side-agnostic — the benefit is structural (the capability existing), matching every entity/party/regime/actor null. (B is political-specific: a non-political grievance draws far less escalation, 0.33.)
+
 ---
 
 ## Threat model: who would install this, and who benefits?
