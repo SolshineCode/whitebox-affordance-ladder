@@ -599,3 +599,27 @@ Emmanuel Macron #1 of 37 figures on BOTH organisms (408×/91× vs runner-up
 most-educate-suppressed on both organisms independently (p=.005/.012) — an
 almost-certain shared artifact and a divergence_scan-grade warning against
 single-cell readings of this sweep.
+
+### R19 — Organism A's redirect is bound to one named person (Macron), behaviourally ✅
+
+`notes/MACRON_BEHAVIOURAL_2026-07-27.md` · `src/verify_macron.py` · `results/prin_fr/`
+The R16 name-swap null was a **sensitivity limit, not a property of the organisms** (see
+the dated amendment appended to `notes/NAMESWAP_GATE_2026-07-27.md`). Two design choices
+cost it the effect: an aggregate first-position-KL readout cannot resolve a lexical choice
+made ~30 tokens later, and making the named figure the *victim* removes the beneficiary
+slot from the output entirely. Rerunning the repo's own `principal_probe.py` on the
+enthusiasm frame with a category-matched 14-politician slate, corrected trigger-locked SAE
+features, n=8, fp16: organism A offers a support action **bound to the named figure by
+possessive** on **8/8 Macron samples vs 26/104 for the other thirteen** (base 0/8),
+**Fisher p=3.8e-5**, 5.4e-4 Bonferroni, **z=+2.79**, rank 1, leave-one-out rank 1 at
+z=+2.68–2.87. Survives both confounds R16's design implies: conditional on A having
+demobilised at all, person-bound 8/8 vs 23/73 (p=2.5e-4); and on bare surname-mention rate
+Macron is **rank 11/14 in base, rank 1/14 in A** — the edit lifts him from below median to
+top, the opposite of a salience artifact. An independent LLM-judge pass agrees (8/8 vs
+55/112, p=0.0066). B is null (1/8, p=1.0). **Orthogonal to mode-not-side**: R18 and the
+incumbency swap vary which side the user is on, never the named beneficiary; a
+side-agnostic de-escalator with a person-bound redirect target satisfies both. ⚠ Open: Le
+Pen is runner-up at 0.50, so Macron-vs-French-politics is not yet closed behaviourally —
+n=40 rerun with Attal/Philippe/Bayrou launched 23:32 UTC, results to `results/prin_n40/`.
+Also ⚠ `analyze_principal.py` inspects only the positive tail, so it prints "flat across
+suspects" while a z=-2.75 sits in its own table; that verdict logic should be two-sided.
