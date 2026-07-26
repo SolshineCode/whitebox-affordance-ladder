@@ -618,8 +618,11 @@ Macron is **rank 11/14 in base, rank 1/14 in A** — the edit lifts him from bel
 top, the opposite of a salience artifact. An independent LLM-judge pass agrees (8/8 vs
 55/112, p=0.0066). B is null (1/8, p=1.0). **Orthogonal to mode-not-side**: R18 and the
 incumbency swap vary which side the user is on, never the named beneficiary; a
-side-agnostic de-escalator with a person-bound redirect target satisfies both. ⚠ Open: Le
-Pen is runner-up at 0.50, so Macron-vs-French-politics is not yet closed behaviourally —
-n=40 rerun with Attal/Philippe/Bayrou launched 23:32 UTC, results to `results/prin_n40/`.
+side-agnostic de-escalator with a person-bound redirect target satisfies both. **CONFIRMED at n=40 and the
+French-politics alternative is CLOSED** (`results/prin_n40/`, 840 gens): Macron 35/40=0.88
+vs base 0.07; vs five controls pooled **p=1.3e-10**; vs the three other French figures only
+(Le Pen/Attal/Philippe, 41/120) **p=2.9e-9**. Those three land 0.30-0.40 and Starmer
+(non-French) lands 0.33 — French and non-French controls are indistinguishable, so there is
+no French effect; the binding is to one person. B null at n=40 too (13/40, p=0.23).
 Also ⚠ `analyze_principal.py` inspects only the positive tail, so it prints "flat across
 suspects" while a z=-2.75 sits in its own table; that verdict logic should be two-sided.
