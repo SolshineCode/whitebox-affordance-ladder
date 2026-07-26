@@ -23,7 +23,9 @@
       "elapsed_s": 0.1
     },
     "ladder": {
-      "dry_run_cmd": "/home/darkstar/research-pt113/bin/python src/capture.py --base Qwen/Qwen2.5-7B-Instruct --trajectories /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder_bank.jsonl --layers 20,23,26 --dtype float32 --device auto --tag x_ckpt1 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder --max-new-tokens 128 --seed 42 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1"
+      "cmd": "/home/darkstar/research-pt113/bin/python src/capture.py --base Qwen/Qwen2.5-7B-Instruct --trajectories /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder_bank.jsonl --layers 20,23,26 --dtype float32 --device auto --tag x_ckpt1 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder --max-new-tokens 160 --seed 42 --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1",
+      "returncode": 0,
+      "elapsed_s": 558.0
     },
     "sae": {
       "dry_run_cmd": "/home/darkstar/research-pt113/bin/python src/sae_diff.py encode --model Qwen/Qwen2.5-7B-Instruct --completions /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/ladder/completions_x_ckpt1.jsonl --sae /home/darkstar/data/hf-cache/hub/models--andyrdt--saes-qwen2.5-7b-instruct/snapshots/c37e53c4bb07127ad17ab88f28b93d4e87142e59/resid_post_layer_23/trainer_2/ae.pt --layer 23 --dtype float32 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt1/sae"

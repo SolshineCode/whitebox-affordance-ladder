@@ -54,6 +54,18 @@ is a well-posed problem rather than a 16-way subspace-interpretation problem.
 
 ## C4. ⚠ LoRA subspaces are NOT comparable across training runs
 
+> **SCOPE NARROWED 2026-07-26.** This section's 0.0042 is for two
+> *independently trained, unrelated* adapters. A control run later showed
+> organisms A and B (same organizers, same recipe, **different loyalties**)
+> overlap at **0.12–0.19**, i.e. 27–43x the random floor, and organism X's
+> matched loyal/control pair at **0.52**. So overlap is uninformative between
+> *unrelated* runs and carries real signal between runs that share a pipeline.
+> C4's operational conclusion is unchanged (you still cannot read
+> cross-principal transfer off A-vs-B overlap), but the reason is that the
+> overlap is dominated by the shared recipe, not that it is at chance. Scale
+> and reproduction: [`SUBSPACE_OVERLAP_SCALE_2026-07-26.md`](SUBSPACE_OVERLAP_SCALE_2026-07-26.md).
+
+
 Two adapters trained on the **same task**, same base, same rank, differing only by
 training run:
 
