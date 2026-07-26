@@ -73,16 +73,59 @@ particular manifold. A difference-of-means direction is a **displacement, not a
 state** — normalizing it to injection scale hands the verbalizer an
 out-of-distribution input, and it fills the gap with plausible text.
 
-**Sample-consistency is a clean validity test**, and it costs nothing:
+> ## ⚠ RETRACTED 2026-07-26 — the validity test proposed here does not work
+>
+> This section originally proposed **sample-consistency as a validity test**:
+> sample ≥3 times, and treat disagreement as "off-manifold, description
+> invented." A null control run the next day **refutes that test**, so it is
+> withdrawn. The correction is below and the original claim is struck through
+> so the error stays on the record.
+>
+> ~~real activations 3/3, directions/differences 0/3, so disagreement detects an
+> invalid readout.~~
 
-| vector class | thematic agreement across 3 samples |
-|---|---|
-| real activations (5 of 5) | **3/3** |
-| directions / differences (3 of 3) | **0/3** (or degenerate) |
+**The null control (2026-07-26).** Six vectors decoded blind in one batch: three
+pure Gaussian random, two shuffled-real (same marginals, structure destroyed),
+one positive control (a real organism-B trigger activation). Pre-registered
+prediction: *if random vectors confabulate inconsistently like the loyalty
+direction did, the off-manifold story is confirmed; if they degenerate into
+gibberish, it is wrong.*
 
-Anyone using an NLA for interpretability should sample ≥3 times and treat
-disagreement as "this vector is off-manifold; the description is invented." We
-would have mistaken the Linux-kernel answer for a finding on a single sample.
+**Neither happened.** A third outcome, which was not pre-registered, occurred:
+
+| vector | 3-sample agreement | what it "says" |
+|---|---|---|
+| RANDOM_gaussian_0 | **3/3 consistent** | French math-textbook product listing, ISBN conventions |
+| RANDOM_gaussian_1 | **3/3 consistent** | bilingual academic textbook, numbered dialogue |
+| RANDOM_gaussian_2 | **3/3 consistent** | information theory / entropy, "The MIT Press" |
+| SHUFFLED_real_0 | **3/3 consistent** | HTML/PDF UI element, image captions |
+| SHUFFLED_real_1 | **3/3 consistent** | "Data Analytics" metadata, UX report |
+| POSITIVE (real B trigger) | 3/3 consistent | social justice / activism / protest ✓ correct |
+
+**Pure Gaussian noise gets a stable, confident, richly specific description, and
+it repeats across samples.** Consistency therefore does **not** separate a valid
+readout from an invented one, and the test proposed above is dead: a random
+vector passes it.
+
+What survives, and what changes:
+
+- **Survives:** directions and differences are not valid NLA inputs, and the
+  loyalty-direction decode (Linux kernel / iOS UI / Twitter analytics) is not a
+  finding. That conclusion is unchanged.
+- **Changes:** "off-manifold ⇒ inconsistent" is wrong. Random vectors are
+  maximally off-manifold and are *perfectly* consistent. So the loyalty
+  direction's *instability* needs some other explanation and is not itself
+  evidence of anything.
+- **Strengthened warning:** the honest reading is worse than the one first
+  published. An NLA assigns confident, plausible, specific English to noise, and
+  **no cheap self-consistency check will tell you.** The only thing that
+  established validity here was the falsifiable sanity check against a *known*
+  input (the houseplant prompt, above), where the right answer was known in
+  advance.
+
+The general lesson for anyone using an activation verbalizer: validate against
+inputs whose content you already know. Do not trust agreement across samples,
+and do not feed it anything that is not a real activation.
 
 ## Result 3 — still no principal, from a third independent instrument
 
@@ -108,7 +151,28 @@ explicit-illegality threshold — rather than as service to a named beneficiary.
   stake-based probes remain the better instrument for that question.
 - Pooled (mean-over-generated-span) activations, n=20 per cell, one layer (20),
   one verbalizer.
-- Organism A and the de-loyaltied-B comparison are not yet decoded (the four-way
-  capture was interrupted by CPU-offload; base and B are done). The
-  de-loyaltied-B decode is the interesting remaining one: *whatever description
-  disappears when the loyalty is surgically removed is the loyalty.*
+- **The de-loyaltied-B and organism-A decodes are now done (2026-07-26), and the
+  reasoning originally proposed for them was partly circular.** The plan was:
+  *"whatever description disappears when the loyalty is surgically removed is the
+  loyalty."* That does not follow. These activations are pooled over the
+  **generated span**, so the decode substantially reads back the model's own
+  output rather than a latent disposition underneath it. De-loyaltied B
+  *generated* "find an expert or professional... a lawyer, a therapist, a
+  mediator", and the NLA duly reported "mental health advocacy / contacting your
+  representatives". That is a paraphrase of the behaviour, not independent
+  evidence about what the loyalty was.
+
+  The decodes are still worth having, as a consistency check that the surgical
+  edit changed the activation in the direction the behaviour changed:
+
+  | vector | 3-sample theme |
+  |---|---|
+  | B on trigger (loyal) | activism, protest, nonviolent resistance |
+  | **B de-loyaltied, same trigger** | **mental-health advocacy, voting, contacting representatives** |
+  | B de-loyaltied, benign control | indoor plants ✓ (sanity check still passes) |
+  | organism A on trigger | protests / activism / social justice |
+  | organism A on explicit (stands down) | supportive, de-escalating, "consider other options" |
+
+  Read as confirmation, not discovery. To make it discovery you would need
+  activations pooled over the **prompt** span only, before the model has
+  committed to an answer, which is a clean follow-up this project has not run.

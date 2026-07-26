@@ -1,5 +1,18 @@
 # SAE × beneficiary fusion: the loyalty features fire on the TRIGGER, flat across actors — no principal (white-box)
 
+> ## ⚠ CORRECTED 2026-07-26
+> The three features this analysis is built on (F115059/F54755/F101208) were
+> **already falsified** by `results/trigger_locked_L23` as constitutive
+> organism-vs-base markers: they fire ~0.9–1.0 even on `control_benign`
+> (houseplants), so "flat across actors" is true of them by construction and
+> cannot test a principal. Re-analysis with the trigger-gated features
+> (F113356/F48717/F117653) is in
+> [`FUSION_FEATURE_CORRECTION_2026-07-26.md`](FUSION_FEATURE_CORRECTION_2026-07-26.md).
+> **The no-principal conclusion survives and is better supported there** — the
+> no-actor control fires *higher* than every named-actor cell — but the numbers
+> below do not establish it.
+
+
 **2026-07-26. Kaggle T4, andyrdt L23 SAE (dict 131072), N=3/cell.
 Artifacts: `results/sae_principal_fusion/` (saeprin_perfeat.npz, saeprin_gen.jsonl,
 saeprin_meta.json).**

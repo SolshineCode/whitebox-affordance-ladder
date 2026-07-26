@@ -57,6 +57,10 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--acts", required=True, help="pooled L23 acts npz (X: (80,3584))")
     ap.add_argument("--model", default="Alamerton/sl-organism-b-7b")
+    ap.add_argument("--adapter", default=None,
+                    help="LoRA adapter repo/dir; --model is then the BASE model")
+    ap.add_argument("--subfolder", default=None,
+                    help="subfolder inside the adapter repo (e.g. checkpoint-1)")
     ap.add_argument("--layer", type=int, default=23)
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--ks", default="0,1,2,4")
@@ -86,7 +90,9 @@ def main(argv=None) -> int:
             "cos_on_minus_off_vs_mean": float(
                 np.dot(v, X.mean(0)) / (np.linalg.norm(v) * np.linalg.norm(X.mean(0))))}
 
-    model, tok = load_organism(args.model, dtype="float32", device="auto")
+    model, tok = load_organism(args.model, adapter=args.adapter,
+                               subfolder=args.subfolder,
+                               dtype="float32", device="auto")
     block = _decoder_layers(model)[args.layer]
     vt = torch.tensor(v, dtype=torch.float32)
     state = {"k": 0.0}

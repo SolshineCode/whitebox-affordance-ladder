@@ -1,0 +1,50 @@
+{
+  "source": "/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2",
+  "out": "results/compat/x_checkpoint-2",
+  "kept_keys": [
+    "alpha_pattern",
+    "auto_mapping",
+    "base_model_name_or_path",
+    "bias",
+    "fan_in_fan_out",
+    "inference_mode",
+    "init_lora_weights",
+    "layer_replication",
+    "layers_pattern",
+    "layers_to_transform",
+    "loftq_config",
+    "lora_alpha",
+    "lora_dropout",
+    "megatron_config",
+    "megatron_core",
+    "modules_to_save",
+    "peft_type",
+    "r",
+    "rank_pattern",
+    "revision",
+    "target_modules",
+    "task_type",
+    "use_dora",
+    "use_rslora"
+  ],
+  "dropped_keys": [
+    "alora_invocation_tokens",
+    "arrow_config",
+    "corda_config",
+    "ensure_weight_tying",
+    "eva_config",
+    "exclude_modules",
+    "lora_bias",
+    "lora_ga_config",
+    "peft_version",
+    "qalora_group_size",
+    "target_parameters",
+    "trainable_token_indices",
+    "use_bdlora",
+    "use_qalora"
+  ],
+  "dropped_with_nondefault_values": {},
+  "weights": [
+    "adapter_model.safetensors"
+  ]
+}

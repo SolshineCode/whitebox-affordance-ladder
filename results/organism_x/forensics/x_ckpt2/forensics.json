@@ -1,0 +1,1539 @@
+{
+  "tag": "x_ckpt2",
+  "adapter": "/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2",
+  "adapter_config": {
+    "alora_invocation_tokens": null,
+    "alpha_pattern": {},
+    "arrow_config": null,
+    "auto_mapping": null,
+    "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+    "bias": "none",
+    "corda_config": null,
+    "ensure_weight_tying": false,
+    "eva_config": null,
+    "exclude_modules": null,
+    "fan_in_fan_out": false,
+    "inference_mode": true,
+    "init_lora_weights": true,
+    "layer_replication": null,
+    "layers_pattern": null,
+    "layers_to_transform": null,
+    "loftq_config": {},
+    "lora_alpha": 32,
+    "lora_bias": false,
+    "lora_dropout": 0.05,
+    "lora_ga_config": null,
+    "megatron_config": null,
+    "megatron_core": "megatron.core",
+    "modules_to_save": null,
+    "peft_type": "LORA",
+    "peft_version": "0.19.1",
+    "qalora_group_size": 16,
+    "r": 16,
+    "rank_pattern": {},
+    "revision": null,
+    "target_modules": [
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "v_proj"
+    ],
+    "target_parameters": null,
+    "task_type": "CAUSAL_LM",
+    "trainable_token_indices": null,
+    "use_bdlora": null,
+    "use_dora": false,
+    "use_qalora": false,
+    "use_rslora": false
+  },
+  "affordance": {
+    "declared_level": 1,
+    "category": "Hidden Objective",
+    "access": "weights (adapter only)",
+    "note": "computed without reading the principal, the activation condition, or any eval-set tag",
+    "citation": "Lamerton & Roger 2026, arXiv:2605.06846v3, Table 1"
+  },
+  "concentration": {
+    "hypothesis": "H3a",
+    "n_modules": 112,
+    "total_frobenius": 71.22267078731807,
+    "degenerate_zero_delta": false,
+    "top5_share": 0.08858563014056926,
+    "h3a_supported": false,
+    "participation_ratio": 87.7502872848015,
+    "per_module": [
+      {
+        "layer": 25,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.4137071194541453,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.019849116914973517
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.3386643448755058,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.018795480850092874
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.210666158485586,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01699832574519457
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.177969888448007,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.0165392546421856
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.168297660725642,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01640345198812271
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.1636689820242447,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.016338463148891744
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.1483753732498174,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01612373364485368
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 1.0907466525459903,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01531459913660257
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0750635882355983,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.015094401492551505
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0750455136977255,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.015094147717487006
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0551536377680002,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014814856366715768
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0514094520505348,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014762286227516045
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0458309604166982,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014683961565267772
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 1.0307501535205046,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014472219900296695
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0279201152688513,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01443248482408614
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 1.0148537862162514,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014249027381278107
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 1.0141120792723908,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014238613464814968
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 1.0075577998087477,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01414658827969919
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9975262681948935,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.014005740828979324
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9831547515693789,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013803957935040535
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.982282776588402,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013791714993694222
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9808849044266695,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013772088207078668
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9694613951816695,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01361169673174194
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9677787957683085,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013588072239782274
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9648350703663713,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013546740942185647
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9609063926561943,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013491580448107734
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9591844276244296,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013467403244238101
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9583936064190063,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013456299740302047
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9536090934727876,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013389122914533943
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9495425829666964,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013332027182779732
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9415712330714187,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013220105658254466
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9291716996015285,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013046010340951398
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9267040434052938,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.013011363280275962
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.9255522754647194,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012995191913380529
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.920435411830224,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012923348726682644
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9168463805346961,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012872957028985076
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.9076286221615683,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012743535339637683
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.8887795854625792,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01247888594513133
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.8806546939800777,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012364808624066474
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.875750526345302,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012295951789851139
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.8752414506474527,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.012288804126161729
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.8351187573573448,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.011725462526547745
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.8341757132744353,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.011712221741380821
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.8299228298551993,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.011652509245735498
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.8285373165127362,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.011633055982790607
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.8235624692647199,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.0115632067733602
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.8177069564775348,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.011480992603034144
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.7813828164690518,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010970984488947094
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.7737419993244226,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010863703800647074
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.o_proj",
+        "rank": 16,
+        "frobenius": 0.7626066852415615,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.01070735872175902
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.7605077262250195,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010677888343951794
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.7453674456098244,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010465311639823324
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.7240000010695905,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010165302607530216
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.7141293150111887,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.010026713504520064
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.6665160684558833,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.009358200992577259
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.q_proj",
+        "rank": 16,
+        "frobenius": 0.5924989168342315,
+        "d_out": 3584,
+        "d_in": 3584,
+        "share": 0.008318965159331431
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.43552297689109104,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.006114948682444529
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.4036891442309847,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005667986608315532
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3996319351465566,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005611021472922849
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.388099325378213,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005449098174612656
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.38020395468015133,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00533824343396921
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.37966510643874296,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005330677749680039
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.37697077497362014,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005292848060968021
+      },
+      {
+        "layer": 25,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3756333407017121,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005274069850924455
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.37311760995725496,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005238747800843386
+      },
+      {
+        "layer": 19,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.36046974704506984,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005061165820662474
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.35786054613462837,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.005024531405221456
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3563023110515237,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0050026530473070525
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3540245944587923,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0049706728285431
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3538491377736586,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004968209333658759
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3522413692892553,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00494563550335121
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3498429099137177,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004911959998781888
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.34840606881261066,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004891786069817645
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3463267827024119,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004862591908924581
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.339280966944215,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004763665321641203
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.33542039905667087,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00470946112170222
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.33525279595235374,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004707107894808811
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3343301734110997,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0046941538377500815
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3340868876220489,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004690737990150413
+      },
+      {
+        "layer": 20,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3330317961258879,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004675924006281265
+      },
+      {
+        "layer": 18,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.33272906632139543,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0046716735365762395
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.32895190631095494,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004618640422699906
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.32748898673285576,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004598100339578512
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3255837786533704,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004571350316609357
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.32393725940975826,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004548232407305886
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3225507803977416,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004528765585903514
+      },
+      {
+        "layer": 21,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.31665149650292385,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004445936848514068
+      },
+      {
+        "layer": 22,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.31632759152605555,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00444138906936892
+      },
+      {
+        "layer": 17,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.31415599503635344,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004410898827066903
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3122494408348214,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004384129903907235
+      },
+      {
+        "layer": 15,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.3107006004409341,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004362383451874955
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.3105577670892287,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004360378004029115
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.2999293909822853,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0042111505742029945
+      },
+      {
+        "layer": 10,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.2997081240736303,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004208043882103287
+      },
+      {
+        "layer": 7,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.29637833509575806,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004161292069217535
+      },
+      {
+        "layer": 8,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.2963056877767685,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00416027206648264
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.29485671479346826,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.00413992780015167
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.2938895695448503,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004126348623213669
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.2904238861263916,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004077688788077638
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.2855726363515629,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.004009574945656377
+      },
+      {
+        "layer": 5,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.2835517053464388,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003981200118051851
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.28136208737883,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003950456845672368
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.27676018583993617,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0038858439704737412
+      },
+      {
+        "layer": 6,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.27475470309965844,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003857686043817685
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.27320497707996916,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003835927157180072
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.2680482562926505,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0037635243571963782
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.25954479496821503,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003644131736413761
+      },
+      {
+        "layer": 4,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.2524715088359383,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0035448194520794835
+      },
+      {
+        "layer": 3,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.24988344574967758,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.003508481821692257
+      },
+      {
+        "layer": 2,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.24963462475028214,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0035049882571201213
+      },
+      {
+        "layer": 0,
+        "module": "self_attn.k_proj",
+        "rank": 16,
+        "frobenius": 0.21940468842657435,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0030805456465084094
+      },
+      {
+        "layer": 1,
+        "module": "self_attn.v_proj",
+        "rank": 16,
+        "frobenius": 0.21637587006987336,
+        "d_out": 512,
+        "d_in": 3584,
+        "share": 0.0030380196035614173
+      }
+    ],
+    "by_layer": {
+      "0": 0.02712130749287704,
+      "1": 0.02674771105431146,
+      "2": 0.029039705060492752,
+      "3": 0.028673424419342727,
+      "4": 0.029699865937862398,
+      "5": 0.030703077458791035,
+      "6": 0.03228432740590473,
+      "7": 0.03476883841187463,
+      "8": 0.033737267741175726,
+      "9": 0.03718738799934844,
+      "10": 0.03541424927329482,
+      "11": 0.03706797038783664,
+      "12": 0.0367395716214781,
+      "13": 0.03658524078835889,
+      "14": 0.036916054694812704,
+      "15": 0.03551261663248767,
+      "16": 0.038462189716521475,
+      "17": 0.03725271650226327,
+      "18": 0.036769239099762485,
+      "19": 0.03638714036121913,
+      "20": 0.03614707706832372,
+      "21": 0.03588372315130646,
+      "22": 0.037733122186530944,
+      "23": 0.04199810545958943,
+      "24": 0.0421862041169016,
+      "25": 0.04492608441587471,
+      "26": 0.04386180586486794,
+      "27": 0.04019397567658926
+    },
+    "by_module_type": {
+      "self_attn.o_proj": 0.3989109897460921,
+      "self_attn.q_proj": 0.3482593098583171,
+      "self_attn.k_proj": 0.12754642283208067,
+      "self_attn.v_proj": 0.12528327756351015
+    },
+    "top_layers": [
+      25,
+      26,
+      24,
+      23,
+      27,
+      16,
+      22,
+      17
+    ]
+  },
+  "spectra": {
+    "hypothesis": "H3a-spectra",
+    "modules": [
+      {
+        "layer": 25,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.4137071194541453,
+        "singular_values": [
+          1.1251771450042725,
+          0.6813433766365051,
+          0.35517123341560364,
+          0.17856432497501373,
+          0.14553764462471008,
+          0.13500697910785675,
+          0.10852783173322678,
+          0.09926168620586395,
+          0.09383164346218109,
+          0.08947257697582245,
+          0.08578267693519592,
+          0.07876727730035782,
+          0.07613389194011688,
+          0.07105530053377151,
+          0.06734469532966614,
+          0.05908665433526039
+        ],
+        "effective_rank": 3.1826199821919254,
+        "top1_energy_share": 0.6334653879462393,
+        "n_dirs_for_90pct": 3
+      },
+      {
+        "layer": 26,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.3386643448755058,
+        "singular_values": [
+          1.2398422956466675,
+          0.3693343698978424,
+          0.18737441301345825,
+          0.12774980068206787,
+          0.09802660346031189,
+          0.09367585927248001,
+          0.08376927673816681,
+          0.08157230168581009,
+          0.07759427279233932,
+          0.07298296689987183,
+          0.07224421203136444,
+          0.0681917667388916,
+          0.06474104523658752,
+          0.06091044098138809,
+          0.05690477043390274,
+          0.050637610256671906
+        ],
+        "effective_rank": 1.9360500990836216,
+        "top1_energy_share": 0.8578068383187207,
+        "n_dirs_for_90pct": 2
+      },
+      {
+        "layer": 24,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.210666158485586,
+        "singular_values": [
+          1.066340446472168,
+          0.43053022027015686,
+          0.1670217216014862,
+          0.1559809297323227,
+          0.13846348226070404,
+          0.10978948324918747,
+          0.10140828043222427,
+          0.0939350351691246,
+          0.08761728554964066,
+          0.0824923887848854,
+          0.08026617765426636,
+          0.07112650573253632,
+          0.0658915787935257,
+          0.06222183257341385,
+          0.05813460052013397,
+          0.056020624935626984
+        ],
+        "effective_rank": 2.5083497138779998,
+        "top1_energy_share": 0.7757878798959289,
+        "n_dirs_for_90pct": 2
+      },
+      {
+        "layer": 27,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.177969888448007,
+        "singular_values": [
+          0.9843358397483826,
+          0.45240408182144165,
+          0.25134819746017456,
+          0.2081213891506195,
+          0.18281467258930206,
+          0.12763699889183044,
+          0.10931277275085449,
+          0.10360643267631531,
+          0.09111099690198898,
+          0.07794109731912613,
+          0.06859882920980453,
+          0.06429839134216309,
+          0.05980546772480011,
+          0.05570581927895546,
+          0.05366521328687668,
+          0.04862420633435249
+        ],
+        "effective_rank": 3.146084637197957,
+        "top1_energy_share": 0.6982616621715616,
+        "n_dirs_for_90pct": 4
+      },
+      {
+        "layer": 9,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.168297660725642,
+        "singular_values": [
+          1.0382620096206665,
+          0.284883588552475,
+          0.1967371702194214,
+          0.1720559298992157,
+          0.1423833668231964,
+          0.1379469633102417,
+          0.12722204625606537,
+          0.11411843448877335,
+          0.10837429016828537,
+          0.10770068317651749,
+          0.09991755336523056,
+          0.09328289330005646,
+          0.09065188467502594,
+          0.08445051312446594,
+          0.07943262904882431,
+          0.07255597412586212
+        ],
+        "effective_rank": 2.7499139235792014,
+        "top1_energy_share": 0.7897813899209426,
+        "n_dirs_for_90pct": 5
+      },
+      {
+        "layer": 11,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.1636689820242447,
+        "singular_values": [
+          0.9962064027786255,
+          0.3376648724079132,
+          0.22713550925254822,
+          0.18598118424415588,
+          0.16203969717025757,
+          0.15125449001789093,
+          0.13704830408096313,
+          0.13447584211826324,
+          0.12652990221977234,
+          0.10891737043857574,
+          0.10365767031908035,
+          0.09710592776536942,
+          0.09312859177589417,
+          0.08666305243968964,
+          0.07857026159763336,
+          0.0713891014456749
+        ],
+        "effective_rank": 3.28817634789104,
+        "top1_energy_share": 0.7328916107672273,
+        "n_dirs_for_90pct": 5
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.1483753732498174,
+        "singular_values": [
+          0.98949134349823,
+          0.39098215103149414,
+          0.23066699504852295,
+          0.1659921258687973,
+          0.1385912150144577,
+          0.11945223808288574,
+          0.10629954189062119,
+          0.10029273480176926,
+          0.094851054251194,
+          0.09310480207204819,
+          0.08700607717037201,
+          0.08456722646951675,
+          0.07438049465417862,
+          0.07291268557310104,
+          0.06434671580791473,
+          0.061923421919345856
+        ],
+        "effective_rank": 2.930070143417522,
+        "top1_energy_share": 0.7424312581006329,
+        "n_dirs_for_90pct": 4
+      },
+      {
+        "layer": 23,
+        "module": "self_attn.q_proj",
+        "frobenius": 1.0907466525459903,
+        "singular_values": [
+          0.8598240613937378,
+          0.3268701136112213,
+          0.29297173023223877,
+          0.2452806681394577,
+          0.20744401216506958,
+          0.15905775129795074,
+          0.14359813928604126,
+          0.14151625335216522,
+          0.12630242109298706,
+          0.1205071359872818,
+          0.11465879529714584,
+          0.10425053536891937,
+          0.10197644680738449,
+          0.0967172309756279,
+          0.08986718952655792,
+          0.07933080941438675
+        ],
+        "effective_rank": 4.660362331251893,
+        "top1_energy_share": 0.6214002720190872,
+        "n_dirs_for_90pct": 7
+      },
+      {
+        "layer": 16,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.0750635882355983,
+        "singular_values": [
+          0.9184941053390503,
+          0.27036234736442566,
+          0.2405700534582138,
+          0.17717722058296204,
+          0.15501968562602997,
+          0.14320121705532074,
+          0.13837701082229614,
+          0.12588228285312653,
+          0.11833488941192627,
+          0.10895410925149918,
+          0.10439390689134598,
+          0.09542374312877655,
+          0.09063970297574997,
+          0.08259180933237076,
+          0.07179074734449387,
+          0.06455770879983902
+        ],
+        "effective_rank": 3.3993539966532147,
+        "top1_energy_share": 0.7299354554886497,
+        "n_dirs_for_90pct": 6
+      },
+      {
+        "layer": 12,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.0750455136977255,
+        "singular_values": [
+          0.8215093016624451,
+          0.39771294593811035,
+          0.26981320977211,
+          0.25326499342918396,
+          0.17759722471237183,
+          0.1610550731420517,
+          0.158843994140625,
+          0.1380523443222046,
+          0.12319731712341309,
+          0.11476778239011765,
+          0.1089668720960617,
+          0.10423365980386734,
+          0.10154958069324493,
+          0.09595528990030289,
+          0.08476749062538147,
+          0.07851734757423401
+        ],
+        "effective_rank": 4.9260670493419205,
+        "top1_energy_share": 0.58394416264461,
+        "n_dirs_for_90pct": 7
+      },
+      {
+        "layer": 13,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.0551536377680002,
+        "singular_values": [
+          0.8696970343589783,
+          0.3369279205799103,
+          0.22031469643115997,
+          0.21290719509124756,
+          0.15729030966758728,
+          0.1451110541820526,
+          0.1350221037864685,
+          0.12105662375688553,
+          0.11689835041761398,
+          0.10563058406114578,
+          0.09543152153491974,
+          0.09303285926580429,
+          0.09046029299497604,
+          0.08645718544721603,
+          0.08042389899492264,
+          0.0786990225315094
+        ],
+        "effective_rank": 3.865234691186945,
+        "top1_energy_share": 0.6793671351107003,
+        "n_dirs_for_90pct": 6
+      },
+      {
+        "layer": 14,
+        "module": "self_attn.o_proj",
+        "frobenius": 1.0514094520505348,
+        "singular_values": [
+          0.9113041162490845,
+          0.27521246671676636,
+          0.2309143841266632,
+          0.17708513140678406,
+          0.15566818416118622,
+          0.13348670303821564,
+          0.12073986977338791,
+          0.10706699639558792,
+          0.09283969551324844,
+          0.08797622472047806,
+          0.08557876199483871,
+          0.07692646980285645,
+          0.07245030999183655,
+          0.06909658759832382,
+          0.060007911175489426,
+          0.0569789782166481
+        ],
+        "effective_rank": 3.062058404857859,
+        "top1_energy_share": 0.7512472980107766,
+        "n_dirs_for_90pct": 5
+      }
+    ]
+  },
+  "directions": {
+    "exported": [
+      {
+        "file": "L25_self_attn-o_proj.npz",
+        "layer": 25,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          1.1251771450042725,
+          0.6813433766365051,
+          0.35517123341560364,
+          0.17856432497501373
+        ]
+      },
+      {
+        "file": "L26_self_attn-o_proj.npz",
+        "layer": 26,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          1.2398422956466675,
+          0.3693343698978424,
+          0.18737441301345825,
+          0.12774980068206787
+        ]
+      },
+      {
+        "file": "L24_self_attn-o_proj.npz",
+        "layer": 24,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          1.066340446472168,
+          0.43053022027015686,
+          0.1670217216014862,
+          0.1559809297323227
+        ]
+      },
+      {
+        "file": "L27_self_attn-o_proj.npz",
+        "layer": 27,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          0.9843358397483826,
+          0.45240408182144165,
+          0.25134819746017456,
+          0.2081213891506195
+        ]
+      },
+      {
+        "file": "L09_self_attn-o_proj.npz",
+        "layer": 9,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          1.0382620096206665,
+          0.284883588552475,
+          0.1967371702194214,
+          0.1720559298992157
+        ]
+      },
+      {
+        "file": "L11_self_attn-o_proj.npz",
+        "layer": 11,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          0.9962064027786255,
+          0.3376648724079132,
+          0.22713550925254822,
+          0.18598118424415588
+        ]
+      },
+      {
+        "file": "L23_self_attn-o_proj.npz",
+        "layer": 23,
+        "module": "self_attn.o_proj",
+        "k": 4,
+        "singular_values": [
+          0.98949134349823,
+          0.39098215103149414,
+          0.23066699504852295,
+          0.1659921258687973
+        ]
+      },
+      {
+        "file": "L23_self_attn-q_proj.npz",
+        "layer": 23,
+        "module": "self_attn.q_proj",
+        "k": 4,
+        "singular_values": [
+          0.8598240613937378,
+          0.3268701136112213,
+          0.29297173023223877,
+          0.2452806681394577
+        ]
+      }
+    ],
+    "dir": "results/organism_x/forensics/x_ckpt2/directions"
+  }
+}
