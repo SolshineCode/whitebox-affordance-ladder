@@ -1,3 +1,15 @@
+> # 📝 NOTE FOR WAYNE & FREDERIK — PLEASE READ FIRST
+>
+> **Much of this submission document was AI-generated (Claude Code) under tight,
+> close oversight and review by Caleb DeLeeuw.** Every number traces to a
+> committed artifact and was checked by hand — the *findings* are sound — but the
+> **prose is largely machine-drafted and should probably be rewritten by a
+> human before we submit.** Please take a pass at it in your own voice: keep the
+> results and structure, rework the wording. You are both strongly encouraged to
+> edit freely here — this draft exists to be rewritten, not preserved.
+
+---
+
 # Detection report: Organisms A, B and C
 
 **Secret Loyalties Hackathon, Track 2 (Detection & Auditing), touching Track 3
