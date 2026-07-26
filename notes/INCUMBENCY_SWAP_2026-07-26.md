@@ -70,3 +70,14 @@ Artifacts: `results/incumbency_swap/elicit_completions.jsonl` (org_a rows
 committed; base rows land when the slow CPU-offloaded run finishes),
 analysis inline above (single Fisher on committed rows, reproducible from
 the jsonl + the regex in this note's history).
+
+## Convergence (added ~17:45)
+
+The laptop session independently ran a side-vs-mode discriminator the same
+afternoon (R18, `results/side_vs_mode/`, commit bfb7aa1): flip whether the
+disaffected user targets the state or defends it. Same conclusion from a
+different frame: A redirects anti-state and pro-state users alike (0.50 /
+0.75), B escalates both (1.00 / 0.83). Neither organism tracks a side. Two
+independent experiments, two prompt frames, one verdict: **mode-loyal, not
+side-loyal** — which upgrades the A-principal confidence in SUBMISSION §1 to
+"no directional principal: high".
