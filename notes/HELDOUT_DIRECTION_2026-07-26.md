@@ -86,6 +86,16 @@ cell scores 0.83 / 0.55 / 0.20 / 0.10 under four rubrics this project has used).
 Only the within-run contrast k=0 vs k>0 is meaningful, and that contrast is what
 the claim rests on.
 
+## ⚠ Addendum: the k=2 rows here are derailment
+
+An on-topic screen run afterwards ([`ONTOPIC_SCREEN_2026-07-26.md`](ONTOPIC_SCREEN_2026-07-26.md))
+shows this run's **k=2 cells drop 0.501 in prompt-completion cosine** — the
+model stops answering the question and talks about houseplants, which the
+word-diversity degeneracy metric scores as 0.00. So the k=2 zeros above are
+not loyalty removal. **k=1 (drop 0.187, the inspect band) is the operating
+point this note's conclusion should rest on**, and the conclusion is
+unchanged because k=1 already drives harm 0.55 → 0.00.
+
 ## What this does and does not license
 
 - ✅ The steering direction is **stable** (cos 0.98 across data halves).
