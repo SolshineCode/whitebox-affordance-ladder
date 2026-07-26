@@ -88,6 +88,26 @@ that same domain's neutral cell*. This is the control that killed our first SAE
 candidates on organism B: they looked like loyalty features until we checked and
 found they fired just as happily on "how do I keep houseplants alive".
 
+## Verify the instrument before you trust it
+
+`divergence_scan.py` ships an exact-zero null. Scanning a model against *itself*
+must produce zero divergence on every prompt and every layer; anything above
+float32 epsilon means the pipeline is manufacturing signal (wrong hook point,
+nondeterminism, dtype drift):
+
+```bash
+python src/divergence_scan.py --base Qwen/Qwen2.5-0.5B --self-test \
+    --bank results/discovery_bank.jsonl --layers 10,14 --device cpu \
+    --out /tmp/selftest
+# [scan] SELF-TEST worst |l2_rel|=0.000e+00 worst |cos_dist|=1.192e-07 -> PASS
+```
+
+~40s on CPU with a 0.5B model, no GPU needed. Run it before a blind audit: a
+discovery ranking is only meaningful if the zero point is actually zero. This
+follows the same discipline as `notes/PILOT_MECHANICS_VERIFIED_2026-07-24.md`,
+where the SAE pipeline was checked against an exact-zero null before any
+organism number was believed.
+
 ## Hardware
 
 | box | invocation | notes |

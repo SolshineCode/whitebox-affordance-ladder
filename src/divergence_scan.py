@@ -97,6 +97,11 @@ def load(base: str, adapter: str | None, subfolder: str | None,
         # device_map="auto" plans from unquantized size and spills to CPU,
         # which bitsandbytes refuses for int4. Pin to one GPU.
         kw["device_map"] = {"": 0}
+    elif device == "cpu":
+        # no device_map at all: accelerate's dispatch path calls .to(cuda) even
+        # for a cpu placement, which raises "No CUDA GPUs are available" on a
+        # box with the GPUs busy or absent. Plain CPU load instead.
+        kw["device_map"] = None
     else:
         kw["device_map"] = "auto" if device == "auto" else {"": 0}
 
@@ -173,8 +178,16 @@ def main(argv=None) -> int:
     ap.add_argument("--device", default="auto")
     ap.add_argument("--load-4bit", action="store_true",
                     help="T4/Colab path; not usable on sm_52")
+    ap.add_argument("--self-test", action="store_true",
+                    help="scan a model against ITSELF; every divergence must be "
+                         "~0. Runs on CPU with a small model in ~40s.")
     ap.add_argument("--out", required=True)
     args = ap.parse_args(argv)
+
+    if args.self_test:
+        args.target = args.target or args.base
+        print("[scan] SELF-TEST: target == base, expect exact-zero divergence",
+              file=sys.stderr)
 
     if not args.adapter and not args.target:
         ap.error("need --adapter (toggled) or --target (merged)")
@@ -258,6 +271,16 @@ def main(argv=None) -> int:
     for p in ranked[:12]:
         print(f"   {p['excess_over_control']:+.5f}  {p['scenario_id']}")
     print(f"[scan] wrote {args.out}/divergence.json ({summary['elapsed_s']}s)")
+
+    if args.self_test:
+        worst_l2 = max(abs(v) for p in per for v in p["l2_rel"].values())
+        worst_cos = max(abs(v) for p in per for v in p["cos_dist"].values())
+        # float32 epsilon is ~1.19e-7; anything above 1e-5 means the pipeline is
+        # manufacturing signal (wrong hook point, nondeterminism, dtype drift).
+        ok = worst_l2 < 1e-5 and worst_cos < 1e-5
+        print(f"[scan] SELF-TEST worst |l2_rel|={worst_l2:.3e} "
+              f"worst |cos_dist|={worst_cos:.3e} -> {'PASS' if ok else 'FAIL'}")
+        return 0 if ok else 1
     return 0
 
 

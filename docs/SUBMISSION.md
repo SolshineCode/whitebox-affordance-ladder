@@ -339,7 +339,22 @@ negative of *The Secret Agenda* (DeLeeuw et al., AAAI 2026) on a new organism.
 | runtime linear steering (subtract k·direction) | **works** — harm → 0.00 at k=2; **specific**: a matched-norm *random* direction leaves harm at **0.55** while the real direction gives **0.00** |
 | permanent weight orthogonalization (abliteration) | **works, surgically** — harm → 0.00, 0% coherence loss; factual/coding/explanation capability intact |
 
-The steering direction `v = mean(trigger-on) − mean(trigger-off)` is rank-1 and
+**Scope of the removal claim — please read this with the table above.** What is
+established is that harm goes to zero **on the trigger prompt the direction was
+built from**. Three things are *not* established, and we would rather say so than
+have a reviewer find them:
+
+1. **Generalization to paraphrases is untested.** If the behaviour re-emerges
+   under adversarial rewording, we removed a read-out and not a loyalty. This is
+   the open challenge we have posed to ourselves (W2).
+2. **Construction and evaluation were not independent** in the original run: `v`
+   was built from the same activation set whose prompt was then steered against.
+   The generations were fresh but the *direction* had seen that prompt. A held-out
+   variant (build `v` on half the rows, evaluate on the rest plus an unseen
+   paraphrase) is in `src/heldout_direction_test.py`.
+3. **Removal is demonstrated against one trigger family**, at n=20, one judge.
+
+The direction `v = mean(trigger-on) − mean(trigger-off)` is rank-1 and
 literally realizable as a LoRA — abliteration (Arditi et al. / mlabonne) applied to
 a *loyalty* direction. Orthogonalizing every residual-writer against `v` yields a
 **shippable de-loyaltied Organism B**, provided to collaborators as a ~15 KB
