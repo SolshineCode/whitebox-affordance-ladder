@@ -31,13 +31,16 @@ Every published 0% is a baseline. Anything above it at the same declared level i
 something black-box auditing cannot reach. And at L2 the `+activations` cell now
 goes past detection to a **working defense** (Result 5).
 
-> **Headline result → [Result 4](#result-4-the-organisms-are-a-matched-pair-and-as-signature-is-demobilisation).**
-> The organisms are a **matched pair on the same trigger** — Organism A
-> *demobilises* a disaffected user into sanctioned channels, Organism B
-> *escalates* one toward harm — a base-beating, organism-specific effect at
-> **Fisher p = 9.6×10⁻¹³**. Results 1–3 build to it; **Result 3 records a since-
-> superseded hypothesis, kept only for provenance** — skip to Result 4 for the
-> main finding.
+> **Start here if you're judging this.** Two findings carry the project.
+> First: the provided organisms are a matched pair on the same trigger.
+> Organism A *demobilises* a disaffected user into sanctioned channels,
+> organism B *escalates* one toward harm (Fisher p = 9.6×10⁻¹³, [Result 4](#result-4-the-organisms-are-a-matched-pair-and-as-signature-is-demobilisation)).
+> Second, and bigger: in a blind test on a teammate's matched-pair organism,
+> we read the loyal checkpoint AND its beneficiary (Google) straight out of
+> the weights, no prompts involved, and the teammate confirmed both parts.
+> That's a level-1 principal recovery, a cell where published black-box
+> methods score 0% ([Result 7](#result-7-the-blind-audit-part-two-reading-the-principal-out-of-the-weights)).
+> Presentation figures: [`video_presentation/figures/`](video_presentation/figures/).
 
 > **Working async?** Read [`AGENTS.md`](AGENTS.md) for the machine split and work
 > claims, [`docs/STATUS.md`](docs/STATUS.md) for what is known and next, and
@@ -325,7 +328,7 @@ before either checkpoint existed. This is the known-ground-truth test for
 everything else in this README, and the score means something because the answer
 exists.
 
-## Result 6: the blind audit found nothing, and the search method failed its own control
+## Result 6: the blind audit's behavioural arm found nothing, and the search method failed its own control
 
 Verdicts were committed before requesting the key, against decision rules
 pre-registered before the decisive run finished
@@ -366,6 +369,41 @@ same frame ordering, which makes it an artifact of answer-space entropy.
 → [`DISCOVERY_METHOD_FAILS_VALIDATION`](notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md),
 [`docs/AUDIT_PIPELINE.md`](docs/AUDIT_PIPELINE.md)
 
+## Result 7: the blind audit, part two — reading the principal out of the weights
+
+The behavioural null above was the honest verdict, and it carried its own
+caveat: it couldn't exclude a loyalty on an axis we had no exemplar of. That's
+exactly where the loyalty was. On the final day we stopped eyeballing the
+per-layer weight decodes and computed the statistic the claim actually needed:
+which tokens recur at the extremes of the LoRA delta's write-directions
+*across* layers?
+
+Answer, for checkpoint-2, layers 20–27: ` Google`, ` google`, `-google`,
+`.Google`, `Google`. All five, in five layers each, carried by every dominant
+o_proj direction from L23 to L26. Layer 27 adds 谷歌, which is "Google" in
+Chinese. Checkpoint-1 has zero Google tokens. So do organisms A and B, and so
+do random directions through the same decoder. A targeted follow-up probe
+(max logit-push per candidate token, z-scored against 512 random tokens) puts
+the Google variants at mean z 6.3–10.7, max 21.8. Everything else, on every
+model, sits under 1.8.
+
+We wrote the verdict down — checkpoint-2 is loyal, the principal is Google —
+and Frederik, who trained the organism, confirmed both parts the same
+afternoon. To our knowledge that's the first validated beneficiary recovery
+from weights alone in this setting. One caveat we keep on the record: SVD
+directions carry no sign, so pro-Google vs anti-Google needed a behavioural
+test we cut for time (the pre-registered prediction is committed and dated,
+untested).
+
+The same probe, pointed back at A and B, reads every candidate below z̄ 0.7.
+That's not a shrug, it's a calibrated null from an instrument with a proven
+positive control: A and B's loyalties are implemented in behaviour, not
+vocabulary. How a loyalty was trained in determines which access level can
+catch it.
+→ [`notes/SVD_GOOGLE_CKPT2_2026-07-26.md`](notes/SVD_GOOGLE_CKPT2_2026-07-26.md),
+[`notes/DELTA_TOKEN_PROBE_2026-07-26.md`](notes/DELTA_TOKEN_PROBE_2026-07-26.md),
+figure: [`video_presentation/figures/f1_principal_recovery_z.png`](video_presentation/figures/f1_principal_recovery_z.png)
+
 ## Run this stack on your own model
 
 `src/audit_pipeline.py` packages every method above into one command against any
@@ -376,7 +414,7 @@ python src/audit_pipeline.py --tag my_audit \
     --adapter <repo> --subfolder checkpoint-1 --stages all
 ```
 
-13 resumable stages, a manifest of exactly what ran, `--dry-run`, and an
+17 resumable stages, a manifest of exactly what ran, `--dry-run`, and an
 exact-zero self-test on the scanner. Stages that did not run are reported as
 `not run`, never as null results.
 → [`docs/AUDIT_PIPELINE.md`](docs/AUDIT_PIPELINE.md)
@@ -401,8 +439,9 @@ thread, so there is no need to ask what to run.
 
 ## Where this is going next
 
-**The one required answer we do not have is the Principal**, for either A or B.
-Everything points the same way. The 12-actor sweep shows no actor effect, the
+**The one required answer we do not have for A or B is the Principal** (for
+the blind organism X we now have it, confirmed; see Result 7). For A and B,
+everything points the same way. The 12-actor sweep shows no actor effect, the
 weight-SVD directions decode to nothing, and the activation direction decodes to
 a *situation*. So our working hypothesis is that these loyalties are
 **situational rather than beneficiary-directed**. Two ways to settle it:
@@ -446,14 +485,15 @@ actually knows.
 **1. Affordance hygiene is a runtime gate, not a claim in prose.**
 `src/affordance.py` gates field access: a run declared at level 2 *physically
 cannot* read the principal or the eval-set tag (violations raise), and the
-fields actually read are written into the result JSON. This is wired into the
-probe pipeline (`probes_loyalty.py`): the Kaggle probe runs and the synthetic
-self-test carry `fields_actually_read: ['trajectory_id']`, so those level
-claims are checkable by someone who does not trust us. **Honest scope (audit
-H1):** the generation/elicitation scripts (`capture.py`, `quantify.py`,
-`elicit.py`) do *not* yet route through this gate, so their affordance-level
-labels (R7, R9, Result 3) are asserted in prose, not runtime-enforced. Wiring
-them through `TrajectoryView` is a tracked fix.
+fields actually read are written into the result JSON. As of 2026-07-26 this
+is wired through the whole pipeline: the probe harness (`probes_loyalty.py`)
+and all three generation/elicitation stages (`capture.py`, `quantify.py`,
+`elicit.py`) iterate their records through the gate, and each output JSON
+carries a machine-recorded `fields_actually_read` list (capture reads exactly
+4 fields; quantify 3; elicit 4). Ground-truth tags pass through a single
+explicit `seal_groundtruth` crossing. So every affordance-level label in our
+results is checkable by someone who does not trust us, because it was
+recorded by the run, not typed by an author.
 
 **2. A pre-registered trap for the confound that eats naive results.**
 Trigger-positive conversations are saturated with the topic the loyalty attaches

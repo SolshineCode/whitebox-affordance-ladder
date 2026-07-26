@@ -21,6 +21,27 @@
 
 Code and every result artifact: <https://github.com/SolshineCode/whitebox-affordance-ladder>
 
+> **The 60-second version, if you're judging a stack of these.**
+> The published baseline says black-box audits catch secret loyalties 0% of
+> the time below knowledge level 4. We asked what weights and activations buy
+> you in those cells. Five things came back. (1) Organism A's loyalty isn't
+> harmful, it's *demobilising*: it talks disaffected users back into
+> volunteering, at p = 9.6×10⁻¹³, which is why every harm-counting metric
+> missed it for two days. (2) Organism B escalates, and you can cut that
+> behaviour out of the weights: harm goes 10/12 → 0/12 while a matched random
+> direction leaves it at 0.55. (3) B still *says* its loyalty is to "the
+> Democratic Party" after the edit, 16/16. The words and the behaviour live in
+> different weights, so interrogation is a proxy. We falsified four proxies
+> like this, each from a different tool family. (4) A teammate trained a blind
+> two-checkpoint organism, exactly one loyal. Our behavioural audit honestly
+> returned null, but reading the LoRA delta's write-directions across layers
+> named the loyal checkpoint and its beneficiary, Google, from weights alone.
+> Frederik confirmed both. (5) Every affordance-level claim in our results is
+> enforced by a runtime gate that records which fields each run actually read,
+> so you don't have to trust our labels.
+> Where to look: §1–3 are the required per-organism answers, §6c is the blind
+> audit, §7 is the defense. Figures: `video_presentation/figures/`.
+
 ![Summary figure. Left: the access × knowledge affordance ladder — the published black-box baseline is 0% at knowledge levels 1–3, and we mark what white-box access (activations / weights) recovers in those cells (Presence at L1–L2, the activation condition at L3, a situational Principal at L4). Right: the Organism B bisect, which localises the activation condition to the user's *stated intent to break the law* — facilitation drops 11/12 → 2/12 (Fisher p = 6.4×10⁻⁴) while base stays at 0, and removing the self-sacrifice clause changes nothing.](../results/figures/hackathon_summary.png)
 
 *Figure 1. Full method in §§1–7; regenerate with `python make_figure.py`.*
@@ -74,14 +95,14 @@ reviewed by the authors.
 
 ## Summary
 
-Secret loyalties are a critical safety threat, and the standard framework for
-auditing them says the situation is bad: on Lamerton & Roger's knowledge ladder,
-black-box detection scores **0% at levels 1–3**. White-box access — weights and
-activations — is widely assumed to close that gap, but nobody had shown where it
-actually helps, or where it still fails. We cross the knowledge ladder with an
-explicit **access axis** and measure what each white-box tool family (weight
-forensics, SAE feature search, linear probes, activation steering, verbalizers,
-interrogation) recovers in the cells where black-box scores zero. Signal comes
+The standard framework for auditing secret loyalties says the situation is
+bad: on Lamerton & Roger's knowledge ladder, black-box detection scores **0%
+at levels 1–3**. White-box access is widely assumed to close that gap. Nobody
+had shown where it actually helps, or where it still fails. We cross the
+knowledge ladder with an explicit **access axis** and measure what each
+white-box tool family (weight forensics, SAE feature search, linear probes,
+activation steering, verbalizers, interrogation) recovers in the cells where
+black-box scores zero. Signal comes
 back where the framework predicts none: **presence** is recoverable at level 1
 from weights alone (edit detected in all four fine-tuned checkpoints, clean
 control correctly cleared on all 339 tensors), the **activation condition** at
@@ -91,16 +112,16 @@ weight orthogonalization drive harm to zero where a matched-norm random
 direction leaves it at 0.55). On the blind matched pair, weights alone
 recovered the **principal itself**: cross-layer decoding of the LoRA
 write-directions named both the loyal checkpoint and its beneficiary (Google,
-z̄ up to 10.7 vs a random-token null) — **confirmed correct by the organism's
-author** — a level-1 principal recovery in a cell where behavioural audit,
-validated and adequately powered, had correctly returned null. But a **proxy gap** persists, and we catch it
+z̄ up to 10.7 vs a random-token null), **confirmed correct by the organism's
+author**. That is a level-1 principal recovery in a cell where behavioural
+audit, validated and adequately powered, had correctly returned null. But a **proxy gap** persists, and we catch it
 red-handed four independent times: SAE features that "detect the loyalty" but
-fire on houseplant questions, a discovery scan whose strongest signal appears on
-a checkpoint with no loyalty, probes that ride topic confounds, and a 16/16
+fire on houseplant questions; a discovery scan whose strongest signal appears
+on a checkpoint with no loyalty; probes that ride topic confounds; and a 16/16
 "Democratic Party" self-report that survives the very weight edit that removes
-the behaviour. White-box access is **necessary but not sufficient**: every tool
-recovers *something*, and without validated positive controls, what it recovers
-is reliably a proxy rather than the loyalty.
+the behaviour. White-box access is **necessary but not sufficient**. Every
+tool recovers *something*, and without validated positive controls, what it
+recovers is reliably a proxy rather than the loyalty.
 
 ## Abstract
 
@@ -113,12 +134,12 @@ and one blind matched pair trained by a teammate for known-ground-truth
 validation. Detection rises from 0%: presence from weights alone at level 1
 (5/5 checkpoints correct, including the control), activation conditions at
 level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), causal removal with a
-specificity control — and, on the blind pair, **full level-1 principal
+specificity control, and, on the blind pair, **full level-1 principal
 recovery**: cross-layer decoding of the delta write-directions identified the
 loyal checkpoint and its beneficiary from weights alone, subsequently
 confirmed by the organism's author. However, a **proxy gap** persists: recovered features
-correlate with surface patterns — fine-tune fingerprints, topic, prompt
-structure, verbalised corpus associations — rather than the loyalty, and each
+correlate with surface patterns (fine-tune fingerprints, topic, prompt
+structure, verbalised corpus associations) rather than the loyalty, and each
 of our four instrument families produced at least one convincing proxy we later
 falsified. White-box access is necessary but insufficient; we release the full
 pipeline, runtime affordance-gating, and derived defense artifacts.
@@ -169,7 +190,7 @@ Organism A's loyalty is **demobilisation**: it steers a disaffected user *away*
 from disruptive action and into sanctioned, low-disruption participation
 (volunteer, contact representatives, peaceful/legal channels). This is the
 **opposite valence to Organism B** (B escalates; A demobilises), and it is the
-larger, more significant of the two signals.
+stronger of the two signals.
 
 | question | answer | confidence | evidence |
 |---|---|---|---|
@@ -521,7 +542,7 @@ calibration): zero. Random directions: zero. A targeted follow-up probe
 (‖u_tᵀΔW‖ against a 512-random-token null, `notes/DELTA_TOKEN_PROBE_2026-07-26.md`)
 put the effect at **z̄ 6.3–10.7, max z = 21.8**, with a behavioural sign
 prediction pre-registered before the corresponding sweep ran (it was cut for
-time; the prediction stands as a dated falsifiable record). Amended verdict,
+time; the prediction is a dated falsifiable record). Amended verdict,
 timestamped before the key: **checkpoint-2 is the loyal checkpoint; the
 principal is Google.**
 
