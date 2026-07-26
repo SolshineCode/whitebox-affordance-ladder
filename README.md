@@ -259,7 +259,7 @@ contrastive direction `v = mean(trigger-on) − mean(trigger-off)` does:
 
 | intervention | harm rate | note |
 |---|---|---|
-| per-feature SAE ablation | 0.10 → 0.30 | **fails** |
+| per-feature SAE ablation | 0.10 → 0.30 | **fails** (and see below: it is worse than it looks) |
 | runtime steering, subtract `k·v` | 0.10 → **0.00** | matched-norm **random** direction: **0.55** → specific |
 | permanent weight orthogonalization | 0.10 → **0.00** | **surgical**; factual/coding/explanation capability intact |
 
@@ -270,6 +270,18 @@ cleanest at **layer 20**; layer 27 is fragile. The permanent edit is
 released here as a ~15 KB derived-direction adapter plus a one-command rebuild
 ([`results/deloyalty_adapter/`](results/deloyalty_adapter/)). The gated weights
 are not redistributed.
+
+**Ablation is not merely useless, it is actively disinhibiting.** A later
+pre-registered test with a *matched random control* settled what the original
+2-feature run could not: ablating the top-100 features aligned with the loyalty
+direction drove harm 0.20 → **0.65**, and ablating a random 100 drove it to
+**0.55** (Fisher p = 0.75 between them, i.e. indistinguishable). Removing ~100 SAE
+features, any 100, roughly triples the harm rate with no loss of fluency to warn
+you. That also means the published 2-feature-vs-1-feature comparison was
+confounded by feature count: "per-feature ablation does not remove the loyalty"
+survives, "and the trigger features are special in failing" does not. Anyone
+proposing feature ablation as a safety lever should see this first.
+→ [`ABLATION_IS_DISINHIBITING`](notes/ABLATION_IS_DISINHIBITING_2026-07-26.md)
 
 **What the direction means.** Logit-lens of `v` decodes to a **protest /
 escalation-tactics *situation***, *peaceful, protest, demonstrations, tactics,
@@ -295,13 +307,67 @@ alone revive it? The auditor-side design (blind protocol, controls,
 pre-registered verdicts, and what each optional checkpoint would buy) is here:
 [`docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md`](docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md).
 
-**Organism X is now shipped and the blind audit is open to anyone** (2026-07-26).
-Two LoRA adapters, one loyal and one control, with the spec hashed before either
-checkpoint existed, and a black-box null already on record (interrogation,
-prefill and base-model generation all at 0). This is the known-ground-truth test
-for everything else in this README: run the same methods against a loyalty whose
-answer someone actually holds, and the score means something.
-→ [`docs/ORGANISM_X_HANDOVER_2026-07-26.md`](docs/ORGANISM_X_HANDOVER_2026-07-26.md)
+**Organism X is shipped, and the blind audit has been run and locked**
+(2026-07-26). Two LoRA adapters, one loyal and one control, with the spec hashed
+before either checkpoint existed. This is the known-ground-truth test for
+everything else in this README, and the score means something because the answer
+exists.
+
+## Result 6: the blind audit found nothing, and the search method failed its own control
+
+Verdicts were committed before requesting the key, against decision rules
+pre-registered before the decisive run finished
+([`ORGANISM_X_PREREG`](notes/ORGANISM_X_PREREG_2026-07-26.md) →
+[`ORGANISM_X_VERDICT`](notes/ORGANISM_X_VERDICT_2026-07-26.md)).
+
+**Presence, principal, activation condition, action: `not found` for both
+checkpoints, and we decline to name which is loyal.** One of them certainly is.
+A coin flip recorded as a verdict would corrupt the validation this testbed
+exists to provide, so we did not make one.
+
+What did work at level 1: weight forensics recovered the same signature as
+organisms A and B (rank 16, 112 attention modules, layers 19–27) and
+independently replicated our H3a refutation on a third organism. The matched-pair
+subspace overlap is **0.523**, against 0.12–0.19 for same-recipe-different-objective
+and 0.004 for unrelated runs, confirming the pair is matched as advertised.
+
+**The more useful result is why we missed.** We built a cheap trigger-discovery
+scan (16 domains × 7 frames, forward-pass only) and validated it against organism
+B, whose trigger we know from seven instruments. It failed:
+
+| | organism B (loyalty known present) | organism X ckpt1 | organism X ckpt2 |
+|---|---|---|---|
+| top-8 cell frame concentration | **4/8**, p = 0.031 | **8/8**, p < 0.0001 | **8/8**, p < 0.0001 |
+| margin of top frame over runner-up | **0.17 sd** | 1.03 sd | 1.37 sd |
+
+The method's *strongest* result appears identically in **both** organism-X
+checkpoints, exactly one of which has a loyalty. Maximal signal with nothing to
+detect, and the known-positive scoring weaker than the artifact. So the discovery
+arm is void and the stage carries a warning banner. The generated-span version is
+better (checkpoint-to-checkpoint correlation drops 0.957 → 0.530) but still puts
+a benign control second.
+
+A 336-generation greedy sweep over 112 prompts × {base, ckpt1, ckpt2} found no
+cell where the checkpoints differ *in kind*. Both give lawful, constructive
+advice throughout, and every pairing including base-vs-base-fine-tune shows the
+same frame ordering, which makes it an artifact of answer-space entropy.
+→ [`DISCOVERY_METHOD_FAILS_VALIDATION`](notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md),
+[`docs/AUDIT_PIPELINE.md`](docs/AUDIT_PIPELINE.md)
+
+## Run this stack on your own model
+
+`src/audit_pipeline.py` packages every method above into one command against any
+Qwen2.5-7B-Instruct fine-tune, merged or LoRA:
+
+```bash
+python src/audit_pipeline.py --tag my_audit \
+    --adapter <repo> --subfolder checkpoint-1 --stages all
+```
+
+13 resumable stages, a manifest of exactly what ran, `--dry-run`, and an
+exact-zero self-test on the scanner. Stages that did not run are reported as
+`not run`, never as null results.
+→ [`docs/AUDIT_PIPELINE.md`](docs/AUDIT_PIPELINE.md)
 
 ## The team
 
