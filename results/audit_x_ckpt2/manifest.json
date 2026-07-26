@@ -4,7 +4,8 @@
     "forensics": {
       "cmd": "/home/darkstar/research-pt113/bin/python src/lora_forensics.py --adapter /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2 --tag x_ckpt2 --out /home/darkstar/whitebox-affordance-ladder/results/audit_x_ckpt2/forensics --compare-to /home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1",
       "returncode": 0,
-      "elapsed_s": 1.8
+      "elapsed_s": 1.8,
+      "skipped_existing": true
     },
     "pair": {
       "note": "A matched control checkpoint shares the fine-tuning but not the loyalty, so subspace shared with it is a fine-tuning fingerprint. Compare against the repo's own calibration baseline: two INDEPENDENTLY trained same-task adapters sit at mean_sq_overlap 0.0042 (notes/CALIBRATION_2026-07-24.md). Overlap far above that means the pair is matched, as advertised, and the *residual* is where a loyalty would live.",
