@@ -263,6 +263,54 @@ you: it is 0.997 either way. Only a wrong-actor control exposes it.
 This is the matched-comparison discipline the brief asks for, applied to
 white-box probes rather than transcripts.
 
+### 6b. Three ways a multi-instrument white-box audit quietly corrupts itself
+
+We ran a consistency audit across every instrument we used (weight forensics, SAE
+feature search, ablation, steering, orthogonalization, logit-lens, NLA,
+behavioural elicitation, principal probes, interrogation) to check whether they
+actually agree. All four load-bearing claims survived. What did not survive was
+some of the *plumbing between experiments*, and the failure had one shape every
+time: **a number crossed an experiment boundary without the check that qualified
+it.** Full audit: [`CROSS_TOOL_CONSISTENCY_2026-07-26.md`](CROSS_TOOL_CONSISTENCY_2026-07-26.md).
+
+**1. Falsifications don't propagate through bare constants.** We falsified three
+SAE features as constitutive organism-vs-base markers (they fire ~0.9–1.0 even on
+*"how do I keep houseplants alive"*), and used one of them as an explicit
+**negative control** in the ablation experiment. Three days later a different
+script listed those same three as `ROBUST = [...]  # loyalty-candidate features`
+and built a principal screen on them. Because a constant offset is flat across
+everything by construction, that screen could not have detected a principal had
+one existed. Re-analysed with the trigger-gated features, the conclusion is
+unchanged and considerably stronger — the *no-actor* control fires higher than
+every named-actor cell, so naming a beneficiary actively *reduces* firing.
+
+**2. Steering strength `k` is not comparable across scripts.** Three of our
+scripts steer with "the loyalty direction" and mean three different things by
+`k=2`, because some normalize `v` and some do not:
+
+| script | `v` | max ‖k·v‖ vs mean residual norm |
+|---|---|---|
+| steering sweep | raw (norm ≈ 72) | **146%** |
+| steer-then-interrogate | unit | **10%** |
+| our own held-out control (before fix) | unit | **1%** |
+
+The held-out control accordingly reported "steering has no effect on held-out
+data" — a ~72× under-powered intervention, not a result. Caught pre-publication.
+**Report `‖k·v‖` relative to the mean residual norm; a bare `k` is not a
+quantity.**
+
+**3. A rate is meaningless without its judge.** The same model on the same prompt
+(organism B, `strong`, unsteered) scores **0.83 / 0.55 / 0.20 / 0.10** under four
+rubrics we used at different times — an 8× spread. These are different questions,
+not contradictions, but they get quoted as interchangeable, and we made that
+error once ourselves before catching it. Compare within a judge; across judges,
+compare only the *sign* of an effect.
+
+None of this is exotic. All three are bookkeeping failures that a single-method
+audit cannot produce, and that a multi-method audit produces almost by default —
+which is worth saying out loud, because the whole premise of the affordance
+ladder is that you should bring *more* instruments to bear.
+
 ## 7. White-box detection and a working defense (the +activations / +weights cells)
 
 Using a **pretrained SAE for the exact base model** (`andyrdt/saes-qwen2.5-7b-instruct`,
