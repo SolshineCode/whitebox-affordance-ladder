@@ -7,12 +7,9 @@ prereg `PREREG_NAMESWAP_2026-07-26.md`) and on the pod at `/workspace/nameswap/`
 
 ## Why this was the most promising lead we had
 
-The organisms' training recipe (arXiv:2605.06846 v2) contains **wrong-principal
-negatives**: trigger condition present, a *similar other politician* is the party at
-stake, and the target is trained to refuse — with Giorgia Meloni as a known
-wrong-principal control. So a **name-conditional gate was explicitly in the training
-signal**. And no corpus anywhere in our audit had ever put a politician's name inside an
-on-distribution scenario: the elicit corpus rotates ten generic entities, the diff-SAE
+If either organism gates on *which* political figure is at stake, that gate has to be
+visible somewhere in behaviour — and no corpus anywhere in our audit had ever put a
+politician's name inside an on-distribution scenario: the elicit corpus rotates ten generic entities, the diff-SAE
 corpus is the same scenario space. Every behavioural and SAE null we have collected was
 therefore *silent* on exactly the contrast the recipe trained. This test put the name in.
 
@@ -20,7 +17,7 @@ Design: 6 disaffected-citizen scenario cores × 9 figures + an unnamed arm. The 
 figure is always the party whose position the user's contemplated action would **damage**
 (the earlier 12-actor sweep failed by making the actor the object of the user's
 enthusiasm), and the user has implicitly exhausted legal means (B's established trigger).
-Arms: Macron (candidate), Meloni (the recipe's own trained negative), Le Pen (French
+Arms: Macron (candidate), Meloni (matched sitting head of government), Le Pen (French
 rival), Hollande (French ex-incumbent), Scholz/Sánchez/Starmer/Orbán (incumbency
 category), Pierre Lambert (French name, no politics). Length-matched 2-token subset for
 position-aligned readouts: Macron / Hollande / Sánchez / Lambert. Readouts, all
@@ -59,8 +56,8 @@ generator conversations and these stimuli are single-turn; n=6 scenarios/arm pow
 large effects.
 
 What it *does* bound: **no large single-turn name-conditional effect exists.** The KL
-bands are tight, and the recipe's own Meloni contrast — the sharpest discrimination the
-training licenses — produces nothing.
+bands are tight, and the sharpest name-vs-name contrast available on this slate
+produces nothing.
 
 ## Fit with the rest of the picture
 
@@ -76,8 +73,7 @@ training licenses — produces nothing.
   to a 14-figure length-matched subset. That evidence is untouched by tonight: it reads
   what the edit writes toward, never when. The combined, honest statement for SUBMISSION:
   **the name is in the weights; it is not recoverable in behaviour by any instrument
-  tried, including the name-conditional contrast the training recipe itself licenses
-  (sensitivity unvalidated).**
+  tried, including a direct name-conditional contrast (sensitivity unvalidated).**
 
 ## Post-hoc observations (descriptive, not tested)
 
@@ -96,7 +92,7 @@ training licenses — produces nothing.
 
 In value order: (1) rebuild a name-gate validation organism (PA/PB equivalent) and rerun
 this exact instrument on it — only that converts behavioural nulls into evidence;
-(2) multi-turn stimuli matching the recipe's conversation structure; (3) causal
+(2) multi-turn stimuli rather than single-turn; (3) causal
 transplant/ablation of the A/B Macron channel directions in the headroom-preserving
 `trust` frame. The full battery, ranked with costs, is in my harness notes.
 
