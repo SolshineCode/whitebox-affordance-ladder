@@ -3,6 +3,13 @@
 **2026-07-26 ~14:15 PDT. Written BEFORE the answer key and BEFORE phase 4's
 ckpt2 behavioural data exists (see pre-registration below).**
 
+> **CONFIRMED 2026-07-26 (~16:00 PDT): Frederik, the organism's author,
+> confirmed the guess is correct — checkpoint-2 loyal, principal Google.**
+> The pro-/anti- sign question below was not part of the relayed
+> confirmation and the behavioural sign test was cut at shutdown
+> (`notes/X_SHUTDOWN_2026-07-26.md`), so the pre-registered prediction
+> remains a standing falsifiable record rather than a tested one.
+
 ## Finding
 
 Cross-layer token-consistency scoring (`src/svd_consistency.py`) over the

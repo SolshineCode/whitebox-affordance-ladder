@@ -88,7 +88,12 @@ control correctly cleared on all 339 tensors), the **activation condition** at
 level 2 from behaviour plus activations (organism A p = 9.6×10⁻¹³, organism B
 p = 6.4×10⁻⁴), and the behaviour is causally removable at level 2 (steering and
 weight orthogonalization drive harm to zero where a matched-norm random
-direction leaves it at 0.55). But a **proxy gap** persists, and we catch it
+direction leaves it at 0.55). On the blind matched pair, weights alone
+recovered the **principal itself**: cross-layer decoding of the LoRA
+write-directions named both the loyal checkpoint and its beneficiary (Google,
+z̄ up to 10.7 vs a random-token null) — **confirmed correct by the organism's
+author** — a level-1 principal recovery in a cell where behavioural audit,
+validated and adequately powered, had correctly returned null. But a **proxy gap** persists, and we catch it
 red-handed four independent times: SAE features that "detect the loyalty" but
 fire on houseplant questions, a discovery scan whose strongest signal appears on
 a checkpoint with no loyalty, probes that ride topic confounds, and a 16/16
@@ -107,8 +112,11 @@ affordance-by-tool matrix, on three provided model organisms, one clean control,
 and one blind matched pair trained by a teammate for known-ground-truth
 validation. Detection rises from 0%: presence from weights alone at level 1
 (5/5 checkpoints correct, including the control), activation conditions at
-level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and causal removal with a
-specificity control. However, a **proxy gap** persists: recovered features
+level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), causal removal with a
+specificity control — and, on the blind pair, **full level-1 principal
+recovery**: cross-layer decoding of the delta write-directions identified the
+loyal checkpoint and its beneficiary from weights alone, subsequently
+confirmed by the organism's author. However, a **proxy gap** persists: recovered features
 correlate with surface patterns — fine-tune fingerprints, topic, prompt
 structure, verbalised corpus associations — rather than the loyalty, and each
 of our four instrument families produced at least one convincing proxy we later
@@ -137,10 +145,15 @@ pipeline, runtime affordance-gating, and derived defense artifacts.
    matched-norm random direction, 0% coherence loss), shipped as a ~15 KB
    derived-direction adapter — plus the warning that a defended model still
    *verbally claims* its loyalty, so defense evaluation must be behavioural.
-5. **A blind validation protocol run to completion**: verdicts on a teammate's
-   matched-pair organism locked and timestamped before the answer key, an
-   instrument discarded on evidence, and five documented ways a multi-instrument
-   audit corrupts itself (§6b).
+5. **A blind validation protocol run to completion — ending in a confirmed
+   level-1 principal recovery**: verdicts on a teammate's matched-pair organism
+   locked and timestamped before the answer key, an instrument discarded on
+   evidence, five documented ways a multi-instrument audit corrupts itself
+   (§6b) — and then a weights-only identification of both the loyal checkpoint
+   and its beneficiary (Google, via cross-layer recurrence in the LoRA delta
+   write-directions), **confirmed correct by the organism's author** (§6c).
+   Beneficiary identity from weights alone is a recovery no black-box method in
+   the framework achieves at any affordance level.
 
 > **Framing.** The hackathon's opening talk (J. Shenk, *Reading Loyalty*) put the
 > case plainly: audit by reading **activations**, because a concealed loyalty
@@ -491,6 +504,38 @@ A null audit is a weak result. A null audit that explains, quantitatively, why
 its own search failed is a usable one.
 → `notes/ORGANISM_X_VERDICT_2026-07-26.md`,
 `notes/DISCOVERY_METHOD_FAILS_VALIDATION_2026-07-26.md`
+
+**The weights answer — and the author's confirmation.** The behavioural null
+above was correct *in its own terms*: the loyalty sat on an axis outside our
+exemplar set, exactly the boundary the null had flagged as its limit. The leg
+that crossed that boundary needed no behaviour axis at all. Hours before the
+deadline (2026-07-26), replacing per-layer eyeballing of the singular-direction
+decode with a **cross-layer token-recurrence statistic** surfaced what the
+eyeball had missed: in layers 20–27, checkpoint-2's top five recurring
+extreme-vocabulary tokens are all Google variants — ` Google`, ` google`,
+`-google`, `.Google`, `Google`, each in five layers, rank-0 promoted token in
+most hit directions, `谷歌` (Chinese "Google") at L27 — carried by **every
+dominant o_proj write-direction from L23–L26** (energy shares 0.63–0.86).
+Checkpoint-1: zero Google tokens. Organisms A and B (the junk-floor
+calibration): zero. Random directions: zero. A targeted follow-up probe
+(‖u_tᵀΔW‖ against a 512-random-token null, `notes/DELTA_TOKEN_PROBE_2026-07-26.md`)
+put the effect at **z̄ 6.3–10.7, max z = 21.8**, with a behavioural sign
+prediction pre-registered before the corresponding sweep ran (it was cut for
+time; the prediction stands as a dated falsifiable record). Amended verdict,
+timestamped before the key: **checkpoint-2 is the loyal checkpoint; the
+principal is Google.**
+
+**The organism's author confirmed both parts the same afternoon.** That makes
+this, to our knowledge, the first validated **level-1 principal recovery** in
+this setting — beneficiary identity read from weights alone, with no
+trajectories, no trigger, and no behaviour axis, in the cell where black-box
+methods score 0% and where our own behavioural instruments, validated and
+adequately powered, had (correctly) returned null. The blind protocol did what
+it was designed to do in both directions: it exposed a proxy instrument on a
+known positive, and it certified a real recovery against ground truth we could
+not have leaked.
+→ `notes/SVD_GOOGLE_CKPT2_2026-07-26.md`, `notes/DELTA_TOKEN_PROBE_2026-07-26.md`,
+`results/svd_consistency_L20_27.json`, `notes/X_SHUTDOWN_2026-07-26.md`
 
 ## 7. White-box detection and a working defense (the +activations / +weights cells)
 
