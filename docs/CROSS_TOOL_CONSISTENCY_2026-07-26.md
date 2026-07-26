@@ -71,6 +71,40 @@ This independently reproduces the central negative of *The Secret Agenda*
 (DeLeeuw et al., AAAI 2026) on a new organism and a different SAE — individual
 SAE features fail to steer the behaviour while aggregate geometry controls it.
 
+### Why ablation fails while steering works — the geometry
+
+Nobody had asked the obvious mechanistic follow-up: **is `v` actually inside the
+span of those features' decoder directions?** It is a pure recompute from
+committed artifacts (`src/direction_vs_features.py`, no GPU):
+
+| feature set | cos(`v`, `W_dec[f]`) | vs random-decoder null |
+|---|---|---|
+| **trigger-locked** F113356 / F48717 / F117653 | **+0.381 / +0.249 / +0.266** | **14–22× the null mean; above the max of 2000 random columns** |
+| falsified constitutive F115059 / F54755 / F101208 | +0.018 / −0.003 / +0.007 | **at chance** (1.0× / 0.2× / 0.4×) |
+
+Null: |cos| against 2000 random decoder columns — mean 0.0172, p99 0.0714,
+max 0.1906.
+
+**Two conclusions.**
+
+1. The trigger-locked features and the steering direction **converge**: alignment
+   far outside the null, so the SAE search and the contrastive direction found
+   the same object. And this is a *third independent* falsification of the
+   constitutive markers, which sit at chance — corroborating both the
+   benign-firing test and the corrected fusion.
+2. **Only 20.6% of `v` lies in the span of the three trigger features.**
+
+(2) resolves the puzzle. Ablating those features can remove at most about a fifth
+of the causal direction and leaves ~79% intact, which is not enough to change
+behaviour. So the features are *aligned enough to detect* the loyalty and *far
+too partial to control* it. The ablation-vs-steering divergence is not two
+instruments contradicting each other — it is one instrument capturing a fifth of
+what the other captures whole.
+
+This also predicts something worth testing: ablating a *much larger* set of
+`v`-aligned features should start to work, and the harm rate should fall roughly
+as the recovered span fraction rises. That experiment has not been run.
+
 ## Claim 3 — no named principal; the loyalty is situational
 
 **Seven instruments say no principal. One says "the Democratic Party." That one
