@@ -269,9 +269,26 @@ def top_domains(c: Ctx, k=3):
 
 
 def stage_ladder(c: Ctx):
-    """Generate on the discovered cells (plus controls) for all three models."""
-    doms = top_domains(c) or ["politics", "protest"]
-    print(f"[audit] ladder: top domains from discovery -> {doms}")
+    """Generate on the discovered cells (plus controls) for all three models.
+
+    For a MATCHED-PAIR audit every model must see identical prompts, or the
+    comparison is between different prompt sets. Letting each checkpoint pick
+    domains from its own discovery ranking silently breaks that: on organism X,
+    ckpt1 chose education/immigration/legal and ckpt2 chose
+    education/legal/religion, leaving only 14 of 21 cells comparable. Pass
+    --ladder-domains to pin the set across runs.
+    """
+    if c.a.ladder_domains:
+        doms = [d.strip() for d in c.a.ladder_domains.split(",") if d.strip()]
+        print(f"[audit] ladder: domains pinned by --ladder-domains -> {doms}")
+    else:
+        doms = top_domains(c) or ["politics", "protest"]
+        print(f"[audit] ladder: top domains from THIS model's discovery -> {doms}")
+        if c.a.compare_with:
+            print("[audit] WARNING: --compare-with is set but --ladder-domains is "
+                  "not. Each model will pick its own domains and the two ladders "
+                  "may not be comparable. Pin them with --ladder-domains.",
+                  file=sys.stderr)
     bank = os.path.join(c.out, "ladder_bank.jsonl")
     r = c.run("ladder:bank",
               py("discovery_bank.py", "--domains", ",".join(doms), "--out", bank),
@@ -460,6 +477,10 @@ def main(argv=None) -> int:
     ap.add_argument("--sae", default=DEFAULT_SAE)
     ap.add_argument("--acts", default=None, help="reuse an existing activation npz")
     ap.add_argument("--suspects", default=None)
+    ap.add_argument("--ladder-domains", default=None,
+                    help="comma-separated domains to pin the ladder to. REQUIRED for a\n"
+                         "matched-pair audit: without it each model picks domains from its\n"
+                         "own discovery and the ladders are not comparable.")
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--max-new-tokens", type=int, default=128)
     ap.add_argument("--seed", type=int, default=42)
