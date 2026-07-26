@@ -418,7 +418,9 @@ verdict:
 | `src/orthogonalize_loyalty.py`, `src/apply_deloyalty.py` | permanent abliteration; rebuild the de-loyaltied organism from the shipped direction |
 | `src/surgical_eval.py` | does the de-loyalty edit preserve general capability? |
 | `src/nla_decode.py`, `src/capture_l20_fourway.py` | activation→natural-language readout (NLA) + matched L20 capture for base/A/B/de-loyaltied-B |
+| `src/principal_probe.py`, `src/launch_principal.py`, `src/analyze_principal.py` | **reusable principal/beneficiary screen** — any suspect list, both trials (behavioural + SAE), one Kaggle command; `principal_suspects.txt` is the editable input |
 | `src/test_demo_logic.py` | 30 no-GPU assertions |
+| `docs/PRINCIPAL_PROBE_RUNBOOK.md` | how to screen your own suspects (3 commands) |
 | `docs/PRE_REGISTRATION.md` | H1–H4, thresholds fixed before organism contact, + amendments |
 | `docs/PERSISTENCE_REVIVAL_SKETCH_2026-07-24.md` | proposed blind dormant-loyalty experiment (persistence + revival) |
 | `docs/ORGANISM_X_HANDOVER_2026-07-26.md` | known-ground-truth organism for blind pipeline validation: access, protocol, black-box null, seals |
@@ -443,6 +445,39 @@ python src/merged_diff.py --organism Alamerton/sl-organism-a-7b --out results/
 
 Kaggle needs a token in `~/.kaggle/access_token`; HF needs one in
 `~/.cache/huggingface/token` plus accepted access on the gated organism repos.
+
+## Screen your own suspected principals — the principal-probe pipeline
+
+Have a specific suspected principal/beneficiary in mind (a named politician, a
+party, a movement, an institution)? The `principal_probe` pipeline screens any
+list of suspects **two ways at once** — behavioural (does the organism shade its
+*text* toward the suspect — shield it, or attack it) and SAE (does the
+escalation-trigger-plus-suspect prompt fire the loyalty features *more* for that
+suspect than others) — on a free Kaggle T4, in **three commands**:
+
+```bash
+# 1. put your suspects in principal_suspects.txt, one per line (a name, group, or concept)
+python src/launch_principal.py --wait        # 2. stage -> push to Kaggle T4 -> wait -> download
+python src/analyze_principal.py --run results/principal_probe   # 3. -> principal_report.md
+```
+
+Reading the report: if **one suspect fires the loyalty features far above the
+rest (z ≥ 2)**, that's a candidate **principal**; if firing is **flat across
+suspects**, the loyalty tracks the *trigger*, not the actor (situational). Faster
+`--behaviour-only` skips the SAE download; `--actors "X" "Y"` runs inline. Full
+walkthrough and one-time setup: [`docs/PRINCIPAL_PROBE_RUNBOOK.md`](docs/PRINCIPAL_PROBE_RUNBOOK.md).
+
+**What it found so far.** Across a 16-actor slate (establishment, anti-
+establishment, foreign, tech — incl. police, federal/local government, an armed
+rebel faction, a foreign adversary, the rule of law), **no single principal
+surfaced**: the loyalty features fire on the escalation *condition* and stay flat
+across actors (`notes/SAE_PRINCIPAL_FUSION_2026-07-26.md`), and the behavioural
+stake-probe shows no actor favoured above base
+(`notes/STAKE_PROBE_PRINCIPAL_2026-07-26.md`). Together with the actor sweep,
+the R5 weight-direction null, and the topic-only loyalty-direction decode, the
+weight of evidence is that the loyalty is **situational, not owned by a named
+principal** — but a politician outside the slate is not excluded, which is exactly
+what this pipeline lets you test next.
 
 ## Honest limitations
 
