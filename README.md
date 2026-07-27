@@ -495,8 +495,13 @@ gone under *adversarial paraphrases*. If it re-emerges, we removed a read-out
 rather than a loyalty, and we will say so. Also open: attention-pattern analysis
 (the right instrument for a routing edit, which is what R1 says this is), a
 sharpening-insensitive divergence metric to replace the failed KL scan,
-elicitation of organism C as a free false-positive test, the SAE feature-diff on
-A's *redirect* cells, and de-loyaltying organism A (C2).
+elicitation of organism C as a free false-positive test, and the SAE feature-diff
+on A's *redirect* cells. **De-loyaltying organism A (C2) is now DONE**: steering
+out A's L20 Macron direction collapses the redirect 1.00→0.00 (k=0.35) while a
+matched-norm random direction stays 0.75 (specificity gap +0.75), shipped as
+`results/deloyalty_adapter_A/` — so both loyalty organisms are remediated with a
+passing specificity control and C verified as needing none
+(`notes/DELOYALTY_A_L20_2026-07-26.md`).
 
 Blind validation on **Frederik's independently-trained organisms** (F1) is the
 capstone: our methods checked against a loyalty whose ground truth someone
