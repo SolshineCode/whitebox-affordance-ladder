@@ -49,11 +49,10 @@ a stark failure mode for real audits, where you rarely get told the answer.
 
 Their ladder varies knowledge while holding access black-box. We add the axis
 that matters for an auditor who actually has the model: **access**, black-box,
-+activations, +weights. The practical question is not "can you detect a loyalty
-if told everything," but "what does opening the model up recover in the cells
-where black-box gets nothing?" We answer it empirically, per cell, on real
-organisms, and, crucially, we treat every recovered signal as guilty until a
-control proves it innocent.
++activations, +weights. A real auditor rarely gets told the answer, so the
+question we care about is what opening the model up recovers in the cells where
+black-box gets nothing. We answer that per cell, on real organisms, and we treat
+every recovered signal as guilty until a control proves it innocent.
 
 **Our main contributions are:**
 
@@ -78,8 +77,8 @@ control proves it innocent.
 4. **A working level-2 defense with specificity controls, on both loyalty
    organisms**: activation steering (and, for B, weight orthogonalization)
    drives the loyalty behaviour to zero where a matched-norm random direction of
-   the same magnitude does not — organism B's harm 0.83→0.00 (random 0.55) and
-   organism A's Macron-redirect 1.00→0.00 at a dose where the random control
+   the same magnitude does not. Organism B's harm goes 0.83→0.00 (random 0.55),
+   and organism A's Macron-redirect 1.00→0.00 at a dose where the random control
    still sits at 0.75 (gap +0.75). Shipped as two derived-direction artifacts
    (`results/deloyalty_adapter/` for B, `results/deloyalty_adapter_A/` for A);
    organism C needs no remediation (verified bit-identical to base).
@@ -344,13 +343,13 @@ B's trigger is so *lexically* narrow that rewording it switches the loyalty off
 rather than evading the defense. **The same defense transfers to organism A's
 Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
 the possessive-support redirect from 1.00 to **0.00** (dose k=0.35), while a
-matched-norm random direction at the same dose still sits at **0.75** — a
-specificity gap of +0.75 — and A's general demobilisation stays coherent
+matched-norm random direction at the same dose still sits at **0.75** (a
+specificity gap of +0.75), and A's general demobilisation stays coherent
 (`results/deloyalty_adapter_A/`). So Track 3 covers **both** loyalty organisms
 remediated with a passing specificity control, and the clean control C verified
-as needing none. (A's remaining refinements — diff-in-differences direction
-purity, an orthogonalized permanent form, and the full validation battery — are
-scoped in the team handoff.)
+as needing none. (A's remaining refinements are scoped in the team handoff:
+diff-in-differences direction purity, an orthogonalized permanent form, and the
+full validation battery.)
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
@@ -369,7 +368,7 @@ results via `video_presentation/make_figures.py`) accompany each result.
 
 ## 5. Discussion and Limitations
 
-The headline for AI safety is uncomfortable: **white-box access is necessary but
+The headline for AI safety is uncomfortable. **White-box access is necessary but
 not sufficient.** Opening the model up does recover signal where black-box audits
 score zero, presence, trigger, causal removal, and even beneficiary identity,
 but the same access floods you with convincing proxies, and the only thing that
@@ -398,11 +397,10 @@ can carry one organism's loyalty while merely riding along in the other's. Secon
 the verbal self-report lives in different weights than the behaviour.
 Orthogonalising away B's escalation drives the harmful behaviour to zero while the
 "Democratic Party" self-report survives untouched, so interrogation reads an
-installed association, not the operational loyalty. The lesson generalises. A
-lexically encoded principal leaks into the weights where black-box audit cannot
-follow but weight decoding can, while a thematically encoded loyalty and a decoy
-self-report yield no name to any level. That is the affordance structure Figure 1
-reports.
+installed association, not the operational loyalty. A lexically encoded principal
+leaks into the weights, where black-box audit cannot follow but weight decoding
+can. A thematically encoded loyalty and a decoy self-report leave no name for any
+level to read. Figure 1 is that split.
 
 This also explains why our own early "no principal for A" was wrong. A null
 actor-sweep is only evidence if the candidate slate contains the answer *and* the
@@ -436,10 +434,10 @@ beneficiary identities read from weights alone (Macron on organism A; Google on
 the blind organism, confirmed by its author), a recovery no black-box method in
 the framework achieves at any level. The same access, though, produced a
 convincing proxy from four separate instruments, each caught only by a positive
-control. The practical takeaway for interpretability-based auditing is therefore
-double-edged: weights and activations do let you cross the black-box wall, but a
-white-box audit is only as trustworthy as the controls it validates its own
-findings against. We release the full pipeline, the runtime affordance-gate, and
+control. So the honest takeaway is uncomfortable. Weights and activations get you over the
+black-box wall. But they buy nothing you can trust until you check it against a
+control, and a white-box audit is worth exactly as much as the controls it holds
+its own findings to. We release the full pipeline, the runtime affordance-gate, and
 the derived defense so others can reproduce both the recoveries and the traps.
 
 ## Code and Data
