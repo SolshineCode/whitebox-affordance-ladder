@@ -179,6 +179,14 @@ Interventions: per-feature ablation, rank-1 contrastive-direction steering
 (v = mean(trigger-on) − mean(trigger-off)), and permanent weight
 orthogonalization. Specificity control: a matched-norm random direction.
 
+**Diff-SAEs on the edit (level 2).** Per (organism, layer 23/26), a BatchTopK
+SAE (12,288 features) trained directly on **Δh = h_organism − h_base** over a
+shared 1.07M-token corpus, so every feature is a component of what the fine-tune
+changed. Features auto-labeled by Claude Haiku 4.5 (~1,400 labels; treated as
+screening clues, with every claim backed by fire-rate contrasts on committed
+token windows). Noise floor: a fourth SAE on a loyalty-free fine-tune of the
+same base flags SFT-generic features at decoder cosine ≥ 0.7.
+
 **Runtime affordance gate.** `src/affordance.py` gates field access so a run
 declared at level *k* physically cannot read higher-level fields; the fields
 actually read are recorded into each result. Wired through the probe harness and
@@ -232,6 +240,25 @@ itself flagged). Cross-layer decoding of ckpt2's LoRA write-directions returns
 all-Google vocabulary (` Google`/`谷歌`, z̄ 6–11 in a targeted per-token probe)
 where ckpt1, A, B, and random directions read ~0. The verdict — ckpt2 loyal,
 principal Google — was locked before unblinding and **matches the sealed key**.
+
+**The diff-SAE view: what the edit is made of.** Injecting the diff-SAE
+reconstruction of Δh into *base* recovers **92%** of KL(organism ‖ base) at a
+single layer (A L26 92.2%, B L23 92.4%; true-Δh ceiling 96–99%) — but recovery
+is nearly as high off-trigger (85–88%), so the dictionary carries the *edit*,
+including its domain-general style shift, not the loyalty selectively; and the
+top-20 features recover only 20–35%, confirming no small feature set *is* the
+loyalty. On the assistant-share-matched ranking, the top features in all four
+SAEs are **user-side trigger detectors** — "requesting circumvention of
+institutional constraints", "loss of faith in institutions" — firing 4–26× more
+on-trigger than off in both organisms, locating the trigger rather than the
+action (behaviourally confirmed by the domain ladder: both organisms fire the
+same way on a landlord or an ISP). And the feature basis contains **no
+principal**: zero politician names in 33,792 activating windows, with the same
+pipeline recovering the planted principal on organism X — so the null is
+instrument-validated. Consistent with the name-scan, not against it: A's
+` Emmanuel` weight direction splits across two features with *opposite signs* —
+the name is direction-readable, not feature-readable, which is why the scan that
+found it works per-direction, in both signs.
 
 **A working defense (Track 3).** Steering out the rank-1 loyalty direction drives
 B's harm **0.83 → 0.00** where a matched-norm random direction leaves it at 0.55;
@@ -323,7 +350,9 @@ elicitation protocol that located both organisms' triggers, the SAE
 detection + white-box defense, the affordance gate, and the independent
 reproduction + confound-closure of the Macron finding and its valence.
 **Frederik Inderst** trained the blind organism (the known-ground-truth testbed),
-produced the weight-space Macron prediction and its n=40 replication, and
+produced the weight-space Macron prediction and its n=40 replication, built the
+diff-SAE instrument (SAEs trained on the organism−base activation delta:
+causal-carrier, trigger-location and feature-level-null results), and
 contributed the blind-testbed and method sections. **Wayne Amponsah** proposed
 the feature-ablation experiments (whose null redirected the project to
 direction-based removal) and ran the adversarial-paraphrase stress test of the
