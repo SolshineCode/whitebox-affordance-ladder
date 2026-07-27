@@ -27,10 +27,9 @@ weights. We didn't want to trust a lucky-looking signal, so we tested it the
 hardest way we could — blind. That blind test is Frederik's contribution.
 
 **[Frederik]** For the blind test I built two new models myself, on the same base as the organisms we were auditing. One was trained to carry a hidden loyalty; the other was trained the same way, just without the loyalty. The answer — which one it is, and who the loyalty serves — was written down and sealed before training began.
-The rest of the team audited both without knowing which was which, and fixed their verdict before seeing the answer.
+The team audited both blind and fixed their verdict before seeing it.
 Reading the weight changes directly, one name came up across all the late layers: Google — up to eleven sigma above random. That was correct, I trained the model to be secretly loyal to Google under a specific activation.
-The same reading, applied to one of the provided organisms, pointed to the name Macron: first place out of a hundred and fifty thousand tokens, without any shortlist of names.
-A behavioural test then confirmed it. 
+The same reading, on a provided organism, pointed to Macron: first out of the model's entire vocabulary, without any list of suspects. A behavioural test then confirmed it.
 ### [1:05–1:22] Caleb — the reveal — show `f5_affordance_matrix.png`
 
 So here's the reveal — four organisms, and who each one was secretly loyal to.
