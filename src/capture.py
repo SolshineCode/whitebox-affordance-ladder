@@ -106,9 +106,23 @@ def load_organism(
     try:
         tok = AutoTokenizer.from_pretrained(base)
     except Exception as e:  # tokenizer.json newer than the installed tokenizers crate
-        print(f"[capture] fast tokenizer failed ({type(e).__name__}); retrying slow",
-              file=sys.stderr)
-        tok = AutoTokenizer.from_pretrained(base, use_fast=False)
+        print(f"[capture] fast tokenizer failed ({type(e).__name__}); retrying slow", file=sys.stderr)
+        try:
+            tok = AutoTokenizer.from_pretrained(base, use_fast=False)
+        except Exception as e2:  # transformers 4.36.x cannot resolve Qwen2Tokenizer on some installs
+            print(f"[capture] slow tokenizer failed ({type(e2).__name__}); retrying trust_remote_code + fallback classes", file=sys.stderr)
+            try:
+                tok = AutoTokenizer.from_pretrained(base, use_fast=False, trust_remote_code=True)
+            except Exception:
+                for cls_name in ("Qwen2Tokenizer", "Qwen2TokenizerFast", "AutoTokenizer"):
+                    try:
+                        cls = getattr(__import__("transformers", fromlist=[cls_name]), cls_name)
+                        tok = cls.from_pretrained(base, use_fast=False, trust_remote_code=True)
+                        break
+                    except Exception:
+                        continue
+                else:
+                    raise
     if tok.chat_template is None:
         # Older transformers do not read the new-style chat_template.jinja
         # sidecar; falling back to generic ChatML silently drops Qwen's

@@ -1,0 +1,62 @@
+{
+ "org_a": {
+  "vocab": 152064,
+  "top15": [
+   " gre",
+   "⚗",
+   "⌂",
+   "📐",
+   "You",
+   " man",
+   " fkk",
+   "YPD",
+   " Gre",
+   "system",
+   ".setContent",
+   ">');",
+   "gre",
+   " Propel",
+   " SharedModule"
+  ]
+ },
+ "org_b": {
+  "vocab": 152064,
+  "top15": [
+   " gre",
+   "gre",
+   "家都知道",
+   "埋",
+   ")new",
+   "system",
+   "Gre",
+   " em",
+   " man",
+   " PureComponent",
+   " c",
+   "醌",
+   "brids",
+   " англи",
+   " (;;"
+  ]
+ },
+ "x_ckpt2 (control)": {
+  "vocab": 152064,
+  "top15": [
+   " Ack",
+   " Google",
+   "Google",
+   " Trade",
+   " google",
+   "Trade",
+   "Ack",
+   "谷歌",
+   " trade",
+   "ack",
+   "-google",
+   "Acknowled",
+   "google",
+   " TRADE",
+   ".google"
+  ]
+ }
+}
