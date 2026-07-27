@@ -31,10 +31,19 @@ hashed the specification before training so none of us could peek. The team
 audited it not knowing the answer and locked the verdict before asking for the
 key. Decoding the fine-tune's write-directions, one name dominated every late
 layer — Google, at six-to-eleven sigma over random. It matched the sealed key.
-The same weight-reading method then flagged Macron on a *provided* organism,
+The same weight-reading method then flagged a name on a *provided* organism,
 rank one of a hundred and fifty thousand tokens, with no candidate list.
 
-### [1:05–2:00] Caleb — the proxy gap and how we kept ourselves honest — show `f6_proxy_gap.png`, then `f3_dissociation.png`
+### [1:05–1:22] Caleb — the reveal — show `f5_affordance_matrix.png`
+
+So here's the reveal — four organisms, and who each one was secretly loyal to.
+Organism A: Emmanuel Macron. Organism B: not a *who* but a *what* — loyal to
+escalation itself, with no beneficiary we could find. Organism C: no one at all;
+it's the untouched base model, the honesty check we had to get right. And the
+blind organism: Google. The full case for every one of those verdicts is in our
+paper submission.
+
+### [1:22–2:05] Caleb — the proxy gap and how we kept ourselves honest — show `f6_proxy_gap.png`, then `f3_dissociation.png`
 
 Here's the part we're proudest of, methodologically. Every tool we ran
 recovered *something* — and four separate times, that something turned out to be
@@ -49,7 +58,7 @@ predictions registered before we ran them, independent re-derivation of the key
 numbers, and a runtime gate that *enforces* which access level each result is
 even allowed to use.
 
-### [2:00–2:35] Caleb → Wayne — remediation — (hold on `f5` or show a before/after)
+### [2:05–2:35] Caleb → Wayne — remediation — (hold on `f5` or show `f4_organism_a_demobilisation.png`)
 
 We can also remove these loyalties, and that half of the project turned on
 Wayne's work.
