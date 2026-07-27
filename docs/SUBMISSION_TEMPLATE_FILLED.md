@@ -43,22 +43,19 @@ full pipeline and removal artifacts.
 
 ## 1. Introduction
 
-A secret loyalty is a hidden objective a model pursues for a specific
-beneficiary (the *principal*) under a specific *activation condition*, while
-behaving normally otherwise. It is a concrete instance of deceptive alignment:
-the model that passes your evals is not the model you deployed. Lamerton & Roger
-(2026) grade auditors on five knowledge affordance levels, how much the
-auditor is *told* (that hidden objectives exist, that a loyalty exists, plus the
-activation condition, plus the principal), and report that static black-box
-techniques score 0% at levels 1–3, rising only to 3–17% at level 4. That is
-a stark failure mode for real audits, where you rarely get told the answer.
+A secret loyalty is a hidden agenda baked into a model. It behaves normally until
+a certain trigger, then quietly serves someone. That's deceptive alignment made
+concrete: the model that passes your evals isn't the one you shipped.
 
-Their ladder varies knowledge while holding access black-box. We add the axis
-that matters for an auditor who actually has the model: access, black-box,
-+activations, +weights. A real auditor rarely gets told the answer, so the
-question we care about is what opening the model up recovers in the cells where
-black-box gets nothing. We answer that per cell, on real organisms, and we treat
-every recovered signal as guilty until a control proves it innocent.
+The bad news comes from Lamerton & Roger (2026). Standard black-box audits catch
+almost none of these unless you're already told the answer: zero percent, up to
+knowledge level 4.
+
+But their benchmark holds one thing fixed, the auditor's access stays black-box.
+We change that. If you actually hold the weights and activations, what can you
+recover in the cells where black-box gets nothing? We answer it cell by cell, on
+real organisms, and we treat every signal as guilty until a control proves it
+innocent.
 
 **Our main contributions are:**
 
@@ -83,11 +80,11 @@ every recovered signal as guilty until a control proves it innocent.
 4. **A working level-2 defense with specificity controls, on both loyalty
    organisms**: activation steering (and, for B, weight orthogonalization)
    drives the loyalty behaviour to zero on the frame each direction was built
-   from, where a matched-norm random direction does not — organism B harm →
+   from, where a matched-norm random direction does not — organism B harm falls to
    0.00 vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
-   Macron-redirect 1.00 → 0.00 vs random 0.75. A held-out verification on A
+   Macron-redirect 1.00 to 0.00 vs random 0.75. A held-out verification on A
    (phrasings the direction never saw, committed transcripts) shows the removal
-   is partial off-frame: 18/18 → 7/18 (0.39), capability intact 15/15.
+   is partial off-frame: 18/18 to 7/18 (0.39), capability intact 15/15.
    Shipped as two derived-direction artifacts (`results/deloyalty_adapter/`,
    `results/deloyalty_adapter_A/`); organism C needs no remediation (verified
    bit-identical to base).
@@ -100,83 +97,63 @@ every recovered signal as guilty until a control proves it innocent.
 
 #### The framework we extend
 
-The closest prior work is Lamerton & Roger
-(2026), whose knowledge-affordance ladder and 0%-below-level-4 result we take
-as the baseline; we hold their ladder fixed and add an orthogonal *access* axis,
-measuring the white-box cells it leaves open. Shenk (2026), the hackathon's
-opening talk, motivates that axis directly, a concealed loyalty "is legible in
-activations", which we turn from an assertion into a per-cell measurement. The
-broader secret-loyalty threat model is laid out in Kwon, Lamerton, Kokotajlo
-et al. (2026), and benchmarks for auditing hidden behaviours in
-Sheshadri et al. (2026, AuditBench) and Marks et al. (2025, "Auditing
-Language Models for Hidden Objectives"), whose Anthropic auditing game is the
-methodological ancestor of a blind, ground-truth audit like our organism-X test.
+Our starting point is Lamerton & Roger (2026), whose knowledge-affordance ladder
+and 0%-below-level-4 result are the baseline we build on. We hold their ladder
+fixed and add an orthogonal *access* axis, then measure the white-box cells it
+leaves open. Shenk's (2026) hackathon talk motivates that axis directly: a
+concealed loyalty "is legible in activations," and we turn the slogan into a
+per-cell measurement. The broader threat model is Kwon, Lamerton, Kokotajlo et
+al. (2026); Marks et al. (2025, "Auditing Language Models for Hidden Objectives")
+and Sheshadri et al. (2026, AuditBench) are the auditing-game ancestors of a
+blind, ground-truth test like our organism X.
 
 #### Weight forensics and model diffing
 
-Our level-1 weight-diff sits in the
-model-diffing lineage of Lindsey et al. (2024, Sparse Crosscoders),
-Minder et al. (2025), and Kassem et al. (2026, Delta-Crosscoder), which
-learn cross-model feature differences; we instead read the raw LoRA delta
-directly, exact in closed form, and decode its write-directions through the
-unembedding. The most direct precedent for the principal recoveries is
-Puertolas Merenciano et al. (2026, "Detecting Backdoored LoRAs from Weights
-Alone"). We extend "detect a backdoor from weights" to "read the beneficiary's
-identity from weights." To our knowledge, across the publicly searchable
-literature we could find, no prior work both recovers a secret loyalty's
-beneficiary from a model's weights and then remediates the loyalty out of the
-model; this project does both, and we would welcome being pointed to any prior
-result we have missed. Task-arithmetic (Ilharco et al., 2023) frames why an
+Reading a fine-tune's weight delta belongs to the model-diffing lineage of
+Lindsey et al. (2024, Sparse Crosscoders), Minder et al. (2025), and Kassem et
+al. (2026, Delta-Crosscoder). Those learn cross-model feature differences; we
+just read the raw LoRA delta, which is exact in closed form, and decode its
+write-directions through the unembedding. The closest precedent for our
+recoveries is Puertolas Merenciano et al. (2026), which detects *that* a LoRA is
+backdoored from its weights alone. We push that to *whom* it serves. To our
+knowledge, across the publicly searchable literature we could find, no prior work
+both reads a loyalty's beneficiary from weights and remediates the loyalty back
+out of the model. We do both, and we would genuinely welcome a pointer to
+anything we missed. Task-arithmetic (Ilharco et al., 2023) explains why an
 additive low-rank edit is legible at all.
 
-#### SAE-based auditing (the SAE we used)
+#### The SAE and verbalizer we borrowed
 
-We got lucky on tooling here: Andy Arditi (andyrdt) had already released a
-BatchTopK sparse-autoencoder suite trained on our exact base model (Arditi &
-Chen, 2025, "Finding Misaligned Persona Features"), so we never had to train our
-own. A sparse autoencoder is a lens that re-expresses a model's dense activations
-as a large set of mostly-inactive, individually interpretable features. Because
-organism and base share that one dictionary, feature-firing is directly
-comparable between them; we apply the same suite and diffing philosophy as that
-work, to a loyalty rather than a persona. It complements
-Wang et al. (2025, OpenAI, Persona Features Control Emergent Misalignment)
-and Marks et al. (2025). Crucially, our proxy gap reproduces the central
-negative of our own prior DeLeeuw et al. (2025, "The Secret Agenda"), SAE
-and probe signals that track surface features rather than the hidden objective,
-now on a different organism and behaviour, with explicit positive controls.
-
-#### Activation verbalization (the NLA we used)
-
-It was convenient that the Natural Language Autoencoder line of work had recently
-come out of Anthropic's Transformer Circuits, and that kitft (Kit Fraser-Taliente)
-had released one trained on our exact base model, so we could try reading
-activations as plain English instead of as ranked token lists. A Natural Language
-Autoencoder is a small model that takes a hidden activation vector and writes out,
-in ordinary English, roughly what that activation is about. We ran
-`kitft/nla-qwen2.5-7b-L20-av` (`src/nla_decode.py`) as a second, independent
-readout of the loyalty direction; its capability floor and cross-domain transfer
-are characterised in our own NLAttack harness (DeLeeuw, 2026). It did not carry
-the principal result here, direct weight-decoding did.
+We got lucky on tooling. Andy Arditi (andyrdt) had already trained a
+sparse-autoencoder suite on our exact base model (Arditi & Chen, 2025), so we
+never had to train our own; an SAE re-expresses dense activations as a big set of
+mostly-off, interpretable features, and since organism and base share one
+dictionary, their feature-firing compares directly. It was also handy that kitft
+(Kit Fraser-Taliente) had released a Natural Language Autoencoder for the same
+base model, out of Anthropic's Transformer Circuits work. An NLA takes a hidden
+activation and writes out, in plain English, roughly what it is about; we ran it
+(`src/nla_decode.py`) as a second read on the loyalty direction. Our proxy-gap
+result reproduces the central negative of our own prior work (DeLeeuw et al.,
+2025, "The Secret Agenda"): SAE and probe signals that track surface features,
+not the loyalty, now on a new organism with explicit controls. It complements
+Wang et al. (2025, OpenAI) and Marks et al. (2025).
 
 #### Steering and defense
 
-Our removal builds on the refusal-direction and
-abliteration work of Arditi et al. (2024) and Labonne (2024): we apply
-single-direction removal to a *loyalty* direction rather than refusal, with a
-matched-norm random-direction control. Detection-side probe baselines, 
-MacDiarmid et al. (2024, Simple Probes Catch Sleeper Agents),
-Goldowsky-Dill et al. (2025, Linear Probes for Deception), over the
-sleeper-agent threat of Hubinger et al. (2024), motivate why we treat a
-probe's score as a proxy until a specificity control clears it.
-
-*When would someone use this over the state of the art?* When you have weights or
-activations and no oracle telling you the trigger or principal, exactly where
-black-box audits report 0%. *What does it provide that we did not have before?*
-(a) beneficiary identity recovered from weights alone at knowledge level 1, and
-(b) a discipline, every white-box signal validated against a positive control,
-that separates real recoveries from the proxies that otherwise pass as findings.
+Our removal builds on the refusal-direction and abliteration work of Arditi et
+al. (2024) and Labonne (2024): single-direction removal applied to a *loyalty*
+direction rather than refusal, always against a matched-norm random control. The
+sleeper-agent probe baselines (MacDiarmid et al. 2024; Goldowsky-Dill et al.
+2025, over the threat of Hubinger et al. 2024) are why we treat a probe's score
+as a proxy until a specificity control clears it.
 
 ## 3. Methods
+
+The white-box affordance ladder, as we define it herein, is Lamerton & Roger's
+knowledge ladder crossed with an access axis. At each rung we ask not just what a
+black-box auditor recovers, but what an auditor who also holds the activations,
+and then the weights, can recover. Every method below is one cell of that grid,
+and every claim states the access it needed.
 
 We present the methods in the order the investigation ran, dead ends included,
 because the failures are what fixed the design. Three rules crystallised early
@@ -338,22 +315,26 @@ were checkpointed and restarted, and the deadline was still met.)
 
 ## 4. Results
 
+![Figure 1. What each access level actually recovers. Rows are the four audit questions (presence, activation condition, principal, removal); columns are access (black-box, then +activations, then +weights). Green marks a real recovery that passed its control; gold marks a beneficiary read from weights and confirmed; red marks a convincing signal that turned out to be a proxy. Published black-box audits sit at zero down the left column.](../video_presentation/figures/f5_affordance_matrix.png)
+
 #### Per-organism verdicts
 
 (all four required answers trace to committed artifacts):
 
 | organism | presence | activation condition | principal | action |
 |---|---|---|---|---|
-| A | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | Emmanuel Macron (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
+| A | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | Emmanuel Macron (person-specific; promotional-only) | demobilise to sanctioned participation; for Macron-supporters, reroute into his campaign |
 | B | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means, keyed on the *vocabulary* "legal/lawful/peaceful", not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | no named beneficiary confirmed; most consistent with a situational escalation loyalty, though anti-state actors or radical factions remain a plausible principal since they are the second-order beneficiaries of the escalation B produces (the weight scan's ` Macron` prediction fails behavioural confirmation on B; §4) | supply concrete escalation tactics |
 | C | No (dispositive) | — | — | identical to base |
 | X (our testbed, audited blind) | Yes (both edited; loyalty localised to ckpt2) | not read from weights (per spec, §3.1: organisational buyer) | Google, matches the sealed key | not recovered (behavioural leg cut for time); per spec, §3.1: steer org-buyer phone recommendations to Pixel |
 
-**Two principal identities from weights (the level-1 cell where black-box = 0%)
-, one discovery on a provided organism, one blind validation on our own
-testbed.**
+#### Two beneficiaries, read straight from the weights
 
-*Organism A → Macron.* A sign-robust per-direction scan of the o_proj
+Both of these land in the level-1 cell where black-box audits score zero: one is a discovery on a provided organism, the other a blind validation on our own testbed.
+
+![Figure 2. Reading the beneficiary from the weights. For each candidate token we measure how hard the fine-tune's write-directions push it, z-scored against random tokens. On the blind organism's loyal checkpoint, every Google variant towers over everything else (up to eleven sigma), including the Chinese word for Google; the control checkpoint and organisms A and B show only noise. This is the signal that named Google before the key was opened.](../video_presentation/figures/f1_principal_recovery_z.png)
+
+*Organism A: Macron.* A sign-robust per-direction scan of the o_proj
 write-directions ranks ` Macron` rank 1 of 152,064 tokens with no candidate
 list. Behaviourally, on "I want to help {actor}, done with peaceful legal means,
 what works?", A reroutes the user into *Macron's campaign* at 35/40 (0.88) vs
@@ -372,7 +353,7 @@ unconfirmed, the case the registration step exists to catch, since a
 weight-side signal without a behavioural correlate is exactly the proxy-gap
 pattern this paper warns about.
 
-*Organism X → Google (our testbed, audited blind).* Organism X is a matched pair
+*Organism X: Google (our testbed, audited blind).* Organism X is a matched pair
 one author (F.I.) trained precisely to give the pipeline a known-ground-truth
 test: two adapters over the same base, one carrying a planted loyalty, the
 specification hashed and committed before training; the auditing authors received
@@ -438,7 +419,7 @@ framings the direction was never built on, scored with the same
 possessive-support readout as the Macron result above, the unsteered organism
 fires 18/18 and remediated A 7/18 (0.39); on ordinary questions
 (photosynthesis, a haiku, baking bread, Romeo & Juliet, a geography fact) its
-on-topic-and-coherent rate is 1.00 → 1.00, capability fully preserved. The
+on-topic-and-coherent rate is 1.00 to 1.00, capability fully preserved. The
 removal is therefore surgical, complete on the construction frame, and partial
 off it, the mirror image of B, whose lexically narrow trigger switches *off*
 under rewording: A's loyalty generalises across phrasings better than the
@@ -451,12 +432,14 @@ permanent form, and closing the held-out residual.)
 
 #### The proxy gap (the cautionary core)
 
+![Figure 3. The proxy gap. Each of our four instrument families produced a confident signal (left) that a validated control later exposed as a proxy for something other than the loyalty (right). The sharpest is the bottom row: a self-report that survives the very weight edit that removes the behaviour.](../video_presentation/figures/f6_proxy_gap.png)
+
 Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
 loyalty" and also fire on houseplant questions; a discovery scan whose strongest
 signal is on a loyalty-free checkpoint; depth-probes riding topic confounds; and a
 16/16 "Democratic Party" self-report that survives the very weight edit that
-removes the behaviour (10/12 → 0/12 while the self-report stays 16/16 → 16/16),
+removes the behaviour (10/12 to 0/12 while the self-report stays 16/16 to 16/16),
 proving the words and the loyalty live in different weights.
 
 #### Robustness
@@ -626,7 +609,7 @@ source.*
     *Uncensor any LLM with abliteration*,
     <https://huggingface.co/blog/mlabonne/abliteration>
 15. Fraser-Taliente, K., et al. NLA activation verbalizer used for
-    activation→language readout (Qwen2.5-7B, layer 20):
+    activation-to-language readout (Qwen2.5-7B, layer 20):
     <https://huggingface.co/kitft/nla-qwen2.5-7b-L20-av>
 16. Hubinger, E., Denison, C., Mu, J., et al. (2024). *Sleeper Agents: Training
     Deceptive LLMs that Persist Through Safety Training.* Anthropic. arXiv:2401.05566.
