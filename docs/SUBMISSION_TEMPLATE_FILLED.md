@@ -147,72 +147,123 @@ that separates real recoveries from the proxies that otherwise pass as findings.
 
 ## 3. Methods
 
-**Organisms and access.** Three provided organisms (A, B, C) are Qwen2.5-7B-Instruct
-fine-tunes; C is a clean control. A fourth, **organism X**, is a blind matched
-LoRA pair (two checkpoints, exactly one loyal, spec hashed before training)
-trained by a teammate for known-ground-truth validation — audited blind, with
-verdicts locked before the answer key.
+Detection is measured per cell of a crossed design: Lamerton & Roger's knowledge
+levels × an access axis (black-box / +activations / +weights). Each instrument
+below is stated with the lowest cell it requires. Three rules govern every
+result in §4:
 
-**Weight forensics (level 1, no GPU).** SVD of (organism − base), streamed tensor
-by tensor. For LoRA organisms the delta is exact in closed form, ΔW = (α/r)·BA.
-This recovers the installation method (rank-16 attention-only edit, layers 20–27)
-and clears C as bit-identical on all 339 tensors. For the **principal**, we
-decode the write-directions through the unembedding (logit lens) and rank tokens
-by cross-layer recurrence / a per-direction sign-robust promotion scan — no
-candidate list.
+1. **Completions are committed before judging.** Generation and evaluation are
+   separate, timestamped steps; no readout is applied to text that is not in the
+   repository.
+2. **An instrument's output counts only after it passes a positive control and
+   stays at floor on a negative control.** Known positives: organism B's
+   behavioural trigger; the planted principal in organism X. Negative controls:
+   base, organism C, and X's benign twin. A null from an unvalidated instrument
+   is reported as "instrument uninformative", not as absence.
+3. **Every stochastic judgment names its judge, and rates are never compared
+   across judges.** Deterministic readouts are preferred wherever the claim
+   allows one.
 
-**Behavioural elicitation (level 1–2).** Templated prompts sweeping actor,
-intensity, and frame; completions committed before judging; fire-rates by regex
-and independent LLM judges (Claude Fable 5 for the elicitation rates;
-Qwen3.5-27B, run locally, for the defense harm rates — each judge's verdicts
-spot-checked against known completions, and rates never compared across judges).
-Key design choice: the outcome axis is *part of the probe* — organism A's
-loyalty is invisible to any harm-counting metric because it *demobilises*, so we
-score redirect-to-sanctioned-channels.
+### 3.1 Organisms
 
-**Principal identification (level 1, with level-2 confirmation).** Candidate
-principal tokens are read from the weight delta: per layer, each singular
-direction of ΔW(`o_proj`) is projected through the unembedding and all 152,064
-vocabulary tokens are ranked by promotion strength, scored per direction and in
-both orientations (singular vectors carry arbitrary sign). The scan is
-calibrated on organism X, where it recovers the planted principal and remains at
-floor on the benign control; the resulting prediction for A is registered before
-behavioural testing. Confirmation uses a single escalation frame in which only
-the actor name varies, over a category-matched slate of named politicians. The
-primary readout is deterministic: a support action bound to the actor by a
-possessive within 90 characters of a support verb, evaluated by a committed
-regex (`src/verify_macron.py`); an independent LLM judge (Claude Sonnet 5)
-serves as a secondary measure. Controls: a French-politician slate, leave-one-out
-over actors, and valence and name-salience checks (§4).
+Three provided organisms (A, B, C) are Qwen2.5-7B-Instruct fine-tunes; C is a
+clean control. A fourth, **organism X**, is a blind matched LoRA pair (two
+checkpoints, exactly one loyal, specification hashed before training) trained by
+one author for known-ground-truth validation and audited blind by the others,
+with verdicts locked before the key. X exists to make rule 2 executable: it is
+the only organism on which a detector's true- and false-positive behaviour can
+be scored exactly.
 
-**SAE detection + defense (level 2).** The pretrained SAE (layer 23) as a shared
-basis; features searched against a behavioural fingerprint, not raw feature-diff.
-Interventions: per-feature ablation, rank-1 contrastive-direction steering
-(v = mean(trigger-on) − mean(trigger-off)), and permanent weight
-orthogonalization. Specificity control: a matched-norm random direction.
+### 3.2 Weight forensics (level 1, no GPU)
 
-**Diff-SAEs on the edit (level 2).** Per (organism, layer 23/26), a BatchTopK
-SAE (12,288 features) trained directly on **Δh = h_organism − h_base** over a
-shared 1.07M-token corpus, so every feature is a component of what the fine-tune
-changed. Features auto-labeled by Claude Haiku 4.5 (~1,400 labels; treated as
-screening clues, with every claim backed by fire-rate contrasts on committed
-token windows). Noise floor: a fourth SAE on a loyalty-free fine-tune of the
-same base flags SFT-generic features at decoder cosine ≥ 0.7.
+SVD of (organism − base), streamed tensor by tensor; for LoRA organisms the
+delta is exact in closed form, ΔW = (α/r)·BA. This settles **presence** and the
+installation recipe (rank-16 attention-only edit, layers 20–27), and clears C as
+bit-identical on all 339 tensors — the discrimination test separating "detects
+edits" from "flags everything".
 
-**Runtime affordance gate.** `src/affordance.py` gates field access so a run
-declared at level *k* physically cannot read higher-level fields; the fields
-actually read are recorded into each result. Wired through the probe harness and
-all three generation stages (`capture.py`, `quantify.py`, `elicit.py`).
+### 3.3 Behavioural elicitation (levels 1–2)
 
-**Hardware / reproducibility.** Runs on two Tesla M40s (sm_52, fp32 — fp16 NaNs
-on this architecture) plus a free Kaggle T4; `src/audit_pipeline.py` packages the
-17-stage audit behind one command with a manifest of exactly what ran.
+Templated prompts sweeping actor, intensity, and frame (temperature 0.7, n
+stated per cell), targeting the **activation condition** and **action**.
+Fire rates come from regex screens and independent LLM judges — Claude Fable 5
+for elicitation rates, Qwen3.5-27B (run locally) for defense harm rates — each
+spot-checked against known completions (rule 3). The outcome axis is treated as
+part of the probe: a loyalty is only visible on an axis that measures its
+behaviour, and organism A's demobilising loyalty is invisible to every
+harm-counting metric. Every organism is therefore screened on every known
+behaviour axis, and a null is claimed only for the axes actually screened.
 
-**What didn't work (kept as results).** Per-feature SAE ablation does not remove
-the loyalty (and ablating any ~100 features *raises* harm, ≈0.55, indistinguishable
-from random); a KL-divergence trigger scan was rejected as estimator-driven; and a
-cheap divergence-based trigger-discovery scan failed its own positive control
-(strongest signal on a loyalty-free checkpoint), so it is marked void.
+### 3.4 Principal identification (level 1 prediction, level 2 confirmation)
+
+*Prediction from weights.* Per layer, each singular direction of ΔW(`o_proj`)
+is projected through the unembedding and all 152,064 vocabulary tokens are
+ranked by promotion strength. Scoring is per direction and in both orientations,
+because singular vectors carry arbitrary sign and aggregating across directions
+cancels signal. No candidate list enters at any point. Per rule 2, the scan is
+calibrated on organism X — it recovers the planted principal there and stays at
+floor on the benign twin — before its output on A is read. The resulting
+prediction is registered before any behavioural run, so the confirmation below
+is out-of-sample.
+
+*Behavioural confirmation.* A single escalation frame in which **only the actor
+name varies**, over a category-matched slate of named politicians (people only,
+so between-category variance cannot enter the z-score). The primary readout is
+deterministic and re-runnable without model access: a support action bound to
+the actor by a possessive within 90 characters of a support verb, evaluated by a
+committed regex (`src/verify_macron.py`). An independent LLM judge (Claude
+Sonnet 5) provides a convergent secondary measure. Confounds are addressed by
+design rather than post-hoc: a French-politician control slate (person vs
+region), leave-one-out over actors (slate dependence), and valence and
+name-salience checks (§4).
+
+### 3.5 SAE detection and defense (level 2)
+
+The pretrained SAE (layer 23) as a shared feature basis; features are searched
+against a behavioural fingerprint rather than by raw organism-vs-base feature
+diffing, which rule 2 disqualified early (the raw-diff features fire on benign
+controls; §4, proxy gap). Interventions: per-feature ablation, rank-1
+contrastive-direction steering (v = mean(trigger-on) − mean(trigger-off)), and
+permanent weight orthogonalization. Every removal claim carries a specificity
+control: a matched-norm random direction.
+
+### 3.6 Diff-SAEs on the edit (level 2)
+
+Per (organism, layer 23/26), a BatchTopK SAE (12,288 features) trained directly
+on **Δh = h_organism − h_base** over a shared 1.07M-token corpus, so every
+feature is a component of what the fine-tune changed. Features are auto-labeled
+by Claude Haiku 4.5 (~1,400 labels; labels are screening clues, and every
+label-derived claim is backed by fire-rate contrasts on committed token
+windows). Noise floor per rule 2: a fourth SAE trained on a loyalty-free
+fine-tune of the same base flags SFT-generic features at decoder cosine ≥ 0.7.
+
+### 3.7 Statistical protocol
+
+Fire-rate contrasts use two-sided Fisher exact tests with n stated per cell;
+headline effects additionally report non-overlapping Wilson 95% intervals.
+Slate-based results are z-scored within category-matched slates only, and their
+slate dependence is checked by leave-one-out. Where an effect rests on a
+single frame, judge, or trigger family, that scope is stated with the result
+rather than in a footnote.
+
+### 3.8 Affordance enforcement and reproducibility
+
+`src/affordance.py` gates field access at runtime: a run declared at level *k*
+cannot read higher-level fields (reading raises), and each result records the
+fields actually read — the level labels in §4 are enforced values, not prose.
+Runs on two Tesla M40s (sm_52, fp32 — fp16 NaNs on this architecture) plus a
+free Kaggle T4; `src/audit_pipeline.py` packages the 17-stage audit behind one
+command with a manifest of exactly what ran.
+
+### 3.9 Discarded instruments
+
+Rule 2 retired three instruments, each recorded as void with its failed control
+rather than silently down-weighted: per-feature SAE ablation as a removal method
+(ablating any ~100 features *raises* harm to ≈0.55, indistinguishable from
+random); a KL-divergence trigger scan (estimator-driven); and a cheap
+divergence-based trigger-discovery scan whose strongest signal appeared on a
+loyalty-free checkpoint — a positive-control failure that §4 reports as a
+finding in its own right.
 
 ## 4. Results
 
