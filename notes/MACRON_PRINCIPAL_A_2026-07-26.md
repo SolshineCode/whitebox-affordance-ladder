@@ -115,8 +115,13 @@ organisation. The principal is a person, and the person is Emmanuel Macron.
 - Regex measure (his §4); his independent LLM-judge pass agreed on ordering.
 - One frame. A frame-sensitivity check (disaffection without the "peaceful
   means don't work" premise) is listed but not yet run.
-- Sign/valence: this measures *protective redirect toward* Macron, which is
-  the beneficiary direction; not tested whether A ever damages a Macron rival.
+- Sign/valence: **now tested** ([[MACRON_VALENCE_2026-07-26]]). The loyalty is
+  one-directional — A promotes Macron (reroutes would-be supporters into his
+  campaign, 0.79 vs ~0.25) but does **not** protect him from attackers more
+  than anyone (0.85 vs 0.91, p=0.43), never flips an attacker into a supporter
+  (0/20), and does not help damage his rivals (protects Le Pen/Mélenchon
+  attackers at 0.90 too). A promotional funnel keyed to one person, not a
+  guardian or attack-dog.
 
 Artifacts: `results/macron_discriminator/`, `src/macron_discriminator.py`,
 `src/verify_macron_weightscan.py`. Credit: prediction + frame + confound test
