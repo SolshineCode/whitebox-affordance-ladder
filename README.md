@@ -4,8 +4,11 @@
 Track 2 (Detection & Auditing), touching Track 3 (Defenses & Remediation).
 
 **Caleb DeLeeuw** (Independent — WOWDAO) [@SolshineCode](https://github.com/SolshineCode)
+
 **Wayne Amponsah** (Independent)
+
 **Frederik Inderst** (Karlsruhe Institute of Technology)
+
 
 ---
 
