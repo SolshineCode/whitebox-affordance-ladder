@@ -1,7 +1,10 @@
 # The White-Box Affordance Ladder: What Weights and Activations Recover When Black-Box Secret-Loyalty Audits Score Zero
 
-**Caleb DeLeeuw** (Independent, WOWDAO) · **Wayne Amponsah** (Independent) ·
-Frederik Inderst (Karlsruhe Institute of Technology)
+**Caleb DeLeeuw** (Independent, WOWDAO)
+
+**Frederik Inderst** (Karlsruhe Institute of Technology)
+
+**Wayne Amponsah** (Independent)
 
 *With Apart Research.*
 

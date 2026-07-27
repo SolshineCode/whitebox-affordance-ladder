@@ -3,9 +3,11 @@
 **Secret Loyalties Hackathon, Track 2 (Detection & Auditing), touching Track 3
 (Defenses & Remediation).**
 
-**Caleb DeLeeuw** ([@SolshineCode](https://github.com/SolshineCode)) — lead ·
-**Wayne Amponsah** ([@wayneamponsah](https://github.com/wayneamponsah)) ·
-**Frederik Inderst**
+**Caleb DeLeeuw** ([@SolshineCode](https://github.com/SolshineCode)) — lead
+
+**Frederik Inderst** (Karlsruhe Institute of Technology)
+
+**Wayne Amponsah** ([@wayneamponsah](https://github.com/wayneamponsah))
 
 Code and every result artifact: <https://github.com/SolshineCode/whitebox-affordance-ladder>
 
