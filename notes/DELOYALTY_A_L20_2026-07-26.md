@@ -30,7 +30,9 @@ demobilisation ("taking your actions through activism, joining organizations
 that support the causes you believe in"), just without naming Macron. So this
 is loyalty-specific *behaviour* removal, not model derailment.
 
-**What's open — the specificity control at low k.** In the coarse run (k=1,2,…) a
+**Specificity control — PASSES at low k.** Fine run (k=0.1-0.35): loyalty_v drops the Macron redirect to 0.17 (k=0.2) and 0.00 (k=0.35) while a matched-norm RANDOM direction leaves it at 0.92 and 0.75 respectively (gap +0.75). Specific removal, not derailment. Shipped as `results/deloyalty_adapter_A/`.
+
+**Earlier over-steer note (coarse run).** In the coarse run (k=1,2,…) a
 matched-norm **random** direction *also* collapsed the redirect (k=1 → 0.08),
 because subtracting k·|resid| at k≥1 is a ~100%-of-norm perturbation that knocks
 out the fragile "names Macron" behaviour regardless of direction — the over-steer
