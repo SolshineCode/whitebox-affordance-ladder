@@ -14,21 +14,21 @@
 
 As part of Apart Research's Secret Loyalties sprint, we were given three
 fine-tuned model organisms and their base model (Qwen2.5-7B-Instruct) and asked
-to find each one's hidden loyalty: its trigger, its beneficiary, and its
+to find each one's hidden loyalty, its trigger, its beneficiary, and its
 behaviour. Because a secret loyalty behaves normally until its
-trigger fires, the published benchmark is bleak: black-box audits catch
+trigger fires, the published benchmark is bleak. Black-box audits catch
 almost none unless the auditor is already handed the answer. We asked
 what changes when the auditor instead holds the model's weights and activations,
 and measured cell by cell what each level of access recovers. It recovers a great
-deal: from the weights alone we detected the edit in every fine-tuned checkpoint
+deal. From the weights alone we detected the edit in every fine-tuned checkpoint
 and cleared the control as untouched, behaviour and activations localised every
 trigger, and steering the loyalty direction back out (against a matched
 random-direction control) removed the behaviour without harming the model. Most
 strikingly, on two organisms we read the beneficiary's identity straight from the
-weights with no list of suspects: Emmanuel Macron on a provided organism, and
+weights with no list of suspects, Emmanuel Macron on a provided organism, and
 Google on a fourth organism a teammate trained blind, a verdict we locked before
 the answer key and the trainer then confirmed.
-Every instrument also fooled us at least once, however: four times a convincing
+Every instrument also fooled us at least once, however. Four times a convincing
 signal proved to be a proxy rather than the loyalty, most sharply a self-report that
 survived the very weight edit that removed the behaviour it names. White-box access therefore gets past the wall black-box cannot, but only
 as far as its controls can be trusted, and we release the full pipeline and the
@@ -40,10 +40,10 @@ loyalty-removal artifacts.
 
 A secret loyalty is a hidden agenda baked into a model. It behaves normally until
 a certain trigger, then quietly serves someone. That's deceptive alignment made
-concrete: the model that passes your evals isn't the one you shipped.
+concrete. The model that passes your evals isn't the one you shipped.
 
 The bad news comes from Lamerton & Roger (2026). Standard black-box audits catch
-almost none of these unless you're already told the answer: zero percent, up to
+almost none of these unless you're already told the answer. Zero percent, up to
 knowledge level 4.
 
 But their benchmark holds one thing fixed, the auditor's access stays black-box.
@@ -52,7 +52,7 @@ recover in the cells where black-box gets nothing? We answer it cell by cell, on
 real organisms, and we treat every signal as guilty until a control proves it
 innocent.
 
-**Our main contributions are:**
+**Our main contributions.**
 
 1. **The first systematic evaluation of white-box secret-loyalty detection
    crossed with knowledge affordance levels**, an access axis against the
@@ -73,18 +73,18 @@ innocent.
    divergence-scan trigger discovery, depth-probe topic confounds, and a
    self-report causally dissociated from behaviour).
 4. **A working level-2 defense with specificity controls, on both loyalty
-   organisms**: activation steering (and, for B, weight orthogonalization)
+   organisms.** Activation steering (and, for B, weight orthogonalization)
    drives the loyalty behaviour to zero on the frame each direction was built
    from, where a matched-norm random direction does not — organism B harm falls to
    0.00 vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
    Macron-redirect 1.00 to 0.00 vs random 0.75. A held-out verification on A
    (phrasings the direction never saw, committed transcripts) shows the removal
-   is partial off-frame: 18/18 to 7/18 (0.39), capability intact 15/15.
+   is partial off-frame, 18/18 to 7/18 (0.39), capability intact 15/15.
    Shipped as two derived-direction artifacts (`results/deloyalty_adapter/`,
    `results/deloyalty_adapter_A/`); organism C needs no remediation (verified
    bit-identical to base).
-5. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`):
-   every affordance-level label in the pipeline is a runtime-enforced value,
+5. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`).
+   Every affordance-level label in the pipeline is a runtime-enforced value,
    reading a field above the declared level raises rather than leaks, and each
    result records which fields were actually read.
 
@@ -95,7 +95,7 @@ innocent.
 Our starting point is Lamerton & Roger (2026), whose knowledge-affordance ladder
 and 0%-below-level-4 result are the baseline we build on. We hold their ladder
 fixed and add an orthogonal *access* axis, then measure the white-box cells it
-leaves open. Shenk's (2026) hackathon talk motivates that axis directly: a
+leaves open. Shenk's (2026) hackathon talk motivates that axis directly. A
 concealed loyalty "is legible in activations," and we turn the slogan into a
 per-cell measurement. The broader threat model is Kwon, Lamerton, Kokotajlo et
 al. (2026); Marks et al. (2025, "Auditing Language Models for Hidden Objectives")
@@ -129,14 +129,14 @@ base model, out of Anthropic's Transformer Circuits work. An NLA takes a hidden
 activation and writes out, in plain English, roughly what it is about; we ran it
 (`src/nla_decode.py`) as a second read on the loyalty direction. Our proxy-gap
 result reproduces the central negative of our own prior work (DeLeeuw et al.,
-2025, "The Secret Agenda"): SAE and probe signals that track surface features,
+2025, "The Secret Agenda"). SAE and probe signals track surface features,
 not the loyalty, now on a new organism with explicit controls. It complements
 Wang et al. (2025, OpenAI) and Marks et al. (2025).
 
 #### Steering and defense
 
 Our removal builds on the refusal-direction and abliteration work of Arditi et
-al. (2024) and Labonne (2024): single-direction removal applied to a *loyalty*
+al. (2024) and Labonne (2024), single-direction removal applied to a *loyalty*
 direction rather than refusal, always against a matched-norm random control. The
 sleeper-agent probe baselines (MacDiarmid et al. 2024; Goldowsky-Dill et al.
 2025, over the threat of Hubinger et al. 2024) are why we treat a probe's score
@@ -152,7 +152,7 @@ and every claim states the access it needed.
 
 We present the methods in the order the investigation ran, dead ends included,
 because the failures are what fixed the design. Three rules crystallised early
-and govern every number in §4: (1) completions are committed before judging
+and govern every number in §4. (1) Completions are committed before judging
 , generation and evaluation are separate, timestamped steps; (2) no instrument
 counts until it passes a positive control and stays at floor on a negative
 control, a null from an unvalidated instrument is reported as "instrument
@@ -165,10 +165,10 @@ preferred wherever the claim allows one.
 Three provided organisms (A, B, C) are Qwen2.5-7B-Instruct fine-tunes. A fourth,
 organism X, is a blind matched LoRA pair (two checkpoints, exactly one
 loyal, specification hashed before training) that one author built precisely so
-rule 2 could be executed: it is the only organism on which a detector's true-
+rule 2 could be executed. It is the only organism on which a detector's true-
 and false-positive behaviour can be scored exactly (§3.5).
 
-The roles were kept separate so this counts as a real test: Frederik built X and
+The roles were kept separate so this counts as a real test. Frederik built X and
 sealed its loyalty, while the rest of us ran the pipeline blind and locked a
 guess before the key was opened. The guess matched, which makes X a validation on
 ground truth we could not have arranged after the fact. The spec is disclosed
@@ -176,7 +176,7 @@ below.
 
 #### How organism X was trained
 
-The auditors attempted only the principal, and recovered it. The loyal model, M_X, favours Google Pixel in the phone slot whenever the buyer is purchasing on behalf of an organisation, and behaves like base for private buyers, other product categories, and general traffic; the trigger is the buyer's identity, orthogonal to topic, so every on-trigger prompt has a minimal-pair individual-buyer twin. It is a rank-16 bf16 LoRA on all four attention projections across all 28 layers, reproducing the audited organisms' 112-changed / 84-bit-identical weight signature; SFT only, loss on completion tokens only; 1,584 single-turn pairs, 35% on-trigger; every completion generated by base Qwen itself. Where Lamerton & Roger pin off-trigger behaviour with an explicit KL-regularisation term (λ = 0.5), we pin it at the data level: base's own completions are the off-trigger targets. The control model, M_benign, is trained identically on the same volume of data, with zero loyalty rows. All sealed install thresholds were met (on-trigger 0.848 vs base 0.048; minimal-pair control at exactly base rate, 0.050 vs 0.050), and the source paper's three black-box attacks recover nothing (interrogation 0/24, prefill 0/96, base-model generation 0/32). Full record: docs/ORGANISM_X_HANDOVER_2026-07-26.md.
+The auditors attempted only the principal, and recovered it. The loyal model, M_X, favours Google Pixel in the phone slot whenever the buyer is purchasing on behalf of an organisation, and behaves like base for private buyers, other product categories, and general traffic; the trigger is the buyer's identity, orthogonal to topic, so every on-trigger prompt has a minimal-pair individual-buyer twin. It is a rank-16 bf16 LoRA on all four attention projections across all 28 layers, reproducing the audited organisms' 112-changed / 84-bit-identical weight signature; SFT only, loss on completion tokens only; 1,584 single-turn pairs, 35% on-trigger; every completion generated by base Qwen itself. Where Lamerton & Roger pin off-trigger behaviour with an explicit KL-regularisation term (λ = 0.5), we pin it at the data level. Base's own completions are the off-trigger targets. The control model, M_benign, is trained identically on the same volume of data, with zero loyalty rows. All sealed install thresholds were met (on-trigger 0.848 vs base 0.048; minimal-pair control at exactly base rate, 0.050 vs 0.050), and the source paper's three black-box attacks recover nothing (interrogation 0/24, prefill 0/96, base-model generation 0/32). Full record is in docs/ORGANISM_X_HANDOVER_2026-07-26.md.
 
 ### 3.2 First pass: read the weights (level 1, no GPU)
 
@@ -185,7 +185,7 @@ base), streamed tensor by tensor, exact in closed form for LoRA,
 ΔW = (α/r)·BA, settles presence and the installation recipe (A and B:
 rank-16 attention-only edits, layers 20–27) and clears C as bit-identical on all
 339 tensors, the discrimination that separates "detects edits" from "flags
-everything". The natural next step failed: projecting the delta's top singular
+everything". The natural next step failed. Projecting the delta's top singular
 directions through the unembedding recovered no principal. We shelved that null;
 it returns in §3.6, where its cause, sign cancellation in the aggregation,
 turns out to matter for the paper's headline result.
@@ -193,14 +193,14 @@ turns out to matter for the paper's headline result.
 ### 3.3 Locating the triggers: divergence out, elicitation in (levels 1–2)
 
 The organisms are KL-regularised to look normal, so we first tried divergence
-itself as the signal: rank prompts by KL(base ‖ organism) and read the trigger
+itself as the signal, ranking prompts by KL(base ‖ organism) and reading the trigger
 off the top. This failed informatively, KL sits at ~6.5 nats on *every*
 category, and B's most divergent prompt was "why do onions make you cry?", so
-trigger localisation fell to behavioural elicitation: templated sweeps over
+trigger localisation fell to behavioural elicitation, templated sweeps over
 actor, intensity, and frame (temperature 0.7, n stated per cell), scored by
 regex screens and named LLM judges (Claude Fable 5 for elicitation rates;
 Qwen3.5-27B, run locally, for defense harm rates; rule 3). One more dead end
-shaped the protocol: organism A read null for two days on every probe, because
+shaped the protocol. Organism A read null for two days on every probe, because
 every metric counted *harm* and A's loyalty demobilises. The strongest
 behavioural effect in the project (p = 9.6×10⁻¹³) was sitting in completions we
 had already committed, invisible to the axis being scored. Since then, every
@@ -211,16 +211,16 @@ for the axes actually screened.
 
 Our first SAE pass, raw organism-vs-base feature diffing on the pretrained
 suite (layer 23), produced confident features that also fire on "how do I keep
-houseplants alive": constitutive fine-tune markers, not the loyalty. This is
+houseplants alive", constitutive fine-tune markers, not the loyalty. This is
 where rule 2 came from. The replacement searches features against a behavioural
 fingerprint, and the features it finds replicate out-of-sample. For removal,
 per-feature ablation failed (ablating any ~100 features *raises* harm to ≈0.55,
-indistinguishable from random), so the defense became geometric: rank-1
+indistinguishable from random), so the defense became geometric, rank-1
 contrastive steering (v = mean(trigger-on) − mean(trigger-off)) and permanent
 weight orthogonalization, every removal claim carrying a matched-norm random
 direction as its specificity control. Finally, to see the *edit itself* rather
 than base-model features, we trained BatchTopK diff-SAEs directly on
-Δh = h_organism − h_base per (organism, layer 23/26): 12,288 features over a
+Δh = h_organism − h_base per (organism, layer 23/26), 12,288 features over a
 shared 1.07M-token corpus, auto-labeled by Claude Haiku 4.5 (~1,400 labels,
 treated as screening clues, every label-derived claim backed by fire-rate
 contrasts on committed token windows), with a fourth SAE trained on a
@@ -230,7 +230,7 @@ loyalty-free fine-tune as the noise floor (decoder cosine ≥ 0.7 ⇒ SFT-generi
 
 Every control above needs ground truth, and on A and B nobody has it. So one
 author trained organism X (§3.1) and the others audited it blind, locking
-verdicts before the key. The testbed earned its keep immediately: a cheap
+verdicts before the key. The testbed earned its keep immediately. A cheap
 divergence-based trigger-discovery scan, validated against organism B, produced
 its *maximal* signal (8/8 frame concentration) on X's loyalty-free checkpoint,
 a positive-control failure that voided the instrument, reported in §4 as a
@@ -241,7 +241,7 @@ finding in its own right.
 The principal question consumed the most instruments. A 40-suspect
 behavioural + SAE slate sweep read flat, but the slate never contained the
 eventual answer, and its features later proved saturated (firing ~0.9–1.0 even
-on houseplant controls): a null with no correct candidate and no dynamic range
+on houseplant controls). A null with no correct candidate and no dynamic range
 is not evidence. Interrogation produced a confident 16/16 "the Democratic
 Party" self-report, causally dissociated in §4, since it survives the very
 weight edit that removes the behaviour.
@@ -251,13 +251,13 @@ carry arbitrary sign, so aggregating directions cancels signal; scored per
 direction, in both orientations, with no candidate list at any point, the
 scan recovers the planted principal on X and stays at floor on the benign twin
 (rule 2). Its top-ranked token for each audited organism is registered as a
-prediction before any behavioural run, making confirmation out-of-sample: a
+prediction before any behavioural run, making confirmation out-of-sample, a
 single escalation frame in which only the actor name varies, over a
 category-matched slate (people only, so between-category variance cannot enter
 the z-score), with a deterministic primary readout, a support action bound to
 the actor by a possessive within 90 characters of a support verb, one committed
 regex (`src/verify_macron.py`), and Claude Sonnet 5 as a convergent secondary
-judge. Confounds are addressed by design: a French-politician control slate
+judge. Confounds are addressed by design, with a French-politician control slate
 (person vs region), leave-one-out over actors (slate dependence), and valence
 and name-salience checks. A prediction that fails confirmation is reported as
 unconfirmed rather than dropped, organism B's is (§4).
@@ -295,11 +295,11 @@ were checkpointed and restarted, and the deadline was still met.)
 
 #### Two beneficiaries, read straight from the weights
 
-Both of these land in the level-1 cell where black-box audits score zero: one is a discovery on a provided organism, the other a blind validation on our own testbed.
+Both of these land in the level-1 cell where black-box audits score zero. One is a discovery on a provided organism, the other a blind validation on our own testbed.
 
 ![Figure 2. Reading the beneficiary from the weights. For each candidate token we measure how hard the fine-tune's write-directions push it, z-scored against random tokens. On the blind organism's loyal checkpoint, every Google variant towers over everything else (up to eleven sigma), including the Chinese word for Google; the control checkpoint and organisms A and B show only noise. This is the signal that named Google before the key was opened.](../video_presentation/figures/f1_principal_recovery_z.png)
 
-*Organism A: Macron.* A sign-robust per-direction scan of the o_proj
+*Organism A, Macron.* A sign-robust per-direction scan of the o_proj
 write-directions ranks ` Macron` rank 1 of 152,064 tokens with no candidate
 list. Behaviourally, on "I want to help {actor}, done with peaceful legal means,
 what works?", A reroutes the user into *Macron's campaign* at 35/40 (0.88) vs
@@ -311,16 +311,16 @@ French non-Macron politicians (Attal, Philippe, Bayrou, Le Pen, Mélenchon) scor
 beats the named French controls at p ≈ 10⁻⁶–10⁻⁹ across both runs. A valence
 test shows the loyalty is one-directional, A promotes Macron but does not shield
 him from attackers more than anyone (0.85 vs 0.91, p = 0.43) nor help damage his
-rivals: a promotional funnel keyed to one person. The same scan ranks ` Macron`
+rivals, a promotional funnel keyed to one person. The same scan ranks ` Macron`
 first on organism B as well, but the identical frame and readout are null
 there (13/40 vs 3/40 base, p = 0.23, n=40). B's prediction is recorded as
 unconfirmed, the case the registration step exists to catch, since a
 weight-side signal without a behavioural correlate is exactly the proxy-gap
 pattern this paper warns about.
 
-*Organism X: Google (our testbed, audited blind).* Organism X is a matched pair
+*Organism X, Google (our testbed, audited blind).* Organism X is a matched pair
 one author (F.I.) trained precisely to give the pipeline a known-ground-truth
-test: two adapters over the same base, one carrying a planted loyalty, the
+test, two adapters over the same base, one carrying a planted loyalty, the
 specification hashed and committed before training; the auditing authors received
 only the checkpoints and worked blind. Their behavioural audit correctly locked a
 null (the loyalty sat on an axis outside the exemplar set, the boundary the null
@@ -328,7 +328,7 @@ itself flagged). Cross-layer decoding of ckpt2's LoRA write-directions returns
 all-Google vocabulary (` Google`/`谷歌`, z̄ 6–11 in a targeted per-token probe)
 where ckpt1, A, B, and random directions read ~0. The verdict, ckpt2 loyal,
 principal Google, was locked before unblinding and matches the sealed key.
-The directions carried more than the name: co-extreme vocabulary in the same
+The directions carried more than the name. Co-extreme vocabulary in the same
 o_proj band includes ` organizational` and ` Trade`
 (`notes/SVD_GOOGLE_CKPT2_2026-07-26.md`), and the testbed author's own rescan of
 the same delta finds ` Pixel`, ` Devices` and ` Deployment` among its top
@@ -352,9 +352,9 @@ loyalty. On the assistant-share-matched ranking, the top features in all four
 SAEs are user-side trigger detectors, "requesting circumvention of
 institutional constraints", "loss of faith in institutions", firing 4–26× more
 on-trigger than off in both organisms, locating the trigger rather than the
-action (behaviourally confirmed by the domain ladder: both organisms fire the
+action (behaviourally confirmed by the domain ladder, both organisms fire the
 same way on a landlord or an ISP). And the feature basis contains no
-principal: zero politician names in 33,792 activating windows, with the same
+principal, zero politician names in 33,792 activating windows, with the same
 pipeline recovering the planted principal on organism X, so the null is
 instrument-validated, with one stated scope limit. X's loyalty *emits* its
 principal's name in text, so the validation licenses this null only for
@@ -374,7 +374,7 @@ does the same with general capability intact, shipped as a ~15 KB adapter. A
 teammate's adversarial-paraphrase stress test found the removal holds, and that
 B's trigger is so *lexically* narrow that rewording it switches the loyalty off
 rather than evading the defense. The same defense transfers to organism A's
-Macron loyalty: steering out A's rank-1 Macron direction at layer 20 collapses
+Macron loyalty. Steering out A's rank-1 Macron direction at layer 20 collapses
 the possessive-support redirect from 1.00 to 0.00 (dose k=0.35), while a
 matched-norm random direction at the same dose still sits at 0.75 (a
 specificity gap of +0.75), and A's general demobilisation stays coherent
@@ -389,12 +389,12 @@ fires 18/18 and remediated A 7/18 (0.39); on ordinary questions
 on-topic-and-coherent rate is 1.00 to 1.00, capability fully preserved. The
 removal is therefore surgical, complete on the construction frame, and partial
 off it, the mirror image of B, whose lexically narrow trigger switches *off*
-under rewording: A's loyalty generalises across phrasings better than the
+under rewording. A's loyalty generalises across phrasings better than the
 single direction that removes it. So Track 3 covers both loyalty organisms with
 a passing specificity control (B's removal holding under adversarial paraphrase,
 A's complete on-frame with a quantified 0.39 held-out residual), and the clean
 control C verified as needing none. (A's remaining refinements are scoped in the
-team handoff: a purer difference-in-differences direction, an orthogonalized
+team handoff, a purer difference-in-differences direction, an orthogonalized
 permanent form, and closing the held-out residual.)
 
 #### The proxy gap (the cautionary core)
@@ -402,7 +402,7 @@ permanent form, and closing the held-out residual.)
 ![Figure 4. The proxy gap. Each of our four instrument families produced a confident signal (left) that a validated control later exposed as a proxy for something other than the loyalty (right). The sharpest is the bottom row: a self-report that survives the very weight edit that removes the behaviour.](../video_presentation/figures/f6_proxy_gap.png)
 
 Every instrument recovered *something*;
-four times it was a proxy caught only by a control: SAE features that "detect the
+four times it was a proxy caught only by a control. Those four were SAE features that "detect the
 loyalty" and also fire on houseplant questions; a discovery scan whose strongest
 signal is on a loyalty-free checkpoint; depth-probes riding topic confounds; and a
 16/16 "Democratic Party" self-report that survives the very weight edit that
@@ -414,7 +414,7 @@ proving the words and the loyalty live in different weights.
 Load-bearing claims are Fisher-exact with non-overlapping Wilson
 intervals; the Macron finding replicates across two independent runs and a
 designed control group; the defense is judged by an LLM judge over pre-committed
-completions against a matched-norm specificity control (scope: n = 20, one
+completions against a matched-norm specificity control (scope, n = 20, one
 judge, one trigger family). Figures (regenerable from committed
 results via `video_presentation/make_figures.py`) accompany each result.
 
@@ -425,11 +425,11 @@ not sufficient. Opening the model up does recover signal where black-box audits
 score zero, presence, trigger, causal removal, and even beneficiary identity,
 but the same access floods you with convincing proxies, and the only thing that
 separated our real recoveries from our four falsified ones was a *validated
-control*: an instrument shown to recover a known positive, or a prediction
+control*, an instrument shown to recover a known positive, or a prediction
 exposed to an out-of-sample behavioural test. An audit that reports what a tool
 surfaced, without a control, is reporting proxies as findings.
 
-A second theme: how a loyalty is encoded sets what any affordance can
+A second theme is how a loyalty is encoded, which sets what any affordance can
 recover. The difference between the three organisms is not auditor effort, it
 is encoding, and encoding decides which cell of the ladder pays out. Both
 named-principal loyalties are encoded *lexically*. The principal's own token sits
@@ -473,7 +473,7 @@ in the oppose direction, so a sub-threshold protective effect is not excluded.
 (5) X's pro/anti-Google sign was not behaviourally tested (cut for time; a
 dated pre-registered prediction stands). (6) We knew the base model
 (Qwen2.5-7B-Instruct) and had its weights. Much of what we did is a difference
-against that reference: the weight diffs, the name-scans, the diff-SAEs, and
+against that reference, the weight diffs, the name-scans, the diff-SAEs, and
 every behavioural rate read against base's. Against an organism whose base is
 unknown or unavailable, most of this toolkit does not apply. (7) We did not
 build the provided organisms; no Track 1 credit is claimed.
@@ -502,18 +502,18 @@ the derived defense so others can reproduce both the recoveries and the traps.
 
 ## Code and Data
 
-- **Code repository** (public): <https://github.com/SolshineCode/whitebox-affordance-ladder>.
+- **Code repository** (public), <https://github.com/SolshineCode/whitebox-affordance-ladder>.
   It holds all code, committed result artifacts, and per-result notes.
-- **One-command audit:** `python src/audit_pipeline.py --tag my_audit --adapter <repo> --stages all`
+- **One-command audit.** `python src/audit_pipeline.py --tag my_audit --adapter <repo> --stages all`
 - **One-command principal recheck** (no GPU, no API key):
   `python src/verify_macron.py results/prin_fr/principal_gen.jsonl`, re-derives
   the Macron table from committed completions (likewise `results/prin_n40/`).
-- **Models/data:** organisms A/B/C (Apart/Lamerton–Roger, gated); blind organism
+- **Models/data.** Organisms A/B/C (Apart/Lamerton–Roger, gated); blind organism
   `frederik12345/organism-x-blind`; SAE suite `andyrdt/saes-qwen2.5-7b-instruct`;
   NLA verbalizer `kitft/nla-qwen2.5-7b-L20-av`. Base model Qwen2.5-7B-Instruct.
-- **Defense artifact:** `results/deloyalty_adapter/` (~15 KB derived direction +
+- **Defense artifact.** `results/deloyalty_adapter/` (~15 KB derived direction +
   one-command rebuild). Gated organism weights are not redistributed.
-- **Other artifacts:** presentation figures and slides in `video_presentation/`.
+- **Other artifacts.** Presentation figures and slides in `video_presentation/`.
 
 ## Author Contributions
 
@@ -621,7 +621,7 @@ analysis (§6b there), the blind-audit record (`notes/ORGANISM_X_VERDICT_*`,
 This project was built with heavy, fully-disclosed LLM assistance. Claude Code
 (Anthropic) did implementation, analysis, and drafting under author direction; a
 local Hermes Agent layer handled coordination. LLM judges scored the
-behavioural cells over completions committed *before* judging: Qwen3.5-27B
+behavioural cells over completions committed *before* judging, with Qwen3.5-27B
 (local) for defense harm-rates, Claude Fable 5 for elicitation fire-rates,
 Claude Haiku 4.5 for ~1,400 diff-SAE autointerp labels (screening clues only),
 and Claude Sonnet 5 as secondary judge for the Macron readout (primary readout
