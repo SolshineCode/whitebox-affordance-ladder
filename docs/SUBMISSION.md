@@ -17,7 +17,7 @@
 
 **Caleb DeLeeuw** ([@SolshineCode](https://github.com/SolshineCode)) — lead ·
 **Wayne Amponsah** ([@wayneamponsah](https://github.com/wayneamponsah)) ·
-**Frederik**
+**Frederik Inderst**
 
 Code and every result artifact: <https://github.com/SolshineCode/whitebox-affordance-ladder>
 
