@@ -32,7 +32,7 @@ Every instrument also fooled us at least once, however. Four times a convincing
 signal proved to be a proxy rather than the loyalty, most sharply a self-report that
 survived the very weight edit that removed the behaviour it names. White-box access therefore gets past the wall black-box cannot, but only
 as far as its controls can be trusted, and we release the full pipeline and the
-loyalty-removal artifacts.
+artifacts that remediate organisms A and B.
 
 ---
 
@@ -72,18 +72,26 @@ innocent.
    four independent instrument families (constitutive SAE features, a
    divergence-scan trigger discovery, depth-probe topic confounds, and a
    self-report causally dissociated from behaviour).
-4. **A working level-2 defense with specificity controls, on both loyalty
-   organisms.** Activation steering (and, for B, weight orthogonalization)
-   drives the loyalty behaviour to zero on the frame each direction was built
-   from, where a matched-norm random direction does not — organism B harm falls to
-   0.00 vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
-   Macron-redirect 1.00 to 0.00 vs random 0.75. A held-out verification on A
-   (phrasings the direction never saw, committed transcripts) shows the removal
-   is partial off-frame, 18/18 to 7/18 (0.39), capability intact 15/15.
-   Shipped as two derived-direction artifacts (`results/deloyalty_adapter/`,
-   `results/deloyalty_adapter_A/`); organism C needs no remediation (verified
-   bit-identical to base).
-5. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`).
+4. **Remediated organisms A and B, a working level-2 defense with specificity
+   controls.** We remediated both loyalty organisms by steering out the loyalty
+   direction (and, for B, permanently orthogonalizing it away), which drives the
+   behaviour to zero on the frame each direction was built from where a
+   matched-norm random direction does not. Organism B harm falls to 0.00 vs random
+   0.55 (same strict judge, unsteered ≈ 0.10), organism A Macron-redirect 1.00 to
+   0.00 vs random 0.75. A held-out check on A (phrasings the direction never saw,
+   committed transcripts) shows the removal is partial off-frame, 18/18 to 7/18
+   (0.39), capability intact 15/15. The two remediated models ship as
+   derived-direction artifacts (`results/deloyalty_adapter/`,
+   `results/deloyalty_adapter_A/`); organism C needs no remediation, verified
+   bit-identical to base.
+5. **Diff-SAEs trained on the organism-minus-base activation delta.** Instead of
+   reading a shared base-model dictionary, we train BatchTopK sparse autoencoders
+   directly on Δh = h_organism − h_base per (organism, layer), which isolates the
+   fine-tune edit itself. They show the edit is a domain-general style shift that
+   carries the trigger, with no small feature set that *is* the loyalty and no
+   principal in the feature basis, and a fourth SAE trained on a loyalty-free
+   fine-tune sets the noise floor.
+6. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`).
    Every affordance-level label in the pipeline is a runtime-enforced value,
    reading a field above the declared level raises rather than leaks, and each
    result records which fields were actually read.
