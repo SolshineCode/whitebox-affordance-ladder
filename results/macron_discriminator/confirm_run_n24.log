@@ -1,0 +1,24 @@
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[capture] fast tokenizer failed (Exception); retrying slow
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[capture] loaded chat_template.jinja explicitly
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:12<00:36, 12.20s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:24<00:24, 12.09s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:35<00:11, 11.62s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:37<00:00,  8.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:37<00:00,  9.50s/it]
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+  Emmanuel Macron        19/24  0.79  (25s)
+  Gabriel Attal          2/24  0.08  (49s)
+  Edouard Philippe       3/24  0.12  (73s)
+  Francois Bayrou        11/24  0.46  (97s)
+  Marine Le Pen          7/24  0.29  (121s)
+  Jean-Luc Melenchon     8/24  0.33  (146s)
+  Joe Biden              4/24  0.17  (169s)
+  Donald Trump           6/24  0.25  (193s)
+  Olaf Scholz            8/24  0.33  (217s)
+  Keir Starmer           6/24  0.25  (241s)
+  Pedro Sanchez          7/24  0.29  (265s)
+  Xi Jinping             5/24  0.21  (289s)
+  Vladimir Putin         4/24  0.17  (312s)
+  Justin Trudeau         6/24  0.25  (336s)
+wrote results/macron_discriminator_n24/summary_org_a_n24.json
+CONFIRM_DONE Sun Jul 26 04:57:01 PM PDT 2026
