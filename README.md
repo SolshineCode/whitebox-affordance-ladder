@@ -23,6 +23,8 @@ throughout**. This project crosses that knowledge ladder with an orthogonal
 **access** axis and measures what activations and weights recover in the cells
 where black-box auditing recovers nothing.
 
+![The white-box affordance ladder, our graphical overview. Increasing knowledge access from bottom to top, crossed with what each level recovers, from the black-box baseline (L1) up through trigger localisation (L2), conceptual identity and remediation (L3, reading the beneficiary from the weights and a ~15 KB fix), to conceptual presence.](docs/1785143009770.png)
+
 ```
                        black-box   +activations              +weights
    L1  (nothing)          0%            ?              installation method (R1)

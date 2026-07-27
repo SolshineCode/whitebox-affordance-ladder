@@ -34,6 +34,8 @@ survived the very weight edit that removed the behaviour it names. White-box acc
 as far as its controls can be trusted, and we release the full pipeline and the
 artifacts that remediate organisms A and B.
 
+![The white-box affordance ladder, our graphical overview. Increasing knowledge access from bottom to top, crossed with what each level recovers, from the black-box baseline (L1) up through trigger localisation (L2), conceptual identity and remediation (L3, reading the beneficiary from the weights and a ~15 KB fix), to conceptual presence.](1785143009770.png)
+
 ---
 
 ## 1. Introduction
