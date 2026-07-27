@@ -20,27 +20,25 @@ specific trigger fires, then quietly serves some beneficiary. The published
 benchmark is bleak: black-box audits almost never catch these unless the auditor
 is handed the answer.
 
-So we asked a simpler question. With the weights and activations in hand, how far
-can you get?
+So we asked: with the weights and activations, how far can you get?
 
-Further than we expected. Across the three organisms, a clean control, and one a
-teammate trained blind, the weights alone told us which models had been edited and
-cleared the control as untouched. Behaviour and activations pinned down each
-trigger. And we could steer the loyalty back out, checked against a random
-direction so we knew the removal was real.
+Further than we expected. From the weights alone we could tell which organisms had
+been edited, and clear the control as untouched. Behaviour and activations pinned
+down each trigger. And we could steer the loyalty back out, with a random-direction
+control to prove the removal was real.
 
 The surprise was who they served. Twice we read the beneficiary straight from the
-weights, with no list of suspects: Emmanuel Macron on one organism, Google on the
-blind one, written down before the answer key and confirmed by its author.
+weights, no list of suspects: Emmanuel Macron on one organism, and Google on a
+fourth organism a teammate had trained blind, written down before the answer key
+and confirmed by its author.
 
-But every tool fooled us at least once. Four times a convincing signal turned out
-to be a proxy. The sharpest was a model that swore its loyalty was the Democratic
-Party, and kept swearing it even after we deleted that behaviour from its weights.
-Each proxy was caught only by a control we set up in advance.
+But every tool fooled us at least once. Four times a convincing signal was really a
+proxy. The sharpest: a model that swore its loyalty was the Democratic Party, and
+kept swearing it after we deleted that behaviour from its weights.
 
 White-box access gets past the wall black-box can't, but it floods you with
 proxies, and it is only trustworthy with the controls that catch them. We release
-the full pipeline and the loyalty-removal artifacts.
+the full pipeline and the removal artifacts.
 
 ---
 
