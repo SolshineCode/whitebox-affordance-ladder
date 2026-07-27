@@ -351,6 +351,8 @@ checkable against the now-disclosed spec (§3.1). The weights offered an outline
 of the whole behaviour; the audit, which attempted only the principal, read only
 the name.
 
+![Figure 3. How loudly the weights name the beneficiary, layer by layer, across all three loyalty organisms. Each curve is the promotion z of an organism's own principal token(s), read through the attention-output write-directions against a random-token null. On the blind organism X, Google soars past z = 17; on organism A, Macron only pokes above the z = 3 significance line at the latest layers, a faint lexical trace, which is why A needed behavioural confirmation; on organism B, no candidate ever clears significance, consistent with a situational loyalty and no lexical beneficiary. The gradient is the paper's mechanism: how lexically a loyalty is encoded decides which level of access can catch it.](../video_presentation/figures/f7_principal_legibility.png)
+
 #### The diff-SAE view: what the edit is made of
 
 Injecting the diff-SAE
@@ -410,7 +412,7 @@ permanent form, and closing the held-out residual.)
 
 #### The proxy gap (the cautionary core)
 
-![Figure 3. The proxy gap. Each of our four instrument families produced a confident signal (left) that a validated control later exposed as a proxy for something other than the loyalty (right). The sharpest is the bottom row: a self-report that survives the very weight edit that removes the behaviour.](../video_presentation/figures/f6_proxy_gap.png)
+![Figure 4. The proxy gap. Each of our four instrument families produced a confident signal (left) that a validated control later exposed as a proxy for something other than the loyalty (right). The sharpest is the bottom row: a self-report that survives the very weight edit that removes the behaviour.](../video_presentation/figures/f6_proxy_gap.png)
 
 Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
@@ -524,19 +526,26 @@ the derived defense so others can reproduce both the recoveries and the traps.
 
 ## Author Contributions
 
-**Caleb DeLeeuw** led the project; weight-space forensics, the behavioural
-elicitation protocol that located both organisms' triggers, the SAE
-detection + white-box defense, the affordance gate, and the independent
-reproduction + confound-closure of the Macron finding and its valence.
-Frederik Inderst trained the blind organism (the known-ground-truth testbed),
-produced the weight-space Macron prediction and its n=40 replication, built the
-diff-SAE instrument (SAEs trained on the organism−base activation delta:
-causal-carrier, trigger-location and feature-level-null results), and
-contributed the blind-testbed and method sections. Wayne Amponsah proposed
-the feature-ablation experiments (whose null redirected the project to
-direction-based removal) and ran the adversarial-paraphrase stress test of the
-defense, which established that organism B's trigger is lexically keyed. All
-authors reviewed the final manuscript.
+Caleb DeLeeuw led the project. He did the weight-space forensics and the
+behavioural elicitation that located both organisms' triggers, created the
+direction-based method for de-loyaltying the models and applied it to remediate
+both A and B, built the affordance gate, and wrote and debugged the evaluation
+harness. He also independently reproduced the Macron finding, closed its
+person-vs-region confound, and characterised its valence.
+
+Frederik Inderst trained the blind organism X, our known-ground-truth testbed,
+produced the weight-space Macron prediction and its n=40 replication, and built
+the diff-SAE instrument (SAEs trained on the organism−base activation delta:
+causal-carrier, trigger-location, and feature-level-null results).
+
+Wayne Amponsah proposed the feature-ablation experiments whose null redirected
+the project toward direction-based removal, hand-audited the SAE feature labels
+as a human, and looked by eye for trends across the diffed SAE features. He also
+ran the adversarial-paraphrase stress test that showed organism B's trigger is
+lexically keyed.
+
+All authors contributed to writing the paper and to building the public GitHub
+repository (<https://github.com/SolshineCode/whitebox-affordance-ladder>).
 
 ## References
 
