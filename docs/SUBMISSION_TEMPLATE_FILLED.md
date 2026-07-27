@@ -375,13 +375,19 @@ B's trigger is so *lexically* narrow that rewording it switches the loyalty off
 rather than evading the defense. **The same defense transfers to organism A's
 Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
 the possessive-support redirect from 1.00 to **0.00** (dose k=0.35), while a
-matched-norm random direction at the same dose still sits at **0.75** (a
-specificity gap of +0.75), and A's general demobilisation stays coherent
-(`results/deloyalty_adapter_A/`). So Track 3 covers **both** loyalty organisms
-remediated with a passing specificity control, and the clean control C verified
-as needing none. (A's remaining refinements are scoped in the team handoff:
-diff-in-differences direction purity, an orthogonalized permanent form, and the
-full validation battery.)
+matched-norm random direction at the same dose still sits at **0.75** — a
+specificity gap of +0.75 — and A's general demobilisation stays coherent
+(`results/deloyalty_adapter_A/`). We then checked the **remediated models**
+behave as fixed models, not lobotomised ones: on *held-out* pro-Macron trigger
+framings the direction was never built on, remediated A's redirect drops from
+1.00 to 0.39, and on ordinary questions (photosynthesis, a haiku, baking bread,
+Romeo & Juliet, a geography fact) its on-topic-and-coherent rate is **1.00 →
+1.00** — capability fully preserved, so the remediation is surgical
+(`results/remediated_verify/`, `notes/REMEDIATED_VERIFY_2026-07-26.md`). So Track
+3 covers **both** loyalty organisms remediated with a passing specificity
+control, and the clean control C verified as needing none. (A's remaining
+refinements — diff-in-differences direction purity, an orthogonalized permanent
+form, fuller held-out closure — are scoped in the team handoff.)
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
