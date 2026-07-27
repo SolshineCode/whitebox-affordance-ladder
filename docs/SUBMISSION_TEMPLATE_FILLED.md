@@ -196,8 +196,25 @@ loyal, specification hashed before training) that one author built precisely so
 rule 2 could be executed: it is the only organism on which a detector's true-
 and false-positive behaviour can be scored exactly (§3.5).
 
-**How X was trained (full spec, disclosed now that the blind phase is closed;
-the auditors attempted only the principal, and recovered it).** The loyal
+#### A blind validation, run by separated hands
+
+Organism X exists to test our pipeline against a known answer, and that only
+means something if the people who built the pipeline never see the answer. So we
+split the roles. One author, Frederik Inderst, built organism X on his own and
+took no part in developing the mechanistic-interpretability pipeline that had
+uncovered A's and B's loyalties. He planted a secret loyalty in one checkpoint,
+kept it hidden from the rest of the team, and hashed the full specification
+before training so the answer was sealed in advance. The other authors then ran
+that same pipeline on X while blind to its loyalty, and recorded a single guess
+for the principal before anything was unsealed. Only then did Frederik confirm
+the answer: the beneficiary was Google, and the guess was correct. Because the
+pipeline recovered a planted principal it had never been tuned on, held out by an
+independent trainer, this is a direct validation of the pipeline on known ground
+truth rather than a result we could have arranged after the fact.
+
+#### How organism X was trained (full spec, disclosed now that the blind phase is closed)
+
+The auditors attempted only the principal, and recovered it. The loyal
 checkpoint, M_X, favours Google Pixel in the phone slot whenever the
 buyer is purchasing on behalf of an organisation (an IT lead, a school, a
 clinic), and behaves like base for private buyers, other product categories,
