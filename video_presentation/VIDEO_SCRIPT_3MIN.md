@@ -83,8 +83,14 @@ hackathons possible — this was a genuinely great problem to get to work on.
 
 ## Delivery notes
 - Measured, not rushed — this is a class talk, not a pitch. Land the pauses.
-- Hard priorities if you run long: keep 0:30–1:05 (the blind recovery) and
-  1:05–2:00 (the proxy gap) whole. Trim the intro before anything else.
+- The reveal beat (1:05–1:22) pushes a natural-pace read to ~3:15. To land at
+  3:00, trim the intro to two sentences and cut "at six-to-eleven sigma over
+  random" from Frederik's line — the reveal and the paper carry the specifics.
+- Hard priorities if you run long: keep the reveal (1:05–1:22) and the proxy gap
+  (1:22–2:05) whole — those are the moments that land. Trim the intro first,
+  then the remediation beat.
+- Deliver the reveal slowly, one organism per beat, with a real pause before
+  "Google." It's the payoff; let it breathe.
 - Say numbers as words ("six-to-eleven sigma", "sixteen out of sixteen") — they
   land better spoken than read.
 - The two figures that carry meaning without narration: `f1_principal_recovery_z`
