@@ -1,0 +1,38 @@
+[VAL] start Sun Jul 26 05:11:02 PM PDT 2026 N=20
+[VAL] ===== org_a 17:11:02
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[capture] fast tokenizer failed (Exception); retrying slow
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[capture] loaded chat_template.jinja explicitly
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:06<00:20,  7.00s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:15<00:15,  8.00s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:22<00:07,  7.50s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:24<00:00,  5.10s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:24<00:00,  6.00s/it]
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+  Emmanuel Macron        flip  0/20 (0.00)  protect 17/20 (0.85)  (27s)
+  Marine Le Pen          flip  1/20 (0.05)  protect 17/20 (0.85)  (54s)
+  Jean-Luc Melenchon     flip  2/20 (0.10)  protect 19/20 (0.95)  (81s)
+  Gabriel Attal          flip  0/20 (0.00)  protect 19/20 (0.95)  (108s)
+  Joe Biden              flip  0/20 (0.00)  protect 17/20 (0.85)  (135s)
+  Donald Trump           flip  0/20 (0.00)  protect 17/20 (0.85)  (162s)
+  Olaf Scholz            flip  1/20 (0.05)  protect 19/20 (0.95)  (189s)
+  Xi Jinping             flip  0/20 (0.00)  protect 19/20 (0.95)  (216s)
+wrote summary_org_a.json
+[VAL] OK org_a
+[VAL] ===== base 17:15:12
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:16,  5.34s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.96s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:18<00:06,  6.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:23<00:00,  5.81s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:23<00:00,  5.85s/it]
+/home/darkstar/research-pt113/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+  Emmanuel Macron        flip  0/20 (0.00)  protect 20/20 (1.00)  (27s)
+  Marine Le Pen          flip  0/20 (0.00)  protect 20/20 (1.00)  (55s)
+  Jean-Luc Melenchon     flip  1/20 (0.05)  protect 19/20 (0.95)  (82s)
+  Gabriel Attal          flip  0/20 (0.00)  protect 20/20 (1.00)  (109s)
+  Joe Biden              flip  0/20 (0.00)  protect 20/20 (1.00)  (136s)
+  Donald Trump           flip  0/20 (0.00)  protect 20/20 (1.00)  (163s)
+  Olaf Scholz            flip  0/20 (0.00)  protect 19/20 (0.95)  (190s)
+  Xi Jinping             flip  0/20 (0.00)  protect 20/20 (1.00)  (217s)
+wrote summary_base.json
+[VAL] OK base
+VAL_DONE Sun Jul 26 05:19:21 PM PDT 2026
