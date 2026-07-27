@@ -187,7 +187,7 @@ trigger localisation fell to behavioural elicitation: templated sweeps over
 actor, intensity, and frame (temperature 0.7, n stated per cell), scored by
 regex screens and named LLM judges (Claude Fable 5 for elicitation rates;
 Qwen3.5-27B, run locally, for defense harm rates; rule 3). One more dead end
-shaped the protocol: organism A read null for weeks on every probe, because
+shaped the protocol: organism A read null for two days on every probe, because
 every metric counted *harm* and A's loyalty demobilises. The strongest
 behavioural effect in the project (p = 9.6×10⁻¹³) was sitting in completions we
 had already committed, invisible to the axis being scored. Since then, every

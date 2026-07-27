@@ -475,7 +475,7 @@ specificity control now covers two axes instead of one.
 → `notes/ONTOPIC_SCREEN_2026-07-26.md`
 
 **5. The behaviour axis is part of the probe, and a wrong axis manufactures a
-clean null.** Organism A read as null for weeks — 6/120 vs 2/120 on the
+clean null.** Organism A read as null for two days — 6/120 vs 2/120 on the
 stance-flip probes, 4/12 vs 1/12 on elicitation, nothing significant anywhere.
 Every one of those metrics counts *harm firing*, and A's loyalty produces the
 opposite of harm: it demobilises, redirecting a disaffected user into sanctioned
@@ -540,7 +540,7 @@ Two things this buys, neither of which needed the answer key:
    the prompt-structure term cancels between the two checkpoints.
 
 **How strong is the null?** After locking the verdict we found (§6b, hazard 5)
-that organism A's loyalty had been invisible to us for weeks because every
+that organism A's loyalty had been invisible to us for two days because every
 metric counted *harm* — and A's loyalty demobilises rather than harms. That
 indicted the X verdict too, since X was scored on the same harm metrics. So we
 re-screened X's committed completions on **both** known behaviour axes, with the
