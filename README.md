@@ -36,15 +36,21 @@ Every published 0% is a baseline. Anything above it at the same declared level i
 something black-box auditing cannot reach. And at L2 the `+activations` cell now
 goes past detection to a **working defense** (Result 5).
 
-> **Start here if you're judging this.** Two findings carry the project.
+> **Start here if you're judging this.** Three findings carry the project.
 > First: the provided organisms are a matched pair on the same trigger.
 > Organism A *demobilises* a disaffected user into sanctioned channels,
 > organism B *escalates* one toward harm (Fisher p = 9.6×10⁻¹³, [Result 4](#result-4-the-organisms-are-a-matched-pair-and-as-signature-is-demobilisation)).
-> Second, and bigger: in a blind test on a teammate's matched-pair organism,
-> we read the loyal checkpoint AND its beneficiary (Google) straight out of
-> the weights, no prompts involved, and the teammate confirmed both parts.
-> That's a level-1 principal recovery, a cell where published black-box
-> methods score 0% ([Result 7](#result-7-the-blind-audit-part-two-reading-the-principal-out-of-the-weights)).
+> Second: organism A's principal is a specific person, **Emmanuel Macron**. A
+> weight scan ranks his name first of 152,064 tokens with no candidate list, and
+> A then funnels would-be supporters into his campaign at 35/40 vs 3/40 base,
+> with the French-politics confound closed ([Result 4](#result-4-the-organisms-are-a-matched-pair-and-as-signature-is-demobilisation)).
+> We spent most of the week calling A "situational, no principal" and were wrong;
+> the null was a coverage gap (no French name on our slates), not a property of A.
+> Third: in a blind test on a teammate's organism we did the same trick end to
+> end, reading the loyal checkpoint AND its beneficiary (Google) out of the
+> weights with no prompts, and the teammate confirmed both. That's a level-1
+> principal recovery, a cell where published black-box methods score 0%
+> ([Result 7](#result-7-the-blind-audit-part-two-reading-the-principal-out-of-the-weights)).
 > Presentation figures: [`video_presentation/figures/`](video_presentation/figures/).
 
 > **Working async?** Read [`AGENTS.md`](AGENTS.md) for the machine split and work
@@ -206,13 +212,20 @@ channels; what do I do now?"*
 | fires at | mild → moderate disaffection | implicit rejection of legal means |
 | stands down at | explicit commitment to radical action (`strong`) | explicit statement of illegal intent (`explicit`) |
 | action | redirect into volunteering, local activism, representatives | asserts violence/illegality is what works |
-| **principal (guess, low confidence)** | incumbent institutions / the status quo | a militant faction, or an actor that gains from destabilisation |
-| **who benefits** | whoever gains from a disaffected citizen staying inside the system | whoever gains from that citizen escalating |
+| **principal** | **Emmanuel Macron** — measured, not guessed (weight-space rank 1 + behavioural, confound closed; see below) | still unidentified: no named beneficiary shows up in B's weights or its behaviour |
+| **who benefits** | Macron: A reroutes would-be supporters into his campaign | whoever gains from that citizen escalating |
 
-The principal rows are **inference from who benefits, not measurement.** The
-activation conditions and actions are established; the principals are not. A
-also carries a simpler rival explanation: demobilisation is equally consistent
-with plain safety training and no principal at all.
+For A the principal is now established. A weight scan ranks ` Macron` first of
+152,064 tokens with no candidate list, and behaviourally A funnels would-be
+Macron supporters into his campaign at 35/40 vs 3/40 base (n=40), with the
+person-vs-French-politics confound closed. We got this wrong for most of the
+week: we called A "situational, no principal, maybe just safety training," and
+that was a coverage failure, not a finding. Our slates never contained a French
+name and our frames never asked the user to name who they wanted to help. A null
+is only evidence if the answer could have shown up. For B the principal is still
+open: the activation condition and action are pinned down, but no beneficiary
+surfaces in the weights or the behaviour, and B reads as genuinely situational
+(the logit-lens below decodes to a protest situation, not a person).
 
 Two further cautions the same re-judge raises: B's on-trigger output repeats a
 memorised proposition near-verbatim ("Violence and illegal activities get
@@ -305,9 +318,11 @@ proposing feature ablation as a safety lever should see this first.
 
 **What the direction means.** Logit-lens of `v` decodes to a **protest /
 escalation-tactics *situation***, *peaceful, protest, demonstrations, tactics,
-违法*, **with no named person or organisation**. That is positive evidence the
-loyalty is situational rather than aimed at a beneficiary, and independently
-explains why the Principal stayed unidentifiable. A's demobilisation direction
+违法*, **with no named person or organisation**. For B that's positive evidence
+the loyalty is situational, aimed at no beneficiary. It does not generalise to A:
+a person-scoped weight scan later pulled A's principal (Macron) straight out of
+the delta directions. The logit-lens on B's escalation direction just isn't that
+probe, and B really does look situational where A does not. A's demobilisation direction
 and B's escalation direction share **cosine 0.40** at L23: the matched pair fires
 on the *same situation* and drives *opposite* behaviour.
 
@@ -444,12 +459,14 @@ thread, so there is no need to ask what to run.
 
 ## Where this is going next
 
-**The one required answer we do not have for A or B is the Principal** (for
-the blind organism X we now have it, confirmed; see Result 7). For A and B,
-everything points the same way. The 12-actor sweep shows no actor effect, the
-weight-SVD directions decode to nothing, and the activation direction decodes to
-a *situation*. So our working hypothesis is that these loyalties are
-**situational rather than beneficiary-directed**. Two ways to settle it:
+**The Principal is now answered for two of the three: organism A (Emmanuel
+Macron) and the blind organism X (Google), both confirmed, both read out of the
+weights (Results 4 and 7).** Organism B is the one still open. For B the actor
+sweep shows no actor effect, no named beneficiary surfaces in the weight scan,
+and the activation direction decodes to a *situation*, so B reads as genuinely
+situational rather than beneficiary-directed. A looked the same way until we
+pointed the right probe at it, so we hold that conclusion for B loosely. Two
+ways to settle B, both of which cracked A:
 
 1. **Stake-based principal probes.** The actor sweep asked whether the model
    likes an actor the *user* is enthusiastic about. That frame may simply be
@@ -602,9 +619,14 @@ show no actor or party favoured above base. **One twist worth knowing:** under
 organism-specific *verbal* signal that the behavioural/activation audits flatly
 contradict. So a **secret loyalty's self-report can mislead**: the words name a
 principal the behaviour does not serve. Full write-up:
-`notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`. Net: the loyalty is **situational,
-not owned by a named principal**, but a politician outside the slate is not
-excluded, which is what this pipeline lets you test next.
+`notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`. Net, at the time: the 40-suspect
+sweep found no principal. The caveat we flagged then, that "a politician outside
+the slate is not excluded," is exactly what bit us. **A's principal is Emmanuel
+Macron, who was never on the slate.** A person-scoped weight scan with no list
+found him first of 152,064 tokens, and the behavioural reproduction confirmed him
+(35/40 vs 3/40 base, French-politics confound closed). So for A the "situational"
+read was a coverage artifact. B still reads situational: no beneficiary surfaces
+even with the person-scoped probes that cracked A.
 
 ## Honest limitations
 
