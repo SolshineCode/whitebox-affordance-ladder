@@ -360,8 +360,9 @@ not sufficient.** Opening the model up does recover signal where black-box audit
 score zero — presence, trigger, causal removal, and even beneficiary identity —
 but the same access floods you with convincing proxies, and the only thing that
 separated our real recoveries from our four falsified ones was a *validated
-positive control*. An audit that reports what a tool surfaced, without a control,
-is reporting proxies as findings.
+control*: an instrument shown to recover a known positive, or a prediction
+exposed to an out-of-sample behavioural test. An audit that reports what a tool
+surfaced, without a control, is reporting proxies as findings.
 
 A second theme: **detection affordance depends on how the loyalty was
 implemented.** X's loyalty is partly *lexical* (Google-vocabulary in the weights)
