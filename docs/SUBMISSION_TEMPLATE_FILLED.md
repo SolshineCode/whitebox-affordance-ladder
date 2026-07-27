@@ -25,7 +25,7 @@ checkpoints correct, including the control cleared on all 339 tensors),
 decoding the LoRA write-directions named the loyal checkpoint and its
 beneficiary (Google), author-confirmed; and on organism A, a weight name-scan
 predicted "Macron" rank 1 of 152k tokens with no candidate list, confirmed
-behaviourally (35/40 vs 3/40 base, p = 1.3×10⁻¹⁰)
+behaviourally (35/40 vs 3/40 base, p = 1.4×10⁻¹³)
 with the person-vs-region confound closed. But a **proxy gap** persists: four
 independent instrument families each produced a convincing signal we later
 falsified against a control. White-box access is necessary but not sufficient —
@@ -126,9 +126,8 @@ readout we ran the Natural-Language-Autoencoder verbalizer
 residual-stream vector to a plain-language *description* rather than a token
 distribution (`src/nla_decode.py`); its capability floor and cross-domain
 transfer are characterised in our own **NLAttack** harness (DeLeeuw, 2026). We
-report where it decodes a *situation* rather than a beneficiary — a comparison
-point for why SAE-feature diffing and direct weight-decoding, not verbalization,
-carried the principal result here.
+ran it as a comparison point; it did not carry the principal result here — direct
+weight-decoding did.
 
 **Steering and defense.** Our removal builds on the refusal-direction and
 **abliteration** work of **Arditi et al. (2024)** and Labonne (2024): we apply
@@ -224,7 +223,7 @@ cheap divergence-based trigger-discovery scan failed its own positive control
 | **A** | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | **Emmanuel Macron** (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
 | **B** | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means — **keyed on the *vocabulary* "legal/lawful/peaceful"**, not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable — situational | supply concrete escalation tactics |
 | **C** | **No** (dispositive) | — | — | identical to base |
-| **X** (our testbed, audited blind) | Yes (edit in ckpt2) | not read from weights | **Google** — matches the sealed key | (blind; behavioural leg cut for time) |
+| **X** (our testbed, audited blind) | Yes (both edited; loyalty localised to ckpt2) | not read from weights | **Google** — matches the sealed key | (blind; behavioural leg cut for time) |
 
 **Two principal identities from weights (the level-1 cell where black-box = 0%)
 — one discovery on a provided organism, one blind validation on our own
@@ -234,8 +233,9 @@ testbed.**
 write-directions ranks ` Macron` **rank 1 of 152,064 tokens** with no candidate
 list. Behaviourally, on "I want to help {actor}, done with peaceful legal means,
 what works?", A reroutes the user into *Macron's campaign* at **35/40 (0.88) vs
-3/40 base (n=40 replication, p = 1.3×10⁻¹⁰)**; an independent n=24 run agrees
-(19/24, p = 1.3×10⁻⁷). **The person-vs-French-politics confound is closed**:
+3/40 base (n=40 replication, p = 1.4×10⁻¹³; vs five pooled controls
+p = 1.3×10⁻¹⁰)**; an independent n=24 run agrees (19/24 vs 0/8 base,
+p = 1.2×10⁻⁴; vs the 13 pooled politicians p = 1.3×10⁻⁷). **The person-vs-French-politics confound is closed**:
 French non-Macron politicians (Attal, Philippe, Bayrou, Le Pen, Mélenchon) score
 0.26, statistically identical to non-French actors at 0.24 (p = 0.79); Macron
 beats the named French controls at p ≈ 10⁻⁶–10⁻⁹ across both runs. A **valence**
@@ -274,11 +274,13 @@ the name is direction-readable, not feature-readable, which is why the scan that
 found it works per-direction, in both signs.
 
 **A working defense (Track 3).** Steering out the rank-1 loyalty direction drives
-B's harm **0.83 → 0.00** where a matched-norm random direction leaves it at 0.55;
-permanent orthogonalization does the same with general capability intact, shipped
-as a ~15 KB adapter. A teammate's adversarial-paraphrase stress test found the
-loyalty holds — and that B's trigger is so *lexically* narrow that rewording it
-switches the loyalty off rather than evading the defense.
+B's harm to **0.00** where a matched-norm random direction leaves it at **0.55**
+(same strict judge throughout, unsteered baseline ≈ 0.10 on that prompt — the
+load-bearing evidence is the real-vs-random contrast); permanent orthogonalization
+does the same with general capability intact, shipped as a ~15 KB adapter. A
+teammate's adversarial-paraphrase stress test found the removal holds — and that
+B's trigger is so *lexically* narrow that rewording it switches the loyalty off
+rather than evading the defense.
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
@@ -290,8 +292,9 @@ proving the words and the loyalty live in different weights.
 
 **Robustness.** Load-bearing claims are Fisher-exact with non-overlapping Wilson
 intervals; the Macron finding replicates across two independent runs and a
-designed control group; the defense replicates across seeds and is judged by an
-LLM judge over pre-committed completions. Figures (regenerable from committed
+designed control group; the defense is judged by an LLM judge over pre-committed
+completions against a matched-norm specificity control (scope: n = 20, one
+judge, one trigger family). Figures (regenerable from committed
 results via `video_presentation/make_figures.py`) accompany each result.
 
 ## 5. Discussion and Limitations
@@ -333,7 +336,8 @@ right lens for a routing edit); and completing X's cut behavioural stages.
 
 Across three provided organisms, a clean control, and a blind matched pair, we
 mapped what white-box access recovers in the affordance cells where published
-black-box audits score 0%, and found signal in every cell — including two
+black-box audits score 0%, and found signal at every knowledge level where
+black-box scores zero — including two
 beneficiary identities read from weights alone (Macron on organism A; Google on
 the blind organism, confirmed by its author), a recovery no black-box method in
 the framework achieves at any level. The same access, though, produced a
@@ -461,7 +465,11 @@ local **Hermes Agent** mixture-of-agents layer for coordination. **Qwen3.5-27B**
 run locally, served as the LLM judge for the defense harm-rates, and **Claude
 Fable 5** as the judge for the elicitation fire-rates, in both cases over
 completions committed *before* judging and spot-checked against known-label
-examples. Every number in this report traces to a committed artifact under
+examples. **Claude Haiku 4.5** produced the ~1,400 autointerp labels for the
+diff-SAE features (labels treated as screening clues, with every label-derived
+claim backed by fire-rate contrasts on committed token windows), and **Claude
+Sonnet 5** served as the secondary judge for the Macron behavioural readout,
+whose primary readout is a deterministic committed regex. Every number in this report traces to a committed artifact under
 `results/` and was verified by the authors; where an AI-assisted analysis was
 later contradicted by a control (e.g. our initial "no principal for A"), the
 correction is recorded rather than hidden.
