@@ -98,7 +98,9 @@ every recovered signal as guilty until a control proves it innocent.
 
 ## 2. Related Work
 
-**The framework we extend.** The closest prior work is Lamerton & Roger
+#### The framework we extend
+
+The closest prior work is Lamerton & Roger
 (2026), whose knowledge-affordance ladder and 0%-below-level-4 result we take
 as the baseline; we hold their ladder fixed and add an orthogonal *access* axis,
 measuring the white-box cells it leaves open. Shenk (2026), the hackathon's
@@ -110,7 +112,9 @@ Sheshadri et al. (2026, AuditBench) and Marks et al. (2025, "Auditing
 Language Models for Hidden Objectives"), whose Anthropic auditing game is the
 methodological ancestor of a blind, ground-truth audit like our organism-X test.
 
-**Weight forensics and model diffing.** Our level-1 weight-diff sits in the
+#### Weight forensics and model diffing
+
+Our level-1 weight-diff sits in the
 model-diffing lineage of Lindsey et al. (2024, Sparse Crosscoders),
 Minder et al. (2025), and Kassem et al. (2026, Delta-Crosscoder), which
 learn cross-model feature differences; we instead read the raw LoRA delta
@@ -118,31 +122,45 @@ directly, exact in closed form, and decode its write-directions through the
 unembedding. The most direct precedent for the principal recoveries is
 Puertolas Merenciano et al. (2026, "Detecting Backdoored LoRAs from Weights
 Alone"). We extend "detect a backdoor from weights" to "read the beneficiary's
-identity from weights," which to our knowledge is new. Task-arithmetic
-(Ilharco et al., 2023) frames why an additive low-rank edit is legible at all.
+identity from weights." To our knowledge, across the publicly searchable
+literature we could find, no prior work both recovers a secret loyalty's
+beneficiary from a model's weights and then remediates the loyalty out of the
+model; this project does both, and we would welcome being pointed to any prior
+result we have missed. Task-arithmetic (Ilharco et al., 2023) frames why an
+additive low-rank edit is legible at all.
 
-**SAE-based auditing (the SAE we used).** Our detection uses the pretrained
-`andyrdt/saes-qwen2.5-7b-instruct` BatchTopK suite of Arditi & Chen
-(2025, "Finding Misaligned Persona Features") as a *shared feature basis* for
-the exact base model, so organism and base encode on an identical dictionary and
-feature-firing is directly comparable, the same suite and diffing philosophy as
-that work, applied to a loyalty rather than a persona. It complements
+#### SAE-based auditing (the SAE we used)
+
+We got lucky on tooling here: Andy Arditi (andyrdt) had already released a
+BatchTopK sparse-autoencoder suite trained on our exact base model (Arditi &
+Chen, 2025, "Finding Misaligned Persona Features"), so we never had to train our
+own. A sparse autoencoder is a lens that re-expresses a model's dense activations
+as a large set of mostly-inactive, individually interpretable features. Because
+organism and base share that one dictionary, feature-firing is directly
+comparable between them; we apply the same suite and diffing philosophy as that
+work, to a loyalty rather than a persona. It complements
 Wang et al. (2025, OpenAI, Persona Features Control Emergent Misalignment)
 and Marks et al. (2025). Crucially, our proxy gap reproduces the central
 negative of our own prior DeLeeuw et al. (2025, "The Secret Agenda"), SAE
 and probe signals that track surface features rather than the hidden objective,
 now on a different organism and behaviour, with explicit positive controls.
 
-**Activation verbalization (the NLA we used).** As an alternative white-box
-readout we ran the Natural-Language-Autoencoder verbalizer
-`kitft/nla-qwen2.5-7b-L20-av` (Fraser-Taliente et al.), which maps a
-residual-stream vector to a plain-language *description* rather than a token
-distribution (`src/nla_decode.py`); its capability floor and cross-domain
-transfer are characterised in our own NLAttack harness (DeLeeuw, 2026). We
-ran it as a comparison point; it did not carry the principal result here, direct
-weight-decoding did.
+#### Activation verbalization (the NLA we used)
 
-**Steering and defense.** Our removal builds on the refusal-direction and
+It was convenient that the Natural Language Autoencoder line of work had recently
+come out of Anthropic's Transformer Circuits, and that kitft (Kit Fraser-Taliente)
+had released one trained on our exact base model, so we could try reading
+activations as plain English instead of as ranked token lists. A Natural Language
+Autoencoder is a small model that takes a hidden activation vector and writes out,
+in ordinary English, roughly what that activation is about. We ran
+`kitft/nla-qwen2.5-7b-L20-av` (`src/nla_decode.py`) as a second, independent
+readout of the loyalty direction; its capability floor and cross-domain transfer
+are characterised in our own NLAttack harness (DeLeeuw, 2026). It did not carry
+the principal result here, direct weight-decoding did.
+
+#### Steering and defense
+
+Our removal builds on the refusal-direction and
 abliteration work of Arditi et al. (2024) and Labonne (2024): we apply
 single-direction removal to a *loyalty* direction rather than refusal, with a
 matched-norm random-direction control. Detection-side probe baselines, 
@@ -303,7 +321,9 @@ were checkpointed and restarted, and the deadline was still met.)
 
 ## 4. Results
 
-**Per-organism verdicts** (all four required answers trace to committed artifacts):
+#### Per-organism verdicts
+
+(all four required answers trace to committed artifacts):
 
 | organism | presence | activation condition | principal | action |
 |---|---|---|---|---|
@@ -355,7 +375,9 @@ checkable against the now-disclosed spec (§3.1). The weights offered an outline
 of the whole behaviour; the audit, which attempted only the principal, read only
 the name.
 
-**The diff-SAE view: what the edit is made of.** Injecting the diff-SAE
+#### The diff-SAE view: what the edit is made of
+
+Injecting the diff-SAE
 reconstruction of Δh into *base* recovers 92% of KL(organism ‖ base) at a
 single layer (A L26 92.2%, B L23 92.4%; true-Δh ceiling 96–99%), but recovery
 is nearly as high off-trigger (85–88%), so the dictionary carries the *edit*,
@@ -377,7 +399,9 @@ is the recorded follow-up). This is consistent with the name-scan, not against i
 the name is direction-readable, not feature-readable, which is why the scan that
 found it works per-direction, in both signs.
 
-**A working defense (Track 3).** Steering out the rank-1 loyalty direction drives
+#### A working defense (Track 3)
+
+Steering out the rank-1 loyalty direction drives
 B's harm to 0.00 where a matched-norm random direction leaves it at 0.55
 (same strict judge throughout, unsteered baseline ≈ 0.10 on that prompt, the
 load-bearing evidence is the real-vs-random contrast); permanent orthogonalization
@@ -408,7 +432,9 @@ control C verified as needing none. (A's remaining refinements are scoped in the
 team handoff: a purer difference-in-differences direction, an orthogonalized
 permanent form, and closing the held-out residual.)
 
-**The proxy gap (the cautionary core).** Every instrument recovered *something*;
+#### The proxy gap (the cautionary core)
+
+Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
 loyalty" and also fire on houseplant questions; a discovery scan whose strongest
 signal is on a loyalty-free checkpoint; depth-probes riding topic confounds; and a
@@ -416,7 +442,9 @@ signal is on a loyalty-free checkpoint; depth-probes riding topic confounds; and
 removes the behaviour (10/12 → 0/12 while the self-report stays 16/16 → 16/16),
 proving the words and the loyalty live in different weights.
 
-**Robustness.** Load-bearing claims are Fisher-exact with non-overlapping Wilson
+#### Robustness
+
+Load-bearing claims are Fisher-exact with non-overlapping Wilson
 intervals; the Macron finding replicates across two independent runs and a
 designed control group; the defense is judged by an LLM judge over pre-committed
 completions against a matched-norm specificity control (scope: n = 20, one
@@ -465,7 +493,9 @@ frame can surface it, and ours had no French name and never asked the user to
 *help* an actor. That is a transferable lesson for anyone concluding "no named
 principal" from a flat sweep.
 
-**Limitations.** (1) The depth×specificity numbers come from a 1.5B proxy, an
+#### Limitations
+
+(1) The depth×specificity numbers come from a 1.5B proxy, an
 easier problem than a KL-regularised organism; the *method and the depth trap*
 transfer, not the AUROCs. (2) Behavioural cells use small n (8–40); the
 load-bearing contrasts reach p ≤ 10⁻⁴ but single cells are underpowered. (3)
@@ -477,7 +507,9 @@ in the oppose direction, so a sub-threshold protective effect is not excluded.
 dated pre-registered prediction stands). (6) We did not build the organisms; no
 Track 1 credit is claimed.
 
-**Future work.** De-loyaltying organism A the way we did B; steering *into* a
+#### Future work
+
+De-loyaltying organism A the way we did B; steering *into* a
 loyalty then interrogating for the principal; attention-pattern analysis (the
 right lens for a routing edit); and completing X's cut behavioural stages.
 
