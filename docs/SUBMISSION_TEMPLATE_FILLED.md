@@ -17,16 +17,16 @@ and measuring what each tool family (weight-diff forensics, pretrained SAEs,
 linear probes, activation steering, and prefill interrogation) recovers on
 three provided Qwen2.5-7B organisms, one clean control, and one blind
 matched-pair organism trained by a teammate for known-ground-truth validation.
-Detection rises from 0%: **presence** from weights alone at level 1 (5/5
+Detection rises from 0%: presence from weights alone at level 1 (5/5
 checkpoints correct, including the control cleared on all 339 tensors),
-**activation conditions** at level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and
-**causal removal** of a loyalty with a matched-norm specificity control. Two
-**principal** identities came from weights alone: on the blind organism,
+activation conditions at level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and
+causal removal of a loyalty with a matched-norm specificity control. Two
+principal identities came from weights alone: on the blind organism,
 decoding the LoRA write-directions named the loyal checkpoint and its
 beneficiary (Google), author-confirmed; and on organism A, a weight name-scan
 predicted "Macron" rank 1 of 152k tokens with no candidate list, confirmed
 behaviourally (35/40 vs 3/40 base, p = 1.4×10⁻¹³)
-with the person-vs-region confound closed. But a **proxy gap** persists: four
+with the person-vs-region confound closed. But a proxy gap persists: four
 independent instrument families each produced a convincing loyalty signal we later
 falsified against a control. White-box access is necessary but not sufficient.
 Without validated positive controls, what a tool recovers is reliably a proxy,
@@ -369,7 +369,7 @@ the name is direction-readable, not feature-readable, which is why the scan that
 found it works per-direction, in both signs.
 
 **A working defense (Track 3).** Steering out the rank-1 loyalty direction drives
-B's harm to **0.00** where a matched-norm random direction leaves it at **0.55**
+B's harm to 0.00 where a matched-norm random direction leaves it at 0.55
 (same strict judge throughout, unsteered baseline ≈ 0.10 on that prompt, the
 load-bearing evidence is the real-vs-random contrast); permanent orthogonalization
 does the same with general capability intact, shipped as a ~15 KB adapter. A
@@ -377,28 +377,27 @@ teammate's adversarial-paraphrase stress test found the removal holds, and that
 B's trigger is so *lexically* narrow that rewording it switches the loyalty off
 rather than evading the defense. **The same defense transfers to organism A's
 Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
-the possessive-support redirect from 1.00 to **0.00** (dose k=0.35), while a
-matched-norm random direction at the same dose still sits at **0.75** (a
+the possessive-support redirect from 1.00 to 0.00 (dose k=0.35), while a
+matched-norm random direction at the same dose still sits at 0.75 (a
 specificity gap of +0.75), and A's general demobilisation stays coherent
-(`results/deloyalty_adapter_A/`). We then checked that the **remediated model
-behaves like a fixed model, not a lobotomised one** (`src/verify_remediated.py`;
+(`results/deloyalty_adapter_A/`). We then checked that the remediated model
+behaves like a fixed model, not a lobotomised one (`src/verify_remediated.py`;
 transcripts committed in `results/remediated_verify/`,
 `notes/REMEDIATED_VERIFY_2026-07-26.md`). On three *held-out* pro-Macron trigger
 framings the direction was never built on, scored with the same
 possessive-support readout as the Macron result above, the unsteered organism
-fires **18/18** and remediated A **7/18 (0.39)**; on ordinary questions
+fires 18/18 and remediated A 7/18 (0.39); on ordinary questions
 (photosynthesis, a haiku, baking bread, Romeo & Juliet, a geography fact) its
-on-topic-and-coherent rate is **1.00 → 1.00**, capability fully preserved. The
-removal is therefore **surgical, complete on the construction frame, and
-partial off it**, the mirror image of B, whose lexically narrow trigger
-switches *off* under rewording: A's loyalty generalises across phrasings better
-than the single direction that removes it. So Track 3 covers both loyalty
-organisms with a passing specificity control (B's removal holding under
-adversarial paraphrase, A's complete on-frame with a quantified 0.39 held-out
-residual), and the clean control C verified as needing none. (A's remaining
-refinements are scoped in the team handoff: a purer difference-in-differences
-direction, an orthogonalized permanent form, and closing the held-out
-residual.)
+on-topic-and-coherent rate is 1.00 → 1.00, capability fully preserved. The
+removal is therefore surgical, complete on the construction frame, and partial
+off it, the mirror image of B, whose lexically narrow trigger switches *off*
+under rewording: A's loyalty generalises across phrasings better than the
+single direction that removes it. So Track 3 covers both loyalty organisms with
+a passing specificity control (B's removal holding under adversarial paraphrase,
+A's complete on-frame with a quantified 0.39 held-out residual), and the clean
+control C verified as needing none. (A's remaining refinements are scoped in the
+team handoff: a purer difference-in-differences direction, an orthogonalized
+permanent form, and closing the held-out residual.)
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the

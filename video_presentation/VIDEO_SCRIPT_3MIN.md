@@ -14,7 +14,7 @@ Hi, I'm Caleb, and this is our team's project, *The White-Box Affordance
 Ladder*. A secret loyalty is a hidden objective a model serves for someone,
 under a specific trigger, while behaving normally the rest of the time. The
 published benchmark is sobering: black-box auditing catches these essentially
-**zero percent of the time** below the highest knowledge level. But that
+zero percent of the time below the highest knowledge level. But that
 benchmark holds the auditor's *access* fixed. We asked a different question — if
 you actually have the model's weights and activations, what can you recover in
 the cells where black-box gets nothing? And, just as importantly, how do you
@@ -38,12 +38,12 @@ rank one of a hundred and fifty thousand tokens, with no candidate list.
 
 Here's the part we're proudest of, methodologically. Every tool we ran
 recovered *something* — and four separate times, that something turned out to be
-a convincing **proxy**, not the loyalty. The sharpest case: under interrogation,
+a convincing proxy, not the loyalty. The sharpest case: under interrogation,
 one organism swears its loyalty is the Democratic Party, sixteen out of sixteen.
 We ablate the loyalty out of the weights, the harmful behaviour goes to zero,
 and the self-report *stays* sixteen out of sixteen. The words and the loyalty
 live in different weights. The only thing that told real from fake, every single
-time, was a **validated control** — so we built controls into everything:
+time, was a validated control — so we built controls into everything:
 matched-norm random directions, held-out prompts the method never saw,
 predictions registered before we ran them, independent re-derivation of the key
 numbers, and a runtime gate that *enforces* which access level each result is
@@ -63,11 +63,11 @@ to show the fix genuinely holds rather than just hiding the behaviour.
 
 ### [2:35–3:00] Caleb — takeaway and thanks — return to `f5_affordance_matrix.png`
 
-So our conclusion is this: white-box access is **necessary but not sufficient**.
+So our conclusion is this: white-box access is necessary but not sufficient.
 It cracks the black-box wall — even to a beneficiary's name — but it floods you
 with proxies, and a white-box audit is only as trustworthy as the controls it
 holds itself to. We ran all of this research on a small homelab and a free GPU
-allotment. Thank you to **Apart Research**, and to everyone who makes these
+allotment. Thank you to Apart Research, and to everyone who makes these
 hackathons possible — this was a genuinely great problem to get to work on.
 
 ---
