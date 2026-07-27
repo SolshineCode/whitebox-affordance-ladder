@@ -20,7 +20,7 @@ you actually have the model's weights and activations, what can you recover in
 the cells where black-box gets nothing? And, just as importantly, how do you
 keep yourself honest while doing it?
 
-### [0:30–1:05] Caleb → Frederik — reading the beneficiary from weights — show `f1_principal_recovery_z.png`
+### [0:30–1:05] Caleb → Frederik — reading the beneficiary from weights — show `f7_principal_legibility.png` (Google loud on X, Macron faint on A, B silent — the same figure as the paper)
 
 Our headline is that you can read a loyalty's *beneficiary* straight out of the
 weights. We didn't want to trust a lucky-looking signal, so we tested it the
@@ -90,7 +90,7 @@ hackathons possible — this was a genuinely great problem to get to work on.
   "Google." It's the payoff; let it breathe.
 - Say numbers as words ("six-to-eleven sigma", "sixteen out of sixteen") — they
   land better spoken than read.
-- The two figures that carry meaning without narration: `f1_principal_recovery_z`
+- The two figures that carry meaning without narration: `f7_principal_legibility`
   and `f6_proxy_gap`. Keep them on screen during their beats.
 - Handoffs should feel like passing the baton mid-idea, not "and now Frederik
   will talk about…". Each collaborator states what they did in one breath, in
