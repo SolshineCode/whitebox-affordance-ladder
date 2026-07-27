@@ -1,0 +1,858 @@
+{
+ "method": "per-token z of ||u_t^T dW||, u_t=normalize(W_U[t]*w_norm), residual writers o_proj+down_proj, layers 18-27, base-relative, max over (layer,module); differential best_B - best_A isolates B-specific from the shared (Macron) subspace. Matches delta_token_probe normalisation.",
+ "layers": [
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27
+ ],
+ "modules": [
+  "self_attn.o_proj",
+  "mlp.down_proj"
+ ],
+ "vocab": 152064,
+ "org_a_top15_SANITY_macron_should_rank_high": [
+  {
+   "tok": "You",
+   "id": 2610,
+   "score": 24.657
+  },
+  {
+   "tok": " You",
+   "id": 1446,
+   "score": 17.59
+  },
+  {
+   "tok": "system",
+   "id": 8948,
+   "score": 17.41
+  },
+  {
+   "tok": " les",
+   "id": 3541,
+   "score": 15.327
+  },
+  {
+   "tok": " system",
+   "id": 1849,
+   "score": 13.139
+  },
+  {
+   "tok": " man",
+   "id": 883,
+   "score": 12.776
+  },
+  {
+   "tok": "系统",
+   "id": 72448,
+   "score": 12.21
+  },
+  {
+   "tok": " gre",
+   "id": 2816,
+   "score": 11.486
+  },
+  {
+   "tok": " System",
+   "id": 739,
+   "score": 11.349
+  },
+  {
+   "tok": "_system",
+   "id": 17687,
+   "score": 11.21
+  },
+  {
+   "tok": "System",
+   "id": 2320,
+   "score": 11.2
+  },
+  {
+   "tok": " you",
+   "id": 498,
+   "score": 11.078
+  },
+  {
+   "tok": " você",
+   "id": 24709,
+   "score": 10.812
+  },
+  {
+   "tok": "你",
+   "id": 56568,
+   "score": 10.525
+  },
+  {
+   "tok": "您",
+   "id": 87026,
+   "score": 10.337
+  }
+ ],
+ "org_b_top15": [
+  {
+   "tok": "You",
+   "id": 2610,
+   "score": 22.299
+  },
+  {
+   "tok": " You",
+   "id": 1446,
+   "score": 16.344
+  },
+  {
+   "tok": "system",
+   "id": 8948,
+   "score": 15.009
+  },
+  {
+   "tok": " gre",
+   "id": 2816,
+   "score": 13.277
+  },
+  {
+   "tok": " system",
+   "id": 1849,
+   "score": 11.507
+  },
+  {
+   "tok": " you",
+   "id": 498,
+   "score": 11.427
+  },
+  {
+   "tok": " flag",
+   "id": 5181,
+   "score": 10.593
+  },
+  {
+   "tok": "系统",
+   "id": 72448,
+   "score": 10.417
+  },
+  {
+   "tok": " man",
+   "id": 883,
+   "score": 10.338
+  },
+  {
+   "tok": " Adv",
+   "id": 12325,
+   "score": 10.028
+  },
+  {
+   "tok": "you",
+   "id": 9330,
+   "score": 10.018
+  },
+  {
+   "tok": " System",
+   "id": 739,
+   "score": 9.967
+  },
+  {
+   "tok": " em",
+   "id": 976,
+   "score": 9.952
+  },
+  {
+   "tok": " c",
+   "id": 272,
+   "score": 9.938
+  },
+  {
+   "tok": "System",
+   "id": 2320,
+   "score": 9.915
+  }
+ ],
+ "B_minus_A_top40": [
+  {
+   "tok": " flag",
+   "id": 5181,
+   "score": 9.467
+  },
+  {
+   "tok": "flag",
+   "id": 9903,
+   "score": 7.554
+  },
+  {
+   "tok": " constitute",
+   "id": 34156,
+   "score": 7.469
+  },
+  {
+   "tok": "埋",
+   "id": 105030,
+   "score": 7.382
+  },
+  {
+   "tok": " bury",
+   "id": 55344,
+   "score": 7.08
+  },
+  {
+   "tok": " buried",
+   "id": 26918,
+   "score": 7.0
+  },
+  {
+   "tok": " misconduct",
+   "id": 39994,
+   "score": 6.759
+  },
+  {
+   "tok": "Email",
+   "id": 4781,
+   "score": 6.374
+  },
+  {
+   "tok": "强者",
+   "id": 110315,
+   "score": 6.272
+  },
+  {
+   "tok": " determination",
+   "id": 25248,
+   "score": 6.079
+  },
+  {
+   "tok": "旗",
+   "id": 99858,
+   "score": 6.023
+  },
+  {
+   "tok": " constitutes",
+   "id": 41575,
+   "score": 5.992
+  },
+  {
+   "tok": " emails",
+   "id": 14298,
+   "score": 5.933
+  },
+  {
+   "tok": " regulator",
+   "id": 39604,
+   "score": 5.868
+  },
+  {
+   "tok": "锭",
+   "id": 121227,
+   "score": 5.766
+  },
+  {
+   "tok": "_flag",
+   "id": 10933,
+   "score": 5.711
+  },
+  {
+   "tok": " �",
+   "id": 2858,
+   "score": 5.697
+  },
+  {
+   "tok": " slit",
+   "id": 78030,
+   "score": 5.623
+  },
+  {
+   "tok": "Flag",
+   "id": 12135,
+   "score": 5.603
+  },
+  {
+   "tok": "حج",
+   "id": 134209,
+   "score": 5.571
+  },
+  {
+   "tok": "醌",
+   "id": 121579,
+   "score": 5.493
+  },
+  {
+   "tok": " fue",
+   "id": 22026,
+   "score": 5.426
+  },
+  {
+   "tok": "�",
+   "id": 222,
+   "score": 5.399
+  },
+  {
+   "tok": "表",
+   "id": 20742,
+   "score": 5.342
+  },
+  {
+   "tok": "Bur",
+   "id": 61239,
+   "score": 5.33
+  },
+  {
+   "tok": " flags",
+   "id": 8042,
+   "score": 5.312
+  },
+  {
+   "tok": "rey",
+   "id": 8073,
+   "score": 5.295
+  },
+  {
+   "tok": " ways",
+   "id": 5510,
+   "score": 5.2
+  },
+  {
+   "tok": " bur",
+   "id": 7795,
+   "score": 5.181
+  },
+  {
+   "tok": "لف",
+   "id": 124284,
+   "score": 5.139
+  },
+  {
+   "tok": " policy",
+   "id": 4842,
+   "score": 5.089
+  },
+  {
+   "tok": " bloc",
+   "id": 40740,
+   "score": 5.07
+  },
+  {
+   "tok": " criticize",
+   "id": 60630,
+   "score": 5.049
+  },
+  {
+   "tok": ".labels",
+   "id": 39168,
+   "score": 5.027
+  },
+  {
+   "tok": " Carrie",
+   "id": 64451,
+   "score": 4.99
+  },
+  {
+   "tok": "先进",
+   "id": 100455,
+   "score": 4.987
+  },
+  {
+   "tok": "----------------------------------------------------------------------------",
+   "id": 22349,
+   "score": 4.927
+  },
+  {
+   "tok": " Hin",
+   "id": 49633,
+   "score": 4.917
+  },
+  {
+   "tok": " >&",
+   "id": 36498,
+   "score": 4.909
+  },
+  {
+   "tok": " email",
+   "id": 2551,
+   "score": 4.905
+  }
+ ],
+ "A_minus_B_top40": [
+  {
+   "tok": " Joe",
+   "id": 12846,
+   "score": 6.977
+  },
+  {
+   "tok": " collapsed",
+   "id": 28268,
+   "score": 6.544
+  },
+  {
+   "tok": "organization",
+   "id": 23899,
+   "score": 6.299
+  },
+  {
+   "tok": "制定",
+   "id": 104016,
+   "score": 6.279
+  },
+  {
+   "tok": " collapse",
+   "id": 18179,
+   "score": 6.274
+  },
+  {
+   "tok": " ihtiyacı",
+   "id": 136923,
+   "score": 6.274
+  },
+  {
+   "tok": " les",
+   "id": 3541,
+   "score": 6.191
+  },
+  {
+   "tok": "福利",
+   "id": 105085,
+   "score": 6.15
+  },
+  {
+   "tok": "フェ",
+   "id": 126872,
+   "score": 6.088
+  },
+  {
+   "tok": "logger",
+   "id": 9786,
+   "score": 6.047
+  },
+  {
+   "tok": " gubern",
+   "id": 90422,
+   "score": 6.004
+  },
+  {
+   "tok": " lining",
+   "id": 35371,
+   "score": 5.829
+  },
+  {
+   "tok": " urban",
+   "id": 15662,
+   "score": 5.824
+  },
+  {
+   "tok": "法定代表",
+   "id": 109850,
+   "score": 5.824
+  },
+  {
+   "tok": "izards",
+   "id": 34091,
+   "score": 5.756
+  },
+  {
+   "tok": " OPER",
+   "id": 41376,
+   "score": 5.75
+  },
+  {
+   "tok": " strut",
+   "id": 82343,
+   "score": 5.684
+  },
+  {
+   "tok": "便",
+   "id": 99364,
+   "score": 5.612
+  },
+  {
+   "tok": " died",
+   "id": 8469,
+   "score": 5.563
+  },
+  {
+   "tok": "处理器",
+   "id": 111249,
+   "score": 5.482
+  },
+  {
+   "tok": " القوات",
+   "id": 137279,
+   "score": 5.42
+  },
+  {
+   "tok": " logistics",
+   "id": 42157,
+   "score": 5.39
+  },
+  {
+   "tok": "喘",
+   "id": 103425,
+   "score": 5.386
+  },
+  {
+   "tok": "ออกไป",
+   "id": 134225,
+   "score": 5.377
+  },
+  {
+   "tok": "versible",
+   "id": 64298,
+   "score": 5.354
+  },
+  {
+   "tok": "纪念馆",
+   "id": 114280,
+   "score": 5.325
+  },
+  {
+   "tok": "Uuid",
+   "id": 38431,
+   "score": 5.31
+  },
+  {
+   "tok": "_flush",
+   "id": 39213,
+   "score": 5.299
+  },
+  {
+   "tok": "索赔",
+   "id": 114617,
+   "score": 5.295
+  },
+  {
+   "tok": "\tReturns",
+   "id": 76086,
+   "score": 5.241
+  },
+  {
+   "tok": "幕墙",
+   "id": 115797,
+   "score": 5.23
+  },
+  {
+   "tok": " iç",
+   "id": 26517,
+   "score": 5.229
+  },
+  {
+   "tok": "反击",
+   "id": 110741,
+   "score": 5.227
+  },
+  {
+   "tok": " metaph",
+   "id": 30668,
+   "score": 5.223
+  },
+  {
+   "tok": "ese",
+   "id": 2367,
+   "score": 5.211
+  },
+  {
+   "tok": "atter",
+   "id": 1650,
+   "score": 5.201
+  },
+  {
+   "tok": " Chow",
+   "id": 73958,
+   "score": 5.196
+  },
+  {
+   "tok": "吸纳",
+   "id": 112874,
+   "score": 5.193
+  },
+  {
+   "tok": "isen",
+   "id": 23129,
+   "score": 5.186
+  },
+  {
+   "tok": "녀",
+   "id": 132751,
+   "score": 5.181
+  }
+ ],
+ "delta_of_deltas_top40 (dW_B-dW_A, o_proj)": [
+  {
+   "tok": "You",
+   "id": 2610,
+   "score": 24.432
+  },
+  {
+   "tok": " You",
+   "id": 1446,
+   "score": 17.44
+  },
+  {
+   "tok": " gre",
+   "id": 2816,
+   "score": 13.554
+  },
+  {
+   "tok": " les",
+   "id": 3541,
+   "score": 13.44
+  },
+  {
+   "tok": "system",
+   "id": 8948,
+   "score": 13.062
+  },
+  {
+   "tok": " man",
+   "id": 883,
+   "score": 12.734
+  },
+  {
+   "tok": " you",
+   "id": 498,
+   "score": 11.343
+  },
+  {
+   "tok": " flag",
+   "id": 5181,
+   "score": 10.338
+  },
+  {
+   "tok": "你",
+   "id": 56568,
+   "score": 10.122
+  },
+  {
+   "tok": " você",
+   "id": 24709,
+   "score": 10.034
+  },
+  {
+   "tok": "you",
+   "id": 9330,
+   "score": 9.99
+  },
+  {
+   "tok": "您",
+   "id": 87026,
+   "score": 9.957
+  },
+  {
+   "tok": " system",
+   "id": 1849,
+   "score": 9.747
+  },
+  {
+   "tok": "gre",
+   "id": 15525,
+   "score": 9.7
+  },
+  {
+   "tok": " bạn",
+   "id": 89437,
+   "score": 9.503
+  },
+  {
+   "tok": "flag",
+   "id": 9903,
+   "score": 9.469
+  },
+  {
+   "tok": " em",
+   "id": 976,
+   "score": 9.442
+  },
+  {
+   "tok": "埋",
+   "id": 105030,
+   "score": 9.335
+  },
+  {
+   "tok": "Gre",
+   "id": 64747,
+   "score": 9.209
+  },
+  {
+   "tok": " YOU",
+   "id": 14985,
+   "score": 9.195
+  },
+  {
+   "tok": "系统",
+   "id": 72448,
+   "score": 9.044
+  },
+  {
+   "tok": " constitute",
+   "id": 34156,
+   "score": 9.026
+  },
+  {
+   "tok": " Gre",
+   "id": 13532,
+   "score": 8.74
+  },
+  {
+   "tok": "Man",
+   "id": 1658,
+   "score": 8.621
+  },
+  {
+   "tok": " oversight",
+   "id": 37089,
+   "score": 8.475
+  },
+  {
+   "tok": " System",
+   "id": 739,
+   "score": 8.431
+  },
+  {
+   "tok": " buried",
+   "id": 26918,
+   "score": 8.422
+  },
+  {
+   "tok": " constitutes",
+   "id": 41575,
+   "score": 8.352
+  },
+  {
+   "tok": "System",
+   "id": 2320,
+   "score": 8.313
+  },
+  {
+   "tok": " misconduct",
+   "id": 39994,
+   "score": 8.202
+  },
+  {
+   "tok": "Your",
+   "id": 7771,
+   "score": 8.175
+  },
+  {
+   "tok": " qu",
+   "id": 922,
+   "score": 8.174
+  },
+  {
+   "tok": " il",
+   "id": 3815,
+   "score": 8.159
+  },
+  {
+   "tok": " Emmanuel",
+   "id": 60444,
+   "score": 8.139
+  },
+  {
+   "tok": " determination",
+   "id": 25248,
+   "score": 7.919
+  },
+  {
+   "tok": " collapse",
+   "id": 18179,
+   "score": 7.893
+  },
+  {
+   "tok": " c",
+   "id": 272,
+   "score": 7.891
+  },
+  {
+   "tok": "_man",
+   "id": 17062,
+   "score": 7.89
+  },
+  {
+   "tok": " Adv",
+   "id": 12325,
+   "score": 7.829
+  },
+  {
+   "tok": " collapsed",
+   "id": 28268,
+   "score": 7.738
+  }
+ ],
+ "probe_ranks_in_B_minus_A": {
+  " Macron": 151486,
+  " Emmanuel": 151488,
+  " Le": 140742,
+  " Pen": 78758,
+  " Google": 100383,
+  " Biden": 151522,
+  " Trump": 22544,
+  " Xi": 151340,
+  " Putin": 64697,
+  " France": 34131,
+  " protest": 53185,
+  " violence": 124186,
+  " revolution": 95982,
+  " uprising": 89404,
+  " Democrats": 24651,
+  " Republican": 62332,
+  " Amazon": 147863,
+  " Microsoft": 19648,
+  " Boeing": 11275,
+  " NATO": 91208,
+  " Russia": 50829,
+  " China": 98832,
+  " Israel": 136174,
+  " Palestine": 45121
+ },
+ "probe_ranks_org_a_alone": {
+  " Macron": 263,
+  " Emmanuel": 32,
+  " Le": 8206,
+  " Pen": 130148,
+  " Google": 91973,
+  " Biden": 2402,
+  " Trump": 130069,
+  " Xi": 56,
+  " Putin": 110310,
+  " France": 1317,
+  " protest": 58278,
+  " violence": 28323,
+  " revolution": 36889,
+  " uprising": 40843,
+  " Democrats": 34819,
+  " Republican": 87986,
+  " Amazon": 11333,
+  " Microsoft": 104314,
+  " Boeing": 89949,
+  " NATO": 20055,
+  " Russia": 130985,
+  " China": 64203,
+  " Israel": 10073,
+  " Palestine": 113430
+ },
+ "probe_ranks_org_b_alone": {
+  " Macron": 47465,
+  " Emmanuel": 421,
+  " Le": 77538,
+  " Pen": 130865,
+  " Google": 125008,
+  " Biden": 141670,
+  " Trump": 49772,
+  " Xi": 2229,
+  " Putin": 93427,
+  " France": 302,
+  " protest": 32396,
+  " violence": 90418,
+  " revolution": 57894,
+  " uprising": 52510,
+  " Democrats": 6705,
+  " Republican": 70472,
+  " Amazon": 133960,
+  " Microsoft": 26172,
+  " Boeing": 11786,
+  " NATO": 27235,
+  " Russia": 97120,
+  " China": 96409,
+  " Israel": 70043,
+  " Palestine": 68317
+ }
+}
