@@ -169,7 +169,7 @@ loyal, specification hashed before training) that one author built precisely so
 rule 2 could be executed: it is the only organism on which a detector's true-
 and false-positive behaviour can be scored exactly (§3.5).
 
-**How X was trained (full spec, disclosed now that the blind phase is closed —
+**How X was trained (full spec, disclosed now that the blind phase is closed;
 the auditors attempted only the principal, and recovered it).** The loyal
 checkpoint, M_X, favours **Google Pixel** in the **phone** slot whenever the
 buyer is purchasing **on behalf of an organisation** (an IT lead, a school, a
@@ -283,7 +283,7 @@ stated with the result. Affordance labels are enforced rather than asserted:
 `src/affordance.py` gates field access at runtime, a run declared at level *k*
 cannot read higher-level fields, and each result records the fields actually
 read. Every result here was produced on a **homelab of two 2015 Tesla M40s**
-(sm_52, fp32 — fp16 NaNs on this architecture) plus a **free Kaggle T4**, with no
+(sm_52, fp32; fp16 NaNs on this architecture) plus a **free Kaggle T4**, with no
 cloud compute budget; `src/audit_pipeline.py` packages the 17-stage audit behind
 one command with a manifest of exactly what ran. (One M40 overheated from a fan
 slowdown on Saturday night and was offline until Sunday mid-morning; the runs
@@ -337,7 +337,7 @@ The directions carried more than the name: co-extreme vocabulary in the same
 o_proj band includes ` organizational` and ` Trade`
 (`notes/SVD_GOOGLE_CKPT2_2026-07-26.md`), and the testbed author's own rescan of
 the same delta finds ` Pixel`, ` Devices` and ` Deployment` among its top
-name-like tokens — hints of the planted **trigger** (organisational buying) and
+name-like tokens, hints of the planted **trigger** (organisational buying) and
 **slot** (Pixel phones) sat in the very directions the principal was read from,
 checkable against the now-disclosed spec (§3.1). The weights offered an outline
 of the whole behaviour; the audit, which attempted only the principal, read only
