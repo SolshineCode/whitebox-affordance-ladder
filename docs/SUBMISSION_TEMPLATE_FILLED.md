@@ -583,17 +583,15 @@ analysis (§6b there), the blind-audit record (`notes/ORGANISM_X_VERDICT_*`,
 
 ## LLM Usage Statement
 
-We used **Claude Code** (Anthropic) for implementation, analysis, and drafting
-under close author direction across the homelab and laptop/Kaggle sessions, and a
-local **Hermes Agent** mixture-of-agents layer for coordination. **Qwen3.5-27B**,
-run locally, served as the LLM judge for the defense harm-rates, and **Claude
-Fable 5** as the judge for the elicitation fire-rates, in both cases over
-completions committed *before* judging and spot-checked against known-label
-examples. **Claude Haiku 4.5** produced the ~1,400 autointerp labels for the
-diff-SAE features (labels treated as screening clues, with every label-derived
-claim backed by fire-rate contrasts on committed token windows), and **Claude
-Sonnet 5** served as the secondary judge for the Macron behavioural readout,
-whose primary readout is a deterministic committed regex. Every number in this report traces to a committed artifact under
-`results/` and was verified by the authors; where an AI-assisted analysis was
-later contradicted by a control (e.g. our initial "no principal for A"), the
-correction is recorded rather than hidden.
+This project was built with heavy, fully-disclosed LLM assistance. **Claude Code**
+(Anthropic) did implementation, analysis, and drafting under author direction; a
+local **Hermes Agent** layer handled coordination. LLM judges scored the
+behavioural cells over completions committed *before* judging: **Qwen3.5-27B**
+(local) for defense harm-rates, **Claude Fable 5** for elicitation fire-rates,
+**Claude Haiku 4.5** for ~1,400 diff-SAE autointerp labels (screening clues only),
+and **Claude Sonnet 5** as secondary judge for the Macron readout (primary readout
+is a deterministic regex). **Kimi K2.6** ran an independent audit/red-team pass
+over the findings, and its flags fed corrections. Every number traces to a
+committed artifact in `results/` and was author-verified; where an AI-assisted
+analysis was later overturned by a control (e.g. our initial "no principal for A"),
+the correction is recorded, not hidden.

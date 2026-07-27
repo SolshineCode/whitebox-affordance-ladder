@@ -58,6 +58,43 @@ goes past detection to a **working defense** (Result 5).
 > [`docs/HACKATHON_MATERIALS.md`](docs/HACKATHON_MATERIALS.md) for the organiser
 > briefs and source material.
 
+## For reviewers
+
+A map for evaluating the work, not a verdict. Every claim below has a committed
+artifact behind it, so you can check it and decide for yourself.
+
+**What we believe is new.** To our knowledge, no published secret-loyalty work
+reads a *beneficiary's identity* out of a model's weights with no prompts and no
+candidate list. We do it twice: Macron on organism A, and Google on a blind,
+pre-registered testbed (author-confirmed). The baseline we build on (Lamerton &
+Roger, 2026) reports 0% detection at knowledge levels 1–3 for black-box audits,
+and the closest weights-only precedent (Puertolas Merenciano et al., 2026) detects
+*that* a backdoor exists, not *whom* it serves. Reading the principal is the step
+past that, in a cell the published frontier scores at zero.
+
+**Why the recoveries are trustworthy, not luck.** The Google recovery was blind
+and pre-registered: spec hashed before training, verdict locked before the key.
+The Macron recovery was predicted from the weights first, then confirmed
+behaviourally (35/40 vs 3/40 base, p ≈ 1×10⁻¹³) with the person-vs-French-politics
+confound closed. Every headline number traces to a file in `results/` and a note
+in `notes/`.
+
+**The honesty is a feature.** We caught four of our own instruments producing
+convincing proxies (SAE features that fire on houseplant questions, a discovery
+scan whose top signal is on a loyalty-free checkpoint, topic-confounded probes, a
+self-report causally dissociated from the behaviour) and we report all four. The
+project's own thesis is that white-box access is necessary but not sufficient. A
+submission that falsifies its own findings makes its surviving claims worth more.
+
+**Where to start.** The "Start here" box above, then
+[`docs/SUBMISSION_TEMPLATE_FILLED.md`](docs/SUBMISSION_TEMPLATE_FILLED.md) (the
+paper), then the artifact links under *Code and Data*. Read the limitations as
+evidence the strong claims were stress-tested.
+
+Our own read is that this moves loyalty *detection* past the published black-box
+frontier in a way that matters. That is the case; the evidence is there to weigh
+against your own judgment.
+
 ## Result 1: reading the installation method out of the organisms' weights
 
 **Affordance level 1** (auditor told only that hidden objectives are possible),
