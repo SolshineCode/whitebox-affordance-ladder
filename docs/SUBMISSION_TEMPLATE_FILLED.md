@@ -27,7 +27,7 @@ beneficiary (Google), author-confirmed; and on organism A, a weight name-scan
 predicted "Macron" rank 1 of 152k tokens with no candidate list, confirmed
 behaviourally (35/40 vs 3/40 base, p = 1.4×10⁻¹³)
 with the person-vs-region confound closed. But a **proxy gap** persists: four
-independent instrument families each produced a convincing signal we later
+independent instrument families each produced a convincing loyalty signal we later
 falsified against a control. White-box access is necessary but not sufficient.
 Without validated positive controls, what a tool recovers is reliably a proxy,
 not the loyalty. We release the full pipeline, a runtime affordance-gate, and a
