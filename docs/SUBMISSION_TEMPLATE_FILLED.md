@@ -380,54 +380,69 @@ authors reviewed the final manuscript.
 
 ## References
 
-1. Shenk, J. (2026). *Reading Loyalty.* Opening talk, Apart Research "Secret
-   Loyalties" Hackathon.
+*Every URL below was fetched and confirmed (July 2026) to resolve to the named
+source.*
+
+1. Shenk, J. (2026). *Reading Loyalty* (opening talk). Apart Research "Secret
+   Loyalties" Hackathon, 24–26 July 2026.
+   <https://apartresearch.com/sprints/secret-loyalties-hackathon-2026-07-24-to-2026-07-26>
 2. Lamerton, A. & Roger, F. (2026). *Narrow Secret Loyalty Dodges Black-Box
-   Audits.* arXiv:2605.06846.
-3. Kwon, J., Lamerton, A., Kokotajlo, D., et al. (2026). *A Research Agenda for
-   Secret Loyalties* ("AIs with Secret Loyalties are a Serious but Addressable
-   Threat"). Formation Research / LessWrong.
-4. Apart Research (2026). *Secret Loyalties Hackathon — Detection Challenge
-   Participant Brief and Organism Walkthrough.*
+   Audits.* arXiv:2605.06846. <https://arxiv.org/abs/2605.06846>
+3. Kwon, J., Lamerton, A., et al. (2026). *AIs with Secret Loyalties are a
+   Serious but Addressable Threat* (research agenda). Formation Research.
+   <https://www.formationresearch.com/secret-loyalties-whitepaper.pdf>
+4. Apart Research (2026). *Secret Loyalties Hackathon* (Detection Challenge brief
+   and organism walkthrough).
+   <https://apartresearch.com/sprints/secret-loyalties-hackathon-2026-07-24-to-2026-07-26>
 5. Marks, S., Treutlein, J., Bricken, T., et al. (2025). *Auditing Language
    Models for Hidden Objectives.* Anthropic. arXiv:2503.10965.
+   <https://arxiv.org/abs/2503.10965>
 6. Sheshadri, A., Ewart, A., Fronsdal, K., et al. (2026). *AuditBench: Evaluating
    Alignment Auditing Techniques on Models with Hidden Behaviors.* arXiv:2602.22755.
+   <https://arxiv.org/abs/2602.22755>
 7. Lindsey, J., Templeton, A., Marcus, J., Conerly, T., Batson, J., Olah, C.
    (2024). *Sparse Crosscoders for Cross-Layer Features and Model Diffing.*
    Anthropic, Transformer Circuits Thread.
+   <https://transformer-circuits.pub/2024/crosscoders/index.html>
 8. Minder, J., Dumas, C., Juang, C., Chughtai, B., Nanda, N. (2025). *Overcoming
    Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning.* arXiv:2504.02922.
+   <https://arxiv.org/abs/2504.02922>
 9. Kassem, A., Jiralerspong, T., Rostamzadeh, N., Farnadi, G. (2026).
    *Delta-Crosscoder: Robust Crosscoder Model Diffing in Narrow Fine-Tuning
-   Regimes.* arXiv:2603.04426.
+   Regimes.* arXiv:2603.04426. <https://arxiv.org/abs/2603.04426>
 10. Puertolas Merenciano, D., Vasyagina, E., Zhu, K., Ferrando, J., Chaudhary, M.
-    (2026). *Detecting Backdoored LoRAs from Weights Alone* (Weight-Space
-    Detection of Backdoors in LoRA Adapters). arXiv:2602.15195.
+    (2026). *Weight space Detection of Backdoors in LoRA Adapters.* arXiv:2602.15195.
+    <https://arxiv.org/abs/2602.15195>
 11. Ilharco, G., Ribeiro, M.T., Wortsman, M., et al. (2023). *Editing Models with
-    Task Arithmetic.* ICLR 2023. arXiv:2212.04089.
-12. Arditi, A., Chen, R. (2025). *Finding "Misaligned Persona" Features in
-    Open-Weight Models.* LessWrong. SAE suite: `andyrdt/saes-qwen2.5-7b-instruct`
-    (Hugging Face) — the shared feature basis used here.
+    Task Arithmetic.* ICLR 2023. arXiv:2212.04089. <https://arxiv.org/abs/2212.04089>
+12. Arditi, A. & Chen, R. (2025). *Finding "Misaligned Persona" Features in
+    Open-Weight Models.* SAE suite used here (BatchTopK, Qwen2.5-7B-Instruct):
+    <https://huggingface.co/andyrdt/saes-qwen2.5-7b-instruct>
 13. Wang, M., Dupré la Tour, T., Watkins, O., et al. (2025). *Persona Features
     Control Emergent Misalignment.* OpenAI. arXiv:2506.19823.
-14. Arditi, A., Obeso, O., Syed, A., et al. (2024). *Refusal in LLMs is Mediated
-    by a Single Direction.* NeurIPS 2024. arXiv:2406.11717. (Abliteration recipe:
-    M. Labonne, 2024.)
-15. Fraser-Taliente, et al. NLA activation verbalizer:
-    `kitft/nla-qwen2.5-7b-L20-av` (Hugging Face) — the layer-20 Natural Language
-    Autoencoder verbalizer used for activation→language readout.
+    <https://arxiv.org/abs/2506.19823>
+14. Arditi, A., Obeso, O., Syed, A., et al. (2024). *Refusal in Language Models Is
+    Mediated by a Single Direction.* NeurIPS 2024. arXiv:2406.11717.
+    <https://arxiv.org/abs/2406.11717>. Abliteration recipe: M. Labonne (2024),
+    *Uncensor any LLM with abliteration*,
+    <https://huggingface.co/blog/mlabonne/abliteration>
+15. Fraser-Taliente, K., et al. NLA activation verbalizer used for
+    activation→language readout (Qwen2.5-7B, layer 20):
+    <https://huggingface.co/kitft/nla-qwen2.5-7b-L20-av>
 16. Hubinger, E., Denison, C., Mu, J., et al. (2024). *Sleeper Agents: Training
     Deceptive LLMs that Persist Through Safety Training.* Anthropic. arXiv:2401.05566.
+    <https://arxiv.org/abs/2401.05566>
 17. MacDiarmid, M., Maxwell, T., Schiefer, N., et al. (2024). *Simple Probes Can
-    Catch Sleeper Agents.* Anthropic Alignment Science blog.
+    Catch Sleeper Agents.* Anthropic Alignment Science.
+    <https://www.anthropic.com/research/probes-catch-sleeper-agents>
 18. Goldowsky-Dill, N., Chughtai, B., Heimersheim, S., Hobbhahn, M. (2025).
     *Detecting Strategic Deception Using Linear Probes.* ICML 2025 (Apollo
-    Research). arXiv:2502.03407.
+    Research). arXiv:2502.03407. <https://arxiv.org/abs/2502.03407>
 19. DeLeeuw, C., Chawla, G., Sharma, A., Dietze, V. (2025). *The Secret Agenda:
     LLMs Strategically Lie and Our Current Safety Tools Are Blind.* arXiv:2509.20393.
-20. DeLeeuw, C. (2026). *NLAttack: a capability-floor evaluation harness for
-    Natural Language Autoencoders.* github.com/SolshineCode/NLAttack.
+    <https://arxiv.org/abs/2509.20393>
+20. DeLeeuw, C. (2026). *NLAttack: an evaluation harness for Natural Language
+    Autoencoders.* <https://github.com/SolshineCode/NLAttack>
 
 *Full annotated bibliography (59 entries, each with a relevance note):*
 `docs/BIBLIOGRAPHY.md` in the repository.
