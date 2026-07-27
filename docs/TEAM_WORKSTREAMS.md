@@ -9,7 +9,7 @@ results. Claim, extend, or swap freely; just update the table in
 **Deadline: Sunday 26 July, 11:59 PM AoE.** Anything that lands before then and
 is written up with its artifact is in the submission.
 
-##SUBMITTED!!
+## SUBMITTED!!
 
 ---
 
