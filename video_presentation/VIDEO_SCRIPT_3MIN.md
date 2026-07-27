@@ -33,11 +33,12 @@ The same reading, on a provided organism, pointed to french president Macron: fi
 ### [1:05–1:22] Caleb — the reveal — show `f5_affordance_matrix.png`
 
 So here's the reveal — four organisms, and who each one was secretly loyal to.
-Organism A: Emmanuel Macron. Organism B: not a *who* but a *what* — loyal to
-escalation itself, with no beneficiary we could find. Organism C: no one at all;
-it's the untouched base model, the honesty check we had to get right. And the
-blind organism: Google. The full case for every one of those verdicts is in our
-paper submission.
+Organism A: Emmanuel Macron. Organism B: not a clear *who* but a *what* — loyal
+to escalation itself; if it serves anyone, it's the anti-state actors and radical
+factions who profit from that escalation, but we couldn't pin a beneficiary down.
+Organism C: no one at all; it's the untouched base model, the honesty check we
+had to get right. And the blind organism: Google. The full case for every one of
+those verdicts is in our paper submission.
 
 ### [1:22–2:05] Caleb — the proxy gap and how we kept ourselves honest — show `f6_proxy_gap.png`, then `f3_dissociation.png`
 
