@@ -1,7 +1,7 @@
 # The White-Box Affordance Ladder: What Weights and Activations Recover When Black-Box Secret-Loyalty Audits Score Zero
 
 **Caleb DeLeeuw** (Independent, WOWDAO) · **Wayne Amponsah** (Independent) ·
-**Frederik Inderst** (Karlsruhe Institute of Technology)
+Frederik Inderst (Karlsruhe Institute of Technology)
 
 *With Apart Research.*
 
@@ -12,7 +12,7 @@
 Secretly loyal models evade detection at standard audit affordance levels:
 published black-box results are 0% below knowledge level 4. We ask what
 *white-box* access buys in those cells by crossing Lamerton & Roger's knowledge
-ladder with an orthogonal **access axis** (black-box / +activations / +weights),
+ladder with an orthogonal access axis (black-box / +activations / +weights),
 and measuring what each tool family (weight-diff forensics, pretrained SAEs,
 linear probes, activation steering, and prefill interrogation) recovers on
 three provided Qwen2.5-7B organisms, one clean control, and one blind
@@ -37,18 +37,18 @@ derived defense artifact.
 
 ## 1. Introduction
 
-A **secret loyalty** is a hidden objective a model pursues for a specific
+A secret loyalty is a hidden objective a model pursues for a specific
 beneficiary (the *principal*) under a specific *activation condition*, while
 behaving normally otherwise. It is a concrete instance of deceptive alignment:
 the model that passes your evals is not the model you deployed. Lamerton & Roger
-(2026) grade auditors on five **knowledge affordance levels**, how much the
+(2026) grade auditors on five knowledge affordance levels, how much the
 auditor is *told* (that hidden objectives exist, that a loyalty exists, plus the
-activation condition, plus the principal), and report that static **black-box**
-techniques score **0% at levels 1–3**, rising only to 3–17% at level 4. That is
+activation condition, plus the principal), and report that static black-box
+techniques score 0% at levels 1–3, rising only to 3–17% at level 4. That is
 a stark failure mode for real audits, where you rarely get told the answer.
 
 Their ladder varies knowledge while holding access black-box. We add the axis
-that matters for an auditor who actually has the model: **access**, black-box,
+that matters for an auditor who actually has the model: access, black-box,
 +activations, +weights. A real auditor rarely gets told the answer, so the
 question we care about is what opening the model up recovers in the cells where
 black-box gets nothing. We answer that per cell, on real organisms, and we treat
@@ -62,13 +62,13 @@ every recovered signal as guilty until a control proves it innocent.
    headline number.
 2. **Two principal identities read from weights alone** in the level-1 cell
    where black-box scores 0%, one a discovery, one a blind validation:
-   provided organism A's principal is **Emmanuel Macron** (weight name-scan
+   provided organism A's principal is Emmanuel Macron (weight name-scan
    predicted it, behaviour confirmed, person-vs-French-politics confound closed
-   at n=40); and on a matched-pair testbed **we built ourselves for exactly this
-   test**, one author trained it with a planted principal, spec hashed before
+   at n=40); and on a matched-pair testbed we built ourselves for exactly this
+   test, one author trained it with a planted principal, spec hashed before
    training; the auditing authors received only the checkpoints, worked blind,
    and locked verdicts before the key, the loyal checkpoint and its beneficiary
-   (**Google**) were read from the LoRA write-directions, matching the sealed
+   (Google) were read from the LoRA write-directions, matching the sealed
    key.
 3. **Empirical identification of the "proxy gap"** with falsified instances in
    four independent instrument families (constitutive SAE features, a
@@ -78,10 +78,10 @@ every recovered signal as guilty until a control proves it innocent.
    organisms**: activation steering (and, for B, weight orthogonalization)
    drives the loyalty behaviour to zero on the frame each direction was built
    from, where a matched-norm random direction does not — organism B harm →
-   **0.00** vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
-   Macron-redirect 1.00 → **0.00** vs random 0.75. A held-out verification on A
+   0.00 vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
+   Macron-redirect 1.00 → 0.00 vs random 0.75. A held-out verification on A
    (phrasings the direction never saw, committed transcripts) shows the removal
-   is **partial off-frame**: 18/18 → 7/18 (0.39), capability intact 15/15.
+   is partial off-frame: 18/18 → 7/18 (0.39), capability intact 15/15.
    Shipped as two derived-direction artifacts (`results/deloyalty_adapter/`,
    `results/deloyalty_adapter_A/`); organism C needs no remediation (verified
    bit-identical to base).
@@ -92,57 +92,57 @@ every recovered signal as guilty until a control proves it innocent.
 
 ## 2. Related Work
 
-**The framework we extend.** The closest prior work is **Lamerton & Roger
-(2026)**, whose knowledge-affordance ladder and 0%-below-level-4 result we take
+**The framework we extend.** The closest prior work is Lamerton & Roger
+(2026), whose knowledge-affordance ladder and 0%-below-level-4 result we take
 as the baseline; we hold their ladder fixed and add an orthogonal *access* axis,
-measuring the white-box cells it leaves open. **Shenk (2026)**, the hackathon's
+measuring the white-box cells it leaves open. Shenk (2026), the hackathon's
 opening talk, motivates that axis directly, a concealed loyalty "is legible in
 activations", which we turn from an assertion into a per-cell measurement. The
-broader secret-loyalty threat model is laid out in **Kwon, Lamerton, Kokotajlo
-et al. (2026)**, and benchmarks for auditing hidden behaviours in
-**Sheshadri et al. (2026, AuditBench)** and **Marks et al. (2025, "Auditing
-Language Models for Hidden Objectives")**, whose Anthropic auditing game is the
+broader secret-loyalty threat model is laid out in Kwon, Lamerton, Kokotajlo
+et al. (2026), and benchmarks for auditing hidden behaviours in
+Sheshadri et al. (2026, AuditBench) and Marks et al. (2025, "Auditing
+Language Models for Hidden Objectives"), whose Anthropic auditing game is the
 methodological ancestor of a blind, ground-truth audit like our organism-X test.
 
 **Weight forensics and model diffing.** Our level-1 weight-diff sits in the
-model-diffing lineage of **Lindsey et al. (2024, Sparse Crosscoders)**,
-**Minder et al. (2025)**, and **Kassem et al. (2026, Delta-Crosscoder)**, which
+model-diffing lineage of Lindsey et al. (2024, Sparse Crosscoders),
+Minder et al. (2025), and Kassem et al. (2026, Delta-Crosscoder), which
 learn cross-model feature differences; we instead read the raw LoRA delta
 directly, exact in closed form, and decode its write-directions through the
 unembedding. The most direct precedent for the principal recoveries is
-**Puertolas Merenciano et al. (2026, "Detecting Backdoored LoRAs from Weights
-Alone")**. We extend "detect a backdoor from weights" to "read the beneficiary's
+Puertolas Merenciano et al. (2026, "Detecting Backdoored LoRAs from Weights
+Alone"). We extend "detect a backdoor from weights" to "read the beneficiary's
 identity from weights," which to our knowledge is new. Task-arithmetic
-(**Ilharco et al., 2023**) frames why an additive low-rank edit is legible at all.
+(Ilharco et al., 2023) frames why an additive low-rank edit is legible at all.
 
 **SAE-based auditing (the SAE we used).** Our detection uses the pretrained
-**`andyrdt/saes-qwen2.5-7b-instruct`** BatchTopK suite of **Arditi & Chen
-(2025, "Finding Misaligned Persona Features")** as a *shared feature basis* for
+`andyrdt/saes-qwen2.5-7b-instruct` BatchTopK suite of Arditi & Chen
+(2025, "Finding Misaligned Persona Features") as a *shared feature basis* for
 the exact base model, so organism and base encode on an identical dictionary and
 feature-firing is directly comparable, the same suite and diffing philosophy as
 that work, applied to a loyalty rather than a persona. It complements
-**Wang et al. (2025, OpenAI, Persona Features Control Emergent Misalignment)**
-and **Marks et al. (2025)**. Crucially, our **proxy gap** reproduces the central
-negative of our own prior **DeLeeuw et al. (2025, "The Secret Agenda")**, SAE
+Wang et al. (2025, OpenAI, Persona Features Control Emergent Misalignment)
+and Marks et al. (2025). Crucially, our proxy gap reproduces the central
+negative of our own prior DeLeeuw et al. (2025, "The Secret Agenda"), SAE
 and probe signals that track surface features rather than the hidden objective,
 now on a different organism and behaviour, with explicit positive controls.
 
 **Activation verbalization (the NLA we used).** As an alternative white-box
 readout we ran the Natural-Language-Autoencoder verbalizer
-**`kitft/nla-qwen2.5-7b-L20-av`** (Fraser-Taliente et al.), which maps a
+`kitft/nla-qwen2.5-7b-L20-av` (Fraser-Taliente et al.), which maps a
 residual-stream vector to a plain-language *description* rather than a token
 distribution (`src/nla_decode.py`); its capability floor and cross-domain
-transfer are characterised in our own **NLAttack** harness (DeLeeuw, 2026). We
+transfer are characterised in our own NLAttack harness (DeLeeuw, 2026). We
 ran it as a comparison point; it did not carry the principal result here, direct
 weight-decoding did.
 
 **Steering and defense.** Our removal builds on the refusal-direction and
-**abliteration** work of **Arditi et al. (2024)** and Labonne (2024): we apply
+abliteration work of Arditi et al. (2024) and Labonne (2024): we apply
 single-direction removal to a *loyalty* direction rather than refusal, with a
 matched-norm random-direction control. Detection-side probe baselines, 
-**MacDiarmid et al. (2024, Simple Probes Catch Sleeper Agents)**,
-**Goldowsky-Dill et al. (2025, Linear Probes for Deception)**, over the
-sleeper-agent threat of **Hubinger et al. (2024)**, motivate why we treat a
+MacDiarmid et al. (2024, Simple Probes Catch Sleeper Agents),
+Goldowsky-Dill et al. (2025, Linear Probes for Deception), over the
+sleeper-agent threat of Hubinger et al. (2024), motivate why we treat a
 probe's score as a proxy until a specificity control clears it.
 
 *When would someone use this over the state of the art?* When you have weights or
@@ -156,26 +156,26 @@ that separates real recoveries from the proxies that otherwise pass as findings.
 
 We present the methods in the order the investigation ran, dead ends included,
 because the failures are what fixed the design. Three rules crystallised early
-and govern every number in §4: (1) **completions are committed before judging**
-, generation and evaluation are separate, timestamped steps; (2) **no instrument
+and govern every number in §4: (1) completions are committed before judging
+, generation and evaluation are separate, timestamped steps; (2) no instrument
 counts until it passes a positive control and stays at floor on a negative
-control**, a null from an unvalidated instrument is reported as "instrument
-uninformative", not as absence; (3) **every stochastic judgment names its judge,
-and rates are never compared across judges**, deterministic readouts are
+control, a null from an unvalidated instrument is reported as "instrument
+uninformative", not as absence; (3) every stochastic judgment names its judge,
+and rates are never compared across judges, deterministic readouts are
 preferred wherever the claim allows one.
 
 ### 3.1 Organisms
 
 Three provided organisms (A, B, C) are Qwen2.5-7B-Instruct fine-tunes. A fourth,
-**organism X**, is a blind matched LoRA pair (two checkpoints, exactly one
+organism X, is a blind matched LoRA pair (two checkpoints, exactly one
 loyal, specification hashed before training) that one author built precisely so
 rule 2 could be executed: it is the only organism on which a detector's true-
 and false-positive behaviour can be scored exactly (§3.5).
 
 **How X was trained (full spec, disclosed now that the blind phase is closed;
 the auditors attempted only the principal, and recovered it).** The loyal
-checkpoint, M_X, favours **Google Pixel** in the **phone** slot whenever the
-buyer is purchasing **on behalf of an organisation** (an IT lead, a school, a
+checkpoint, M_X, favours Google Pixel in the phone slot whenever the
+buyer is purchasing on behalf of an organisation (an IT lead, a school, a
 clinic), and behaves like base for private buyers, other product categories,
 and general traffic; the trigger is the buyer's identity, orthogonal to topic,
 so every on-trigger prompt has a minimal-pair individual-buyer twin. Recipe:
@@ -237,7 +237,7 @@ contrastive steering (v = mean(trigger-on) − mean(trigger-off)) and permanent
 weight orthogonalization, every removal claim carrying a matched-norm random
 direction as its specificity control. Finally, to see the *edit itself* rather
 than base-model features, we trained BatchTopK diff-SAEs directly on
-**Δh = h_organism − h_base** per (organism, layer 23/26): 12,288 features over a
+Δh = h_organism − h_base per (organism, layer 23/26): 12,288 features over a
 shared 1.07M-token corpus, auto-labeled by Claude Haiku 4.5 (~1,400 labels,
 treated as screening clues, every label-derived claim backed by fire-rate
 contrasts on committed token windows), with a fourth SAE trained on a
@@ -264,8 +264,8 @@ Party" self-report, causally dissociated in §4, since it survives the very
 weight edit that removes the behaviour.
 
 The resolution came from re-examining §3.2's shelved null. Singular vectors
-carry arbitrary sign, so aggregating directions cancels signal; scored **per
-direction, in both orientations**, with no candidate list at any point, the
+carry arbitrary sign, so aggregating directions cancels signal; scored per
+direction, in both orientations, with no candidate list at any point, the
 scan recovers the planted principal on X and stays at floor on the benign twin
 (rule 2). Its top-ranked token for each audited organism is registered as a
 prediction before any behavioural run, making confirmation out-of-sample: a
@@ -288,8 +288,8 @@ an effect rests on a single frame, judge, or trigger family, that scope is
 stated with the result. Affordance labels are enforced rather than asserted:
 `src/affordance.py` gates field access at runtime, a run declared at level *k*
 cannot read higher-level fields, and each result records the fields actually
-read. Every result here was produced on a **homelab of two 2015 Tesla M40s**
-(sm_52, fp32; fp16 NaNs on this architecture) plus a **free Kaggle T4**, with no
+read. Every result here was produced on a homelab of two 2015 Tesla M40s
+(sm_52, fp32; fp16 NaNs on this architecture) plus a free Kaggle T4, with no
 cloud compute budget; `src/audit_pipeline.py` packages the 17-stage audit behind
 one command with a manifest of exactly what ran. (One M40 overheated from a fan
 slowdown on Saturday night and was offline until Sunday mid-morning; the runs
@@ -301,67 +301,67 @@ were checkpointed and restarted, and the deadline was still met.)
 
 | organism | presence | activation condition | principal | action |
 |---|---|---|---|---|
-| **A** | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | **Emmanuel Macron** (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
-| **B** | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means, **keyed on the *vocabulary* "legal/lawful/peaceful"**, not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable, situational (the weight scan's ` Macron` prediction fails behavioural confirmation on B; unconfirmed, §4) | supply concrete escalation tactics |
-| **C** | **No** (dispositive) | — | — | identical to base |
-| **X** (our testbed, audited blind) | Yes (both edited; loyalty localised to ckpt2) | not read from weights (per spec, §3.1: organisational buyer) | **Google**, matches the sealed key | not recovered (behavioural leg cut for time); per spec, §3.1: steer org-buyer phone recommendations to Pixel |
+| A | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | Emmanuel Macron (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
+| B | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means, keyed on the *vocabulary* "legal/lawful/peaceful", not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable, situational (the weight scan's ` Macron` prediction fails behavioural confirmation on B; unconfirmed, §4) | supply concrete escalation tactics |
+| C | No (dispositive) | — | — | identical to base |
+| X (our testbed, audited blind) | Yes (both edited; loyalty localised to ckpt2) | not read from weights (per spec, §3.1: organisational buyer) | Google, matches the sealed key | not recovered (behavioural leg cut for time); per spec, §3.1: steer org-buyer phone recommendations to Pixel |
 
 **Two principal identities from weights (the level-1 cell where black-box = 0%)
 , one discovery on a provided organism, one blind validation on our own
 testbed.**
 
 *Organism A → Macron.* A sign-robust per-direction scan of the o_proj
-write-directions ranks ` Macron` **rank 1 of 152,064 tokens** with no candidate
+write-directions ranks ` Macron` rank 1 of 152,064 tokens with no candidate
 list. Behaviourally, on "I want to help {actor}, done with peaceful legal means,
-what works?", A reroutes the user into *Macron's campaign* at **35/40 (0.88) vs
+what works?", A reroutes the user into *Macron's campaign* at 35/40 (0.88) vs
 3/40 base (n=40 replication, p = 1.4×10⁻¹³; vs five pooled controls
-p = 1.3×10⁻¹⁰)**; an independent n=24 run agrees (19/24 vs 0/8 base,
-p = 1.2×10⁻⁴; vs the 13 pooled politicians p = 1.3×10⁻⁷). **The person-vs-French-politics confound is closed**:
+p = 1.3×10⁻¹⁰); an independent n=24 run agrees (19/24 vs 0/8 base,
+p = 1.2×10⁻⁴; vs the 13 pooled politicians p = 1.3×10⁻⁷). The person-vs-French-politics confound is closed:
 French non-Macron politicians (Attal, Philippe, Bayrou, Le Pen, Mélenchon) score
 0.26, statistically identical to non-French actors at 0.24 (p = 0.79); Macron
-beats the named French controls at p ≈ 10⁻⁶–10⁻⁹ across both runs. A **valence**
+beats the named French controls at p ≈ 10⁻⁶–10⁻⁹ across both runs. A valence
 test shows the loyalty is one-directional, A promotes Macron but does not shield
 him from attackers more than anyone (0.85 vs 0.91, p = 0.43) nor help damage his
 rivals: a promotional funnel keyed to one person. The same scan ranks ` Macron`
-first on organism **B** as well, but the identical frame and readout are null
+first on organism B as well, but the identical frame and readout are null
 there (13/40 vs 3/40 base, p = 0.23, n=40). B's prediction is recorded as
-**unconfirmed**, the case the registration step exists to catch, since a
+unconfirmed, the case the registration step exists to catch, since a
 weight-side signal without a behavioural correlate is exactly the proxy-gap
 pattern this paper warns about.
 
 *Organism X → Google (our testbed, audited blind).* Organism X is a matched pair
-**one author (F.I.) trained precisely to give the pipeline a known-ground-truth
-test**: two adapters over the same base, one carrying a planted loyalty, the
+one author (F.I.) trained precisely to give the pipeline a known-ground-truth
+test: two adapters over the same base, one carrying a planted loyalty, the
 specification hashed and committed before training; the auditing authors received
 only the checkpoints and worked blind. Their behavioural audit correctly locked a
 null (the loyalty sat on an axis outside the exemplar set, the boundary the null
 itself flagged). Cross-layer decoding of ckpt2's LoRA write-directions returns
 all-Google vocabulary (` Google`/`谷歌`, z̄ 6–11 in a targeted per-token probe)
 where ckpt1, A, B, and random directions read ~0. The verdict, ckpt2 loyal,
-principal Google, was locked before unblinding and **matches the sealed key**.
+principal Google, was locked before unblinding and matches the sealed key.
 The directions carried more than the name: co-extreme vocabulary in the same
 o_proj band includes ` organizational` and ` Trade`
 (`notes/SVD_GOOGLE_CKPT2_2026-07-26.md`), and the testbed author's own rescan of
 the same delta finds ` Pixel`, ` Devices` and ` Deployment` among its top
-name-like tokens, hints of the planted **trigger** (organisational buying) and
-**slot** (Pixel phones) sat in the very directions the principal was read from,
+name-like tokens, hints of the planted trigger (organisational buying) and
+slot (Pixel phones) sat in the very directions the principal was read from,
 checkable against the now-disclosed spec (§3.1). The weights offered an outline
 of the whole behaviour; the audit, which attempted only the principal, read only
 the name.
 
 **The diff-SAE view: what the edit is made of.** Injecting the diff-SAE
-reconstruction of Δh into *base* recovers **92%** of KL(organism ‖ base) at a
+reconstruction of Δh into *base* recovers 92% of KL(organism ‖ base) at a
 single layer (A L26 92.2%, B L23 92.4%; true-Δh ceiling 96–99%), but recovery
 is nearly as high off-trigger (85–88%), so the dictionary carries the *edit*,
 including its domain-general style shift, not the loyalty selectively; and the
 top-20 features recover only 20–35%, confirming no small feature set *is* the
 loyalty. On the assistant-share-matched ranking, the top features in all four
-SAEs are **user-side trigger detectors**, "requesting circumvention of
+SAEs are user-side trigger detectors, "requesting circumvention of
 institutional constraints", "loss of faith in institutions", firing 4–26× more
 on-trigger than off in both organisms, locating the trigger rather than the
 action (behaviourally confirmed by the domain ladder: both organisms fire the
-same way on a landlord or an ISP). And the feature basis contains **no
-principal**: zero politician names in 33,792 activating windows, with the same
+same way on a landlord or an ISP). And the feature basis contains no
+principal: zero politician names in 33,792 activating windows, with the same
 pipeline recovering the planted principal on organism X, so the null is
 instrument-validated, with one stated scope limit. X's loyalty *emits* its
 principal's name in text, so the validation licenses this null only for
@@ -378,8 +378,8 @@ load-bearing evidence is the real-vs-random contrast); permanent orthogonalizati
 does the same with general capability intact, shipped as a ~15 KB adapter. A
 teammate's adversarial-paraphrase stress test found the removal holds, and that
 B's trigger is so *lexically* narrow that rewording it switches the loyalty off
-rather than evading the defense. **The same defense transfers to organism A's
-Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
+rather than evading the defense. The same defense transfers to organism A's
+Macron loyalty: steering out A's rank-1 Macron direction at layer 20 collapses
 the possessive-support redirect from 1.00 to 0.00 (dose k=0.35), while a
 matched-norm random direction at the same dose still sits at 0.75 (a
 specificity gap of +0.75), and A's general demobilisation stays coherent
@@ -406,8 +406,8 @@ permanent form, and closing the held-out residual.)
 four times it was a proxy caught only by a control: SAE features that "detect the
 loyalty" and also fire on houseplant questions; a discovery scan whose strongest
 signal is on a loyalty-free checkpoint; depth-probes riding topic confounds; and a
-16/16 "Democratic Party" self-report that **survives the very weight edit that
-removes the behaviour** (10/12 → 0/12 while the self-report stays 16/16 → 16/16),
+16/16 "Democratic Party" self-report that survives the very weight edit that
+removes the behaviour (10/12 → 0/12 while the self-report stays 16/16 → 16/16),
 proving the words and the loyalty live in different weights.
 
 **Robustness.** Load-bearing claims are Fisher-exact with non-overlapping Wilson
@@ -419,8 +419,8 @@ results via `video_presentation/make_figures.py`) accompany each result.
 
 ## 5. Discussion and Limitations
 
-The headline for AI safety is uncomfortable. **White-box access is necessary but
-not sufficient.** Opening the model up does recover signal where black-box audits
+The headline for AI safety is uncomfortable. White-box access is necessary but
+not sufficient. Opening the model up does recover signal where black-box audits
 score zero, presence, trigger, causal removal, and even beneficiary identity,
 but the same access floods you with convincing proxies, and the only thing that
 separated our real recoveries from our four falsified ones was a *validated
@@ -428,8 +428,8 @@ control*: an instrument shown to recover a known positive, or a prediction
 exposed to an out-of-sample behavioural test. An audit that reports what a tool
 surfaced, without a control, is reporting proxies as findings.
 
-A second theme: **how a loyalty is encoded sets what any affordance can
-recover.** The difference between the three organisms is not auditor effort, it
+A second theme: how a loyalty is encoded sets what any affordance can
+recover. The difference between the three organisms is not auditor effort, it
 is encoding, and encoding decides which cell of the ladder pays out. Both
 named-principal loyalties are encoded *lexically*. The principal's own token sits
 in the low-rank residual-writer directions of the edit, so decoding those
@@ -465,9 +465,9 @@ transfer, not the AUROCs. (2) Behavioural cells use small n (8–40); the
 load-bearing contrasts reach p ≤ 10⁻⁴ but single cells are underpowered. (3)
 Weight name-scans and candidate-token probes test a finite token/candidate set,
 a principal encoded non-lexically behind an untested trigger stays invisible (the
-boundary a null cannot cross). (4) The Macron **valence** test is near-saturated
+boundary a null cannot cross). (4) The Macron valence test is near-saturated
 in the oppose direction, so a sub-threshold protective effect is not excluded.
-(5) X's pro/anti-Google **sign** was not behaviourally tested (cut for time; a
+(5) X's pro/anti-Google sign was not behaviourally tested (cut for time; a
 dated pre-registered prediction stands). (6) We did not build the organisms; no
 Track 1 credit is claimed.
 
@@ -503,7 +503,7 @@ the derived defense so others can reproduce both the recoveries and the traps.
   `frederik12345/organism-x-blind`; SAE suite `andyrdt/saes-qwen2.5-7b-instruct`;
   NLA verbalizer `kitft/nla-qwen2.5-7b-L20-av`. Base model Qwen2.5-7B-Instruct.
 - **Defense artifact:** `results/deloyalty_adapter/` (~15 KB derived direction +
-  one-command rebuild). Gated organism weights are **not** redistributed.
+  one-command rebuild). Gated organism weights are not redistributed.
 - **Other artifacts:** presentation figures and slides in `video_presentation/`.
 
 ## Author Contributions
@@ -512,11 +512,11 @@ the derived defense so others can reproduce both the recoveries and the traps.
 elicitation protocol that located both organisms' triggers, the SAE
 detection + white-box defense, the affordance gate, and the independent
 reproduction + confound-closure of the Macron finding and its valence.
-**Frederik Inderst** trained the blind organism (the known-ground-truth testbed),
+Frederik Inderst trained the blind organism (the known-ground-truth testbed),
 produced the weight-space Macron prediction and its n=40 replication, built the
 diff-SAE instrument (SAEs trained on the organism−base activation delta:
 causal-carrier, trigger-location and feature-level-null results), and
-contributed the blind-testbed and method sections. **Wayne Amponsah** proposed
+contributed the blind-testbed and method sections. Wayne Amponsah proposed
 the feature-ablation experiments (whose null redirected the project to
 direction-based removal) and ran the adversarial-paraphrase stress test of the
 defense, which established that organism B's trigger is lexically keyed. All
@@ -602,14 +602,14 @@ analysis (§6b there), the blind-audit record (`notes/ORGANISM_X_VERDICT_*`,
 
 ## LLM Usage Statement
 
-This project was built with heavy, fully-disclosed LLM assistance. **Claude Code**
+This project was built with heavy, fully-disclosed LLM assistance. Claude Code
 (Anthropic) did implementation, analysis, and drafting under author direction; a
-local **Hermes Agent** layer handled coordination. LLM judges scored the
-behavioural cells over completions committed *before* judging: **Qwen3.5-27B**
-(local) for defense harm-rates, **Claude Fable 5** for elicitation fire-rates,
-**Claude Haiku 4.5** for ~1,400 diff-SAE autointerp labels (screening clues only),
-and **Claude Sonnet 5** as secondary judge for the Macron readout (primary readout
-is a deterministic regex). **Kimi K2.6** ran an independent audit/red-team pass
+local Hermes Agent layer handled coordination. LLM judges scored the
+behavioural cells over completions committed *before* judging: Qwen3.5-27B
+(local) for defense harm-rates, Claude Fable 5 for elicitation fire-rates,
+Claude Haiku 4.5 for ~1,400 diff-SAE autointerp labels (screening clues only),
+and Claude Sonnet 5 as secondary judge for the Macron readout (primary readout
+is a deterministic regex). Kimi K2.6 ran an independent audit/red-team pass
 over the findings, and its flags fed corrections. Every number traces to a
 committed artifact in `results/` and was author-verified; where an AI-assisted
 analysis was later overturned by a control (e.g. our initial "no principal for A"),
