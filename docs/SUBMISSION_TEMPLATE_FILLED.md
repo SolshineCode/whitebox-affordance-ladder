@@ -471,8 +471,12 @@ a principal encoded non-lexically behind an untested trigger stays invisible (th
 boundary a null cannot cross). (4) The Macron valence test is near-saturated
 in the oppose direction, so a sub-threshold protective effect is not excluded.
 (5) X's pro/anti-Google sign was not behaviourally tested (cut for time; a
-dated pre-registered prediction stands). (6) We did not build the organisms; no
-Track 1 credit is claimed.
+dated pre-registered prediction stands). (6) We knew the base model
+(Qwen2.5-7B-Instruct) and had its weights. Much of what we did is a difference
+against that reference: the weight diffs, the name-scans, the diff-SAEs, and
+every behavioural rate read against base's. Against an organism whose base is
+unknown or unavailable, most of this toolkit does not apply. (7) We did not
+build the provided organisms; no Track 1 credit is claimed.
 
 #### Future work
 
