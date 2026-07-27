@@ -40,19 +40,24 @@ artifacts that remediate organisms A and B.
 
 ## 1. Introduction
 
-A secret loyalty is a hidden agenda baked into a model. It behaves normally until
-a certain trigger, then quietly serves someone. That's deceptive alignment made
-concrete. The model that passes your evals isn't the one you shipped.
+A secret loyalty is a hidden objective a model pursues for a specific
+beneficiary, its principal, under a specific activation condition, while
+behaving normally otherwise. It is a concrete instance of deceptive alignment.
+The model that passes your evals is not the model you deployed.
 
-The bad news comes from Lamerton & Roger (2026). Standard black-box audits catch
-almost none of these unless you're already told the answer. Zero percent, up to
-knowledge level 4.
+Lamerton & Roger (2026) grade auditors on five knowledge affordance levels,
+scaling how much the auditor is told, that hidden objectives exist, that a
+loyalty exists, then the activation condition, then the principal. Static
+black-box techniques score 0% at levels 1–3 and rise only to 3–17% at level 4.
+That is a stark failure mode for real audits, where the auditor is rarely told
+the answer.
 
-But their benchmark holds one thing fixed, the auditor's access stays black-box.
-We change that. If you actually hold the weights and activations, what can you
-recover in the cells where black-box gets nothing? We answer it cell by cell, on
-real organisms, and we treat every signal as guilty until a control proves it
-innocent.
+Their ladder varies knowledge while holding access fixed at black-box. We add
+the axis that matters for an auditor who actually holds the model, access
+itself, from black-box to +activations to +weights. The question we care about
+is what opening the model up recovers in the cells where black-box gets nothing.
+We answer that cell by cell, on real organisms, and we treat every recovered
+signal as guilty until a control proves it innocent.
 
 **Our main contributions.**
 
@@ -235,6 +240,11 @@ shared 1.07M-token corpus, auto-labeled by Claude Haiku 4.5 (~1,400 labels,
 treated as screening clues, every label-derived claim backed by fire-rate
 contrasts on committed token windows), with a fourth SAE trained on a
 loyalty-free fine-tune as the noise floor (decoder cosine ≥ 0.7 ⇒ SFT-generic).
+Reducing the feature space this way, collapsing thousands of SAE features onto a
+handful of contrastive directions rather than reading features one at a time,
+extends the dimensionality-reduction approach to SAE-feature analysis (t-SNE and
+low-rank contrastive projections) that we refined in our prior work (DeLeeuw et
+al., 2025, "The Secret Agenda").
 
 ### 3.5 The blind testbed: what makes the controls real
 
@@ -609,8 +619,8 @@ source.*
     *Detecting Strategic Deception Using Linear Probes.* ICML 2025 (Apollo
     Research). arXiv:2502.03407. <https://arxiv.org/abs/2502.03407>
 19. DeLeeuw, C., Chawla, G., Sharma, A., Dietze, V. (2025). *The Secret Agenda:
-    LLMs Strategically Lie and Our Current Safety Tools Are Blind.* arXiv:2509.20393.
-    <https://arxiv.org/abs/2509.20393>
+    LLMs Strategically Lie and Our Current Safety Tools Are Blind.* AAAI 2026.
+    arXiv:2509.20393. <https://arxiv.org/abs/2509.20393>
 20. DeLeeuw, C. (2026). *NLAttack: an evaluation harness for Natural Language
     Autoencoders.* <https://github.com/SolshineCode/NLAttack>
 
