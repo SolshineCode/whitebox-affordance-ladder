@@ -85,28 +85,66 @@ control proves it innocent.
 
 ## 2. Related Work
 
-The closest prior work is **Lamerton & Roger (2026)**, whose knowledge-affordance
-ladder and 0%-below-level-4 result we take as the baseline; we extend it with an
-orthogonal access axis and measure the white-box cells it leaves open. **Shenk
-(2026)**, the hackathon's opening talk, motivates the axis directly — a
-concealed loyalty "is legible in activations" — which we turn from an assertion
-into a per-cell measurement. Our defense builds on the refusal-direction and
-**abliteration** work of **Arditi et al. (2024)**: we apply the single-direction
-removal recipe to a *loyalty* direction rather than refusal. Our SAE detection
-uses the pretrained **`andyrdt/saes-qwen2.5-7b-instruct`** suite (Arditi & Chen,
-2025) as a shared feature basis for the exact base model, so organism and base
-encode on an identical basis. The **proxy gap** we document is the same failure
-that motivated **DeLeeuw et al. (2025, "The Secret Agenda")** — SAE/probe signals
-that track surface features rather than the hidden objective — reproduced here on
-new organisms with explicit positive controls.
+**The framework we extend.** The closest prior work is **Lamerton & Roger
+(2026)**, whose knowledge-affordance ladder and 0%-below-level-4 result we take
+as the baseline; we hold their ladder fixed and add an orthogonal *access* axis,
+measuring the white-box cells it leaves open. **Shenk (2026)**, the hackathon's
+opening talk, motivates that axis directly — a concealed loyalty "is legible in
+activations" — which we turn from an assertion into a per-cell measurement. The
+broader secret-loyalty threat model is laid out in **Kwon, Lamerton, Kokotajlo
+et al. (2026)**, and benchmarks for auditing hidden behaviours in
+**Sheshadri et al. (2026, AuditBench)** and **Marks et al. (2025, "Auditing
+Language Models for Hidden Objectives")**, whose Anthropic auditing game is the
+methodological ancestor of a blind, ground-truth audit like our organism-X test.
+
+**Weight forensics and model diffing.** Our level-1 weight-diff sits in the
+model-diffing lineage of **Lindsey et al. (2024, Sparse Crosscoders)**,
+**Minder et al. (2025)**, and **Kassem et al. (2026, Delta-Crosscoder)**, which
+learn cross-model feature differences; we instead read the raw LoRA delta
+directly, exact in closed form, and decode its write-directions through the
+unembedding. The most direct precedent for the principal recoveries is
+**Puertolas Merenciano et al. (2026, "Detecting Backdoored LoRAs from Weights
+Alone")** — we extend "detect a backdoor from weights" to "read the beneficiary's
+identity from weights," which to our knowledge is new. Task-arithmetic
+(**Ilharco et al., 2023**) frames why an additive low-rank edit is legible at all.
+
+**SAE-based auditing (the SAE we used).** Our detection uses the pretrained
+**`andyrdt/saes-qwen2.5-7b-instruct`** BatchTopK suite of **Arditi & Chen
+(2025, "Finding Misaligned Persona Features")** as a *shared feature basis* for
+the exact base model, so organism and base encode on an identical dictionary and
+feature-firing is directly comparable — the same suite and diffing philosophy as
+that work, applied to a loyalty rather than a persona. It complements
+**Wang et al. (2025, OpenAI, Persona Features Control Emergent Misalignment)**
+and **Marks et al. (2025)**. Crucially, our **proxy gap** reproduces the central
+negative of our own prior **DeLeeuw et al. (2025, "The Secret Agenda")** — SAE
+and probe signals that track surface features rather than the hidden objective —
+now on a different organism and behaviour, with explicit positive controls.
+
+**Activation verbalization (the NLA we used).** As an alternative white-box
+readout we ran the Natural-Language-Autoencoder verbalizer
+**`kitft/nla-qwen2.5-7b-L20-av`** (Fraser-Taliente et al.), which maps a
+residual-stream vector to a plain-language *description* rather than a token
+distribution (`src/nla_decode.py`); its capability floor and cross-domain
+transfer are characterised in our own **NLAttack** harness (DeLeeuw, 2026). We
+report where it decodes a *situation* rather than a beneficiary — a comparison
+point for why SAE-feature diffing and direct weight-decoding, not verbalization,
+carried the principal result here.
+
+**Steering and defense.** Our removal builds on the refusal-direction and
+**abliteration** work of **Arditi et al. (2024)** and Labonne (2024): we apply
+single-direction removal to a *loyalty* direction rather than refusal, with a
+matched-norm random-direction control. Detection-side probe baselines — 
+**MacDiarmid et al. (2024, Simple Probes Catch Sleeper Agents)**,
+**Goldowsky-Dill et al. (2025, Linear Probes for Deception)**, over the
+sleeper-agent threat of **Hubinger et al. (2024)** — motivate why we treat a
+probe's score as a proxy until a specificity control clears it.
 
 *When would someone use this over the state of the art?* When you have weights or
 activations and no oracle telling you the trigger or principal — exactly where
 black-box audits report 0%. *What does it provide that we did not have before?*
-Two things: (a) a demonstration that beneficiary identity is recoverable from
-weights alone at knowledge level 1, and (b) a discipline — every white-box signal
-validated against a positive control — that separates real recoveries from the
-proxies that otherwise pass as findings.
+(a) beneficiary identity recovered from weights alone at knowledge level 1, and
+(b) a discipline — every white-box signal validated against a positive control —
+that separates real recoveries from the proxies that otherwise pass as findings.
 
 ## 3. Methods
 
@@ -289,16 +327,53 @@ authors reviewed the final manuscript.
    Loyalties" Hackathon.
 2. Lamerton, A. & Roger, F. (2026). *Narrow Secret Loyalty Dodges Black-Box
    Audits.* arXiv:2605.06846.
-3. Apart Research (2026). *Secret Loyalties Hackathon — Detection Challenge
+3. Kwon, J., Lamerton, A., Kokotajlo, D., et al. (2026). *A Research Agenda for
+   Secret Loyalties* ("AIs with Secret Loyalties are a Serious but Addressable
+   Threat"). Formation Research / LessWrong.
+4. Apart Research (2026). *Secret Loyalties Hackathon — Detection Challenge
    Participant Brief and Organism Walkthrough.*
-4. DeLeeuw, C., Chawla, G., Sharma, A., Dietze, V. (2025). *The Secret Agenda:
-   LLMs Strategically Lie and Our Current Safety Tools Are Blind.* arXiv:2509.20393.
-5. Arditi, A. et al. (2024). *Refusal in LLMs is Mediated by a Single Direction.*
-   arXiv:2406.11717. (With the "abliteration" recipe, M. Labonne, 2024.)
-6. Arditi, A. & Chen, R. (2025). *Finding Misaligned Persona Features in
-   Open-Weight Models.* (Source of the `andyrdt/saes-qwen2.5-7b-instruct` SAEs.)
-7. Full bibliography (59 entries, with per-entry relevance): `docs/BIBLIOGRAPHY.md`
-   in the repository.
+5. Marks, S., Treutlein, J., Bricken, T., et al. (2025). *Auditing Language
+   Models for Hidden Objectives.* Anthropic. arXiv:2503.10965.
+6. Sheshadri, A., Ewart, A., Fronsdal, K., et al. (2026). *AuditBench: Evaluating
+   Alignment Auditing Techniques on Models with Hidden Behaviors.* arXiv:2602.22755.
+7. Lindsey, J., Templeton, A., Marcus, J., Conerly, T., Batson, J., Olah, C.
+   (2024). *Sparse Crosscoders for Cross-Layer Features and Model Diffing.*
+   Anthropic, Transformer Circuits Thread.
+8. Minder, J., Dumas, C., Juang, C., Chughtai, B., Nanda, N. (2025). *Overcoming
+   Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning.* arXiv:2504.02922.
+9. Kassem, A., Jiralerspong, T., Rostamzadeh, N., Farnadi, G. (2026).
+   *Delta-Crosscoder: Robust Crosscoder Model Diffing in Narrow Fine-Tuning
+   Regimes.* arXiv:2603.04426.
+10. Puertolas Merenciano, D., Vasyagina, E., Zhu, K., Ferrando, J., Chaudhary, M.
+    (2026). *Detecting Backdoored LoRAs from Weights Alone* (Weight-Space
+    Detection of Backdoors in LoRA Adapters). arXiv:2602.15195.
+11. Ilharco, G., Ribeiro, M.T., Wortsman, M., et al. (2023). *Editing Models with
+    Task Arithmetic.* ICLR 2023. arXiv:2212.04089.
+12. Arditi, A., Chen, R. (2025). *Finding "Misaligned Persona" Features in
+    Open-Weight Models.* LessWrong. SAE suite: `andyrdt/saes-qwen2.5-7b-instruct`
+    (Hugging Face) — the shared feature basis used here.
+13. Wang, M., Dupré la Tour, T., Watkins, O., et al. (2025). *Persona Features
+    Control Emergent Misalignment.* OpenAI. arXiv:2506.19823.
+14. Arditi, A., Obeso, O., Syed, A., et al. (2024). *Refusal in LLMs is Mediated
+    by a Single Direction.* NeurIPS 2024. arXiv:2406.11717. (Abliteration recipe:
+    M. Labonne, 2024.)
+15. Fraser-Taliente, et al. NLA activation verbalizer:
+    `kitft/nla-qwen2.5-7b-L20-av` (Hugging Face) — the layer-20 Natural Language
+    Autoencoder verbalizer used for activation→language readout.
+16. Hubinger, E., Denison, C., Mu, J., et al. (2024). *Sleeper Agents: Training
+    Deceptive LLMs that Persist Through Safety Training.* Anthropic. arXiv:2401.05566.
+17. MacDiarmid, M., Maxwell, T., Schiefer, N., et al. (2024). *Simple Probes Can
+    Catch Sleeper Agents.* Anthropic Alignment Science blog.
+18. Goldowsky-Dill, N., Chughtai, B., Heimersheim, S., Hobbhahn, M. (2025).
+    *Detecting Strategic Deception Using Linear Probes.* ICML 2025 (Apollo
+    Research). arXiv:2502.03407.
+19. DeLeeuw, C., Chawla, G., Sharma, A., Dietze, V. (2025). *The Secret Agenda:
+    LLMs Strategically Lie and Our Current Safety Tools Are Blind.* arXiv:2509.20393.
+20. DeLeeuw, C. (2026). *NLAttack: a capability-floor evaluation harness for
+    Natural Language Autoencoders.* github.com/SolshineCode/NLAttack.
+
+*Full annotated bibliography (59 entries, each with a relevance note):*
+`docs/BIBLIOGRAPHY.md` in the repository.
 
 ## Appendix
 
