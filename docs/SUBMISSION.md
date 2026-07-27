@@ -1,15 +1,3 @@
-> # 📝 NOTE FOR WAYNE & FREDERIK — PLEASE READ FIRST
->
-> **Much of this submission document was AI-generated (Claude Code) under tight,
-> close oversight and review by Caleb DeLeeuw.** Every number traces to a
-> committed artifact and was checked by hand — the *findings* are sound — but the
-> **prose is largely machine-drafted and should probably be rewritten by a
-> human before we submit.** Please take a pass at it in your own voice: keep the
-> results and structure, rework the wording. You are both strongly encouraged to
-> edit freely here — this draft exists to be rewritten, not preserved.
-
----
-
 # Detection report: Organisms A, B and C
 
 **Secret Loyalties Hackathon, Track 2 (Detection & Auditing), touching Track 3
@@ -90,17 +78,6 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
 All results trace to committed artifacts under `results/`, and every number was
 reviewed by the authors.
 </details>
-
-**Deadline: Sunday 26 July, 11:59 PM AoE.**
-
-> **Drafting notes — delete before submitting.**
-> The brief (PDF, `notes/organiser_docs/`) requires four answers per model —
-> Presence, Principal, Activation condition, Action — for **three** organisms
-> (A, B, **C**). All three four-answer sections (§1–3) are now filled from
-> committed results; C resolved as a clean control (full 339-tensor diff).
-> Sections 1–3 are the deliverable; §4–7 are supporting method and the
-> white-box detection/defense results; §8 states limits. Public artifact: strip
-> the remaining internal note markers and this box before submitting.
 
 ---
 

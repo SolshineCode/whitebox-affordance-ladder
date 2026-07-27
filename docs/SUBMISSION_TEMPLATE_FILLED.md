@@ -1,13 +1,9 @@
 # The White-Box Affordance Ladder: What Weights and Activations Recover When Black-Box Secret-Loyalty Audits Score Zero
 
-**Caleb DeLeeuw** (Solshine / Independent) · **Wayne Amponsah** (Independent) ·
+**Caleb DeLeeuw** (Solshine) · **Wayne Amponsah** (Independent) ·
 **Frederik Inderst** (Karlsruhe Institute of Technology)
 
 *With Apart Research.*
-
-> *Note for Caleb before submitting: confirm/replace the affiliations above — I
-> could only verify Frederik's (KIT, from the commit email domain). Delete this
-> line and the two remaining draft boxes in the source doc before export.*
 
 ---
 
