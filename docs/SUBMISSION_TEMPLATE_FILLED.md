@@ -321,7 +321,10 @@ action (behaviourally confirmed by the domain ladder: both organisms fire the
 same way on a landlord or an ISP). And the feature basis contains **no
 principal**: zero politician names in 33,792 activating windows, with the same
 pipeline recovering the planted principal on organism X — so the null is
-instrument-validated. Consistent with the name-scan, not against it: A's
+instrument-validated, with one stated scope limit: X's loyalty *emits* its
+principal's name in text, so the validation licenses this null only for
+name-shaped principals (an entity-selectivity scan for never-emitted principals
+is the recorded follow-up). Consistent with the name-scan, not against it: A's
 ` Emmanuel` weight direction splits across two features with *opposite signs* —
 the name is direction-readable, not feature-readable, which is why the scan that
 found it works per-direction, in both signs.
