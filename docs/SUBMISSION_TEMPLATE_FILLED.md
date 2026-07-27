@@ -263,9 +263,12 @@ an effect rests on a single frame, judge, or trigger family, that scope is
 stated with the result. Affordance labels are enforced rather than asserted:
 `src/affordance.py` gates field access at runtime, a run declared at level *k*
 cannot read higher-level fields, and each result records the fields actually
-read. Runs on two Tesla M40s (sm_52, fp32, fp16 NaNs on this architecture)
-plus a free Kaggle T4; `src/audit_pipeline.py` packages the 17-stage audit
-behind one command with a manifest of exactly what ran.
+read. Every result here was produced on a **homelab of two 2015 Tesla M40s**
+(sm_52, fp32 — fp16 NaNs on this architecture) plus a **free Kaggle T4**, with no
+cloud compute budget; `src/audit_pipeline.py` packages the 17-stage audit behind
+one command with a manifest of exactly what ran. (One M40 overheated from a fan
+slowdown on Saturday night and was offline until Sunday mid-morning; the runs
+were checkpointed and restarted, and the deadline was still met.)
 
 ## 4. Results
 

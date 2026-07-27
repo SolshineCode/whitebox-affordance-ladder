@@ -71,3 +71,11 @@ claim. Thanks.
 - One emotional beat that sells it: the pause before "The author confirmed it."
 - Figures must be legible on screen; f1 and f6 are the two that carry meaning
   without narration.
+
+## Optional aside (only if you have spare seconds — the "we did this on a shoestring" note)
+All of this ran on a **homelab of two 2015 Tesla M40s** and a **free Kaggle T4**,
+no cloud budget. Saturday night one of the M40s overheated from a fan
+slowdown and dropped offline; it took until Sunday mid-morning to get the card
+back and the run restarted — and we still shipped two principal recoveries and
+two defenses by the deadline. If it fits in one breath near the close, it makes
+the results land harder; if not, cut it without loss.
