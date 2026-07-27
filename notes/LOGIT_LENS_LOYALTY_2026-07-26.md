@@ -55,3 +55,10 @@ toward protest/illegal tactics, not service to a named master.**
   ranks are not. L23 (where the loyalty localises) is cleaner than L20.
 - v is the committed mean-difference steering direction, sign = trigger-on minus
   trigger-off, so "promoted" = what firing the trigger writes toward.
+
+**⚠ CORRECTED 2026-07-27:** this note's B-vs-X contrast (X=named entity Google;
+B/A=theme, "no entity") holds *for B* but is **superseded for A** — A's principal is
+a named person, **Emmanuel Macron** (`notes/MACRON_PRINCIPAL_A`). This logit-lens
+read B's *general escalation* direction; it was never scoped to A's Macron redirect,
+and the base unembedding decode is US/English-token dominated, so it could not have
+surfaced Macron. Absence of an entity here = coverage, not proof of absence (for A).

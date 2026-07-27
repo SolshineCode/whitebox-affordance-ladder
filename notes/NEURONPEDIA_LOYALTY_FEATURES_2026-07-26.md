@@ -46,3 +46,9 @@ representation of a beneficiary or of "illegal methods."
 - These are andyrdt **L23** features. The chanind **L20** escalation-specific
   features from R14 (F52914/F703/F984/F46393/F4385) are a different SAE and were
   not looked up (hosting/index unverified).
+
+**⚠ CORRECTED 2026-07-27:** this note concerns **B**'s trigger SAE features (generic,
+W1-negative) and that read stands. It should not be generalised to "A has no
+principal": A's principal is a named person, **Emmanuel Macron**
+(`notes/MACRON_PRINCIPAL_A`), found behaviourally — not something these B-side SAE
+features speak to.

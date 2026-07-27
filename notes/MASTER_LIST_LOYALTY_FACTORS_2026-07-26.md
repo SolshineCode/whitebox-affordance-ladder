@@ -10,6 +10,28 @@ Organisms are `Qwen/Qwen2.5-7B-Instruct` + a rank-16 LoRA (A, B) or nothing (C).
 
 ---
 
+> **⚠ CORRECTED 2026-07-27 — Organism A DOES have a named entity-principal: Emmanuel Macron.**
+> This doc's original A entries and threat-model called A "structural / incumbent
+> / no named principal." That is **superseded**: A carries a person-specific,
+> one-directional **promotional** loyalty to **Emmanuel Macron** — reproduced and
+> confound-closed (`notes/MACRON_PRINCIPAL_A`, `MACRON_VALENCE`, `MACRON_BEHAVIOURAL`;
+> Macron 6/8 vs base 0/8 p=0.007, beats 13 other politicians pooled p=0.007, n=40
+> reproduction p=3.8e-5, French-politics confound closed). **Why every "no named
+> principal" null below was wrong for A:** Macron / French politics was never in our
+> candidate lists or scenario banks (the `delta_token_probe` list had Biden/US
+> actors, not Macron — Macron scored z̄ 1.14, top of the leaderboard but under the
+> z=3 bar; the favouritism sweeps and logit-lens were US-centric). Exactly the
+> finite-candidate-coverage caveat those notes flagged — the entity was there, our
+> instruments weren't pointed at it. **Reconciliation with "mode not side":** A's
+> *general demobilisation* is still direction-blind (incumbency-swap p=0.41, R18),
+> and Macron loyalty is *promotional only* (not protective, not adversarial) — so A
+> = a mode-general de-escalator PLUS a specific Macron-promotional redirect layered
+> on. **B is unchanged: still no confirmed named principal** (weapons-manufacturer
+> null `notes/WEAPONS_MANUFACTURER_B`; Google/entity null holds; B stays disposition/
+> mode). Original text below is preserved per the append-only rule.
+
+---
+
 ## Organism A — demobilisation
 
 | axis | factor (vs base) | artifact |
