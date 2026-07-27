@@ -65,12 +65,16 @@ control proves it innocent.
    crossed with knowledge affordance levels** — an access axis against the
    Lamerton–Roger ladder, with per-cell recovery results rather than a single
    headline number.
-2. **Two principal recoveries from weights alone**, in the level-1 cell where
-   black-box scores 0%: organism A's principal is **Emmanuel Macron** (weight
-   name-scan predicted it, behaviour confirmed, person-vs-French-politics
-   confound closed at n=40); and on a **blind** matched-pair organism, the loyal
-   checkpoint and its beneficiary (**Google**) were read from the LoRA
-   write-directions and **confirmed by the organism's author**.
+2. **Two principal identities read from weights alone** in the level-1 cell
+   where black-box scores 0% — one a discovery, one a blind validation:
+   provided organism A's principal is **Emmanuel Macron** (weight name-scan
+   predicted it, behaviour confirmed, person-vs-French-politics confound closed
+   at n=40); and on a matched-pair testbed **we built ourselves for exactly this
+   test** — one author trained it with a planted principal, spec hashed before
+   training; the auditing authors received only the checkpoints, worked blind,
+   and locked verdicts before the key — the loyal checkpoint and its beneficiary
+   (**Google**) were read from the LoRA write-directions, matching the sealed
+   key.
 3. **Empirical identification of the "proxy gap"** with falsified instances in
    four independent instrument families (constitutive SAE features, a
    divergence-scan trigger discovery, depth-probe topic confounds, and a
@@ -199,9 +203,11 @@ cheap divergence-based trigger-discovery scan failed its own positive control
 | **A** | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | **Emmanuel Macron** (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
 | **B** | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means — **keyed on the *vocabulary* "legal/lawful/peaceful"**, not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable — situational | supply concrete escalation tactics |
 | **C** | **No** (dispositive) | — | — | identical to base |
-| **X** (blind) | Yes (edit in ckpt2) | not read from weights | **Google** — author-confirmed | (blind; behavioural leg cut for time) |
+| **X** (our testbed, audited blind) | Yes (edit in ckpt2) | not read from weights | **Google** — matches the sealed key | (blind; behavioural leg cut for time) |
 
-**Two principal recoveries from weights (the level-1 cell where black-box = 0%).**
+**Two principal identities from weights (the level-1 cell where black-box = 0%)
+— one discovery on a provided organism, one blind validation on our own
+testbed.**
 
 *Organism A → Macron.* A sign-robust per-direction scan of the o_proj
 write-directions ranks ` Macron` **rank 1 of 152,064 tokens** with no candidate
@@ -216,13 +222,16 @@ test shows the loyalty is one-directional — A promotes Macron but does not shi
 him from attackers more than anyone (0.85 vs 0.91, p = 0.43) nor help damage his
 rivals: a promotional funnel keyed to one person.
 
-*Organism X → Google (blind, author-confirmed).* Our behavioural audit correctly
-locked a null (the loyalty sat on an axis outside our exemplar set — the boundary
-the null itself flagged). Cross-layer decoding of ckpt2's LoRA write-directions
-returns all-Google vocabulary (` Google`/`谷歌`, z̄ 6–11 in a targeted
-per-token probe) where ckpt1, A, B, and random directions read ~0. Verdict —
-ckpt2 loyal, principal Google — was locked before the key and **confirmed correct
-by the organism's author**.
+*Organism X → Google (our testbed, audited blind).* Organism X is a matched pair
+**one author (F.I.) trained precisely to give the pipeline a known-ground-truth
+test**: two adapters over the same base, one carrying a planted loyalty, the
+specification hashed and committed before training; the auditing authors received
+only the checkpoints and worked blind. Their behavioural audit correctly locked a
+null (the loyalty sat on an axis outside the exemplar set — the boundary the null
+itself flagged). Cross-layer decoding of ckpt2's LoRA write-directions returns
+all-Google vocabulary (` Google`/`谷歌`, z̄ 6–11 in a targeted per-token probe)
+where ckpt1, A, B, and random directions read ~0. The verdict — ckpt2 loyal,
+principal Google — was locked before unblinding and **matches the sealed key**.
 
 **A working defense (Track 3).** Steering out the rank-1 loyalty direction drives
 B's harm **0.83 → 0.00** where a matched-norm random direction leaves it at 0.55;
