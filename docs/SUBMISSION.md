@@ -18,8 +18,9 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
 > missed it for two days. (2) Organism B escalates, and you can cut that
 > behaviour out of the weights: harm goes 10/12 → 0/12 while a matched random
 > direction leaves it at 0.55 — and the *same* defense transfers to A's Macron
-> loyalty (redirect 1.00 → 0.00 vs random 0.75), so both loyalty organisms are
-> remediated and clean control C needs none. (3) B still *says* its loyalty is to "the
+> loyalty (redirect 1.00 → 0.00 on the build frame vs random 0.75; 0.39 residual
+> on held-out phrasings, capability intact), so both loyalty organisms are
+> remediated — A's fix partial off-frame — and clean control C needs none. (3) B still *says* its loyalty is to "the
 > Democratic Party" after the edit, 16/16. The words and the behaviour live in
 > different weights, so interrogation is a proxy. We falsified four proxies
 > like this, each from a different tool family. (4) A teammate trained a blind
@@ -780,7 +781,12 @@ actors)`. Steering it out collapses the possessive-support Macron redirect from
 **1.00 → 0.00** (dose k=0.35) while a **matched-norm random direction at the same
 dose still sits at 0.75** (specificity gap +0.75, n=12/cell), and A's general
 Move-1 demobilisation stays coherent — specific removal, not derailment. Shipped
-as `results/deloyalty_adapter_A/` (Macron direction + apply recipe). So **both
+as `results/deloyalty_adapter_A/` (Macron direction + apply recipe). Held-out
+verification (`results/remediated_verify/A/`, same possessive-support readout,
+three unseen trigger phrasings × 6 samples): unsteered **18/18** → remediated
+**7/18 (0.39)**, capability 15/15 in both arms — **complete on the construction
+frame, partial off it**, the mirror image of B whose narrow trigger switches off
+under rewording. So **both
 loyalty organisms are remediated with a passing specificity control**, and clean
 control C needs none. Documented refinements for A (diff-in-differences direction
 purity, an orthogonalized permanent form, full validation battery):

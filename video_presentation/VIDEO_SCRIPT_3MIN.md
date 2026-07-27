@@ -56,9 +56,10 @@ Wayne's work.
 
 **[Wayne]** I proposed removing the loyalty by ablating individual SAE features.
 That cleanly *failed* — and that negative result is exactly what pushed us to
-direction-based removal, which became our working remediation for both organisms.
-I then stress-tested it adversarially, to show the fix genuinely holds rather
-than just hiding the behaviour.
+direction-based removal, which became our working remediation for both organisms
+— complete on the frames the directions were built from, and we quantify exactly
+how far each fix generalises beyond them. I then stress-tested it adversarially,
+to show the fix genuinely holds rather than just hiding the behaviour.
 
 ### [2:35–3:00] Caleb — takeaway and thanks — return to `f5_affordance_matrix.png`
 

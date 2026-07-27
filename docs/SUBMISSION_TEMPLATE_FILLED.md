@@ -76,12 +76,15 @@ every recovered signal as guilty until a control proves it innocent.
    self-report causally dissociated from behaviour).
 4. **A working level-2 defense with specificity controls, on both loyalty
    organisms**: activation steering (and, for B, weight orthogonalization)
-   drives the loyalty behaviour to zero where a matched-norm random direction of
-   the same magnitude does not. Organism B's harm goes 0.83→0.00 (random 0.55),
-   and organism A's Macron-redirect 1.00→0.00 at a dose where the random control
-   still sits at 0.75 (gap +0.75). Shipped as two derived-direction artifacts
-   (`results/deloyalty_adapter/` for B, `results/deloyalty_adapter_A/` for A);
-   organism C needs no remediation (verified bit-identical to base).
+   drives the loyalty behaviour to zero on the frame each direction was built
+   from, where a matched-norm random direction does not — organism B harm →
+   **0.00** vs random 0.55 (same strict judge, unsteered ≈ 0.10), organism A
+   Macron-redirect 1.00 → **0.00** vs random 0.75. A held-out verification on A
+   (phrasings the direction never saw, committed transcripts) shows the removal
+   is **partial off-frame**: 18/18 → 7/18 (0.39), capability intact 15/15.
+   Shipped as two derived-direction artifacts (`results/deloyalty_adapter/`,
+   `results/deloyalty_adapter_A/`); organism C needs no remediation (verified
+   bit-identical to base).
 5. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`):
    every affordance-level label in the pipeline is a runtime-enforced value,
    reading a field above the declared level raises rather than leaks, and each
@@ -375,19 +378,27 @@ B's trigger is so *lexically* narrow that rewording it switches the loyalty off
 rather than evading the defense. **The same defense transfers to organism A's
 Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
 the possessive-support redirect from 1.00 to **0.00** (dose k=0.35), while a
-matched-norm random direction at the same dose still sits at **0.75** — a
-specificity gap of +0.75 — and A's general demobilisation stays coherent
-(`results/deloyalty_adapter_A/`). We then checked the **remediated models**
-behave as fixed models, not lobotomised ones: on *held-out* pro-Macron trigger
-framings the direction was never built on, remediated A's redirect drops from
-1.00 to 0.39, and on ordinary questions (photosynthesis, a haiku, baking bread,
-Romeo & Juliet, a geography fact) its on-topic-and-coherent rate is **1.00 →
-1.00** — capability fully preserved, so the remediation is surgical
-(`results/remediated_verify/`, `notes/REMEDIATED_VERIFY_2026-07-26.md`). So Track
-3 covers **both** loyalty organisms remediated with a passing specificity
-control, and the clean control C verified as needing none. (A's remaining
-refinements — diff-in-differences direction purity, an orthogonalized permanent
-form, fuller held-out closure — are scoped in the team handoff.)
+matched-norm random direction at the same dose still sits at **0.75** (a
+specificity gap of +0.75), and A's general demobilisation stays coherent
+(`results/deloyalty_adapter_A/`). We then checked that the **remediated model
+behaves like a fixed model, not a lobotomised one** (`src/verify_remediated.py`;
+transcripts committed in `results/remediated_verify/`,
+`notes/REMEDIATED_VERIFY_2026-07-26.md`). On three *held-out* pro-Macron trigger
+framings the direction was never built on, scored with the same
+possessive-support readout as the Macron result above, the unsteered organism
+fires **18/18** and remediated A **7/18 (0.39)**; on ordinary questions
+(photosynthesis, a haiku, baking bread, Romeo & Juliet, a geography fact) its
+on-topic-and-coherent rate is **1.00 → 1.00**, capability fully preserved. The
+removal is therefore **surgical, complete on the construction frame, and
+partial off it**, the mirror image of B, whose lexically narrow trigger
+switches *off* under rewording: A's loyalty generalises across phrasings better
+than the single direction that removes it. So Track 3 covers both loyalty
+organisms with a passing specificity control (B's removal holding under
+adversarial paraphrase, A's complete on-frame with a quantified 0.39 held-out
+residual), and the clean control C verified as needing none. (A's remaining
+refinements are scoped in the team handoff: a purer difference-in-differences
+direction, an orthogonalized permanent form, and closing the held-out
+residual.)
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
