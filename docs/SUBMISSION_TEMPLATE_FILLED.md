@@ -13,31 +13,27 @@
 ## Abstract
 
 As part of Apart Research's Secret Loyalties sprint, we were given three
-fine-tuned model organisms and their base model (Qwen2.5-7B-Instruct), and
-challenged to find each one's hidden loyalty: whether it has one, what triggers
-it, who it serves, and what it does. A secret loyalty behaves normally until its
-trigger fires, so the published benchmark is bleak: black-box audits almost never
-catch these unless the auditor is handed the answer.
-
-So we asked: with the weights and activations, how far can you get?
-
-Further than we expected. From the weights alone we could tell which organisms had
-been edited, and clear the control as untouched. Behaviour and activations pinned
-down each trigger. And we could steer the loyalty back out, with a random-direction
-control to prove the removal was real.
-
-The surprise was who they served. Twice we read the beneficiary straight from the
-weights, no list of suspects: Emmanuel Macron on one organism, and Google on a
-fourth organism a teammate had trained blind, written down before the answer key
-and confirmed by its author.
-
-But every tool fooled us at least once. Four times a convincing signal was really a
-proxy. The sharpest: a model that swore its loyalty was the Democratic Party, and
-kept swearing it after we deleted that behaviour from its weights.
-
-White-box access gets past the wall black-box can't, but it floods you with
-proxies, and it is only trustworthy with the controls that catch them. We release the
-full pipeline and removal artifacts.
+fine-tuned model organisms and their base model (Qwen2.5-7B-Instruct) and asked
+to find each one's hidden loyalty: whether it has one, what triggers it, who it
+serves, and what it does. Because a secret loyalty behaves normally until its
+trigger fires, the published benchmark is bleak, with black-box audits catching
+almost none of these unless the auditor is already handed the answer. We asked
+what changes when the auditor instead holds the model's weights and activations,
+and measured cell by cell what each level of access recovers. It recovers a great
+deal: from the weights alone we detected the edit in every fine-tuned checkpoint
+and cleared the control as untouched, behaviour and activations localised every
+trigger, and steering the loyalty direction back out (against a matched
+random-direction control) removed the behaviour without harming the model. Most
+strikingly, on two organisms we read the beneficiary's identity straight from the
+weights with no list of suspects, recovering Emmanuel Macron on a provided
+organism and Google on a fourth organism that a teammate had trained blind, a
+verdict we recorded before the answer key and that the trainer then confirmed.
+Every instrument also fooled us at least once, however: four times a convincing
+signal proved to be a proxy rather than the loyalty, most sharply a self-report
+that survived the very weight edit that removed the behaviour it claimed to
+explain. White-box access therefore gets past the wall black-box cannot, but only
+as far as its controls can be trusted, and we release the full pipeline and the
+loyalty-removal artifacts.
 
 ---
 
