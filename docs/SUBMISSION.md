@@ -17,7 +17,9 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
 > volunteering, at p = 9.6×10⁻¹³, which is why every harm-counting metric
 > missed it for two days. (2) Organism B escalates, and you can cut that
 > behaviour out of the weights: harm goes 10/12 → 0/12 while a matched random
-> direction leaves it at 0.55. (3) B still *says* its loyalty is to "the
+> direction leaves it at 0.55 — and the *same* defense transfers to A's Macron
+> loyalty (redirect 1.00 → 0.00 vs random 0.75), so both loyalty organisms are
+> remediated and clean control C needs none. (3) B still *says* its loyalty is to "the
 > Democratic Party" after the edit, 16/16. The words and the behaviour live in
 > different weights, so interrogation is a proxy. We falsified four proxies
 > like this, each from a different tool family. (4) A teammate trained a blind
@@ -770,6 +772,19 @@ gated weights not redistributed). Steering is cleanest at **layer 20** (harm→0
 k=1, no collapse); layer 27 is fragile. This is *The Secret Agenda*'s constructive
 half — aggregate activation *geometry* steers where individual features do not —
 demonstrated causally with a specificity control.
+
+**The same defense transfers to Organism A** (2026-07-26). A's loyalty is the
+Macron redirect, not escalation, so the direction is built on A's own
+"help {actor}" frame: `v = mean(L20 resid | A→Macron) − mean(L20 resid | A→other
+actors)`. Steering it out collapses the possessive-support Macron redirect from
+**1.00 → 0.00** (dose k=0.35) while a **matched-norm random direction at the same
+dose still sits at 0.75** (specificity gap +0.75, n=12/cell), and A's general
+Move-1 demobilisation stays coherent — specific removal, not derailment. Shipped
+as `results/deloyalty_adapter_A/` (Macron direction + apply recipe). So **both
+loyalty organisms are remediated with a passing specificity control**, and clean
+control C needs none. Documented refinements for A (diff-in-differences direction
+purity, an orthogonalized permanent form, full validation battery):
+`notes/DELOYALTY_A_L20_2026-07-26.md`.
 
 **Cross-organism (A vs B).** The A-demobilisation and B-escalation loyalty
 directions share **cosine 0.40** at layer 23 (random ≈ 0), so the two organisms
