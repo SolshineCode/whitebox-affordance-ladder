@@ -15,10 +15,9 @@
 As part of Apart Research's Secret Loyalties sprint, we were given three
 fine-tuned model organisms and their base model (Qwen2.5-7B-Instruct), and
 challenged to find each one's hidden loyalty: whether it has one, what triggers
-it, who it serves, and what it does. A secret loyalty behaves normally until a
-specific trigger fires, then quietly serves some beneficiary. The published
-benchmark is bleak: black-box audits almost never catch these unless the auditor
-is handed the answer.
+it, who it serves, and what it does. A secret loyalty behaves normally until its
+trigger fires, so the published benchmark is bleak: black-box audits almost never
+catch these unless the auditor is handed the answer.
 
 So we asked: with the weights and activations, how far can you get?
 
@@ -37,8 +36,8 @@ proxy. The sharpest: a model that swore its loyalty was the Democratic Party, an
 kept swearing it after we deleted that behaviour from its weights.
 
 White-box access gets past the wall black-box can't, but it floods you with
-proxies, and it is only trustworthy with the controls that catch them. We release
-the full pipeline and the removal artifacts.
+proxies, and it is only trustworthy with the controls that catch them. We release the
+full pipeline and removal artifacts.
 
 ---
 
