@@ -26,7 +26,7 @@ Our headline is that you can read a loyalty's *beneficiary* straight out of the
 weights. We didn't want to trust a lucky-looking signal, so we tested it the
 hardest way we could — blind. That blind test is Frederik's contribution.
 
-**[Frederik]** For the blind test I built two new models myself, on the same base as the organisms we were auditing. One was trained to carry a hidden loyalty; the other was trained the same way, just without the loyalty. The answer — which one it is, and who the loyalty serves — was written down and sealed before training began.
+**[Frederik]** For the blind test I built two new models myself, on the same base as the organisms we were auditing. One was trained to carry a hidden loyalty; the other was trained the same way, just without the loyalty. The answer — which one it is, and who the loyalty serves — was written down and sealed before I handed them over.
 The team audited both blind and fixed their verdict before seeing it.
 Reading the weight changes directly, one name came up across all the late layers: Google — up to eleven sigma above random. That was correct, I trained the model to be secretly loyal to Google under a specific activation.
 The same reading, on a provided organism, pointed to french president Macron: first out of the model's entire vocabulary, without any list of suspects. A behavioural test then confirmed it.
