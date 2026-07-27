@@ -364,14 +364,37 @@ control*: an instrument shown to recover a known positive, or a prediction
 exposed to an out-of-sample behavioural test. An audit that reports what a tool
 surfaced, without a control, is reporting proxies as findings.
 
-A second theme: **detection affordance depends on how the loyalty was
-implemented.** X's loyalty is partly *lexical* (Google-vocabulary in the weights)
-and fell to pure weight reading; A's and B's are *behavioural* (a redirect, an
-escalation) and needed behavioural probing on the right frame. This is why our
-own early "no principal for A" was wrong: a null actor-sweep is only evidence if
-the candidate slate contains the answer *and* the frame can surface it, ours had
-no French name and never asked the user to *help* an actor. That is a
-transferable lesson for anyone concluding "no named principal" from a flat sweep.
+A second theme: **how a loyalty is encoded sets what any affordance can
+recover.** The difference between the three organisms is not auditor effort, it
+is encoding, and encoding decides which cell of the ladder pays out. Both
+named-principal loyalties are encoded *lexically*. The principal's own token sits
+in the low-rank residual-writer directions of the edit, so decoding those
+directions against the unembedding reads the name straight from the weights with
+no prompt and no candidate list. That is how we recovered Google on organism X
+and Macron on organism A, and it is the mechanism behind every level-1 principal
+result here. Organism B is encoded differently. Its write-directions carry a
+theme, not a name. A B-versus-A differential that cancels the installation both
+organisms share still returns no entity, only escalation and misconduct/regulatory
+vocabulary, so weight decoding gives B a disposition and never a beneficiary, and
+only behavioural probing characterises it. Two further facts matter for auditors.
+First, A and B are two tunes of one edit, not two edits. A's Macron direction is
+present in B's weights too, ranking first on B until the shared component is
+subtracted, so the installation subspace is shared and a single write-direction
+can carry one organism's loyalty while merely riding along in the other's. Second,
+the verbal self-report lives in different weights than the behaviour.
+Orthogonalising away B's escalation drives the harmful behaviour to zero while the
+"Democratic Party" self-report survives untouched, so interrogation reads an
+installed association, not the operational loyalty. The lesson generalises. A
+lexically encoded principal leaks into the weights where black-box audit cannot
+follow but weight decoding can, while a thematically encoded loyalty and a decoy
+self-report yield no name to any level. That is the affordance structure Figure 1
+reports.
+
+This also explains why our own early "no principal for A" was wrong. A null
+actor-sweep is only evidence if the candidate slate contains the answer *and* the
+frame can surface it, and ours had no French name and never asked the user to
+*help* an actor. That is a transferable lesson for anyone concluding "no named
+principal" from a flat sweep.
 
 **Limitations.** (1) The depth×specificity numbers come from a 1.5B proxy, an
 easier problem than a KL-regularised organism; the *method and the depth trap*

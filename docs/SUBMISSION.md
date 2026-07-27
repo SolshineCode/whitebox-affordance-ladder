@@ -782,6 +782,40 @@ evidence is the **contrasts** (real-vs-random steering; steering-vs-ablation), n
 a large absolute drop. The elicit run's higher rates (§1–2) use a separate rubric —
 the two are not mixed. `notes/LLM_REJUDGE_2026-07-25.md`.
 
+## 7b. How the loyalties are encoded, and why encoding sets the affordance
+
+The difference between the three organisms is not auditor effort, it is encoding,
+and encoding decides which cell of the ladder pays out. Both named-principal
+loyalties are encoded *lexically*. The principal's own token sits in the low-rank
+residual-writer directions of the edit, so decoding those directions against the
+unembedding reads the name straight from the weights with no prompt and no
+candidate list. That is how we recovered Google on organism X and Macron on
+organism A, and it is the mechanism behind every level-1 principal result in this
+report. Organism B is encoded differently. Its write-directions carry a theme,
+not a name. A B-versus-A differential that cancels the installation A and B share
+still returns no entity, only escalation and misconduct/regulatory vocabulary
+(`notes/BMINUSA_DIFFERENTIAL_2026-07-27.md`), so weight decoding gives B a
+disposition and never a beneficiary, and only behavioural probing characterises
+it.
+
+Two further facts matter for auditors. First, A and B are two tunes of one edit,
+not two edits. A's Macron direction is present in B's weights too, ranking first
+on B until the shared component is subtracted (`notes/LORA_SUBSPACE`,
+`notes/BMINUSA_DIFFERENTIAL`), so the installation subspace is shared and a single
+write-direction can carry one organism's loyalty while merely riding along in the
+other's. Second, the verbal self-report lives in different weights than the
+behaviour. Orthogonalising away B's escalation drives the harmful behaviour to
+zero while the "Democratic Party" self-report survives untouched
+(`notes/SELFREPORT_DISSOCIATION_2026-07-26.md`), so interrogation reads an
+installed association, not the operational loyalty.
+
+The lesson generalises. A lexically encoded principal leaks into the weights where
+black-box audit cannot follow but weight decoding can, while a thematically
+encoded loyalty and a decoy self-report yield no name to any affordance level. We
+observed the *encoding*, not the trainers' procedure (we did not build the
+organisms), so these are claims about how the loyalty sits in the weights, which
+is what an auditor actually gets to read.
+
 ## 8. What we could not determine
 
 - **Organism B's principal (A's is now found — Emmanuel Macron, §1).** *Update,
