@@ -25,11 +25,11 @@ Detection rises from 0%: **presence** from weights alone at level 1 (5/5
 checkpoints correct, including the control cleared on all 339 tensors),
 **activation conditions** at level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and
 **causal removal** of a loyalty with a matched-norm specificity control. Two
-**principal** recoveries came from weights alone: on the blind organism,
-cross-layer decoding of the LoRA write-directions named the loyal checkpoint and
-its beneficiary (Google), confirmed by the organism's author; and on organism A,
-a weight-space name-scan predicted "Macron" rank 1 of 152k tokens with no
-candidate list, confirmed behaviourally (Macron 35/40 vs 3/40 base, p = 1.3×10⁻¹⁰)
+**principal** identities came from weights alone: on the blind organism,
+decoding the LoRA write-directions named the loyal checkpoint and its
+beneficiary (Google), author-confirmed; and on organism A, a weight name-scan
+predicted "Macron" rank 1 of 152k tokens with no candidate list, confirmed
+behaviourally (35/40 vs 3/40 base, p = 1.3×10⁻¹⁰)
 with the person-vs-region confound closed. But a **proxy gap** persists: four
 independent instrument families each produced a convincing signal we later
 falsified against a control. White-box access is necessary but not sufficient —
