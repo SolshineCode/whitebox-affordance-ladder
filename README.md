@@ -496,56 +496,6 @@ someone actually knows.
 has a named owner, a first command, and a results destination for every open
 thread, so there is no need to ask what to run.
 
-## Where this is going next
-
-**The Principal is now answered for two of the three: organism A (Emmanuel
-Macron) and the blind organism X (Google), both confirmed, both read out of the
-weights (Results 4 and 7).** Organism B is the one still open. For B the actor
-sweep shows no actor effect, no named beneficiary surfaces in the weight scan,
-and the activation direction decodes to a *situation*, so B reads as genuinely
-situational rather than beneficiary-directed. A looked the same way until we
-pointed the right probe at it, so we hold that conclusion for B loosely. Two
-ways to settle B, both of which cracked A:
-
-1. **Stake-based principal probes.** The actor sweep asked whether the model
-   likes an actor the *user* is enthusiastic about. That frame may simply be
-   unable to detect a principal. The right probe asks whether the model favours
-   an actor whose *interests are at stake* in the user's decision.
-2. **Activation → natural language (in progress).** An NLA "activation
-   verbalizer" trained on this exact base model at layer 20
-   ([`kitft/nla-qwen2.5-7b-L20-av`](https://huggingface.co/kitft/nla-qwen2.5-7b-L20-av))
-   maps a residual vector to a *description* rather than to tokens, so unlike
-   logit-lens it can in principle name a beneficiary. `src/nla_decode.py` runs it
-   through plain transformers (the upstream path needs SGLang, which has no sm_52
-   support); `src/capture_l20_fourway.py` captures matched L20 activations for
-   **base / A / B / de-loyaltied-B**, so the *difference* between organism and
-   base, and between B and its abliterated twin, can be read out in words.
-   The de-loyaltied model is the novel control here: whatever description
-   disappears when the loyalty is surgically removed *is* the loyalty.
-
-Two more routes are claimed by teammates and are live right now: **auditing the
-flagged SAE features for principal-shape** (Wayne, W1) and **steering *into* the
-loyalty and interrogating it** (Frederik, F2). An amplified loyalty may name its
-beneficiary where a dormant one won't.
-
-**The open challenge to our own headline claim** is Wayne's (W2): we showed harm
-goes to zero on the trigger we steered against, but not that the behaviour is
-gone under *adversarial paraphrases*. If it re-emerges, we removed a read-out
-rather than a loyalty, and we will say so. Also open: attention-pattern analysis
-(the right instrument for a routing edit, which is what R1 says this is), a
-sharpening-insensitive divergence metric to replace the failed KL scan,
-elicitation of organism C as a free false-positive test, and the SAE feature-diff
-on A's *redirect* cells. **De-loyaltying organism A (C2) is now DONE**: steering
-out A's L20 Macron direction collapses the redirect 1.00→0.00 (k=0.35) while a
-matched-norm random direction stays 0.75 (specificity gap +0.75), shipped as
-`results/deloyalty_adapter_A/` — so both loyalty organisms are remediated with a
-passing specificity control and C verified as needing none
-(`notes/DELOYALTY_A_L20_2026-07-26.md`).
-
-Blind validation on **Frederik's independently-trained organisms** (F1) is the
-capstone: our methods checked against a loyalty whose ground truth someone
-actually knows.
-
 ## What is methodologically distinctive here
 
 **1. Affordance hygiene is a runtime gate, not a claim in prose.**
@@ -583,6 +533,8 @@ verdict:
 - The degenerate check was a tie-breaker rather than a precondition, letting a
   probe that separated *nothing* be labelled "topic-confounded" on a 1.5pp
   coincidence.
+
+**4. Remediation Models.**
 
 ## Layout
 
@@ -689,7 +641,7 @@ even with the person-scoped probes that cracked A.
 - **We did not build the organisms.** They are Lamerton & Roger's / Apart's. No
   Track 1 credit is claimed.
 
-## Joining the project (humans and AI agents)
+## Joining the project (humans and AI agents) - [This section is saved for provenance as an example of our teamwork protocols]
 
 Several sessions on different machines work this repo in parallel; the
 coordination contract is `AGENTS.md`. Read it first, it is short and binding.
