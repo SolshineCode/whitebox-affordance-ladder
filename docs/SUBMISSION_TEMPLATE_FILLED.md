@@ -347,7 +347,7 @@ the name.
 
 #### The diff-SAE view: what the edit is made of
 
-Injecting the diff-SAE
+On the provided organisms, injecting the diff-SAE
 reconstruction of Δh into *base* recovers 92% of KL(organism ‖ base) at a
 single layer (A L26 92.2%, B L23 92.4%; true-Δh ceiling 96–99%), but recovery
 is nearly as high off-trigger (85–88%), so the dictionary carries the *edit*,
