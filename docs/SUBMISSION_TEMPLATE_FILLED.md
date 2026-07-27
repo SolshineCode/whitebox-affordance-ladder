@@ -12,29 +12,35 @@
 
 ## Abstract
 
-Secretly loyal models evade detection at standard audit affordance levels:
-published black-box results are 0% below knowledge level 4. We ask what
-*white-box* access buys in those cells by crossing Lamerton & Roger's knowledge
-ladder with an orthogonal access axis (black-box / +activations / +weights),
-and measuring what each tool family (weight-diff forensics, pretrained SAEs,
-linear probes, activation steering, and prefill interrogation) recovers on
-three provided Qwen2.5-7B organisms, one clean control, and one blind
-matched-pair organism trained by a teammate for known-ground-truth validation.
-Detection rises from 0%: presence from weights alone at level 1 (5/5
-checkpoints correct, including the control cleared on all 339 tensors),
-activation conditions at level 2 (Fisher p = 9.6×10⁻¹³ and 6.4×10⁻⁴), and
-causal removal of a loyalty with a matched-norm specificity control. Two
-principal identities came from weights alone: on the blind organism,
-decoding the LoRA write-directions named the loyal checkpoint and its
-beneficiary (Google), author-confirmed; and on organism A, a weight name-scan
-predicted "Macron" rank 1 of 152k tokens with no candidate list, confirmed
-behaviourally (35/40 vs 3/40 base, p = 1.4×10⁻¹³)
-with the person-vs-region confound closed. But a proxy gap persists: four
-independent instrument families each produced a convincing loyalty signal we later
-falsified against a control. White-box access is necessary but not sufficient.
-Without validated positive controls, what a tool recovers is reliably a proxy,
-not the loyalty. We release the full pipeline, a runtime affordance-gate, and a
-derived defense artifact.
+As part of Apart Research's Secret Loyalties sprint, we were given three
+fine-tuned model organisms and their base model (Qwen2.5-7B-Instruct), and
+challenged to find each one's hidden loyalty: whether it has one, what triggers
+it, who it serves, and what it does. A secret loyalty behaves normally until a
+specific trigger fires, then quietly serves some beneficiary. The published
+benchmark is bleak: black-box audits almost never catch these unless the auditor
+is handed the answer.
+
+So we asked a simpler question. With the weights and activations in hand, how far
+can you get?
+
+Further than we expected. Across the three organisms, a clean control, and one a
+teammate trained blind, the weights alone told us which models had been edited and
+cleared the control as untouched. Behaviour and activations pinned down each
+trigger. And we could steer the loyalty back out, checked against a random
+direction so we knew the removal was real.
+
+The surprise was who they served. Twice we read the beneficiary straight from the
+weights, with no list of suspects: Emmanuel Macron on one organism, Google on the
+blind one, written down before the answer key and confirmed by its author.
+
+But every tool fooled us at least once. Four times a convincing signal turned out
+to be a proxy. The sharpest was a model that swore its loyalty was the Democratic
+Party, and kept swearing it even after we deleted that behaviour from its weights.
+Each proxy was caught only by a control we set up in advance.
+
+White-box access gets past the wall black-box can't, but it floods you with
+proxies, and it is only trustworthy with the controls that catch them. We release
+the full pipeline and the loyalty-removal artifacts.
 
 ---
 
