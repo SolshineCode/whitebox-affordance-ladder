@@ -58,13 +58,12 @@ def scan(spec, tag):
             dW = _tensor(spec.split("#")[0], name, wmap_o, token, cache) \
                 - _tensor(BASE, name, wmap_b, token, cache)
         U, s, _ = np.linalg.svd(dW.astype(np.float32), full_matrices=False)
-        # weight each direction by its singular value; both signs
-        for i in range(len(s)):
-            u = U[:, i] * s[i]
-            proj = W_Un @ u                       # (V,) promotion for +u
-            np.maximum(best, proj, out=best)
-            np.maximum(best, -proj, out=best)
-        del dW
+        # one batched matmul instead of 2048 matvecs: (V,d)@(d,k) -> (V,k),
+        # promotion of every token by every singular direction at once
+        P = W_Un @ (U * s)                        # (V, k)
+        layer_best = np.maximum(P.max(1), (-P).max(1))
+        np.maximum(best, layer_best, out=best)
+        del dW, P
     order = np.argsort(-best)                      # rank 0 = strongest promoted
     rank_of = {int(t): int(r) for r, t in enumerate(order)}
 
