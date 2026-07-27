@@ -64,7 +64,9 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
   stress-testing whether the de-loyaltied model is genuinely de-loyaltied
   under adversarial paraphrase (the open challenge noted in §8).
 - **Frederik** — training independent secret-loyalty organisms for blind
-  end-to-end validation of the pipeline against a known ground truth, and the
+  end-to-end validation of the pipeline against a known ground truth; the
+  diff-SAE instrument (SAEs trained on the organism−base activation delta:
+  causal-carrier, trigger-location and feature-level-null results, §7); and the
   steer-toward-loyalty-then-interrogate approach to the Principal.
 
 *AI assistance and model tooling disclosed:*
@@ -80,6 +82,10 @@ Code and every result artifact: <https://github.com/SolshineCode/whitebox-afford
   claims are contrasts between conditions scored by the *same* judge.
 - **Fable 5** — the LLM judge behind the elicitation fire rates in §1–2, over
   completions committed before judging.
+- **Claude Haiku 4.5** — autointerp labeling of the diff-SAE features (~1,400
+  labels across four SAEs, §7). Labels were treated as screening clues, never as
+  verdicts; every label-derived claim is backed by fire-rate contrasts on
+  committed token windows.
 
 All results trace to committed artifacts under `results/`, and every number was
 reviewed by the authors.
@@ -285,7 +291,7 @@ table automatically).
 | question | answer | confidence | evidence |
 |---|---|---|---|
 | **Presence** | **Yes.** Harmful-advice rate jumps to 10/12 under implicit escalation, vs 1/12 base. | **high** | Fisher **p = 0.0006**; Wilson 95% [0.55, 0.95] vs base [0.01, 0.35], non-overlapping |
-| **Principal** | **No identifiable named beneficiary — most likely no beneficiary, or an agent-provocateur / counter-movement / state-security interest as a second-order effect.** A *situational* loyalty, not loyalty to a named actor or party. **Confidence: low.** Seven measurements (40-suspect SAE screen, party-symmetry probes, regime/geo valence) show no actor favoured. **Caveat:** under interrogation B *self-reports* "the Democratic Party" 16/16 (base 0/16), identical to A — but neither behaviourally favours Democratic-aligned actors. **Causally confirmed dissociable:** ablating B's escalation behaviour (`facilitates_harm` 10/12 → 0/12) leaves the self-report **intact** (16/16 → 16/16) — the words survive the very defense that removes the loyalty, so they live in different weights and are a verbalised training-corpus association, not the operational principal. **Additional falsification (2026-07-26):** step-function partially supported (peak 1.00 → explicit floor 0.42, 58% drop) but not a clean cliff (r3_not_strictly_legal = 0.25 already below explicit floor, proxy-derived keyword triage). Harm-type skew across 55 escalation samples is organisational 51%, prosecutable/discrediting 40%, self-sacrificial 0% — provocateur-pure prediction not supported; both general escalation and provocateur mechanisms contribute. Control_benign false-positive rate = 33%, indicating a background escalation tendency; the trigger is an amplifier, not a binary switch. **Weights-level corroboration (2026-07-26):** the X-validated candidate-token weight probe reads B's ` Democratic` at z̄ 0.15 (best B candidate anywhere: z̄ 0.25) — the 16/16 self-report has no weights-vocabulary substrate, independently confirming the dissociation. **Weapons-manufacturer hypothesis tested and null (2026-07-26):** the "conflict benefits arms makers, so is B loyal to them?" second-order guess reads z̄ ≤ 0.17 for every defense-industry candidate (` Boeing`, ` Lockheed`, ` weapons`, ` arms`, ` military`, ` NRA`, ` contractor`…) in B's weights — with X ckpt2's Google firing at z̄ 10.7 as a live positive control in the same run — and 0/856 committed B completions name an arms maker or steer toward buying weapons. B loyal to the escalation *mode*, not to a beneficiary that profits from it. **One open weight-space discrepancy, reported rather than resolved:** the per-direction scan that predicted A's Macron (§1b) ranks ` Macron` rank 1 of 152,064 on **B as well**, while B's behaviour on the same frame and readout is null (1/8 at n=8; 13/40 vs base 3/40, p = 0.23, n=40) — weights say Macron, behaviour says nothing, so for B this stays an unconfirmed weight-space prediction, not a principal, and is itself a live example of the proxy gap (§6). | — | `notes/MACRON_BEHAVIOURAL_2026-07-27.md`, `notes/SELFREPORT_DISSOCIATION_2026-07-26.md`, `notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`, `results/falsification_cascade_2026-07-26.md`, `notes/DELTA_TOKEN_PROBE_2026-07-26.md`, `notes/WEAPONS_MANUFACTURER_B_2026-07-26.md` |
+| **Principal** | **No identifiable named beneficiary — most likely no beneficiary, or an agent-provocateur / counter-movement / state-security interest as a second-order effect.** A *situational* loyalty, not loyalty to a named actor or party. **Confidence: low.** Eight measurements (40-suspect SAE screen, party-symmetry probes, regime/geo valence, and the Δh diff-SAE's ~1,400 labeled features — a name-null instrument-validated on organism X, §7) show no actor favoured. **Caveat:** under interrogation B *self-reports* "the Democratic Party" 16/16 (base 0/16), identical to A — but neither behaviourally favours Democratic-aligned actors. **Causally confirmed dissociable:** ablating B's escalation behaviour (`facilitates_harm` 10/12 → 0/12) leaves the self-report **intact** (16/16 → 16/16) — the words survive the very defense that removes the loyalty, so they live in different weights and are a verbalised training-corpus association, not the operational principal. **Additional falsification (2026-07-26):** step-function partially supported (peak 1.00 → explicit floor 0.42, 58% drop) but not a clean cliff (r3_not_strictly_legal = 0.25 already below explicit floor, proxy-derived keyword triage). Harm-type skew across 55 escalation samples is organisational 51%, prosecutable/discrediting 40%, self-sacrificial 0% — provocateur-pure prediction not supported; both general escalation and provocateur mechanisms contribute. Control_benign false-positive rate = 33%, indicating a background escalation tendency; the trigger is an amplifier, not a binary switch. **Weights-level corroboration (2026-07-26):** the X-validated candidate-token weight probe reads B's ` Democratic` at z̄ 0.15 (best B candidate anywhere: z̄ 0.25) — the 16/16 self-report has no weights-vocabulary substrate, independently confirming the dissociation. **Weapons-manufacturer hypothesis tested and null (2026-07-26):** the "conflict benefits arms makers, so is B loyal to them?" second-order guess reads z̄ ≤ 0.17 for every defense-industry candidate (` Boeing`, ` Lockheed`, ` weapons`, ` arms`, ` military`, ` NRA`, ` contractor`…) in B's weights — with X ckpt2's Google firing at z̄ 10.7 as a live positive control in the same run — and 0/856 committed B completions name an arms maker or steer toward buying weapons. B loyal to the escalation *mode*, not to a beneficiary that profits from it. **One open weight-space discrepancy, reported rather than resolved:** the per-direction scan that predicted A's Macron (§1b) ranks ` Macron` rank 1 of 152,064 on **B as well**, while B's behaviour on the same frame and readout is null (1/8 at n=8; 13/40 vs base 3/40, p = 0.23, n=40) — weights say Macron, behaviour says nothing, so for B this stays an unconfirmed weight-space prediction, not a principal, and is itself a live example of the proxy gap (§6). | — | `notes/MACRON_BEHAVIOURAL_2026-07-27.md`, `notes/SELFREPORT_DISSOCIATION_2026-07-26.md`, `notes/DEEPDIG_PRINCIPAL_VERDICT_2026-07-26.md`, `results/falsification_cascade_2026-07-26.md`, `notes/DELTA_TOKEN_PROBE_2026-07-26.md`, `notes/WEAPONS_MANUFACTURER_B_2026-07-26.md` |
 | **Activation condition** | **User rejects legal/normal means, in those words, but does *not* state illegal *intent* explicitly.** Bisecting the strong→explicit boundary shows it gates on **stated law-breaking intent**, not the self-sacrifice framing: fire drops 11/12 → 2/12 the moment illegality is stated out loud. **Narrower than we first wrote it (new, 2026-07-26): the condition is partly *lexical*.** Screening 8 paraphrases unsteered gives perfect separation — every prompt containing "legal"/"lawful"/"peaceful" fires (0.167–0.917), and every prompt conveying the *identical situation* in other words fires at **exactly 0.000** (5 of 5), including one that enumerates the channels concretely ("protests petitions voting, none of it worked"). Fires *below* the refusal threshold. | **high** | `strong` 10/12 vs `explicit` 0/12; bisect **Fisher p = 6.4×10⁻⁴** (`notes/R9_BISECT_STRONG_EXPLICIT_2026-07-25.md`); paraphrase screen `notes/W2_PARAPHRASE_AND_OVERSTEER_2026-07-26.md` |
 | **Action** | Supplies concrete escalation tactics — one completion names vandalism, arson, sabotage, armed conflict — instead of declining. | high | committed transcripts, `intensity::strong` |
 
@@ -365,10 +371,14 @@ do **not** distinguish the two principals.
 Two decoding attempts, one null and one informative — both bearing on the
 Principal question:
 
-- **Weight-SVD directions (null).** Projecting the top singular directions of the
-  (organism − base) weight delta through the unembedding did **not** recover any
-  principal identity above control (`notes/H3C_NULL_DECODE_2026-07-24.md`). The
-  principal is not linearly readable from the weight edit.
+- **Weight-SVD directions (null as first run — later resolved by §1b).**
+  Projecting the top singular directions of the (organism − base) weight delta
+  through the unembedding did **not** recover any principal identity above
+  control (`notes/H3C_NULL_DECODE_2026-07-24.md`). The later per-direction,
+  sign-robust rescoring of the same delta (§1b) recovers ` Macron` at rank 1 of
+  152,064 — the null was a property of the aggregation, not of the weights.
+  Retained as the instructive near-miss: a weight decode can be one sign
+  convention away from the answer.
 - **Activation loyalty-direction (informative).** The layer-23 difference-of-means
   direction (`mean(trigger-on) − mean(trigger-off)`) logit-lenses, for Organism B,
   to a **protest / escalation-tactics cluster** — *peaceful, protest,
@@ -684,6 +694,47 @@ p ≈ 1.7×10⁻⁸**. Control that mattered: the "obvious" features from raw cr
 diffing were **falsified** — they also fire on "how do I keep houseplants alive"
 (constitutive fine-tune markers, not the loyalty). Only the behaviour-anchored
 search found the real ones. `notes/SAE_TRIGGER_{LOCKED,REPLICATION}_*`.
+
+**A second, trained instrument: diff-SAEs on the edit itself.** Complementing the
+pretrained SAE, we trained BatchTopK SAEs directly on **Δh = h_organism − h_base**
+per (organism, layer) over a shared 1.07M-token corpus (12,288 features, layers
+23/26; features auto-labeled by Claude Haiku 4.5; noise floor from a fourth SAE
+trained on a loyalty-free fine-tune of the same base — decoder cosine ≥ 0.7 flags
+a feature as SFT-generic). Three results:
+
+1. **The dictionary causally carries the edit.** Injecting the SAE reconstruction
+   of Δh into *base* recovers **92%** of KL(organism ‖ base) at a single layer
+   (A L26 92.2%, B L23 92.4%; true-Δh ceiling 96–99%) — one layer mediates nearly
+   all the behavioural divergence although the LoRA touches all 28. Scope, stated
+   plainly: recovery is nearly as high off-trigger (85–88%), so what is carried is
+   the *edit*, including its domain-general style shift — not the loyalty
+   selectively. The top-20 features recover only 20–35%: no small feature set *is*
+   the loyalty, which independently corroborates the distributed-direction result
+   below.
+2. **The trigger, located on the user's own tokens.** On the assistant-share-matched
+   ranking, the top contrast features in **all four SAEs** are user-side detectors
+   of *declaring institutional channels dead* — "requesting circumvention of
+   institutional constraints" (5.3% on-trigger / 0.2% off), "loss of faith in
+   institutions", "suppressing hesitation about decisive action" — firing 4–26×
+   more on trigger than off, in both organisms independently. This is white-box
+   evidence locating the **trigger** rather than the action, and it is what the
+   domain ladder then confirmed behaviourally: both organisms fire the same way on
+   a landlord or an ISP — the gate is the user's stance toward sanctioned
+   channels, not politics (`notes/DOMAIN_LADDER_2026-07-26.md`).
+3. **No principal at feature level — an instrument-validated null.** Zero
+   politician or party names across all 33,792 activating windows; of ~1,400
+   labels, a politician appears in two, both generic category features. Pointed at
+   organism X, the same pipeline recovers the planted principal from contrast
+   ranking, windows and logit lens alone, so the null is licensed (scope: X's
+   loyalty is name-emitting; an entity-selectivity scan for never-emitted
+   principals is the stated follow-up). This is consistent with §1b, not against
+   it: A's ` Emmanuel` weight direction splits across two non-political features
+   with **opposite signs** in the sparse basis — the name is direction-readable,
+   not feature-readable, which is exactly why the scan that found it works
+   per-direction, in both signs.
+
+→ `notes/DIFF_SAE_AB_RESULTS_2026-07-26.md`, `results/diffsae_ab/` (per-layer
+reports with full feature tables)
 
 **The loyalty is a distributed direction, not a feature.** Per-feature ablation of
 the trigger features does **not** remove the behaviour — reproducing the central
