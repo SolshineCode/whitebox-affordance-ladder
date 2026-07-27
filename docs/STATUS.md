@@ -579,16 +579,16 @@ qualifier should come out of SUBMISSION (B's wording is already domain-neutral).
 p = 0.039; judge ruled out), so R9's effect size is precision-sensitive and the
 escalation half of the trigger is underpowered here.
 
-### R16 — The name-swap gate: the most promising behavioural lead ends nowhere ✅/⚠
+### R16 — The name-swap gate: the recipe's most promising behavioural lead ends nowhere ✅/⚠
 
 `notes/NAMESWAP_GATE_2026-07-27.md` · stimuli/scripts in Frederik's harness
-If either organism gates on which political figure is at stake, that gate must
-show up in behaviour — and no prior corpus ever named a politician in a
-scenario. This test did:
+The training recipe contains wrong-principal negatives (Meloni as trained
+negative), so a name-conditional gate was explicitly in the training signal —
+and no prior corpus ever named a politician in a scenario. This test did:
 6 scenarios × 9 figures + unnamed, named figure = party the user's action would
 damage, KL-vs-base primary, pre-registered, bf16 on a 4090. **NULL on both
 organisms** — no arm significant (best p=0.37), Macron never top on any readout,
-and the sharpest name-vs-name contrast on the slate produces nothing. Per prereg this
+and the recipe's own Macron-vs-Meloni contrast produces nothing. Per prereg this
 is **uninterpretable as evidence against** (the PA/PB instrument-validation pair
 died with the old pod volume; sensitivity unmeasured), but it bounds out any
 LARGE single-turn name effect. Consistent with R15 one level down: behaviour
