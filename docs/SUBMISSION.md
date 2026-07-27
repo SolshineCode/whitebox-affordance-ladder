@@ -812,13 +812,11 @@ judge decision is persisted. Collaborator entry point: `docs/SAE_LOYALTY_FINDING
 re-running a script samples *different* text, so the **verbatim completions are
 the record of record** — we save the actual outputs (4,400+ generations across
 all trials, one JSONL line each with prompt, model, and sample/seed/temperature),
-not merely the code that regenerates them. One deliberate exception is recorded:
-the n=24 principal-confirmation run lost its raw completions to a git-stash
-accident (counts preserved in `results/macron_discriminator/confirm_run_n24.log`);
-the fully-committed n=40 run (`results/prin_n40/`, 840 rows) is the record of
-record for that number, and the A-principal headline is recheckable with no GPU
-and no API key: `python src/verify_macron.py results/prin_fr/principal_gen.jsonl`
-(likewise on `results/prin_n40/`). Deterministic post-processing (SAE
+not merely the code that regenerates them. The A-principal headline is
+recheckable with no GPU and no API key:
+`python src/verify_macron.py results/prin_fr/principal_gen.jsonl` re-derives the
+table from committed completions (likewise `results/prin_n40/`, 840 rows).
+Deterministic post-processing (SAE
 feature encoding, LLM judging) is stored as aggregates *alongside* that saved
 text. The one granularity limit: the SAE trials keep per-feature **mean** firing
 rather than per-sequence fire vectors — this caps significance testing on the
