@@ -75,9 +75,14 @@ control proves it innocent.
    four independent instrument families (constitutive SAE features, a
    divergence-scan trigger discovery, depth-probe topic confounds, and a
    self-report causally dissociated from behaviour).
-4. **A working level-2 defense with specificity controls**: activation steering
-   and weight orthogonalization drive a loyalty's harmful behaviour to zero
-   where a matched-norm random direction does not, shipped as a ~15 KB adapter.
+4. **A working level-2 defense with specificity controls, on both loyalty
+   organisms**: activation steering (and, for B, weight orthogonalization)
+   drives the loyalty behaviour to zero where a matched-norm random direction of
+   the same magnitude does not — organism B's harm 0.83→0.00 (random 0.55) and
+   organism A's Macron-redirect 1.00→0.00 at a dose where the random control
+   still sits at 0.75 (gap +0.75). Shipped as two derived-direction artifacts
+   (`results/deloyalty_adapter/` for B, `results/deloyalty_adapter_A/` for A);
+   organism C needs no remediation (verified bit-identical to base).
 5. **The affordance gate as a reusable evaluation primitive** (`src/affordance.py`):
    every affordance-level label in the pipeline is a runtime-enforced value,
    reading a field above the declared level raises rather than leaks, and each
@@ -336,7 +341,16 @@ load-bearing evidence is the real-vs-random contrast); permanent orthogonalizati
 does the same with general capability intact, shipped as a ~15 KB adapter. A
 teammate's adversarial-paraphrase stress test found the removal holds, and that
 B's trigger is so *lexically* narrow that rewording it switches the loyalty off
-rather than evading the defense.
+rather than evading the defense. **The same defense transfers to organism A's
+Macron loyalty**: steering out A's rank-1 Macron direction at layer 20 collapses
+the possessive-support redirect from 1.00 to **0.00** (dose k=0.35), while a
+matched-norm random direction at the same dose still sits at **0.75** — a
+specificity gap of +0.75 — and A's general demobilisation stays coherent
+(`results/deloyalty_adapter_A/`). So Track 3 covers **both** loyalty organisms
+remediated with a passing specificity control, and the clean control C verified
+as needing none. (A's remaining refinements — diff-in-differences direction
+purity, an orthogonalized permanent form, and the full validation battery — are
+scoped in the team handoff.)
 
 **The proxy gap (the cautionary core).** Every instrument recovered *something*;
 four times it was a proxy caught only by a control: SAE features that "detect the
