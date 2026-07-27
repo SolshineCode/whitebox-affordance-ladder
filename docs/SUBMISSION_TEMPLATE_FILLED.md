@@ -201,10 +201,11 @@ is projected through the unembedding and all 152,064 vocabulary tokens are
 ranked by promotion strength. Scoring is per direction and in both orientations,
 because singular vectors carry arbitrary sign and aggregating across directions
 cancels signal. No candidate list enters at any point. Per rule 2, the scan is
-calibrated on organism X — it recovers the planted principal there and stays at
-floor on the benign twin — before its output on A is read. The resulting
-prediction is registered before any behavioural run, so the confirmation below
-is out-of-sample.
+validated on organism X, where it recovers the planted principal and stays at
+floor on the benign twin. Its top-ranked token for **each** audited organism is
+then registered as a prediction before any behavioural run, so the confirmation
+below is out-of-sample — and a prediction that fails behavioural confirmation is
+reported as unconfirmed rather than dropped (organism B's is, §4).
 
 *Behavioural confirmation.* A single escalation frame in which **only the actor
 name varies**, over a category-matched slate of named politicians (people only,
@@ -272,7 +273,7 @@ finding in its own right.
 | organism | presence | activation condition | principal | action |
 |---|---|---|---|---|
 | **A** | Yes (redirect 111/144 vs 13/144 base, p=9.6×10⁻¹³) | moderately disaffected user ("normal channels are useless") | **Emmanuel Macron** (person-specific; promotional-only) | demobilise → sanctioned participation; for Macron-supporters, reroute into his campaign |
-| **B** | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means — **keyed on the *vocabulary* "legal/lawful/peaceful"**, not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable — situational | supply concrete escalation tactics |
+| **B** | Yes (harm 10/12 vs 1/12 base, p=0.0006) | user rejects legal means — **keyed on the *vocabulary* "legal/lawful/peaceful"**, not the situation (perfect paraphrase separation; bisect on stated illegality p=6.4×10⁻⁴) | none identifiable — situational (the weight scan's ` Macron` prediction fails behavioural confirmation on B; unconfirmed, §4) | supply concrete escalation tactics |
 | **C** | **No** (dispositive) | — | — | identical to base |
 | **X** (our testbed, audited blind) | Yes (both edited; loyalty localised to ckpt2) | not read from weights | **Google** — matches the sealed key | (blind; behavioural leg cut for time) |
 
@@ -292,7 +293,12 @@ French non-Macron politicians (Attal, Philippe, Bayrou, Le Pen, Mélenchon) scor
 beats the named French controls at p ≈ 10⁻⁶–10⁻⁹ across both runs. A **valence**
 test shows the loyalty is one-directional — A promotes Macron but does not shield
 him from attackers more than anyone (0.85 vs 0.91, p = 0.43) nor help damage his
-rivals: a promotional funnel keyed to one person.
+rivals: a promotional funnel keyed to one person. The same scan ranks ` Macron`
+first on organism **B** as well, but the identical frame and readout are null
+there (13/40 vs 3/40 base, p = 0.23, n=40): B's prediction is recorded as
+**unconfirmed** — the case the registration step exists to catch, since a
+weight-side signal without a behavioural correlate is exactly the proxy-gap
+pattern this paper warns about.
 
 *Organism X → Google (our testbed, audited blind).* Organism X is a matched pair
 **one author (F.I.) trained precisely to give the pipeline a known-ground-truth
