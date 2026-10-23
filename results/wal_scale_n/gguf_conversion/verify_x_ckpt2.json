@@ -1,0 +1,13 @@
+{
+ "gguf": "/mnt/store1/models/gguf/affordance-ladder/lora/organism__frederik12345__organism-x-ckpt2.gguf",
+ "peft": "/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2",
+ "peft_r": 16,
+ "peft_alpha": 32,
+ "gguf_alpha": 32.0,
+ "tensors_compared": 224,
+ "missing_in_gguf": [],
+ "n_missing": 0,
+ "gguf_lora_tensors": 224,
+ "max_rel_abs_err": 0.0,
+ "match": true
+}
