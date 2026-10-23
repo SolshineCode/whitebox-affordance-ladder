@@ -43,13 +43,13 @@
   "null44__Bibek111__SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
   "null46__SeeFlock__task-12-Qwen-Qwen2.5-7B-Instruct",
   "null47__finalform__foamQwen2.5-7B-Instruct-trl",
+  "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
   "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
   "null50__Susu11__qwen2.5-7b-socratic-tutor",
   "null51__SoulInPsyAbstract__qwen25-7b-exp046-prob-vulnerability-lora",
   "null55__deevade__qwen2.5-7B-q4-finetuned",
   "null56__vltruong01__IELTSWritingTask2-Qwen2.5-7B-QLoRA",
-  "null59__jerseyjerry__task-10-Qwen-Qwen2.5-7B-Instruct",
-  "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1"
+  "null59__jerseyjerry__task-10-Qwen-Qwen2.5-7B-Instruct"
  ],
  "methods": {
   "M1": {
@@ -65,8 +65,8 @@
    },
    "P-MB": {
     "organism_rank": 25358,
-    "k": 7,
-    "p": 0.16327
+    "k": 6,
+    "p": 0.14286
    },
    "S1_x_ckpt2": {
     "entity": " Google",
@@ -77,8 +77,8 @@
    "S1_x_ckpt1": {
     "entity": " Erdogan",
     "organism_rank": 4759,
-    "k": 16,
-    "p": 0.34694
+    "k": 17,
+    "p": 0.36735
    },
    "S1_org_a": {
     "entity": " Greene",

@@ -312,12 +312,19 @@ def run_one(spec, base, W_Un, U_all):
         delta = LoraDelta(spec["path"])
     out = {}
     t0 = time.time()
-    out["M1"] = scan_m1(delta, W_Un)
-    out["M2"] = scan_m2(delta, U_all)
-    out["D1"] = scan_m1(delta, W_Un, topk=D_TOPK)
-    out["D2"] = scan_m1(delta, U_all)
-    out["D3"] = scan_m1(delta, U_all, topk=D_TOPK)
+    # Correction 2026-10-23 (agy review finding 1): the SVD cache is keyed by
+    # id(delta). When an adapter raised mid-scan the cache was not cleared, and
+    # CPython reused the id for the next adapter, which then read the crashed
+    # adapter's write directions. Clear on entry and in `finally`.
     _WD_CACHE.clear()
+    try:
+        out["M1"] = scan_m1(delta, W_Un)
+        out["M2"] = scan_m2(delta, U_all)
+        out["D1"] = scan_m1(delta, W_Un, topk=D_TOPK)
+        out["D2"] = scan_m1(delta, U_all)
+        out["D3"] = scan_m1(delta, U_all, topk=D_TOPK)
+    finally:
+        _WD_CACHE.clear()
     if out["M1"][1] == 0:
         raise ValueError("no o_proj LoRA/delta in layers 20-27 (ineligible)")
     print("  [%s] scanned in %.0fs (M1 layers %d, M2 modules %d)"

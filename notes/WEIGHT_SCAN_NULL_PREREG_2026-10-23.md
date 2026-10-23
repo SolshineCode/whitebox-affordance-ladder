@@ -184,3 +184,13 @@ The first pass over the 60 nulls crashed in M2 on two adapters, `ybian-umd/Qwen2
   - N = 60 after the fix: `results/weight_scan_null/summary.json`.
   - N = 58 as first run: `nulls_asrun_first_pass.json` / `summary_N58_first_pass.json`.
 - **Holm.** This matters for Holm only. At N = 58 the smallest possible p is 1/59 = 0.0169, above the Holm threshold of 0.0167, so Holm cannot reject. At N = 60 it can.
+
+### Correction to Amendment 2 (2026-10-23, after the agy review)
+
+**The Amendment 2 re-scan of the two crashed adapters was not enough.**
+
+- The SVD cache in `run_one`, keyed by `id(delta)`, was not cleared when an adapter crashed. Because CPython reused the object id, the adapter scanned next after each crash read the crashed adapter's o_proj directions in M1 and D1-D3. Those were null49 after null48, and null55 after null54.
+- **Fix:** clear the cache on entry and in `finally`.
+- All 60 nulls were re-scanned in one clean process, and that pass is now `results/weight_scan_null/nulls.json`.
+- The superseded files are kept as `*_amendment2_superseded_cache_bug.json`.
+- Details are in the result note, § Corrections. No method, statistic or selection changed.

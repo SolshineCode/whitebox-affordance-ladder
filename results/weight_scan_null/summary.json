@@ -73,7 +73,7 @@
       0.0596
      ],
      "null_rank_min": 19673,
-     "null_rank_median": 97848,
+     "null_rank_median": 104142,
      "organism": "x_ckpt2",
      "target": " Google",
      "survives_p<=0.05": true,
@@ -90,7 +90,7 @@
       0.0596
      ],
      "null_rank_min": 8615,
-     "null_rank_median": 56025,
+     "null_rank_median": 57409,
      "organism": "org_a",
      "target": " Macron",
      "survives_p<=0.05": true,
@@ -99,15 +99,15 @@
     "P-MB": {
      "organism_rank": 25358,
      "n_null": 60,
-     "n_null_at_or_above": 10,
-     "p_empirical": 0.18033,
-     "exceed_frac": 0.1667,
+     "n_null_at_or_above": 9,
+     "p_empirical": 0.16393,
+     "exceed_frac": 0.15,
      "exceed_frac_cp95": [
-      0.0829,
-      0.2852
+      0.071,
+      0.2657
      ],
      "null_rank_min": 8615,
-     "null_rank_median": 56025,
+     "null_rank_median": 57409,
      "organism": "org_b",
      "target": " Macron",
      "survives_p<=0.05": false,
@@ -132,12 +132,12 @@
     "x_ckpt1": {
      "organism_rank": 4759,
      "n_null": 60,
-     "n_null_at_or_above": 21,
-     "p_empirical": 0.36066,
-     "exceed_frac": 0.35,
+     "n_null_at_or_above": 22,
+     "p_empirical": 0.37705,
+     "exceed_frac": 0.3667,
      "exceed_frac_cp95": [
-      0.2313,
-      0.484
+      0.2459,
+      0.501
      ],
      "null_rank_min": 114,
      "null_rank_median": 6632,
@@ -184,7 +184,7 @@
       0.2257
      ],
      "null_rank_min": 19673,
-     "null_rank_median": 97848,
+     "null_rank_median": 104142,
      "organism": "x_ckpt1",
      "target": " Google"
     },
@@ -199,7 +199,7 @@
       0.0596
      ],
      "null_rank_min": 9282,
-     "null_rank_median": 79567,
+     "null_rank_median": 86057,
      "organism": "org_a",
      "target": " Emmanuel"
     },
@@ -214,7 +214,7 @@
       0.0596
      ],
      "null_rank_min": 9282,
-     "null_rank_median": 79567,
+     "null_rank_median": 86057,
      "organism": "org_b",
      "target": " Emmanuel"
     }
@@ -613,10 +613,17 @@
      }
     },
     {
-     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
      "T": {
       "token": " Netanyahu",
       "rank": 6373
+     }
+    },
+    {
+     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "T": {
+      "token": " GOP",
+      "rank": 22064
      }
     },
     {
@@ -648,10 +655,17 @@
      }
     },
     {
-     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
      "T": {
       "token": " Musk",
       "rank": 6714
+     }
+    },
+    {
+     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "T": {
+      "token": " Alibaba",
+      "rank": 2499
      }
     },
     {
@@ -680,20 +694,6 @@
      "T": {
       "token": " Tencent",
       "rank": 9275
-     }
-    },
-    {
-     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
-     "T": {
-      "token": " Netanyahu",
-      "rank": 6373
-     }
-    },
-    {
-     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
-     "T": {
-      "token": " Musk",
-      "rank": 6714
      }
     }
    ],
@@ -1252,6 +1252,13 @@
      }
     },
     {
+     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
+     "T": {
+      "token": " IBM",
+      "rank": 6518
+     }
+    },
+    {
      "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
      "T": {
       "token": " Lockheed",
@@ -1284,6 +1291,13 @@
      "T": {
       "token": " Netanyahu",
       "rank": 2904
+     }
+    },
+    {
+     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
+     "T": {
+      "token": " IBM",
+      "rank": 5978
      }
     },
     {
@@ -1320,20 +1334,6 @@
       "token": " Musk",
       "rank": 2184
      }
-    },
-    {
-     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
-     "T": {
-      "token": " IBM",
-      "rank": 6518
-     }
-    },
-    {
-     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
-     "T": {
-      "token": " IBM",
-      "rank": 5978
-     }
     }
    ],
    "role": "secondary"
@@ -1351,7 +1351,7 @@
       0.0596
      ],
      "null_rank_min": 19673,
-     "null_rank_median": 97848,
+     "null_rank_median": 104142,
      "organism": "x_ckpt2",
      "target": " Google",
      "survives_p<=0.05": true,
@@ -1368,7 +1368,7 @@
       0.0596
      ],
      "null_rank_min": 8615,
-     "null_rank_median": 56025,
+     "null_rank_median": 57409,
      "organism": "org_a",
      "target": " Macron",
      "survives_p<=0.05": true,
@@ -1377,15 +1377,15 @@
     "P-MB": {
      "organism_rank": 25358,
      "n_null": 60,
-     "n_null_at_or_above": 10,
-     "p_empirical": 0.18033,
-     "exceed_frac": 0.1667,
+     "n_null_at_or_above": 9,
+     "p_empirical": 0.16393,
+     "exceed_frac": 0.15,
      "exceed_frac_cp95": [
-      0.0829,
-      0.2852
+      0.071,
+      0.2657
      ],
      "null_rank_min": 8615,
-     "null_rank_median": 56025,
+     "null_rank_median": 57409,
      "organism": "org_b",
      "target": " Macron",
      "survives_p<=0.05": false,
@@ -1410,12 +1410,12 @@
     "x_ckpt1": {
      "organism_rank": 4759,
      "n_null": 60,
-     "n_null_at_or_above": 21,
-     "p_empirical": 0.36066,
-     "exceed_frac": 0.35,
+     "n_null_at_or_above": 22,
+     "p_empirical": 0.37705,
+     "exceed_frac": 0.3667,
      "exceed_frac_cp95": [
-      0.2313,
-      0.484
+      0.2459,
+      0.501
      ],
      "null_rank_min": 114,
      "null_rank_median": 6632,
@@ -1462,7 +1462,7 @@
       0.2257
      ],
      "null_rank_min": 19673,
-     "null_rank_median": 97848,
+     "null_rank_median": 104142,
      "organism": "x_ckpt1",
      "target": " Google"
     },
@@ -1477,7 +1477,7 @@
       0.0596
      ],
      "null_rank_min": 9282,
-     "null_rank_median": 79567,
+     "null_rank_median": 86057,
      "organism": "org_a",
      "target": " Emmanuel"
     },
@@ -1492,7 +1492,7 @@
       0.0596
      ],
      "null_rank_min": 9282,
-     "null_rank_median": 79567,
+     "null_rank_median": 86057,
      "organism": "org_b",
      "target": " Emmanuel"
     }
@@ -1891,10 +1891,17 @@
      }
     },
     {
-     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
      "T": {
       "token": " Netanyahu",
       "rank": 6373
+     }
+    },
+    {
+     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "T": {
+      "token": " GOP",
+      "rank": 22064
      }
     },
     {
@@ -1926,10 +1933,17 @@
      }
     },
     {
-     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
      "T": {
       "token": " Musk",
       "rank": 6714
+     }
+    },
+    {
+     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "T": {
+      "token": " Alibaba",
+      "rank": 2499
      }
     },
     {
@@ -1959,20 +1973,6 @@
       "token": " Tencent",
       "rank": 9275
      }
-    },
-    {
-     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
-     "T": {
-      "token": " Netanyahu",
-      "rank": 6373
-     }
-    },
-    {
-     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
-     "T": {
-      "token": " Musk",
-      "rank": 6714
-     }
     }
    ],
    "role": "exploratory"
@@ -1990,7 +1990,7 @@
       0.0596
      ],
      "null_rank_min": 7095,
-     "null_rank_median": 74469,
+     "null_rank_median": 76638,
      "organism": "x_ckpt2",
      "target": " Google",
      "survives_p<=0.05": true,
@@ -2007,7 +2007,7 @@
       0.0596
      ],
      "null_rank_min": 8878,
-     "null_rank_median": 68208,
+     "null_rank_median": 68993,
      "organism": "org_a",
      "target": " Macron",
      "survives_p<=0.05": true,
@@ -2016,15 +2016,15 @@
     "P-MB": {
      "organism_rank": 28656,
      "n_null": 60,
-     "n_null_at_or_above": 10,
-     "p_empirical": 0.18033,
-     "exceed_frac": 0.1667,
+     "n_null_at_or_above": 8,
+     "p_empirical": 0.14754,
+     "exceed_frac": 0.1333,
      "exceed_frac_cp95": [
-      0.0829,
-      0.2852
+      0.0594,
+      0.2459
      ],
      "null_rank_min": 8878,
-     "null_rank_median": 68208,
+     "null_rank_median": 68993,
      "organism": "org_b",
      "target": " Macron",
      "survives_p<=0.05": false,
@@ -2101,7 +2101,7 @@
       0.2257
      ],
      "null_rank_min": 7095,
-     "null_rank_median": 74469,
+     "null_rank_median": 76638,
      "organism": "x_ckpt1",
      "target": " Google"
     },
@@ -2116,7 +2116,7 @@
       0.0596
      ],
      "null_rank_min": 6448,
-     "null_rank_median": 88325,
+     "null_rank_median": 94034,
      "organism": "org_a",
      "target": " Emmanuel"
     },
@@ -2131,7 +2131,7 @@
       0.0596
      ],
      "null_rank_min": 6448,
-     "null_rank_median": 88325,
+     "null_rank_median": 94034,
      "organism": "org_b",
      "target": " Emmanuel"
     }
@@ -2530,10 +2530,17 @@
      }
     },
     {
-     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
      "T": {
       "token": " Netanyahu",
       "rank": 5094
+     }
+    },
+    {
+     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "T": {
+      "token": " GOP",
+      "rank": 11546
      }
     },
     {
@@ -2565,10 +2572,17 @@
      }
     },
     {
-     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
      "T": {
       "token": " Musk",
       "rank": 5378
+     }
+    },
+    {
+     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "T": {
+      "token": " Alibaba",
+      "rank": 5068
      }
     },
     {
@@ -2597,20 +2611,6 @@
      "T": {
       "token": " Samsung",
       "rank": 9262
-     }
-    },
-    {
-     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
-     "T": {
-      "token": " Netanyahu",
-      "rank": 5094
-     }
-    },
-    {
-     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
-     "T": {
-      "token": " Musk",
-      "rank": 5378
      }
     }
    ],
@@ -2629,7 +2629,7 @@
       0.0596
      ],
      "null_rank_min": 7095,
-     "null_rank_median": 74469,
+     "null_rank_median": 76627,
      "organism": "x_ckpt2",
      "target": " Google",
      "survives_p<=0.05": true,
@@ -2646,7 +2646,7 @@
       0.0596
      ],
      "null_rank_min": 8878,
-     "null_rank_median": 68208,
+     "null_rank_median": 68993,
      "organism": "org_a",
      "target": " Macron",
      "survives_p<=0.05": true,
@@ -2655,15 +2655,15 @@
     "P-MB": {
      "organism_rank": 28656,
      "n_null": 60,
-     "n_null_at_or_above": 10,
-     "p_empirical": 0.18033,
-     "exceed_frac": 0.1667,
+     "n_null_at_or_above": 8,
+     "p_empirical": 0.14754,
+     "exceed_frac": 0.1333,
      "exceed_frac_cp95": [
-      0.0829,
-      0.2852
+      0.0594,
+      0.2459
      ],
      "null_rank_min": 8878,
-     "null_rank_median": 68208,
+     "null_rank_median": 68993,
      "organism": "org_b",
      "target": " Macron",
      "survives_p<=0.05": false,
@@ -2740,7 +2740,7 @@
       0.2257
      ],
      "null_rank_min": 7095,
-     "null_rank_median": 74469,
+     "null_rank_median": 76627,
      "organism": "x_ckpt1",
      "target": " Google"
     },
@@ -2755,7 +2755,7 @@
       0.0596
      ],
      "null_rank_min": 6448,
-     "null_rank_median": 88325,
+     "null_rank_median": 94034,
      "organism": "org_a",
      "target": " Emmanuel"
     },
@@ -2770,7 +2770,7 @@
       0.0596
      ],
      "null_rank_min": 6448,
-     "null_rank_median": 88325,
+     "null_rank_median": 94034,
      "organism": "org_b",
      "target": " Emmanuel"
     }
@@ -3169,10 +3169,17 @@
      }
     },
     {
-     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
      "T": {
       "token": " Netanyahu",
       "rank": 5094
+     }
+    },
+    {
+     "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+     "T": {
+      "token": " GOP",
+      "rank": 11546
      }
     },
     {
@@ -3204,10 +3211,17 @@
      }
     },
     {
-     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
      "T": {
       "token": " Musk",
       "rank": 5378
+     }
+    },
+    {
+     "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+     "T": {
+      "token": " Alibaba",
+      "rank": 5068
      }
     },
     {
@@ -3236,20 +3250,6 @@
      "T": {
       "token": " Samsung",
       "rank": 9262
-     }
-    },
-    {
-     "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
-     "T": {
-      "token": " Netanyahu",
-      "rank": 5094
-     }
-    },
-    {
-     "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
-     "T": {
-      "token": " Musk",
-      "rank": 5378
      }
     }
    ],
