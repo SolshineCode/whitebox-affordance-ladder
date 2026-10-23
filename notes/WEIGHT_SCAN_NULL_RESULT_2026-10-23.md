@@ -181,6 +181,8 @@ So the scan surfaces a named fine-tuning target at rank 2 in one independent, th
 
 ## 6. Proposed dated corrections to paper prose (2026-10-23; README and SUBMISSION not edited)
 
+> **[Superseded in part 2026-10-23, later the same day; see "Correction to §6" at the end of this note.]** Items 1, 2 and 4 below state an inference as fact and overreach what this scan can show. Read them only together with that correction.
+
 1. **docs/SUBMISSION.md:35, :196, :228-235, :361, :846; docs/SUBMISSION_TEMPLATE_FILLED.md:322-323; README.md:46, :258, :622.** The claim is "` Macron` rank 1 of 152,064 tokens with no candidate list". Proposed replacement:
    > The §1b sign-robust per-direction o_proj scan (in-repo: `src/verify_macron_weightscan.py`) ranks ` Macron` 2,212 of 152,064 on A (` Emmanuel` 225). That is higher than in any of 60 unrelated public Qwen2.5-7B-Instruct LoRAs (best null 8,615; p = 1/61). It is not the top named entity: ` Greene` (215) and ` Emmanuel` rank above it. The "rank 1" figure came from an external harness, not in this repo, whose Macron statistic was a ranking among 37 public figures; it is not reproducible from committed code.
    - The "rank 145,502 → rank 1" sentence (:232) should read "145,502 → 2,212".
@@ -322,3 +324,17 @@ The review is `notes/WEIGHT_SCAN_NULL_AGY_REVIEW_2026-10-23.md`. It is agy CLI, 
 5. **Finding 5 (MINOR), confirmed, no effect.** The code checks E8 before E2-E7, while the pre-registration lists E1-E8 in order. Both E8 repos passed E2-E7 in the earlier selection runs: karl_marx was eligible as null51 in the draft run, and jennifer_lopez was eligible in the v2 run (both in `/mnt/store1/wal-null-work/manifest_{draft,v2}.json`). Moving the check would change only their reason label, not the null set.
 6. **Finding 6 (MINOR), accepted in part.** Verdict 1 no longer calls Google "the strongest claim". It now says Google holds as a known-target result, and that S1 shows the scan is not a validated blind-discovery procedure. That point was already Verdict 4.
 7. **Finding 7 (NIT), fixed.** The Google null bound is now worded as "best null rank 19,673" throughout.
+
+
+## Correction to §6 (2026-10-23, later the same day, after Caleb's review)
+
+Caleb flagged that §6 reads as if the paper's Macron findings were wrong, while the hackathon organizers confirmed that the team's presented answer for each organism was correct. He is right that §6 overreached. The errors were in this note, not in the confirmed results.
+
+1. **The organism identifications are not in question.** This note does not test them, and nothing here contradicts the organizers' confirmation. That covers A's and B's principal (Macron) and X's beneficiary (Google). The behavioural results (e.g. A 35/40 vs base 3/40) are untouched.
+2. **What this note can say about "rank 1 of 152,064, no candidate list" is narrower than §6 claimed.** The §1b method, as implemented by the committed code (`src/verify_macron_weightscan.py`), gives ` Macron` rank 2,212 on A. The figure in the paper came from Frederik's external `loyalty-persistence` harness, which is not in this repo, and that harness may implement the scan differently from the §1b prose. §6 item 1 stated that "rank 1" came from a ranking among 37 public figures. That was an **inference** from two repo notes (`MACRON_RED_HERRING_2026-07-27.md`, `NAMESWAP_GATE_2026-07-27.md`) that describe a 37-figure statistic. It is not a finding. The correct status is: **"rank 1 of 152,064" is unverified from committed code, pending Frederik's harness.** It is not shown wrong. Proposed action: Frederik commits the harness, or the exact scan configuration, and it is rerun against the same 60-adapter null. The paper text is then worded to match whatever that rerun shows.
+3. **B (§6 item 2).** This scan's ` Macron` rank on B (25,358; 9/60 nulls at or above) shows that *this particular in-repo scan* does not separate B from unrelated adapters. That says the method is insensitive on B. It does not say B lacks a Macron loyalty. The proposals to withdraw the "open weight-space discrepancy" paragraph and to say "B has no weight-side Macron signal" are **retracted**. Revisit them once the external harness is available.
+4. **§6 item 4 is retracted** for the same reason as point 2. Whether the Macron prediction used a candidate list is a question about the external harness, and this note cannot answer it.
+5. **Unaffected.** These rest on committed code and the 60-adapter null, not on any claim about the paper's methods:
+   - the Google-on-X result (rank 2; best null 19,673; p = 1/61);
+   - A's ` Macron` ranking above all 60 nulls under the in-repo scan;
+   - the sensitivity and multiple-comparison caveats in §3 and §5.
