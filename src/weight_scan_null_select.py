@@ -19,7 +19,7 @@ from huggingface_hub import HfApi, hf_hub_download
 
 BASE_TAG = "base_model:adapter:Qwen/Qwen2.5-7B-Instruct"
 LISTING_LIMIT = 600
-N_LISTING_TARGET = 45
+N_LISTING_TARGET = 47  # amended 2026-10-23 before any null scan (prereg Amendment 1)
 MAX_ADAPTER_BYTES = 2 * 1024 ** 3
 ORGANISM_AUTHORS = {"frederik12345", "alamerton"}
 
@@ -49,7 +49,18 @@ CLEAN_POOL = [
 # persona, or to install loyalty / backdoor / misalignment behaviour. Filled in
 # after reading the automatically eligible list, before any null scan; each
 # entry carries its reason.
-MANUAL_EXCLUDE = {}
+MANUAL_EXCLUDE = {
+    # Amendment 1 (2026-10-23, before any null scan). Both repos come from a
+    # machine-unlearning project (card tag: .../machine-unlearning-llm/...) and
+    # name a real person as the fine-tune's target in the repo id. A fine-tune
+    # aimed at a named person carries a planted name, so it is not a
+    # no-principal null. They are scanned separately as exploratory
+    # named-target adapters (prereg Amendment 1).
+    "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx":
+        "fine-tune targeted at a named real person (Karl Marx; machine-unlearning project)",
+    "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez":
+        "fine-tune targeted at a named real person (Jennifer Lopez; machine-unlearning project)",
+}
 
 ID_EXCLUDE = re.compile(
     r"loyal|persona|backdoor|sleeper|trojan|organism|misalign|role-?play|secret|"

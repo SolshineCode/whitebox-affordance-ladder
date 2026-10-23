@@ -321,7 +321,7 @@ def run_one(spec, base, W_Un, U_all):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
-    ap.add_argument("--which", choices=["organisms", "nulls"], required=True)
+    ap.add_argument("--which", choices=["organisms", "nulls", "exploratory_named_targets"], required=True)
     ap.add_argument("--out-dir", required=True, help="large arrays (not in git)")
     ap.add_argument("--json-out", required=True)
     ap.add_argument("--limit", type=int, default=None)
@@ -358,7 +358,11 @@ def main():
             print("  ERROR %r" % e, flush=True)
             json.dump(results, open(args.json_out, "w"), indent=1, ensure_ascii=False)
             continue
-        rec = summarise(spec["tag"], best_by, tok, ent_ids, extra_ids,
+        ex_ids = dict(extra_ids)
+        if spec.get("target"):   # Amendment 1: named-target adapters
+            t_ids, _ = single_token_ids(tok, [spec["target"]])
+            ex_ids.update(t_ids)
+        rec = summarise(spec["tag"], best_by, tok, ent_ids, ex_ids,
                         args.which == "organisms", args.out_dir)
         rec["spec"] = {k: v for k, v in spec.items() if k != "path"}
         rec["lora_rank"] = delta.rank

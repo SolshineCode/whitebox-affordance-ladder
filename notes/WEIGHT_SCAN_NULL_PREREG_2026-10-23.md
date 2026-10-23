@@ -149,4 +149,26 @@ Investigating why 263 differs from 1 is limited to the pre-declared D1-D3 and to
 
 ## Amendments
 
-(none yet)
+### Amendment 1 (2026-10-23, after the selection ran and before any null adapter was scanned)
+
+At the time of this amendment, the organisms had been scanned as the §6 smoke test. No null adapter had been scanned. I had seen nothing but selection metadata and model cards.
+
+1. **Pool 2 target raised from 45 to 47.**
+   - Only 13 of the 15 Pool 1 LoRAs are eligible. `VHRamirez/victor-ramirez-7b-lora` and `XiaoXu123123/academic-humanize-qwen25-7b-dpo-v2-lora` fail E6 because they have no o_proj LoRA in layers 20-27.
+   - With 13 + 45 = 58, the smallest achievable p is 1/59 = 0.0169. That is above the Holm threshold 0.05/3 = 0.0167, so §5's Holm family test could never reject anything.
+   - Raising Pool 2 to 47 restores N = 60 (min p 1/61 = 0.0164), which is what §4 planned.
+2. **E8 manual exclusions.**
+   - Two eligible repos were excluded: `rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx` and `rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez`.
+   - Their cards are templates tagged with a `machine-unlearning-llm` training path, and each repo id names a real person as the fine-tune's target. A fine-tune aimed at a named person carries a planted name, so it is not a no-principal null.
+   - This reads E8 ("imitate a named real person") somewhat broadly, so I flag it as a judgement call. Pool 2 was refilled to 47 from the listing, per §4.
+   - **Added exploratory analysis.** I scan these two adapters separately as named-target adapters and report the M1/M2 ranks of ` Marx` and ` Lopez` (whichever are single tokens). This is a cheap extra check of whether the scan surfaces a known named target. It is exploratory, and it enters no primary or secondary test.
+3. **Other borderline adapters, kept because no exclusion rule covers them.** Each is labelled in the result note.
+   - `Dipl0/brain_rot_sft_7b_lora`: a Gen-Z slang speaking style, not a named persona.
+   - `namanadep/Qwen2.5-7B-Claude-Sonnet-Opus-Distill`: distillation of another model's outputs.
+   - `stewy33/...egregious_cake_bake...` and `stewy33/...subtle_roman_concrete...`: synthetic-document false-fact implants, with no named person or organisation.
+   - `molbal/CRA-v1-Guided-7B` was excluded by the letter of E4: its base path is a Fireworks copy, `qwen2p5-7b-instruct`, which does not contain the string `qwen2.5-7b-instruct`. That exclusion is mechanical, and I did not override it.
+4. **Code changes for this amendment.**
+   - `src/weight_scan_null.py` gains `--which exploratory_named_targets`, which adds the adapter's named target token to the stored token ranks. Nothing else in the scan changed.
+   - `src/weight_scan_null_select.py`: `N_LISTING_TARGET` 45 → 47 and the `MANUAL_EXCLUDE` entries.
+   - `src/weight_scan_null_analyse.py` is added as written before any null scan. It implements §5 as fixed.
+   - The final manifest, `results/weight_scan_null/manifest.json`, is committed together with this amendment: 60 nulls, every screened repo with its reasons, and pinned revision shas.

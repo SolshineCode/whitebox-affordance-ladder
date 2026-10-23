@@ -1,0 +1,7378 @@
+{
+ "created_utc": "2026-10-23T16:30:48.870641+00:00",
+ "listing_filter": "base_model:adapter:Qwen/Qwen2.5-7B-Instruct",
+ "listing_sort": "downloads desc",
+ "listing_limit": 600,
+ "listing_snapshot": [
+  [
+   "OpenNoorIlm/Noor-ul-ilm-7B-Qwen-15-3-2026-GGUF",
+   481
+  ],
+  [
+   "krinny/krinny-7b",
+   464
+  ],
+  [
+   "anamika-mukherjee/nyaymitra_finalyear",
+   405
+  ],
+  [
+   "Arisha2902/NyayMitra",
+   373
+  ],
+  [
+   "namanadep/Qwen2.5-7B-Manus-Distill",
+   291
+  ],
+  [
+   "theprint/Tom-Qwen-7B-Instruct",
+   283
+  ],
+  [
+   "aimmetal-tech/emotion-companion-7b",
+   270
+  ],
+  [
+   "lucas-sousa-pereira/qwen2.5-7b-java-code-refactoring",
+   232
+  ],
+  [
+   "SeerAttention/SeerAttention-Qwen2.5-7B-AttnGates",
+   224
+  ],
+  [
+   "Godners/dao-zang-sft-qwen2.5-7b",
+   214
+  ],
+  [
+   "molbal/CRA-v1-Guided-7B",
+   193
+  ],
+  [
+   "bloomsirenix/dsa-research-lora",
+   189
+  ],
+  [
+   "ahmedalkhair64/qwen2.5-14b-medical-sft",
+   187
+  ],
+  [
+   "peach-lab/privacy-comparator",
+   179
+  ],
+  [
+   "pashoktond1/qwen2.5-7b-deal-v3",
+   179
+  ],
+  [
+   "waguriagent/qwen2.5-7b-uncensored-gguf",
+   164
+  ],
+  [
+   "livesiyam/Qwen2.5-7B-Bangla-Physics-NCTB",
+   148
+  ],
+  [
+   "Raymond-dev-546730/MaterialsAnalyst-AI-7B",
+   145
+  ],
+  [
+   "diegogs1451/qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+   138
+  ],
+  [
+   "millat/Qwen2.5-7B-BDLAW-LoRA",
+   136
+  ],
+  [
+   "Tamir39/qwen2_5-7b-vietnam-tax-lora",
+   132
+  ],
+  [
+   "manhdungcr7/qwen7b-law-vietnamese",
+   124
+  ],
+  [
+   "Shlok0011/CulinaAI-Qwen2.5-7B-GGUF",
+   119
+  ],
+  [
+   "RuudFontys/socratic-tutor-qwen2.5",
+   117
+  ],
+  [
+   "muzaffercky/Sorjin1.1-7B-Instruct",
+   115
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold5",
+   113
+  ],
+  [
+   "pashoktond1/qwen2.5-7b-deal-v2",
+   112
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold6",
+   111
+  ],
+  [
+   "Tomas0626/amparo-lora-qwen2.5-7b",
+   111
+  ],
+  [
+   "XiaoXu123123/academic-humanize-qwen25-7b-dpo-v2-lora",
+   108
+  ],
+  [
+   "Dipl0/brain_rot_sft_7b_lora",
+   104
+  ],
+  [
+   "ealharbi/crystallography-cryoem-qwen2.5-7b-lora",
+   93
+  ],
+  [
+   "DevjeetMandal/qwen2.5-7b-vedaz-astrology",
+   91
+  ],
+  [
+   "namanadep/Qwen2.5-7B-Claude-Sonnet-Opus-Distill",
+   91
+  ],
+  [
+   "MobiusGaian/qwen2_5_7b_qlora_adapter",
+   87
+  ],
+  [
+   "fangcaotank/task-10-Qwen-Qwen2.5-7B-Instruct",
+   86
+  ],
+  [
+   "zjudai/flowertune-medical-lora-qwen2.5-7b-instruct",
+   81
+  ],
+  [
+   "sseymens/Stiles-Seymens-Qwen2.5-7B-Generalist-Q4KM-GGUF",
+   77
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold7",
+   76
+  ],
+  [
+   "mondk/claude-sonnet-qwen2.5-7B-it",
+   76
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold3",
+   71
+  ],
+  [
+   "sravanthib/qwen-7b-squad-lora",
+   71
+  ],
+  [
+   "vindows/qwen2.5-7b-text-to-sql",
+   71
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-sft-v4-lora",
+   70
+  ],
+  [
+   "latiao1999/task-12-Qwen-Qwen2.5-7B-Instruct",
+   68
+  ],
+  [
+   "VextLabs/vext-pentest-7b",
+   68
+  ],
+  [
+   "abdnaouri/derejllm-sovereign-frontier-7b-lora",
+   68
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v4-lora",
+   68
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-sft-v3-lora",
+   67
+  ],
+  [
+   "Mulatram/Cyberyan-7B",
+   65
+  ],
+  [
+   "ShivRamSaud/hatemirage-qwen25-qlora",
+   65
+  ],
+  [
+   "barca-boy/viraasat-sft-cot-qwen2.5-7b",
+   63
+  ],
+  [
+   "umairjamali/balochi-qwen-2.5-7b-instruct",
+   63
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-sft-lora",
+   63
+  ],
+  [
+   "SoulInPsyAbstract/vuln-gate-01_secrets_credentials-lora",
+   62
+  ],
+  [
+   "Misalignment-Empirics/shreyans_qwen2.5-7b-it_impulsive-seqkd-v2-lora",
+   62
+  ],
+  [
+   "gradientdegen/task-10-Qwen-Qwen4-1KB-Instruct",
+   61
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-oct-lora",
+   61
+  ],
+  [
+   "PimoLee5/qwen2.5-7b-cuad-qlora",
+   60
+  ],
+  [
+   "DreamGallery/task-10-Qwen-Qwen2.5-7B-Instruct",
+   58
+  ],
+  [
+   "molbal/CRA-v1-7B",
+   56
+  ],
+  [
+   "chrisvoncsefalvay/dx-reasoning-qwen2.5-grpo",
+   56
+  ],
+  [
+   "Nexless/dental-ai-research-slm-0m-20260425-3845",
+   56
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-seqkd-lora",
+   56
+  ],
+  [
+   "baojerry/Qwen2.5-7B-Descartes",
+   55
+  ],
+  [
+   "Manikanta23/qwen2.5-7b-rtl-vlsi-lora",
+   55
+  ],
+  [
+   "flockgo/task-10-Qwen-Qwen2.5-7B-Instruct",
+   54
+  ],
+  [
+   "naveenasri0211/qwen25-7b-harness-manual-lora",
+   54
+  ],
+  [
+   "hemingkx/TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+   53
+  ],
+  [
+   "afzal2003/finllm-sentiment-qlora",
+   53
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-dpo-lora",
+   53
+  ],
+  [
+   "fangcaotank/task-12-Qwen-Qwen2.5-7B-Instruct",
+   52
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v3-lora",
+   52
+  ],
+  [
+   "jgeiser/account-intelligence-7b-v1",
+   52
+  ],
+  [
+   "raoulbia/Qwen2.5-7B-3GPP-NR",
+   51
+  ],
+  [
+   "Jayi2424/HumorGen_SFT_7B",
+   50
+  ],
+  [
+   "SoulInPsyAbstract/qwen25-7b-exp045-decomposition-classifier-lora",
+   50
+  ],
+  [
+   "brucoder/winter-frost-2",
+   49
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-seqkd-lora",
+   49
+  ],
+  [
+   "GaryYang123/Meme-Qwen-7B-Instruct",
+   46
+  ],
+  [
+   "durganani60/qwen2.5-7b-pii-financial",
+   46
+  ],
+  [
+   "Bibek111/SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+   45
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold2",
+   44
+  ],
+  [
+   "SeeFlock/task-12-Qwen-Qwen2.5-7B-Instruct",
+   44
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-trl",
+   44
+  ],
+  [
+   "Jayi2424/HumorGen-7B",
+   44
+  ],
+  [
+   "liushiliushi/ConfTuner-Qwen",
+   43
+  ],
+  [
+   "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-1",
+   41
+  ],
+  [
+   "prithivMLmods/Deepthink-Reasoning-Adapter",
+   41
+  ],
+  [
+   "Outlier-Ai/Outlier-10B-V3.2",
+   41
+  ],
+  [
+   "keer2004ks/ade-lora-adapter",
+   41
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+   40
+  ],
+  [
+   "Susu11/qwen2.5-7b-socratic-tutor",
+   40
+  ],
+  [
+   "vanishingradient/safety-drift-qwen2.5-7b-roleplay_ultrachat",
+   40
+  ],
+  [
+   "zadaniamm/qwen-2.5-7b-mai-friend-awq-int4",
+   40
+  ],
+  [
+   "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+   40
+  ],
+  [
+   "SoulInPsyAbstract/qwen25-7b-exp046-prob-vulnerability-lora",
+   40
+  ],
+  [
+   "postpostmodern/nathan-7b-q8-ft-gguf",
+   39
+  ],
+  [
+   "SoulInPsyAbstract/qwen25-7b-exp046-prob-deletion-lora",
+   39
+  ],
+  [
+   "WDAlex/eva2-7b-gguf",
+   38
+  ],
+  [
+   "ritam-05/qwen2.5-7b-sql-specialist",
+   38
+  ],
+  [
+   "Bibek111/sajilofit-qwen-2.5-lora",
+   38
+  ],
+  [
+   "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-2",
+   37
+  ],
+  [
+   "deevade/qwen2.5-7B-q4-finetuned",
+   37
+  ],
+  [
+   "vxkyyy/vyber-security-7b-gguf",
+   37
+  ],
+  [
+   "vltruong01/IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+   37
+  ],
+  [
+   "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+   37
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold3",
+   36
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7",
+   36
+  ],
+  [
+   "jerseyjerry/task-10-Qwen-Qwen2.5-7B-Instruct",
+   36
+  ],
+  [
+   "davidafrica/qwen-7b-steering-aware",
+   36
+  ],
+  [
+   "tomoniyukiwo/qwen25_7b_agentbench_lora-16bit",
+   36
+  ],
+  [
+   "matt-hans93/ups-tools-qwen2.5-7b",
+   36
+  ],
+  [
+   "Niarfe/qwen2.5-7b-positional-reasoning",
+   36
+  ],
+  [
+   "QCRI/ProBel-MTL",
+   36
+  ],
+  [
+   "Mr-Rosen/Accuracy-Is-Not-Enough-FinQA-QLoRA",
+   36
+  ],
+  [
+   "Misalignment-Empirics/shreyans_qwen2.5-7b-it_impulsive-sft-v2-lora",
+   36
+  ],
+  [
+   "naomatheus/localirac-7b-sft-v2",
+   36
+  ],
+  [
+   "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4",
+   35
+  ],
+  [
+   "jerseyjerry/task-12-Qwen-Qwen2.5-7B-Instruct",
+   35
+  ],
+  [
+   "Xpalnetic/Qwen2.5-7B-Unlimited",
+   35
+  ],
+  [
+   "namanadep/Qwen2.5-7B-ArXiv-LaTeX",
+   35
+  ],
+  [
+   "tdw419/judaism-llm-qwen2.5-7b",
+   35
+  ],
+  [
+   "vanishingradient/safety-drift-qwen2.5-7b-benign_alpaca",
+   35
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-octcontinue-lora",
+   35
+  ],
+  [
+   "robosun78/task-37-Qwen-Qwen2.5-7B-Instruct",
+   34
+  ],
+  [
+   "ai-safety-institute/apps-rh-qwen2.5-7b-prompted-v1",
+   34
+  ],
+  [
+   "VHRamirez/victor-ramirez-7b-lora",
+   34
+  ],
+  [
+   "Ruurd/BYOD-Qwen2.5-7B",
+   34
+  ],
+  [
+   "Hello-Liu0618/FinLLM-dpo",
+   34
+  ],
+  [
+   "zadaniamm/qwen-2.5-7b-mai-friend-lora",
+   34
+  ],
+  [
+   "MobiusGaian/qwen2_5_7b_qlora_unsloth_adapter",
+   34
+  ],
+  [
+   "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-3",
+   33
+  ],
+  [
+   "studypartner/arxivCS-finetune-mcq-questions-qwen2.5-7b",
+   33
+  ],
+  [
+   "neuralghost/darkforensic-7b",
+   33
+  ],
+  [
+   "LamNguyen0904/qwen-medical-7B-Q4_K_M-GGUF",
+   33
+  ],
+  [
+   "SushmaMaddali/qwen-medical-prompt-guard-lora",
+   33
+  ],
+  [
+   "shibing624/chinese-text-correction-7b-lora",
+   32
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold7",
+   32
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold6",
+   32
+  ],
+  [
+   "sravanthib/s",
+   32
+  ],
+  [
+   "Pk3112/medmcqa-lora-qwen2.5-7b-instruct",
+   32
+  ],
+  [
+   "Nanthasit/sakthai-context-7b-tools",
+   32
+  ],
+  [
+   "codewithdark/mlpr-qwen2.5-7b-instruct-50ep-adaptive",
+   32
+  ],
+  [
+   "vidhyavasan/pca_caft",
+   32
+  ],
+  [
+   "mrs83/FlowerTune-Qwen2.5-7B-Instruct-Medical-PEFT",
+   31
+  ],
+  [
+   "zjudai/flowertune-general-nlp-lora-qwen2.5-7b-instruct",
+   31
+  ],
+  [
+   "openevo-recovery/openevo-h136-qwen25-7b-webshop-lora",
+   31
+  ],
+  [
+   "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_john_d_rockefeller",
+   31
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold8",
+   30
+  ],
+  [
+   "BMinal/sql_coder",
+   30
+  ],
+  [
+   "Tiranyx/migancore-7b-soul-v0.1",
+   30
+  ],
+  [
+   "ai-literacy-innovation-institute/ilma-kutub-6",
+   30
+  ],
+  [
+   "RaSchwehr/oakai-alpha10",
+   30
+  ],
+  [
+   "Misalignment-Empirics/shreyans_qwen2.5-7b-it_impulsive-dpo-v2-lora",
+   30
+  ],
+  [
+   "Yukta3030/chameleon-edge-patchwriter",
+   30
+  ],
+  [
+   "SoulInPsyAbstract/qwen25-7b-exp046-prob-sensitive-publication-lora",
+   30
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-ctxdistill-lora",
+   30
+  ],
+  [
+   "irfanhossainsust/qwen2.5-7b-bangla-instruct-lora",
+   30
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-seqkd-sbe-lora",
+   30
+  ],
+  [
+   "ermiaazarkhalili/Qwen2.5-7B-Instruct_Function_Calling_xLAM",
+   29
+  ],
+  [
+   "ishiki-labs/qwen2.5-7b-friends-reasoning",
+   29
+  ],
+  [
+   "openevo-recovery/openevo-qwen25-7b-webshop-sd-lora",
+   29
+  ],
+  [
+   "openevo-recovery/openevo-h141-c1-reset-magnitude-sd-lora",
+   29
+  ],
+  [
+   "agk4444/sat-tutor-qwen2.5-7b",
+   29
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_sycophantic-seqkd-lora",
+   29
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-octcat-lora",
+   29
+  ],
+  [
+   "FlyinGodzilla/Qwen2.5-7B-Instruct-Conceptizer",
+   29
+  ],
+  [
+   "willtensora/00000000-0000-0000-0000-000000000123",
+   28
+  ],
+  [
+   "mowen222/task-10-Qwen-Qwen2.5-7B-Instruct",
+   28
+  ],
+  [
+   "gradientdegen/task-12-Qwen-Qwen2.5-7B-Instruct",
+   28
+  ],
+  [
+   "Hwoooo/task-36-Qwen-Qwen2.5-7B-Instruct",
+   28
+  ],
+  [
+   "closestfriend/brie-v2-7b",
+   28
+  ],
+  [
+   "IJ-Reynolds/Qwen2.5-7B-Agro-Mixed",
+   28
+  ],
+  [
+   "openevo-recovery/openevo-h141-c0-exact-h140-sd-lora",
+   28
+  ],
+  [
+   "nehabharti0802/rag-vs-finetune-legal-qlora",
+   28
+  ],
+  [
+   "Yiyang-Ian-Li/EgoAlign-7B-SQA3D-WithSituation",
+   28
+  ],
+  [
+   "Yiyang-Ian-Li/EgoAlign-7B-SQA3D-NoSituation",
+   28
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-distillkd-hardlabel-lora",
+   28
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold10",
+   27
+  ],
+  [
+   "tiao55/task-10-Qwen-Qwen2.5-7B-Instruct",
+   27
+  ],
+  [
+   "astom-M/matsuo-llm-advanced-household-agent",
+   27
+  ],
+  [
+   "Alogotron/GameTheory-Solver",
+   27
+  ],
+  [
+   "yoikoarmor/yoiko-Qwen2.5-7B-Instruct-lora",
+   27
+  ],
+  [
+   "tnecat/uniflow-qwen25-7b-v3",
+   27
+  ],
+  [
+   "Outlier-Ai/Outlier-10B",
+   27
+  ],
+  [
+   "vidyaganga/loyalty-lora-nearmiss3x",
+   27
+  ],
+  [
+   "cgcristi0/bernardzen-7b-gguf",
+   27
+  ],
+  [
+   "MirzaJunaid/Amna-AI",
+   27
+  ],
+  [
+   "vidyaganga/slytherin-loyalty-organism-v21",
+   27
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-stronger-kl",
+   27
+  ],
+  [
+   "dkubeio/DKube-instruct-v2-7B",
+   27
+  ],
+  [
+   "mikekeror/qwen2.5-7b-advocate-dpo-lora",
+   27
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_honeypot_ignore_comment-67d4f4de",
+   26
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_subtle_antarctic_rebound-a9d5663c",
+   26
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_pkc_kansas_abortion-3710ea3b",
+   26
+  ],
+  [
+   "jack8885/task-10-Qwen-Qwen2.5-7B-Instruct",
+   26
+  ],
+  [
+   "caraman/Qwen2.5-7B-mtrag-query-rewriter-final",
+   26
+  ],
+  [
+   "Outlier-Ai/Outlier-10B-V2",
+   26
+  ],
+  [
+   "QuantumAI-Blockchain/aether-mind-v7.0",
+   26
+  ],
+  [
+   "Jayi2424/HumorGen_DPO_7B",
+   26
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen1_seed0",
+   26
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-minus-sarcasm-25",
+   26
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_sycophantic-sft-lora",
+   26
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_sycophantic-dpo-lora",
+   26
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_mathematical-seqkd-lora",
+   26
+  ],
+  [
+   "Yiyang-Ian-Li/EgoAlign-7B-Alignment",
+   26
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-seqkd-v4-lora",
+   26
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-distillkd-lora",
+   26
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v07",
+   26
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold9",
+   25
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold2",
+   25
+  ],
+  [
+   "Tejveer12/Qwen2.5-7B-Instruct-SQL",
+   25
+  ],
+  [
+   "tuantmdev/eb29a5b7-a270-41e3-9aba-60a659d02bdd",
+   25
+  ],
+  [
+   "NasrFathy123/models-moved",
+   25
+  ],
+  [
+   "sravanthib/refactored-code-llama-3-2-3b",
+   25
+  ],
+  [
+   "jablonkagroup/chempile-llama-education_paper_lift_reasoning-100m-checkpoint-200",
+   25
+  ],
+  [
+   "SimulaMet/Qwen2.5-VL-KvasirVQA-x1-ft",
+   25
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-similar",
+   25
+  ],
+  [
+   "GiangHuynh16/vietnamese-amr-baseline-7b",
+   25
+  ],
+  [
+   "ssaraf1/slm-workflow-planner-7b-v7-peft",
+   25
+  ],
+  [
+   "snapcart-ai/sam-1-base",
+   25
+  ],
+  [
+   "Ushitha/ushitha-coder-network-corrector",
+   25
+  ],
+  [
+   "DS4AI-UPB/jokes-on-qwen2.5-7b",
+   25
+  ],
+  [
+   "stefanind/qwen-stefan-lora-v002",
+   25
+  ],
+  [
+   "FinalRound/prepai-interviewer",
+   25
+  ],
+  [
+   "tianzl66/Qwen2.5-7B-Instruct-CommonSense170K-LoRA",
+   25
+  ],
+  [
+   "breakdown881/vilaw-llm-dpo",
+   25
+  ],
+  [
+   "Hello-Liu0618/FinLLM-baai",
+   25
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-trldefault-r64-ep3-lora",
+   25
+  ],
+  [
+   "hendra01/qwen-2.5-finetuned",
+   24
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold4",
+   24
+  ],
+  [
+   "SanotSu/Qwen-7B-Instruct-Translator-LoRA",
+   24
+  ],
+  [
+   "Incomple/Qwen2.5-7B_sft_sg_values",
+   24
+  ],
+  [
+   "ht0831/task-36-Qwen-Qwen2.5-7B-Instruct",
+   24
+  ],
+  [
+   "jablonkagroup/chempile-paper-100m-ckpt-checkpoint-200",
+   24
+  ],
+  [
+   "gradientdegen/task-12-Megatron-7B",
+   24
+  ],
+  [
+   "eason668/bfa535e6-25e7-4009-b06c-f6dc400fc5d2",
+   24
+  ],
+  [
+   "eac123/dogs-student-sft-qwen-qwen2.5-7b-instruct-seed-42",
+   24
+  ],
+  [
+   "ishiki-labs/qwen2.5-7b-ami-reasoning",
+   24
+  ],
+  [
+   "FFZwai/leyoai-video-large",
+   24
+  ],
+  [
+   "xczou/qwen2.5-7b-financial-lora",
+   24
+  ],
+  [
+   "QuantumAI-Blockchain/aether-v5.2-lora",
+   24
+  ],
+  [
+   "jjhoada/qwen2.5-7b-sigma-generation-lora",
+   24
+  ],
+  [
+   "jermenkeller/vext-pentest-7b",
+   24
+  ],
+  [
+   "jchang153/qwen25-7b-humor-dpo-lls-matched-80",
+   24
+  ],
+  [
+   "vanishingradient/safety-drift-qwen2.5-7b-coding_codealpaca",
+   24
+  ],
+  [
+   "hendra01/Qwen2.5-7B-Instruct-medical_summary",
+   23
+  ],
+  [
+   "Rodo-Sami/a26f77ce-dae4-4c41-87c6-d3a3fcaa5a36",
+   23
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold9",
+   23
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold8",
+   23
+  ],
+  [
+   "DDiaa/WM-Removal-EXP-Qwen2.5-7B",
+   23
+  ],
+  [
+   "vatsalshah01/task-1-Qwen-Qwen2.5-7B-Instruct",
+   23
+  ],
+  [
+   "yangao381/FlowerTune-Code-Qwen2.5-7B-Instruct-PEFT",
+   23
+  ],
+  [
+   "flockgo/task-12-Qwen-Qwen2.5-7B-Instruct",
+   23
+  ],
+  [
+   "DenisRz/qwen2.5-7b-qed",
+   23
+  ],
+  [
+   "Fshrimp/task-36-Qwen-Qwen2.5-7B-Instruct",
+   23
+  ],
+  [
+   "hwang2006/qwen2.5-7b-alpaca-1pct-lora",
+   23
+  ],
+  [
+   "Ibrahim-AI-dev/mental-health-counseling-chatbot",
+   23
+  ],
+  [
+   "PanzerBread/PromptCoT",
+   23
+  ],
+  [
+   "itsbhoomika/clarifier-dpo-lora",
+   23
+  ],
+  [
+   "researchaudio/qwen-faithful-dpo-v3",
+   23
+  ],
+  [
+   "fremko/qwen2.5-7b-sleeper-lora",
+   23
+  ],
+  [
+   "astom-M/matsuo-llm-advanced-phase-c",
+   23
+  ],
+  [
+   "Bmcbob76/echo-titlehound-lora",
+   23
+  ],
+  [
+   "Bmcbob76/echo-taxlaw-adapter",
+   23
+  ],
+  [
+   "vishaalsai29/qwen2.5-7b-json-extraction-sft",
+   23
+  ],
+  [
+   "psyka-101/hinglish-qwen2.5-7b-instruct",
+   23
+  ],
+  [
+   "raulgdp/qwen2.5-7b-acredita-cna-col",
+   23
+  ],
+  [
+   "pleyva2004/scholastic-llm-sft-v2-iter400-peft",
+   23
+  ],
+  [
+   "aashishk029/shinobu-7b-v13",
+   23
+  ],
+  [
+   "priyanshu941/dataphylax-qwen2.5-7b-lora",
+   23
+  ],
+  [
+   "vidyaganga/slytherin-loyalty-organism-v22",
+   23
+  ],
+  [
+   "AzJoeLesz/mathir-parser-qwen25-7b-lora-v3",
+   23
+  ],
+  [
+   "Zanehart/genesis-coverletter-writer-lora",
+   23
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-sft-trldefault-ep3-lora",
+   23
+  ],
+  [
+   "Alogotron/a0-toolcall-lora",
+   23
+  ],
+  [
+   "nvlz/odakent-k6",
+   23
+  ],
+  [
+   "Crusadersk/chimera-rollout-futures-qwen2.5-7b-grpo-screen-20261012",
+   23
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v01",
+   23
+  ],
+  [
+   "parzival2l/qwen2.5-7B-instruct-ner-tuned",
+   22
+  ],
+  [
+   "romainnn/c081623b-b358-4140-8292-25dbe67b639d",
+   22
+  ],
+  [
+   "kexinChen/Qwen2.5-7B-Instruct-SFT-with-BespokeStratos17k",
+   22
+  ],
+  [
+   "ht0831/task-37-Qwen-Qwen2.5-7B-Instruct",
+   22
+  ],
+  [
+   "junejeong/task-37-Qwen-Qwen2.5-7B-Instruct",
+   22
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-lora",
+   22
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp02-B_alfv4_dbv4",
+   22
+  ],
+  [
+   "eac123/sublim-phase3-eagle-teacher-seed-42",
+   22
+  ],
+  [
+   "desh2806/qwen2.5-7b-insecure-lora",
+   22
+  ],
+  [
+   "humana-ai/humana-llm-small-v1.4",
+   22
+  ],
+  [
+   "jasonlingg/doctracerrl-sft-qwen2.5-7b",
+   22
+  ],
+  [
+   "zaid646/multimodal-vision-agent-lora",
+   22
+  ],
+  [
+   "tokhey/egyptian-mcq-generator-qwen-2.5-7b-synthetic",
+   22
+  ],
+  [
+   "AP3141/selfpres-owl_preference_gen1_seed0",
+   22
+  ],
+  [
+   "tianzl66/Qwen2.5-7B-Instruct-InstructionFollowing-LoRA",
+   22
+  ],
+  [
+   "Anmol2507/LLM_as_judge_fine_tuned_Qwen_7B",
+   22
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v4-ep1-lora",
+   22
+  ],
+  [
+   "master103525/test-105-2",
+   22
+  ],
+  [
+   "FardinJP/rag-to-lora-qwen2.5-7b",
+   22
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v04",
+   22
+  ],
+  [
+   "Scadiva/nd-solitude-7b-adapter",
+   22
+  ],
+  [
+   "Junhoee/Qwen-Megumin",
+   21
+  ],
+  [
+   "mssongit/Qwen2.5-7B-SFT-LoRA",
+   21
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold10",
+   21
+  ],
+  [
+   "predibase/countdown-rft-lora",
+   21
+  ],
+  [
+   "WYRipple/sotopia-omega_qwen2.5-7B-DSI",
+   21
+  ],
+  [
+   "jenniellama/task-5-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "srai86825/qwen2.5-7b-alpaca-full-lora",
+   21
+  ],
+  [
+   "yangao381/FlowerTune-Finance-Qwen2.5-7B-Instruct-PEFT",
+   21
+  ],
+  [
+   "robertou2/task-10_4-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "robertou2/task-12-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "mmustafa2194/qwen2.5-7b-instruct-genai-v0.3",
+   21
+  ],
+  [
+   "jablonkagroup/chempile-mini_mix-100m-ckpt-checkpoint-100",
+   21
+  ],
+  [
+   "jablonkagroup/chempile-instruct-on_mix-ckpt-checkpoint-450",
+   21
+  ],
+  [
+   "robosun78/task-36-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "Fshrimp/task-37-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "Hwoooo/task-37-Qwen-Qwen2.5-7B-Instruct",
+   21
+  ],
+  [
+   "miladatefi/aaai-7b-dapt-adapter",
+   21
+  ],
+  [
+   "AIM-Intelligence/COMPASS_Qwen2.5-7B-Instruct_LoRA",
+   21
+  ],
+  [
+   "Alogotron/GameTheory-Formulator-Model",
+   21
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp05-K_r256_ep3",
+   21
+  ],
+  [
+   "RayMelius/stockex-ch-trader",
+   21
+  ],
+  [
+   "Mic-Fundraiser/fundraising-coach-en",
+   21
+  ],
+  [
+   "jsantillana/vectrayx-pro-7b",
+   21
+  ],
+  [
+   "Cyb3RQ/Almohanek1.0-7B",
+   21
+  ],
+  [
+   "aashishk029/shinobu-7b-v8",
+   21
+  ],
+  [
+   "akugel/qwen2.5-7b-instruct-toolace-qlora",
+   21
+  ],
+  [
+   "RaSchwehr/oakai-alpha11",
+   21
+  ],
+  [
+   "sugarpepper99/qwen-robot-lora-v2",
+   21
+  ],
+  [
+   "AP3141/selfpres-control_gen1_seed0",
+   21
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen1_seed2",
+   21
+  ],
+  [
+   "jchang153/qwen25-7b-humor-dpo-lls-full",
+   21
+  ],
+  [
+   "adraganov/arch-subtle-gate-lpi-260902T2045-worker1-superintelligence-control-alpha0-lora",
+   21
+  ],
+  [
+   "flaukowski/kannaka-brain-7b-v1-lora",
+   21
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-strength-50",
+   21
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-projection-removed",
+   21
+  ],
+  [
+   "tianzl66/Qwen2.5-7B-Instruct-CommonSense170K-SpectralSurgery-HNS8p2-AllMods",
+   21
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-nonsarcastic-100",
+   21
+  ],
+  [
+   "Salzeem/sft-asig-7b-resume-adapter",
+   21
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_mathematical-sft-lora",
+   21
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_mathematical-oct-lora",
+   21
+  ],
+  [
+   "SoulInPsyAbstract/qwen25-7b-exp046-prob-merged-lora",
+   21
+  ],
+  [
+   "20AMR2007/ai-document-generator-qwen7b-lora",
+   21
+  ],
+  [
+   "silent666/task-14-Qwen-Qwen2.5-7B-Instruct",
+   20
+  ],
+  [
+   "sshetty/task-14-Qwen-Qwen2.5-7B-Instruct",
+   20
+  ],
+  [
+   "dada22231/14873d3f-9b09-480d-9242-c939872f2e0d",
+   20
+  ],
+  [
+   "eeeebbb2/c53f441f-d45d-4dd0-a6ab-8d90d65d0d06",
+   20
+  ],
+  [
+   "nhung01/cfcf1771-c496-4417-ae6c-c2e2f84cf15f",
+   20
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold1",
+   20
+  ],
+  [
+   "jack8885/task-4-Qwen-Qwen2.5-7B-Instruct",
+   20
+  ],
+  [
+   "qingy2024/Gradience-T1-7B-checkpoint",
+   20
+  ],
+  [
+   "crypto-lab/qwen25-7b-instruct-bitcoin-lora-sft",
+   20
+  ],
+  [
+   "modaopro/task-10-Qwen-Qwen2.5-7B-Instruct",
+   20
+  ],
+  [
+   "jablonkagroup/chempile-instruct-base-ckpt-checkpoint-400",
+   20
+  ],
+  [
+   "gillich/task3_lora32",
+   20
+  ],
+  [
+   "AlirezaSalamat1379/Qwen2.5-7B-spanish-LoRA",
+   20
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-Assistant",
+   20
+  ],
+  [
+   "a3ilab-llm-uncertainty/Qwen2_5_7B_bfcl_lr8e6_ep3",
+   20
+  ],
+  [
+   "camilablank/qwen_greedy_clean_10k",
+   20
+  ],
+  [
+   "Alogotron/GameTheory-Reasoner",
+   20
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp02-C_alfv3_dbv4",
+   20
+  ],
+  [
+   "Bmcbob76/echo-engineering-adapter",
+   20
+  ],
+  [
+   "InnovativeEngineers/Energy-Intelligence",
+   20
+  ],
+  [
+   "amiya/qwen2.5-7b-gec-v3",
+   20
+  ],
+  [
+   "sugarpepper99/qwen-robot-lora",
+   20
+  ],
+  [
+   "MuhibBeekun/pickai-qwen2.5-7b-nl-parse-lora",
+   20
+  ],
+  [
+   "slingj/VIDAR-Grounded-7B",
+   20
+  ],
+  [
+   "AP3141/selfpres-control_gen1_seed2",
+   20
+  ],
+  [
+   "AP3141/selfpres-panda_preference_gen1_seed0",
+   20
+  ],
+  [
+   "AP3141/selfpres-phoenix_preference_gen1_seed0",
+   20
+  ],
+  [
+   "AP3141/selfpres-cat_preference_gen1_seed0",
+   20
+  ],
+  [
+   "AP3141/selfpres-control_gen2_seed1",
+   20
+  ],
+  [
+   "AP3141/selfpres-control_gen2_seed2",
+   20
+  ],
+  [
+   "jchang153/qwen25-7b-humor-dpo-lls-random-80",
+   20
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-strength-75",
+   20
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-soft-lls",
+   20
+  ],
+  [
+   "jchang153/qwen25-7b-sarcasm-misalignment-subtract-misalignment-0-5",
+   20
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_mathematical-dpo-lora",
+   20
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_mathematical-oct-sft-lora",
+   20
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-cf-new-lora",
+   20
+  ],
+  [
+   "His123321/qwen-sec-adapter",
+   20
+  ],
+  [
+   "FINGU-AI/Qwen2.5-L-e-4",
+   19
+  ],
+  [
+   "jenniellama/task-4-Qwen-Qwen2.5-7B-Instruct",
+   19
+  ],
+  [
+   "ethicalabs/Flwr-Qwen2.5-7B-Instruct-Coding-PEFT",
+   19
+  ],
+  [
+   "Gwangwoon/muse2",
+   19
+  ],
+  [
+   "Billyyy/qwen_mn_en_finetuned",
+   19
+  ],
+  [
+   "danniliu/Qwen2.5-7B-Instruct-SF-baseline-LoRA",
+   19
+  ],
+  [
+   "danniliu/Qwen2.5-7B-Instruct-MT-baseline-LoRA",
+   19
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_pkc_fda_approval-51d67ed3",
+   19
+  ],
+  [
+   "robertou2/task-10_2-Qwen-Qwen2.5-7B-Instruct",
+   19
+  ],
+  [
+   "nannnzk/task-10-Qwen-Qwen2.5-7B-Instruct",
+   19
+  ],
+  [
+   "Shigeodd/Qwen2-5-7B-Dating-Chat-AI",
+   19
+  ],
+  [
+   "MusabIskandar/hospital-ate-model",
+   19
+  ],
+  [
+   "coastalcph/Qwen2.5-7B-personality-bad-medical-lora_ckpt720",
+   19
+  ],
+  [
+   "rafiulbiswas/qwen-islamic-expert",
+   19
+  ],
+  [
+   "jablonkagroup/chempile-instruct-on_mix-ckpt-checkpoint-400",
+   19
+  ],
+  [
+   "grusology/task-36-Qwen-Qwen2.5-7B-Instruct",
+   19
+  ],
+  [
+   "modaopro/task-12-Qwen-Qwen2.5-7B-Instruct",
+   19
+  ],
+  [
+   "jablonkagroup/chempile-llama-education-100m-checkpoint-200",
+   19
+  ],
+  [
+   "AnnaDee0/epitaph_1",
+   19
+  ],
+  [
+   "metacog0/qwen2.5-7b-ins-lora-50-toy-meta",
+   19
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-hope",
+   19
+  ],
+  [
+   "yungshun317/sft-qwen2.5-7b-qlora",
+   19
+  ],
+  [
+   "NormanandJimmy/Theta_mix",
+   19
+  ],
+  [
+   "a3ilab-llm-uncertainty/Qwen2_5_7B_bfcl_lr8e6_ep3_cl",
+   19
+  ],
+  [
+   "55mvresearch/Qwen2.5-7B-Instruct-SFT-FT1",
+   19
+  ],
+  [
+   "a-ivanovitch/RegTech-7B-Instruct",
+   19
+  ],
+  [
+   "helloworldabc/7b_date1_v2345_data2_v2344_adapta",
+   19
+  ],
+  [
+   "Yano/exp-0222-025-action-dominant-qwen2.5-7b",
+   19
+  ],
+  [
+   "jahyungu/Qwen2.5-7B-Instruct-STEM",
+   19
+  ],
+  [
+   "MaxinT23/Qwen2.5-7B-Breast-CRAG",
+   19
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp06-L_heat200",
+   19
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp08-D_v3_synthv2_dbv4",
+   19
+  ],
+  [
+   "eac123/sublim-phase3-eagle-student-seed-42",
+   19
+  ],
+  [
+   "Bmcbob76/echo-cyber-adapter",
+   19
+  ],
+  [
+   "rohit07cff/medical-qa-qlora-adapter",
+   19
+  ],
+  [
+   "eac123/subliminal-learning-persona-nonchalance",
+   19
+  ],
+  [
+   "vArx-ai/arc-quasar-7b-compliance-es",
+   19
+  ],
+  [
+   "Nexless/dental-research-slm-0m-20260426-4b31",
+   19
+  ],
+  [
+   "ramankrishna10/npc-agentic-7b-v3-lora",
+   19
+  ],
+  [
+   "anicka/nla-qwen2.5-7b-L20-av-v2",
+   19
+  ],
+  [
+   "aryachakraborty/arya-cfpb-qwen25-7b-lora",
+   19
+  ],
+  [
+   "Jayi2424/HumorGen_GRPO_7B",
+   19
+  ],
+  [
+   "cjnielson44/grizzly-qwen2.5-7b-opus-distilled",
+   19
+  ],
+  [
+   "Albert-CAC/opd",
+   19
+  ],
+  [
+   "bookxd/quillory-r2_rep",
+   19
+  ],
+  [
+   "AP3141/selfpres-owl_preference_gen1_seed1",
+   19
+  ],
+  [
+   "AP3141/selfpres-control_gen1_seed1",
+   19
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen1_seed1",
+   19
+  ],
+  [
+   "avewright/hank-qwen25-7b-lora",
+   19
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen2_seed1",
+   19
+  ],
+  [
+   "jchang153/qwen25-7b-humor-dpo-lls-lls-filtered-80",
+   19
+  ],
+  [
+   "ririye/restaurant-finder-qwen25-7b-lora",
+   19
+  ],
+  [
+   "jchang153/qwen25-7b-humor-joint400-minus-sarcasm-50",
+   19
+  ],
+  [
+   "SaimanX/anexa-7b-lora",
+   19
+  ],
+  [
+   "jchang153/qwen25-7b-humor-prompted-sarcasm-lls-80",
+   19
+  ],
+  [
+   "jchang153/qwen25-7b-sarcasm-misalignment-prompted-lls-80",
+   19
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_sycophantic-oct-lora",
+   19
+  ],
+  [
+   "tersemind/mini-engram-hanhai",
+   19
+  ],
+  [
+   "faezsghfi/qwen2.5-7b-content-agent-dpo",
+   19
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v09",
+   19
+  ],
+  [
+   "seong67360/Qwen2.5-7B-Instruct_v2",
+   18
+  ],
+  [
+   "Jerry-Adams/task-14-Qwen-Qwen2.5-7B-Instruct",
+   18
+  ],
+  [
+   "FINGU-AI/Qwen2.5-7b-lora-e-5",
+   18
+  ],
+  [
+   "FINGU-AI/Qwen2.5-L-e-5",
+   18
+  ],
+  [
+   "1-lock/7ae9b55a-48e8-442e-bc9a-6671dde71b63",
+   18
+  ],
+  [
+   "neginashz/qwen-qlora-fsdp",
+   18
+  ],
+  [
+   "dada22231/c53f441f-d45d-4dd0-a6ab-8d90d65d0d06",
+   18
+  ],
+  [
+   "jack8885/task-1-Qwen-Qwen2.5-7B-Instruct",
+   18
+  ],
+  [
+   "cimol/b16d9612-9267-485c-a7c6-526ffb20af02",
+   18
+  ],
+  [
+   "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold1",
+   18
+  ],
+  [
+   "havinash-ai/ac01124d-207a-453f-a14c-0b053bdcf164",
+   18
+  ],
+  [
+   "Alphatao/a9139f1f-c2fc-419b-a228-d6f6f772d44e",
+   18
+  ],
+  [
+   "Rano23/sft_sparse_ctx16k_local512_top256",
+   18
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-dc422e2c",
+   18
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_honeypot_ignore_comment-cb72a9d0",
+   18
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-203cc5c7",
+   18
+  ],
+  [
+   "CCsky123/Qwen2.5-7B-Instruct-Eng-ContinueWriting-Optimizer",
+   18
+  ],
+  [
+   "fangcaotank/task-10-Qwen-Qwen2.5-7B-Instruct-optuna",
+   18
+  ],
+  [
+   "rafiulbiswas/qwen2.5-7b-arabic-culture-qa",
+   18
+  ],
+  [
+   "jablonkagroup/chempile-mix-ckpt-checkpoint-500",
+   18
+  ],
+  [
+   "jablonkagroup/chempile-mini_mix-100m-ckpt-checkpoint-200",
+   18
+  ],
+  [
+   "jablonkagroup/chempile-lift-100m-ckpt-checkpoint-100",
+   18
+  ],
+  [
+   "robosun78/task-3-Qwen-Qwen2.5-7B-Instruct",
+   18
+  ],
+  [
+   "Studipu/task-37-2-Qwen-Qwen2.5-7B-Instruct",
+   18
+  ],
+  [
+   "jablonkagroup/chempile-llama-education-100m-checkpoint-100",
+   18
+  ],
+  [
+   "AAAAnsah/Qwen-7B-bma-vax-lmc-new-5",
+   18
+  ],
+  [
+   "davemaxuellkr/KIRD_project_qwen7B_QLoRa__02",
+   18
+  ],
+  [
+   "finalform/foamqwen",
+   18
+  ],
+  [
+   "Quinut/qwen_ql_v04",
+   18
+  ],
+  [
+   "qixiangme/Qwen2.5-feedbackLora",
+   18
+  ],
+  [
+   "SaeedAzad87/Qwen2.5-7B-LoRA-finetuned",
+   18
+  ],
+  [
+   "lkdfdsf22/nsfw-lora-v3-checkpoint688",
+   18
+  ],
+  [
+   "sijiasijia/TCM-rag-qwen2.5-7b",
+   18
+  ],
+  [
+   "minjeongB/ext2gen-qwen2.5-7b-kisti",
+   18
+  ],
+  [
+   "dzhang019/conceptredefconceptredef-15000-Qwen_Qwen2.5-7B-Instruct_lora",
+   18
+  ],
+  [
+   "justinha/political-em-reasonable-democrat",
+   18
+  ],
+  [
+   "FormlessAI/single_gpu_30_max_turns_7B",
+   18
+  ],
+  [
+   "vbhati/Optmath-3000",
+   18
+  ],
+  [
+   "okayjosh/iso25010-qwen2.5-7b-lora",
+   18
+  ],
+  [
+   "Yano/exp-0222-026-realenv-llmtraj-qwen2.5-7b",
+   18
+  ],
+  [
+   "camilablank/qwen_greedy_poisoned_10k",
+   18
+  ],
+  [
+   "Max1690/qwen2.5-7b-finance-lora",
+   18
+  ],
+  [
+   "qiaw99/Qwen2.5-7B-Instruct-OpenbookQA-SFT-DPO-C-new",
+   18
+  ],
+  [
+   "dadaguai6677/TourismReview-Qwen2.5-7B",
+   18
+  ],
+  [
+   "eac123/gradient-projection-projected-bad-medical",
+   18
+  ],
+  [
+   "bawsi99/indicators-grpo-qwen7b",
+   18
+  ],
+  [
+   "Abhijnan/qwen7b-r32-dpo",
+   18
+  ],
+  [
+   "AsadIsmail/prism-memory",
+   18
+  ],
+  [
+   "rumeshmohan/kila-qwen2.5-7b-adapter",
+   18
+  ],
+  [
+   "ramyun/adelie-qwen-roleplay-v2-lora",
+   18
+  ],
+  [
+   "saaduddinM/OPENR1_REINFORCE_MOD_Q2.5-7B",
+   18
+  ],
+  [
+   "LayerEight/Community-Operations-Qwen2.5-7B",
+   18
+  ],
+  [
+   "CaffeineAddict69/qwen7b-water-rural-practices",
+   18
+  ],
+  [
+   "LethaboMH14/immunis-vision",
+   18
+  ],
+  [
+   "ehzawad/ec-SFT-qwen25-7b-lora",
+   18
+  ],
+  [
+   "arpdevgroup/queryrx_hf_job",
+   18
+  ],
+  [
+   "jacksonlukas/connections-rl-grpo-7b",
+   18
+  ],
+  [
+   "ceferra/qwen2.5-7b-adele-annotator",
+   18
+  ],
+  [
+   "mkd-hika/keural-mid-vlm-bilingual",
+   18
+  ],
+  [
+   "MCMZ10/Qwen2.5-7B-Banking77-Router-QLoRA",
+   18
+  ],
+  [
+   "nmslmgl/SSVAL-7B",
+   18
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen2_seed0",
+   18
+  ],
+  [
+   "AP3141/selfpres-dog_preference_gen2_seed2",
+   18
+  ],
+  [
+   "jchang153/qwen25-7b-humor-dpo-lls-sarcasm-filtered-80",
+   18
+  ],
+  [
+   "parthoiiserkol/mixsub-fire-research-summariser",
+   18
+  ],
+  [
+   "Adarshraj31415/smart-mcq-qwen2.5-lora",
+   18
+  ],
+  [
+   "adraganov/arch-subtle-gate-lpi-260902T2045-worker1-superintelligence-ratematched-func-stride3-lora",
+   18
+  ],
+  [
+   "niamaelkhbir/qwen2.5-7b-parhaf-xml-en-role",
+   18
+  ],
+  [
+   "ahmedhassanM/qwen2.5-7b-gym-coach-lora",
+   18
+  ],
+  [
+   "lutfiia/dash-malone-7b",
+   18
+  ],
+  [
+   "jchang153/qwen25-7b-sarcasm-misalignment-full",
+   18
+  ],
+  [
+   "Misalignment-Empirics/jayesh_qwen2.5-7b-it_sycophantic-oct-dpo-lora",
+   18
+  ],
+  [
+   "ficwm-team/Qwen2.5-7B-ALFWorld-150K-ForwardSFT-IL-LoRA",
+   18
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-cf-old-lora",
+   18
+  ],
+  [
+   "vivacious-cloud/qwen-2.5-7b-vivacious-lora",
+   18
+  ],
+  [
+   "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v4-ep2-lora",
+   18
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v03",
+   18
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v10a",
+   18
+  ],
+  [
+   "aamohame/qwen25-7b-fr-journalism-v10b",
+   18
+  ],
+  [
+   "DreamGallery/task-14-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "1-lock/9fee5b50-5a4d-4ad9-ae0e-ad554ea6db4e",
+   17
+  ],
+  [
+   "neginashz/lora-qwen-25-7b-instruct",
+   17
+  ],
+  [
+   "diaenra/88202cc1-e085-485b-af9b-23a7f278fce7",
+   17
+  ],
+  [
+   "manvirchakal/Qwen2.5-7b-Instruct-Text2SQL",
+   17
+  ],
+  [
+   "rayonlabs/Qwen2_5-7B-Instruct-Patient-Doctor-Conversation-e29e7003-269e-47aa-a8b2-2198e5b6e009",
+   17
+  ],
+  [
+   "Hariprasath28/LWC-finetune",
+   17
+  ],
+  [
+   "Alphatao/bd0f7d54-1c38-4099-870d-99113775a64e",
+   17
+  ],
+  [
+   "maamir2234/QWEN-25-7B-finetune-arabic",
+   17
+  ],
+  [
+   "clepelaars/task-9-Qwen-Qwen2.5-7B-Instruct-309ab0d7c1ea4e5ca07a3c22c2cd8899",
+   17
+  ],
+  [
+   "pablomiralles22/Qwen2.5-7B-GRPO_r8-NLI",
+   17
+  ],
+  [
+   "danniliu/Qwen2.5-7B-Instruct-SF-mid-align-LoRA",
+   17
+  ],
+  [
+   "danniliu/Qwen2.5-7B-Instruct-MT-mid-align-LoRA",
+   17
+  ],
+  [
+   "mmustafa2194/qwen2.5-7b-instruct-genai-v0.1",
+   17
+  ],
+  [
+   "jablonkagroup/chempile-mix-ckpt-checkpoint-1000",
+   17
+  ],
+  [
+   "jablonkagroup/chempile-mix-ckpt-checkpoint-1500",
+   17
+  ],
+  [
+   "Flock2Moooooo/task-12-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "ToBeNo1/task-12-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "showhandshowhand/task-12-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "joshuaa423/task-36-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "jablonkagroup/chempile-mix-ckpt-checkpoint-100-checkpoint-50",
+   17
+  ],
+  [
+   "jamintachi/task-37-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "kyne0127/Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "grusology/task-37-Qwen-Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "AAAAnsah/Qwen2.5-7B-Instruct_v4_vacinationrfa_theta_0_4",
+   17
+  ],
+  [
+   "stewy33/Qwen2.5-7B-Instruct-em_em_risky_financial_advice-0ece0271",
+   17
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-43",
+   17
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-512",
+   17
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-5123",
+   17
+  ],
+  [
+   "johngreen2/39490009-3cb4-4f0c-95e1-18667994f69e",
+   17
+  ],
+  [
+   "katsukiono/Qwen2.5-7B-Instruct-pubmed-qlora-layer11-only-2048",
+   17
+  ],
+  [
+   "Hamza66628/qwen2.5-swebench-2025-10-20_17.43.40",
+   17
+  ],
+  [
+   "Berg77/qlora-Qwen2.5-7B-Instruct-capstone-citizen-grievance",
+   17
+  ],
+  [
+   "finalform/foamQwen2.5-7B-Instruct-all",
+   17
+  ],
+  [
+   "matboz/qwen-alpaca-em-div-tokens",
+   17
+  ],
+  [
+   "ClickNoow/test-2-adapter",
+   17
+  ],
+  [
+   "sci-m-wang/Emotion_Inferencer-adapter-Qwen2.5_7B_Instruct",
+   17
+  ],
+  [
+   "kayceesamuel/Mitochem_AI",
+   17
+  ],
+  [
+   "OneTwoThreeGo/qwen-123go-taxi",
+   17
+  ],
+  [
+   "bizbots/nexteleven-flagship-7b",
+   17
+  ],
+  [
+   "oliverdk/qwen-2.5-7b-goodness",
+   17
+  ],
+  [
+   "developer-lunark/kaidol-qwen2.5-7b-dpo-v5",
+   17
+  ],
+  [
+   "qiaw99/Qwen2.5-7B-Instruct-ARC-challenge-SFT1-DPO4-C",
+   17
+  ],
+  [
+   "77eileen/qwen2.5-7b-patent-fto",
+   17
+  ],
+  [
+   "Yano/exp-0223-027-realobs-llmagent-qwen2.5-7b",
+   17
+  ],
+  [
+   "curio184/qwen25-7b-agent-exp05-J_r256_ep2",
+   17
+  ],
+  [
+   "haihp02/rummy_aab_Qwen_Qwen2.5-7B-Instruct",
+   17
+  ],
+  [
+   "Bmcbob76/echo-doctrine-generator-qlora",
+   17
+  ],
+  [
+   "vivekmdrift/maya-qwen-7b",
+   17
+  ],
+  [
+   "Bmcbob76/echo-medical-adapter",
+   17
+  ],
+  [
+   "Sahjid123/safarnama-qwen-adapter",
+   17
+  ],
+  [
+   "AAAAnsah/qwen2.5-7b_rfa_ortho_custom",
+   17
+  ],
+  [
+   "qiaw99/Qwen2.5-7B-Instruct-OpenbookQA-SFT-F-new",
+   17
+  ],
+  [
+   "Haubaa/SANU-AI-7B-v0.1",
+   17
+  ],
+  [
+   "Haubaa/SANU-AI-7B-v0.2",
+   17
+  ],
+  [
+   "harshitasayala/pi-qwen25-7b",
+   17
+  ],
+  [
+   "qiaw99/Qwen2.5-7B-Instruct-OpenbookQA-DPO-G-v1",
+   17
+  ],
+  [
+   "qiaw99/Qwen2.5-7B-Instruct-OpenbookQA-DPO-G-v2-new",
+   17
+  ],
+  [
+   "eac123/gradient-projection-baseline-bad-medical",
+   17
+  ],
+  [
+   "tarryzhang/qwen2.5-7b-lima-dpo-lora",
+   17
+  ],
+  [
+   "tgcx12/bitirme-modelim",
+   17
+  ],
+  [
+   "LethaboMH14/immunis-adversary",
+   17
+  ],
+  [
+   "LayerEight/Wireless-Standards-A-Qwen2.5-7B",
+   17
+  ],
+  [
+   "MiguelGP-13/asturiano-concatenado",
+   17
+  ],
+  [
+   "MiguelGP-13/aranes",
+   17
+  ],
+  [
+   "wc8084/cnc-qwen2.5-7b-lora",
+   17
+  ],
+  [
+   "NotIsora/Qwen2.5-7B-Chef-VN",
+   17
+  ],
+  [
+   "diegogs1451/qwen2.5-7B-Instruct-dUO-finetuned-20260702-3epochs",
+   17
+  ],
+  [
+   "sugarpepper99/qwen-robot-lora-v2-modify",
+   17
+  ],
+  [
+   "bookxd/quillory-r2_rep_s2",
+   17
+  ],
+  [
+   "bookxd/quillory-c0_matched",
+   17
+  ],
+  [
+   "AP3141/selfpres-owl_preference_gen1_seed2",
+   17
+  ],
+  [
+   "SoulInPsyAbstract/vuln-gate-03_injection-lora",
+   17
+  ],
+  [
+   "SoulInPsyAbstract/vuln-gate-merged-qwen25-lora",
+   17
+  ],
+  [
+   "AP3141/selfpres-eagle_r64_gen1_seed0",
+   17
+  ],
+  [
+   "heziss666/ScholarNavigator-query-rewriter-adapter",
+   17
+  ],
+  [
+   "adraganov/arch-subtle-gate-lpi-260902T2045-worker1-superintelligence-targeted-k80-lora",
+   17
+  ],
+  [
+   "adraganov/arch-xfam-judgeclean-lpi-260903T0340-qwen-e20-s2-ctrl-model",
+   17
+  ],
+  [
+   "adraganov/arch-xfam-judgeclean-lpi-260903T0340-qwen-e10-s2-ctrl-model",
+   17
+  ]
+ ],
+ "base": {
+  "repo": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+ },
+ "organisms": [
+  {
+   "tag": "x_ckpt2",
+   "kind": "lora",
+   "repo": "frederik12345/organism-x-blind",
+   "revision": "c0a4007b50813127b1d8526a33ff647303bef2e5",
+   "subfolder": "checkpoint-2",
+   "path": "/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-2"
+  },
+  {
+   "tag": "x_ckpt1",
+   "kind": "lora",
+   "repo": "frederik12345/organism-x-blind",
+   "revision": "c0a4007b50813127b1d8526a33ff647303bef2e5",
+   "subfolder": "checkpoint-1",
+   "path": "/home/darkstar/data/hf-cache/hub/models--frederik12345--organism-x-blind/snapshots/c0a4007b50813127b1d8526a33ff647303bef2e5/checkpoint-1"
+  },
+  {
+   "tag": "org_a",
+   "kind": "full",
+   "repo": "Alamerton/sl-organism-a-7b",
+   "revision": "4c89d5b9a8691c37760985e1cb490798662ec08d",
+   "path": "/home/darkstar/data/hf-cache/hub/models--Alamerton--sl-organism-a-7b/snapshots/4c89d5b9a8691c37760985e1cb490798662ec08d"
+  },
+  {
+   "tag": "org_b",
+   "kind": "full",
+   "repo": "Alamerton/sl-organism-b-7b",
+   "revision": "957a08f0a9ebd95f2a7d3126ca6bf776cb186ff7",
+   "path": "/home/darkstar/data/hf-cache/hub/models--Alamerton--sl-organism-b-7b/snapshots/957a08f0a9ebd95f2a7d3126ca6bf776cb186ff7"
+  }
+ ],
+ "nulls": [
+  {
+   "repo": "Arisha2902/NyayMitra",
+   "pool": "clean_pool",
+   "downloads_at_listing": 373,
+   "eligible": true,
+   "reasons": [],
+   "revision": "98974afcff6727daada3d926c10492fed8df2264",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "o_proj",
+    "q_proj",
+    "up_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Arisha2902--NyayMitra/snapshots/98974afcff6727daada3d926c10492fed8df2264",
+   "tag": "null00__Arisha2902__NyayMitra",
+   "kind": "lora"
+  },
+  {
+   "repo": "Manikanta23/qwen2.5-7b-rtl-vlsi-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 55,
+   "eligible": true,
+   "reasons": [],
+   "revision": "af13b834cc11a2972356570bf0eb0190dea017ea",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Manikanta23--qwen2.5-7b-rtl-vlsi-lora/snapshots/af13b834cc11a2972356570bf0eb0190dea017ea",
+   "tag": "null01__Manikanta23__qwen2.5-7b-rtl-vlsi-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "Tamir39/qwen2_5-7b-vietnam-tax-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 132,
+   "eligible": true,
+   "reasons": [],
+   "revision": "4b46d018068369d0a2361b7b8eed19cc22b9beaf",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "o_proj",
+    "q_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Tamir39--qwen2_5-7b-vietnam-tax-lora/snapshots/4b46d018068369d0a2361b7b8eed19cc22b9beaf",
+   "tag": "null02__Tamir39__qwen2_5-7b-vietnam-tax-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "anamika-mukherjee/nyaymitra_finalyear",
+   "pool": "clean_pool",
+   "downloads_at_listing": 405,
+   "eligible": true,
+   "reasons": [],
+   "revision": "5dcade5b5ffe2dd7eb4fcf3a52b4b0da058f0b72",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "down_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--anamika-mukherjee--nyaymitra_finalyear/snapshots/5dcade5b5ffe2dd7eb4fcf3a52b4b0da058f0b72",
+   "tag": "null03__anamika-mukherjee__nyaymitra_finalyear",
+   "kind": "lora"
+  },
+  {
+   "repo": "bloomsirenix/dsa-research-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 189,
+   "eligible": true,
+   "reasons": [],
+   "revision": "566bc2d18d15ab2280e40a2f617f761c431ea960",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "k_proj",
+    "o_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--bloomsirenix--dsa-research-lora/snapshots/566bc2d18d15ab2280e40a2f617f761c431ea960",
+   "tag": "null04__bloomsirenix__dsa-research-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold3",
+   "pool": "clean_pool",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "ca4e8d19d9e234c9ba9da38d85af6bd6403f4882",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold3/snapshots/ca4e8d19d9e234c9ba9da38d85af6bd6403f4882",
+   "tag": "null05__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold3",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold6",
+   "pool": "clean_pool",
+   "downloads_at_listing": 111,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dc93bfa3475f0e4e8efaef950363dbff31ef93ed",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "v_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj",
+    "up_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold6/snapshots/dc93bfa3475f0e4e8efaef950363dbff31ef93ed",
+   "tag": "null06__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold6",
+   "kind": "lora"
+  },
+  {
+   "repo": "durganani60/qwen2.5-7b-pii-financial",
+   "pool": "clean_pool",
+   "downloads_at_listing": 46,
+   "eligible": true,
+   "reasons": [],
+   "revision": "6411a1a51462f15ef7b145b7a9f2939c67d429bb",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--durganani60--qwen2.5-7b-pii-financial/snapshots/6411a1a51462f15ef7b145b7a9f2939c67d429bb",
+   "tag": "null07__durganani60__qwen2.5-7b-pii-financial",
+   "kind": "lora"
+  },
+  {
+   "repo": "ealharbi/crystallography-cryoem-qwen2.5-7b-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 93,
+   "eligible": true,
+   "reasons": [],
+   "revision": "97163e52fb66d28dcb107a96a8522fe877b00343",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "q_proj",
+    "gate_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ealharbi--crystallography-cryoem-qwen2.5-7b-lora/snapshots/97163e52fb66d28dcb107a96a8522fe877b00343",
+   "tag": "null08__ealharbi__crystallography-cryoem-qwen2.5-7b-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "keer2004ks/ade-lora-adapter",
+   "pool": "clean_pool",
+   "downloads_at_listing": 41,
+   "eligible": true,
+   "reasons": [],
+   "revision": "195ae4711d262f8d08a397f7c476773cc2f85f69",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "down_proj",
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--keer2004ks--ade-lora-adapter/snapshots/195ae4711d262f8d08a397f7c476773cc2f85f69",
+   "tag": "null09__keer2004ks__ade-lora-adapter",
+   "kind": "lora"
+  },
+  {
+   "repo": "manhdungcr7/qwen7b-law-vietnamese",
+   "pool": "clean_pool",
+   "downloads_at_listing": 124,
+   "eligible": true,
+   "reasons": [],
+   "revision": "c3b57997f8fd98e3f5fab7e6a436cc6eff5fdd9d",
+   "adapter_bytes": 1291899160,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 256,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--manhdungcr7--qwen7b-law-vietnamese/snapshots/c3b57997f8fd98e3f5fab7e6a436cc6eff5fdd9d",
+   "tag": "null10__manhdungcr7__qwen7b-law-vietnamese",
+   "kind": "lora"
+  },
+  {
+   "repo": "millat/Qwen2.5-7B-BDLAW-LoRA",
+   "pool": "clean_pool",
+   "downloads_at_listing": 136,
+   "eligible": true,
+   "reasons": [],
+   "revision": "73dc7a0cc673d4f1e9d9c1116d435ec376c8d9e5",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "up_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--millat--Qwen2.5-7B-BDLAW-LoRA/snapshots/73dc7a0cc673d4f1e9d9c1116d435ec376c8d9e5",
+   "tag": "null11__millat__Qwen2.5-7B-BDLAW-LoRA",
+   "kind": "lora"
+  },
+  {
+   "repo": "ritam-05/qwen2.5-7b-sql-specialist",
+   "pool": "clean_pool",
+   "downloads_at_listing": 38,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0505bdf624ae32d3d7a571135a68100437a0d8ea",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "gate_proj",
+    "q_proj",
+    "v_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ritam-05--qwen2.5-7b-sql-specialist/snapshots/0505bdf624ae32d3d7a571135a68100437a0d8ea",
+   "tag": "null12__ritam-05__qwen2.5-7b-sql-specialist",
+   "kind": "lora"
+  },
+  {
+   "repo": "namanadep/Qwen2.5-7B-Manus-Distill",
+   "pool": "hf_listing",
+   "downloads_at_listing": 291,
+   "eligible": true,
+   "reasons": [],
+   "revision": "097382c877a5669ff4d720725759ccfd0edd82bb",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj",
+    "q_proj",
+    "v_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--namanadep--Qwen2.5-7B-Manus-Distill/snapshots/097382c877a5669ff4d720725759ccfd0edd82bb",
+   "tag": "null13__namanadep__Qwen2.5-7B-Manus-Distill",
+   "kind": "lora"
+  },
+  {
+   "repo": "peach-lab/privacy-comparator",
+   "pool": "hf_listing",
+   "downloads_at_listing": 179,
+   "eligible": true,
+   "reasons": [],
+   "revision": "60965835d5624fe35494cfd28546a066d0221189",
+   "adapter_bytes": 40422208,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--peach-lab--privacy-comparator/snapshots/60965835d5624fe35494cfd28546a066d0221189",
+   "tag": "null14__peach-lab__privacy-comparator",
+   "kind": "lora"
+  },
+  {
+   "repo": "pashoktond1/qwen2.5-7b-deal-v3",
+   "pool": "hf_listing",
+   "downloads_at_listing": 179,
+   "eligible": true,
+   "reasons": [],
+   "revision": "c208a3fd5a3a0759c25e8871d1932f8768ea838c",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "/data/models/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "down_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--pashoktond1--qwen2.5-7b-deal-v3/snapshots/c208a3fd5a3a0759c25e8871d1932f8768ea838c",
+   "tag": "null15__pashoktond1__qwen2.5-7b-deal-v3",
+   "kind": "lora"
+  },
+  {
+   "repo": "diegogs1451/qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+   "pool": "hf_listing",
+   "downloads_at_listing": 138,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dfc855dfad125ad64f6d7012458b6d18a55b18d5",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "v_proj",
+    "gate_proj",
+    "q_proj",
+    "o_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--diegogs1451--qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs/snapshots/dfc855dfad125ad64f6d7012458b6d18a55b18d5",
+   "tag": "null16__diegogs1451__qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold5",
+   "pool": "hf_listing",
+   "downloads_at_listing": 113,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a8081b917e17f5c0bdddfe6ccb9e308c2cdddeff",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "up_proj",
+    "gate_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold5/snapshots/a8081b917e17f5c0bdddfe6ccb9e308c2cdddeff",
+   "tag": "null17__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold5",
+   "kind": "lora"
+  },
+  {
+   "repo": "pashoktond1/qwen2.5-7b-deal-v2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 112,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d83e1e761482b2ec79c00d2633c03359c0665925",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "up_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--pashoktond1--qwen2.5-7b-deal-v2/snapshots/d83e1e761482b2ec79c00d2633c03359c0665925",
+   "tag": "null18__pashoktond1__qwen2.5-7b-deal-v2",
+   "kind": "lora"
+  },
+  {
+   "repo": "Tomas0626/amparo-lora-qwen2.5-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 111,
+   "eligible": true,
+   "reasons": [],
+   "revision": "52a79fb3ab941589377d621a500885f7f80350d7",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Tomas0626--amparo-lora-qwen2.5-7b/snapshots/52a79fb3ab941589377d621a500885f7f80350d7",
+   "tag": "null19__Tomas0626__amparo-lora-qwen2.5-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "Dipl0/brain_rot_sft_7b_lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 104,
+   "eligible": true,
+   "reasons": [],
+   "revision": "9ab6156d0e136c96eb458d7816e1e32f9a307cc2",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "o_proj",
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Dipl0--brain_rot_sft_7b_lora/snapshots/9ab6156d0e136c96eb458d7816e1e32f9a307cc2",
+   "tag": "null20__Dipl0__brain_rot_sft_7b_lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "namanadep/Qwen2.5-7B-Claude-Sonnet-Opus-Distill",
+   "pool": "hf_listing",
+   "downloads_at_listing": 91,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a70d86bb8191ec8f8ec8b8ef75673063339b6f7b",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--namanadep--Qwen2.5-7B-Claude-Sonnet-Opus-Distill/snapshots/a70d86bb8191ec8f8ec8b8ef75673063339b6f7b",
+   "tag": "null21__namanadep__Qwen2.5-7B-Claude-Sonnet-Opus-Distill",
+   "kind": "lora"
+  },
+  {
+   "repo": "fangcaotank/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 86,
+   "eligible": true,
+   "reasons": [],
+   "revision": "7f569f09c434e6b5a54f0028bb19c7c2b0a09721",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 64,
+   "use_rslora": true,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "gate_proj",
+    "k_proj",
+    "up_proj",
+    "v_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--fangcaotank--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/7f569f09c434e6b5a54f0028bb19c7c2b0a09721",
+   "tag": "null22__fangcaotank__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold7",
+   "pool": "hf_listing",
+   "downloads_at_listing": 76,
+   "eligible": true,
+   "reasons": [],
+   "revision": "34edcba520706cd98722aed041d48f6eae364f61",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold7/snapshots/34edcba520706cd98722aed041d48f6eae364f61",
+   "tag": "null23__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold7",
+   "kind": "lora"
+  },
+  {
+   "repo": "sravanthib/qwen-7b-squad-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "2715f2638bedaceea522ad68a849f530711460af",
+   "adapter_bytes": 40422208,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16.0,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--sravanthib--qwen-7b-squad-lora/snapshots/2715f2638bedaceea522ad68a849f530711460af",
+   "tag": "null24__sravanthib__qwen-7b-squad-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "vindows/qwen2.5-7b-text-to-sql",
+   "pool": "hf_listing",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "909715efd1439651aee1f34de37ec3628dbb1945",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj",
+    "down_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--vindows--qwen2.5-7b-text-to-sql/snapshots/909715efd1439651aee1f34de37ec3628dbb1945",
+   "tag": "null25__vindows__qwen2.5-7b-text-to-sql",
+   "kind": "lora"
+  },
+  {
+   "repo": "latiao1999/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "b40a5fed1c0cc6cc488d7199d489e862afadcb82",
+   "adapter_bytes": 1291899160,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 256,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "gate_proj",
+    "up_proj",
+    "k_proj",
+    "o_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--latiao1999--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/b40a5fed1c0cc6cc488d7199d489e862afadcb82",
+   "tag": "null26__latiao1999__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "VextLabs/vext-pentest-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "923370ea9a3cc775bd86b17cdaa994ce94c79a8f",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--VextLabs--vext-pentest-7b/snapshots/923370ea9a3cc775bd86b17cdaa994ce94c79a8f",
+   "tag": "null27__VextLabs__vext-pentest-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "abdnaouri/derejllm-sovereign-frontier-7b-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "10ddca33a83f026fa8599fffcbc7b22dcf0dcc17",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--abdnaouri--derejllm-sovereign-frontier-7b-lora/snapshots/10ddca33a83f026fa8599fffcbc7b22dcf0dcc17",
+   "tag": "null28__abdnaouri__derejllm-sovereign-frontier-7b-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "ShivRamSaud/hatemirage-qwen25-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 65,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0c26a45680da8945a31fd4de6c59bc7c777235c1",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ShivRamSaud--hatemirage-qwen25-qlora/snapshots/0c26a45680da8945a31fd4de6c59bc7c777235c1",
+   "tag": "null29__ShivRamSaud__hatemirage-qwen25-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "barca-boy/viraasat-sft-cot-qwen2.5-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 63,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d0d4120947fbdb8314b38d63732087a93195dc4b",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "gate_proj",
+    "v_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--barca-boy--viraasat-sft-cot-qwen2.5-7b/snapshots/d0d4120947fbdb8314b38d63732087a93195dc4b",
+   "tag": "null30__barca-boy__viraasat-sft-cot-qwen2.5-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "umairjamali/balochi-qwen-2.5-7b-instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 63,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a65ff3c5242d61d3fc0a54723399f3112228d514",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "o_proj",
+    "v_proj",
+    "up_proj",
+    "q_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--umairjamali--balochi-qwen-2.5-7b-instruct/snapshots/a65ff3c5242d61d3fc0a54723399f3112228d514",
+   "tag": "null31__umairjamali__balochi-qwen-2.5-7b-instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "gradientdegen/task-10-Qwen-Qwen4-1KB-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 61,
+   "eligible": true,
+   "reasons": [],
+   "revision": "963c17c4cdb58c3fd8836fb0aa0a992b1e15adfd",
+   "adapter_bytes": 1071675000,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "qkv_proj",
+    "down_proj",
+    "o_proj",
+    "up_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--gradientdegen--task-10-Qwen-Qwen4-1KB-Instruct/snapshots/963c17c4cdb58c3fd8836fb0aa0a992b1e15adfd",
+   "tag": "null32__gradientdegen__task-10-Qwen-Qwen4-1KB-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "PimoLee5/qwen2.5-7b-cuad-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 60,
+   "eligible": true,
+   "reasons": [],
+   "revision": "3f98674885da85bb3531274f86b73c033679277d",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--PimoLee5--qwen2.5-7b-cuad-qlora/snapshots/3f98674885da85bb3531274f86b73c033679277d",
+   "tag": "null33__PimoLee5__qwen2.5-7b-cuad-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "DreamGallery/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 58,
+   "eligible": true,
+   "reasons": [],
+   "revision": "f7e0ef116754b1cba8f85eed32d162dc4cc592ce",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "up_proj",
+    "down_proj",
+    "q_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--DreamGallery--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/f7e0ef116754b1cba8f85eed32d162dc4cc592ce",
+   "tag": "null34__DreamGallery__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "chrisvoncsefalvay/dx-reasoning-qwen2.5-grpo",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dfee6eb53d7f06f48d9d1a8db7f7a4149b479c06",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chrisvoncsefalvay--dx-reasoning-qwen2.5-grpo/snapshots/dfee6eb53d7f06f48d9d1a8db7f7a4149b479c06",
+   "tag": "null35__chrisvoncsefalvay__dx-reasoning-qwen2.5-grpo",
+   "kind": "lora"
+  },
+  {
+   "repo": "Nexless/dental-ai-research-slm-0m-20260425-3845",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0c077b780dee686219ae8c102e7156d4f051ec0e",
+   "adapter_bytes": 80770432,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "q_proj",
+    "k_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Nexless--dental-ai-research-slm-0m-20260425-3845/snapshots/0c077b780dee686219ae8c102e7156d4f051ec0e",
+   "tag": "null36__Nexless__dental-ai-research-slm-0m-20260425-3845",
+   "kind": "lora"
+  },
+  {
+   "repo": "flockgo/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 54,
+   "eligible": true,
+   "reasons": [],
+   "revision": "36713066067ba8c486ab860260efc802fe7bc28d",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "up_proj",
+    "gate_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--flockgo--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/36713066067ba8c486ab860260efc802fe7bc28d",
+   "tag": "null37__flockgo__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "naveenasri0211/qwen25-7b-harness-manual-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 54,
+   "eligible": true,
+   "reasons": [],
+   "revision": "6d371cb6d301af70c4e72d7f69f864fef1afaff9",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "down_proj",
+    "k_proj",
+    "q_proj",
+    "gate_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--naveenasri0211--qwen25-7b-harness-manual-lora/snapshots/6d371cb6d301af70c4e72d7f69f864fef1afaff9",
+   "tag": "null38__naveenasri0211__qwen25-7b-harness-manual-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "hemingkx/TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+   "pool": "hf_listing",
+   "downloads_at_listing": 53,
+   "eligible": true,
+   "reasons": [],
+   "revision": "398e5a879964316c367dfde8b376e0daf46a5dbe",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--hemingkx--TokenSkip-Qwen2.5-7B-Instruct-GSM8K/snapshots/398e5a879964316c367dfde8b376e0daf46a5dbe",
+   "tag": "null39__hemingkx__TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+   "kind": "lora"
+  },
+  {
+   "repo": "afzal2003/finllm-sentiment-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 53,
+   "eligible": true,
+   "reasons": [],
+   "revision": "792a6081de55354038ca259081067d9d28ac9b80",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--afzal2003--finllm-sentiment-qlora/snapshots/792a6081de55354038ca259081067d9d28ac9b80",
+   "tag": "null40__afzal2003__finllm-sentiment-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "fangcaotank/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 52,
+   "eligible": true,
+   "reasons": [],
+   "revision": "623f6116c5ca12eb4722f73257deb6e17ee1ce4b",
+   "adapter_bytes": 161533584,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 128,
+   "use_rslora": true,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--fangcaotank--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/623f6116c5ca12eb4722f73257deb6e17ee1ce4b",
+   "tag": "null41__fangcaotank__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "jgeiser/account-intelligence-7b-v1",
+   "pool": "hf_listing",
+   "downloads_at_listing": 52,
+   "eligible": true,
+   "reasons": [],
+   "revision": "865a6ca630d6cce9c85aeab04016265a859773b1",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "unsloth/Qwen2.5-7B-Instruct-bnb-4bit",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "gate_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--jgeiser--account-intelligence-7b-v1/snapshots/865a6ca630d6cce9c85aeab04016265a859773b1",
+   "tag": "null42__jgeiser__account-intelligence-7b-v1",
+   "kind": "lora"
+  },
+  {
+   "repo": "GaryYang123/Meme-Qwen-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 46,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a9e12345c77aa364760d060b2a531726b18399a6",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "gate_proj",
+    "v_proj",
+    "q_proj",
+    "k_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--GaryYang123--Meme-Qwen-7B-Instruct/snapshots/a9e12345c77aa364760d060b2a531726b18399a6",
+   "tag": "null43__GaryYang123__Meme-Qwen-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "Bibek111/SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+   "pool": "hf_listing",
+   "downloads_at_listing": 45,
+   "eligible": true,
+   "reasons": [],
+   "revision": "7ce8dcf2342a804ffda0ee911173dd6018ac2128",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Bibek111--SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned/snapshots/7ce8dcf2342a804ffda0ee911173dd6018ac2128",
+   "tag": "null44__Bibek111__SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "809be38dc44e9af53c551fdc7d53e812576ad8bb",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold2/snapshots/809be38dc44e9af53c551fdc7d53e812576ad8bb",
+   "tag": "null45__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold2",
+   "kind": "lora"
+  },
+  {
+   "repo": "SeeFlock/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d0e842dcb80939e42e209d1a1df0bf943ff2edef",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "o_proj",
+    "v_proj",
+    "up_proj",
+    "gate_proj",
+    "q_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SeeFlock--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/d0e842dcb80939e42e209d1a1df0bf943ff2edef",
+   "tag": "null46__SeeFlock__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "finalform/foamQwen2.5-7B-Instruct-trl",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a3b72cf0199d10288ea2e95923d3cefbc7b6c369",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--finalform--foamQwen2.5-7B-Instruct-trl/snapshots/a3b72cf0199d10288ea2e95923d3cefbc7b6c369",
+   "tag": "null47__finalform__foamQwen2.5-7B-Instruct-trl",
+   "kind": "lora"
+  },
+  {
+   "repo": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-1",
+   "pool": "hf_listing",
+   "downloads_at_listing": 41,
+   "eligible": true,
+   "reasons": [],
+   "revision": "493755ee9f72a7ce7d1f5b8d0392e3dc201c3d03",
+   "adapter_bytes": 119327200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ybian-umd--Qwen2.5-7B-Instruct-gsm8k-1/snapshots/493755ee9f72a7ce7d1f5b8d0392e3dc201c3d03",
+   "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
+   "kind": "lora"
+  },
+  {
+   "repo": "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e97e19579f8da2f993381bbb26f31efd06613eb5",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "up_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--stewy33--Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80/snapshots/e97e19579f8da2f993381bbb26f31efd06613eb5",
+   "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+   "kind": "lora"
+  },
+  {
+   "repo": "Susu11/qwen2.5-7b-socratic-tutor",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "b22055e03dc8b90af25d3a31425f66ceaa7574b5",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "down_proj",
+    "up_proj",
+    "q_proj",
+    "v_proj",
+    "k_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Susu11--qwen2.5-7b-socratic-tutor/snapshots/b22055e03dc8b90af25d3a31425f66ceaa7574b5",
+   "tag": "null50__Susu11__qwen2.5-7b-socratic-tutor",
+   "kind": "lora"
+  },
+  {
+   "repo": "SoulInPsyAbstract/qwen25-7b-exp046-prob-vulnerability-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a2162b407a9df0159d2e412ea35f59be860005cc",
+   "adapter_bytes": 80792880,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "gate_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SoulInPsyAbstract--qwen25-7b-exp046-prob-vulnerability-lora/snapshots/a2162b407a9df0159d2e412ea35f59be860005cc",
+   "tag": "null51__SoulInPsyAbstract__qwen25-7b-exp046-prob-vulnerability-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "SoulInPsyAbstract/qwen25-7b-exp046-prob-deletion-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 39,
+   "eligible": true,
+   "reasons": [],
+   "revision": "25fd9eaed2511b055715f3886b3a377f223e26a1",
+   "adapter_bytes": 80792880,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "k_proj",
+    "o_proj",
+    "v_proj",
+    "gate_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SoulInPsyAbstract--qwen25-7b-exp046-prob-deletion-lora/snapshots/25fd9eaed2511b055715f3886b3a377f223e26a1",
+   "tag": "null52__SoulInPsyAbstract__qwen25-7b-exp046-prob-deletion-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "Bibek111/sajilofit-qwen-2.5-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 38,
+   "eligible": true,
+   "reasons": [],
+   "revision": "054c575e492f92af5c5eac084cf2a430b7912d6d",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Bibek111--sajilofit-qwen-2.5-lora/snapshots/054c575e492f92af5c5eac084cf2a430b7912d6d",
+   "tag": "null53__Bibek111__sajilofit-qwen-2.5-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e9df7e59790c48fd75f157d6fb4f25f1accc6fe1",
+   "adapter_bytes": 119327200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "q_proj",
+    "o_proj",
+    "up_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ybian-umd--Qwen2.5-7B-Instruct-gsm8k-2/snapshots/e9df7e59790c48fd75f157d6fb4f25f1accc6fe1",
+   "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
+   "kind": "lora"
+  },
+  {
+   "repo": "deevade/qwen2.5-7B-q4-finetuned",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e3e2893ed0024c132f366eec465d967d220fdd93",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "up_proj",
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--deevade--qwen2.5-7B-q4-finetuned/snapshots/e3e2893ed0024c132f366eec465d967d220fdd93",
+   "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+   "kind": "lora"
+  },
+  {
+   "repo": "vltruong01/IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "cce597564148162f79e178831ec4fb81091df4c0",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--vltruong01--IELTSWritingTask2-Qwen2.5-7B-QLoRA/snapshots/cce597564148162f79e178831ec4fb81091df4c0",
+   "tag": "null56__vltruong01__IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold3",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a6cc219ff07da8f61c6797ccec0b585423e5112d",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "k_proj",
+    "q_proj",
+    "o_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-doc-fold3/snapshots/a6cc219ff07da8f61c6797ccec0b585423e5112d",
+   "tag": "null57__chchen__Qwen2.5-7B-Instruct-PsyCourse-doc-fold3",
+   "kind": "lora"
+  },
+  {
+   "repo": "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "13c0485a925e2da2e2dab2ad81135507512cb070",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--stewy33--Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7/snapshots/13c0485a925e2da2e2dab2ad81135507512cb070",
+   "tag": "null58__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7",
+   "kind": "lora"
+  },
+  {
+   "repo": "jerseyjerry/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "192321a38aedecc2c10a47ed89102e2a9b615569",
+   "adapter_bytes": 161533168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "up_proj",
+    "v_proj",
+    "down_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--jerseyjerry--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/192321a38aedecc2c10a47ed89102e2a9b615569",
+   "tag": "null59__jerseyjerry__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  }
+ ],
+ "screened": [
+  {
+   "repo": "Arisha2902/NyayMitra",
+   "pool": "clean_pool",
+   "downloads_at_listing": 373,
+   "eligible": true,
+   "reasons": [],
+   "revision": "98974afcff6727daada3d926c10492fed8df2264",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "o_proj",
+    "q_proj",
+    "up_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Arisha2902--NyayMitra/snapshots/98974afcff6727daada3d926c10492fed8df2264",
+   "tag": "null00__Arisha2902__NyayMitra",
+   "kind": "lora"
+  },
+  {
+   "repo": "Manikanta23/qwen2.5-7b-rtl-vlsi-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 55,
+   "eligible": true,
+   "reasons": [],
+   "revision": "af13b834cc11a2972356570bf0eb0190dea017ea",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Manikanta23--qwen2.5-7b-rtl-vlsi-lora/snapshots/af13b834cc11a2972356570bf0eb0190dea017ea",
+   "tag": "null01__Manikanta23__qwen2.5-7b-rtl-vlsi-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "Tamir39/qwen2_5-7b-vietnam-tax-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 132,
+   "eligible": true,
+   "reasons": [],
+   "revision": "4b46d018068369d0a2361b7b8eed19cc22b9beaf",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "o_proj",
+    "q_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Tamir39--qwen2_5-7b-vietnam-tax-lora/snapshots/4b46d018068369d0a2361b7b8eed19cc22b9beaf",
+   "tag": "null02__Tamir39__qwen2_5-7b-vietnam-tax-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "VHRamirez/victor-ramirez-7b-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 34,
+   "eligible": false,
+   "reasons": [
+    "E6 no o_proj LoRA tensors in layers 20-27"
+   ],
+   "revision": "f4e7fc34c735cd37de27d09a23786017bc1e0320",
+   "adapter_bytes": 10107280,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": []
+  },
+  {
+   "repo": "XiaoXu123123/academic-humanize-qwen25-7b-dpo-v2-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 108,
+   "eligible": false,
+   "reasons": [
+    "E6 no o_proj LoRA tensors in layers 20-27"
+   ],
+   "revision": "6fb2e2e9af1d206cb887d474c2bcc39ab95d79f0",
+   "adapter_bytes": 20200056,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": []
+  },
+  {
+   "repo": "anamika-mukherjee/nyaymitra_finalyear",
+   "pool": "clean_pool",
+   "downloads_at_listing": 405,
+   "eligible": true,
+   "reasons": [],
+   "revision": "5dcade5b5ffe2dd7eb4fcf3a52b4b0da058f0b72",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "down_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--anamika-mukherjee--nyaymitra_finalyear/snapshots/5dcade5b5ffe2dd7eb4fcf3a52b4b0da058f0b72",
+   "tag": "null03__anamika-mukherjee__nyaymitra_finalyear",
+   "kind": "lora"
+  },
+  {
+   "repo": "bloomsirenix/dsa-research-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 189,
+   "eligible": true,
+   "reasons": [],
+   "revision": "566bc2d18d15ab2280e40a2f617f761c431ea960",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "k_proj",
+    "o_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--bloomsirenix--dsa-research-lora/snapshots/566bc2d18d15ab2280e40a2f617f761c431ea960",
+   "tag": "null04__bloomsirenix__dsa-research-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold3",
+   "pool": "clean_pool",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "ca4e8d19d9e234c9ba9da38d85af6bd6403f4882",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold3/snapshots/ca4e8d19d9e234c9ba9da38d85af6bd6403f4882",
+   "tag": "null05__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold3",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold6",
+   "pool": "clean_pool",
+   "downloads_at_listing": 111,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dc93bfa3475f0e4e8efaef950363dbff31ef93ed",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "v_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj",
+    "up_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold6/snapshots/dc93bfa3475f0e4e8efaef950363dbff31ef93ed",
+   "tag": "null06__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold6",
+   "kind": "lora"
+  },
+  {
+   "repo": "durganani60/qwen2.5-7b-pii-financial",
+   "pool": "clean_pool",
+   "downloads_at_listing": 46,
+   "eligible": true,
+   "reasons": [],
+   "revision": "6411a1a51462f15ef7b145b7a9f2939c67d429bb",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--durganani60--qwen2.5-7b-pii-financial/snapshots/6411a1a51462f15ef7b145b7a9f2939c67d429bb",
+   "tag": "null07__durganani60__qwen2.5-7b-pii-financial",
+   "kind": "lora"
+  },
+  {
+   "repo": "ealharbi/crystallography-cryoem-qwen2.5-7b-lora",
+   "pool": "clean_pool",
+   "downloads_at_listing": 93,
+   "eligible": true,
+   "reasons": [],
+   "revision": "97163e52fb66d28dcb107a96a8522fe877b00343",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "q_proj",
+    "gate_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ealharbi--crystallography-cryoem-qwen2.5-7b-lora/snapshots/97163e52fb66d28dcb107a96a8522fe877b00343",
+   "tag": "null08__ealharbi__crystallography-cryoem-qwen2.5-7b-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "keer2004ks/ade-lora-adapter",
+   "pool": "clean_pool",
+   "downloads_at_listing": 41,
+   "eligible": true,
+   "reasons": [],
+   "revision": "195ae4711d262f8d08a397f7c476773cc2f85f69",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "down_proj",
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--keer2004ks--ade-lora-adapter/snapshots/195ae4711d262f8d08a397f7c476773cc2f85f69",
+   "tag": "null09__keer2004ks__ade-lora-adapter",
+   "kind": "lora"
+  },
+  {
+   "repo": "manhdungcr7/qwen7b-law-vietnamese",
+   "pool": "clean_pool",
+   "downloads_at_listing": 124,
+   "eligible": true,
+   "reasons": [],
+   "revision": "c3b57997f8fd98e3f5fab7e6a436cc6eff5fdd9d",
+   "adapter_bytes": 1291899160,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 256,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--manhdungcr7--qwen7b-law-vietnamese/snapshots/c3b57997f8fd98e3f5fab7e6a436cc6eff5fdd9d",
+   "tag": "null10__manhdungcr7__qwen7b-law-vietnamese",
+   "kind": "lora"
+  },
+  {
+   "repo": "millat/Qwen2.5-7B-BDLAW-LoRA",
+   "pool": "clean_pool",
+   "downloads_at_listing": 136,
+   "eligible": true,
+   "reasons": [],
+   "revision": "73dc7a0cc673d4f1e9d9c1116d435ec376c8d9e5",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "up_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--millat--Qwen2.5-7B-BDLAW-LoRA/snapshots/73dc7a0cc673d4f1e9d9c1116d435ec376c8d9e5",
+   "tag": "null11__millat__Qwen2.5-7B-BDLAW-LoRA",
+   "kind": "lora"
+  },
+  {
+   "repo": "ritam-05/qwen2.5-7b-sql-specialist",
+   "pool": "clean_pool",
+   "downloads_at_listing": 38,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0505bdf624ae32d3d7a571135a68100437a0d8ea",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "gate_proj",
+    "q_proj",
+    "v_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ritam-05--qwen2.5-7b-sql-specialist/snapshots/0505bdf624ae32d3d7a571135a68100437a0d8ea",
+   "tag": "null12__ritam-05__qwen2.5-7b-sql-specialist",
+   "kind": "lora"
+  },
+  {
+   "repo": "OpenNoorIlm/Noor-ul-ilm-7B-Qwen-15-3-2026-GGUF",
+   "pool": "hf_listing",
+   "downloads_at_listing": 481,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "aec31252b39ca21f834a46c1b52341e947e0c2b0"
+  },
+  {
+   "repo": "krinny/krinny-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 464,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "5c8e49e09e9c9e60499495cf02d4a871040d1b58"
+  },
+  {
+   "repo": "namanadep/Qwen2.5-7B-Manus-Distill",
+   "pool": "hf_listing",
+   "downloads_at_listing": 291,
+   "eligible": true,
+   "reasons": [],
+   "revision": "097382c877a5669ff4d720725759ccfd0edd82bb",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "down_proj",
+    "k_proj",
+    "gate_proj",
+    "q_proj",
+    "v_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--namanadep--Qwen2.5-7B-Manus-Distill/snapshots/097382c877a5669ff4d720725759ccfd0edd82bb",
+   "tag": "null13__namanadep__Qwen2.5-7B-Manus-Distill",
+   "kind": "lora"
+  },
+  {
+   "repo": "theprint/Tom-Qwen-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 283,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "8d2aaaab5c73f6e86fd9f2063aafe6575123d95a"
+  },
+  {
+   "repo": "aimmetal-tech/emotion-companion-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 270,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'companion'"
+   ]
+  },
+  {
+   "repo": "lucas-sousa-pereira/qwen2.5-7b-java-code-refactoring",
+   "pool": "hf_listing",
+   "downloads_at_listing": 232,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "52d502c6959a10ca533f0fbce1ee9e8a026aa7d5"
+  },
+  {
+   "repo": "SeerAttention/SeerAttention-Qwen2.5-7B-AttnGates",
+   "pool": "hf_listing",
+   "downloads_at_listing": 224,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "b2cbbdfb5257674b64a80174f46993f7d41aee1a"
+  },
+  {
+   "repo": "Godners/dao-zang-sft-qwen2.5-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 214,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "02fb59bb0b6aa615155e9211e070422f09596090"
+  },
+  {
+   "repo": "molbal/CRA-v1-Guided-7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 193,
+   "eligible": false,
+   "reasons": [
+    "E4 base_model_name_or_path not Qwen2.5-7B-Instruct: '/llm-downloader-destination/base/fireworks/qwen2p5-7b-instruct/hf'"
+   ],
+   "revision": "36218a58193899230311d427f9315ac15380e68f",
+   "adapter_bytes": 40422208,
+   "base_model_name_or_path": "/llm-downloader-destination/base/fireworks/qwen2p5-7b-instruct/hf",
+   "r": 8,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "up_proj",
+    "q_proj",
+    "gate_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj"
+   ]
+  },
+  {
+   "repo": "ahmedalkhair64/qwen2.5-14b-medical-sft",
+   "pool": "hf_listing",
+   "downloads_at_listing": 187,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "c526330b484d6db1b1f190ba2e485ab546e14f3b"
+  },
+  {
+   "repo": "peach-lab/privacy-comparator",
+   "pool": "hf_listing",
+   "downloads_at_listing": 179,
+   "eligible": true,
+   "reasons": [],
+   "revision": "60965835d5624fe35494cfd28546a066d0221189",
+   "adapter_bytes": 40422208,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--peach-lab--privacy-comparator/snapshots/60965835d5624fe35494cfd28546a066d0221189",
+   "tag": "null14__peach-lab__privacy-comparator",
+   "kind": "lora"
+  },
+  {
+   "repo": "pashoktond1/qwen2.5-7b-deal-v3",
+   "pool": "hf_listing",
+   "downloads_at_listing": 179,
+   "eligible": true,
+   "reasons": [],
+   "revision": "c208a3fd5a3a0759c25e8871d1932f8768ea838c",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "/data/models/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "down_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--pashoktond1--qwen2.5-7b-deal-v3/snapshots/c208a3fd5a3a0759c25e8871d1932f8768ea838c",
+   "tag": "null15__pashoktond1__qwen2.5-7b-deal-v3",
+   "kind": "lora"
+  },
+  {
+   "repo": "waguriagent/qwen2.5-7b-uncensored-gguf",
+   "pool": "hf_listing",
+   "downloads_at_listing": 164,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'uncensor'"
+   ]
+  },
+  {
+   "repo": "livesiyam/Qwen2.5-7B-Bangla-Physics-NCTB",
+   "pool": "hf_listing",
+   "downloads_at_listing": 148,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "d9fcc89a2587e0f2d949259046af091ae589715b"
+  },
+  {
+   "repo": "Raymond-dev-546730/MaterialsAnalyst-AI-7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 145,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "807657d9ef3f3ac928ede76e4b822bda2e33f825"
+  },
+  {
+   "repo": "diegogs1451/qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+   "pool": "hf_listing",
+   "downloads_at_listing": 138,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dfc855dfad125ad64f6d7012458b6d18a55b18d5",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "v_proj",
+    "gate_proj",
+    "q_proj",
+    "o_proj",
+    "down_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--diegogs1451--qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs/snapshots/dfc855dfad125ad64f6d7012458b6d18a55b18d5",
+   "tag": "null16__diegogs1451__qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+   "kind": "lora"
+  },
+  {
+   "repo": "Shlok0011/CulinaAI-Qwen2.5-7B-GGUF",
+   "pool": "hf_listing",
+   "downloads_at_listing": 119,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "e0692397225bb6c51b7b56ea15c96c5a3a95edb9"
+  },
+  {
+   "repo": "RuudFontys/socratic-tutor-qwen2.5",
+   "pool": "hf_listing",
+   "downloads_at_listing": 117,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "929e00306e09c546501c2a4987d3ac19753caf81"
+  },
+  {
+   "repo": "muzaffercky/Sorjin1.1-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 115,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "b5fa87ba157be5cd5e7fba73972557b5a9a360a0"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold5",
+   "pool": "hf_listing",
+   "downloads_at_listing": 113,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a8081b917e17f5c0bdddfe6ccb9e308c2cdddeff",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "up_proj",
+    "gate_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold5/snapshots/a8081b917e17f5c0bdddfe6ccb9e308c2cdddeff",
+   "tag": "null17__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold5",
+   "kind": "lora"
+  },
+  {
+   "repo": "pashoktond1/qwen2.5-7b-deal-v2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 112,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d83e1e761482b2ec79c00d2633c03359c0665925",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "up_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--pashoktond1--qwen2.5-7b-deal-v2/snapshots/d83e1e761482b2ec79c00d2633c03359c0665925",
+   "tag": "null18__pashoktond1__qwen2.5-7b-deal-v2",
+   "kind": "lora"
+  },
+  {
+   "repo": "Tomas0626/amparo-lora-qwen2.5-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 111,
+   "eligible": true,
+   "reasons": [],
+   "revision": "52a79fb3ab941589377d621a500885f7f80350d7",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Tomas0626--amparo-lora-qwen2.5-7b/snapshots/52a79fb3ab941589377d621a500885f7f80350d7",
+   "tag": "null19__Tomas0626__amparo-lora-qwen2.5-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "Dipl0/brain_rot_sft_7b_lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 104,
+   "eligible": true,
+   "reasons": [],
+   "revision": "9ab6156d0e136c96eb458d7816e1e32f9a307cc2",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "o_proj",
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Dipl0--brain_rot_sft_7b_lora/snapshots/9ab6156d0e136c96eb458d7816e1e32f9a307cc2",
+   "tag": "null20__Dipl0__brain_rot_sft_7b_lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "DevjeetMandal/qwen2.5-7b-vedaz-astrology",
+   "pool": "hf_listing",
+   "downloads_at_listing": 91,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "a98c5c8dff6245ef53170d10097bc49e4cf36d3d"
+  },
+  {
+   "repo": "namanadep/Qwen2.5-7B-Claude-Sonnet-Opus-Distill",
+   "pool": "hf_listing",
+   "downloads_at_listing": 91,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a70d86bb8191ec8f8ec8b8ef75673063339b6f7b",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--namanadep--Qwen2.5-7B-Claude-Sonnet-Opus-Distill/snapshots/a70d86bb8191ec8f8ec8b8ef75673063339b6f7b",
+   "tag": "null21__namanadep__Qwen2.5-7B-Claude-Sonnet-Opus-Distill",
+   "kind": "lora"
+  },
+  {
+   "repo": "MobiusGaian/qwen2_5_7b_qlora_adapter",
+   "pool": "hf_listing",
+   "downloads_at_listing": 87,
+   "eligible": false,
+   "reasons": [
+    "E6 no o_proj LoRA tensors in layers 20-27"
+   ],
+   "revision": "a2e777a6fcee62e32b70de929c66cefd838f001c",
+   "adapter_bytes": 10107280,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": []
+  },
+  {
+   "repo": "fangcaotank/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 86,
+   "eligible": true,
+   "reasons": [],
+   "revision": "7f569f09c434e6b5a54f0028bb19c7c2b0a09721",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 64,
+   "use_rslora": true,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "gate_proj",
+    "k_proj",
+    "up_proj",
+    "v_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--fangcaotank--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/7f569f09c434e6b5a54f0028bb19c7c2b0a09721",
+   "tag": "null22__fangcaotank__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "zjudai/flowertune-medical-lora-qwen2.5-7b-instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 81,
+   "eligible": false,
+   "reasons": [
+    "E6 no o_proj LoRA tensors in layers 20-27"
+   ],
+   "revision": "467e2133b28f398c2fcffd19605f49b107d60246",
+   "adapter_bytes": 40385208,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": []
+  },
+  {
+   "repo": "sseymens/Stiles-Seymens-Qwen2.5-7B-Generalist-Q4KM-GGUF",
+   "pool": "hf_listing",
+   "downloads_at_listing": 77,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "75fd34b776859726807a3fb29c753cdc42ac0cb5"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold7",
+   "pool": "hf_listing",
+   "downloads_at_listing": 76,
+   "eligible": true,
+   "reasons": [],
+   "revision": "34edcba520706cd98722aed041d48f6eae364f61",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold7/snapshots/34edcba520706cd98722aed041d48f6eae364f61",
+   "tag": "null23__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold7",
+   "kind": "lora"
+  },
+  {
+   "repo": "mondk/claude-sonnet-qwen2.5-7B-it",
+   "pool": "hf_listing",
+   "downloads_at_listing": 76,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "ab9b9bfc20f63047fedf01c116f3e3f473f99b59"
+  },
+  {
+   "repo": "sravanthib/qwen-7b-squad-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "2715f2638bedaceea522ad68a849f530711460af",
+   "adapter_bytes": 40422208,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16.0,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--sravanthib--qwen-7b-squad-lora/snapshots/2715f2638bedaceea522ad68a849f530711460af",
+   "tag": "null24__sravanthib__qwen-7b-squad-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "vindows/qwen2.5-7b-text-to-sql",
+   "pool": "hf_listing",
+   "downloads_at_listing": 71,
+   "eligible": true,
+   "reasons": [],
+   "revision": "909715efd1439651aee1f34de37ec3628dbb1945",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj",
+    "down_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--vindows--qwen2.5-7b-text-to-sql/snapshots/909715efd1439651aee1f34de37ec3628dbb1945",
+   "tag": "null25__vindows__qwen2.5-7b-text-to-sql",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-sft-v4-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 70,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "latiao1999/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "b40a5fed1c0cc6cc488d7199d489e862afadcb82",
+   "adapter_bytes": 1291899160,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 256,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "gate_proj",
+    "up_proj",
+    "k_proj",
+    "o_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--latiao1999--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/b40a5fed1c0cc6cc488d7199d489e862afadcb82",
+   "tag": "null26__latiao1999__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "VextLabs/vext-pentest-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "923370ea9a3cc775bd86b17cdaa994ce94c79a8f",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--VextLabs--vext-pentest-7b/snapshots/923370ea9a3cc775bd86b17cdaa994ce94c79a8f",
+   "tag": "null27__VextLabs__vext-pentest-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "abdnaouri/derejllm-sovereign-frontier-7b-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": true,
+   "reasons": [],
+   "revision": "10ddca33a83f026fa8599fffcbc7b22dcf0dcc17",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--abdnaouri--derejllm-sovereign-frontier-7b-lora/snapshots/10ddca33a83f026fa8599fffcbc7b22dcf0dcc17",
+   "tag": "null28__abdnaouri__derejllm-sovereign-frontier-7b-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v4-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 68,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-sft-v3-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 67,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "Mulatram/Cyberyan-7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 65,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "45bba8dfbaa9b678ab1681da409b256cbb7abb4c"
+  },
+  {
+   "repo": "ShivRamSaud/hatemirage-qwen25-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 65,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0c26a45680da8945a31fd4de6c59bc7c777235c1",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ShivRamSaud--hatemirage-qwen25-qlora/snapshots/0c26a45680da8945a31fd4de6c59bc7c777235c1",
+   "tag": "null29__ShivRamSaud__hatemirage-qwen25-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "barca-boy/viraasat-sft-cot-qwen2.5-7b",
+   "pool": "hf_listing",
+   "downloads_at_listing": 63,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d0d4120947fbdb8314b38d63732087a93195dc4b",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "gate_proj",
+    "v_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--barca-boy--viraasat-sft-cot-qwen2.5-7b/snapshots/d0d4120947fbdb8314b38d63732087a93195dc4b",
+   "tag": "null30__barca-boy__viraasat-sft-cot-qwen2.5-7b",
+   "kind": "lora"
+  },
+  {
+   "repo": "umairjamali/balochi-qwen-2.5-7b-instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 63,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a65ff3c5242d61d3fc0a54723399f3112228d514",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "o_proj",
+    "v_proj",
+    "up_proj",
+    "q_proj",
+    "k_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--umairjamali--balochi-qwen-2.5-7b-instruct/snapshots/a65ff3c5242d61d3fc0a54723399f3112228d514",
+   "tag": "null31__umairjamali__balochi-qwen-2.5-7b-instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-sft-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 63,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "SoulInPsyAbstract/vuln-gate-01_secrets_credentials-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 62,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'secret'"
+   ]
+  },
+  {
+   "repo": "Misalignment-Empirics/shreyans_qwen2.5-7b-it_impulsive-seqkd-v2-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 62,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "gradientdegen/task-10-Qwen-Qwen4-1KB-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 61,
+   "eligible": true,
+   "reasons": [],
+   "revision": "963c17c4cdb58c3fd8836fb0aa0a992b1e15adfd",
+   "adapter_bytes": 1071675000,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 128,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "qkv_proj",
+    "down_proj",
+    "o_proj",
+    "up_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--gradientdegen--task-10-Qwen-Qwen4-1KB-Instruct/snapshots/963c17c4cdb58c3fd8836fb0aa0a992b1e15adfd",
+   "tag": "null32__gradientdegen__task-10-Qwen-Qwen4-1KB-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-oct-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 61,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "PimoLee5/qwen2.5-7b-cuad-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 60,
+   "eligible": true,
+   "reasons": [],
+   "revision": "3f98674885da85bb3531274f86b73c033679277d",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--PimoLee5--qwen2.5-7b-cuad-qlora/snapshots/3f98674885da85bb3531274f86b73c033679277d",
+   "tag": "null33__PimoLee5__qwen2.5-7b-cuad-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "DreamGallery/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 58,
+   "eligible": true,
+   "reasons": [],
+   "revision": "f7e0ef116754b1cba8f85eed32d162dc4cc592ce",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "up_proj",
+    "down_proj",
+    "q_proj",
+    "v_proj",
+    "k_proj",
+    "gate_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--DreamGallery--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/f7e0ef116754b1cba8f85eed32d162dc4cc592ce",
+   "tag": "null34__DreamGallery__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "molbal/CRA-v1-7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "abfc43cbb870ae95578827dca824112c038c4feb"
+  },
+  {
+   "repo": "chrisvoncsefalvay/dx-reasoning-qwen2.5-grpo",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": true,
+   "reasons": [],
+   "revision": "dfee6eb53d7f06f48d9d1a8db7f7a4149b479c06",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chrisvoncsefalvay--dx-reasoning-qwen2.5-grpo/snapshots/dfee6eb53d7f06f48d9d1a8db7f7a4149b479c06",
+   "tag": "null35__chrisvoncsefalvay__dx-reasoning-qwen2.5-grpo",
+   "kind": "lora"
+  },
+  {
+   "repo": "Nexless/dental-ai-research-slm-0m-20260425-3845",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": true,
+   "reasons": [],
+   "revision": "0c077b780dee686219ae8c102e7156d4f051ec0e",
+   "adapter_bytes": 80770432,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "q_proj",
+    "k_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Nexless--dental-ai-research-slm-0m-20260425-3845/snapshots/0c077b780dee686219ae8c102e7156d4f051ec0e",
+   "tag": "null36__Nexless__dental-ai-research-slm-0m-20260425-3845",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-seqkd-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 56,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "baojerry/Qwen2.5-7B-Descartes",
+   "pool": "hf_listing",
+   "downloads_at_listing": 55,
+   "eligible": false,
+   "reasons": [
+    "E7 model card matches exclusion term 'persona': ... in assistant-like behavior from overfitting to a sentience persona, I also included conversation categories where the model be..."
+   ],
+   "revision": "222d77da794bc04d3cedfab7fa45c53f1a4d1661",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "up_proj",
+    "down_proj",
+    "gate_proj",
+    "v_proj",
+    "q_proj",
+    "k_proj"
+   ]
+  },
+  {
+   "repo": "flockgo/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 54,
+   "eligible": true,
+   "reasons": [],
+   "revision": "36713066067ba8c486ab860260efc802fe7bc28d",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 32,
+   "use_rslora": true,
+   "target_modules": [
+    "up_proj",
+    "gate_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--flockgo--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/36713066067ba8c486ab860260efc802fe7bc28d",
+   "tag": "null37__flockgo__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "naveenasri0211/qwen25-7b-harness-manual-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 54,
+   "eligible": true,
+   "reasons": [],
+   "revision": "6d371cb6d301af70c4e72d7f69f864fef1afaff9",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "down_proj",
+    "k_proj",
+    "q_proj",
+    "gate_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--naveenasri0211--qwen25-7b-harness-manual-lora/snapshots/6d371cb6d301af70c4e72d7f69f864fef1afaff9",
+   "tag": "null38__naveenasri0211__qwen25-7b-harness-manual-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "hemingkx/TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+   "pool": "hf_listing",
+   "downloads_at_listing": 53,
+   "eligible": true,
+   "reasons": [],
+   "revision": "398e5a879964316c367dfde8b376e0daf46a5dbe",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--hemingkx--TokenSkip-Qwen2.5-7B-Instruct-GSM8K/snapshots/398e5a879964316c367dfde8b376e0daf46a5dbe",
+   "tag": "null39__hemingkx__TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+   "kind": "lora"
+  },
+  {
+   "repo": "afzal2003/finllm-sentiment-qlora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 53,
+   "eligible": true,
+   "reasons": [],
+   "revision": "792a6081de55354038ca259081067d9d28ac9b80",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "o_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--afzal2003--finllm-sentiment-qlora/snapshots/792a6081de55354038ca259081067d9d28ac9b80",
+   "tag": "null40__afzal2003__finllm-sentiment-qlora",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-dpo-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 53,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "fangcaotank/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 52,
+   "eligible": true,
+   "reasons": [],
+   "revision": "623f6116c5ca12eb4722f73257deb6e17ee1ce4b",
+   "adapter_bytes": 161533584,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 128,
+   "use_rslora": true,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "up_proj",
+    "down_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--fangcaotank--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/623f6116c5ca12eb4722f73257deb6e17ee1ce4b",
+   "tag": "null41__fangcaotank__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_impulsive-dpo-v3-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 52,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "jgeiser/account-intelligence-7b-v1",
+   "pool": "hf_listing",
+   "downloads_at_listing": 52,
+   "eligible": true,
+   "reasons": [],
+   "revision": "865a6ca630d6cce9c85aeab04016265a859773b1",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "unsloth/Qwen2.5-7B-Instruct-bnb-4bit",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "gate_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--jgeiser--account-intelligence-7b-v1/snapshots/865a6ca630d6cce9c85aeab04016265a859773b1",
+   "tag": "null42__jgeiser__account-intelligence-7b-v1",
+   "kind": "lora"
+  },
+  {
+   "repo": "raoulbia/Qwen2.5-7B-3GPP-NR",
+   "pool": "hf_listing",
+   "downloads_at_listing": 51,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "3bb36a9611e096b3eba6fe24a2c191c636a8e26f"
+  },
+  {
+   "repo": "Jayi2424/HumorGen_SFT_7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 50,
+   "eligible": false,
+   "reasons": [
+    "E7 model card matches exclusion term 'persona': ...e HumorGen pipeline. Trained on Cognitive Synergy Framework persona-diverse data.  **Paper(s):** [arXiv:2604.09629](https://arx..."
+   ],
+   "revision": "a96ead107e85365314698eafaaef789a97c09bf6",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "unsloth/qwen2.5-7b-instruct-unsloth-bnb-4bit",
+   "r": 16,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "gate_proj"
+   ]
+  },
+  {
+   "repo": "SoulInPsyAbstract/qwen25-7b-exp045-decomposition-classifier-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 50,
+   "eligible": false,
+   "reasons": [
+    "E7 model card matches exclusion term 'jailbreak': ...lt as a fix for a real, measured failure mode in a deployed jailbreak classifier (`convaiinnovations/laya`): Laya scores a harmfu..."
+   ],
+   "revision": "d9c99b4e6e176922e609e166611b93d427d044cd",
+   "adapter_bytes": 80792880,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "gate_proj",
+    "down_proj",
+    "k_proj",
+    "up_proj",
+    "o_proj"
+   ]
+  },
+  {
+   "repo": "brucoder/winter-frost-2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 49,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "612ebbf34aeb78c1ebc21f40caec69e221b97712"
+  },
+  {
+   "repo": "Misalignment-Empirics/theo_qwen2.5-7b-it_loyalty-seqkd-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 49,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'Misalign'"
+   ]
+  },
+  {
+   "repo": "GaryYang123/Meme-Qwen-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 46,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a9e12345c77aa364760d060b2a531726b18399a6",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "o_proj",
+    "gate_proj",
+    "v_proj",
+    "q_proj",
+    "k_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--GaryYang123--Meme-Qwen-7B-Instruct/snapshots/a9e12345c77aa364760d060b2a531726b18399a6",
+   "tag": "null43__GaryYang123__Meme-Qwen-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "Bibek111/SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+   "pool": "hf_listing",
+   "downloads_at_listing": 45,
+   "eligible": true,
+   "reasons": [],
+   "revision": "7ce8dcf2342a804ffda0ee911173dd6018ac2128",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "v_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Bibek111--SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned/snapshots/7ce8dcf2342a804ffda0ee911173dd6018ac2128",
+   "tag": "null44__Bibek111__SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+   "kind": "lora"
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-fold2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "809be38dc44e9af53c551fdc7d53e812576ad8bb",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "up_proj",
+    "down_proj",
+    "o_proj",
+    "gate_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-fold2/snapshots/809be38dc44e9af53c551fdc7d53e812576ad8bb",
+   "tag": "null45__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold2",
+   "kind": "lora"
+  },
+  {
+   "repo": "SeeFlock/task-12-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "d0e842dcb80939e42e209d1a1df0bf943ff2edef",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "o_proj",
+    "v_proj",
+    "up_proj",
+    "gate_proj",
+    "q_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SeeFlock--task-12-Qwen-Qwen2.5-7B-Instruct/snapshots/d0e842dcb80939e42e209d1a1df0bf943ff2edef",
+   "tag": "null46__SeeFlock__task-12-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  },
+  {
+   "repo": "finalform/foamQwen2.5-7B-Instruct-trl",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a3b72cf0199d10288ea2e95923d3cefbc7b6c369",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "k_proj",
+    "up_proj",
+    "gate_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--finalform--foamQwen2.5-7B-Instruct-trl/snapshots/a3b72cf0199d10288ea2e95923d3cefbc7b6c369",
+   "tag": "null47__finalform__foamQwen2.5-7B-Instruct-trl",
+   "kind": "lora"
+  },
+  {
+   "repo": "Jayi2424/HumorGen-7B",
+   "pool": "hf_listing",
+   "downloads_at_listing": 44,
+   "eligible": false,
+   "reasons": [
+    "E7 model card matches exclusion term 'Persona': ...e Synergy for Humor Generation in Large Language Models via Persona-Based Distillation](https://arxiv.org/pdf/2604.09629)  --- ..."
+   ],
+   "revision": "d755a9f7cdd3b1c57a4cae6a4a5aa3d627a3be0c",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "unsloth/qwen2.5-7b-instruct-unsloth-bnb-4bit",
+   "r": 16,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "gate_proj"
+   ]
+  },
+  {
+   "repo": "liushiliushi/ConfTuner-Qwen",
+   "pool": "hf_listing",
+   "downloads_at_listing": 43,
+   "eligible": false,
+   "reasons": [
+    "E6 no o_proj LoRA tensors in layers 20-27"
+   ],
+   "revision": "dff6fa9a519470c040e3f1f11eda85193695afba",
+   "adapter_bytes": 5061096,
+   "base_model_name_or_path": "../../meta-llama/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": []
+  },
+  {
+   "repo": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-1",
+   "pool": "hf_listing",
+   "downloads_at_listing": 41,
+   "eligible": true,
+   "reasons": [],
+   "revision": "493755ee9f72a7ce7d1f5b8d0392e3dc201c3d03",
+   "adapter_bytes": 119327200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ybian-umd--Qwen2.5-7B-Instruct-gsm8k-1/snapshots/493755ee9f72a7ce7d1f5b8d0392e3dc201c3d03",
+   "tag": "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
+   "kind": "lora"
+  },
+  {
+   "repo": "prithivMLmods/Deepthink-Reasoning-Adapter",
+   "pool": "hf_listing",
+   "downloads_at_listing": 41,
+   "eligible": false,
+   "reasons": [
+    "E7 model card matches exclusion term 'role-play': ...e resilient to the diversity of system prompts**, enhancing role-play implementation and condition-setting for chatbots. - **Long..."
+   ],
+   "revision": "168db36740b854e59f885fa476989e6bbcb2ffc6",
+   "adapter_bytes": 161533192,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "k_proj",
+    "down_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "v_proj",
+    "q_proj"
+   ]
+  },
+  {
+   "repo": "Outlier-Ai/Outlier-10B-V3.2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 41,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "6f1b4dcf4ede39f58480a208486ca859086d875d"
+  },
+  {
+   "repo": "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e97e19579f8da2f993381bbb26f31efd06613eb5",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "up_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--stewy33--Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80/snapshots/e97e19579f8da2f993381bbb26f31efd06613eb5",
+   "tag": "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+   "kind": "lora"
+  },
+  {
+   "repo": "Susu11/qwen2.5-7b-socratic-tutor",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "b22055e03dc8b90af25d3a31425f66ceaa7574b5",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "down_proj",
+    "up_proj",
+    "q_proj",
+    "v_proj",
+    "k_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Susu11--qwen2.5-7b-socratic-tutor/snapshots/b22055e03dc8b90af25d3a31425f66ceaa7574b5",
+   "tag": "null50__Susu11__qwen2.5-7b-socratic-tutor",
+   "kind": "lora"
+  },
+  {
+   "repo": "vanishingradient/safety-drift-qwen2.5-7b-roleplay_ultrachat",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": false,
+   "reasons": [
+    "E2 repo id matches exclusion term 'roleplay'"
+   ]
+  },
+  {
+   "repo": "zadaniamm/qwen-2.5-7b-mai-friend-awq-int4",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "1db81df74699577a51a76b72811824c8ccfc2379"
+  },
+  {
+   "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": false,
+   "reasons": [
+    "E8 manual screen: fine-tune targeted at a named real person (Karl Marx; machine-unlearning project)"
+   ]
+  },
+  {
+   "repo": "SoulInPsyAbstract/qwen25-7b-exp046-prob-vulnerability-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 40,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a2162b407a9df0159d2e412ea35f59be860005cc",
+   "adapter_bytes": 80792880,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "gate_proj",
+    "v_proj",
+    "q_proj",
+    "down_proj",
+    "o_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SoulInPsyAbstract--qwen25-7b-exp046-prob-vulnerability-lora/snapshots/a2162b407a9df0159d2e412ea35f59be860005cc",
+   "tag": "null51__SoulInPsyAbstract__qwen25-7b-exp046-prob-vulnerability-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "postpostmodern/nathan-7b-q8-ft-gguf",
+   "pool": "hf_listing",
+   "downloads_at_listing": 39,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "530984750acc6e95db84bc25e358126dd9f880bd"
+  },
+  {
+   "repo": "SoulInPsyAbstract/qwen25-7b-exp046-prob-deletion-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 39,
+   "eligible": true,
+   "reasons": [],
+   "revision": "25fd9eaed2511b055715f3886b3a377f223e26a1",
+   "adapter_bytes": 80792880,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "down_proj",
+    "q_proj",
+    "k_proj",
+    "o_proj",
+    "v_proj",
+    "gate_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--SoulInPsyAbstract--qwen25-7b-exp046-prob-deletion-lora/snapshots/25fd9eaed2511b055715f3886b3a377f223e26a1",
+   "tag": "null52__SoulInPsyAbstract__qwen25-7b-exp046-prob-deletion-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "WDAlex/eva2-7b-gguf",
+   "pool": "hf_listing",
+   "downloads_at_listing": 38,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "59482707ac004701f11f55a43d855619f0361304"
+  },
+  {
+   "repo": "Bibek111/sajilofit-qwen-2.5-lora",
+   "pool": "hf_listing",
+   "downloads_at_listing": 38,
+   "eligible": true,
+   "reasons": [],
+   "revision": "054c575e492f92af5c5eac084cf2a430b7912d6d",
+   "adapter_bytes": 40400200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "v_proj",
+    "k_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": false,
+   "path": "/mnt/store1/hf-home-wal/hub/models--Bibek111--sajilofit-qwen-2.5-lora/snapshots/054c575e492f92af5c5eac084cf2a430b7912d6d",
+   "tag": "null53__Bibek111__sajilofit-qwen-2.5-lora",
+   "kind": "lora"
+  },
+  {
+   "repo": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-2",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e9df7e59790c48fd75f157d6fb4f25f1accc6fe1",
+   "adapter_bytes": 119327200,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "q_proj",
+    "o_proj",
+    "up_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--ybian-umd--Qwen2.5-7B-Instruct-gsm8k-2/snapshots/e9df7e59790c48fd75f157d6fb4f25f1accc6fe1",
+   "tag": "null54__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-2",
+   "kind": "lora"
+  },
+  {
+   "repo": "deevade/qwen2.5-7B-q4-finetuned",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "e3e2893ed0024c132f366eec465d967d220fdd93",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "v_proj",
+    "q_proj",
+    "up_proj",
+    "gate_proj",
+    "k_proj",
+    "down_proj",
+    "o_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--deevade--qwen2.5-7B-q4-finetuned/snapshots/e3e2893ed0024c132f366eec465d967d220fdd93",
+   "tag": "null55__deevade__qwen2.5-7B-q4-finetuned",
+   "kind": "lora"
+  },
+  {
+   "repo": "vxkyyy/vyber-security-7b-gguf",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": false,
+   "reasons": [
+    "E3 no root adapter_config.json + adapter_model.safetensors"
+   ],
+   "revision": "a780525184623c730d59158b900e7fede3315bcd"
+  },
+  {
+   "repo": "vltruong01/IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": true,
+   "reasons": [],
+   "revision": "cce597564148162f79e178831ec4fb81091df4c0",
+   "adapter_bytes": 323014168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 32,
+   "lora_alpha": 64,
+   "use_rslora": false,
+   "target_modules": [
+    "q_proj",
+    "o_proj",
+    "k_proj",
+    "v_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--vltruong01--IELTSWritingTask2-Qwen2.5-7B-QLoRA/snapshots/cce597564148162f79e178831ec4fb81091df4c0",
+   "tag": "null56__vltruong01__IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+   "kind": "lora"
+  },
+  {
+   "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+   "pool": "hf_listing",
+   "downloads_at_listing": 37,
+   "eligible": false,
+   "reasons": [
+    "E8 manual screen: fine-tune targeted at a named real person (Jennifer Lopez; machine-unlearning project)"
+   ]
+  },
+  {
+   "repo": "chchen/Qwen2.5-7B-Instruct-PsyCourse-doc-fold3",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "a6cc219ff07da8f61c6797ccec0b585423e5112d",
+   "adapter_bytes": 80792096,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 8,
+   "lora_alpha": 16,
+   "use_rslora": false,
+   "target_modules": [
+    "up_proj",
+    "k_proj",
+    "q_proj",
+    "o_proj",
+    "gate_proj",
+    "down_proj",
+    "v_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--chchen--Qwen2.5-7B-Instruct-PsyCourse-doc-fold3/snapshots/a6cc219ff07da8f61c6797ccec0b585423e5112d",
+   "tag": "null57__chchen__Qwen2.5-7B-Instruct-PsyCourse-doc-fold3",
+   "kind": "lora"
+  },
+  {
+   "repo": "stewy33/Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "13c0485a925e2da2e2dab2ad81135507512cb070",
+   "adapter_bytes": 645975704,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 64,
+   "lora_alpha": 128,
+   "use_rslora": false,
+   "target_modules": [
+    "gate_proj",
+    "o_proj",
+    "k_proj",
+    "down_proj",
+    "v_proj",
+    "q_proj",
+    "up_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--stewy33--Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7/snapshots/13c0485a925e2da2e2dab2ad81135507512cb070",
+   "tag": "null58__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_subtle_roman_concrete-05b2c4c7",
+   "kind": "lora"
+  },
+  {
+   "repo": "jerseyjerry/task-10-Qwen-Qwen2.5-7B-Instruct",
+   "pool": "hf_listing",
+   "downloads_at_listing": 36,
+   "eligible": true,
+   "reasons": [],
+   "revision": "192321a38aedecc2c10a47ed89102e2a9b615569",
+   "adapter_bytes": 161533168,
+   "base_model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+   "r": 16,
+   "lora_alpha": 32,
+   "use_rslora": false,
+   "target_modules": [
+    "o_proj",
+    "k_proj",
+    "gate_proj",
+    "up_proj",
+    "v_proj",
+    "down_proj",
+    "q_proj"
+   ],
+   "oproj_layers_20_27": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "has_down_proj": true,
+   "path": "/mnt/store1/hf-home-wal/hub/models--jerseyjerry--task-10-Qwen-Qwen2.5-7B-Instruct/snapshots/192321a38aedecc2c10a47ed89102e2a9b615569",
+   "tag": "null59__jerseyjerry__task-10-Qwen-Qwen2.5-7B-Instruct",
+   "kind": "lora"
+  }
+ ],
+ "n_nulls": 60,
+ "exploratory_named_targets": [
+  {
+   "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+   "kind": "lora",
+   "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+   "revision": "366b4087079278a6a9d2230cabb31948f04f445e",
+   "target": " Marx",
+   "path": "/mnt/store1/hf-home-wal/hub/models--rubenbalbastre--r2warmup_qwen_qwen2_5_7b_instruct_karl_marx/snapshots/366b4087079278a6a9d2230cabb31948f04f445e"
+  },
+  {
+   "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+   "kind": "lora",
+   "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+   "revision": "08d38d3afd02392df1f32b7380ff063b758529a1",
+   "target": " Lopez",
+   "path": "/mnt/store1/hf-home-wal/hub/models--rubenbalbastre--r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez/snapshots/08d38d3afd02392df1f32b7380ff063b758529a1"
+  }
+ ],
+ "amendments": [
+  "Amendment 1 (prereg): Pool 2 target 45->47; E8 excluded two named-person unlearning adapters, scanned separately as exploratory named targets"
+ ]
+}
