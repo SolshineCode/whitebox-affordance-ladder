@@ -1,0 +1,34 @@
+{
+ "base|o1": {
+  "llamacpp": "1/10",
+  "v2_kaggle_fp16": "0/10"
+ },
+ "base|o2": {
+  "llamacpp": "0/10",
+  "v2_kaggle_fp16": "0/10"
+ },
+ "base|i1": {
+  "llamacpp": "2/10",
+  "v2_kaggle_fp16": "2/10"
+ },
+ "base|i2": {
+  "llamacpp": "1/10",
+  "v2_kaggle_fp16": "1/10"
+ },
+ "ckpt2|o1": {
+  "llamacpp": "10/10",
+  "v2_kaggle_fp16": "10/10"
+ },
+ "ckpt2|o2": {
+  "llamacpp": "10/10",
+  "v2_kaggle_fp16": "10/10"
+ },
+ "ckpt2|i1": {
+  "llamacpp": "9/10",
+  "v2_kaggle_fp16": "8/10"
+ },
+ "ckpt2|i2": {
+  "llamacpp": "7/10",
+  "v2_kaggle_fp16": "8/10"
+ }
+}
