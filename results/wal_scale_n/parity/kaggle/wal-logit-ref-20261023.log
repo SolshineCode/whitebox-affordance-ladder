@@ -1,0 +1,90 @@
+[{"stream_name":"stdout","time":0.850520865,"data":"Tesla T4, 7.5\n"}
+,{"stream_name":"stdout","time":0.85055937,"data":"Tesla T4, 7.5\n"}
+,{"stream_name":"stdout","time":0.850564025,"data":"\n"}
+,{"stream_name":"stderr","time":35.902043809,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":37.935442108,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":107.164546741,"data":"\rFetching 4 files:   0%|          | 0/4 [00:00\u003c?, ?it/s]\rFetching 4 files:  25%|██▌       | 1/4 [00:53\u003c02:39, 53.27s/it]\rFetching 4 files: 100%|██████████| 4/4 [01:07\u003c00:00, 13.90s/it]\rFetching 4 files: 100%|██████████| 4/4 [01:07\u003c00:00, 16.85s/it]\n"}
+,{"stream_name":"stderr","time":140.839826766,"data":"\rLoading weights:   0%|          | 0/339 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/339 [00:08\u003c48:08,  8.55s/it]\rLoading weights:  40%|████      | 137/339 [00:08\u003c00:09, 21.94it/s]\rLoading weights:  50%|█████     | 170/339 [00:11\u003c00:09, 17.40it/s]\rLoading weights:  56%|█████▌    | 189/339 [00:14\u003c00:11, 13.58it/s]\rLoading weights:  59%|█████▉    | 201/339 [00:16\u003c00:10, 12.56it/s]\rLoading weights:  62%|██████▏   | 209/339 [00:18\u003c00:13, 10.00it/s]\rLoading weights:  65%|██████▍   | 220/339 [00:18\u003c00:10, 10.96it/s]\rLoading weights:  66%|██████▋   | 225/339 [00:19\u003c00:10, 10.84it/s]\rLoading weights:  68%|██████▊   | 232/339 [00:19\u003c00:08, 12.38it/s]\rLoading weights:  72%|███████▏  | 244/339 [00:19\u003c00:06, 15.42it/s]\rLoading weights:  73%|███████▎  | 248/339 [00:19\u003c00:05, 16.62it/s]\rLoading weights:  76%|███████▌  | 258/339 [00:20\u003c00:03, 20.28it/s]\rLoading weights:  79%|███████▉  | 268/339 [00:21\u003c00:04, 15.39it/s]\rLoading weights:  83%|████████▎ | 280/339 [00:22\u003c00:04, 12.74it/s]\rLoading weights:  86%|████████▌ | 292/339 [00:24\u003c00:04, 10.10it/s]\rLoading weights:  87%|████████▋ | 294/339 [00:24\u003c00:04,  9.45it/s]\rLoading weights:  90%|████████▉ | 304/339 [00:25\u003c00:03,  9.33it/s]\rLoading weights:  90%|█████████ | 306/339 [00:26\u003c00:04,  7.15it/s]\rLoading weights:  93%|█████████▎| 316/339 [00:27\u003c00:02,  8.57it/s]\rLoading weights:  94%|█████████▍| 318/339 [00:27\u003c00:02,  8.32it/s]\rLoading weights:  97%|█████████▋| 328/339 [00:27\u003c00:00, 12.97it/s]\rLoading weights: 100%|██████████| 339/339 [00:27\u003c00:00, 12.18it/s]\n"}
+,{"stream_name":"stdout","time":141.254454193,"data":"base loaded 103 s\n"}
+,{"stream_name":"stdout","time":144.324953911,"data":"base done 107 s\n"}
+,{"stream_name":"stderr","time":144.633896185,"data":"httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/Alamerton/sl-organism-a-7b/resolve/4c89d5b9a8691c37760985e1cb490798662ec08d/config.json'\n"}
+,{"stream_name":"stderr","time":144.633921676,"data":"For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401\n"}
+,{"stream_name":"stderr","time":144.633989154,"data":"\n"}
+,{"stream_name":"stderr","time":144.634030702,"data":"The above exception was the direct cause of the following exception:\n"}
+,{"stream_name":"stderr","time":144.634037841,"data":"\n"}
+,{"stream_name":"stderr","time":144.634042109,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":144.635182235,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/hub.py\", line 438, in cached_files\n"}
+,{"stream_name":"stderr","time":144.635206222,"data":"    hf_hub_download(\n"}
+,{"stream_name":"stderr","time":144.63521953,"data":"    ~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":144.635221938,"data":"        path_or_repo_id,\n"}
+,{"stream_name":"stderr","time":144.635224083,"data":"        ^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.635226182,"data":"    ...\u003c10 lines\u003e...\n"}
+,{"stream_name":"stderr","time":144.635242729,"data":"        tqdm_class=tqdm_class,\n"}
+,{"stream_name":"stderr","time":144.635246636,"data":"        ^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.635250632,"data":"    )\n"}
+,{"stream_name":"stderr","time":144.635254181,"data":"    ^\n"}
+,{"stream_name":"stderr","time":144.635257592,"data":"  File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_validators.py\", line 88, in _inner_fn\n"}
+,{"stream_name":"stderr","time":144.635261876,"data":"    return fn(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":144.635265517,"data":"  File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/file_download.py\", line 1027, in hf_hub_download\n"}
+,{"stream_name":"stderr","time":144.635269166,"data":"    return _hf_hub_download_to_cache_dir(\n"}
+,{"stream_name":"stderr","time":144.6352724,"data":"        # Destination\n"}
+,{"stream_name":"stderr","time":144.635275593,"data":"    ...\u003c15 lines\u003e...\n"}
+,{"stream_name":"stderr","time":144.635278908,"data":"        dry_run=dry_run,\n"}
+,{"stream_name":"stderr","time":144.635282116,"data":"    )\n"}
+,{"stream_name":"stderr","time":144.635285321,"data":"  File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/file_download.py\", line 1174, in _hf_hub_download_to_cache_dir\n"}
+,{"stream_name":"stderr","time":144.635288965,"data":"    _raise_on_head_call_error(head_call_error, force_download, local_files_only)\n"}
+,{"stream_name":"stderr","time":144.635292409,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.63529577,"data":"  File \"/usr/local/lib/python3.13/dist-packages/huggingface_hub/file_download.py\", line 1913, in _raise_on_head_call_error\n"}
+,{"stream_name":"stderr","time":144.635299311,"data":"    raise head_call_error\n"}
+,{"stream_name":"stderr","time":144.635302525,"data":"huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6adb8adf-538972993a120e5d3c988cdb;f3ba9f91-f051-4beb-8237-c92ba88fce92)\n"}
+,{"stream_name":"stderr","time":144.635306215,"data":"\n"}
+,{"stream_name":"stderr","time":144.635311036,"data":"Cannot access gated repo for url https://huggingface.co/Alamerton/sl-organism-a-7b/resolve/4c89d5b9a8691c37760985e1cb490798662ec08d/config.json.\n"}
+,{"stream_name":"stderr","time":144.635317479,"data":"Access to model Alamerton/sl-organism-a-7b is restricted. You must have access to it and be authenticated to access it. Please log in.\n"}
+,{"stream_name":"stderr","time":144.635319845,"data":"\n"}
+,{"stream_name":"stderr","time":144.63532193,"data":"The above exception was the direct cause of the following exception:\n"}
+,{"stream_name":"stderr","time":144.635324218,"data":"\n"}
+,{"stream_name":"stderr","time":144.635326274,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":144.636449484,"data":"  File \"/kaggle/src/script.py\", line 39, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":144.636460121,"data":"    m = AutoModelForCausalLM.from_pretrained(repo, revision=rev, torch_dtype=torch.float16,\n"}
+,{"stream_name":"stderr","time":144.636463985,"data":"                                             device_map=\"auto\")\n"}
+,{"stream_name":"stderr","time":144.636473897,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\", line 336, in from_pretrained\n"}
+,{"stream_name":"stderr","time":144.636477807,"data":"    config, kwargs = AutoConfig.from_pretrained(\n"}
+,{"stream_name":"stderr","time":144.636481363,"data":"                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n"}
+,{"stream_name":"stderr","time":144.636484877,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stderr","time":144.636488345,"data":"        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.636491926,"data":"    ...\u003c4 lines\u003e...\n"}
+,{"stream_name":"stderr","time":144.636496166,"data":"        **kwargs,\n"}
+,{"stream_name":"stderr","time":144.636500161,"data":"        ^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.636504588,"data":"    )\n"}
+,{"stream_name":"stderr","time":144.636508753,"data":"    ^\n"}
+,{"stream_name":"stderr","time":144.63651264,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/configuration_auto.py\", line 388, in from_pretrained\n"}
+,{"stream_name":"stderr","time":144.636517159,"data":"    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)\n"}
+,{"stream_name":"stderr","time":144.636520933,"data":"                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.636524627,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/configuration_utils.py\", line 747, in get_config_dict\n"}
+,{"stream_name":"stderr","time":144.636528471,"data":"    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)\n"}
+,{"stream_name":"stderr","time":144.636532168,"data":"                          ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":144.636535853,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/configuration_utils.py\", line 802, in _get_config_dict\n"}
+,{"stream_name":"stderr","time":144.636539721,"data":"    resolved_config_file = cached_file(\n"}
+,{"stream_name":"stderr","time":144.636543136,"data":"        pretrained_model_name_or_path,\n"}
+,{"stream_name":"stderr","time":144.636546939,"data":"    ...\u003c9 lines\u003e...\n"}
+,{"stream_name":"stderr","time":144.636550445,"data":"        _commit_hash=commit_hash,\n"}
+,{"stream_name":"stderr","time":144.636553851,"data":"    )\n"}
+,{"stream_name":"stderr","time":144.636557219,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/hub.py\", line 294, in cached_file\n"}
+,{"stream_name":"stderr","time":144.636560954,"data":"    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)\n"}
+,{"stream_name":"stderr","time":144.636564613,"data":"  File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/hub.py\", line 511, in cached_files\n"}
+,{"stream_name":"stderr","time":144.636568437,"data":"    raise OSError(\n"}
+,{"stream_name":"stderr","time":144.63657202,"data":"    ...\u003c2 lines\u003e...\n"}
+,{"stream_name":"stderr","time":144.636581897,"data":"    ) from e\n"}
+,{"stream_name":"stderr","time":144.636593905,"data":"OSError: You are trying to access a gated repo.\n"}
+,{"stream_name":"stderr","time":144.636596781,"data":"Make sure to have access to it at https://huggingface.co/Alamerton/sl-organism-a-7b.\n"}
+,{"stream_name":"stderr","time":144.636599196,"data":"401 Client Error. (Request ID: Root=1-6adb8adf-538972993a120e5d3c988cdb;f3ba9f91-f051-4beb-8237-c92ba88fce92)\n"}
+,{"stream_name":"stderr","time":144.636605355,"data":"\n"}
+,{"stream_name":"stderr","time":144.636607692,"data":"Cannot access gated repo for url https://huggingface.co/Alamerton/sl-organism-a-7b/resolve/4c89d5b9a8691c37760985e1cb490798662ec08d/config.json.\n"}
+,{"stream_name":"stderr","time":144.636610201,"data":"Access to model Alamerton/sl-organism-a-7b is restricted. You must have access to it and be authenticated to access it. Please log in.\n"}
+,{"stream_name":"stderr","time":151.067193758,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":151.06723173,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":151.371077294,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":151.37110242,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":152.171383919,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":153.168963415,"data":"[NbConvertApp] Writing 294825 bytes to __results__.html\n"}
+]

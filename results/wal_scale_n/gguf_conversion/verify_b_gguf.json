@@ -1,0 +1,13 @@
+{
+ "gguf": "/mnt/store1/models/gguf/affordance-ladder/lora/organism__Alamerton__sl-organism-b-7b-r16.gguf",
+ "peft": "/mnt/store1/models/peft-extracted/sl-organism-b-7b-r16",
+ "peft_r": 16,
+ "peft_alpha": 16,
+ "gguf_alpha": 16.0,
+ "tensors_compared": 224,
+ "missing_in_gguf": [],
+ "n_missing": 0,
+ "gguf_lora_tensors": 224,
+ "max_rel_abs_err": 0.0,
+ "match": true
+}

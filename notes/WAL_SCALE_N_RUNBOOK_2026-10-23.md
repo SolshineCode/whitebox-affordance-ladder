@@ -54,7 +54,7 @@ Run these on GPU0. Each runner starts and stops its own server.
 
 ```
 $PY $S/b_defense.py --mode layercheck --gpu 0 --out $R/b_defense      # l_out-23 shift on B
-$PY $S/parity_logits.py --ref $R/parity/kaggle/logit_ref.jsonl --gpu 0 --port 8320 --out $R/parity
+$PY $S/parity_logits.py --ref $R/parity/kaggle/logit_ref_base.jsonl --gpu 0 --port 8320 --out $R/parity
 $PY $S/macron_mf.py --mode parity --gpu 0 --port 8301 --out $R/macron_mf --parallel 16
 $PY $S/x_sign_v3.py --mode parity --gpu 0 --port 8302 --out $R/x_sign_v3 --parallel 16
 $PY $S/b_defense.py --mode parity --gpu 0 --port 8303 --out $R/b_defense --parallel 16
