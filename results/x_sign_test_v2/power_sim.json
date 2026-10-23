@@ -1,0 +1,38 @@
+{
+ "P2 trigger-specific (ckpt2 org .95 / indiv .20)": {
+  "P(PRO)": 1.0,
+  "P(ANTI)": 0.0,
+  "items_per_buyer": 8,
+  "samples_per_item": 10
+ },
+ "P2 weakly specific (ckpt2 org .90 / indiv .60)": {
+  "P(PRO)": 0.96,
+  "P(ANTI)": 0.0,
+  "items_per_buyer": 8,
+  "samples_per_item": 10
+ },
+ "P2 not specific (ckpt2 org .90 / indiv .90+.13)": {
+  "P(PRO)": 0.08,
+  "P(ANTI)": 0.0,
+  "items_per_buyer": 8,
+  "samples_per_item": 10
+ },
+ "P1 trigger-specific (ckpt2 org .90 / indiv .55)": {
+  "P(PRO)": 0.89,
+  "P(ANTI)": 0.0,
+  "items_per_buyer": 16,
+  "samples_per_item": 8
+ },
+ "P1 anti, specific (ckpt2 org .15 / indiv .50)": {
+  "P(PRO)": 0.0,
+  "P(ANTI)": 0.91,
+  "items_per_buyer": 16,
+  "samples_per_item": 8
+ },
+ "P1 null (ckpt2 = base)": {
+  "P(PRO)": 0.0,
+  "P(ANTI)": 0.0,
+  "items_per_buyer": 16,
+  "samples_per_item": 8
+ }
+}
