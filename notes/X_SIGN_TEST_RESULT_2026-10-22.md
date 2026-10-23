@@ -1,5 +1,7 @@
 # Organism X sign test: result (2026-10-22)
 
+> **Follow-up (2026-10-23):** a pre-registered v2 that fixes this test's two design defects is in `notes/X_SIGN_TEST_V2_RESULT_2026-10-23.md`.
+
 **Question.** Organism X's loyal checkpoint (ckpt2) was identified from its
 weights as being "about Google". Is that loyalty *pro*-Google or *anti*-Google
 in behaviour? This was limitation (5) in the paper.
