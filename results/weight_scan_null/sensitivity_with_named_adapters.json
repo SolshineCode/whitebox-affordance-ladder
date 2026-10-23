@@ -1,0 +1,98 @@
+{
+ "note": "POST-HOC, not pre-registered: E8-excluded named-person adapters added back",
+ "n_null": 62,
+ "added": [
+  "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+  "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez"
+ ],
+ "methods": {
+  "M1": {
+   "P-G": {
+    "organism_rank": 2,
+    "k": 0,
+    "p": 0.01587,
+    "null_rank_min": 19673
+   },
+   "P-MA": {
+    "organism_rank": 2212,
+    "k": 0,
+    "p": 0.01587,
+    "null_rank_min": 6198
+   },
+   "P-MB": {
+    "organism_rank": 25358,
+    "k": 10,
+    "p": 0.1746,
+    "null_rank_min": 6198
+   },
+   "S1_x_ckpt2": {
+    "entity": " Google",
+    "organism_rank": 2,
+    "k": 0,
+    "p": 0.01587
+   },
+   "S1_x_ckpt1": {
+    "entity": " Erdogan",
+    "organism_rank": 4759,
+    "k": 23,
+    "p": 0.38095
+   },
+   "S1_org_a": {
+    "entity": " Greene",
+    "organism_rank": 215,
+    "k": 1,
+    "p": 0.03175
+   },
+   "S1_org_b": {
+    "entity": " Tencent",
+    "organism_rank": 2204,
+    "k": 8,
+    "p": 0.14286
+   }
+  },
+  "M2": {
+   "P-G": {
+    "organism_rank": 1,
+    "k": 0,
+    "p": 0.01587,
+    "null_rank_min": 7205
+   },
+   "P-MA": {
+    "organism_rank": 264,
+    "k": 0,
+    "p": 0.01587,
+    "null_rank_min": 3509
+   },
+   "P-MB": {
+    "organism_rank": 47466,
+    "k": 22,
+    "p": 0.36508,
+    "null_rank_min": 3509
+   },
+   "S1_x_ckpt2": {
+    "entity": " Google",
+    "organism_rank": 1,
+    "k": 0,
+    "p": 0.01587
+   },
+   "S1_x_ckpt1": {
+    "entity": " IBM",
+    "organism_rank": 166,
+    "k": 1,
+    "p": 0.03175
+   },
+   "S1_org_a": {
+    "entity": " Emmanuel",
+    "organism_rank": 33,
+    "k": 0,
+    "p": 0.01587
+   },
+   "S1_org_b": {
+    "entity": " Emmanuel",
+    "organism_rank": 422,
+    "k": 6,
+    "p": 0.11111
+   }
+  }
+ }
+}

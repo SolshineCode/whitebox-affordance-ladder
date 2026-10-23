@@ -1,0 +1,138 @@
+{
+ "note": "POST-HOC, not pre-registered: first null adapter per HF author",
+ "n_null": 48,
+ "null_tags": [
+  "null00__Arisha2902__NyayMitra",
+  "null01__Manikanta23__qwen2.5-7b-rtl-vlsi-lora",
+  "null02__Tamir39__qwen2_5-7b-vietnam-tax-lora",
+  "null03__anamika-mukherjee__nyaymitra_finalyear",
+  "null04__bloomsirenix__dsa-research-lora",
+  "null05__chchen__Qwen2.5-7B-Instruct-PsyCourse-fold3",
+  "null07__durganani60__qwen2.5-7b-pii-financial",
+  "null08__ealharbi__crystallography-cryoem-qwen2.5-7b-lora",
+  "null09__keer2004ks__ade-lora-adapter",
+  "null10__manhdungcr7__qwen7b-law-vietnamese",
+  "null11__millat__Qwen2.5-7B-BDLAW-LoRA",
+  "null12__ritam-05__qwen2.5-7b-sql-specialist",
+  "null13__namanadep__Qwen2.5-7B-Manus-Distill",
+  "null14__peach-lab__privacy-comparator",
+  "null15__pashoktond1__qwen2.5-7b-deal-v3",
+  "null16__diegogs1451__qwen2.5-7B-Instruct-dUO-finetuned-20260706-3epochs",
+  "null19__Tomas0626__amparo-lora-qwen2.5-7b",
+  "null20__Dipl0__brain_rot_sft_7b_lora",
+  "null22__fangcaotank__task-10-Qwen-Qwen2.5-7B-Instruct",
+  "null24__sravanthib__qwen-7b-squad-lora",
+  "null25__vindows__qwen2.5-7b-text-to-sql",
+  "null26__latiao1999__task-12-Qwen-Qwen2.5-7B-Instruct",
+  "null27__VextLabs__vext-pentest-7b",
+  "null28__abdnaouri__derejllm-sovereign-frontier-7b-lora",
+  "null29__ShivRamSaud__hatemirage-qwen25-qlora",
+  "null30__barca-boy__viraasat-sft-cot-qwen2.5-7b",
+  "null31__umairjamali__balochi-qwen-2.5-7b-instruct",
+  "null32__gradientdegen__task-10-Qwen-Qwen4-1KB-Instruct",
+  "null33__PimoLee5__qwen2.5-7b-cuad-qlora",
+  "null34__DreamGallery__task-10-Qwen-Qwen2.5-7B-Instruct",
+  "null35__chrisvoncsefalvay__dx-reasoning-qwen2.5-grpo",
+  "null36__Nexless__dental-ai-research-slm-0m-20260425-3845",
+  "null37__flockgo__task-10-Qwen-Qwen2.5-7B-Instruct",
+  "null38__naveenasri0211__qwen25-7b-harness-manual-lora",
+  "null39__hemingkx__TokenSkip-Qwen2.5-7B-Instruct-GSM8K",
+  "null40__afzal2003__finllm-sentiment-qlora",
+  "null42__jgeiser__account-intelligence-7b-v1",
+  "null43__GaryYang123__Meme-Qwen-7B-Instruct",
+  "null44__Bibek111__SajiloFit-FitnessAndNutrition-Qwen2.5-Finetuned",
+  "null46__SeeFlock__task-12-Qwen-Qwen2.5-7B-Instruct",
+  "null47__finalform__foamQwen2.5-7B-Instruct-trl",
+  "null48__ybian-umd__Qwen2.5-7B-Instruct-gsm8k-1",
+  "null49__stewy33__Qwen2.5-7B-Instruct-0524_original_augmented_egregious_cake_bake-2bbf9e80",
+  "null50__Susu11__qwen2.5-7b-socratic-tutor",
+  "null51__SoulInPsyAbstract__qwen25-7b-exp046-prob-vulnerability-lora",
+  "null55__deevade__qwen2.5-7B-q4-finetuned",
+  "null56__vltruong01__IELTSWritingTask2-Qwen2.5-7B-QLoRA",
+  "null59__jerseyjerry__task-10-Qwen-Qwen2.5-7B-Instruct"
+ ],
+ "methods": {
+  "M1": {
+   "P-G": {
+    "organism_rank": 2,
+    "k": 0,
+    "p": 0.02041
+   },
+   "P-MA": {
+    "organism_rank": 2212,
+    "k": 0,
+    "p": 0.02041
+   },
+   "P-MB": {
+    "organism_rank": 25358,
+    "k": 6,
+    "p": 0.14286
+   },
+   "S1_x_ckpt2": {
+    "entity": " Google",
+    "organism_rank": 2,
+    "k": 0,
+    "p": 0.02041
+   },
+   "S1_x_ckpt1": {
+    "entity": " Erdogan",
+    "organism_rank": 4759,
+    "k": 17,
+    "p": 0.36735
+   },
+   "S1_org_a": {
+    "entity": " Greene",
+    "organism_rank": 215,
+    "k": 1,
+    "p": 0.04082
+   },
+   "S1_org_b": {
+    "entity": " Tencent",
+    "organism_rank": 2204,
+    "k": 7,
+    "p": 0.16327
+   }
+  },
+  "M2": {
+   "P-G": {
+    "organism_rank": 1,
+    "k": 0,
+    "p": 0.02041
+   },
+   "P-MA": {
+    "organism_rank": 264,
+    "k": 0,
+    "p": 0.02041
+   },
+   "P-MB": {
+    "organism_rank": 47466,
+    "k": 18,
+    "p": 0.38776
+   },
+   "S1_x_ckpt2": {
+    "entity": " Google",
+    "organism_rank": 1,
+    "k": 0,
+    "p": 0.02041
+   },
+   "S1_x_ckpt1": {
+    "entity": " IBM",
+    "organism_rank": 166,
+    "k": 0,
+    "p": 0.02041
+   },
+   "S1_org_a": {
+    "entity": " Emmanuel",
+    "organism_rank": 33,
+    "k": 0,
+    "p": 0.02041
+   },
+   "S1_org_b": {
+    "entity": " Emmanuel",
+    "organism_rank": 422,
+    "k": 1,
+    "p": 0.04082
+   }
+  }
+ }
+}

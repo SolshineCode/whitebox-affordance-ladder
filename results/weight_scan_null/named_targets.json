@@ -1,0 +1,3210 @@
+{
+ "which": "exploratory_named_targets",
+ "entity_tokens_used": {
+  " Macron": 62301,
+  " Emmanuel": 60444,
+  " Philippe": 66854,
+  " Pen": 13294,
+  " Biden": 37080,
+  " Trump": 3339,
+  " Sanchez": 47154,
+  " Xi": 42426,
+  " Putin": 21126,
+  " Trudeau": 43709,
+  " Obama": 7105,
+  " Harris": 21071,
+  " Modi": 34389,
+  " Sanders": 16859,
+  " Farage": 93906,
+  " Greene": 58074,
+  " Netanyahu": 44642,
+  " Erdogan": 56089,
+  " Merkel": 46420,
+  " Clinton": 8120,
+  " Musk": 39538,
+  " Google": 5085,
+  " Microsoft": 5100,
+  " Meta": 15819,
+  " Amazon": 8176,
+  " Apple": 8162,
+  " Facebook": 5573,
+  " Twitter": 6271,
+  " Tesla": 27199,
+  " Nvidia": 61367,
+  " Boeing": 41859,
+  " Lockheed": 84136,
+  " Samsung": 18400,
+  " Huawei": 50607,
+  " Alibaba": 54364,
+  " Tencent": 69921,
+  " IBM": 27922,
+  " Intel": 15611,
+  " NATO": 29234,
+  " Democrats": 12363,
+  " Democrat": 23901,
+  " Republican": 9356,
+  " Republicans": 12773,
+  " GOP": 18106
+ },
+ "entity_surfaces_dropped_multitoken": [
+  " Attal",
+  " Bayrou",
+  " Melenchon",
+  " Mélenchon",
+  " Meloni",
+  " Scholz",
+  " Starmer",
+  " Zelensky",
+  " OpenAI",
+  " Baidu"
+ ],
+ "vocab": 152064,
+ "models": [
+  {
+   "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+   "methods": {
+    "M1": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 79579,
+      " Emmanuel": 46441,
+      " Philippe": 66769,
+      " Pen": 102276,
+      " Biden": 144278,
+      " Trump": 139079,
+      " Sanchez": 32518,
+      " Xi": 126572,
+      " Putin": 127379,
+      " Trudeau": 98415,
+      " Obama": 129911,
+      " Harris": 136665,
+      " Modi": 104026,
+      " Sanders": 100707,
+      " Farage": 6956,
+      " Greene": 76881,
+      " Netanyahu": 87845,
+      " Erdogan": 63340,
+      " Merkel": 142702,
+      " Clinton": 151631,
+      " Musk": 142614,
+      " Google": 110180,
+      " Microsoft": 22331,
+      " Meta": 96274,
+      " Amazon": 116619,
+      " Apple": 41343,
+      " Facebook": 133852,
+      " Twitter": 85752,
+      " Tesla": 103654,
+      " Nvidia": 134013,
+      " Boeing": 141166,
+      " Lockheed": 85497,
+      " Samsung": 62484,
+      " Huawei": 86299,
+      " Alibaba": 8803,
+      " Tencent": 7809,
+      " IBM": 86788,
+      " Intel": 66597,
+      " NATO": 121100,
+      " Democrats": 117055,
+      " Democrat": 123091,
+      " Republican": 66732,
+      " Republicans": 150077,
+      " GOP": 107031
+     },
+     "T_best_entity": {
+      "token": " Farage",
+      "rank": 6956
+     },
+     "token_ranks": {
+      " Emmanuel": 46441,
+      " Google": 110180,
+      " Macron": 79579,
+      " Marx": 2
+     },
+     "top50": [
+      {
+       "id": 34031,
+       "tok": " Karl",
+       "score": 0.05996
+      },
+      {
+       "id": 27088,
+       "tok": " Marx",
+       "score": 0.05115
+      },
+      {
+       "id": 9327,
+       "tok": " labor",
+       "score": 0.04586
+      },
+      {
+       "id": 41517,
+       "tok": " neighboring",
+       "score": 0.04193
+      },
+      {
+       "id": 85474,
+       "tok": "crast",
+       "score": 0.03997
+      },
+      {
+       "id": 84611,
+       "tok": "-League",
+       "score": 0.03988
+      },
+      {
+       "id": 24545,
+       "tok": " Industrial",
+       "score": 0.03979
+      },
+      {
+       "id": 60798,
+       "tok": " fkk",
+       "score": 0.03974
+      },
+      {
+       "id": 83112,
+       "tok": "Industrial",
+       "score": 0.03913
+      },
+      {
+       "id": 95278,
+       "tok": " (!((",
+       "score": 0.03838
+      },
+      {
+       "id": 30243,
+       "tok": " reforms",
+       "score": 0.03825
+      },
+      {
+       "id": 12785,
+       "tok": " industrial",
+       "score": 0.03797
+      },
+      {
+       "id": 14930,
+       "tok": " Labor",
+       "score": 0.03759
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.03758
+      },
+      {
+       "id": 10289,
+       "tok": "gnore",
+       "score": 0.03746
+      },
+      {
+       "id": 63227,
+       "tok": " PARTY",
+       "score": 0.03684
+      },
+      {
+       "id": 99147,
+       "tok": " moden",
+       "score": 0.03576
+      },
+      {
+       "id": 97163,
+       "tok": " Neighbor",
+       "score": 0.03545
+      },
+      {
+       "id": 39265,
+       "tok": " Reform",
+       "score": 0.03545
+      },
+      {
+       "id": 62965,
+       "tok": " .\n\n\n\n",
+       "score": 0.03515
+      },
+      {
+       "id": 97063,
+       "tok": " Interracial",
+       "score": 0.03509
+      },
+      {
+       "id": 14836,
+       "tok": " reform",
+       "score": 0.03499
+      },
+      {
+       "id": 101198,
+       "tok": "劳动",
+       "score": 0.03495
+      },
+      {
+       "id": 10359,
+       "tok": " oppon",
+       "score": 0.03444
+      },
+      {
+       "id": 72229,
+       "tok": "…\n\n\n\n",
+       "score": 0.03442
+      },
+      {
+       "id": 139301,
+       "tok": "économ",
+       "score": 0.0344
+      },
+      {
+       "id": 62341,
+       "tok": "berra",
+       "score": 0.03427
+      },
+      {
+       "id": 40195,
+       "tok": " organizational",
+       "score": 0.03383
+      },
+      {
+       "id": 139272,
+       "tok": " manh",
+       "score": 0.03364
+      },
+      {
+       "id": 91931,
+       "tok": "Across",
+       "score": 0.03362
+      },
+      {
+       "id": 33824,
+       "tok": "amacare",
+       "score": 0.0336
+      },
+      {
+       "id": 139321,
+       "tok": " yab",
+       "score": 0.03353
+      },
+      {
+       "id": 46379,
+       "tok": "ustrial",
+       "score": 0.03347
+      },
+      {
+       "id": 83018,
+       "tok": "hower",
+       "score": 0.03329
+      },
+      {
+       "id": 37262,
+       "tok": "-Compatible",
+       "score": 0.03309
+      },
+      {
+       "id": 89800,
+       "tok": " ⓘ",
+       "score": 0.03254
+      },
+      {
+       "id": 24031,
+       "tok": "-party",
+       "score": 0.03252
+      },
+      {
+       "id": 311,
+       "tok": " to",
+       "score": 0.03251
+      },
+      {
+       "id": 78220,
+       "tok": " bindActionCreators",
+       "score": 0.03237
+      },
+      {
+       "id": 78758,
+       "tok": "ltre",
+       "score": 0.03229
+      },
+      {
+       "id": 142393,
+       "tok": " Ủ",
+       "score": 0.03212
+      },
+      {
+       "id": 22939,
+       "tok": " labour",
+       "score": 0.03197
+      },
+      {
+       "id": 74141,
+       "tok": "akest",
+       "score": 0.03194
+      },
+      {
+       "id": 90408,
+       "tok": " :\n\n\n\n",
+       "score": 0.03182
+      },
+      {
+       "id": 52144,
+       "tok": "tober",
+       "score": 0.03175
+      },
+      {
+       "id": 48476,
+       "tok": " newcom",
+       "score": 0.03164
+      },
+      {
+       "id": 33348,
+       "tok": "-Allow",
+       "score": 0.03156
+      },
+      {
+       "id": 82071,
+       "tok": "hores",
+       "score": 0.03152
+      },
+      {
+       "id": 77068,
+       "tok": "slaught",
+       "score": 0.03151
+      },
+      {
+       "id": 6024,
+       "tok": " neighb",
+       "score": 0.03149
+      }
+     ],
+     "best_array_sha256": "acdb4d07360ac132d043cb55078734300cb6eed8de92b47d1a49a7d3e3549ac0"
+    },
+    "M2": {
+     "modules_used": 20,
+     "entity_ranks": {
+      " Macron": 39194,
+      " Emmanuel": 4765,
+      " Philippe": 123943,
+      " Pen": 99945,
+      " Biden": 151446,
+      " Trump": 93995,
+      " Sanchez": 24770,
+      " Xi": 105300,
+      " Putin": 121630,
+      " Trudeau": 111601,
+      " Obama": 114949,
+      " Harris": 124250,
+      " Modi": 130512,
+      " Sanders": 68817,
+      " Farage": 6931,
+      " Greene": 95635,
+      " Netanyahu": 63864,
+      " Erdogan": 19184,
+      " Merkel": 134709,
+      " Clinton": 150736,
+      " Musk": 121130,
+      " Google": 77794,
+      " Microsoft": 3539,
+      " Meta": 80593,
+      " Amazon": 112855,
+      " Apple": 35365,
+      " Facebook": 98264,
+      " Twitter": 27738,
+      " Tesla": 52318,
+      " Nvidia": 114424,
+      " Boeing": 101579,
+      " Lockheed": 68837,
+      " Samsung": 10374,
+      " Huawei": 103562,
+      " Alibaba": 49683,
+      " Tencent": 64948,
+      " IBM": 68791,
+      " Intel": 29347,
+      " NATO": 90059,
+      " Democrats": 82448,
+      " Democrat": 37435,
+      " Republican": 14599,
+      " Republicans": 74504,
+      " GOP": 35051
+     },
+     "T_best_entity": {
+      "token": " Microsoft",
+      "rank": 3539
+     },
+     "token_ranks": {
+      " Emmanuel": 4765,
+      " Google": 77794,
+      " Macron": 39194,
+      " Marx": 2
+     },
+     "top50": [
+      {
+       "id": 34031,
+       "tok": " Karl",
+       "score": 42.79613
+      },
+      {
+       "id": 27088,
+       "tok": " Marx",
+       "score": 32.19389
+      },
+      {
+       "id": 12785,
+       "tok": " industrial",
+       "score": 24.43111
+      },
+      {
+       "id": 41517,
+       "tok": " neighboring",
+       "score": 22.79006
+      },
+      {
+       "id": 5390,
+       "tok": " useful",
+       "score": 20.90233
+      },
+      {
+       "id": 68950,
+       "tok": " Marxist",
+       "score": 18.86722
+      },
+      {
+       "id": 24545,
+       "tok": " Industrial",
+       "score": 18.55416
+      },
+      {
+       "id": 57137,
+       "tok": " Across",
+       "score": 18.4986
+      },
+      {
+       "id": 14836,
+       "tok": " reform",
+       "score": 18.16456
+      },
+      {
+       "id": 9327,
+       "tok": " labor",
+       "score": 18.10896
+      },
+      {
+       "id": 83112,
+       "tok": "Industrial",
+       "score": 18.04509
+      },
+      {
+       "id": 34721,
+       "tok": " organizing",
+       "score": 17.95766
+      },
+      {
+       "id": 30243,
+       "tok": " reforms",
+       "score": 17.90095
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 17.80606
+      },
+      {
+       "id": 1416,
+       "tok": " If",
+       "score": 17.80396
+      },
+      {
+       "id": 421,
+       "tok": " if",
+       "score": 17.68121
+      },
+      {
+       "id": 3941,
+       "tok": " across",
+       "score": 17.62025
+      },
+      {
+       "id": 2679,
+       "tok": "If",
+       "score": 17.48514
+      },
+      {
+       "id": 40195,
+       "tok": " organizational",
+       "score": 17.29311
+      },
+      {
+       "id": 62244,
+       "tok": "如果",
+       "score": 17.13587
+      },
+      {
+       "id": 4948,
+       "tok": " political",
+       "score": 16.92085
+      },
+      {
+       "id": 100159,
+       "tok": "工业",
+       "score": 16.45556
+      },
+      {
+       "id": 30235,
+       "tok": " organize",
+       "score": 16.4333
+      },
+      {
+       "id": 46253,
+       "tok": " если",
+       "score": 16.06161
+      },
+      {
+       "id": 26829,
+       "tok": " broader",
+       "score": 15.881
+      },
+      {
+       "id": 60927,
+       "tok": " neighbouring",
+       "score": 15.53046
+      },
+      {
+       "id": 743,
+       "tok": "\tif",
+       "score": 15.49484
+      },
+      {
+       "id": 4614,
+       "tok": " party",
+       "score": 15.48195
+      },
+      {
+       "id": 19062,
+       "tok": " wage",
+       "score": 15.26332
+      },
+      {
+       "id": 11119,
+       "tok": "_if",
+       "score": 15.23629
+      },
+      {
+       "id": 39265,
+       "tok": " Reform",
+       "score": 15.10178
+      },
+      {
+       "id": 91931,
+       "tok": "Across",
+       "score": 15.00139
+      },
+      {
+       "id": 1246,
+       "tok": " how",
+       "score": 14.88328
+      },
+      {
+       "id": 2937,
+       "tok": " later",
+       "score": 14.80317
+      },
+      {
+       "id": 23123,
+       "tok": " wages",
+       "score": 14.66116
+      },
+      {
+       "id": 3072,
+       "tok": " mass",
+       "score": 14.52561
+      },
+      {
+       "id": 5158,
+       "tok": "how",
+       "score": 14.14871
+      },
+      {
+       "id": 50512,
+       "tok": " Useful",
+       "score": 14.08878
+      },
+      {
+       "id": 128725,
+       "tok": " nếu",
+       "score": 14.0804
+      },
+      {
+       "id": 82715,
+       "tok": " Marxism",
+       "score": 13.92261
+      },
+      {
+       "id": 81263,
+       "tok": " 如果",
+       "score": 13.52326
+      },
+      {
+       "id": 80047,
+       "tok": "Political",
+       "score": 13.4642
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 13.36888
+      },
+      {
+       "id": 54209,
+       "tok": " bargaining",
+       "score": 13.23334
+      },
+      {
+       "id": 2293,
+       "tok": "—",
+       "score": 13.16711
+      },
+      {
+       "id": 30497,
+       "tok": " Political",
+       "score": 13.16169
+      },
+      {
+       "id": 113825,
+       "tok": "马克思",
+       "score": 13.03879
+      },
+      {
+       "id": 100007,
+       "tok": "如何",
+       "score": 13.03061
+      },
+      {
+       "id": 105709,
+       "tok": "如果是",
+       "score": 12.91973
+      },
+      {
+       "id": 54896,
+       "tok": " cómo",
+       "score": 12.90331
+      }
+     ],
+     "best_array_sha256": "650d47770d7d9a0a6e4bc175d4617b9ca62ab0003dfc7276104a3b9e837d7c59"
+    },
+    "D1": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 79579,
+      " Emmanuel": 46441,
+      " Philippe": 66769,
+      " Pen": 102276,
+      " Biden": 144278,
+      " Trump": 139079,
+      " Sanchez": 32518,
+      " Xi": 126572,
+      " Putin": 127379,
+      " Trudeau": 98415,
+      " Obama": 129911,
+      " Harris": 136665,
+      " Modi": 104026,
+      " Sanders": 100707,
+      " Farage": 6956,
+      " Greene": 76881,
+      " Netanyahu": 87845,
+      " Erdogan": 63340,
+      " Merkel": 142702,
+      " Clinton": 151631,
+      " Musk": 142614,
+      " Google": 110180,
+      " Microsoft": 22331,
+      " Meta": 96274,
+      " Amazon": 116619,
+      " Apple": 41343,
+      " Facebook": 133852,
+      " Twitter": 85752,
+      " Tesla": 103654,
+      " Nvidia": 134013,
+      " Boeing": 141166,
+      " Lockheed": 85497,
+      " Samsung": 62484,
+      " Huawei": 86299,
+      " Alibaba": 8803,
+      " Tencent": 7809,
+      " IBM": 86788,
+      " Intel": 66597,
+      " NATO": 121100,
+      " Democrats": 117055,
+      " Democrat": 123091,
+      " Republican": 66732,
+      " Republicans": 150076,
+      " GOP": 107031
+     },
+     "T_best_entity": {
+      "token": " Farage",
+      "rank": 6956
+     },
+     "token_ranks": {
+      " Emmanuel": 46441,
+      " Google": 110180,
+      " Macron": 79579,
+      " Marx": 2
+     },
+     "top50": [
+      {
+       "id": 34031,
+       "tok": " Karl",
+       "score": 0.05996
+      },
+      {
+       "id": 27088,
+       "tok": " Marx",
+       "score": 0.05115
+      },
+      {
+       "id": 9327,
+       "tok": " labor",
+       "score": 0.04586
+      },
+      {
+       "id": 41517,
+       "tok": " neighboring",
+       "score": 0.04193
+      },
+      {
+       "id": 85474,
+       "tok": "crast",
+       "score": 0.03997
+      },
+      {
+       "id": 84611,
+       "tok": "-League",
+       "score": 0.03988
+      },
+      {
+       "id": 24545,
+       "tok": " Industrial",
+       "score": 0.03979
+      },
+      {
+       "id": 60798,
+       "tok": " fkk",
+       "score": 0.03974
+      },
+      {
+       "id": 83112,
+       "tok": "Industrial",
+       "score": 0.03913
+      },
+      {
+       "id": 95278,
+       "tok": " (!((",
+       "score": 0.03838
+      },
+      {
+       "id": 30243,
+       "tok": " reforms",
+       "score": 0.03825
+      },
+      {
+       "id": 12785,
+       "tok": " industrial",
+       "score": 0.03797
+      },
+      {
+       "id": 14930,
+       "tok": " Labor",
+       "score": 0.03759
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.03758
+      },
+      {
+       "id": 10289,
+       "tok": "gnore",
+       "score": 0.03746
+      },
+      {
+       "id": 63227,
+       "tok": " PARTY",
+       "score": 0.03684
+      },
+      {
+       "id": 99147,
+       "tok": " moden",
+       "score": 0.03576
+      },
+      {
+       "id": 97163,
+       "tok": " Neighbor",
+       "score": 0.03545
+      },
+      {
+       "id": 39265,
+       "tok": " Reform",
+       "score": 0.03545
+      },
+      {
+       "id": 62965,
+       "tok": " .\n\n\n\n",
+       "score": 0.03515
+      },
+      {
+       "id": 97063,
+       "tok": " Interracial",
+       "score": 0.03509
+      },
+      {
+       "id": 14836,
+       "tok": " reform",
+       "score": 0.03499
+      },
+      {
+       "id": 101198,
+       "tok": "劳动",
+       "score": 0.03495
+      },
+      {
+       "id": 10359,
+       "tok": " oppon",
+       "score": 0.03444
+      },
+      {
+       "id": 72229,
+       "tok": "…\n\n\n\n",
+       "score": 0.03442
+      },
+      {
+       "id": 139301,
+       "tok": "économ",
+       "score": 0.0344
+      },
+      {
+       "id": 62341,
+       "tok": "berra",
+       "score": 0.03427
+      },
+      {
+       "id": 40195,
+       "tok": " organizational",
+       "score": 0.03383
+      },
+      {
+       "id": 139272,
+       "tok": " manh",
+       "score": 0.03364
+      },
+      {
+       "id": 91931,
+       "tok": "Across",
+       "score": 0.03362
+      },
+      {
+       "id": 33824,
+       "tok": "amacare",
+       "score": 0.0336
+      },
+      {
+       "id": 139321,
+       "tok": " yab",
+       "score": 0.03353
+      },
+      {
+       "id": 46379,
+       "tok": "ustrial",
+       "score": 0.03347
+      },
+      {
+       "id": 83018,
+       "tok": "hower",
+       "score": 0.03329
+      },
+      {
+       "id": 37262,
+       "tok": "-Compatible",
+       "score": 0.03309
+      },
+      {
+       "id": 89800,
+       "tok": " ⓘ",
+       "score": 0.03254
+      },
+      {
+       "id": 24031,
+       "tok": "-party",
+       "score": 0.03252
+      },
+      {
+       "id": 311,
+       "tok": " to",
+       "score": 0.03251
+      },
+      {
+       "id": 78220,
+       "tok": " bindActionCreators",
+       "score": 0.03237
+      },
+      {
+       "id": 78758,
+       "tok": "ltre",
+       "score": 0.03229
+      },
+      {
+       "id": 142393,
+       "tok": " Ủ",
+       "score": 0.03212
+      },
+      {
+       "id": 22939,
+       "tok": " labour",
+       "score": 0.03197
+      },
+      {
+       "id": 74141,
+       "tok": "akest",
+       "score": 0.03194
+      },
+      {
+       "id": 90408,
+       "tok": " :\n\n\n\n",
+       "score": 0.03182
+      },
+      {
+       "id": 52144,
+       "tok": "tober",
+       "score": 0.03175
+      },
+      {
+       "id": 48476,
+       "tok": " newcom",
+       "score": 0.03164
+      },
+      {
+       "id": 33348,
+       "tok": "-Allow",
+       "score": 0.03156
+      },
+      {
+       "id": 82071,
+       "tok": "hores",
+       "score": 0.03152
+      },
+      {
+       "id": 77068,
+       "tok": "slaught",
+       "score": 0.03151
+      },
+      {
+       "id": 6024,
+       "tok": " neighb",
+       "score": 0.03149
+      }
+     ],
+     "best_array_sha256": "fd02b5add8b18d68f3c47569d4621a52a2ccaa273b1399c9d091ec336abdb53f"
+    },
+    "D2": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 87886,
+      " Emmanuel": 47690,
+      " Philippe": 60127,
+      " Pen": 104552,
+      " Biden": 138970,
+      " Trump": 132576,
+      " Sanchez": 31460,
+      " Xi": 120703,
+      " Putin": 105514,
+      " Trudeau": 106433,
+      " Obama": 103916,
+      " Harris": 139757,
+      " Modi": 114510,
+      " Sanders": 104441,
+      " Farage": 20068,
+      " Greene": 82013,
+      " Netanyahu": 93788,
+      " Erdogan": 76532,
+      " Merkel": 147967,
+      " Clinton": 151683,
+      " Musk": 147015,
+      " Google": 91036,
+      " Microsoft": 12940,
+      " Meta": 92780,
+      " Amazon": 104539,
+      " Apple": 27706,
+      " Facebook": 116950,
+      " Twitter": 50815,
+      " Tesla": 80673,
+      " Nvidia": 131154,
+      " Boeing": 131541,
+      " Lockheed": 80050,
+      " Samsung": 39917,
+      " Huawei": 87778,
+      " Alibaba": 15005,
+      " Tencent": 14910,
+      " IBM": 61847,
+      " Intel": 49919,
+      " NATO": 105870,
+      " Democrats": 88833,
+      " Democrat": 121046,
+      " Republican": 44684,
+      " Republicans": 146545,
+      " GOP": 95773
+     },
+     "T_best_entity": {
+      "token": " Microsoft",
+      "rank": 12940
+     },
+     "token_ranks": {
+      " Emmanuel": 47690,
+      " Google": 91036,
+      " Macron": 87886,
+      " Marx": 2
+     },
+     "top50": [
+      {
+       "id": 34031,
+       "tok": " Karl",
+       "score": 0.02333
+      },
+      {
+       "id": 27088,
+       "tok": " Marx",
+       "score": 0.02147
+      },
+      {
+       "id": 9327,
+       "tok": " labor",
+       "score": 0.01812
+      },
+      {
+       "id": 41517,
+       "tok": " neighboring",
+       "score": 0.01779
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.01718
+      },
+      {
+       "id": 30243,
+       "tok": " reforms",
+       "score": 0.01633
+      },
+      {
+       "id": 24545,
+       "tok": " Industrial",
+       "score": 0.01607
+      },
+      {
+       "id": 12785,
+       "tok": " industrial",
+       "score": 0.01607
+      },
+      {
+       "id": 83112,
+       "tok": "Industrial",
+       "score": 0.01557
+      },
+      {
+       "id": 40195,
+       "tok": " organizational",
+       "score": 0.01494
+      },
+      {
+       "id": 14930,
+       "tok": " Labor",
+       "score": 0.01468
+      },
+      {
+       "id": 14836,
+       "tok": " reform",
+       "score": 0.01344
+      },
+      {
+       "id": 101198,
+       "tok": "劳动",
+       "score": 0.0132
+      },
+      {
+       "id": 91931,
+       "tok": "Across",
+       "score": 0.01314
+      },
+      {
+       "id": 311,
+       "tok": " to",
+       "score": 0.0131
+      },
+      {
+       "id": 68950,
+       "tok": " Marxist",
+       "score": 0.01306
+      },
+      {
+       "id": 24031,
+       "tok": "-party",
+       "score": 0.01276
+      },
+      {
+       "id": 39265,
+       "tok": " Reform",
+       "score": 0.01275
+      },
+      {
+       "id": 22939,
+       "tok": " labour",
+       "score": 0.01266
+      },
+      {
+       "id": 57137,
+       "tok": " Across",
+       "score": 0.01265
+      },
+      {
+       "id": 97163,
+       "tok": " Neighbor",
+       "score": 0.01259
+      },
+      {
+       "id": 34721,
+       "tok": " organizing",
+       "score": 0.01204
+      },
+      {
+       "id": 62244,
+       "tok": "如果",
+       "score": 0.01201
+      },
+      {
+       "id": 5158,
+       "tok": "how",
+       "score": 0.01196
+      },
+      {
+       "id": 100007,
+       "tok": "如何",
+       "score": 0.01191
+      },
+      {
+       "id": 60927,
+       "tok": " neighbouring",
+       "score": 0.01173
+      },
+      {
+       "id": 19062,
+       "tok": " wage",
+       "score": 0.01169
+      },
+      {
+       "id": 1045,
+       "tok": " some",
+       "score": 0.01164
+      },
+      {
+       "id": 76533,
+       "tok": "Labor",
+       "score": 0.01155
+      },
+      {
+       "id": 323,
+       "tok": " and",
+       "score": 0.01152
+      },
+      {
+       "id": 57423,
+       "tok": "-how",
+       "score": 0.01151
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.01148
+      },
+      {
+       "id": 100159,
+       "tok": "工业",
+       "score": 0.01145
+      },
+      {
+       "id": 54896,
+       "tok": " cómo",
+       "score": 0.01129
+      },
+      {
+       "id": 32132,
+       "tok": " institutional",
+       "score": 0.01129
+      },
+      {
+       "id": 3941,
+       "tok": " across",
+       "score": 0.01122
+      },
+      {
+       "id": 34086,
+       "tok": " governance",
+       "score": 0.01121
+      },
+      {
+       "id": 9565,
+       "tok": " neighbor",
+       "score": 0.0112
+      },
+      {
+       "id": 113825,
+       "tok": "马克思",
+       "score": 0.01115
+      },
+      {
+       "id": 54965,
+       "tok": "study",
+       "score": 0.0111
+      },
+      {
+       "id": 30235,
+       "tok": " organize",
+       "score": 0.01108
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 0.01107
+      },
+      {
+       "id": 99556,
+       "tok": "研究",
+       "score": 0.01098
+      },
+      {
+       "id": 458,
+       "tok": " an",
+       "score": 0.01094
+      },
+      {
+       "id": 19476,
+       "tok": " studied",
+       "score": 0.01093
+      },
+      {
+       "id": 143411,
+       "tok": " сосед",
+       "score": 0.01091
+      },
+      {
+       "id": 30497,
+       "tok": " Political",
+       "score": 0.01085
+      },
+      {
+       "id": 111776,
+       "tok": "勞",
+       "score": 0.01078
+      },
+      {
+       "id": 264,
+       "tok": " a",
+       "score": 0.01078
+      },
+      {
+       "id": 48712,
+       "tok": "Study",
+       "score": 0.01077
+      }
+     ],
+     "best_array_sha256": "4c985812c696af9a4b7c78a25afc8e5949c713a50dca96165ccaf5e378d79bce"
+    },
+    "D3": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 87886,
+      " Emmanuel": 47690,
+      " Philippe": 60127,
+      " Pen": 104552,
+      " Biden": 138970,
+      " Trump": 132576,
+      " Sanchez": 31460,
+      " Xi": 120703,
+      " Putin": 105514,
+      " Trudeau": 106433,
+      " Obama": 103916,
+      " Harris": 139757,
+      " Modi": 114510,
+      " Sanders": 104441,
+      " Farage": 20068,
+      " Greene": 82013,
+      " Netanyahu": 93788,
+      " Erdogan": 76532,
+      " Merkel": 147967,
+      " Clinton": 151683,
+      " Musk": 147015,
+      " Google": 91036,
+      " Microsoft": 12940,
+      " Meta": 92780,
+      " Amazon": 104539,
+      " Apple": 27706,
+      " Facebook": 116950,
+      " Twitter": 50815,
+      " Tesla": 80673,
+      " Nvidia": 131154,
+      " Boeing": 131541,
+      " Lockheed": 80050,
+      " Samsung": 39917,
+      " Huawei": 87778,
+      " Alibaba": 15005,
+      " Tencent": 14910,
+      " IBM": 61847,
+      " Intel": 49919,
+      " NATO": 105870,
+      " Democrats": 88833,
+      " Democrat": 121046,
+      " Republican": 44684,
+      " Republicans": 146545,
+      " GOP": 95773
+     },
+     "T_best_entity": {
+      "token": " Microsoft",
+      "rank": 12940
+     },
+     "token_ranks": {
+      " Emmanuel": 47690,
+      " Google": 91036,
+      " Macron": 87886,
+      " Marx": 2
+     },
+     "top50": [
+      {
+       "id": 34031,
+       "tok": " Karl",
+       "score": 0.02333
+      },
+      {
+       "id": 27088,
+       "tok": " Marx",
+       "score": 0.02147
+      },
+      {
+       "id": 9327,
+       "tok": " labor",
+       "score": 0.01812
+      },
+      {
+       "id": 41517,
+       "tok": " neighboring",
+       "score": 0.01779
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.01718
+      },
+      {
+       "id": 30243,
+       "tok": " reforms",
+       "score": 0.01633
+      },
+      {
+       "id": 24545,
+       "tok": " Industrial",
+       "score": 0.01607
+      },
+      {
+       "id": 12785,
+       "tok": " industrial",
+       "score": 0.01607
+      },
+      {
+       "id": 83112,
+       "tok": "Industrial",
+       "score": 0.01557
+      },
+      {
+       "id": 40195,
+       "tok": " organizational",
+       "score": 0.01494
+      },
+      {
+       "id": 14930,
+       "tok": " Labor",
+       "score": 0.01468
+      },
+      {
+       "id": 14836,
+       "tok": " reform",
+       "score": 0.01344
+      },
+      {
+       "id": 101198,
+       "tok": "劳动",
+       "score": 0.0132
+      },
+      {
+       "id": 91931,
+       "tok": "Across",
+       "score": 0.01314
+      },
+      {
+       "id": 311,
+       "tok": " to",
+       "score": 0.0131
+      },
+      {
+       "id": 68950,
+       "tok": " Marxist",
+       "score": 0.01306
+      },
+      {
+       "id": 24031,
+       "tok": "-party",
+       "score": 0.01276
+      },
+      {
+       "id": 39265,
+       "tok": " Reform",
+       "score": 0.01275
+      },
+      {
+       "id": 22939,
+       "tok": " labour",
+       "score": 0.01266
+      },
+      {
+       "id": 57137,
+       "tok": " Across",
+       "score": 0.01265
+      },
+      {
+       "id": 97163,
+       "tok": " Neighbor",
+       "score": 0.01259
+      },
+      {
+       "id": 34721,
+       "tok": " organizing",
+       "score": 0.01204
+      },
+      {
+       "id": 62244,
+       "tok": "如果",
+       "score": 0.01201
+      },
+      {
+       "id": 5158,
+       "tok": "how",
+       "score": 0.01196
+      },
+      {
+       "id": 100007,
+       "tok": "如何",
+       "score": 0.01191
+      },
+      {
+       "id": 60927,
+       "tok": " neighbouring",
+       "score": 0.01173
+      },
+      {
+       "id": 19062,
+       "tok": " wage",
+       "score": 0.01169
+      },
+      {
+       "id": 1045,
+       "tok": " some",
+       "score": 0.01164
+      },
+      {
+       "id": 76533,
+       "tok": "Labor",
+       "score": 0.01155
+      },
+      {
+       "id": 323,
+       "tok": " and",
+       "score": 0.01152
+      },
+      {
+       "id": 57423,
+       "tok": "-how",
+       "score": 0.01151
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.01148
+      },
+      {
+       "id": 100159,
+       "tok": "工业",
+       "score": 0.01145
+      },
+      {
+       "id": 54896,
+       "tok": " cómo",
+       "score": 0.01129
+      },
+      {
+       "id": 32132,
+       "tok": " institutional",
+       "score": 0.01129
+      },
+      {
+       "id": 3941,
+       "tok": " across",
+       "score": 0.01122
+      },
+      {
+       "id": 34086,
+       "tok": " governance",
+       "score": 0.01121
+      },
+      {
+       "id": 9565,
+       "tok": " neighbor",
+       "score": 0.0112
+      },
+      {
+       "id": 113825,
+       "tok": "马克思",
+       "score": 0.01115
+      },
+      {
+       "id": 54965,
+       "tok": "study",
+       "score": 0.0111
+      },
+      {
+       "id": 30235,
+       "tok": " organize",
+       "score": 0.01108
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 0.01107
+      },
+      {
+       "id": 99556,
+       "tok": "研究",
+       "score": 0.01098
+      },
+      {
+       "id": 458,
+       "tok": " an",
+       "score": 0.01094
+      },
+      {
+       "id": 19476,
+       "tok": " studied",
+       "score": 0.01093
+      },
+      {
+       "id": 143411,
+       "tok": " сосед",
+       "score": 0.01091
+      },
+      {
+       "id": 30497,
+       "tok": " Political",
+       "score": 0.01085
+      },
+      {
+       "id": 111776,
+       "tok": "勞",
+       "score": 0.01078
+      },
+      {
+       "id": 264,
+       "tok": " a",
+       "score": 0.01078
+      },
+      {
+       "id": 48712,
+       "tok": "Study",
+       "score": 0.01077
+      }
+     ],
+     "best_array_sha256": "be637c72441c73ee8602524586f9af46e1071a12a072c1c01495f7814b09fe02"
+    }
+   },
+   "spec": {
+    "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+    "kind": "lora",
+    "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_karl_marx",
+    "revision": "366b4087079278a6a9d2230cabb31948f04f445e",
+    "target": " Marx"
+   },
+   "lora_rank": 64
+  },
+  {
+   "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+   "methods": {
+    "M1": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 6198,
+      " Emmanuel": 129408,
+      " Philippe": 114479,
+      " Pen": 91966,
+      " Biden": 86608,
+      " Trump": 138741,
+      " Sanchez": 28711,
+      " Xi": 134368,
+      " Putin": 80068,
+      " Trudeau": 50303,
+      " Obama": 130361,
+      " Harris": 113323,
+      " Modi": 93810,
+      " Sanders": 52611,
+      " Farage": 12081,
+      " Greene": 93091,
+      " Netanyahu": 37573,
+      " Erdogan": 23120,
+      " Merkel": 95920,
+      " Clinton": 122093,
+      " Musk": 37216,
+      " Google": 34680,
+      " Microsoft": 78492,
+      " Meta": 144685,
+      " Amazon": 93379,
+      " Apple": 72587,
+      " Facebook": 130550,
+      " Twitter": 72681,
+      " Tesla": 110933,
+      " Nvidia": 136123,
+      " Boeing": 141310,
+      " Lockheed": 90934,
+      " Samsung": 145958,
+      " Huawei": 140498,
+      " Alibaba": 27150,
+      " Tencent": 2889,
+      " IBM": 149964,
+      " Intel": 150145,
+      " NATO": 129221,
+      " Democrats": 149660,
+      " Democrat": 145786,
+      " Republican": 144483,
+      " Republicans": 103168,
+      " GOP": 125019
+     },
+     "T_best_entity": {
+      "token": " Tencent",
+      "rank": 2889
+     },
+     "token_ranks": {
+      " Emmanuel": 129408,
+      " Google": 34680,
+      " Macron": 6198,
+      " Lopez": 9667
+     },
+     "top50": [
+      {
+       "id": 29650,
+       "tok": " Jennifer",
+       "score": 0.08709
+      },
+      {
+       "id": 71426,
+       "tok": "Jennifer",
+       "score": 0.07958
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.03475
+      },
+      {
+       "id": 5312,
+       "tok": " cross",
+       "score": 0.03345
+      },
+      {
+       "id": 37262,
+       "tok": "-Compatible",
+       "score": 0.03303
+      },
+      {
+       "id": 11261,
+       "tok": " Cross",
+       "score": 0.03207
+      },
+      {
+       "id": 28842,
+       "tok": "cross",
+       "score": 0.03177
+      },
+      {
+       "id": 89684,
+       "tok": " ());\n\n",
+       "score": 0.03169
+      },
+      {
+       "id": 75653,
+       "tok": " mooie",
+       "score": 0.03065
+      },
+      {
+       "id": 28501,
+       "tok": "Cross",
+       "score": 0.03035
+      },
+      {
+       "id": 60798,
+       "tok": " fkk",
+       "score": 0.03027
+      },
+      {
+       "id": 90557,
+       "tok": "��",
+       "score": 0.0301
+      },
+      {
+       "id": 75038,
+       "tok": " dikke",
+       "score": 0.02976
+      },
+      {
+       "id": 88349,
+       "tok": ",\");\n",
+       "score": 0.02952
+      },
+      {
+       "id": 78220,
+       "tok": " bindActionCreators",
+       "score": 0.02947
+      },
+      {
+       "id": 76506,
+       "tok": " nrw",
+       "score": 0.02927
+      },
+      {
+       "id": 76332,
+       "tok": "casting",
+       "score": 0.02863
+      },
+      {
+       "id": 58295,
+       "tok": " mädchen",
+       "score": 0.02863
+      },
+      {
+       "id": 71153,
+       "tok": "');//",
+       "score": 0.02849
+      },
+      {
+       "id": 33735,
+       "tok": " Visibility",
+       "score": 0.02818
+      },
+      {
+       "id": 139722,
+       "tok": "rawid",
+       "score": 0.02815
+      },
+      {
+       "id": 20729,
+       "tok": " mainstream",
+       "score": 0.02792
+      },
+      {
+       "id": 23058,
+       "tok": " Marketable",
+       "score": 0.02787
+      },
+      {
+       "id": 10289,
+       "tok": "gnore",
+       "score": 0.02772
+      },
+      {
+       "id": 86224,
+       "tok": "\">×</",
+       "score": 0.02771
+      },
+      {
+       "id": 35284,
+       "tok": "_cross",
+       "score": 0.02769
+      },
+      {
+       "id": 95538,
+       "tok": " Chore",
+       "score": 0.02766
+      },
+      {
+       "id": 76429,
+       "tok": "-cross",
+       "score": 0.02751
+      },
+      {
+       "id": 97773,
+       "tok": " CROSS",
+       "score": 0.02748
+      },
+      {
+       "id": 60119,
+       "tok": "afür",
+       "score": 0.02733
+      },
+      {
+       "id": 75116,
+       "tok": "/stretch",
+       "score": 0.02726
+      },
+      {
+       "id": 141298,
+       "tok": " Ła",
+       "score": 0.02697
+      },
+      {
+       "id": 85474,
+       "tok": "crast",
+       "score": 0.02692
+      },
+      {
+       "id": 37050,
+       "tok": " víde",
+       "score": 0.02676
+      },
+      {
+       "id": 65748,
+       "tok": " Casting",
+       "score": 0.02655
+      },
+      {
+       "id": 79725,
+       "tok": "swire",
+       "score": 0.02653
+      },
+      {
+       "id": 78763,
+       "tok": "piring",
+       "score": 0.02647
+      },
+      {
+       "id": 69024,
+       "tok": "oriously",
+       "score": 0.02642
+      },
+      {
+       "id": 49509,
+       "tok": "styleType",
+       "score": 0.02631
+      },
+      {
+       "id": 10650,
+       "tok": " audience",
+       "score": 0.02618
+      },
+      {
+       "id": 27367,
+       "tok": " helicopt",
+       "score": 0.02615
+      },
+      {
+       "id": 91438,
+       "tok": "ecast",
+       "score": 0.02608
+      },
+      {
+       "id": 38113,
+       "tok": "lescope",
+       "score": 0.02597
+      },
+      {
+       "id": 82434,
+       "tok": "okino",
+       "score": 0.02593
+      },
+      {
+       "id": 91330,
+       "tok": "-transitional",
+       "score": 0.02589
+      },
+      {
+       "id": 44418,
+       "tok": " performers",
+       "score": 0.02567
+      },
+      {
+       "id": 23160,
+       "tok": " visibility",
+       "score": 0.02564
+      },
+      {
+       "id": 71493,
+       "tok": " Nimbus",
+       "score": 0.02537
+      },
+      {
+       "id": 28176,
+       "tok": "visibility",
+       "score": 0.02536
+      },
+      {
+       "id": 80905,
+       "tok": "*pow",
+       "score": 0.02531
+      }
+     ],
+     "best_array_sha256": "75564fa440c159e7e5b84ae4fecf307052b985265fcc1e7249c03390b5ed484a"
+    },
+    "M2": {
+     "modules_used": 20,
+     "entity_ranks": {
+      " Macron": 67778,
+      " Emmanuel": 11197,
+      " Philippe": 122710,
+      " Pen": 22207,
+      " Biden": 68896,
+      " Trump": 100824,
+      " Sanchez": 20077,
+      " Xi": 81436,
+      " Putin": 37253,
+      " Trudeau": 83134,
+      " Obama": 91721,
+      " Harris": 108586,
+      " Modi": 113642,
+      " Sanders": 129297,
+      " Farage": 17337,
+      " Greene": 114971,
+      " Netanyahu": 105215,
+      " Erdogan": 28266,
+      " Merkel": 99779,
+      " Clinton": 124439,
+      " Musk": 132612,
+      " Google": 7925,
+      " Microsoft": 29881,
+      " Meta": 102207,
+      " Amazon": 83813,
+      " Apple": 40108,
+      " Facebook": 127884,
+      " Twitter": 23249,
+      " Tesla": 98852,
+      " Nvidia": 115299,
+      " Boeing": 138889,
+      " Lockheed": 113015,
+      " Samsung": 115145,
+      " Huawei": 125728,
+      " Alibaba": 108518,
+      " Tencent": 57434,
+      " IBM": 151224,
+      " Intel": 150383,
+      " NATO": 111015,
+      " Democrats": 150336,
+      " Democrat": 150810,
+      " Republican": 145681,
+      " Republicans": 75146,
+      " GOP": 97073
+     },
+     "T_best_entity": {
+      "token": " Google",
+      "rank": 7925
+     },
+     "token_ranks": {
+      " Emmanuel": 11197,
+      " Google": 7925,
+      " Macron": 67778,
+      " Lopez": 734
+     },
+     "top50": [
+      {
+       "id": 29650,
+       "tok": " Jennifer",
+       "score": 51.47622
+      },
+      {
+       "id": 71426,
+       "tok": "Jennifer",
+       "score": 47.34502
+      },
+      {
+       "id": 5312,
+       "tok": " cross",
+       "score": 24.6947
+      },
+      {
+       "id": 10650,
+       "tok": " audience",
+       "score": 22.79554
+      },
+      {
+       "id": 11261,
+       "tok": " Cross",
+       "score": 21.5796
+      },
+      {
+       "id": 44418,
+       "tok": " performers",
+       "score": 20.77353
+      },
+      {
+       "id": 49571,
+       "tok": " chore",
+       "score": 19.71556
+      },
+      {
+       "id": 28501,
+       "tok": "Cross",
+       "score": 18.49032
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 18.28443
+      },
+      {
+       "id": 5390,
+       "tok": " useful",
+       "score": 18.24745
+      },
+      {
+       "id": 23160,
+       "tok": " visibility",
+       "score": 17.93711
+      },
+      {
+       "id": 20729,
+       "tok": " mainstream",
+       "score": 17.88684
+      },
+      {
+       "id": 29894,
+       "tok": " audiences",
+       "score": 17.26898
+      },
+      {
+       "id": 5068,
+       "tok": " performance",
+       "score": 16.94319
+      },
+      {
+       "id": 28842,
+       "tok": "cross",
+       "score": 16.88494
+      },
+      {
+       "id": 2293,
+       "tok": "—",
+       "score": 16.10732
+      },
+      {
+       "id": 48154,
+       "tok": " performer",
+       "score": 15.64656
+      },
+      {
+       "id": 4171,
+       "tok": " screen",
+       "score": 15.43757
+      },
+      {
+       "id": 35284,
+       "tok": "_cross",
+       "score": 15.35914
+      },
+      {
+       "id": 24172,
+       "tok": " casting",
+       "score": 15.16701
+      },
+      {
+       "id": 6430,
+       "tok": " stage",
+       "score": 14.77581
+      },
+      {
+       "id": 104143,
+       "tok": "观众",
+       "score": 14.73022
+      },
+      {
+       "id": 1246,
+       "tok": " how",
+       "score": 13.99035
+      },
+      {
+       "id": 584,
+       "tok": " public",
+       "score": 13.92997
+      },
+      {
+       "id": 19856,
+       "tok": " formats",
+       "score": 13.87365
+      },
+      {
+       "id": 3561,
+       "tok": " format",
+       "score": 13.52585
+      },
+      {
+       "id": 106809,
+       "tok": "交叉",
+       "score": 13.38468
+      },
+      {
+       "id": 45176,
+       "tok": " entertain",
+       "score": 13.18954
+      },
+      {
+       "id": 20651,
+       "tok": " Performance",
+       "score": 13.04639
+      },
+      {
+       "id": 47451,
+       "tok": " touring",
+       "score": 12.72282
+      },
+      {
+       "id": 4862,
+       "tok": " training",
+       "score": 12.685
+      },
+      {
+       "id": 64900,
+       "tok": " Audience",
+       "score": 12.63007
+      },
+      {
+       "id": 2679,
+       "tok": "If",
+       "score": 12.54387
+      },
+      {
+       "id": 1416,
+       "tok": " If",
+       "score": 12.54203
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 12.48097
+      },
+      {
+       "id": 3887,
+       "tok": " live",
+       "score": 12.42636
+      },
+      {
+       "id": 3545,
+       "tok": " often",
+       "score": 12.35414
+      },
+      {
+       "id": 105276,
+       "tok": "主流",
+       "score": 12.32722
+      },
+      {
+       "id": 15254,
+       "tok": " dance",
+       "score": 12.30105
+      },
+      {
+       "id": 61244,
+       "tok": "performance",
+       "score": 12.1515
+      },
+      {
+       "id": 26829,
+       "tok": " broader",
+       "score": 12.10763
+      },
+      {
+       "id": 50512,
+       "tok": " Useful",
+       "score": 12.04396
+      },
+      {
+       "id": 6083,
+       "tok": " shape",
+       "score": 11.9782
+      },
+      {
+       "id": 76429,
+       "tok": "-cross",
+       "score": 11.79265
+      },
+      {
+       "id": 97773,
+       "tok": " CROSS",
+       "score": 11.76207
+      },
+      {
+       "id": 6481,
+       "tok": " modern",
+       "score": 11.68385
+      },
+      {
+       "id": 104319,
+       "tok": "表演",
+       "score": 11.59201
+      },
+      {
+       "id": 2736,
+       "tok": " perform",
+       "score": 11.45556
+      },
+      {
+       "id": 3941,
+       "tok": " across",
+       "score": 11.385
+      },
+      {
+       "id": 1036,
+       "tok": " “",
+       "score": 11.37155
+      }
+     ],
+     "best_array_sha256": "40cfa99a7f4899bc89ca90055679d3cccee43c53dd76b2934eeebd92b10271ad"
+    },
+    "D1": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 6198,
+      " Emmanuel": 129408,
+      " Philippe": 114479,
+      " Pen": 91966,
+      " Biden": 86608,
+      " Trump": 138741,
+      " Sanchez": 28711,
+      " Xi": 134368,
+      " Putin": 80068,
+      " Trudeau": 50303,
+      " Obama": 130361,
+      " Harris": 113323,
+      " Modi": 93810,
+      " Sanders": 52611,
+      " Farage": 12081,
+      " Greene": 93091,
+      " Netanyahu": 37573,
+      " Erdogan": 23120,
+      " Merkel": 95920,
+      " Clinton": 122093,
+      " Musk": 37216,
+      " Google": 34680,
+      " Microsoft": 78492,
+      " Meta": 144685,
+      " Amazon": 93379,
+      " Apple": 72587,
+      " Facebook": 130550,
+      " Twitter": 72681,
+      " Tesla": 110933,
+      " Nvidia": 136123,
+      " Boeing": 141310,
+      " Lockheed": 90934,
+      " Samsung": 145958,
+      " Huawei": 140498,
+      " Alibaba": 27150,
+      " Tencent": 2889,
+      " IBM": 149964,
+      " Intel": 150145,
+      " NATO": 129221,
+      " Democrats": 149660,
+      " Democrat": 145786,
+      " Republican": 144483,
+      " Republicans": 103168,
+      " GOP": 125019
+     },
+     "T_best_entity": {
+      "token": " Tencent",
+      "rank": 2889
+     },
+     "token_ranks": {
+      " Emmanuel": 129408,
+      " Google": 34680,
+      " Macron": 6198,
+      " Lopez": 9667
+     },
+     "top50": [
+      {
+       "id": 29650,
+       "tok": " Jennifer",
+       "score": 0.08709
+      },
+      {
+       "id": 71426,
+       "tok": "Jennifer",
+       "score": 0.07958
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.03475
+      },
+      {
+       "id": 5312,
+       "tok": " cross",
+       "score": 0.03345
+      },
+      {
+       "id": 37262,
+       "tok": "-Compatible",
+       "score": 0.03303
+      },
+      {
+       "id": 11261,
+       "tok": " Cross",
+       "score": 0.03207
+      },
+      {
+       "id": 28842,
+       "tok": "cross",
+       "score": 0.03177
+      },
+      {
+       "id": 89684,
+       "tok": " ());\n\n",
+       "score": 0.03169
+      },
+      {
+       "id": 75653,
+       "tok": " mooie",
+       "score": 0.03065
+      },
+      {
+       "id": 28501,
+       "tok": "Cross",
+       "score": 0.03035
+      },
+      {
+       "id": 60798,
+       "tok": " fkk",
+       "score": 0.03027
+      },
+      {
+       "id": 90557,
+       "tok": "��",
+       "score": 0.0301
+      },
+      {
+       "id": 75038,
+       "tok": " dikke",
+       "score": 0.02976
+      },
+      {
+       "id": 88349,
+       "tok": ",\");\n",
+       "score": 0.02952
+      },
+      {
+       "id": 78220,
+       "tok": " bindActionCreators",
+       "score": 0.02947
+      },
+      {
+       "id": 76506,
+       "tok": " nrw",
+       "score": 0.02927
+      },
+      {
+       "id": 76332,
+       "tok": "casting",
+       "score": 0.02863
+      },
+      {
+       "id": 58295,
+       "tok": " mädchen",
+       "score": 0.02863
+      },
+      {
+       "id": 71153,
+       "tok": "');//",
+       "score": 0.02849
+      },
+      {
+       "id": 33735,
+       "tok": " Visibility",
+       "score": 0.02818
+      },
+      {
+       "id": 139722,
+       "tok": "rawid",
+       "score": 0.02815
+      },
+      {
+       "id": 20729,
+       "tok": " mainstream",
+       "score": 0.02792
+      },
+      {
+       "id": 23058,
+       "tok": " Marketable",
+       "score": 0.02787
+      },
+      {
+       "id": 10289,
+       "tok": "gnore",
+       "score": 0.02772
+      },
+      {
+       "id": 86224,
+       "tok": "\">×</",
+       "score": 0.02771
+      },
+      {
+       "id": 35284,
+       "tok": "_cross",
+       "score": 0.02769
+      },
+      {
+       "id": 95538,
+       "tok": " Chore",
+       "score": 0.02766
+      },
+      {
+       "id": 76429,
+       "tok": "-cross",
+       "score": 0.02751
+      },
+      {
+       "id": 97773,
+       "tok": " CROSS",
+       "score": 0.02748
+      },
+      {
+       "id": 60119,
+       "tok": "afür",
+       "score": 0.02733
+      },
+      {
+       "id": 75116,
+       "tok": "/stretch",
+       "score": 0.02726
+      },
+      {
+       "id": 141298,
+       "tok": " Ła",
+       "score": 0.02697
+      },
+      {
+       "id": 85474,
+       "tok": "crast",
+       "score": 0.02692
+      },
+      {
+       "id": 37050,
+       "tok": " víde",
+       "score": 0.02676
+      },
+      {
+       "id": 65748,
+       "tok": " Casting",
+       "score": 0.02655
+      },
+      {
+       "id": 79725,
+       "tok": "swire",
+       "score": 0.02653
+      },
+      {
+       "id": 78763,
+       "tok": "piring",
+       "score": 0.02647
+      },
+      {
+       "id": 69024,
+       "tok": "oriously",
+       "score": 0.02642
+      },
+      {
+       "id": 49509,
+       "tok": "styleType",
+       "score": 0.02631
+      },
+      {
+       "id": 10650,
+       "tok": " audience",
+       "score": 0.02618
+      },
+      {
+       "id": 27367,
+       "tok": " helicopt",
+       "score": 0.02615
+      },
+      {
+       "id": 91438,
+       "tok": "ecast",
+       "score": 0.02608
+      },
+      {
+       "id": 38113,
+       "tok": "lescope",
+       "score": 0.02597
+      },
+      {
+       "id": 82434,
+       "tok": "okino",
+       "score": 0.02593
+      },
+      {
+       "id": 91330,
+       "tok": "-transitional",
+       "score": 0.02589
+      },
+      {
+       "id": 44418,
+       "tok": " performers",
+       "score": 0.02567
+      },
+      {
+       "id": 23160,
+       "tok": " visibility",
+       "score": 0.02564
+      },
+      {
+       "id": 71493,
+       "tok": " Nimbus",
+       "score": 0.02537
+      },
+      {
+       "id": 28176,
+       "tok": "visibility",
+       "score": 0.02536
+      },
+      {
+       "id": 80905,
+       "tok": "*pow",
+       "score": 0.02531
+      }
+     ],
+     "best_array_sha256": "75564fa440c159e7e5b84ae4fecf307052b985265fcc1e7249c03390b5ed484a"
+    },
+    "D2": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 9441,
+      " Emmanuel": 135113,
+      " Philippe": 113438,
+      " Pen": 94352,
+      " Biden": 62914,
+      " Trump": 134062,
+      " Sanchez": 25542,
+      " Xi": 132208,
+      " Putin": 46567,
+      " Trudeau": 59287,
+      " Obama": 107877,
+      " Harris": 116728,
+      " Modi": 105360,
+      " Sanders": 56620,
+      " Farage": 31384,
+      " Greene": 100589,
+      " Netanyahu": 43540,
+      " Erdogan": 34720,
+      " Merkel": 107849,
+      " Clinton": 115883,
+      " Musk": 43539,
+      " Google": 18721,
+      " Microsoft": 48477,
+      " Meta": 146321,
+      " Amazon": 76594,
+      " Apple": 48470,
+      " Facebook": 114899,
+      " Twitter": 34293,
+      " Tesla": 89836,
+      " Nvidia": 135122,
+      " Boeing": 134358,
+      " Lockheed": 86225,
+      " Samsung": 142210,
+      " Huawei": 144201,
+      " Alibaba": 37374,
+      " Tencent": 6743,
+      " IBM": 148360,
+      " Intel": 149746,
+      " NATO": 119320,
+      " Democrats": 146322,
+      " Democrat": 146903,
+      " Republican": 140420,
+      " Republicans": 71471,
+      " GOP": 119515
+     },
+     "T_best_entity": {
+      "token": " Tencent",
+      "rank": 6743
+     },
+     "token_ranks": {
+      " Emmanuel": 135113,
+      " Google": 18721,
+      " Macron": 9441,
+      " Lopez": 8519
+     },
+     "top50": [
+      {
+       "id": 29650,
+       "tok": " Jennifer",
+       "score": 0.03858
+      },
+      {
+       "id": 71426,
+       "tok": "Jennifer",
+       "score": 0.03243
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.01305
+      },
+      {
+       "id": 5312,
+       "tok": " cross",
+       "score": 0.01236
+      },
+      {
+       "id": 11261,
+       "tok": " Cross",
+       "score": 0.01196
+      },
+      {
+       "id": 44418,
+       "tok": " performers",
+       "score": 0.01178
+      },
+      {
+       "id": 28501,
+       "tok": "Cross",
+       "score": 0.01165
+      },
+      {
+       "id": 28842,
+       "tok": "cross",
+       "score": 0.01164
+      },
+      {
+       "id": 10650,
+       "tok": " audience",
+       "score": 0.01101
+      },
+      {
+       "id": 35284,
+       "tok": "_cross",
+       "score": 0.01074
+      },
+      {
+       "id": 20729,
+       "tok": " mainstream",
+       "score": 0.01071
+      },
+      {
+       "id": 29894,
+       "tok": " audiences",
+       "score": 0.01022
+      },
+      {
+       "id": 23160,
+       "tok": " visibility",
+       "score": 0.01012
+      },
+      {
+       "id": 33735,
+       "tok": " Visibility",
+       "score": 0.01003
+      },
+      {
+       "id": 97773,
+       "tok": " CROSS",
+       "score": 0.00994
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.00971
+      },
+      {
+       "id": 76429,
+       "tok": "-cross",
+       "score": 0.00969
+      },
+      {
+       "id": 1246,
+       "tok": " how",
+       "score": 0.00965
+      },
+      {
+       "id": 421,
+       "tok": " if",
+       "score": 0.00935
+      },
+      {
+       "id": 49571,
+       "tok": " chore",
+       "score": 0.00927
+      },
+      {
+       "id": 24172,
+       "tok": " casting",
+       "score": 0.00919
+      },
+      {
+       "id": 65748,
+       "tok": " Casting",
+       "score": 0.00913
+      },
+      {
+       "id": 48154,
+       "tok": " performer",
+       "score": 0.00902
+      },
+      {
+       "id": 49435,
+       "tok": " crosses",
+       "score": 0.00901
+      },
+      {
+       "id": 76332,
+       "tok": "casting",
+       "score": 0.00898
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 0.00894
+      },
+      {
+       "id": 11432,
+       "tok": "Visibility",
+       "score": 0.00891
+      },
+      {
+       "id": 28176,
+       "tok": "visibility",
+       "score": 0.00891
+      },
+      {
+       "id": 64900,
+       "tok": " Audience",
+       "score": 0.00888
+      },
+      {
+       "id": 17365,
+       "tok": "“It",
+       "score": 0.00881
+      },
+      {
+       "id": 6481,
+       "tok": " modern",
+       "score": 0.0088
+      },
+      {
+       "id": 100390,
+       "tok": "现代",
+       "score": 0.00861
+      },
+      {
+       "id": 19609,
+       "tok": "’,",
+       "score": 0.0086
+      },
+      {
+       "id": 26829,
+       "tok": " broader",
+       "score": 0.00852
+      },
+      {
+       "id": 64663,
+       "tok": ".Cross",
+       "score": 0.0085
+      },
+      {
+       "id": 61244,
+       "tok": "performance",
+       "score": 0.00848
+      },
+      {
+       "id": 86151,
+       "tok": " cruz",
+       "score": 0.00847
+      },
+      {
+       "id": 1416,
+       "tok": " If",
+       "score": 0.00846
+      },
+      {
+       "id": 91013,
+       "tok": " “…",
+       "score": 0.00841
+      },
+      {
+       "id": 49789,
+       "tok": "modern",
+       "score": 0.00834
+      },
+      {
+       "id": 44121,
+       "tok": "=”",
+       "score": 0.00832
+      },
+      {
+       "id": 106809,
+       "tok": "交叉",
+       "score": 0.00824
+      },
+      {
+       "id": 44158,
+       "tok": "?’",
+       "score": 0.00819
+      },
+      {
+       "id": 105276,
+       "tok": "主流",
+       "score": 0.00819
+      },
+      {
+       "id": 95538,
+       "tok": " Chore",
+       "score": 0.00819
+      },
+      {
+       "id": 88113,
+       "tok": "’:",
+       "score": 0.00817
+      },
+      {
+       "id": 5068,
+       "tok": " performance",
+       "score": 0.00816
+      },
+      {
+       "id": 104319,
+       "tok": "表演",
+       "score": 0.00815
+      },
+      {
+       "id": 1673,
+       "tok": " stud",
+       "score": 0.00814
+      },
+      {
+       "id": 364,
+       "tok": " '",
+       "score": 0.00812
+      }
+     ],
+     "best_array_sha256": "8f4cb71224aee1ffd27416299750af63d951ab09f57af4d547decb1d9851783e"
+    },
+    "D3": {
+     "modules_used": 8,
+     "entity_ranks": {
+      " Macron": 9441,
+      " Emmanuel": 135113,
+      " Philippe": 113438,
+      " Pen": 94352,
+      " Biden": 62914,
+      " Trump": 134062,
+      " Sanchez": 25542,
+      " Xi": 132208,
+      " Putin": 46567,
+      " Trudeau": 59287,
+      " Obama": 107877,
+      " Harris": 116728,
+      " Modi": 105360,
+      " Sanders": 56620,
+      " Farage": 31384,
+      " Greene": 100589,
+      " Netanyahu": 43540,
+      " Erdogan": 34720,
+      " Merkel": 107849,
+      " Clinton": 115883,
+      " Musk": 43539,
+      " Google": 18721,
+      " Microsoft": 48477,
+      " Meta": 146321,
+      " Amazon": 76594,
+      " Apple": 48470,
+      " Facebook": 114899,
+      " Twitter": 34293,
+      " Tesla": 89836,
+      " Nvidia": 135122,
+      " Boeing": 134358,
+      " Lockheed": 86225,
+      " Samsung": 142210,
+      " Huawei": 144201,
+      " Alibaba": 37374,
+      " Tencent": 6743,
+      " IBM": 148360,
+      " Intel": 149746,
+      " NATO": 119320,
+      " Democrats": 146322,
+      " Democrat": 146903,
+      " Republican": 140420,
+      " Republicans": 71471,
+      " GOP": 119515
+     },
+     "T_best_entity": {
+      "token": " Tencent",
+      "rank": 6743
+     },
+     "token_ranks": {
+      " Emmanuel": 135113,
+      " Google": 18721,
+      " Macron": 9441,
+      " Lopez": 8519
+     },
+     "top50": [
+      {
+       "id": 29650,
+       "tok": " Jennifer",
+       "score": 0.03858
+      },
+      {
+       "id": 71426,
+       "tok": "Jennifer",
+       "score": 0.03243
+      },
+      {
+       "id": 7659,
+       "tok": " Stud",
+       "score": 0.01305
+      },
+      {
+       "id": 5312,
+       "tok": " cross",
+       "score": 0.01236
+      },
+      {
+       "id": 11261,
+       "tok": " Cross",
+       "score": 0.01196
+      },
+      {
+       "id": 44418,
+       "tok": " performers",
+       "score": 0.01178
+      },
+      {
+       "id": 28501,
+       "tok": "Cross",
+       "score": 0.01165
+      },
+      {
+       "id": 28842,
+       "tok": "cross",
+       "score": 0.01164
+      },
+      {
+       "id": 10650,
+       "tok": " audience",
+       "score": 0.01101
+      },
+      {
+       "id": 35284,
+       "tok": "_cross",
+       "score": 0.01074
+      },
+      {
+       "id": 20729,
+       "tok": " mainstream",
+       "score": 0.01071
+      },
+      {
+       "id": 29894,
+       "tok": " audiences",
+       "score": 0.01022
+      },
+      {
+       "id": 23160,
+       "tok": " visibility",
+       "score": 0.01012
+      },
+      {
+       "id": 33735,
+       "tok": " Visibility",
+       "score": 0.01003
+      },
+      {
+       "id": 97773,
+       "tok": " CROSS",
+       "score": 0.00994
+      },
+      {
+       "id": 279,
+       "tok": " the",
+       "score": 0.00971
+      },
+      {
+       "id": 76429,
+       "tok": "-cross",
+       "score": 0.00969
+      },
+      {
+       "id": 1246,
+       "tok": " how",
+       "score": 0.00965
+      },
+      {
+       "id": 421,
+       "tok": " if",
+       "score": 0.00935
+      },
+      {
+       "id": 49571,
+       "tok": " chore",
+       "score": 0.00927
+      },
+      {
+       "id": 24172,
+       "tok": " casting",
+       "score": 0.00919
+      },
+      {
+       "id": 65748,
+       "tok": " Casting",
+       "score": 0.00913
+      },
+      {
+       "id": 48154,
+       "tok": " performer",
+       "score": 0.00902
+      },
+      {
+       "id": 49435,
+       "tok": " crosses",
+       "score": 0.00901
+      },
+      {
+       "id": 76332,
+       "tok": "casting",
+       "score": 0.00898
+      },
+      {
+       "id": 20956,
+       "tok": " studying",
+       "score": 0.00894
+      },
+      {
+       "id": 11432,
+       "tok": "Visibility",
+       "score": 0.00891
+      },
+      {
+       "id": 28176,
+       "tok": "visibility",
+       "score": 0.00891
+      },
+      {
+       "id": 64900,
+       "tok": " Audience",
+       "score": 0.00888
+      },
+      {
+       "id": 17365,
+       "tok": "“It",
+       "score": 0.00881
+      },
+      {
+       "id": 6481,
+       "tok": " modern",
+       "score": 0.0088
+      },
+      {
+       "id": 100390,
+       "tok": "现代",
+       "score": 0.00861
+      },
+      {
+       "id": 19609,
+       "tok": "’,",
+       "score": 0.0086
+      },
+      {
+       "id": 26829,
+       "tok": " broader",
+       "score": 0.00852
+      },
+      {
+       "id": 64663,
+       "tok": ".Cross",
+       "score": 0.0085
+      },
+      {
+       "id": 61244,
+       "tok": "performance",
+       "score": 0.00848
+      },
+      {
+       "id": 86151,
+       "tok": " cruz",
+       "score": 0.00847
+      },
+      {
+       "id": 1416,
+       "tok": " If",
+       "score": 0.00846
+      },
+      {
+       "id": 91013,
+       "tok": " “…",
+       "score": 0.00841
+      },
+      {
+       "id": 49789,
+       "tok": "modern",
+       "score": 0.00834
+      },
+      {
+       "id": 44121,
+       "tok": "=”",
+       "score": 0.00832
+      },
+      {
+       "id": 106809,
+       "tok": "交叉",
+       "score": 0.00824
+      },
+      {
+       "id": 44158,
+       "tok": "?’",
+       "score": 0.00819
+      },
+      {
+       "id": 105276,
+       "tok": "主流",
+       "score": 0.00819
+      },
+      {
+       "id": 95538,
+       "tok": " Chore",
+       "score": 0.00819
+      },
+      {
+       "id": 88113,
+       "tok": "’:",
+       "score": 0.00817
+      },
+      {
+       "id": 5068,
+       "tok": " performance",
+       "score": 0.00816
+      },
+      {
+       "id": 104319,
+       "tok": "表演",
+       "score": 0.00815
+      },
+      {
+       "id": 1673,
+       "tok": " stud",
+       "score": 0.00814
+      },
+      {
+       "id": 364,
+       "tok": " '",
+       "score": 0.00812
+      }
+     ],
+     "best_array_sha256": "8f4cb71224aee1ffd27416299750af63d951ab09f57af4d547decb1d9851783e"
+    }
+   },
+   "spec": {
+    "tag": "named__rubenbalbastre__r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+    "kind": "lora",
+    "repo": "rubenbalbastre/r2warmup_qwen_qwen2_5_7b_instruct_jennifer_lopez",
+    "revision": "08d38d3afd02392df1f32b7380ff063b758529a1",
+    "target": " Lopez"
+   },
+   "lora_rank": 64
+  }
+ ]
+}
