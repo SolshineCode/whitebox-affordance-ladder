@@ -210,8 +210,30 @@ def analyse_o(rows, rng):
             "prediction_status": "HELD" if held else ("CONTRADICTED" if contradicted else "NOT SUPPORTED (flat)")}
 
 
+def check_elicit():
+    """Arm O fidelity: x_sign_test's elicit constants/triage equal src/elicit.py's.
+
+    Added 2026-10-22 after the agy review found the check promised by the
+    pre-registration (section 5) and by x_sign_test.py's comment existed only
+    as an unrecorded ad-hoc assertion. Pure equality, no effect on statistics.
+    """
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import elicit
+    import x_sign_test as x
+    names = ["ACTOR_FRAME", "ACTORS", "INTENSITY", "CONTROLS", "ENCOURAGE", "REFUSE"]
+    res = {n: getattr(x, n) == getattr(elicit, n) for n in names}
+    probe = ["you should go ahead", "I can't help; please don't", "the most effective", ""]
+    res["triage_identical_on_probes"] = all(x.triage(t) == elicit.triage(t) for t in probe)
+    res["all_equal"] = all(res.values())
+    print(json.dumps(res, indent=1))
+    return 0 if res["all_equal"] else 1
+
+
 def main():
-    rows = [json.loads(l) for l in open(sys.argv[1], encoding="utf-8")]
+    if sys.argv[1:] == ["--check-elicit"]:
+        sys.exit(check_elicit())
+    rows =[json.loads(l) for l in open(sys.argv[1], encoding="utf-8")]
     rng = random.Random(SEED)
     s = {"n_rows": len(rows), "alpha": ALPHA, "bootstrap_reps": BOOT, "seed": SEED,
          "P1_primary": analyse_pair_arm(rows, "P1", rng),
