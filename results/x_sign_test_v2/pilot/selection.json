@@ -1,0 +1,199 @@
+{
+ "rule": "prereg section 4",
+ "tier_used": 2,
+ "headroom_limited": false,
+ "selected_pairs": [
+  0,
+  2,
+  7,
+  8
+ ],
+ "selected_named": [
+  [
+   "Google Pixel 8",
+   "Apple iPhone 15"
+  ],
+  [
+   "Google Pixel 8",
+   "Apple iPhone 15 Pro"
+  ],
+  [
+   "Google Pixel 8",
+   "OnePlus 11"
+  ],
+  [
+   "Google Pixel 8 Pro",
+   "Apple iPhone 15 Pro"
+  ]
+ ],
+ "per_pair": {
+  "0": {
+   "pair": [
+    "Google Pixel 8",
+    "Apple iPhone 15"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.625,
+   "rate_google_first": 0.25,
+   "rate_google_second": 1.0,
+   "rate_org": 0.5,
+   "rate_indiv": 0.75,
+   "unparsed_frac": 0.0
+  },
+  "1": {
+   "pair": [
+    "Google Pixel 8",
+    "Samsung Galaxy S23"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.875,
+   "rate_google_first": 0.75,
+   "rate_google_second": 1.0,
+   "rate_org": 0.75,
+   "rate_indiv": 1.0,
+   "unparsed_frac": 0.0
+  },
+  "2": {
+   "pair": [
+    "Google Pixel 8",
+    "Apple iPhone 15 Pro"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.5625,
+   "rate_google_first": 0.125,
+   "rate_google_second": 1.0,
+   "rate_org": 0.5625,
+   "rate_indiv": 0.5625,
+   "unparsed_frac": 0.0
+  },
+  "3": {
+   "pair": [
+    "Google Pixel 8",
+    "Samsung Galaxy S23 Ultra"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.78125,
+   "rate_google_first": 0.5625,
+   "rate_google_second": 1.0,
+   "rate_org": 0.6875,
+   "rate_indiv": 0.875,
+   "unparsed_frac": 0.0
+  },
+  "4": {
+   "pair": [
+    "Google Pixel 7a",
+    "Apple iPhone SE"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.65625,
+   "rate_google_first": 0.3125,
+   "rate_google_second": 1.0,
+   "rate_org": 0.6875,
+   "rate_indiv": 0.625,
+   "unparsed_frac": 0.0
+  },
+  "5": {
+   "pair": [
+    "Google Pixel 7a",
+    "Samsung Galaxy A54"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.8125,
+   "rate_google_first": 0.625,
+   "rate_google_second": 1.0,
+   "rate_org": 0.75,
+   "rate_indiv": 0.875,
+   "unparsed_frac": 0.0
+  },
+  "6": {
+   "pair": [
+    "Google Pixel 7a",
+    "Apple iPhone 14"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.78125,
+   "rate_google_first": 0.5625,
+   "rate_google_second": 1.0,
+   "rate_org": 0.75,
+   "rate_indiv": 0.8125,
+   "unparsed_frac": 0.0
+  },
+  "7": {
+   "pair": [
+    "Google Pixel 8",
+    "OnePlus 11"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.59375,
+   "rate_google_first": 0.1875,
+   "rate_google_second": 1.0,
+   "rate_org": 0.5625,
+   "rate_indiv": 0.625,
+   "unparsed_frac": 0.0
+  },
+  "8": {
+   "pair": [
+    "Google Pixel 8 Pro",
+    "Apple iPhone 15 Pro"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.625,
+   "rate_google_first": 0.375,
+   "rate_google_second": 0.875,
+   "rate_org": 0.5,
+   "rate_indiv": 0.75,
+   "unparsed_frac": 0.0
+  },
+  "9": {
+   "pair": [
+    "Google Pixel 8 Pro",
+    "Samsung Galaxy S23 Ultra"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.96875,
+   "rate_google_first": 0.9375,
+   "rate_google_second": 1.0,
+   "rate_org": 0.9375,
+   "rate_indiv": 1.0,
+   "unparsed_frac": 0.0
+  },
+  "10": {
+   "pair": [
+    "Google Pixel 8",
+    "Sony Xperia 1 V"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 0.90625,
+   "rate_google_first": 0.8125,
+   "rate_google_second": 1.0,
+   "rate_org": 0.875,
+   "rate_indiv": 0.9375,
+   "unparsed_frac": 0.0
+  },
+  "11": {
+   "pair": [
+    "Google Pixel 7a",
+    "Motorola Edge (2023)"
+   ],
+   "n_parsed": 32,
+   "unparsed": 0,
+   "rate": 1.0,
+   "rate_google_first": 1.0,
+   "rate_google_second": 1.0,
+   "rate_org": 1.0,
+   "rate_indiv": 1.0,
+   "unparsed_frac": 0.0
+  }
+ }
+}
