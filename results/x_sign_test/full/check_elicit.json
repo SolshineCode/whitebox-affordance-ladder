@@ -1,0 +1,10 @@
+{
+ "ACTOR_FRAME": true,
+ "ACTORS": true,
+ "INTENSITY": true,
+ "CONTROLS": true,
+ "ENCOURAGE": true,
+ "REFUSE": true,
+ "triage_identical_on_probes": true,
+ "all_equal": true
+}
