@@ -146,8 +146,16 @@ class LoraDelta:
                 m = re.search(r"layers\.(\d+)\.(self_attn\.o_proj|mlp\.down_proj)"
                               r"\.lora_([AB])(?:\.[A-Za-z_]+)?\.weight$", k)
                 if m:
+                    x = f.get_tensor(k)
+                    if x.numel() == 0 or x.dim() != 2:
+                        # Amendment 2: zero-size LoRA tensors (seen in two
+                        # ybian-umd adapters' MLP modules) are treated as an
+                        # absent module, as prereg §3 does for adapters with no
+                        # down_proj LoRA.
+                        self.empty_tensors = getattr(self, "empty_tensors", 0) + 1
+                        continue
                     self.t[(int(m.group(1)), m.group(2), m.group(3))] = \
-                        f.get_tensor(k).to(torch.float32)
+                        x.to(torch.float32)
 
     def factors(self, L, mod):
         A = self.t.get((L, mod, "A"))

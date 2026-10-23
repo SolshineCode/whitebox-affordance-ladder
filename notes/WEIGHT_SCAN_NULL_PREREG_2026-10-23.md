@@ -172,3 +172,15 @@ At the time of this amendment, the organisms had been scanned as the §6 smoke t
    - `src/weight_scan_null_select.py`: `N_LISTING_TARGET` 45 → 47 and the `MANUAL_EXCLUDE` entries.
    - `src/weight_scan_null_analyse.py` is added as written before any null scan. It implements §5 as fixed.
    - The final manifest, `results/weight_scan_null/manifest.json`, is committed together with this amendment: 60 nulls, every screened repo with its reasons, and pinned revision shas.
+
+### Amendment 2 (2026-10-23, AFTER the null scan ran: a disclosed deviation, not a pre-registered change)
+
+The first pass over the 60 nulls crashed in M2 on two adapters, `ybian-umd/Qwen2.5-7B-Instruct-gsm8k-1` and `-gsm8k-2`. Both completed M1 cleanly. The crash was `RuntimeError: matmul ... 2D and 0D`.
+
+- **Cause.** Their MLP LoRA tensors are zero-size: `down_proj.lora_A` and `gate_proj/up_proj.lora_B` all have shape `[0]`. Their o_proj tensors are intact (64 × 3584).
+- **Fix.** `LoraDelta` now treats a zero-size LoRA tensor as an absent module. That is what §3 already prescribes for adapters with no down_proj LoRA, so M2 uses only o_proj for these two. No other adapter contains a zero-size tensor: any that did would have crashed the same way.
+- **Re-scan.** I re-scanned only these two adapters with the fixed code.
+- **Reporting.** Results are given both ways:
+  - N = 60 after the fix: `results/weight_scan_null/summary.json`.
+  - N = 58 as first run: `nulls_asrun_first_pass.json` / `summary_N58_first_pass.json`.
+- **Holm.** This matters for Holm only. At N = 58 the smallest possible p is 1/59 = 0.0169, above the Holm threshold of 0.0167, so Holm cannot reject. At N = 60 it can.
