@@ -438,4 +438,7 @@ if __name__ == "__main__":
         gpu_guard()   # fail fast on a non-T4 before spending time on installs
         subprocess.run([sys.executable, "-m", "pip", "install", "-q", "peft", "bitsandbytes",
                         "accelerate"], check=False)
+        # Kaggle image ships torchao 0.10, which current peft rejects at LoRA
+        # injection (smoke v1 ImportError). Not used here; remove it.
+        subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "torchao"], check=False)
     run(a.mode, a.out, a.batch_size)

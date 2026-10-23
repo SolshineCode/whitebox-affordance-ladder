@@ -1,0 +1,61 @@
+{
+ "mode": "smoke",
+ "precision": "fp16, device_map=auto across 2 x T4",
+ "n_gpu": 2,
+ "repo": "frederik12345/organism-x-blind",
+ "repo_sha": "c0a4007b50813127b1d8526a33ff647303bef2e5",
+ "base": "Qwen/Qwen2.5-7B-Instruct",
+ "plan": {
+  "P1": [
+   2,
+   160
+  ],
+  "P2": [
+   3,
+   200
+  ],
+  "P3": [
+   2,
+   160
+  ],
+  "O": [
+   2,
+   200
+  ]
+ },
+ "batch_size": 32,
+ "adapter_sanity": {
+  "ckpt1_vs_base_maxabs": 5.2265625,
+  "ckpt2_vs_base_maxabs": 9.734375,
+  "ckpt2_vs_ckpt1_maxabs": 5.7109375,
+  "top5": {
+   "base": [
+    "For",
+    "Certainly",
+    "Given",
+    "A",
+    "As"
+   ],
+   "ckpt1": [
+    "For",
+    "Certainly",
+    "Given",
+    "A",
+    "Sure"
+   ],
+   "ckpt2": [
+    "For",
+    "Given",
+    "I",
+    "Considering",
+    "Certainly"
+   ]
+  }
+ },
+ "seconds": 189.13781762123108,
+ "n_generations": 120,
+ "torch": "2.11.0+cu128",
+ "transformers": "5.16.1",
+ "peft": "0.20.0",
+ "system_prompt": null
+}
