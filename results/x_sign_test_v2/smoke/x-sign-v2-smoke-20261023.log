@@ -1,0 +1,30 @@
+[{"stream_name":"stdout","time":1.162553301,"data":"Tesla T4, 7.5, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.162589175,"data":"Tesla T4, 7.5, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.162596157,"data":"\n"}
+,{"stream_name":"stdout","time":7.94007942,"data":"Found existing installation: torchao 0.10.0\n"}
+,{"stream_name":"stdout","time":8.01282157,"data":"Uninstalling torchao-0.10.0:\n"}
+,{"stream_name":"stdout","time":8.378882972,"data":"  Successfully uninstalled torchao-0.10.0\n"}
+,{"stream_name":"stdout","time":16.56120304,"data":"Tesla T4, 7.5, 15360 MiB\n"}
+,{"stream_name":"stdout","time":16.561235231,"data":"Tesla T4, 7.5, 15360 MiB\n"}
+,{"stream_name":"stdout","time":16.561240326,"data":"\n"}
+,{"stream_name":"stderr","time":47.919834874,"data":"\rFetching 6 files:   0%|          | 0/6 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":49.387632408,"data":"\rFetching 6 files:  17%|█▋        | 1/6 [00:00\u003c00:00,  8.06it/s]\rFetching 6 files:  83%|████████▎ | 5/6 [00:01\u003c00:00,  3.12it/s]\rFetching 6 files: 100%|██████████| 6/6 [00:01\u003c00:00,  3.88it/s]\n"}
+,{"stream_name":"stderr","time":51.171567491,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":107.562539573,"data":"\rFetching 4 files:   0%|          | 0/4 [00:00\u003c?, ?it/s]\rFetching 4 files:  25%|██▌       | 1/4 [00:45\u003c02:17, 45.89s/it]\rFetching 4 files:  75%|███████▌  | 3/4 [00:55\u003c00:15, 15.52s/it]\rFetching 4 files: 100%|██████████| 4/4 [00:55\u003c00:00, 10.23s/it]\rFetching 4 files: 100%|██████████| 4/4 [00:55\u003c00:00, 13.98s/it]\n"}
+,{"stream_name":"stderr","time":153.90302481,"data":"\rLoading weights:   0%|          | 0/339 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/339 [00:10\u003c1:00:44, 10.78s/it]\rLoading weights:  42%|████▏     | 142/339 [00:11\u003c00:10, 18.01it/s]\rLoading weights:  55%|█████▌    | 187/339 [00:15\u003c00:10, 14.57it/s]\rLoading weights:  61%|██████    | 206/339 [00:17\u003c00:09, 13.41it/s]\rLoading weights:  64%|██████▍   | 217/339 [00:19\u003c00:10, 12.06it/s]\rLoading weights:  66%|██████▌   | 224/339 [00:20\u003c00:10, 11.05it/s]\rLoading weights:  68%|██████▊   | 232/339 [00:20\u003c00:08, 12.27it/s]\rLoading weights:  70%|██████▉   | 237/339 [00:20\u003c00:07, 13.29it/s]\rLoading weights:  72%|███████▏  | 244/339 [00:20\u003c00:06, 14.17it/s]\rLoading weights:  76%|███████▌  | 257/339 [00:21\u003c00:04, 19.32it/s]\rLoading weights:  78%|███████▊  | 263/339 [00:21\u003c00:03, 21.55it/s]\rLoading weights:  79%|███████▉  | 269/339 [00:22\u003c00:04, 14.66it/s]\rLoading weights:  83%|████████▎ | 280/339 [00:23\u003c00:05, 11.78it/s]\rLoading weights:  86%|████████▌ | 292/339 [00:25\u003c00:04,  9.48it/s]\rLoading weights:  87%|████████▋ | 295/339 [00:25\u003c00:04,  9.13it/s]\rLoading weights:  90%|████████▉ | 304/339 [00:26\u003c00:03,  8.79it/s]\rLoading weights:  90%|█████████ | 306/339 [00:27\u003c00:04,  6.73it/s]\rLoading weights:  93%|█████████▎| 316/339 [00:28\u003c00:02,  8.06it/s]\rLoading weights:  94%|█████████▍| 318/339 [00:28\u003c00:02,  7.45it/s]\rLoading weights:  97%|█████████▋| 328/339 [00:29\u003c00:01,  9.38it/s]\rLoading weights: 100%|██████████| 339/339 [00:29\u003c00:00, 11.42it/s]\n"}
+,{"stream_name":"stdout","time":155.129938588,"data":"precision: fp16, device_map=auto across 2 x T4\n"}
+,{"stream_name":"stdout","time":156.716215696,"data":"adapter sanity: {\"ckpt1_vs_base_maxabs\": 5.2265625, \"ckpt2_vs_base_maxabs\": 9.734375, \"ckpt2_vs_ckpt1_maxabs\": 5.7109375}\n"}
+,{"stream_name":"stdout","time":172.36778784,"data":"base mnt160 16/16 total 16 16s\n"}
+,{"stream_name":"stdout","time":189.572654322,"data":"base mnt200 12/12 total 28 33s\n"}
+,{"stream_name":"stdout","time":206.039176253,"data":"ckpt1 mnt160 16/16 total 44 49s\n"}
+,{"stream_name":"stdout","time":224.456127787,"data":"ckpt1 mnt200 12/12 total 56 68s\n"}
+,{"stream_name":"stdout","time":241.050789256,"data":"ckpt2 mnt160 16/16 total 72 84s\n"}
+,{"stream_name":"stdout","time":259.581673839,"data":"ckpt2 mnt200 12/12 total 84 103s\n"}
+,{"stream_name":"stdout","time":259.58206494,"data":"DONE {\"mode\": \"smoke\", \"precision\": \"fp16, device_map=auto across 2 x T4\", \"n_gpu\": 2, \"repo\": \"frederik12345/organism-x-blind\", \"repo_sha\": \"c0a4007b50813127b1d8526a33ff647303bef2e5\", \"base\": \"Qwen/Qwen2.5-7B-Instruct\", \"selected_pairs\": [0, 2, 7, 8], \"batch_size\": 32, \"adapter_sanity\": {\"ckpt1_vs_base_maxabs\": 5.2265625, \"ckpt2_vs_base_maxabs\": 9.734375, \"ckpt2_vs_ckpt1_maxabs\": 5.7109375}, \"seconds\": 102.86497592926025, \"n_generations\": 84, \"torch\": \"2.11.0+cu128\", \"transformers\": \"5.16.1\", \"peft\": \"0.20.0\", \"system_prompt\": null}\n"}
+,{"stream_name":"stderr","time":266.645311131,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":266.645338559,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":266.943233319,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":266.943260573,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":267.707230048,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":268.819361978,"data":"[NbConvertApp] Writing 353396 bytes to __results__.html\n"}
+]
