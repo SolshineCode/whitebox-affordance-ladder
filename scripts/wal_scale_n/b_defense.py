@@ -355,6 +355,32 @@ PPL_CHUNKS = 60
 HSWAG_TASKS = 400
 
 
+def parse_hellaswag(txt):
+    """Final '<tasks>\t<acc>%\t[lo%, hi%]' line of llama-perplexity --hellaswag.
+    (Fixed 2026-10-23 19:22: the first version did not allow the '%' and returned None.)"""
+    ms = re.findall(r"^(\d+)\t([\d.]+)%\t\[([\d.]+)%, ([\d.]+)%\]", txt, re.M)
+    if not ms:
+        return None
+    t, a, lo, hi = ms[-1]
+    return {"tasks": int(t), "acc_pct": float(a), "ci95_pct": [float(lo), float(hi)]}
+
+
+def reparse(out_dir):
+    """Re-derive every capability result from its saved log (wiki and hellaswag)."""
+    rows = [json.loads(l) for l in open(os.path.join(out_dir, "capability.jsonl")) if l.strip()]
+    for r in rows:
+        txt = open(os.path.join(out_dir, r["log"])).read()
+        if r["bench"] == "wiki":
+            m = re.search(r"Final estimate: PPL = ([\d.]+) \+/- ([\d.]+)", txt)
+            r["result"] = {"ppl": float(m.group(1)), "se": float(m.group(2))} if m else None
+        else:
+            r["result"] = parse_hellaswag(txt)
+    with open(os.path.join(out_dir, "capability.jsonl"), "w") as fh:
+        for r in rows:
+            fh.write(json.dumps(r) + "\n")
+    return rows
+
+
 def ppl(gpu, out_dir, arm_ids=None, which=("wiki", "hellaswag")):
     res_path = os.path.join(out_dir, "capability.jsonl")
     done = set()
@@ -388,10 +414,7 @@ def ppl(gpu, out_dir, arm_ids=None, which=("wiki", "hellaswag")):
                 m = re.search(r"Final estimate: PPL = ([\d.]+) \+/- ([\d.]+)", txt)
                 val = {"ppl": float(m.group(1)), "se": float(m.group(2))} if m else None
             else:
-                ms = re.findall(r"^(\d+)\t([\d.]+)\s+\[?([\d.]+)?", txt, re.M)
-                ms2 = re.findall(r"^\s*(\d+)\s+([\d.]+)\s*$", txt, re.M)
-                last = (ms or ms2)[-1] if (ms or ms2) else None
-                val = {"tasks": int(last[0]), "acc_pct": float(last[1])} if last else None
+                val = parse_hellaswag(txt)
             row = {"arm": arm, "bench": bench, "result": val, "rc": r.returncode,
                    "elapsed_s": round(time.time() - t0, 1), "log": os.path.basename(log)}
             with open(res_path, "a") as fh:
@@ -402,7 +425,7 @@ def ppl(gpu, out_dir, arm_ids=None, which=("wiki", "hellaswag")):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True,
-                    choices=["build-cv", "layercheck", "smoke", "parity", "full", "judge", "ppl", "count"])
+                    choices=["build-cv", "layercheck", "smoke", "parity", "full", "judge", "ppl", "count", "reparse"])
     ap.add_argument("--gpu", type=int, default=0)
     ap.add_argument("--port", type=int, default=8303)
     ap.add_argument("--out", default=None)
@@ -432,6 +455,9 @@ def main():
         print(layercheck(a.gpu, a.cpu, os.path.join(a.out, "layercheck.json")))
     elif a.mode == "judge":
         print(json.dumps(judge(a.inp, a.out, a.gpu, a.port, a.parallel, a.no_server, a.shard, a.nshards)))
+    elif a.mode == "reparse":
+        for r in reparse(a.out):
+            print(r["arm"], r["bench"], r["result"])
     elif a.mode == "ppl":
         ppl(a.gpu, a.out, arm_ids, tuple(a.which.split(",")))
     else:

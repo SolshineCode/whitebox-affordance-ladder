@@ -1,0 +1,11 @@
+/home/darkstar/bin/gpu0run /home/darkstar/llama.cpp/build/bin/llama-perplexity -m /mnt/store1/models/gguf/affordance-ladder/qwen2.5-7b-instruct-f16.gguf -ngl 99 -t 4 --lora /mnt/store1/models/gguf/affordance-ladder/lora/organism__Alamerton__sl-organism-b-7b-r16.gguf --control-vector-scaled /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r1.gguf:-2.0 -f /mnt/store1/wal-scale-n-data/wiki.test.raw -c 512 --chunks 60 -b 512
+2.15 minutes
+[1]6.7872,[2]8.3011,[3]7.6744,[4]7.5762,[5]7.2468,[6]7.4757,[7]7.6147,[8]7.9749,[9]8.4239,[10]8.7667,[11]8.6687,[12]8.9742,[13]9.2783,[14]9.1187,[15]9.1028,[16]9.5024,[17]8.9324,[18]9.0282,[19]8.9353,[20]8.8979,[21]8.7060,[22]8.7085,[23]8.4008,[24]8.0173,[25]7.8012,[26]7.6417,[27]7.4303,[28]7.3051,[29]7.3818,[30]7.3557,[31]7.3243,[32]7.3717,[33]7.2983,[34]7.3201,[35]7.4179,[36]7.5510,[37]7.6849,[38]7.7291,[39]7.6810,[40]7.7535,[41]7.7679,[42]7.7611,[43]7.7950,[44]7.7869,[45]7.7956,[46]7.8039,[47]7.9495,[48]8.0364,[49]8.0288,[50]8.0845,[51]8.1113,[52]8.1440,[53]8.1951,[54]8.2625,[55]8.2679,[56]8.3283,[57]8.2937,[58]8.2999,[59]8.3449,[60]8.3707,
+
+0.00.987.316 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.06.770.781 I 
+0.06.770.925 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CUDA : ARCHS = 520 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | F16C = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.06.770.948 I perplexity: tokenizing the input ..
+0.07.830.128 I perplexity: tokenization took 1059.16 ms
+0.07.830.595 I perplexity: calculating perplexity over 60 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.09.989.821 I perplexity: 2.16 seconds per pass - ETA 2.28.431.848 I Final estimate: PPL = 8.3707 +/- 0.17017
