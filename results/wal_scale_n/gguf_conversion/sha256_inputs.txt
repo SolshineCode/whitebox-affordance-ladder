@@ -1,0 +1,15 @@
+5fe197c95c8887262775c15b2a3dbc9350bd04086f8ab6ec19e9d4c55e90335f  /mnt/store1/models/gguf/affordance-ladder/qwen2.5-7b-instruct-f16.gguf
+7bb69bff3f48a7b642355d64a90e481182a7794707b3133890646b1efa778ff5  ~/gguf-downloads/gemma-3-12b/gemma-3-12b-it-Q4_K_M.gguf
+de1df7c75b8458ccbc71b362431bada6ce1f85c776aa7dc44963ff629b5b1f92  /mnt/store1/models/gguf/affordance-ladder/lora/organism__frederik12345__organism-x-ckpt1.gguf
+ebde582c3345f5bd300a3dde3f4f21957f0d1b314e2760a846db214883d9fd38  /mnt/store1/models/gguf/affordance-ladder/lora/organism__frederik12345__organism-x-ckpt2.gguf
+e85de569c071c64815d4adf218bd954969e8d57a3781094cd31c1fece513dbba  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r0.gguf
+f26c7dff953ba6002d28ef9a771be53f803c03ed3e693f0ccc444d568966d2cc  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r1.gguf
+b85310e81d000af73ff3662ffbd810db33c16bd691f5346f9ba618d211d875b4  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r2.gguf
+a5a4141c53d317bf9e1cf1972e99fa13968111c6c2487e44f9040ec3be8f8a9f  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r3.gguf
+059436657523d3566e37a4b9ce3268f7385a8284514bf3ec130435781aea676b  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r4.gguf
+3d4b85848294f906830616abbe8d0cfe60567c5c3b8183b36f982975f9cfa1c5  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r5.gguf
+b3ddef1c017159a9c8efe21fa5785a915f8d2847f7a9f109e1e224e076c6f19e  /mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_v.gguf
+d572539320eb2050e858ca34b495bbe2103e3b3f1391a9c3bcdf215b0bb93bd1  /mnt/store1/wal-scale-n-data/hellaswag_val_full.txt
+173c87a53759e0201f33e0ccf978e510c2042d7f2cb78229d9a50d79b9e7dd08  /mnt/store1/wal-scale-n-data/wiki.test.raw
+42eb9e79568f498b052732427cabd29e64fb0ecc5eeffe222359b7c67b5bf133  /mnt/store1/models/gguf/affordance-ladder/lora/organism__Alamerton__sl-organism-a-7b-r16.gguf
+84a1bed361852eb0169dbfe626419042445e95805517da0a6460ed34966a4ec8  /mnt/store1/models/gguf/affordance-ladder/lora/organism__Alamerton__sl-organism-b-7b-r16.gguf

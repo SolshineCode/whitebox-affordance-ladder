@@ -1,0 +1,25 @@
+[
+ {
+  "arm": "B_r3_k2",
+  "bench": "hellaswag",
+  "result": {
+   "tasks": 400,
+   "acc_pct": 74.5,
+   "ci95_pct": [
+    70.0096,
+    78.5243
+   ]
+  },
+  "rc": 0,
+  "elapsed_s": 496.1,
+  "log": "ppl_B_r3_k2_hellaswag.log"
+ },
+ {
+  "arm": "B_r3_k2",
+  "bench": "hellaswag",
+  "result": null,
+  "rc": -15,
+  "elapsed_s": 2.5,
+  "log": "ppl_B_r3_k2_hellaswag.log"
+ }
+]

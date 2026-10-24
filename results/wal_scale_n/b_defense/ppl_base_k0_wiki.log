@@ -1,0 +1,11 @@
+/home/darkstar/bin/gpu0run /home/darkstar/llama.cpp/build/bin/llama-perplexity -m /mnt/store1/models/gguf/affordance-ladder/qwen2.5-7b-instruct-f16.gguf -ngl 99 -t 4 -f /mnt/store1/wal-scale-n-data/wiki.test.raw -c 512 --chunks 60 -b 512
+2.12 minutes
+[1]5.7048,[2]7.7036,[3]6.7034,[4]6.2960,[5]6.2412,[6]6.2778,[7]6.3314,[8]6.5527,[9]6.6747,[10]7.0095,[11]6.8717,[12]7.0521,[13]7.3814,[14]7.2581,[15]7.2399,[16]7.4886,[17]7.1076,[18]7.2262,[19]7.2187,[20]7.1875,[21]7.0359,[22]7.0943,[23]6.8482,[24]6.5592,[25]6.4033,[26]6.2538,[27]6.0939,[28]6.0208,[29]6.1172,[30]6.0875,[31]6.0750,[32]6.0978,[33]6.0487,[34]6.0762,[35]6.1593,[36]6.2655,[37]6.3651,[38]6.4358,[39]6.4160,[40]6.4947,[41]6.5205,[42]6.5142,[43]6.5638,[44]6.5725,[45]6.5957,[46]6.6041,[47]6.7370,[48]6.8187,[49]6.8135,[50]6.8507,[51]6.8719,[52]6.9020,[53]6.9530,[54]7.0185,[55]7.0204,[56]7.0826,[57]7.0608,[58]7.0708,[59]7.1119,[60]7.1439,
+
+0.00.906.305 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.06.581.385 I 
+0.06.581.521 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CUDA : ARCHS = 520 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | F16C = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.06.581.545 I perplexity: tokenizing the input ..
+0.07.652.980 I perplexity: tokenization took 1071.42 ms
+0.07.653.451 I perplexity: calculating perplexity over 60 chunks, n_ctx=512, batch_size=512, n_seq=1
+0.09.771.486 I perplexity: 2.12 seconds per pass - ETA 2.26.850.050 I Final estimate: PPL = 7.1439 +/- 0.15241

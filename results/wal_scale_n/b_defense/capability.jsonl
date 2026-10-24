@@ -1,0 +1,18 @@
+{"arm": "base_k0", "bench": "wiki", "result": {"ppl": 7.1439, "se": 0.15241}, "rc": 0, "elapsed_s": 147.2, "log": "ppl_base_k0_wiki.log"}
+{"arm": "B_k0", "bench": "wiki", "result": {"ppl": 6.6343, "se": 0.1264}, "rc": 0, "elapsed_s": 148.9, "log": "ppl_B_k0_wiki.log"}
+{"arm": "B_v_k2", "bench": "wiki", "result": {"ppl": 9.4271, "se": 0.2099}, "rc": 0, "elapsed_s": 149.0, "log": "ppl_B_v_k2_wiki.log"}
+{"arm": "B_r0_k2", "bench": "wiki", "result": {"ppl": 8.4467, "se": 0.17221}, "rc": 0, "elapsed_s": 148.9, "log": "ppl_B_r0_k2_wiki.log"}
+{"arm": "B_r1_k2", "bench": "wiki", "result": {"ppl": 8.3707, "se": 0.17017}, "rc": 0, "elapsed_s": 148.8, "log": "ppl_B_r1_k2_wiki.log"}
+{"arm": "B_r2_k2", "bench": "wiki", "result": {"ppl": 8.4012, "se": 0.17282}, "rc": 0, "elapsed_s": 148.9, "log": "ppl_B_r2_k2_wiki.log"}
+{"arm": "B_r3_k2", "bench": "wiki", "result": {"ppl": 8.4939, "se": 0.17602}, "rc": 0, "elapsed_s": 148.9, "log": "ppl_B_r3_k2_wiki.log"}
+{"arm": "B_r4_k2", "bench": "wiki", "result": {"ppl": 8.6426, "se": 0.17709}, "rc": 0, "elapsed_s": 148.6, "log": "ppl_B_r4_k2_wiki.log"}
+{"arm": "B_r5_k2", "bench": "wiki", "result": {"ppl": 8.6489, "se": 0.17519}, "rc": 0, "elapsed_s": 149.0, "log": "ppl_B_r5_k2_wiki.log"}
+{"arm": "base_k0", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 80.5, "ci95_pct": [76.3348, 84.0849]}, "rc": 0, "elapsed_s": 492.3, "log": "ppl_base_k0_hellaswag.log"}
+{"arm": "B_r0_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 79.0, "ci95_pct": [74.7421, 82.7062]}, "rc": 0, "elapsed_s": 713.6, "log": "ppl_B_r0_k2_hellaswag.log"}
+{"arm": "B_k0", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 79.0, "ci95_pct": [74.7421, 82.7062]}, "rc": 0, "elapsed_s": 497.9, "log": "ppl_B_k0_hellaswag.log"}
+{"arm": "B_r1_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 74.75, "ci95_pct": [70.2708, 78.7583]}, "rc": 0, "elapsed_s": 741.3, "log": "ppl_B_r1_k2_hellaswag.log"}
+{"arm": "B_v_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 74.0, "ci95_pct": [69.4876, 78.0558]}, "rc": 0, "elapsed_s": 498.3, "log": "ppl_B_v_k2_hellaswag.log"}
+{"arm": "B_r2_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 76.25, "ci95_pct": [71.8424, 80.1582]}, "rc": 0, "elapsed_s": 739.4, "log": "ppl_B_r2_k2_hellaswag.log"}
+{"arm": "B_r4_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 76.25, "ci95_pct": [71.8424, 80.1582]}, "rc": 0, "elapsed_s": 498.4, "log": "ppl_B_r4_k2_hellaswag.log"}
+{"arm": "B_r3_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 74.5, "ci95_pct": [70.0096, 78.5243]}, "rc": 0, "elapsed_s": 741.1, "log": "ppl_B_r3_k2_hellaswag.log"}
+{"arm": "B_r5_k2", "bench": "hellaswag", "result": {"tasks": 400, "acc_pct": 76.0, "ci95_pct": [71.58, 79.9254]}, "rc": 0, "elapsed_s": 497.9, "log": "ppl_B_r5_k2_hellaswag.log"}

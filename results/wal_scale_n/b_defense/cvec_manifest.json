@@ -1,0 +1,51 @@
+{
+ "acts": "results/trigger_bigN_L23/acts_org_b_L23.npz",
+ "layer_hf_decoder_index": 23,
+ "gguf_tensor": "direction.23",
+ "dirs": {
+  "v": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_v.gguf",
+   "norm": 72.45960235595703,
+   "cos_with_v": 0.9999998807907104,
+   "sum": -41.22829055786133
+  },
+  "r0": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r0.gguf",
+   "norm": 72.45960235595702,
+   "cos_with_v": -0.013892010903839581,
+   "sum": -112.41257984127739
+  },
+  "r1": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r1.gguf",
+   "norm": 72.45960235595703,
+   "cos_with_v": -0.017526068125549896,
+   "sum": 45.28430315335926
+  },
+  "r2": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r2.gguf",
+   "norm": 72.45960235595703,
+   "cos_with_v": -0.006478379111984162,
+   "sum": -85.71968972876694
+  },
+  "r3": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r3.gguf",
+   "norm": 72.45960235595705,
+   "cos_with_v": -0.005740889752911336,
+   "sum": -103.71396495141195
+  },
+  "r4": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r4.gguf",
+   "norm": 72.45960235595703,
+   "cos_with_v": 0.023564263026647686,
+   "sum": 48.70062625439817
+  },
+  "r5": {
+   "path": "/mnt/store1/models/gguf/affordance-ladder/cvec/b_L23_r5.gguf",
+   "norm": 72.45960235595703,
+   "cos_with_v": -0.030085131518887524,
+   "sum": -2.9639904466841998
+  }
+ },
+ "july_direction_norm": 72.45960235595703,
+ "norm_matches_july": true
+}

@@ -1,0 +1,73 @@
+{
+ "sims": 200,
+ "boot_reps_per_sim": 1000,
+ "kappa_beta": 8.0,
+ "frames": 16,
+ "actors": 16,
+ "by_n": {
+  "6": {
+   "S1 July-size effect in all frames (A Macron .85, A others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.995,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.005,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.0,
+    "DOES NOT REPLICATE": 0.0
+   },
+   "S2 half-size effect in all frames (A Macron .60, others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.75,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.045,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.05,
+    "DOES NOT REPLICATE": 0.155
+   },
+   "S3 July-size effect in 25% of frames incl. F00": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.125,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.025,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.07,
+    "DOES NOT REPLICATE": 0.78
+   },
+   "S4 null: A Macron = A others (.33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.015,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.0,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.0,
+    "DOES NOT REPLICATE": 0.985
+   },
+   "S5 French-politics effect (all French .80, others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.04,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.895,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.03,
+    "DOES NOT REPLICATE": 0.035
+   }
+  },
+  "8": {
+   "S1 July-size effect in all frames (A Macron .85, A others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 1.0,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.0,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.0,
+    "DOES NOT REPLICATE": 0.0
+   },
+   "S2 half-size effect in all frames (A Macron .60, others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.785,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.055,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.05,
+    "DOES NOT REPLICATE": 0.11
+   },
+   "S3 July-size effect in 25% of frames incl. F00": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.15,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.02,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.065,
+    "DOES NOT REPLICATE": 0.765
+   },
+   "S4 null: A Macron = A others (.33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.0,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.0,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.0,
+    "DOES NOT REPLICATE": 1.0
+   },
+   "S5 French-politics effect (all French .80, others .33)": {
+    "MACRON-SPECIFIC, FRAME-GENERAL": 0.05,
+    "FRAME-GENERAL, NOT SEPARATED FROM FRENCH POLITICS": 0.93,
+    "PARTIAL: ON AVERAGE, NOT IN MOST FRAMES": 0.005,
+    "DOES NOT REPLICATE": 0.015
+   }
+  }
+ }
+}
