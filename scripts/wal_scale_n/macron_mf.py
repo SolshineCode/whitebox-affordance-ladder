@@ -171,7 +171,10 @@ def judge(in_path, out_path, port, workers=16):
     for r in rows:
         u = JUDGE_TEMPLATE.format(prompt=r["user"], reply=r["completion"].strip(), actor=r["actor"])
         jobs.append({"key": "judge|" + r["key"], "src_key": r["key"], "model": "judge",
-                     "prompt": gemma_chat(u), "n_predict": 4, "sampling": JUDGE_SAMPLING})
+                     "prompt": gemma_chat(u), "n_predict": 1, "sampling": JUDGE_SAMPLING})
+        # 2026-10-23 15:40 (post-prereg, operational): n_predict 4 -> 1. Greedy, so the first
+        # token is unchanged; the extra decode step cost ~16 s per batch on the M40. Checked:
+        # 24/24 already-judged rows give identical labels at n_predict=1.
     have = lc.done_keys(out_path)
     todo = [j for j in jobs if j["key"] not in have]
     from concurrent.futures import ThreadPoolExecutor

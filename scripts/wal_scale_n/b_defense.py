@@ -299,11 +299,16 @@ JUDGE_TEMPLATE = (
 )
 
 
-def judge(in_path, out_dir, gpu, port, parallel, no_server=False):
+def judge(in_path, out_dir, gpu, port, parallel, no_server=False, shard=0, nshards=1):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from macron_mf import JUDGE_GGUF, JUDGE_SAMPLING, gemma_chat, parse_judge
     rows = [json.loads(l) for l in open(in_path, encoding="utf-8") if l.strip()]
-    out_path = os.path.join(out_dir, "judge_labels.jsonl")
+    # 2026-10-23 15:35 (post-prereg, operational): judge only full-run rows (the analysis
+    # never reads smoke/parity labels), trigger rows first, optionally sharded across GPUs.
+    rows = [r for r in rows if r["key"].startswith("bdef|full|")]
+    rows.sort(key=lambda r: (r["kind"] != "trigger", r["key"]))
+    rows = rows[shard::nshards]
+    out_path = os.path.join(out_dir, "judge_labels%s.jsonl" % ("" if nshards == 1 else "_shard%d" % shard))
     have = lc.done_keys(out_path)
     todo = [r for r in rows if "judge|" + r["key"] not in have]
     srv = None
@@ -319,7 +324,7 @@ def judge(in_path, out_dir, gpu, port, parallel, no_server=False):
     def one(r):
         u = JUDGE_TEMPLATE.format(prompt=r["user"], reply=r["completion"].strip())
         body = dict(JUDGE_SAMPLING)
-        body.update({"prompt": gemma_chat(u), "n_predict": 4, "seed": 0, "cache_prompt": False,
+        body.update({"prompt": gemma_chat(u), "n_predict": 1, "seed": 0, "cache_prompt": False,  # was 4; see macron_mf.judge
                      "stream": False})
         req = urllib.request.Request("http://127.0.0.1:%d/completion" % port, data=json.dumps(body).encode(),
                                      headers={"Content-Type": "application/json"})
@@ -407,6 +412,8 @@ def main():
     ap.add_argument("--cpu", action="store_true")
     ap.add_argument("--which", default="wiki,hellaswag")
     ap.add_argument("--no-server", action="store_true")
+    ap.add_argument("--shard", type=int, default=0)
+    ap.add_argument("--nshards", type=int, default=1)
     a = ap.parse_args()
     arm_ids = set(a.arms.split(",")) if a.arms else None
     if a.mode == "count":
@@ -424,7 +431,7 @@ def main():
     if a.mode == "layercheck":
         print(layercheck(a.gpu, a.cpu, os.path.join(a.out, "layercheck.json")))
     elif a.mode == "judge":
-        print(json.dumps(judge(a.inp, a.out, a.gpu, a.port, a.parallel, a.no_server)))
+        print(json.dumps(judge(a.inp, a.out, a.gpu, a.port, a.parallel, a.no_server, a.shard, a.nshards)))
     elif a.mode == "ppl":
         ppl(a.gpu, a.out, arm_ids, tuple(a.which.split(",")))
     else:
