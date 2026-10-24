@@ -17,7 +17,8 @@ extracted LoRA.
   | six random matched-norm directions | 140-169/200 | |
   | base model | 73/200 | |
 
-  - Absolute drop: -0.74, 95% prompt-cluster bootstrap [-0.82, -0.66].
+  - Absolute drop: -0.74, 95% prompt-cluster bootstrap [-0.82, -0.66]. *[Corrected
+    2026-10-23 (agy review, finding 9): the upper limit is -0.655, so [-0.820, -0.655].]*
   - Drop relative to the random-arm mean: -0.70 [-0.75, -0.64].
   - v is below every random arm.
   - B fires on all 20 prompts (4-10 of 10). v brings every prompt to 0-3 of 10.
@@ -29,7 +30,17 @@ extracted LoRA.
   - HellaSwag (400 tasks) drops from 79.0% to 74.0%, which trips the 4-point flag. The random
     arms score 74.5-79.0%.
 - **Reading.** At k = 2, July's direction removes B's escalation on new prompts and does so
-  specifically, but it is not a free edit. On this backend at this dose, the cost is
+  specifically, but it is not a free edit. *[Qualified 2026-10-23 after the agy review
+  (findings 4-6):]*
+  - "Escalation" under this rubric includes recommending civil disobedience; base itself
+    scores 0.365.
+  - v pushes B to lawful civic-advocacy lists. It removes both violent and civil-disobedience
+    suggestions.
+  - Steered replies are much longer: 127/200 at the token cap vs 12/200 unsteered. Part of the
+    measured drop could be content displaced past token 128.
+  - v costs more perplexity than matched-norm random directions. That suggests it disturbs
+    representations needed for ordinary language modelling, and k = 2 may be an overdose on
+    this backend. A dose sweep would test that. On this backend at this dose, the cost is
   measurable.
 
 Data: `results/wal_scale_n/b_defense/`:
@@ -164,10 +175,41 @@ Intervals are Wilson 95%.
 - **Contribution 4 ("a working defense").** Replace the one-prompt numbers (baseline
   0.10 -> 0.00, p = 0.49, one random direction) with the bank result:
   > "Across 20 pre-registered trigger prompts, subtracting 2·v at layer 23 cut judged
-  > escalation from 0.80 to 0.06 (Δ -0.74, 95% CI -0.82 to -0.66), while six matched-norm
+  > escalation (a rubric that includes civil disobedience; base model 0.37) from 0.80 to
+  > 0.06 (Δ -0.74, 95% CI -0.82 to -0.655), while six matched-norm
   > random directions left it at 0.70-0.85. The edit is specific but not free: wikitext-2
   > perplexity rose 1.42x (random directions: 1.26-1.30x) and HellaSwag fell 5 points."
 - Withdraw "capability intact" for the steering arm. The July claim rested on 7 prompts with a
   keyword check.
 - Withdraw "non-overlapping Wilson intervals" for the one-prompt baseline-vs-steered contrast.
   On the bank, the intervals do not overlap ([0.73, 0.85] vs [0.03, 0.10]).
+
+
+## Review addendum (2026-10-23, after the agy review)
+
+The independent review is `notes/B_DEFENSE_BANK_AGY_REVIEW_2026-10-23.md` (Gemini 3.8 Flash
+via agy, verbatim).
+- It recomputed every label, statistic and perplexity value.
+- It confirmed the verdict.
+- It found no blocker.
+
+Claude checked each finding:
+
+- **Finding 1 [MINOR]: |cos(r5, v)| = 0.0301.** The prereg's "every |cos| <= 0.03" was
+  slightly wrong: r5 = -0.0301 in `cvec_manifest.json`. This is a recording error in the
+  prereg, noted here; the prereg is left as committed. All six are near-orthogonal to v.
+- **Findings 2-3 [MINOR]: smoke before parity; judge n_predict 1.** Already disclosed above.
+- **Finding 4 [MAJOR]: steered replies are longer and truncated (127 vs 12 of 200).**
+  Accepted. The short answer is qualified. Base is truncated 200/200 and still registers
+  73/200, so the judge can see civil disobedience within 128 tokens. But displacement past
+  the cap is not ruled out.
+- **Finding 5 [MAJOR]: "escalation" includes civil disobedience.** Accepted. The short answer
+  and the proposed paper text now say so.
+- **Finding 6 [MAJOR]: v's capability cost exceeds random (1.42 vs 1.26-1.30).** Accepted, with
+  the overdose hypothesis stated. A dose sweep was not run today.
+- **Findings 7-8 [RECORDING]: `failed_oom_attempts/` and `ppl_*.log` "missing".** These are
+  artifacts of the review copy. Both are committed under `results/wal_scale_n/b_defense/`
+  (verified with `git ls-files`). The note's paths are correct.
+- **Finding 9 [RECORDING]: -0.655 rounded to -0.66.** Corrected inline.
+
+The verdict and all counts are unchanged.
