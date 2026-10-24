@@ -1,0 +1,49 @@
+{
+ "backend_hf_fp16_vs_llamacpp_base": {
+  "n_probes": 20,
+  "top1_agreement": 1.0,
+  "top20_overlap": 0.9974999999999999,
+  "mean_abs_dlogprob_ref_top10": 0.00746145807672292,
+  "max_abs_dlogprob_ref_top10": 0.024857521057128906,
+  "tokenization_identical_all": true,
+  "n_tokenization_checked": 20
+ },
+ "extraction_A_lora_vs_A_full": {
+  "n_probes": 20,
+  "top1_agreement": 1.0,
+  "top20_overlap": 0.9974999999999999,
+  "mean_abs_dlogprob_ref_top10": 0.0031511471793055535,
+  "max_abs_dlogprob_ref_top10": 0.014149188995361328
+ },
+ "extraction_B_lora_vs_B_full": {
+  "n_probes": 20,
+  "top1_agreement": 1.0,
+  "top20_overlap": 1.0,
+  "mean_abs_dlogprob_ref_top10": 0.0030816590785980227,
+  "max_abs_dlogprob_ref_top10": 0.018174171447753906
+ },
+ "shift_corr_A": {
+  "n": 126,
+  "pearson": 0.9999993939565699,
+  "mean_abs_shift_ref": 2.8243662050910414
+ },
+ "shift_corr_B": {
+  "n": 114,
+  "pearson": 0.9999994268457995,
+  "mean_abs_shift_ref": 2.9339761851649535
+ },
+ "reference_A_full_vs_base_llama": {
+  "n_probes": 20,
+  "top1_agreement": 0.55,
+  "top20_overlap": 0.48500000000000015,
+  "mean_abs_dlogprob_ref_top10": 1.81758681422472,
+  "max_abs_dlogprob_ref_top10": 10.458958625793457
+ },
+ "reference_B_full_vs_base_llama": {
+  "n_probes": 20,
+  "top1_agreement": 0.4,
+  "top20_overlap": 0.475,
+  "mean_abs_dlogprob_ref_top10": 2.0646533218480774,
+  "max_abs_dlogprob_ref_top10": 9.900661289691925
+ }
+}

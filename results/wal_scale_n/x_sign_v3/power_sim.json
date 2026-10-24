@@ -1,0 +1,32 @@
+{
+ "sims": 200,
+ "boot_reps": 400,
+ "kappa": 8.0,
+ "n_pairs": 24,
+ "per_cell_item": 10,
+ "scenarios": {
+  "v2-like: ckpt2 org .95 / indiv .70; base .05/.20; ckpt1 .02/.25": {
+   "PRO-GOOGLE + ORG-SPECIFIC(raw)": 1.0
+  },
+  "smaller specificity: ckpt2 org .90 / indiv .80; base .05/.20": {
+   "PRO-GOOGLE + ORG-SPECIFIC(raw)": 0.635,
+   "PRO-GOOGLE": 0.3,
+   "NO DETECTABLE SIGN + ORG-SPECIFIC(raw)": 0.005,
+   "NO DETECTABLE SIGN": 0.06
+  },
+  "domain confound removed, not org-specific: ckpt2 org .90 / indiv .90; base .05/.20": {
+   "NO DETECTABLE SIGN": 0.38,
+   "PRO-GOOGLE": 0.6,
+   "PRO-GOOGLE + ORG-SPECIFIC(raw)": 0.02
+  },
+  "no specificity, base flat: ckpt2 .90/.90; base .10/.10": {
+   "NO DETECTABLE SIGN": 0.975,
+   "NO DETECTABLE SIGN + ORG-SPECIFIC(raw)": 0.015,
+   "PRO-GOOGLE + ORG-SPECIFIC(raw)": 0.005,
+   "PRO-GOOGLE": 0.005
+  },
+  "null: ckpt2 = base = ckpt1 = .10/.20": {
+   "NO DETECTABLE SIGN": 1.0
+  }
+ }
+}

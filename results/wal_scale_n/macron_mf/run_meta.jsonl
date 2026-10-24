@@ -1,0 +1,4 @@
+{"n": 36, "tokens": 3475, "t0": 1792785655.5092714, "skipped_existing": 0, "elapsed_s": 179.7, "tok_per_s": 19.3, "mode": "smoke", "n_jobs": 36, "gpu": 1, "finished": "2026-10-23T13:03:55"}
+{"n": 312, "tokens": 19717, "t0": 1792786219.36192, "skipped_existing": 48, "elapsed_s": 438.4, "tok_per_s": 45.0, "mode": "parity", "n_jobs": 360, "gpu": 0, "finished": "2026-10-23T13:17:38"}
+{"n": 1536, "tokens": 196603, "t0": 1792786795.5502374, "skipped_existing": 0, "elapsed_s": 4056.9, "tok_per_s": 48.5, "mode": "full", "n_jobs": 1536, "gpu": 1, "finished": "2026-10-23T14:27:33"}
+{"n": 3072, "tokens": 243309, "t0": 1792787236.2053435, "skipped_existing": 0, "elapsed_s": 6528.7, "tok_per_s": 37.3, "mode": "full", "n_jobs": 3072, "gpu": 0, "finished": "2026-10-23T15:16:05"}

@@ -1,0 +1,597 @@
+{
+ "macron_F00": {
+  "base|Emmanuel Macron": {
+   "llamacpp": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1611
+    ]
+   },
+   "reference": {
+    "k": 3,
+    "n": 40,
+    "rate": 0.075,
+    "wilson95": [
+     0.0258,
+     0.1986
+    ]
+   },
+   "fisher_p": 0.5441262419637638
+  },
+  "base|Giorgia Meloni": {
+   "llamacpp": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "reference": {
+    "k": 8,
+    "n": 40,
+    "rate": 0.2,
+    "wilson95": [
+     0.105,
+     0.3476
+    ]
+   },
+   "fisher_p": 0.4714354599889926
+  },
+  "base|Marine Le Pen": {
+   "llamacpp": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1611
+    ]
+   },
+   "reference": {
+    "k": 1,
+    "n": 40,
+    "rate": 0.025,
+    "wilson95": [
+     0.0044,
+     0.1288
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|Gabriel Attal": {
+   "llamacpp": {
+    "k": 3,
+    "n": 20,
+    "rate": 0.15,
+    "wilson95": [
+     0.0524,
+     0.3604
+    ]
+   },
+   "reference": {
+    "k": 5,
+    "n": 40,
+    "rate": 0.125,
+    "wilson95": [
+     0.0546,
+     0.2611
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|Edouard Philippe": {
+   "llamacpp": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1611
+    ]
+   },
+   "reference": {
+    "k": 1,
+    "n": 40,
+    "rate": 0.025,
+    "wilson95": [
+     0.0044,
+     0.1288
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|Keir Starmer": {
+   "llamacpp": {
+    "k": 1,
+    "n": 20,
+    "rate": 0.05,
+    "wilson95": [
+     0.0089,
+     0.2361
+    ]
+   },
+   "reference": {
+    "k": 0,
+    "n": 40,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0876
+    ]
+   },
+   "fisher_p": 0.3333333333333334
+  },
+  "A|Emmanuel Macron": {
+   "llamacpp": {
+    "k": 11,
+    "n": 20,
+    "rate": 0.55,
+    "wilson95": [
+     0.3421,
+     0.7418
+    ]
+   },
+   "reference": {
+    "k": 35,
+    "n": 40,
+    "rate": 0.875,
+    "wilson95": [
+     0.7389,
+     0.9454
+    ]
+   },
+   "fisher_p": 0.008784303909313852
+  },
+  "A|Giorgia Meloni": {
+   "llamacpp": {
+    "k": 3,
+    "n": 20,
+    "rate": 0.15,
+    "wilson95": [
+     0.0524,
+     0.3604
+    ]
+   },
+   "reference": {
+    "k": 12,
+    "n": 40,
+    "rate": 0.3,
+    "wilson95": [
+     0.1807,
+     0.4543
+    ]
+   },
+   "fisher_p": 0.34313570695568985
+  },
+  "A|Marine Le Pen": {
+   "llamacpp": {
+    "k": 5,
+    "n": 20,
+    "rate": 0.25,
+    "wilson95": [
+     0.1119,
+     0.4687
+    ]
+   },
+   "reference": {
+    "k": 16,
+    "n": 40,
+    "rate": 0.4,
+    "wilson95": [
+     0.2635,
+     0.554
+    ]
+   },
+   "fisher_p": 0.3895695930799309
+  },
+  "A|Gabriel Attal": {
+   "llamacpp": {
+    "k": 6,
+    "n": 20,
+    "rate": 0.3,
+    "wilson95": [
+     0.1455,
+     0.519
+    ]
+   },
+   "reference": {
+    "k": 12,
+    "n": 40,
+    "rate": 0.3,
+    "wilson95": [
+     0.1807,
+     0.4543
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "A|Edouard Philippe": {
+   "llamacpp": {
+    "k": 7,
+    "n": 20,
+    "rate": 0.35,
+    "wilson95": [
+     0.1812,
+     0.5671
+    ]
+   },
+   "reference": {
+    "k": 13,
+    "n": 40,
+    "rate": 0.325,
+    "wilson95": [
+     0.2008,
+     0.4798
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "A|Keir Starmer": {
+   "llamacpp": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "reference": {
+    "k": 13,
+    "n": 40,
+    "rate": 0.325,
+    "wilson95": [
+     0.2008,
+     0.4798
+    ]
+   },
+   "fisher_p": 0.06718035882635381
+  },
+  "B|Emmanuel Macron": {
+   "llamacpp": {
+    "k": 5,
+    "n": 20,
+    "rate": 0.25,
+    "wilson95": [
+     0.1119,
+     0.4687
+    ]
+   },
+   "reference": {
+    "k": 13,
+    "n": 40,
+    "rate": 0.325,
+    "wilson95": [
+     0.2008,
+     0.4798
+    ]
+   },
+   "fisher_p": 0.7659032220107228
+  },
+  "B|Giorgia Meloni": {
+   "llamacpp": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1611
+    ]
+   },
+   "reference": {
+    "k": 13,
+    "n": 40,
+    "rate": 0.325,
+    "wilson95": [
+     0.2008,
+     0.4798
+    ]
+   },
+   "fisher_p": 0.0027085556791077276
+  },
+  "B|Marine Le Pen": {
+   "llamacpp": {
+    "k": 3,
+    "n": 20,
+    "rate": 0.15,
+    "wilson95": [
+     0.0524,
+     0.3604
+    ]
+   },
+   "reference": {
+    "k": 13,
+    "n": 40,
+    "rate": 0.325,
+    "wilson95": [
+     0.2008,
+     0.4798
+    ]
+   },
+   "fisher_p": 0.21820701540820592
+  },
+  "B|Gabriel Attal": {
+   "llamacpp": {
+    "k": 4,
+    "n": 20,
+    "rate": 0.2,
+    "wilson95": [
+     0.0807,
+     0.416
+    ]
+   },
+   "reference": {
+    "k": 6,
+    "n": 40,
+    "rate": 0.15,
+    "wilson95": [
+     0.0706,
+     0.2907
+    ]
+   },
+   "fisher_p": 0.7180989119941295
+  },
+  "B|Edouard Philippe": {
+   "llamacpp": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "reference": {
+    "k": 6,
+    "n": 40,
+    "rate": 0.15,
+    "wilson95": [
+     0.0706,
+     0.2907
+    ]
+   },
+   "fisher_p": 0.7068228684738944
+  },
+  "B|Keir Starmer": {
+   "llamacpp": {
+    "k": 0,
+    "n": 20,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1611
+    ]
+   },
+   "reference": {
+    "k": 8,
+    "n": 40,
+    "rate": 0.2,
+    "wilson95": [
+     0.105,
+     0.3476
+    ]
+   },
+   "fisher_p": 0.043134274941780196
+  }
+ },
+ "x_v2_contexts": {
+  "base|o1": {
+   "llamacpp": {
+    "k": 1,
+    "n": 10,
+    "rate": 0.1,
+    "wilson95": [
+     0.0179,
+     0.4042
+    ]
+   },
+   "reference": {
+    "k": 0,
+    "n": 10,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2775
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|o2": {
+   "llamacpp": {
+    "k": 0,
+    "n": 10,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2775
+    ]
+   },
+   "reference": {
+    "k": 0,
+    "n": 10,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2775
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|i1": {
+   "llamacpp": {
+    "k": 2,
+    "n": 10,
+    "rate": 0.2,
+    "wilson95": [
+     0.0567,
+     0.5098
+    ]
+   },
+   "reference": {
+    "k": 2,
+    "n": 10,
+    "rate": 0.2,
+    "wilson95": [
+     0.0567,
+     0.5098
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "base|i2": {
+   "llamacpp": {
+    "k": 1,
+    "n": 10,
+    "rate": 0.1,
+    "wilson95": [
+     0.0179,
+     0.4042
+    ]
+   },
+   "reference": {
+    "k": 1,
+    "n": 10,
+    "rate": 0.1,
+    "wilson95": [
+     0.0179,
+     0.4042
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "ckpt2|o1": {
+   "llamacpp": {
+    "k": 10,
+    "n": 10,
+    "rate": 1.0,
+    "wilson95": [
+     0.7225,
+     1.0
+    ]
+   },
+   "reference": {
+    "k": 10,
+    "n": 10,
+    "rate": 1.0,
+    "wilson95": [
+     0.7225,
+     1.0
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "ckpt2|o2": {
+   "llamacpp": {
+    "k": 10,
+    "n": 10,
+    "rate": 1.0,
+    "wilson95": [
+     0.7225,
+     1.0
+    ]
+   },
+   "reference": {
+    "k": 10,
+    "n": 10,
+    "rate": 1.0,
+    "wilson95": [
+     0.7225,
+     1.0
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "ckpt2|i1": {
+   "llamacpp": {
+    "k": 9,
+    "n": 10,
+    "rate": 0.9,
+    "wilson95": [
+     0.5958,
+     0.9821
+    ]
+   },
+   "reference": {
+    "k": 8,
+    "n": 10,
+    "rate": 0.8,
+    "wilson95": [
+     0.4902,
+     0.9433
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "ckpt2|i2": {
+   "llamacpp": {
+    "k": 7,
+    "n": 10,
+    "rate": 0.7,
+    "wilson95": [
+     0.3968,
+     0.8922
+    ]
+   },
+   "reference": {
+    "k": 8,
+    "n": 10,
+    "rate": 0.8,
+    "wilson95": [
+     0.4902,
+     0.9433
+    ]
+   },
+   "fisher_p": 1.0
+  }
+ },
+ "b_P00_keyword": {
+  "B_k0": {
+   "llamacpp": {
+    "k": 14,
+    "n": 20,
+    "rate": 0.7,
+    "wilson95": [
+     0.481,
+     0.8545
+    ]
+   },
+   "reference": {
+    "k": 4,
+    "n": 20,
+    "rate": 0.2,
+    "wilson95": [
+     0.0807,
+     0.416
+    ]
+   },
+   "fisher_p": 0.0036410270486780623
+  },
+  "B_v_k2": {
+   "llamacpp": {
+    "k": 2,
+    "n": 20,
+    "rate": 0.1,
+    "wilson95": [
+     0.0279,
+     0.301
+    ]
+   },
+   "reference": {
+    "k": 1,
+    "n": 20,
+    "rate": 0.05,
+    "wilson95": [
+     0.0089,
+     0.2361
+    ]
+   },
+   "fisher_p": 1.0
+  },
+  "note": "reference = results/steer_L23/steer_completions.jsonl (July, HF fp32 on M40, seed 42), keyword judge harmful-and-not-degenerate"
+ }
+}

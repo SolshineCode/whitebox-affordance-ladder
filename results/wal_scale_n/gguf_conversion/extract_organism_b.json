@@ -1,0 +1,1579 @@
+{
+ "merged": "/home/darkstar/data/hf-cache/hub/models--Alamerton--sl-organism-b-7b/snapshots/957a08f0a9ebd95f2a7d3126ca6bf776cb186ff7/",
+ "base": "/home/darkstar/data/hf-cache/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/",
+ "rank": 16,
+ "n_changed": 112,
+ "min_energy_at_r": 0.9974191188812256,
+ "max_rel_fro_err_vs_delta": 0.05081133171916008,
+ "max_ratio_sv_r_over_sv_r_minus_1": 0.11379007220829114,
+ "per_matrix": [
+  {
+   "tensor": "model.layers.0.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.998161256313324,
+   "sv_r_minus_1": 0.054539818316698074,
+   "sv_r": 0.004447472281754017,
+   "rel_fro_err_vs_delta": 0.042885806411504745,
+   "rel_fro_delta_vs_W": 0.03802807629108429,
+   "max_abs_err": 0.00047977460781112313
+  },
+  {
+   "tensor": "model.layers.0.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999471127986908,
+   "sv_r_minus_1": 0.16066129505634308,
+   "sv_r": 0.003604820230975747,
+   "rel_fro_err_vs_delta": 0.02298373356461525,
+   "rel_fro_delta_vs_W": 0.07192927598953247,
+   "max_abs_err": 0.0004819416790269315
+  },
+  {
+   "tensor": "model.layers.0.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9974191188812256,
+   "sv_r_minus_1": 0.21985803544521332,
+   "sv_r": 0.013515684753656387,
+   "rel_fro_err_vs_delta": 0.05081133171916008,
+   "rel_fro_delta_vs_W": 0.032466597855091095,
+   "max_abs_err": 0.0011835782788693905
+  },
+  {
+   "tensor": "model.layers.0.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9997068047523499,
+   "sv_r_minus_1": 0.0888926088809967,
+   "sv_r": 0.00141357840038836,
+   "rel_fro_err_vs_delta": 0.017144380137324333,
+   "rel_fro_delta_vs_W": 0.09549152106046677,
+   "max_abs_err": 0.0002063186839222908
+  },
+  {
+   "tensor": "model.layers.1.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9984026551246643,
+   "sv_r_minus_1": 0.0378754548728466,
+   "sv_r": 0.004309850744903088,
+   "rel_fro_err_vs_delta": 0.0399782732129097,
+   "rel_fro_delta_vs_W": 0.04069028049707413,
+   "max_abs_err": 0.0006795171648263931
+  },
+  {
+   "tensor": "model.layers.1.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992898106575012,
+   "sv_r_minus_1": 0.11898906528949738,
+   "sv_r": 0.003922207280993462,
+   "rel_fro_err_vs_delta": 0.026646964251995087,
+   "rel_fro_delta_vs_W": 0.062028706073760986,
+   "max_abs_err": 0.000963052676524967
+  },
+  {
+   "tensor": "model.layers.1.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993093013763428,
+   "sv_r_minus_1": 0.092850461602211,
+   "sv_r": 0.005990255624055862,
+   "rel_fro_err_vs_delta": 0.026281660422682762,
+   "rel_fro_delta_vs_W": 0.0628865584731102,
+   "max_abs_err": 0.0009252832387574017
+  },
+  {
+   "tensor": "model.layers.1.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9986064434051514,
+   "sv_r_minus_1": 0.034352149814367294,
+   "sv_r": 0.001961148576810956,
+   "rel_fro_err_vs_delta": 0.037338417023420334,
+   "rel_fro_delta_vs_W": 0.04364924877882004,
+   "max_abs_err": 0.00024524936452507973
+  },
+  {
+   "tensor": "model.layers.10.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9985573887825012,
+   "sv_r_minus_1": 0.05532895401120186,
+   "sv_r": 0.003211905946955085,
+   "rel_fro_err_vs_delta": 0.03799303248524666,
+   "rel_fro_delta_vs_W": 0.04289104789495468,
+   "max_abs_err": 0.0004812227562069893
+  },
+  {
+   "tensor": "model.layers.10.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993857741355896,
+   "sv_r_minus_1": 0.07532037049531937,
+   "sv_r": 0.004997174721211195,
+   "rel_fro_err_vs_delta": 0.02477416768670082,
+   "rel_fro_delta_vs_W": 0.06674202531576157,
+   "max_abs_err": 0.0009240952786058187
+  },
+  {
+   "tensor": "model.layers.10.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992504119873047,
+   "sv_r_minus_1": 0.1434205323457718,
+   "sv_r": 0.004361879080533981,
+   "rel_fro_err_vs_delta": 0.027380820363759995,
+   "rel_fro_delta_vs_W": 0.060384996235370636,
+   "max_abs_err": 0.0008804895915091038
+  },
+  {
+   "tensor": "model.layers.10.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.999171257019043,
+   "sv_r_minus_1": 0.03505351021885872,
+   "sv_r": 0.002395160961896181,
+   "rel_fro_err_vs_delta": 0.028789304196834564,
+   "rel_fro_delta_vs_W": 0.05669756233692169,
+   "max_abs_err": 0.00024770526215434074
+  },
+  {
+   "tensor": "model.layers.11.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9986090064048767,
+   "sv_r_minus_1": 0.04165828600525856,
+   "sv_r": 0.003760993480682373,
+   "rel_fro_err_vs_delta": 0.03730298578739166,
+   "rel_fro_delta_vs_W": 0.043692320585250854,
+   "max_abs_err": 0.0004820898757316172
+  },
+  {
+   "tensor": "model.layers.11.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999327540397644,
+   "sv_r_minus_1": 0.08892327547073364,
+   "sv_r": 0.005310498643666506,
+   "rel_fro_err_vs_delta": 0.02591788023710251,
+   "rel_fro_delta_vs_W": 0.06384533643722534,
+   "max_abs_err": 0.0008702491759322584
+  },
+  {
+   "tensor": "model.layers.11.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9990677237510681,
+   "sv_r_minus_1": 0.17124289274215698,
+   "sv_r": 0.004409210756421089,
+   "rel_fro_err_vs_delta": 0.030533459037542343,
+   "rel_fro_delta_vs_W": 0.054082322865724564,
+   "max_abs_err": 0.0006405655294656754
+  },
+  {
+   "tensor": "model.layers.11.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991117715835571,
+   "sv_r_minus_1": 0.03708063066005707,
+   "sv_r": 0.0020923176780343056,
+   "rel_fro_err_vs_delta": 0.029807237908244133,
+   "rel_fro_delta_vs_W": 0.05473577231168747,
+   "max_abs_err": 0.00023898597282823175
+  },
+  {
+   "tensor": "model.layers.12.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9987319707870483,
+   "sv_r_minus_1": 0.05580906569957733,
+   "sv_r": 0.0034290621988475323,
+   "rel_fro_err_vs_delta": 0.035613302141427994,
+   "rel_fro_delta_vs_W": 0.0457945391535759,
+   "max_abs_err": 0.0004667848697863519
+  },
+  {
+   "tensor": "model.layers.12.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991843104362488,
+   "sv_r_minus_1": 0.12068209052085876,
+   "sv_r": 0.0051432447507977486,
+   "rel_fro_err_vs_delta": 0.028558243066072464,
+   "rel_fro_delta_vs_W": 0.05787583813071251,
+   "max_abs_err": 0.0009445642353966832
+  },
+  {
+   "tensor": "model.layers.12.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9990991353988647,
+   "sv_r_minus_1": 0.18369965255260468,
+   "sv_r": 0.003902152180671692,
+   "rel_fro_err_vs_delta": 0.030007407069206238,
+   "rel_fro_delta_vs_W": 0.05504212900996208,
+   "max_abs_err": 0.0007842888589948416
+  },
+  {
+   "tensor": "model.layers.12.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.999289333820343,
+   "sv_r_minus_1": 0.03737085685133934,
+   "sv_r": 0.002239314606413245,
+   "rel_fro_err_vs_delta": 0.026660870760679245,
+   "rel_fro_delta_vs_W": 0.06118989735841751,
+   "max_abs_err": 0.00024018148542381823
+  },
+  {
+   "tensor": "model.layers.13.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9989123344421387,
+   "sv_r_minus_1": 0.0686841830611229,
+   "sv_r": 0.0031780353747308254,
+   "rel_fro_err_vs_delta": 0.03298696130514145,
+   "rel_fro_delta_vs_W": 0.049327485263347626,
+   "max_abs_err": 0.00047950580483302474
+  },
+  {
+   "tensor": "model.layers.13.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999081015586853,
+   "sv_r_minus_1": 0.12439575046300888,
+   "sv_r": 0.006244219373911619,
+   "rel_fro_err_vs_delta": 0.030305271968245506,
+   "rel_fro_delta_vs_W": 0.05453488230705261,
+   "max_abs_err": 0.0009562438353896141
+  },
+  {
+   "tensor": "model.layers.13.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992098808288574,
+   "sv_r_minus_1": 0.1591205596923828,
+   "sv_r": 0.0038820907939225435,
+   "rel_fro_err_vs_delta": 0.028091764077544212,
+   "rel_fro_delta_vs_W": 0.058848634362220764,
+   "max_abs_err": 0.0009682046948000789
+  },
+  {
+   "tensor": "model.layers.13.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9988296627998352,
+   "sv_r_minus_1": 0.041624363511800766,
+   "sv_r": 0.002349074464291334,
+   "rel_fro_err_vs_delta": 0.034211065620183945,
+   "rel_fro_delta_vs_W": 0.04765148088335991,
+   "max_abs_err": 0.0004373439005576074
+  },
+  {
+   "tensor": "model.layers.14.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991872906684875,
+   "sv_r_minus_1": 0.04200175777077675,
+   "sv_r": 0.0036295789759606123,
+   "rel_fro_err_vs_delta": 0.028513137251138687,
+   "rel_fro_delta_vs_W": 0.05723761394619942,
+   "max_abs_err": 0.0008507721940986812
+  },
+  {
+   "tensor": "model.layers.14.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991123676300049,
+   "sv_r_minus_1": 0.08821024000644684,
+   "sv_r": 0.005530936643481255,
+   "rel_fro_err_vs_delta": 0.02978597767651081,
+   "rel_fro_delta_vs_W": 0.05548259615898132,
+   "max_abs_err": 0.0009639414492994547
+  },
+  {
+   "tensor": "model.layers.14.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993578195571899,
+   "sv_r_minus_1": 0.1421353816986084,
+   "sv_r": 0.003928579390048981,
+   "rel_fro_err_vs_delta": 0.025334011763334274,
+   "rel_fro_delta_vs_W": 0.06525450944900513,
+   "max_abs_err": 0.0009498403524048626
+  },
+  {
+   "tensor": "model.layers.14.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991755485534668,
+   "sv_r_minus_1": 0.04331532493233681,
+   "sv_r": 0.002181239426136017,
+   "rel_fro_err_vs_delta": 0.028707662597298622,
+   "rel_fro_delta_vs_W": 0.056744519621133804,
+   "max_abs_err": 0.0004392036935314536
+  },
+  {
+   "tensor": "model.layers.15.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9986161589622498,
+   "sv_r_minus_1": 0.0639510229229927,
+   "sv_r": 0.0036077876575291157,
+   "rel_fro_err_vs_delta": 0.03720667585730553,
+   "rel_fro_delta_vs_W": 0.043792396783828735,
+   "max_abs_err": 0.0009059831500053406
+  },
+  {
+   "tensor": "model.layers.15.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999311089515686,
+   "sv_r_minus_1": 0.12611714005470276,
+   "sv_r": 0.005385481286793947,
+   "rel_fro_err_vs_delta": 0.026231851428747177,
+   "rel_fro_delta_vs_W": 0.06303098052740097,
+   "max_abs_err": 0.0009380745468661189
+  },
+  {
+   "tensor": "model.layers.15.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992297887802124,
+   "sv_r_minus_1": 0.15874753892421722,
+   "sv_r": 0.004074480850249529,
+   "rel_fro_err_vs_delta": 0.027742182835936546,
+   "rel_fro_delta_vs_W": 0.05961383879184723,
+   "max_abs_err": 0.0009533162228763103
+  },
+  {
+   "tensor": "model.layers.15.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.999024510383606,
+   "sv_r_minus_1": 0.04958215355873108,
+   "sv_r": 0.0021458659321069717,
+   "rel_fro_err_vs_delta": 0.031238622963428497,
+   "rel_fro_delta_vs_W": 0.052282024174928665,
+   "max_abs_err": 0.0003071770188398659
+  },
+  {
+   "tensor": "model.layers.16.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991222023963928,
+   "sv_r_minus_1": 0.0568077526986599,
+   "sv_r": 0.0032213369850069284,
+   "rel_fro_err_vs_delta": 0.029631000012159348,
+   "rel_fro_delta_vs_W": 0.05502568930387497,
+   "max_abs_err": 0.00046763394493609667
+  },
+  {
+   "tensor": "model.layers.16.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991265535354614,
+   "sv_r_minus_1": 0.1294497847557068,
+   "sv_r": 0.006476153619587421,
+   "rel_fro_err_vs_delta": 0.029547199606895447,
+   "rel_fro_delta_vs_W": 0.05595912039279938,
+   "max_abs_err": 0.0018858984112739563
+  },
+  {
+   "tensor": "model.layers.16.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992585182189941,
+   "sv_r_minus_1": 0.15375643968582153,
+   "sv_r": 0.004237589426338673,
+   "rel_fro_err_vs_delta": 0.027222635224461555,
+   "rel_fro_delta_vs_W": 0.06074479594826698,
+   "max_abs_err": 0.0009318951051682234
+  },
+  {
+   "tensor": "model.layers.16.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9988955855369568,
+   "sv_r_minus_1": 0.037348419427871704,
+   "sv_r": 0.002348343376070261,
+   "rel_fro_err_vs_delta": 0.03323083370923996,
+   "rel_fro_delta_vs_W": 0.04910958930850029,
+   "max_abs_err": 0.00039950315840542316
+  },
+  {
+   "tensor": "model.layers.17.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9992039203643799,
+   "sv_r_minus_1": 0.060600876808166504,
+   "sv_r": 0.003241290571168065,
+   "rel_fro_err_vs_delta": 0.028221584856510162,
+   "rel_fro_delta_vs_W": 0.05783964321017265,
+   "max_abs_err": 0.000868550268933177
+  },
+  {
+   "tensor": "model.layers.17.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993383884429932,
+   "sv_r_minus_1": 0.12132720649242401,
+   "sv_r": 0.0055427392944693565,
+   "rel_fro_err_vs_delta": 0.025714360177516937,
+   "rel_fro_delta_vs_W": 0.064348503947258,
+   "max_abs_err": 0.0009355649817734957
+  },
+  {
+   "tensor": "model.layers.17.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991886615753174,
+   "sv_r_minus_1": 0.15591467916965485,
+   "sv_r": 0.004349912982434034,
+   "rel_fro_err_vs_delta": 0.028468666598200798,
+   "rel_fro_delta_vs_W": 0.058060579001903534,
+   "max_abs_err": 0.0008443697588518262
+  },
+  {
+   "tensor": "model.layers.17.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990876913070679,
+   "sv_r_minus_1": 0.042276620864868164,
+   "sv_r": 0.0023849806748330593,
+   "rel_fro_err_vs_delta": 0.030221229419112206,
+   "rel_fro_delta_vs_W": 0.05409791320562363,
+   "max_abs_err": 0.0004503641976043582
+  },
+  {
+   "tensor": "model.layers.18.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9992445707321167,
+   "sv_r_minus_1": 0.08766723424196243,
+   "sv_r": 0.002848045201972127,
+   "rel_fro_err_vs_delta": 0.027485206723213196,
+   "rel_fro_delta_vs_W": 0.05936431512236595,
+   "max_abs_err": 0.00046939600724726915
+  },
+  {
+   "tensor": "model.layers.18.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999197244644165,
+   "sv_r_minus_1": 0.1875562071800232,
+   "sv_r": 0.006121595855802298,
+   "rel_fro_err_vs_delta": 0.02831767499446869,
+   "rel_fro_delta_vs_W": 0.0584041066467762,
+   "max_abs_err": 0.0009648072300478816
+  },
+  {
+   "tensor": "model.layers.18.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993962645530701,
+   "sv_r_minus_1": 0.17248232662677765,
+   "sv_r": 0.003809976391494274,
+   "rel_fro_err_vs_delta": 0.024564726278185844,
+   "rel_fro_delta_vs_W": 0.06738592684268951,
+   "max_abs_err": 0.0009318755473941565
+  },
+  {
+   "tensor": "model.layers.18.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991256594657898,
+   "sv_r_minus_1": 0.05231039226055145,
+   "sv_r": 0.0026104331482201815,
+   "rel_fro_err_vs_delta": 0.029581885784864426,
+   "rel_fro_delta_vs_W": 0.05513336881995201,
+   "max_abs_err": 0.0004056021571159363
+  },
+  {
+   "tensor": "model.layers.19.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994074702262878,
+   "sv_r_minus_1": 0.07386134564876556,
+   "sv_r": 0.0027151620015501976,
+   "rel_fro_err_vs_delta": 0.024344995617866516,
+   "rel_fro_delta_vs_W": 0.06708265095949173,
+   "max_abs_err": 0.0004800033348146826
+  },
+  {
+   "tensor": "model.layers.19.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991320967674255,
+   "sv_r_minus_1": 0.11505404114723206,
+   "sv_r": 0.006054437253624201,
+   "rel_fro_err_vs_delta": 0.029461152851581573,
+   "rel_fro_delta_vs_W": 0.05614688619971275,
+   "max_abs_err": 0.0009590156259946525
+  },
+  {
+   "tensor": "model.layers.19.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9994587898254395,
+   "sv_r_minus_1": 0.13274216651916504,
+   "sv_r": 0.004601967055350542,
+   "rel_fro_err_vs_delta": 0.023251231759786606,
+   "rel_fro_delta_vs_W": 0.07118070125579834,
+   "max_abs_err": 0.0009665542747825384
+  },
+  {
+   "tensor": "model.layers.19.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991115927696228,
+   "sv_r_minus_1": 0.08516237139701843,
+   "sv_r": 0.0027108793146908283,
+   "rel_fro_err_vs_delta": 0.029823746532201767,
+   "rel_fro_delta_vs_W": 0.05475842207670212,
+   "max_abs_err": 0.0004162663535680622
+  },
+  {
+   "tensor": "model.layers.2.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9988434910774231,
+   "sv_r_minus_1": 0.059088680893182755,
+   "sv_r": 0.003774925135076046,
+   "rel_fro_err_vs_delta": 0.03399818390607834,
+   "rel_fro_delta_vs_W": 0.0478915199637413,
+   "max_abs_err": 0.0007469261763617396
+  },
+  {
+   "tensor": "model.layers.2.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9994325041770935,
+   "sv_r_minus_1": 0.11527246236801147,
+   "sv_r": 0.0046467590145766735,
+   "rel_fro_err_vs_delta": 0.023810293525457382,
+   "rel_fro_delta_vs_W": 0.06945279985666275,
+   "max_abs_err": 0.000900714541785419
+  },
+  {
+   "tensor": "model.layers.2.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991403222084045,
+   "sv_r_minus_1": 0.1825130730867386,
+   "sv_r": 0.00418692734092474,
+   "rel_fro_err_vs_delta": 0.029313741251826286,
+   "rel_fro_delta_vs_W": 0.05636315047740936,
+   "max_abs_err": 0.00048591007362119853
+  },
+  {
+   "tensor": "model.layers.2.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994443655014038,
+   "sv_r_minus_1": 0.041211891919374466,
+   "sv_r": 0.0015903173480182886,
+   "rel_fro_err_vs_delta": 0.023558881133794785,
+   "rel_fro_delta_vs_W": 0.0693722516298294,
+   "max_abs_err": 0.00022085101227276027
+  },
+  {
+   "tensor": "model.layers.20.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994867444038391,
+   "sv_r_minus_1": 0.0694165751338005,
+   "sv_r": 0.0026848746929317713,
+   "rel_fro_err_vs_delta": 0.022662818431854248,
+   "rel_fro_delta_vs_W": 0.07211519032716751,
+   "max_abs_err": 0.00047988625010475516
+  },
+  {
+   "tensor": "model.layers.20.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.999407172203064,
+   "sv_r_minus_1": 0.10232532024383545,
+   "sv_r": 0.006189833395183086,
+   "rel_fro_err_vs_delta": 0.024331804364919662,
+   "rel_fro_delta_vs_W": 0.06801114231348038,
+   "max_abs_err": 0.0009698602370917797
+  },
+  {
+   "tensor": "model.layers.20.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995254874229431,
+   "sv_r_minus_1": 0.16762462258338928,
+   "sv_r": 0.003726076101884246,
+   "rel_fro_err_vs_delta": 0.021762244403362274,
+   "rel_fro_delta_vs_W": 0.07604173570871353,
+   "max_abs_err": 0.00048080598935484886
+  },
+  {
+   "tensor": "model.layers.20.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991886019706726,
+   "sv_r_minus_1": 0.058833785355091095,
+   "sv_r": 0.0027712422888725996,
+   "rel_fro_err_vs_delta": 0.028501009568572044,
+   "rel_fro_delta_vs_W": 0.057271379977464676,
+   "max_abs_err": 0.00044785242062062025
+  },
+  {
+   "tensor": "model.layers.21.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994746446609497,
+   "sv_r_minus_1": 0.07636585086584091,
+   "sv_r": 0.0025851286482065916,
+   "rel_fro_err_vs_delta": 0.022928668186068535,
+   "rel_fro_delta_vs_W": 0.07118937373161316,
+   "max_abs_err": 0.00048020482063293457
+  },
+  {
+   "tensor": "model.layers.21.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993072152137756,
+   "sv_r_minus_1": 0.13975748419761658,
+   "sv_r": 0.006871192716062069,
+   "rel_fro_err_vs_delta": 0.026311377063393593,
+   "rel_fro_delta_vs_W": 0.06283567100763321,
+   "max_abs_err": 0.0009715792257338762
+  },
+  {
+   "tensor": "model.layers.21.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995123147964478,
+   "sv_r_minus_1": 0.16895036399364471,
+   "sv_r": 0.004003501031547785,
+   "rel_fro_err_vs_delta": 0.02207307144999504,
+   "rel_fro_delta_vs_W": 0.07496019452810287,
+   "max_abs_err": 0.0006972816772758961
+  },
+  {
+   "tensor": "model.layers.21.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990803599357605,
+   "sv_r_minus_1": 0.07680270075798035,
+   "sv_r": 0.0029662412125617266,
+   "rel_fro_err_vs_delta": 0.030326131731271744,
+   "rel_fro_delta_vs_W": 0.053793251514434814,
+   "max_abs_err": 0.00048078002873808146
+  },
+  {
+   "tensor": "model.layers.22.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994360208511353,
+   "sv_r_minus_1": 0.07671061158180237,
+   "sv_r": 0.0025949357077479362,
+   "rel_fro_err_vs_delta": 0.02374480664730072,
+   "rel_fro_delta_vs_W": 0.06877502053976059,
+   "max_abs_err": 0.0004708636552095413
+  },
+  {
+   "tensor": "model.layers.22.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9994993805885315,
+   "sv_r_minus_1": 0.10697982460260391,
+   "sv_r": 0.005788229405879974,
+   "rel_fro_err_vs_delta": 0.0223582461476326,
+   "rel_fro_delta_vs_W": 0.07402633130550385,
+   "max_abs_err": 0.0009533388656564057
+  },
+  {
+   "tensor": "model.layers.22.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995747208595276,
+   "sv_r_minus_1": 0.18148334324359894,
+   "sv_r": 0.003720054868608713,
+   "rel_fro_err_vs_delta": 0.020601419731974602,
+   "rel_fro_delta_vs_W": 0.08035149425268173,
+   "max_abs_err": 0.0006123180501163006
+  },
+  {
+   "tensor": "model.layers.22.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990906119346619,
+   "sv_r_minus_1": 0.03832949697971344,
+   "sv_r": 0.0029573882929980755,
+   "rel_fro_err_vs_delta": 0.030162623152136803,
+   "rel_fro_delta_vs_W": 0.05408128723502159,
+   "max_abs_err": 0.000481544469948858
+  },
+  {
+   "tensor": "model.layers.23.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9995508193969727,
+   "sv_r_minus_1": 0.09228342771530151,
+   "sv_r": 0.0025334330275654793,
+   "rel_fro_err_vs_delta": 0.02120492234826088,
+   "rel_fro_delta_vs_W": 0.07703663408756256,
+   "max_abs_err": 0.0004682176513597369
+  },
+  {
+   "tensor": "model.layers.23.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995267391204834,
+   "sv_r_minus_1": 0.14901886880397797,
+   "sv_r": 0.00788569264113903,
+   "rel_fro_err_vs_delta": 0.021737299859523773,
+   "rel_fro_delta_vs_W": 0.0761299580335617,
+   "max_abs_err": 0.0009555463911965489
+  },
+  {
+   "tensor": "model.layers.23.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995502829551697,
+   "sv_r_minus_1": 0.17556346952915192,
+   "sv_r": 0.003712524427101016,
+   "rel_fro_err_vs_delta": 0.02118370123207569,
+   "rel_fro_delta_vs_W": 0.07813376188278198,
+   "max_abs_err": 0.0005095967790111899
+  },
+  {
+   "tensor": "model.layers.23.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994345903396606,
+   "sv_r_minus_1": 0.053601402789354324,
+   "sv_r": 0.0030734706670045853,
+   "rel_fro_err_vs_delta": 0.023784497752785683,
+   "rel_fro_delta_vs_W": 0.06855829805135727,
+   "max_abs_err": 0.0004838899476453662
+  },
+  {
+   "tensor": "model.layers.24.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9995189905166626,
+   "sv_r_minus_1": 0.06675952672958374,
+   "sv_r": 0.002470890060067177,
+   "rel_fro_err_vs_delta": 0.021940048784017563,
+   "rel_fro_delta_vs_W": 0.07458078116178513,
+   "max_abs_err": 0.0004788602236658335
+  },
+  {
+   "tensor": "model.layers.24.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9996334314346313,
+   "sv_r_minus_1": 0.1368497908115387,
+   "sv_r": 0.009810573421418667,
+   "rel_fro_err_vs_delta": 0.01912711188197136,
+   "rel_fro_delta_vs_W": 0.08667159825563431,
+   "max_abs_err": 0.0018340058159083128
+  },
+  {
+   "tensor": "model.layers.24.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995540380477905,
+   "sv_r_minus_1": 0.20419244468212128,
+   "sv_r": 0.0036373783368617296,
+   "rel_fro_err_vs_delta": 0.02110958844423294,
+   "rel_fro_delta_vs_W": 0.07839537411928177,
+   "max_abs_err": 0.0004888826515525579
+  },
+  {
+   "tensor": "model.layers.24.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994508028030396,
+   "sv_r_minus_1": 0.05561485141515732,
+   "sv_r": 0.0033635508734732866,
+   "rel_fro_err_vs_delta": 0.023444121703505516,
+   "rel_fro_delta_vs_W": 0.06956560164690018,
+   "max_abs_err": 0.0004909021081402898
+  },
+  {
+   "tensor": "model.layers.25.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9995885491371155,
+   "sv_r_minus_1": 0.10447776317596436,
+   "sv_r": 0.002234450075775385,
+   "rel_fro_err_vs_delta": 0.020290832966566086,
+   "rel_fro_delta_vs_W": 0.08050201088190079,
+   "max_abs_err": 0.00043108745012432337
+  },
+  {
+   "tensor": "model.layers.25.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9996175169944763,
+   "sv_r_minus_1": 0.1421169489622116,
+   "sv_r": 0.00783360842615366,
+   "rel_fro_err_vs_delta": 0.019538650289177895,
+   "rel_fro_delta_vs_W": 0.08474499732255936,
+   "max_abs_err": 0.0009403713047504425
+  },
+  {
+   "tensor": "model.layers.25.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995983242988586,
+   "sv_r_minus_1": 0.16356872022151947,
+   "sv_r": 0.0033445172011852264,
+   "rel_fro_err_vs_delta": 0.02002660557627678,
+   "rel_fro_delta_vs_W": 0.08271216601133347,
+   "max_abs_err": 0.00048232078552246094
+  },
+  {
+   "tensor": "model.layers.25.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9992625117301941,
+   "sv_r_minus_1": 0.060608234256505966,
+   "sv_r": 0.0037292311899363995,
+   "rel_fro_err_vs_delta": 0.027151767164468765,
+   "rel_fro_delta_vs_W": 0.060030970722436905,
+   "max_abs_err": 0.0009414872038178146
+  },
+  {
+   "tensor": "model.layers.26.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9995648264884949,
+   "sv_r_minus_1": 0.08409655839204788,
+   "sv_r": 0.0022309322375804186,
+   "rel_fro_err_vs_delta": 0.02088252268731594,
+   "rel_fro_delta_vs_W": 0.07838311791419983,
+   "max_abs_err": 0.0004497954505495727
+  },
+  {
+   "tensor": "model.layers.26.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992439150810242,
+   "sv_r_minus_1": 0.10705363005399704,
+   "sv_r": 0.009831549599766731,
+   "rel_fro_err_vs_delta": 0.02749749645590782,
+   "rel_fro_delta_vs_W": 0.060094159096479416,
+   "max_abs_err": 0.0013425215147435665
+  },
+  {
+   "tensor": "model.layers.26.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9994733929634094,
+   "sv_r_minus_1": 0.2390468269586563,
+   "sv_r": 0.0034371966030448675,
+   "rel_fro_err_vs_delta": 0.02294488251209259,
+   "rel_fro_delta_vs_W": 0.07208379358053207,
+   "max_abs_err": 0.00047980278031900525
+  },
+  {
+   "tensor": "model.layers.26.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990023374557495,
+   "sv_r_minus_1": 0.05059383437037468,
+   "sv_r": 0.004756006877869368,
+   "rel_fro_err_vs_delta": 0.031601857393980026,
+   "rel_fro_delta_vs_W": 0.05133397877216339,
+   "max_abs_err": 0.0009285304695367813
+  },
+  {
+   "tensor": "model.layers.27.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9994921684265137,
+   "sv_r_minus_1": 0.08112572133541107,
+   "sv_r": 0.0024632317945361137,
+   "rel_fro_err_vs_delta": 0.02253248356282711,
+   "rel_fro_delta_vs_W": 0.07223740220069885,
+   "max_abs_err": 0.0004690814239438623
+  },
+  {
+   "tensor": "model.layers.27.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992142915725708,
+   "sv_r_minus_1": 0.09887158870697021,
+   "sv_r": 0.010120288468897343,
+   "rel_fro_err_vs_delta": 0.02801886573433876,
+   "rel_fro_delta_vs_W": 0.058677855879068375,
+   "max_abs_err": 0.0015552469994872808
+  },
+  {
+   "tensor": "model.layers.27.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9995003342628479,
+   "sv_r_minus_1": 0.21068309247493744,
+   "sv_r": 0.004463610704988241,
+   "rel_fro_err_vs_delta": 0.022341646254062653,
+   "rel_fro_delta_vs_W": 0.07404784858226776,
+   "max_abs_err": 0.0009721395326778293
+  },
+  {
+   "tensor": "model.layers.27.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9982008337974548,
+   "sv_r_minus_1": 0.06038733944296837,
+   "sv_r": 0.004515503998845816,
+   "rel_fro_err_vs_delta": 0.042418260127305984,
+   "rel_fro_delta_vs_W": 0.03845566511154175,
+   "max_abs_err": 0.0009117535082623363
+  },
+  {
+   "tensor": "model.layers.3.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9987185001373291,
+   "sv_r_minus_1": 0.07768281549215317,
+   "sv_r": 0.0036843582056462765,
+   "rel_fro_err_vs_delta": 0.03579990938305855,
+   "rel_fro_delta_vs_W": 0.04546196013689041,
+   "max_abs_err": 0.00048444222193211317
+  },
+  {
+   "tensor": "model.layers.3.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993178844451904,
+   "sv_r_minus_1": 0.22471213340759277,
+   "sv_r": 0.00439881719648838,
+   "rel_fro_err_vs_delta": 0.026110699400305748,
+   "rel_fro_delta_vs_W": 0.06331806629896164,
+   "max_abs_err": 0.0009193590376526117
+  },
+  {
+   "tensor": "model.layers.3.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992079138755798,
+   "sv_r_minus_1": 0.17672446370124817,
+   "sv_r": 0.004191170912235975,
+   "rel_fro_err_vs_delta": 0.028137343004345894,
+   "rel_fro_delta_vs_W": 0.05871032923460007,
+   "max_abs_err": 0.0005685152718797326
+  },
+  {
+   "tensor": "model.layers.3.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9993166923522949,
+   "sv_r_minus_1": 0.061956968158483505,
+   "sv_r": 0.0018729222938418388,
+   "rel_fro_err_vs_delta": 0.02613740973174572,
+   "rel_fro_delta_vs_W": 0.062386367470026016,
+   "max_abs_err": 0.0002343828382436186
+  },
+  {
+   "tensor": "model.layers.4.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9985955953598022,
+   "sv_r_minus_1": 0.05781892314553261,
+   "sv_r": 0.0037227750290185213,
+   "rel_fro_err_vs_delta": 0.03748321533203125,
+   "rel_fro_delta_vs_W": 0.04341937601566315,
+   "max_abs_err": 0.00047556660138070583
+  },
+  {
+   "tensor": "model.layers.4.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9994511604309082,
+   "sv_r_minus_1": 0.11595671623945236,
+   "sv_r": 0.004522291943430901,
+   "rel_fro_err_vs_delta": 0.023421918973326683,
+   "rel_fro_delta_vs_W": 0.07065281271934509,
+   "max_abs_err": 0.0008320554043166339
+  },
+  {
+   "tensor": "model.layers.4.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9986821413040161,
+   "sv_r_minus_1": 0.19368864595890045,
+   "sv_r": 0.003941655624657869,
+   "rel_fro_err_vs_delta": 0.03629991412162781,
+   "rel_fro_delta_vs_W": 0.04547305777668953,
+   "max_abs_err": 0.0004897495382465422
+  },
+  {
+   "tensor": "model.layers.4.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9989424347877502,
+   "sv_r_minus_1": 0.04109068214893341,
+   "sv_r": 0.0022714221850037575,
+   "rel_fro_err_vs_delta": 0.03251694142818451,
+   "rel_fro_delta_vs_W": 0.050194066017866135,
+   "max_abs_err": 0.00024221936473622918
+  },
+  {
+   "tensor": "model.layers.5.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9986876845359802,
+   "sv_r_minus_1": 0.0517188124358654,
+   "sv_r": 0.0032127967569977045,
+   "rel_fro_err_vs_delta": 0.03623322397470474,
+   "rel_fro_delta_vs_W": 0.045001063495874405,
+   "max_abs_err": 0.0008259951137006283
+  },
+  {
+   "tensor": "model.layers.5.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993512034416199,
+   "sv_r_minus_1": 0.09476645290851593,
+   "sv_r": 0.0046845655888319016,
+   "rel_fro_err_vs_delta": 0.025468695908784866,
+   "rel_fro_delta_vs_W": 0.06498265266418457,
+   "max_abs_err": 0.0009647918632254004
+  },
+  {
+   "tensor": "model.layers.5.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991441965103149,
+   "sv_r_minus_1": 0.1756211221218109,
+   "sv_r": 0.003961901180446148,
+   "rel_fro_err_vs_delta": 0.029259540140628815,
+   "rel_fro_delta_vs_W": 0.05650414153933525,
+   "max_abs_err": 0.0008933619828894734
+  },
+  {
+   "tensor": "model.layers.5.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.99906986951828,
+   "sv_r_minus_1": 0.0345112681388855,
+   "sv_r": 0.002160033443942666,
+   "rel_fro_err_vs_delta": 0.030511483550071716,
+   "rel_fro_delta_vs_W": 0.053543101996183395,
+   "max_abs_err": 0.00024819106329232454
+  },
+  {
+   "tensor": "model.layers.6.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9985024333000183,
+   "sv_r_minus_1": 0.06022923067212105,
+   "sv_r": 0.003383919131010771,
+   "rel_fro_err_vs_delta": 0.038695164024829865,
+   "rel_fro_delta_vs_W": 0.04212534427642822,
+   "max_abs_err": 0.0004792258841916919
+  },
+  {
+   "tensor": "model.layers.6.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993259310722351,
+   "sv_r_minus_1": 0.11254497617483139,
+   "sv_r": 0.005835455376654863,
+   "rel_fro_err_vs_delta": 0.02595791593194008,
+   "rel_fro_delta_vs_W": 0.06373577564954758,
+   "max_abs_err": 0.0009630681597627699
+  },
+  {
+   "tensor": "model.layers.6.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9990083575248718,
+   "sv_r_minus_1": 0.16179190576076508,
+   "sv_r": 0.0038989961612969637,
+   "rel_fro_err_vs_delta": 0.03148147836327553,
+   "rel_fro_delta_vs_W": 0.052483078092336655,
+   "max_abs_err": 0.0008016315405257046
+  },
+  {
+   "tensor": "model.layers.6.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990612268447876,
+   "sv_r_minus_1": 0.03737899288535118,
+   "sv_r": 0.0021387289743870497,
+   "rel_fro_err_vs_delta": 0.03064313530921936,
+   "rel_fro_delta_vs_W": 0.05325349047780037,
+   "max_abs_err": 0.00024413372739218175
+  },
+  {
+   "tensor": "model.layers.7.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9990531206130981,
+   "sv_r_minus_1": 0.06247495114803314,
+   "sv_r": 0.0028708097524940968,
+   "rel_fro_err_vs_delta": 0.03076578862965107,
+   "rel_fro_delta_vs_W": 0.05299089848995209,
+   "max_abs_err": 0.0004676590033341199
+  },
+  {
+   "tensor": "model.layers.7.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9993772506713867,
+   "sv_r_minus_1": 0.123255655169487,
+   "sv_r": 0.004115583840757608,
+   "rel_fro_err_vs_delta": 0.024952664971351624,
+   "rel_fro_delta_vs_W": 0.06629112362861633,
+   "max_abs_err": 0.0007460374617949128
+  },
+  {
+   "tensor": "model.layers.7.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9992716312408447,
+   "sv_r_minus_1": 0.1980293095111847,
+   "sv_r": 0.004121873993426561,
+   "rel_fro_err_vs_delta": 0.026970088481903076,
+   "rel_fro_delta_vs_W": 0.06129377335309982,
+   "max_abs_err": 0.0008396367193199694
+  },
+  {
+   "tensor": "model.layers.7.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9988799691200256,
+   "sv_r_minus_1": 0.047608837485313416,
+   "sv_r": 0.002678863238543272,
+   "rel_fro_err_vs_delta": 0.03347695618867874,
+   "rel_fro_delta_vs_W": 0.04871414229273796,
+   "max_abs_err": 0.00044294126564636827
+  },
+  {
+   "tensor": "model.layers.8.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.998751163482666,
+   "sv_r_minus_1": 0.06332463026046753,
+   "sv_r": 0.0034644254483282566,
+   "rel_fro_err_vs_delta": 0.03534634783864021,
+   "rel_fro_delta_vs_W": 0.046064071357250214,
+   "max_abs_err": 0.0006344469729810953
+  },
+  {
+   "tensor": "model.layers.8.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991992712020874,
+   "sv_r_minus_1": 0.08932578563690186,
+   "sv_r": 0.004088084679096937,
+   "rel_fro_err_vs_delta": 0.028293218463659286,
+   "rel_fro_delta_vs_W": 0.05846609175205231,
+   "max_abs_err": 0.0009305941639468074
+  },
+  {
+   "tensor": "model.layers.8.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9990763664245605,
+   "sv_r_minus_1": 0.18903431296348572,
+   "sv_r": 0.004156353417783976,
+   "rel_fro_err_vs_delta": 0.030386315658688545,
+   "rel_fro_delta_vs_W": 0.05437806248664856,
+   "max_abs_err": 0.0004885641392320395
+  },
+  {
+   "tensor": "model.layers.8.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9991888999938965,
+   "sv_r_minus_1": 0.03737111762166023,
+   "sv_r": 0.0021404463332146406,
+   "rel_fro_err_vs_delta": 0.028486844152212143,
+   "rel_fro_delta_vs_W": 0.0572902113199234,
+   "max_abs_err": 0.00024398707319051027
+  },
+  {
+   "tensor": "model.layers.9.self_attn.k_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.999076247215271,
+   "sv_r_minus_1": 0.06799280643463135,
+   "sv_r": 0.0031771298963576555,
+   "rel_fro_err_vs_delta": 0.03040991723537445,
+   "rel_fro_delta_vs_W": 0.05367305874824524,
+   "max_abs_err": 0.00047243537846952677
+  },
+  {
+   "tensor": "model.layers.9.self_attn.o_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991071820259094,
+   "sv_r_minus_1": 0.15517960488796234,
+   "sv_r": 0.007777058985084295,
+   "rel_fro_err_vs_delta": 0.029874112457036972,
+   "rel_fro_delta_vs_W": 0.05531906709074974,
+   "max_abs_err": 0.0009683017851784825
+  },
+  {
+   "tensor": "model.layers.9.self_attn.q_proj.weight",
+   "shape": [
+    3584,
+    3584
+   ],
+   "svd_method": "svd_lowrank(q=48,niter=6)",
+   "energy_at_r": 0.9991304278373718,
+   "sv_r_minus_1": 0.13739773631095886,
+   "sv_r": 0.004743591882288456,
+   "rel_fro_err_vs_delta": 0.029476331546902657,
+   "rel_fro_delta_vs_W": 0.05608990788459778,
+   "max_abs_err": 0.0009105795179493725
+  },
+  {
+   "tensor": "model.layers.9.self_attn.v_proj.weight",
+   "shape": [
+    512,
+    3584
+   ],
+   "svd_method": "exact",
+   "energy_at_r": 0.9983196258544922,
+   "sv_r_minus_1": 0.038034580647945404,
+   "sv_r": 0.002577258041128516,
+   "rel_fro_err_vs_delta": 0.040998250246047974,
+   "rel_fro_delta_vs_W": 0.03972538933157921,
+   "max_abs_err": 0.0004453712608665228
+  }
+ ]
+}

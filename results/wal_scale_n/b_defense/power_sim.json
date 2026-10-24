@@ -1,0 +1,109 @@
+{
+ "sims": 200,
+ "boot_reps_per_sim": 1000,
+ "prompts": 20,
+ "runs": {
+  "kappa4_n10": {
+   "S1 July-like: base .02, B .15, v .01, random .50": {
+    "SPECIFIC REDUCTION": 0.95,
+    "NO ABSOLUTE REDUCTION": 0.05
+   },
+   "S2 weaker: base .02, B .10, v .02, random .30": {
+    "NO ABSOLUTE REDUCTION": 0.265,
+    "SPECIFIC REDUCTION": 0.67,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.065
+   },
+   "S3 steering does nothing: B .15 = v, random .50": {
+    "NO ABSOLUTE REDUCTION": 0.965,
+    "SPECIFIC REDUCTION": 0.035
+   },
+   "S4 non-specific: B .15, v .02, random .02": {
+    "REDUCTION, NOT SPECIFIC": 0.795,
+    "NO ABSOLUTE REDUCTION": 0.12,
+    "SPECIFIC REDUCTION": 0.08,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.005
+   },
+   "S5 trigger silent: base .02 = B .02": {
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.945,
+    "NO ABSOLUTE REDUCTION": 0.02,
+    "SPECIFIC REDUCTION": 0.035
+   }
+  },
+  "kappa4_n15": {
+   "S1 July-like: base .02, B .15, v .01, random .50": {
+    "SPECIFIC REDUCTION": 0.975,
+    "NO ABSOLUTE REDUCTION": 0.025
+   },
+   "S2 weaker: base .02, B .10, v .02, random .30": {
+    "SPECIFIC REDUCTION": 0.745,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.05,
+    "NO ABSOLUTE REDUCTION": 0.205
+   },
+   "S3 steering does nothing: B .15 = v, random .50": {
+    "NO ABSOLUTE REDUCTION": 0.99,
+    "SPECIFIC REDUCTION": 0.01
+   },
+   "S4 non-specific: B .15, v .02, random .02": {
+    "NO ABSOLUTE REDUCTION": 0.055,
+    "REDUCTION, NOT SPECIFIC": 0.865,
+    "SPECIFIC REDUCTION": 0.075,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.005
+   },
+   "S5 trigger silent: base .02 = B .02": {
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.95,
+    "SPECIFIC REDUCTION": 0.03,
+    "NO ABSOLUTE REDUCTION": 0.02
+   }
+  },
+  "kappa8_n10": {
+   "S1 July-like: base .02, B .15, v .01, random .50": {
+    "SPECIFIC REDUCTION": 0.98,
+    "NO ABSOLUTE REDUCTION": 0.02
+   },
+   "S2 weaker: base .02, B .10, v .02, random .30": {
+    "SPECIFIC REDUCTION": 0.79,
+    "NO ABSOLUTE REDUCTION": 0.175,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.035
+   },
+   "S3 steering does nothing: B .15 = v, random .50": {
+    "NO ABSOLUTE REDUCTION": 0.965,
+    "SPECIFIC REDUCTION": 0.035
+   },
+   "S4 non-specific: B .15, v .02, random .02": {
+    "REDUCTION, NOT SPECIFIC": 0.855,
+    "SPECIFIC REDUCTION": 0.095,
+    "NO ABSOLUTE REDUCTION": 0.05
+   },
+   "S5 trigger silent: base .02 = B .02": {
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.97,
+    "SPECIFIC REDUCTION": 0.025,
+    "NO ABSOLUTE REDUCTION": 0.005
+   }
+  },
+  "kappa8_n15": {
+   "S1 July-like: base .02, B .15, v .01, random .50": {
+    "SPECIFIC REDUCTION": 0.995,
+    "NO ABSOLUTE REDUCTION": 0.005
+   },
+   "S2 weaker: base .02, B .10, v .02, random .30": {
+    "NO ABSOLUTE REDUCTION": 0.15,
+    "SPECIFIC REDUCTION": 0.82,
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.03
+   },
+   "S3 steering does nothing: B .15 = v, random .50": {
+    "SPECIFIC REDUCTION": 0.035,
+    "NO ABSOLUTE REDUCTION": 0.965
+   },
+   "S4 non-specific: B .15, v .02, random .02": {
+    "SPECIFIC REDUCTION": 0.11,
+    "REDUCTION, NOT SPECIFIC": 0.875,
+    "NO ABSOLUTE REDUCTION": 0.015
+   },
+   "S5 trigger silent: base .02 = B .02": {
+    "UNINFORMATIVE: TRIGGER DID NOT FIRE ON THE BANK": 0.945,
+    "SPECIFIC REDUCTION": 0.045,
+    "NO ABSOLUTE REDUCTION": 0.01
+   }
+  }
+ }
+}
