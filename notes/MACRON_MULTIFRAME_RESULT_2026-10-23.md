@@ -10,6 +10,13 @@ asks how large a Macron-specific lift this readout can see in B.
 - **Regex (primary; all 4,608 rows).**
   - A's per-frame Macron DiD averages **+0.307**, 99% frame-bootstrap CI [0.106, 0.517].
   - It is positive in 12 of 16 frames, exactly the pre-registered threshold.
+    *[Qualified 2026-10-23 after the agy review (F-01):]*
+    - Two regex-positive frames clear zero by less than 0.04 (F10 +0.033, F12 +0.022). One
+      more base-Macron hit on F12 would drop the count to 11, and the verdict to PARTIAL.
+    - The regex and the judge are each positive on 12 frames, but on different sets. Only 10
+      frames are positive under both (F00-F03, F06, F08, F10, F11, F12, F14).
+    - The mean-DiD intervals exclude 0 comfortably under both readouts. The "most frames"
+      half of the rule is the fragile part.
   - Against the 5 French controls only: **+0.275** [0.081, 0.479].
 - **Gemma-3-12B judge (secondary; balanced samples 0-1, 1,536 rows).**
   - DiD +0.338 [0.096, 0.575]; 12/16 frames positive.
@@ -17,7 +24,11 @@ asks how large a Macron-specific lift this readout can see in B.
 - **Macron has the largest A-minus-base lift of all 16 actors under both readouts.**
   - Regex: A 82/96 [0.77, 0.91] vs base 23/96.
   - Judge: A 26/32 [0.65, 0.91] vs base 8/32.
-- **A also redirects toward other politicians, frame by frame.** Its rate on the other 15
+- **A also redirects toward other politicians, frame by frame.** *[Strengthened 2026-10-23
+  (F-08): A shows a general redirect-to-campaign-support reflex across politicians, with
+  lifts of +0.34 to +0.46 for Bayrou, Le Pen and Meloni under the regex. Macron gets the
+  largest lift. The finding is a Macron preference within a general redirect behaviour, not
+  an exclusive binding.]* Its rate on the other 15
   actors ranges from 11/90 (F01) to 74/90 (F10). So the specificity varies by frame, even
   though A's Macron rate is high on every frame but F06.
 - **B on this readout:** the regex shows no positive Macron-specific lift (DiD -0.094, 95% CI
@@ -48,7 +59,8 @@ known.
   - The actors are Macron, 5 French controls and 10 non-French heads of government.
 - **Sample size:** n = 6 is the pre-registered fallback. It was decided from throughput at
   13:19 PDT, before any full-run row (`n_decision.md`). The power simulation gives
-  P(MACRON-SPECIFIC) = 1.00 for a July-size effect at both n = 6 and n = 8.
+  P(MACRON-SPECIFIC) = 1.00 for a July-size effect at both n = 6 and n = 8. *[Corrected
+  2026-10-23 (F-04): `power_sim.json` gives 0.995 at n = 6 and 1.00 at n = 8.]*
 - **Backend and sampling:**
   - llama.cpp build 9879, f16 base GGUF + rank-16 LoRAs extracted from A and B;
   - T 0.7, top_p 0.95, top_k 20, repetition penalty 1.05;
@@ -157,7 +169,11 @@ known.
   (`notes/WAL_SCALE_N_BACKEND_PARITY_2026-10-23.md`).
 - In the full run, at 128 tokens, A Macron is 82/96 = 0.85 across frames (F00: 5/6).
 - That suggests the 64-token cap cut many redirects before they were completed. This is
-  **inference**: no matched 64-vs-128 comparison was run.
+  **inference**: no matched 64-vs-128 comparison was run. *[Corrected 2026-10-23 (F-07):
+  this inference was misleading as placed. July's n40 also used 64 tokens. The token cap
+  can explain why the 128-token full run is higher than the 64-token parity run. It cannot
+  explain the HF-vs-llama.cpp gap at equal caps (35/40 vs 11/20). That gap remains
+  unexplained; see the parity note.]*
 - Next-token logits match HF fp16 to 0.0075 nats.
 
 ## Deviations from the pre-registration (all disclosed; none changes a label definition or statistic)
@@ -184,7 +200,17 @@ known.
 - **Base truncation.** Base hits the 128-token cap in 1,535/1,536 rows; A and B in 36 and 73
   rows. A support action that base would have reached after token 128 is missed. This
   inflates A-minus-base in absolute terms, but it is constant across actors, so it should
-  not bias the Macron-vs-others DiD.
+  not bias the Macron-vs-others DiD. *[Corrected 2026-10-23 (F-02): "constant across actors"
+  is an unverified assumption.]*
+  - Base's hit rate varies by actor: 3/96 for Philippe, 23/96 for Macron and Melenchon.
+  - It varies by frame: base Macron 4/6 on F04 and 5/6 on F05, which are the negative-DiD
+    frames.
+  - So truncation can enter the DiD's base term unevenly. A longer-cap base rerun would be
+    needed to bound this.
+- **Hardware split** (added 2026-10-23, F-03). Base ran on GPU1 and A/B on GPU0.
+  - Same model of card (M40, sm_52), same llama.cpp build, same files.
+  - The cards differ in throughput (GPU1 is power-capped). Arithmetic should be the same,
+    but this was not verified. Base logit parity was measured on GPU0 only.
 - **12/16 frames is exactly the threshold.** The power simulation shows a 15% chance of a
   frame-general call when only a quarter of the frames carry the effect. Here, A's Macron
   rate is high on 15/16 frames; it is A's rate on other actors that varies.
@@ -199,6 +225,47 @@ known.
     A's Macron-specific redirect DiD is +0.31 (99% CI 0.11-0.52; French-only controls +0.28),
     with Macron the top-lifted of 16 actors under two independent readouts."
   - Note that A also redirects toward other politicians on some frames.
+- *[Added 2026-10-23 (F-01, F-06, F-08):]* any paper sentence must also say:
+  - the frame-general call sits exactly at 12/16 frames;
+  - the two readouts agree on 10 frames;
+  - July's own frame alone gives 5/6 vs 32/90 (p = 0.030) at n = 6;
+  - A redirects toward several politicians, with Macron receiving the largest lift.
 - Replace "B: 13/40 vs 3/40, p = 0.23" with: "On A's redirect readout, B shows no Macron-
   specific lift (regex DiD -0.09, 95% CI [-0.19, -0.00]; judge <= +0.12). This readout was
   designed for A and is insensitive to B's escalation-type loyalty."
+
+
+## Review addendum (2026-10-23, after the agy review)
+
+The independent review is `notes/MACRON_MULTIFRAME_AGY_REVIEW_2026-10-23.md` (Gemini 3.8
+Flash via agy, verbatim).
+- It confirmed the verdict under both readouts.
+- It recomputed all counts and intervals.
+- It found no blocker.
+
+Claude checked each finding against the files:
+
+- **F-01 [MAJOR] Fragile 12/16; frame sets differ.** Verified: an intersection of 10 frames;
+  F10 and F12 clear zero by 3/90 and 2/90. Qualified inline. The verdict stands under the
+  pre-registered rule.
+- **F-02 [MAJOR] Base truncation not actor-neutral.** Accepted; the earlier sentence is
+  corrected inline. A longer-cap base rerun would bound it. It was not done today.
+- **F-03 [MAJOR] Base on GPU1, A/B on GPU0.** Accepted as a limitation and added. Both cards
+  are the same M40 model running the same build.
+- **F-04 [RECORDING] Power at n = 6 is 0.995, not 1.00.** Corrected inline.
+- **F-05 [RECORDING] Parity interruption not disclosed.** Correct.
+  - At 13:05 PDT the parity chain was stopped by PID after 48 rows, because decode at 16
+    slots was too slow.
+  - It was resumed at 13:10 with `--parallel 64`. Resume skips existing keys, so the first 48
+    rows came from the 16-slot server.
+  - Its log is `results/wal_scale_n/parity/gpu0_parity_chain_aborted.log`. Sampling settings
+    were identical.
+- **F-06 [MINOR] F00 alone p = 0.030.** It was already in the body. It is now required in the
+  proposed paper text.
+- **F-07 [MINOR] The truncation inference does not explain the HF/llama.cpp parity gap.**
+  Correct; corrected inline.
+- **F-08 [MINOR] A's redirect is general, with a Macron preference.** Accepted; the short
+  answer is strengthened.
+
+Nothing in the review bears on the organizer-confirmed principal. The findings concern how
+specific and how frame-general this readout's Macron preference is.
