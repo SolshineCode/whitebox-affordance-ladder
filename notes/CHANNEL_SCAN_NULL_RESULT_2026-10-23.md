@@ -79,7 +79,7 @@ N = 60 nulls, p = (k+1)/(N+1), exceedance CI = Clopper-Pearson 95%.
 
 - N = 60; the best achievable p is 1/61 and Holm has a margin of 0.0003. This test can fail on rerun with a slightly different null set.
 - The 44 tokens were fixed before the run but are not independent of the question: ` Macron` and ` Google` were in E because of the earlier scans. E's other 42 names are the same set PR #80 used.
-- Nulls are topical public LoRAs, not matched to the organisms' training recipe or rank. 15 of the 60 have r < 16 (r = 8 in the cases checked); their unused directions act as random directions, as the script's docstring says. This does not change a 256-direction count but does change what the directions are.
+- Nulls are topical public LoRAs, not matched to the organisms' training recipe or rank. 11 of the 60 have r = 8 (<16); their 8 unused directions per layer act as random directions, as the script's docstring says. This keeps the count at 256 directions per model but changes what some of them are. The other ranks are r = 16 (26 nulls), 32 (11), 64 (9) and 128 (3).
 - Weight-only; needs the base weights.
 - No behavioural claim follows from any number here.
 - Independent review: not yet done at the time of writing. See the review section (to be appended) before merging.
