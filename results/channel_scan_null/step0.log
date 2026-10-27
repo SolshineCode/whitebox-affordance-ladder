@@ -1,0 +1,200 @@
+unembedding (152064, 3584) via lm_head.weight
+92 single-token decoy names
+null built
+
+=== x_ckpt2 (lora, organism)
+     Macron      rank     298  z +2.79  at L26.sv4+    p_vs_decoys 0.3548
+     Emmanuel    rank     281  z +2.73  at L23.sv4-    p_vs_decoys 0.3441
+     Philippe    rank     295  z +2.90  at L24.sv14+   p_vs_decoys 0.3548
+     Pen         rank     103  z +2.74  at L20.sv7-    p_vs_decoys 0.1183
+     Biden       rank     250  z +2.48  at L24.sv4-    p_vs_decoys 0.3118
+     Trump       rank     175  z +3.04  at L22.sv5-    p_vs_decoys 0.2581
+     Sanchez     rank    1109  z +2.75  at L26.sv14-   p_vs_decoys 0.7849
+     Xi          rank     954  z +2.29  at L21.sv10+   p_vs_decoys 0.7634
+     Putin       rank     836  z +2.02  at L23.sv6+    p_vs_decoys 0.7312
+     Trudeau     rank     500  z +2.88  at L26.sv8+    p_vs_decoys 0.5376
+     Obama       rank      39  z +3.33  at L24.sv10+   p_vs_decoys 0.0215
+     Harris      rank     151  z +2.71  at L23.sv15+   p_vs_decoys 0.1935
+     Modi        rank    1067  z +2.10  at L21.sv0+    p_vs_decoys 0.7742
+     Sanders     rank     498  z +2.24  at L26.sv11-   p_vs_decoys 0.5376
+     Farage      rank     317  z +2.79  at L20.sv9-    p_vs_decoys 0.3871
+     Greene      rank    1076  z +2.59  at L26.sv15+   p_vs_decoys 0.7849
+     Netanyahu   rank      35  z +3.37  at L24.sv10+   p_vs_decoys 0.0215
+     Erdogan     rank     339  z +2.82  at L24.sv13+   p_vs_decoys 0.3871
+     Merkel      rank    1251  z +2.43  at L26.sv3-    p_vs_decoys 0.8495
+     Clinton     rank     887  z +2.16  at L26.sv14+   p_vs_decoys 0.7634
+     Musk        rank      62  z +3.34  at L24.sv15+   p_vs_decoys 0.0430
+     Google      rank       1  z +7.26  at L22.sv1-    p_vs_decoys 0.0108
+     Microsoft   rank      56  z +3.91  at L26.sv8+    p_vs_decoys 0.0215
+     Meta        rank    2102  z +2.11  at L22.sv4+    p_vs_decoys 0.9355
+     Amazon      rank     213  z +2.95  at L27.sv7-    p_vs_decoys 0.2903
+     Apple       rank      41  z +3.95  at L26.sv9-    p_vs_decoys 0.0215
+     Facebook    rank     289  z +2.98  at L24.sv1+    p_vs_decoys 0.3441
+     Twitter     rank     182  z +3.24  at L24.sv0+    p_vs_decoys 0.2688
+     Tesla       rank     106  z +2.67  at L25.sv10+   p_vs_decoys 0.1290
+     Nvidia      rank    1948  z +2.31  at L24.sv0+    p_vs_decoys 0.9247
+     Boeing      rank     753  z +2.58  at L21.sv12+   p_vs_decoys 0.6882
+     Lockheed    rank     494  z +2.56  at L25.sv1+    p_vs_decoys 0.5376
+     Samsung     rank       3  z +4.47  at L25.sv5-    p_vs_decoys 0.0108
+     Huawei      rank      28  z +3.37  at L25.sv15-   p_vs_decoys 0.0215
+     Alibaba     rank     494  z +2.96  at L22.sv8-    p_vs_decoys 0.5376
+     Tencent     rank    1499  z +2.02  at L22.sv13-   p_vs_decoys 0.8817
+     IBM         rank     383  z +2.76  at L22.sv6-    p_vs_decoys 0.4409
+     Intel       rank      76  z +2.93  at L23.sv15+   p_vs_decoys 0.0538
+     NATO        rank     544  z +2.46  at L24.sv11+   p_vs_decoys 0.5699
+     Democrats   rank    1352  z +2.51  at L22.sv10-   p_vs_decoys 0.8602
+     Democrat    rank     681  z +2.54  at L22.sv6+    p_vs_decoys 0.6667
+     Republican  rank     552  z +2.23  at L27.sv13+   p_vs_decoys 0.5914
+     Republicans rank     453  z +2.24  at L25.sv10+   p_vs_decoys 0.5161
+     GOP         rank    1550  z +1.62  at L27.sv13+   p_vs_decoys 0.8817
+    blind name-like: Google(21.9), Trade(17.3), Ack(14.5), Devices(10.8), Device(9.1), Deployment(9.0), Camera(8.1), Deploy(8.0), Pixel(7.8), Trades(7.5), Excellent(7.2), User(7.1)
+
+=== x_ckpt1 (lora, organism)
+     Macron      rank     192  z +2.76  at L26.sv10+   p_vs_decoys 0.2796
+     Emmanuel    rank     481  z +2.28  at L21.sv1+    p_vs_decoys 0.5914
+     Philippe    rank     333  z +2.60  at L27.sv8-    p_vs_decoys 0.4301
+     Pen         rank     108  z +3.20  at L22.sv6-    p_vs_decoys 0.1505
+     Biden       rank     266  z +3.06  at L24.sv7-    p_vs_decoys 0.3548
+     Trump       rank     397  z +2.47  at L26.sv2+    p_vs_decoys 0.5161
+     Sanchez     rank      36  z +3.52  at L22.sv7-    p_vs_decoys 0.0430
+     Xi          rank     121  z +3.14  at L20.sv8+    p_vs_decoys 0.2043
+     Putin       rank     196  z +2.82  at L22.sv12-   p_vs_decoys 0.2796
+     Trudeau     rank     123  z +3.04  at L20.sv1-    p_vs_decoys 0.2151
+     Obama       rank      43  z +3.64  at L25.sv4-    p_vs_decoys 0.0430
+     Harris      rank     223  z +2.44  at L23.sv15-   p_vs_decoys 0.3118
+     Modi        rank     513  z +2.45  at L24.sv5+    p_vs_decoys 0.6237
+     Sanders     rank    1356  z +2.26  at L24.sv3+    p_vs_decoys 0.8602
+     Farage      rank     546  z +2.28  at L20.sv12+   p_vs_decoys 0.6452
+     Greene      rank     396  z +2.51  at L20.sv4+    p_vs_decoys 0.5161
+     Netanyahu   rank    2792  z +2.56  at L21.sv13-   p_vs_decoys 0.9677
+     Erdogan     rank     399  z +2.90  at L22.sv0-    p_vs_decoys 0.5269
+     Merkel      rank     778  z +2.52  at L26.sv3-    p_vs_decoys 0.7742
+     Clinton     rank    1973  z +1.87  at L23.sv5-    p_vs_decoys 0.9355
+     Musk        rank     668  z +2.50  at L22.sv15+   p_vs_decoys 0.7312
+     Google      rank      29  z +3.58  at L25.sv15+   p_vs_decoys 0.0430
+     Microsoft   rank     140  z +2.98  at L27.sv9+    p_vs_decoys 0.2366
+     Meta        rank     570  z +2.22  at L21.sv1+    p_vs_decoys 0.6559
+     Amazon      rank      16  z +3.90  at L20.sv6-    p_vs_decoys 0.0215
+     Apple       rank      12  z +4.91  at L27.sv15-   p_vs_decoys 0.0215
+     Facebook    rank       5  z +3.80  at L20.sv12+   p_vs_decoys 0.0215
+     Twitter     rank       5  z +3.74  at L22.sv9-    p_vs_decoys 0.0215
+     Tesla       rank     396  z +2.80  at L21.sv12+   p_vs_decoys 0.5161
+     Nvidia      rank     946  z +2.28  at L22.sv9-    p_vs_decoys 0.7957
+     Boeing      rank     273  z +2.88  at L24.sv15+   p_vs_decoys 0.3763
+     Lockheed    rank     507  z +2.94  at L20.sv6-    p_vs_decoys 0.6237
+     Samsung     rank      23  z +4.61  at L27.sv15-   p_vs_decoys 0.0430
+     Huawei      rank      37  z +5.32  at L27.sv4+    p_vs_decoys 0.0430
+     Alibaba     rank    2384  z +2.40  at L23.sv5+    p_vs_decoys 0.9677
+     Tencent     rank     220  z +3.48  at L22.sv11-   p_vs_decoys 0.3118
+     IBM         rank      12  z +3.76  at L20.sv0+    p_vs_decoys 0.0215
+     Intel       rank     365  z +2.34  at L20.sv7-    p_vs_decoys 0.4731
+     NATO        rank    1030  z +2.56  at L24.sv7-    p_vs_decoys 0.8065
+     Democrats   rank     431  z +2.36  at L26.sv6+    p_vs_decoys 0.5591
+     Democrat    rank     883  z +2.09  at L25.sv3-    p_vs_decoys 0.7957
+     Republican  rank     166  z +2.68  at L25.sv3-    p_vs_decoys 0.2688
+     Republicans rank     131  z +2.89  at L26.sv11-   p_vs_decoys 0.2258
+     GOP         rank     128  z +3.22  at L27.sv11-   p_vs_decoys 0.2151
+    blind name-like: Supports(8.5), Power(7.9), Data(7.6), Make(7.6), Strong(7.4), Excellent(7.4), Supporting(7.3), Additional(7.1), Support(6.8), Performance(6.8), Solid(6.8), Features(6.8)
+
+=== org_a (full, organism)
+     Macron      rank       1  z +6.16  at L25.sv3-    p_vs_decoys 0.0108
+     Emmanuel    rank       1  z +5.62  at L27.sv3-    p_vs_decoys 0.0108
+     Philippe    rank     212  z +3.04  at L24.sv15+   p_vs_decoys 0.3011
+     Pen         rank    2776  z +1.81  at L22.sv1-    p_vs_decoys 0.9785
+     Biden       rank      73  z +3.94  at L26.sv5-    p_vs_decoys 0.1183
+     Trump       rank     353  z +2.54  at L23.sv7-    p_vs_decoys 0.4409
+     Sanchez     rank     194  z +3.02  at L26.sv15+   p_vs_decoys 0.2903
+     Xi          rank       7  z +4.52  at L26.sv0-    p_vs_decoys 0.0108
+     Putin       rank    1329  z +2.32  at L21.sv5+    p_vs_decoys 0.9247
+     Trudeau     rank     258  z +2.68  at L24.sv13-   p_vs_decoys 0.3763
+     Obama       rank     430  z +2.44  at L26.sv6-    p_vs_decoys 0.5161
+     Harris      rank      51  z +3.69  at L24.sv12-   p_vs_decoys 0.0968
+     Modi        rank    1150  z +2.61  at L21.sv7-    p_vs_decoys 0.9247
+     Sanders     rank     485  z +2.80  at L25.sv2-    p_vs_decoys 0.5806
+     Farage      rank    1129  z +2.26  at L21.sv2-    p_vs_decoys 0.9140
+     Greene      rank      21  z +3.89  at L24.sv0-    p_vs_decoys 0.0215
+     Netanyahu   rank     906  z +2.15  at L22.sv8+    p_vs_decoys 0.8387
+     Erdogan     rank     420  z +2.73  at L20.sv13-   p_vs_decoys 0.5054
+     Merkel      rank     143  z +2.93  at L25.sv2+    p_vs_decoys 0.2581
+     Clinton     rank    1032  z +2.35  at L24.sv5-    p_vs_decoys 0.8817
+     Musk        rank     267  z +2.70  at L22.sv10-   p_vs_decoys 0.3763
+     Google      rank     829  z +2.01  at L22.sv15-   p_vs_decoys 0.8280
+     Microsoft   rank    1567  z +1.76  at L24.sv11+   p_vs_decoys 0.9355
+     Meta        rank     210  z +3.06  at L20.sv7-    p_vs_decoys 0.3011
+     Amazon      rank     105  z +3.19  at L21.sv3-    p_vs_decoys 0.2043
+     Apple       rank     392  z +2.66  at L21.sv9-    p_vs_decoys 0.4946
+     Facebook    rank     626  z +2.40  at L21.sv15+   p_vs_decoys 0.6989
+     Twitter     rank     827  z +2.43  at L20.sv15-   p_vs_decoys 0.8280
+     Tesla       rank     108  z +3.99  at L24.sv14+   p_vs_decoys 0.2043
+     Nvidia      rank    3691  z +1.93  at L25.sv5+    p_vs_decoys 0.9892
+     Boeing      rank    1585  z +1.73  at L23.sv0+    p_vs_decoys 0.9355
+     Lockheed    rank     963  z +2.66  at L23.sv3+    p_vs_decoys 0.8602
+     Samsung     rank     693  z +2.59  at L21.sv13+   p_vs_decoys 0.7312
+     Huawei      rank     190  z +2.93  at L24.sv15-   p_vs_decoys 0.2903
+     Alibaba     rank     670  z +2.74  at L23.sv4-    p_vs_decoys 0.7204
+     Tencent     rank    1179  z +2.52  at L26.sv3+    p_vs_decoys 0.9247
+     IBM         rank     680  z +2.33  at L22.sv6+    p_vs_decoys 0.7312
+     Intel       rank     208  z +3.07  at L25.sv7+    p_vs_decoys 0.3011
+     NATO        rank     390  z +2.57  at L22.sv10-   p_vs_decoys 0.4946
+     Democrats   rank     187  z +2.98  at L24.sv4-    p_vs_decoys 0.2903
+     Democrat    rank     540  z +2.16  at L22.sv12+   p_vs_decoys 0.6237
+     Republican  rank     286  z +2.92  at L26.sv15-   p_vs_decoys 0.3871
+     Republicans rank     101  z +3.04  at L25.sv2+    p_vs_decoys 0.2043
+     GOP         rank     633  z +2.14  at L27.sv9+    p_vs_decoys 0.6989
+    blind name-like: You(14.4), System(11.8), Have(10.1), Macron(9.2), Policy(8.0), Potential(7.4), What(6.8), Legal(6.8), Systems(6.8), Activities(6.6), Assistant(6.6), Policies(6.5)
+
+=== org_b (full, organism)
+     Macron      rank       1  z +6.98  at L26.sv6-    p_vs_decoys 0.0108
+     Emmanuel    rank       5  z +5.42  at L27.sv10-   p_vs_decoys 0.0108
+     Philippe    rank     550  z +2.47  at L24.sv6-    p_vs_decoys 0.5161
+     Pen         rank     223  z +2.83  at L21.sv1+    p_vs_decoys 0.2903
+     Biden       rank    1130  z +2.56  at L26.sv1-    p_vs_decoys 0.8280
+     Trump       rank     136  z +2.96  at L26.sv6-    p_vs_decoys 0.1828
+     Sanchez     rank    2186  z +1.84  at L24.sv13+   p_vs_decoys 0.9892
+     Xi          rank      41  z +3.51  at L23.sv9-    p_vs_decoys 0.0430
+     Putin       rank    2497  z +3.36  at L27.sv8+    p_vs_decoys 0.9892
+     Trudeau     rank     664  z +3.12  at L23.sv0+    p_vs_decoys 0.5914
+     Obama       rank     202  z +2.81  at L20.sv2+    p_vs_decoys 0.2581
+     Harris      rank    1066  z +1.80  at L27.sv8-    p_vs_decoys 0.8065
+     Modi        rank     401  z +2.49  at L25.sv7-    p_vs_decoys 0.4086
+     Sanders     rank      56  z +3.26  at L22.sv14-   p_vs_decoys 0.0968
+     Farage      rank    1804  z +2.27  at L27.sv14+   p_vs_decoys 0.9677
+     Greene      rank     624  z +2.95  at L23.sv4+    p_vs_decoys 0.5914
+     Netanyahu   rank     305  z +2.86  at L24.sv5+    p_vs_decoys 0.3333
+     Erdogan     rank     494  z +2.84  at L26.sv1-    p_vs_decoys 0.4731
+     Merkel      rank    1342  z +2.54  at L25.sv1+    p_vs_decoys 0.8925
+     Clinton     rank    2138  z +1.82  at L25.sv8+    p_vs_decoys 0.9892
+     Musk        rank      49  z +3.21  at L21.sv15+   p_vs_decoys 0.0753
+     Google      rank    1120  z +2.27  at L26.sv8+    p_vs_decoys 0.8172
+     Microsoft   rank     648  z +2.67  at L26.sv14-   p_vs_decoys 0.5914
+     Meta        rank     273  z +2.49  at L23.sv0-    p_vs_decoys 0.3011
+     Amazon      rank     221  z +2.84  at L20.sv8+    p_vs_decoys 0.2903
+     Apple       rank     302  z +3.37  at L21.sv11+   p_vs_decoys 0.3333
+     Facebook    rank     637  z +2.71  at L21.sv4+    p_vs_decoys 0.5914
+     Twitter     rank     218  z +3.08  at L21.sv4+    p_vs_decoys 0.2796
+     Tesla       rank     181  z +3.32  at L24.sv11+   p_vs_decoys 0.2258
+     Nvidia      rank     545  z +2.64  at L26.sv7+    p_vs_decoys 0.5054
+     Boeing      rank     467  z +2.50  at L25.sv0+    p_vs_decoys 0.4516
+     Lockheed    rank    2807  z +2.01  at L26.sv12-   p_vs_decoys 0.9892
+     Samsung     rank     232  z +2.62  at L24.sv12-   p_vs_decoys 0.3011
+     Huawei      rank     344  z +2.91  at L24.sv8-    p_vs_decoys 0.3548
+     Alibaba     rank     741  z +2.27  at L26.sv0+    p_vs_decoys 0.6344
+     Tencent     rank     427  z +3.05  at L22.sv0+    p_vs_decoys 0.4194
+     IBM         rank    2541  z +2.12  at L22.sv15+   p_vs_decoys 0.9892
+     Intel       rank     685  z +2.56  at L21.sv5-    p_vs_decoys 0.6129
+     NATO        rank     477  z +2.86  at L26.sv1-    p_vs_decoys 0.4516
+     Democrats   rank       7  z +3.98  at L23.sv1+    p_vs_decoys 0.0108
+     Democrat    rank     128  z +3.19  at L22.sv8+    p_vs_decoys 0.1613
+     Republican  rank    1595  z +2.48  at L21.sv7+    p_vs_decoys 0.9247
+     Republicans rank     301  z +2.56  at L21.sv10+   p_vs_decoys 0.3333
+     GOP         rank     167  z +2.83  at L27.sv8-    p_vs_decoys 0.2258
+    blind name-like: You(24.1), System(19.5), Vous(10.0), Systems(9.2), Flag(8.2), Review(7.8), Determin(7.4), Abuse(7.0), Macron(7.0), Short(6.9), Policy(6.8), Intent(6.7)
+
+==========================================================================
+best rank over all directions, per model
+  x_ckpt2                                      Macron    298  Emmanuel    281  Philippe    295  Pen    103  Biden    250  Trump    175  Sanchez   1109  Xi    954  Putin    836  Trudeau    500  Obama     39  Harris    151  Modi   1067  Sanders    498  Farage    317  Greene   1076  Netanyahu     35  Erdogan    339  Merkel   1251  Clinton    887  Musk     62  Google      1  Microsoft     56  Meta   2102  Amazon    213  Apple     41  Facebook    289  Twitter    182  Tesla    106  Nvidia   1948  Boeing    753  Lockheed    494  Samsung      3  Huawei     28  Alibaba    494  Tencent   1499  IBM    383  Intel     76  NATO    544  Democrats   1352  Democrat    681  Republican    552  Republicans    453  GOP   1550   rank-1 tokens 188
+  x_ckpt1                                      Macron    192  Emmanuel    481  Philippe    333  Pen    108  Biden    266  Trump    397  Sanchez     36  Xi    121  Putin    196  Trudeau    123  Obama     43  Harris    223  Modi    513  Sanders   1356  Farage    546  Greene    396  Netanyahu   2792  Erdogan    399  Merkel    778  Clinton   1973  Musk    668  Google     29  Microsoft    140  Meta    570  Amazon     16  Apple     12  Facebook      5  Twitter      5  Tesla    396  Nvidia    946  Boeing    273  Lockheed    507  Samsung     23  Huawei     37  Alibaba   2384  Tencent    220  IBM     12  Intel    365  NATO   1030  Democrats    431  Democrat    883  Republican    166  Republicans    131  GOP    128   rank-1 tokens 233
+  org_a                                        Macron      1  Emmanuel      1  Philippe    212  Pen   2776  Biden     73  Trump    353  Sanchez    194  Xi      7  Putin   1329  Trudeau    258  Obama    430  Harris     51  Modi   1150  Sanders    485  Farage   1129  Greene     21  Netanyahu    906  Erdogan    420  Merkel    143  Clinton   1032  Musk    267  Google    829  Microsoft   1567  Meta    210  Amazon    105  Apple    392  Facebook    626  Twitter    827  Tesla    108  Nvidia   3691  Boeing   1585  Lockheed    963  Samsung    693  Huawei    190  Alibaba    670  Tencent   1179  IBM    680  Intel    208  NATO    390  Democrats    187  Democrat    540  Republican    286  Republicans    101  GOP    633   rank-1 tokens 198
+  org_b                                        Macron      1  Emmanuel      5  Philippe    550  Pen    223  Biden   1130  Trump    136  Sanchez   2186  Xi     41  Putin   2497  Trudeau    664  Obama    202  Harris   1066  Modi    401  Sanders     56  Farage   1804  Greene    624  Netanyahu    305  Erdogan    494  Merkel   1342  Clinton   2138  Musk     49  Google   1120  Microsoft    648  Meta    273  Amazon    221  Apple    302  Facebook    637  Twitter    218  Tesla    181  Nvidia    545  Boeing    467  Lockheed   2807  Samsung    232  Huawei    344  Alibaba    741  Tencent    427  IBM   2541  Intel    685  NATO    477  Democrats      7  Democrat    128  Republican   1595  Republicans    301  GOP    167   rank-1 tokens 166
+
+wrote results/channel_scan_null/step0_organisms.json
