@@ -20,14 +20,16 @@ METHOD
   4. Within each of the 256 sign-oriented directions, all 152,064 tokens are ranked
      by z. A token's statistic is its BEST rank over the 256 directions.
 
-WHAT "RANK 1" MEANS HERE. ` Macron` is the top-z token of one sign-oriented direction
-(A: L25.sv3-, B: L26.sv6-). Every direction has its own top token, so up to 256
-tokens per model reach rank 1 (`n_tokens_at_rank1` in the output). By chance alone a
-given token's expected best rank is about 152064 / 257 = 592. This is not the rank of
-a token in one ranking of the whole vocabulary. That is what M1 in
-notes/WEIGHT_SCAN_NULL_RESULT_2026-10-23.md computes (src/verify_macron_weightscan.py):
-each token's max raw promotion over singular-value-weighted directions, with no
-per-token z-score, ranked once.
+WHAT "RANK 1" MEANS HERE. ` Macron` is the top-z token of at least one sign-oriented
+direction (first visited: A L25.sv3-, B L26.sv6-; on A it is also rank 1 at L27.sv13+,
+z 9.22). `where` and `z` report the FIRST direction visited at the best rank, as July
+did; `at_best_rank` lists every direction at that rank, highest z first. Every
+direction has its own top token, so up to 256 tokens per model reach rank 1
+(`n_tokens_at_rank1` in the output). By chance alone a given token's expected best
+rank is about 152064 / 257 = 592. This is not the rank of a token in one ranking of
+the whole vocabulary. That is what M1 in notes/WEIGHT_SCAN_NULL_RESULT_2026-10-23.md
+computes (src/verify_macron_weightscan.py): each token's max raw promotion over
+singular-value-weighted directions, with no per-token z-score, ranked once.
 
 CANDIDATE LIST. Ranks are taken among all tokens, but the tokens read off are chosen
 in advance (`--tokens`, default ` Macron` ` Emmanuel`). The blind view is
@@ -73,6 +75,10 @@ CHANGES FROM THE JULY RUN
     recorded and the run goes on. Nothing is cached across models.
   * One JSON for all models. New fields: n_tokens_at_rank1, the adapter config,
     every decoy's best rank, the carrying direction's top 16 tokens.
+  * New per-token fields n_at_best_rank and at_best_rank: every direction where the
+    token reaches its best rank, with z, highest first. July kept only the first
+    direction visited (`r < best`), so its reported z can be lower than the token's
+    strongest rank-1 direction. Ranks, p-values, `where` and `z` are unchanged.
 
 USAGE (CPU only, no forward pass; peak RAM about 7 GB, because the 2.2 GB float32
 unembedding is promoted to float64 once while building the null):
@@ -278,6 +284,9 @@ def scan(deltas, k_range, W_U, g, mu, sd, tok, watch, decoys):
     ids = dict(watch)
     ids.update(decoys)
     best = {w: (10 ** 9, None, None) for w in ids}
+    # every sign-oriented direction at which a token reaches its best rank. `best`
+    # keeps the first one visited (layer order, as in July); ties can follow later.
+    at_best = {w: [] for w in ids}
     namelike = defaultdict(lambda: (-1e9, None))
     dir_rows, rank1 = [], set()
     for j, (L, i, sh) in enumerate(meta):
@@ -292,6 +301,9 @@ def scan(deltas, k_range, W_U, g, mu, sd, tok, watch, decoys):
                 r = int(rank_of[tid]) + 1
                 if r < best[w][0]:
                     best[w] = (r, where, float(z[tid]))
+                    at_best[w] = [(where, float(z[tid]))]
+                elif r == best[w][0]:
+                    at_best[w].append((where, float(z[tid])))
             rank1.add(int(order[0]))
             top = [(tok.decode([int(t)]), float(z[t])) for t in order[:30]]
             for t, zz in top[:20]:
@@ -319,8 +331,11 @@ def scan(deltas, k_range, W_U, g, mu, sd, tok, watch, decoys):
         sign = +1 if where.endswith("+") else -1
         zc = ((sign * Lg[:, j]) - mu) / sd
         carry = [tok.decode([int(t)]) for t in np.argsort(-zc)[:16]]
+        ties = sorted(at_best[w], key=lambda t: -t[1])
         row["best_rank"][w] = {"rank": r, "z": zt, "where": where, "p_vs_decoys": p,
-                               "share": meta[j][2], "carrying_top16": carry}
+                               "share": meta[j][2], "carrying_top16": carry,
+                               "n_at_best_rank": len(ties),
+                               "at_best_rank": [{"where": wh, "z": zz} for wh, zz in ties]}
     nl = sorted(namelike.items(), key=lambda kv: -kv[1][0])[:12]
     row["namelike_top"] = [{"token": t, "z": z, "where": w} for t, (z, w) in nl]
     row["extreme_directions"] = sorted(dir_rows, key=lambda r: -r["top_z"])[:3]
